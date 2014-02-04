@@ -25,25 +25,39 @@
  * @link       http://www.icub.com.br
  */
 namespace AckUsers\Model;
-use AckDb\ZF1\RowAbstract,
-    AckCore\Interfaces\Cacheable,
-    AckUsers\Model\Permissions,
-    AckUsers\Model\Photos;
+use AckDb\ZF1\RowAbstract;
+use AckCore\Interfaces\Cacheable;
+use AckUsers\Traits\GroupRowModel;
+/**
+ * modelo de usuário
+ *
+ * @category Business
+ * @package  AckDefault
+ * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
+ * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
+ * @link     http://github.com/zendframework/zf2 for the canonical source repository
+ */
 class User extends RowAbstract implements Cacheable
 {
-    protected $_table = "AckUsers\Model\Users";
+    use GroupRowModel;
+
+    protected $_table = 'AckUsers\Model\Users';
     protected $cache = array();
     const ROOT_USER_ID = 1;
 
     /**
      * retorna verdadeiro se o objeto passao é exatamente o
      * mesmo que o usuário
-     * @param  SystemDbRowAbstract $row [description]
-     * @return boolean             [description]
+     *
+     * @param SystemDbRowAbstract $row [description]
+     *
+     * @return boolean [description]
      */
     public function isMe(\AckDb\ZF1\RowAbstract &$row)
     {
-        if($row->getId()->getBruteVal() == $this->getId()->getBruteVal()) return true;
+        if ($row->getId()->getBruteVal() == $this->getId()->getBruteVal()) {
+            return true;
+        }
 
         return false;
     }
@@ -55,8 +69,9 @@ class User extends RowAbstract implements Cacheable
      */
     public function permissonLevelOfModule($moduleId)
     {
-        if(!$moduleId)
+        if (!$moduleId) {
             throw new Excpetion("o id do módulo é obrigatório");
+        }
 
         $modelPermission = new Permissions;
 
@@ -77,10 +92,13 @@ class User extends RowAbstract implements Cacheable
      */
     public function hasModulePermission($moduleId)
     {
-        if($this->permissonLevelOfModule($moduleId)) return true;
+        if ($this->permissonLevelOfModule($moduleId)) {
+            return true;
+        }
 
         return false;
     }
+
     /**
      * removo o avatar de um usuário
      * @return [type] [description]
@@ -187,6 +205,7 @@ class User extends RowAbstract implements Cacheable
 
         return $user;
     }
+
     /**
      * retorna os pais de um usuário (guarda cache também)
      * @return [type] [description]
@@ -204,6 +223,7 @@ class User extends RowAbstract implements Cacheable
 
         return $parents;
     }
+
     /**
      * retorna  os filhos na hierarquia de um usuário
      * @return [type] [description]
@@ -258,96 +278,4 @@ class User extends RowAbstract implements Cacheable
 
         return $result;
     }
-    //###################################################################################
-    //################################# empresa ###########################################
-    //###################################################################################
-
-    //###################################################################################
-    //################################# END empresa ########################################
-    //###################################################################################
-    //###################################################################################
-    //################################# grupos ###########################################
-    //###################################################################################
-    /**
-     * testa se o usuário está em um grupo qualquer da relação nn
-     * @param  [type] $groupIdentifier [description]
-     * @return [type] [description]
-     */
-    public function inGroup($groupIdentifier)
-    {
-        //testa pelo id do grupo
-        if (is_int($groupIdentifier)) {
-
-            $modelUsersGroups = new \AckUsers\Model\UsersGroups;
-            $UsersGroups = $modelUsersGroups->get(array("usuario_id"=>$this->getId()->getBruteVal(),"grupo_id"=>$groupIdentifier));
-            if(!empty($UsersGroups))
-
-                return true;
-        }
-
-        return false;
-    }
-    /**
-     * testa se o grupo passado é o grupo principal do usuário
-     * @param  [type]  $groupId [description]
-     * @return boolean [description]
-     */
-    public function isMyMainGroup($groupId)
-    {
-        if($this->getMainGroupId()->getBruteVal() == $groupId) return true;
-
-        return false;
-    }
-    /**
-     * testa se o usuário tem a permissão deste grupo ou de algum
-     * que englobe este
-     * @param  [type]  $groupId [description]
-     * @return boolean [description]
-     */
-    public function hasGroupPermission($groupId)
-    {
-        if($this->isMyMainGroup($groupId)) return true;
-
-        $groups = $this->getMyMainGroup()->getMyChildGroups();
-        foreach ($groups as $group) {
-            if($group->getSlaveId()->getBruteVal() == $groupId) return true;
-        }
-
-        return false;
-    }
-
-    public function amIResponsableFor(\AckDb\ZF1\RowAbstract $row)
-    {
-        if($this->isMe($row)) return true;
-        //testa casos de hierarquia
-        //
-        $modelUsers = new Users;
-        $object = $modelUsers->toObject()->onlyAvailable()->get(array("empresa_id"=>$this->getId()->getBruteVal(),"id"=>$row->getId()->getBruteVal()));
-        if(!empty($object))
-
-            return true;
-
-        return false;
-    }
-    /**
-     * retorna o objeto representando o
-     * grupo principal do usuário
-     * @return [type] [description]
-     */
-    public function getMyMainGroup()
-    {
-        $result = null;
-        $gId = $this->getMainGroupId()->getBruteVal();
-        if(empty($gId))
-
-            return new Group;
-
-        $result = Groups::getFromId($gId);
-
-        return $result;
-    }
-
-    //###################################################################################
-    //################################# END grupos ########################################
-    //###################################################################################
 }

@@ -29,9 +29,7 @@
  */
 namespace AckUsers\Controller;
 use AckMvc\Controller\AbstractTableRowController;
-
 use AckUsers\Model\Usuarios;
-
 use AckUsers\Traits\AuthenticatedController;
 
 /**
@@ -47,7 +45,7 @@ class UsuariosController extends AbstractTableRowController
 {
     use AuthenticatedController;
 
-    protected $models =  array("default" => "\AckUsers\Model\Usuarios");
+    protected $models =  array("default" => "\AckUsers\Model\Users");
 
     /**
      * configuração global do controller

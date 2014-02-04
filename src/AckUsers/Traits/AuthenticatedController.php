@@ -30,6 +30,9 @@
  */
 namespace AckUsers\Traits;
 
+use AckUsers\Form\Login as LoginForm;
+use AckUsers\Form\Cadastro as CadastroForm;
+
 trait AuthenticatedController
 {
 
@@ -39,6 +42,13 @@ trait AuthenticatedController
      */
     public function perfilAction()
     {
+        /** @var auth  */
+        $auth = $this->getServiceLocator()->get('auth');
+
+        if (!$auth->isAuth()) {
+            $this->redirect()->toRoute('login');
+        }
+
         $this->getEvent()->getRouteMatch()->setParam('id',Facade::getCurrentUser()->getId()->getBruteVal());
         $this->getEvent()->getRouteMatch()->setParam('action','editar');
 
@@ -61,11 +71,11 @@ trait AuthenticatedController
 
         if ($this->getRequest()->isPost()) {
 
-            if ($this->getRequest()->getPost("login")) {
+            if ($this->getRequest()->getPost('login')) {
 
                 $formLogin->setData($this->getRequest()->getPost());
                 if ($formLogin->isValid()) {
-                    $auth = Facade::getAuthInstance();
+                    $auth = $this->getServiceLocator()->get('auth');;
                     $data = \AckCore\Utils\Arr::getOneLevelArray($formLogin->getData());
                     if ($auth->authenticate($data['email'], $data['senha'])) {
                         $this->redirect()->toRoute("home");
@@ -77,7 +87,7 @@ trait AuthenticatedController
                     $this->getServiceLocator()->get('notify')->error($formLogin->getMessages());
                 }
 
-            } elseif ($this->getRequest()->getPost("create")) {
+            } elseif ($this->getRequest()->getPost('create')) {
 
                 $formCadastro->setData($this->getRequest()->getPost());
                 if ($formCadastro->isValid()) {
@@ -183,13 +193,7 @@ trait AuthenticatedController
 
                 if ($formAlterarSenha->isValid()) {
                     \System\Debug\Debug::dg('asdkj');
-                    // $auth = \AckCore\Facade::getAuthInstance();
-                    // $data = \AckCore\Utils\Arr::getOneLevelArray($formAlterarSenha->getData());
-                    // if ($auth->authenticate($data['email'],$data['senha'])) {
-                    //     $this->redirect()->toRoute("perfil-usuario");
-                    // } else {
-                    //     $this->getServiceLocator()->get('notify')->error("Usuário ou senha incorretos.");
-                    // }
+
                 }
 
 //======================= END alterar a senha =======================
