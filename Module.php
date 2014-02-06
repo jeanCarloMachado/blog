@@ -28,7 +28,11 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  */
 namespace AckUsers;
+
+use AckUsers\Auth\AuthenticationService;
+use AckUsers\Auth\Adapter;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use AckUsers\Model\Users;
 /**
  * módulo de usuaŕios
  *
@@ -72,8 +76,23 @@ class Module implements AutoloaderProviderInterface
     {
         return array(
             'factories'  => array(
-                  'auth' => function ($sm) {
-                    $auth = new \AckUsers\Auth\User;
+
+                'Auth' => function ($sm) {
+                    $auth = new AuthenticationService;
+
+                    return $auth;
+                },
+
+                'AuthAdapter' => function ($sm) {
+
+                    $adapter = new Adapter;
+                    $adapter->setServiceLocator($sm);
+
+                    return $adapter;
+                },
+
+                'AckAuthenticationModel' => function ($sm) {
+                    $auth = new Users;
                     $auth->setServiceLocator($sm);
 
                     return $auth;

@@ -9,7 +9,7 @@
   if($row->getId()->getBruteVal() && $modules && \AckCore\Facade::getCurrentUser()->hasModulePermission(\AckUsers\Model\Users::moduleId)) :
 ?>
                 <div class="modulo permissoes <?php echo $row->getId()->getVal() ? "incluir" : "editar" ?>">
-                      <?php \System\HtmlElements\Explain::getInstance()->setName("modulePermisson")->render();?>
+                      <?php \AckCore\HtmlElements\Explain::getInstance()->setName("modulePermisson")->render();?>
 
                     <div class="slide <?php echo $row->getId()->getVal() ? "incluir" : "editar" ?>">
                         <div class="lista list_permissoes">

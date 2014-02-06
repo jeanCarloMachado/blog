@@ -8,14 +8,14 @@ class Access implements Observer
     /**
      *	escuta o notify de um objeto do tipo observer e trata-o a sua maneira
      */
-    public function listen(\System\Core\Event $event)
+    public function listen(\AckCore\Event $event)
     {
         $resultModel = null;
 
-        if(!($event instanceof \System\Core\Event))
+        if(!($event instanceof \AckCore\Event))
             throw new \Exception(" event não é uma intância de dbinfo");
 
-        if($event->getType() != \System\Core\Event::TYPE_ACCESS_REQUEST)
+        if($event->getType() != \AckCore\Event::TYPE_ACCESS_REQUEST)
 
             return false;
 
@@ -34,9 +34,9 @@ class Access implements Observer
          * se a hora atual for maior que a última+12 então reincrementa
          * os acessos para aquele ip
          */
-        if (((int) $myLastTime+(self::INCREMENT_HOURS_DELAY * 3600) < (int) strtotime(date(\System\Object\Date::getDefaultDateTimeFormat())))) {
+        if (((int) $myLastTime+(self::INCREMENT_HOURS_DELAY * 3600) < (int) strtotime(date(\AckCore\Object\Date::getDefaultDateTimeFormat())))) {
 
-            $where["data"] = date(\System\Object\Date::getDefaultDateTimeFormat());
+            $where["data"] = date(\AckCore\Object\Date::getDefaultDateTimeFormat());
             $obj->create($where);
         }
 

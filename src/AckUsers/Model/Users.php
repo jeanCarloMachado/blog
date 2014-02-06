@@ -27,6 +27,9 @@ use AckDb\ZF1\TableAbstract;
 use AckCore\Utils\Date;
 use AckCore\Utils\Encryption;
 use AckCore\Facade;
+
+use Zend\Math\Rand;
+
 /**
  * tabela de usuários
  *
@@ -50,10 +53,22 @@ class Users extends TableAbstract
      */
     const PASSWORD_COL = "senha";
     const LOGIN_COL = "email";
+
     public $identityColumn = "email";
     public $passwordColumn = "senha";
     public $inclusionDateColumn = "dt_inc";
     protected $minPasswordSize = 3;
+
+    protected $meta = array(
+        "humanizedIdentifier" => "nome",
+    );
+
+    protected $relations = array(
+        '1:n' => array(
+            array('model'=>'\AckAcl\Model\PapelUsuarios','reference'=>'usuario_id','elementTitle'=>'Papéis','relatedRowUrlTemplate'=>'/acl/papeisdeusuarios/editar/{id}/id','exibitionTemplate'=>'[getMyPapelStr]'),
+        ),
+    );
+
     /**
      * colunas (default) usadas em funcionalidades do
          * sitema
@@ -168,7 +183,7 @@ class Users extends TableAbstract
                      $email->setDestinatary($destinatary)->setNovaSenha($set[$this->passwordColumn])->send();
                  }
                  //encripta a senha
-                $set[$this->passwordColumn] = \AckCore\Utils\Encryption::encrypt($set[$this->passwordColumn]);
+                $set[$this->passwordColumn] = Encryption::encrypt($set[$this->passwordColumn]);
                 //desabilita a flag de primeira senha
                 $set["primeira_senha"] = 0;
             }
@@ -214,5 +229,38 @@ class Users extends TableAbstract
     public function getDevil()
     {
         return $this->toObject()->getOne(array("email"=>"jean@icub.com.br"));
+    }
+
+    // /**
+    //  * sobreescreveu o criar
+    //  * @param  array  $set [description]
+    //  * @return [type] [description]
+    //  */
+    // public function create(array $set, array $params = null)
+    // {
+    //     $set['salt'] = base64_encode(Rand::getBytes(8,true));
+
+    //     return parent::create($set,$params);
+    // }
+
+     /**
+     * retorna o usuário associado com o email em questão
+     * @param  [type] $mail [description]
+     * @return [type] [description]
+     */
+    public static function getFromEmail($mail)
+    {
+        $model = new Usuarios;
+        $resultUser = $model
+                    ->toObject()
+                    ->onlyAvailable()
+                    ->getOne(array("email"=>$mail));
+
+        return $resultUser;
+    }
+
+    public function encrypt($string)
+    {
+        return Encryption::encrypt($string);
     }
 }

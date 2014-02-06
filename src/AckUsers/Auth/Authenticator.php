@@ -1,5 +1,7 @@
 <?php
 /**
+ *
+ * DEPRECIADO
  * classe de autenticação legada do frameowrk System,
  * para as próximas versões do ack o esquema de autenticação
  * do zend 2 é preferível
@@ -88,7 +90,7 @@ abstract class Authenticator implements ServiceLocatorAwareInterface
             $_SESSION[Encryption::strong($this->_user->getTableName())]['auth']['user'] = ($return);
         }
 
-        return $this->isAuth();
+        return $this->hasIdentity();
     }
 
     /**
@@ -158,7 +160,7 @@ abstract class Authenticator implements ServiceLocatorAwareInterface
      */
     public function getUserObject()
     {
-        if(!$this->isAuth()) throw new \Exception("Não há usuário autenticado neste contexto");
+        if(!$this->hasIdentity()) throw new \Exception("Não há usuário autenticado neste contexto");
 
         return $this->_getUserObject();
     }
@@ -196,12 +198,13 @@ abstract class Authenticator implements ServiceLocatorAwareInterface
      * testa se o usuario está autenticado
      * @return boolean [description]
      */
-    public function isAuth()
+    public function hasIdentity()
     {
-        if ($_SESSION[Encryption::strong($this->_user->getTableName())]['auth']['isAuth']) {
+        if (isset( $_SESSION[Encryption::strong($this->_user->getTableName())])
+            && $_SESSION[Encryption::strong($this->_user->getTableName())]['auth']['isAuth']) {
 
             // $moduleName = \AckCore\Facade::getCurrentModuleName();
-            // \System\Debug\Debug::dg($moduleName);
+            // \AckCore\Debug\Debug::dg($moduleName);
             // //se o o módulo for do ack e o usuário não for do ack retorna falso
             // if (preg_match('/^.*Ack.*$/', $moduleName)) {
             // 	$this->logoff();
