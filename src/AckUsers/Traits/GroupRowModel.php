@@ -37,7 +37,7 @@ namespace AckUsers\Traits;
  * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
  * @link     http://github.com/zendframework/zf2 for the canonical source repository
  */
-class GroupRowModel
+trait GroupRowModel
 {
     /**
      * testa se o usuário está em um grupo qualquer da relação nn

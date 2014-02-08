@@ -34,9 +34,9 @@ class Access implements Observer
          * se a hora atual for maior que a última+12 então reincrementa
          * os acessos para aquele ip
          */
-        if (((int) $myLastTime+(self::INCREMENT_HOURS_DELAY * 3600) < (int) strtotime(date(\System\Object\Date::getDefaultDateTimeFormat())))) {
+        if (((int) $myLastTime+(self::INCREMENT_HOURS_DELAY * 3600) < (int) strtotime(date(\AckCore\Utils\Date::getDefaultDateTimeFormat())))) {
 
-            $where["data"] = date(\System\Object\Date::getDefaultDateTimeFormat());
+            $where["data"] = date(\AckCore\Utils\Date::getDefaultDateTimeFormat());
             $obj->create($where);
         }
 

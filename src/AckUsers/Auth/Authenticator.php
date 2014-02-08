@@ -25,9 +25,19 @@
  * @link       http://www.icub.com.br
  */
 namespace AckUsers\Auth;
+
 use AckCore\Utils\Encryption;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
+/**
+ * authenticacao
+ *
+ * @category Business
+ * @package  AckDefault
+ * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
+ * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
+ * @link     http://github.com/zendframework/zf2 for the canonical source repository
+ */
 abstract class Authenticator implements ServiceLocatorAwareInterface
 {
     //------------------ ESSES 3 VALORES DEVEM SER SETADOS NAS CLASSES FILHAS -------------------------
@@ -80,6 +90,7 @@ abstract class Authenticator implements ServiceLocatorAwareInterface
         );
 
         $return = $this->_user->onlyAvailable()->get($whereClausule);
+
         if(is_array($return)) $return  = reset($return);
 
         //caso a pesquisa retorne se cria a sessao de autenticacao

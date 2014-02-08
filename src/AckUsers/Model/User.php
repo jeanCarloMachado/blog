@@ -107,7 +107,7 @@ class User extends RowAbstract implements Cacheable
     {
         $set = array("profile_image_id"=>0);
         $model = new Users();
-        $result = $model->update($set,array("id"=>$this->getId()->getBruteVal()));
+        $result = $model->update($set, array("id"=>$this->getId()->getBruteVal()));
 
         return (!empty($result)) ? 1 : 0;
     }
@@ -236,9 +236,9 @@ class User extends RowAbstract implements Cacheable
     public function hasParent()
     {
         $parents = $this->getParents();
-        if(empty($parents))
-
+        if (empty($parents)) {
             return false;
+        }
 
         return true;
     }
@@ -260,22 +260,4 @@ class User extends RowAbstract implements Cacheable
         return $this->getNome();
     }
 
-    public function getLastAcessMessage()
-    {
-        $result = null;
-
-        $accessDate = $this->getUltimoAcesso()->getBruteVal();
-        if (empty($accessDate)) {
-            $result="este é o seu primeiro acesso";
-        } else {
-            $data=\AckCore\Utils\Number::convertDate($this->getUltimoAcesso()->getBruteVal(), "%d de REPLACEMONTH de %Y às %Hh%M");
-            $month = explode("-",$this->getUltimoAcesso()->getBruteVal());
-            $month = (int) $month[1];
-            $str = \AckCore\Utils\Date::getMonthStr($month);
-            $data = str_replace("REPLACEMONTH", $str,$data);
-            $result="seu último acesso foi no dia ".$data;
-        }
-
-        return $result;
-    }
 }

@@ -35,7 +35,6 @@ use AckUsers\Form\Cadastro as CadastroForm;
 
 trait AuthenticatedController
 {
-
     /**
      * perfil do usuário
      * @return [type] [description]
@@ -64,6 +63,13 @@ trait AuthenticatedController
     */
     public function loginAction()
     {
+        $auth = $this->getServiceLocator()->get('auth');
+
+        //testa se o usuário já não está autenticado
+        if ($auth->isAuth()) {
+            $this->redirect()->toRoute('dashboard');
+        }
+
         $formLogin = new LoginForm;
         $formCadastro = new CadastroForm;
 
@@ -75,10 +81,10 @@ trait AuthenticatedController
 
                 $formLogin->setData($this->getRequest()->getPost());
                 if ($formLogin->isValid()) {
-                    $auth = $this->getServiceLocator()->get('auth');;
                     $data = \AckCore\Utils\Arr::getOneLevelArray($formLogin->getData());
+
                     if ($auth->authenticate($data['email'], $data['senha'])) {
-                        $this->redirect()->toRoute("home");
+                        $this->redirect()->toRoute('dashboard');
                     } else {
                         $this->getServiceLocator()->get('notify')->error("Usuário ou senha incorretos.");
                     }
@@ -112,6 +118,7 @@ trait AuthenticatedController
                 $this->getServiceLocator()->get('notify')->notice("Nenhuma ação realizada.");
             }
         }
+
         $vars["formLogin"] = $formLogin;
         $vars["messages"] = $messages;
         $vars["formCadastro"] = $formCadastro;
@@ -192,7 +199,6 @@ trait AuthenticatedController
                 $formAlterarSenha->setData($this->getRequest()->getPost());
 
                 if ($formAlterarSenha->isValid()) {
-                    \System\Debug\Debug::dg('asdkj');
 
                 }
 
