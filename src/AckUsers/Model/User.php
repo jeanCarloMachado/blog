@@ -165,35 +165,11 @@ class User extends RowAbstract implements Cacheable
     }
 
     /**
-     * reseta a senha do usuário
-     * @return Ambigous <string>
-     */
-    public function resetPassword()
-    {
-        $set = array();
-        $generated = \AckCore\Utils\Password::sgenerate();
-
-        $modelTableName = $this->_table;
-        $modelUsers = new $modelTableName;
-        $passCol = $modelUsers->passwordColumn;
-        $set[$passCol] = $generated["password"];
-
-        $where = array("id"=>$this->getId()->getBruteVal());
-
-        $model = new \AckUsers\Model\Users;
-
-        $result = $model->update($set,$where);
-
-        return $generated["password"];
-    }
-
-    /**
      * retorna o próximo usuário
      * @return [type] [description]
      */
     public function getNext($where = array())
     {
-
         $modelUsers = new \AckUsers\Model\Users;
 
         $whereBelowUsers = $where;
@@ -260,4 +236,45 @@ class User extends RowAbstract implements Cacheable
         return $this->getNome();
     }
 
+    public function getLastAcessMessage()
+    {
+        $result = null;
+
+        $accessDate = $this->getUltimoAcesso()->getBruteVal();
+        if (empty($accessDate)) {
+            $result="este é o seu primeiro acesso";
+        } else {
+            $data=\AckCore\Utils\Number::convertDate($this->getUltimoAcesso()->getBruteVal(), "%d de REPLACEMONTH de %Y às %Hh%M");
+            $month = explode("-",$this->getUltimoAcesso()->getBruteVal());
+            $month = (int) $month[1];
+            $str = \AckCore\Utils\Date::getMonthStr($month);
+            $data = str_replace("REPLACEMONTH", $str,$data);
+            $result="seu último acesso foi no dia ".$data;
+        }
+
+        return $result;
+    }
+
+    /**
+     * reseta a senha do usuário
+     * @return Ambigous <string>
+     */
+    public function resetPassword()
+    {
+        $set = array();
+        $generated = Password::sgenerate();
+
+        $modelTableName = $this->_table;
+        $modelUsers = new $modelTableName;
+        $passCol = $modelUsers->passwordColumn;
+        $set[$passCol] = $generated["password"];
+
+        $where = array("id"=>$this->getId()->getBruteVal());
+
+        $model = $this->getTableInstance();
+        $result = $model->update($set,
+                $where);
+
+        return $generated["password"];
+    }
 }

@@ -1,6 +1,6 @@
 <?php $config = \AckCore\Facade::getInstance()->getControllerConfig(); ?>
 <div class="modulo <?= $controllerName ?>">
-    <?php \System\HtmlElements\Explain::getInstance()->setName("moduleDescription")->render();?>
+    <?php \AckCore\HtmlElements\Explain::getInstance()->setName("moduleDescription")->render();?>
     <div class="slide colunas">
         <div class="collumA form">
             <?php
@@ -14,7 +14,7 @@
         <div class="collumB">
             <?php echo $this->visible($row,$disableVisible) ?>
             <?php echo $this->highlight($row,$disableHightlight) ?>
-            <?php \System\HtmlElements\LanguageSelector::getInstance()->render() ?>
+            <?php \AckCore\HtmlElements\LanguageSelector::getInstance()->render() ?>
               <?php
                 unset($config["blacklist"]);
                 $config["whitelist"] = (isset($colB["whitelist"]) && !empty($colB["whitelist"])) ? $colB["whitelist"] : array();
@@ -37,11 +37,11 @@
     ?>
     <span class="clearBoth"></span>
     <div class="modulo Groups">
-        <?php \System\HtmlElements\Explain::getInstance()->setName("GroupsDescription")->render();?>
+        <?php \AckCore\HtmlElements\Explain::getInstance()->setName("GroupsDescription")->render();?>
      <?php
              $checksGroups = array();
              foreach($Groups as $relationElement) {
-                $checksGroups[] = \System\HtmlElements\Check::getInstance(true)
+                $checksGroups[] = \AckCore\HtmlElements\Check::getInstance(true)
                                                     ->setChecked($relationElement->isChildOf($row,"\AckUsers\Model\GroupsHierarchys", "master_id", "slave_id"))
                                                     ->setTitle($relationElement->getNome()->getBruteVal())
                                                     ->setValue($relationElement->getId()->getBruteVal())
@@ -49,7 +49,7 @@
                                                      ->setUrl("/ack/gruposdeusuarios/editar/".$relationElement->getId()->getBruteVal())
                                                     ->setName("Groups");
              }
-              $blockActions = \System\HtmlElements\CheckBlock::getInstance()
+              $blockActions = \AckCore\HtmlElements\CheckBlock::getInstance()
               ->setChecks($checksGroups)
               ->setTitle("Grupos que este herda configuraçẽos")
               ->setName("Groups")
@@ -69,7 +69,7 @@
   if($modules && \AckCore\Facade::getCurrentUser()->hasModulePermission(\AckUsers\Model\Users::moduleId)) :
 ?>
                 <div class="modulo permissoes <?= $row->getId()->getVal() ? "incluir" : "editar" ?>">
-                      <?php \System\HtmlElements\Explain::getInstance()->setName("modulePermisson")->render();?>
+                      <?php \AckCore\HtmlElements\Explain::getInstance()->setName("modulePermisson")->render();?>
 
                     <div class="slide <?= $row->getId()->getVal() ? "incluir" : "editar" ?>">
                         <div class="lista list_permissoes">

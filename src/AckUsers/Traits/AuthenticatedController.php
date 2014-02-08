@@ -32,6 +32,7 @@ namespace AckUsers\Traits;
 
 use AckUsers\Form\Login as LoginForm;
 use AckUsers\Form\Cadastro as CadastroForm;
+use \AckCore\Utils\Arr as ArrayUtils;
 
 trait AuthenticatedController
 {
@@ -42,14 +43,14 @@ trait AuthenticatedController
     public function perfilAction()
     {
         /** @var auth  */
-        $auth = $this->getServiceLocator()->get('auth');
+        $auth = $this->getServiceLocator()->get('Auth');
 
-        if (!$auth->isAuth()) {
+        if (!$auth->hasIdentity()) {
             $this->redirect()->toRoute('login');
         }
 
-        $this->getEvent()->getRouteMatch()->setParam('id',Facade::getCurrentUser()->getId()->getBruteVal());
-        $this->getEvent()->getRouteMatch()->setParam('action','editar');
+        $this->getEvent()->getRouteMatch()->setParam('id', Facade::getCurrentUser()->getId()->getBruteVal());
+        $this->getEvent()->getRouteMatch()->setParam('action', 'editar');
 
         $result =  parent::editarAction();
 
@@ -81,13 +82,20 @@ trait AuthenticatedController
 
                 $formLogin->setData($this->getRequest()->getPost());
                 if ($formLogin->isValid()) {
-                    $data = \AckCore\Utils\Arr::getOneLevelArray($formLogin->getData());
 
-                    if ($auth->authenticate($data['email'], $data['senha'])) {
-                        $this->redirect()->toRoute('dashboard');
+                    $auth = $this->getServiceLocator()->get('Auth');
+                    $authAdapter = $this->getServiceLocator()->get('AuthAdapter');
+
+                    $data = ArrayUtils::getOneLevelArray($formLogin->getData());
+
+                    $authAdapter->setData($data);
+
+                    if ($auth->authenticate($authAdapter)->isValid()) {
+                        $this->redirect()->toRoute("home");
                     } else {
                         $this->getServiceLocator()->get('notify')->error("Usuário ou senha incorretos.");
                     }
+
                 } else {
 
                     $this->getServiceLocator()->get('notify')->error($formLogin->getMessages());
@@ -97,6 +105,7 @@ trait AuthenticatedController
 
                 $formCadastro->setData($this->getRequest()->getPost());
                 if ($formCadastro->isValid()) {
+
                     $model = new Usuarios;
                     try {
                         $result =  $model->toObject()->create(\AckCore\Utils\Arr::getOneLevelArray($formCadastro->getData()));
@@ -105,13 +114,13 @@ trait AuthenticatedController
                             $this->getServiceLocator()->get('notify')->error("Não foi possível criar o usuário");
                         } else {
 
-                            $auth = $this->getServiceLocator()->get('auth');
+                            $auth = $this->getServiceLocator()->get('Auth');
                             if($auth->authenticateFromObject($result)) $this->redirect()->toRoute("perfil-usuario");
 
                             $this->getServiceLocator()->get('notify')->success("Usuário cadastrado com sucesso! Efetue login para entrar");
                         }
                     } catch (\Exception $e) {
-                       $this->getServiceLocator()->get('notify')->error($e->getMessage());
+                        $this->getServiceLocator()->get('notify')->error($e->getMessage());
                     }
                 }
             } else {
@@ -120,7 +129,9 @@ trait AuthenticatedController
         }
 
         $vars["formLogin"] = $formLogin;
-        $vars["messages"] = $messages;
+        if ( isset($messages) ) {
+            $vars["messages"] = $messages;
+        }
         $vars["formCadastro"] = $formCadastro;
         $this->viewModel->setVariables($vars);
 
@@ -170,13 +181,17 @@ trait AuthenticatedController
         return $this->viewModel;
     }
 
+    /**
+     * efetua logoff no sistema
+     *
+     * @return void null
+     */
     public function logoffAction()
     {
         $this->viewModel->setTerminal(true);
 
         /** @var auth  */
-        $auth =$this->getServiceLocator()->get('auth');
-        $auth->logoff();
+        $this->getServiceLocator()->get('Auth')->clearIdentity();
         $this->redirect()->toRoute("home");
 
         return false;
@@ -199,6 +214,10 @@ trait AuthenticatedController
                 $formAlterarSenha->setData($this->getRequest()->getPost());
 
                 if ($formAlterarSenha->isValid()) {
+<<<<<<< HEAD
+=======
+                    \AckCore\Debug\Debug::dg('asdkj');
+>>>>>>> 9d6e80422202ffd39291a9927a0df4bb254f9de7
 
                 }
 
