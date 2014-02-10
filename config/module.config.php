@@ -22,7 +22,7 @@ return array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "perfil"
                       ),
@@ -31,7 +31,6 @@ return array(
 
             'usuarios' => array(
                 'type'    => 'Segment',
-                'priority' => 666,
                  'options' => array(
                     'route'    => '/usuarios/:action[/:id][/:params]',
                     'constraints' => array(
@@ -40,7 +39,7 @@ return array(
                         'params' => '(.*)'
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "lista"
                     ),

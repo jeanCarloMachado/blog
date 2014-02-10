@@ -26,7 +26,6 @@ namespace AckUsers\Model;
 use AckDb\ZF1\TableAbstract;
 use AckCore\Utils\Date;
 use AckCore\Utils\Encryption;
-use AckCore\Facade;
 
 use Zend\Math\Rand;
 
@@ -61,12 +60,6 @@ class Users extends TableAbstract
 
     protected $meta = array(
         "humanizedIdentifier" => "nome",
-    );
-
-    protected $relations = array(
-        '1:n' => array(
-            array('model'=>'\AckAcl\Model\PapelUsuarios','reference'=>'usuario_id','elementTitle'=>'Papéis','relatedRowUrlTemplate'=>'/acl/papeisdeusuarios/editar/{id}/id','exibitionTemplate'=>'[getMyPapelStr]'),
-        ),
     );
 
     /**
@@ -119,20 +112,6 @@ class Users extends TableAbstract
         $set[$this->inclusionDateColumn] = Date::now();
 
         if((!$set[$this->passwordColumn]) && !empty($set["senha"])) $set[$this->passwordColumn] = $set["senha"];
-
-    //negócio da função
-        //###################################################################################
-        //################################# adiciona o grupo de acordo com o usuário que o criou###########################################
-        //###################################################################################
-        //se o usuário tem permissão inferior ao de um usuaŕio do ack entao o usuário criado deve conter a mesma empr
-
-        if (Facade::hasSomeoneAuthenticated() && Facade::getCurrentUser()->getEmpresaId()->getBruteVal()) {
-            $set["empresa_id"] = Facade::getCurrentUser()->getEmpresaId()->getBruteVal();
-            $set["main_group_id"] = Facade::getCurrentUser()->getMainGroupId()->getBruteVal();
-        }
-        //###################################################################################
-        //################################# END adiciona o grupo de acordo com o usuário que o criou########################################
-        //###################################################################################
         $result =  parent::create($set);
 
         //envia o e-mail para o novo usuário

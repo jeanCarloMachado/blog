@@ -33,7 +33,16 @@ namespace AckUsers\Traits;
 use AckUsers\Form\Login as LoginForm;
 use AckUsers\Form\Cadastro as CadastroForm;
 use \AckCore\Utils\Arr as ArrayUtils;
-
+/**
+ * trait para controllers de usuários com
+ * actions de login/logout, alterar senha, recuperar senha, etc
+ *
+ * @category Business
+ * @package  AckDefault
+ * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
+ * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
+ * @link     http://github.com/zendframework/zf2 for the canonical source repository
+ */
 trait AuthenticatedController
 {
     /**
@@ -67,7 +76,7 @@ trait AuthenticatedController
         $auth = $this->getServiceLocator()->get('auth');
 
         //testa se o usuário já não está autenticado
-        if ($auth->isAuth()) {
+        if ($auth->hasIdentity()) {
             $this->redirect()->toRoute('dashboard');
         }
 
@@ -214,10 +223,6 @@ trait AuthenticatedController
                 $formAlterarSenha->setData($this->getRequest()->getPost());
 
                 if ($formAlterarSenha->isValid()) {
-<<<<<<< HEAD
-=======
-                    \AckCore\Debug\Debug::dg('asdkj');
->>>>>>> 9d6e80422202ffd39291a9927a0df4bb254f9de7
 
                 }
 
