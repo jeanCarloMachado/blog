@@ -47,14 +47,9 @@ return array(
             ),
 
            'alterar-senha' => array (
-                'type'    => 'Segment',
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/usuarios[/][:action][/:id][/:params]',
-                    'constraints' => array(
-                        'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                        'params' => '(.*)'
-                    ),
+                    'route'    => '/usuarios/alterarsenha',
                     'defaults' => array(
                         '__NAMESPACE__' => 'AckUsers\Controller',
                         "controller" => "Usuarios",
@@ -64,9 +59,9 @@ return array(
             ),
 
            'logoff' => array (
-                'type'    => 'Segment',
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/usuarios/:action',
+                    'route'    => '/usuarios/logoff',
                     'constraints' => array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
@@ -79,9 +74,10 @@ return array(
             ),
 
            'login' => array (
-                'type'    => 'Segment',
+                'type'    => 'Literal',
+                'priority' => 667,
                 'options' => array(
-                    'route'    => '/usuarios/:action',
+                    'route'    => '/usuarios/login',
                     'constraints' => array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
@@ -94,9 +90,9 @@ return array(
             ),
 
            'login-reciver' => array(
-                'type'    => 'Segment',
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/usuarios/:action',
+                    'route'    => '/usuarios/login',
                     'constraints' => array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),

@@ -4,10 +4,12 @@
     <div class="slide colunas">
         <div class="collumA form">
             <?php
-                $elements =   \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setControllerConfig($config)->buildElementsFromRow($row);
-                if(is_array($elements))
-                foreach($elements as $element)
-                    $element->render();
+                $elements = \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setControllerConfig($config)->buildElementsFromRow($row);
+                if(is_array($elements)) {
+                    foreach($elements as $element) {
+                        $element->render();
+                    }
+                }
             ?>
         </div><!-- END collumA -->
         <!-- • • • • -->
@@ -30,9 +32,6 @@
 
 
     <?php
-    //###################################################################################
-    //################################# módulo html de relacão NN com Groups ###########################################
-    //###################################################################################
         if($row->getId()->getBruteVal() && class_exists("\AckUsers\Model\Groups") && !empty($Groups)) :
     ?>
     <span class="clearBoth"></span>
