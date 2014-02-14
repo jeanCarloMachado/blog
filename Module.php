@@ -32,7 +32,6 @@ namespace AckUsers;
 use AckUsers\Auth\AuthenticationService;
 use AckUsers\Auth\Adapter;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use AckUsers\Model\Users;
 /**
  * módulo de usuaŕios
  *
@@ -92,7 +91,7 @@ class Module implements AutoloaderProviderInterface
                 },
 
                 'AckAuthenticationModel' => function ($sm) {
-                    $auth = new Users;
+                    $auth = new \ControlaCar\Model\Usuarios;
                     $auth->setServiceLocator($sm);
 
                     return $auth;

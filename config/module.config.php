@@ -14,7 +14,7 @@ return array(
     'router' => array(
         'routes' => array(
 
-            'perfil-usuario' => array (
+            'perfil' => array (
                 'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/usuarios/:action',
@@ -56,7 +56,7 @@ return array(
                         'params' => '(.*)'
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "alterarsenha"
                     ),
@@ -71,7 +71,7 @@ return array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "logoff"
                     ),
@@ -86,7 +86,7 @@ return array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "login"
                     ),
@@ -101,7 +101,7 @@ return array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'AckUsers\Controller',
+                        '__NAMESPACE__' => 'ControlaCar\Controller',
                         "controller" => "Usuarios",
                         'action' => "login"
                     ),

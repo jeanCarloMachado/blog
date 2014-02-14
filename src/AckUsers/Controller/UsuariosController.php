@@ -29,7 +29,6 @@
  */
 namespace AckUsers\Controller;
 use AckMvc\Controller\AbstractTableRowController;
-use AckUsers\Model\Usuarios;
 use AckUsers\Traits\AuthenticatedController;
 
 /**
@@ -47,27 +46,13 @@ class UsuariosController extends AbstractTableRowController
 
     protected $models =  array("default" => "\AckUsers\Model\Users");
 
-    /**
-     * configuração global do controller
-     * @var array
-     */
     protected $config = array(
         "global"=>array(
             "blacklist" => array("senha","dtinc","status","primeirasenha","ultimoacesso",'salt','classname'),
-            "parentFullClasses" => "usuarios",
-            "parentFullId" => "usuarios",
         ),
         "lista" => array(
             "whitelist"=>array("nome", "email"),
-            "elementsSettings"=>array(
-                                // "acessofront"=> array("columnSpacing" => 80,"FilterHTMLType" => "BooleanCheck","SearchPattern" =>"Equals",),
-                                "acessoack"=> array("columnSpacing" => 90,"FilterHTMLType" => "BooleanCheck","SearchPattern" =>"Equals",)
-                            ),
-            "addButtonTitle" => "Adicionar usuário",
-            "rmButtonTitle" => "Excluir usuários",
         ),
-
-        "carregar_mais"=>array("where"=>array("id !="=>"1")),
     );
 
     protected function evtAfterGetScopedData()
@@ -75,9 +60,32 @@ class UsuariosController extends AbstractTableRowController
         if ($this->params("action") == "editar" || $this->params("action") == 'perfil' || $this->params('action')=='incluir') {
 
             $config = $this->viewModel->config;
-            $config['toRenderCOL1'][2] =  \AckCore\HtmlElements\PasswordManagementBlock::Factory($config['row']->getSenha())->setUserRow($config['row']);
+            $config['toRenderCOL1'][4] =  \AckCore\HtmlElements\PasswordManagementBlock::Factory($config['row']->getSenha())->setUserRow($config['row']);
             $this->viewModel->config = $config;
         }
+    }
+
+     /**
+     * perfil do usuário
+     * @return [type] [description]
+     */
+    public function perfilAction()
+    {
+        /** @var auth  */
+        $auth = $this->getServiceLocator()->get('Auth');
+
+        if (!$auth->hasIdentity()) {
+            $this->redirect()->toRoute('login');
+        }
+
+        $user = $auth->getIdentity();
+
+        $this->getEvent()->getRouteMatch()->setParam('id', $user->getId()->getBruteVal());
+        $this->getEvent()->getRouteMatch()->setParam('action', 'editar');
+
+        $result =  parent::editarAction();
+
+        return $result;
     }
 
 }

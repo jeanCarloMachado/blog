@@ -96,9 +96,8 @@ class Adapter implements AdapterInterface, ServiceLocatorAwareInterface
 
         $resultEntity = $model->toObject()->getOne($whereClausule);
 
-        $ackAuthResult = null;
-
         if ($resultEntity->getId()->getBruteVal()) {
+
             $ackAuthResult = new AckAuthResult(AckAuthResult::SUCCESS, $resultEntity);
         } else {
             $ackAuthResult = new AckAuthResult(AckAuthResult::FAILURE_CREDENTIAL_INVALID, $resultEntity);
