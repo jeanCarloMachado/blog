@@ -56,7 +56,7 @@ return array(
                         'params' => '(.*)'
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'ControlaCar\Controller',
+                        '__NAMESPACE__' => 'AckUsers\Controller',
                         "controller" => "Usuarios",
                         'action' => "alterarsenha"
                     ),
@@ -86,7 +86,7 @@ return array(
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'ControlaCar\Controller',
+                        '__NAMESPACE__' => 'AckUsers\Controller',
                         "controller" => "Usuarios",
                         'action' => "login"
                     ),

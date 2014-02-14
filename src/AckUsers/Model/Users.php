@@ -84,6 +84,7 @@ class Users extends TableAbstract
         "dt_inc" => "Data de inclusão",
         "nome_tratamento" => "Apelido",
         "acessofront" => "Acesso ao site",
+        "fone" => "Telefone",
     );
 
     /**
