@@ -27,8 +27,6 @@ use AckDb\ZF1\TableAbstract;
 use AckCore\Utils\Date;
 use AckCore\Utils\Encryption;
 
-use Zend\Math\Rand;
-
 /**
  * tabela de usuários
  *
@@ -55,7 +53,7 @@ class Users extends TableAbstract
 
     public $identityColumn = "email";
     public $passwordColumn = "senha";
-    public $inclusionDateColumn = "dt_inc";
+    public $inclusionDateColumn = "inclusao_data";
     protected $minPasswordSize = 3;
 
     protected $meta = array(
@@ -95,30 +93,36 @@ class Users extends TableAbstract
     public function create(array $set, array $params = null)
     {
         $passwordCpy = $set[$this->passwordColumn];
-    //testes iniciais
-        if(empty($set[$this->identityColumn]) || empty($set[$this->passwordColumn])) throw new \Exception("Usuário ou senha não definidos.");
 
-        {
-            $whereTest = array($this->identityColumn => $set[$this->identityColumn]);
-            $resultUser = $this->toObject()->getOne($whereTest);
-            if($resultUser->getId()->getBruteVal())
-                throw new \Exception("O e-mail solicitado já está cadastrado no sistema!", 1);
+        //testa se os dados mínimos foram passados
+        if (empty($set[$this->identityColumn]) || empty($set[$this->passwordColumn])) {
+            throw new \Exception("Usuário ou senha não definidos.");
         }
-    //inicializacao de variáveis
+
+        //teste se o usuáiro já não está cadastrado
+        $whereTest = array($this->identityColumn => $set[$this->identityColumn]);
+        $resultUser = $this->toObject()->getOne($whereTest);
+        if ($resultUser->getId()->getBruteVal()) {
+            throw new \Exception("O e-mail solicitado já está cadastrado no sistema!", 1);
+        }
+
         // encripta a senha do usuario
         $passwordNotEncrypted = $set[$this->passwordColumn];
 
-        $set[$this->passwordColumn] = Encryption::encrypt($set[$this->passwordColumn]);
+        $set[$this->passwordColumn] = $this->encrypt($set[$this->passwordColumn]);
         //seta a data de criacao
         $set[$this->inclusionDateColumn] = Date::now();
 
-        if((!$set[$this->passwordColumn]) && !empty($set["senha"])) $set[$this->passwordColumn] = $set["senha"];
+        if ((!$set[$this->passwordColumn]) && !empty($set["senha"])) {
+            $set[$this->passwordColumn] = $set["senha"];
+        }
+
         $result =  parent::create($set);
 
         //envia o e-mail para o novo usuário
         $email = new \AckUsers\Emails\NovoUsuario;
         $email->setDestinatary($set[$this->identityColumn])->setPassword($passwordCpy)->send();
-    //retorno
+
         return $result;
     }
 
@@ -163,7 +167,7 @@ class Users extends TableAbstract
                      $email->setDestinatary($destinatary)->setNovaSenha($set[$this->passwordColumn])->send();
                  }
                  //encripta a senha
-                $set[$this->passwordColumn] = Encryption::encrypt($set[$this->passwordColumn]);
+                $set[$this->passwordColumn] = $this->encrypt($set[$this->passwordColumn]);
                 //desabilita a flag de primeira senha
                 $set["primeira_senha"] = 0;
             }
@@ -205,23 +209,6 @@ class Users extends TableAbstract
 
         return $users;
     }
-
-    public function getDevil()
-    {
-        return $this->toObject()->getOne(array("email"=>"jean@icub.com.br"));
-    }
-
-    // /**
-    //  * sobreescreveu o criar
-    //  * @param  array  $set [description]
-    //  * @return [type] [description]
-    //  */
-    // public function create(array $set, array $params = null)
-    // {
-    //     $set['salt'] = base64_encode(Rand::getBytes(8,true));
-
-    //     return parent::create($set,$params);
-    // }
 
      /**
      * retorna o usuário associado com o email em questão

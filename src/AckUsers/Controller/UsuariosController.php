@@ -55,16 +55,6 @@ class UsuariosController extends AbstractTableRowController
         ),
     );
 
-    // protected function evtAfterGetScopedData()
-    // {
-    //     // if ($this->params("action") == "editar" || $this->params("action") == 'perfil' || $this->params('action')=='incluir') {
-
-    //     //     $config = $this->viewModel->config;
-    //     //     $config['toRenderCOL1'][4] =  \AckCore\HtmlElements\PasswordManagementBlock::Factory($config['row']->getSenha())->setUserRow($config['row']);
-    //     //     $this->viewModel->config = $config;
-    //     // }
-    // }
-
      /**
      * perfil do usuário
      * @return [type] [description]
