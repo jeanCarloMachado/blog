@@ -1,0 +1,28 @@
+<h1>
+<?php
+
+foreach ($this->AjudaCategorias as $categoria) :
+
+    $ajudas = $categoria->getMyAjudas();
+
+    if(empty($ajudas)) {
+        continue;
+    }
+
+?>
+
+<h3><?php echo $categoria->getNome()->getVal(); ?></h3>
+<ul>
+    <?php foreach($ajudas as $ajuda) : ?>
+
+    <li>
+        <h4><?php echo $ajuda->getTitulo()->getVal(); ?></h4>
+        <p><?php echo $ajuda->getDescricao()->getVal(); ?></p>
+    </li>
+
+    <?php endforeach; ?>
+</ul>
+
+
+<?php endforeach; ?>
+</h1>

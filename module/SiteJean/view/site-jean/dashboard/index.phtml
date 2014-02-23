@@ -1,0 +1,21 @@
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="jumbotron">
+			<!-- TODO: Form aqui -->
+
+                  <!-- lista da esquerda -->
+                  <ul>
+                        <li>Número de visitas do site no mês: <var><?= $this->info()->totalVisitsThisMonth() ?></var></li>
+                        <li>Total de visitas do site:         <var><?php echo $this->info()->totalVisits() ?></var></li>
+                        <li>Média mensal de visitas:          <var><?php echo $this->info()->totalVisitsAverage(); ?></var></li>
+                        <li> Total de contatos: <var>0</var></li>
+                        <li> Total de posts: <var>0</var></li>
+                  </ul>
+		</div>
+
+            <div>
+                  <h3>Altertas de novidades</h3>
+            </div>
+	</div>
+</div>

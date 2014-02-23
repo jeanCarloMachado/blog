@@ -1,0 +1,38 @@
+<?php $this->layout()->setTemplate('error/404'); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="Shortcut Icon" type="image/ico" href="/ack-core/images/favicon.gif" />
+    <title>Ack</title>
+
+    <link type="text/css" rel="stylesheet" href="/ack-core/css/ack.style.css" />
+    <!--[if IE 7]> <link type="text/css" rel="stylesheet" href="/css/ack/ack.style_IE7.css" /> <![endif]-->
+    <!--[if IE 8]> <link type="text/css" rel="stylesheet" href="/css/ack/ack.style_IE8.css" /> <![endif]-->
+    <!--[if IE 9]> <link type="text/css" rel="stylesheet" href="/css/ack/ack.style_IE9.css" /> <![endif]-->
+</head>
+<body>
+<div class="erroBox">
+
+    <img src="/ack-core/images/ack_Logo.png" width="76" height="52" alt="ACK" />
+    <div class="content">
+        <span></span>
+
+        <div>
+                    <h3>
+                        <var><?php echo $this->translate('A 404 error occurred') ?></var>
+                        <span></span>
+                    </h3>
+
+                    <p>
+                    <?php echo ($this->message) ? $this->message : "A página que você tentou acessar não existe." ?>
+                    </p>
+        </div>
+        <span></span>
+    </div><!-- END content -->
+
+
+</div><!-- END erroBox -->
+</body>
+</html>

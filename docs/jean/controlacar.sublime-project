@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/jeancarlo/Projects/ControlaCar"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/jeancarlo/Projects/Snippets"
+		}
+	]
+}

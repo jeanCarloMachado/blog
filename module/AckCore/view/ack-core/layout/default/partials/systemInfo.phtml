@@ -1,0 +1,14 @@
+<?php
+    if(empty($row))
+        return false;
+?>
+
+<!-- informações utilizadas pelo js para interpretar a página -->
+<input type="hidden" id="infoPagina" data-info='{"modulo":"<?php echo $moduleName ?>", "arquivoRetorno":"<?php echo $controllerName ?>" , "id":"<?php echo $row->getId()->getBruteVal() ?>", "acao":"<?php echo ($row->getId()->getBruteVal()) ? "editar" : "incluir" ?>"}'/>
+
+<input type="hidden" id="dataACK"
+        data-id="<?php echo $row->getId()->getBruteVal() ?>"
+        data-acao="<?= ($row->getId()->getBruteVal()) ? "editar" : "incluir" ?>"
+        data-modulo="<?php echo $moduleName ?>"
+        data-arquivoRetorno="<?php echo $controllerName ?>"
+    />

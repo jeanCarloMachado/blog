@@ -1,0 +1,7 @@
+<div class="row hidden-print">
+    <div class="col-xs-12">
+
+        <?php $partial = array('/site-jean/layout/partials/navigation/breadcrumbs.phtml', 'default'); ?>
+        <?php echo $this->navigation('navigation')->breadcrumbs()->setMinDepth(0)->setMaxDepth(100)->setPartial($partial)->render(); ?>
+    </div>
+</div>

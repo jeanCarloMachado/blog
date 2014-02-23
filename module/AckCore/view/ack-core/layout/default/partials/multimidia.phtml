@@ -1,0 +1,102 @@
+<div class="modulo upMidias Wfull"<?php if (!$row->getId()->getBruteVal()) : ?> style="display:none;"<?php endif; ?>>
+	<?php
+    \AckCore\HtmlElements\Explain::getInstance()->setName("multimidiaModuleDescription")->render();
+    ?>
+
+    <div class="slide">
+        <div class="boxAbas">
+        	<div class="menuAbas">
+            	<?php if ($abaImagens) { ?>
+                <button value="abaIMAGEM" title="Imagens" class="abaView">
+                	<span></span>
+                    <em><span>Imagens</span></em>
+                    <span></span>
+                </button>
+                <?php } ?>
+            	<?php if ($abaVideos) { ?>
+                <button value="abaVIDEO" title="Vídeos">
+                	<span></span>
+                    <em><span>Vídeos</span></em>
+                    <span></span>
+                </button>
+                <?php } ?>
+            	<?php if ($abaAnexos) { ?>
+                <button value="abaANEXO" title="Anexos">
+                	<span></span>
+                    <em><span>Anexos</span></em>
+                    <span></span>
+                </button>
+                <?php } ?>
+            </div><!-- END menuAbas -->
+            <!-- • • • • -->
+            <div class="parentAbas">
+            	<?php if ($abaImagens) : ?>
+                <!-- • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • Aba IMAGENS -->
+                <div id="abaIMAGEM" class="contAba colunas"><!-- nao pode passar ID para estas divs com a classe contAba -->
+					   <?php \AckCore\HtmlElements\Explain::getInstance()->disableTitle()->setName("imagesModuleDescription")->render();?>
+
+                    <input type="hidden" id="imgEdicao" <?php if (isset($tamanhoCrop)) { ?>value="1" class="<?echo $tamanhoCrop;?>"<?php } else { ?>value="0" class="0 0"<?php } ?> />
+                    <div class="collumA">
+                        <div class="lista_selecionados">
+                        	<input type="file" name="imagem" id="imagem_upload" <?php if (!$multiplasImagens) { ?>class="1"<?php } ?>><!-- class = quantidade de arquivos -->
+                        </div><!-- END lista_selecionados -->
+
+                        <div style="display:none;" class="tempBox form"></div>
+                    </div><!-- END collumA -->
+
+                    <div class="collumB arquivosBloco">
+                    	<ol></ol>
+                    </div><!-- END collumB -->
+
+                    <!-- • • • • • • • • • • • EDITAR IMAGEM • • • -->
+                    <div style="display:none;" class="editArquivo edicaoIMAGEM form"></div>
+                </div><!-- END #abaIMAGENS -->
+                <?php endif; ?>
+                <?php if ($abaVideos) : ?>
+                <!-- • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • Aba VIDEOS -->
+                <div id="abaVIDEO" class="contAba colunas">
+					 <?php \AckCore\HtmlElements\Explain::getInstance()->disableTitle()->setName("videosModuleDescription")->render();?>
+                    <div class="collumA">
+                    	<div class="lista_selecionados">
+                        	<button value="youtube" class="includeURLvideo" id="btn_UpYoutube">Clique aqui para incluir um vídeo do YouTube.</button>
+                            <button value="vimeo" class="includeURLvideo" id="btn_UpVimeo">Clique aqui para incluir um vídeo do Vimeo.</button>
+                            <input type="file" name="video" id="video_upload">
+                        </div><!-- END btn_incluir -->
+
+                        <div style="display:none;" class="tempBox form"></div>
+                    </div><!-- END collumA -->
+
+                    <div class="collumB arquivosBloco arquivosDeVideo">
+                    	<ol></ol>
+                    </div><!-- END collumB -->
+
+                    <!-- • • • • • • • • • • • EDITAR VIDEO • • • -->
+                    <div style="display:none;" class="editArquivo edicaoVIDEO form"></div>
+                </div><!-- END #abaVIDEOS -->
+                <?php endif; ?>
+                <?php if ($abaAnexos) : ?>
+                <!-- • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • Aba ANEXOS -->
+                <div id="abaANEXO" class="contAba colunas">
+				 <?php \AckCore\HtmlElements\Explain::getInstance()->disableTitle()->setName("annexModuleDescription")->render();?>
+                    <div class="collumA">
+                    	<div class="lista_selecionados">
+                        	<input type="file" name="anexo" id="anexo_upload">
+                        </div><!-- END btn_incluir -->
+
+                        <div style="display:none;" class="tempBox form"></div>
+                    </div><!-- END collumA -->
+
+                    <div class="collumB arquivosLista">
+                    	<ol></ol>
+                    </div><!-- END collumB -->
+                    <!-- • • • • • • • • • • • EDITAR ANEXO • • • -->
+                    <div style="display:none;" class="editArquivo edicaoANEXO form"></div>
+                </div><!-- END #abaANEXOS -->
+                <?php endif; ?>
+            </div><!-- END parentAbas -->
+
+        </div><!-- END boxAbas -->
+
+        <span class="clearBoth"></span>
+    </div><!-- END slide -->
+</div><!-- END modulo -->

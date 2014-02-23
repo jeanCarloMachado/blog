@@ -1,0 +1,38 @@
+           <div id="breadcrumbs">
+            	<ul>
+                	<li><span><em>Setores de Contato</em></span></li>
+                </ul>
+            </div><!-- END breadcrumbs -->
+
+            <div id="descricaoPagina">
+            	<h2><?= $this->explain(213,"titulo") ?></h2>
+                <div>
+                	<p>
+                	<?= $this->explain(213) ?>
+                	<p>
+                </div>
+            </div><!-- END descricaoPagina -->
+            
+            <div class="parentFull <?= $controllerName ?>">
+                                    
+                <div class="modulo idiomasSite listagem">
+                	<div class="head">
+                    	<div class="boxBotoes">
+                            <a href="/ack/<?= $controllerName ?>/incluir" class="botao add" title="Adicionar  <?= $elementSingular ?>"><span><var></var><em>Adicionar  <?= $elementSingular ?></em></span><var class="borda"></var></a>
+                            <button class="botao excluir" title="Excluir"><span><var></var><em>Excluir</em></span><var class="borda"></var></button>
+                        </div><!-- END boxBotoes -->
+                        
+                    	<button class="btnAB"><em><?= $this->explain(214,"titulo") ?></em></button>
+                    	<P>
+						<?= $this->explain(214) ?>
+						</P>
+                    </div><!-- END head -->
+                    
+                    <div class="slide lista list_<?= $controllerName ?>">
+                        <div class="header">
+                            <span class="borda"></span>
+                                <div>
+                                    <div class="checkGrupo 20"><input type="checkbox" name="checkAll"></div>
+                                    <div class="titulopt 790"><button><em>Titulo</em></button></div>
+                                    <div class="visible 30"><button><em>Visivel</em></button></div>
+                                </div>

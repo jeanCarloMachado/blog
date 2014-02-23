@@ -1,0 +1,2160 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"emp",
+				"empresaId"
+			],
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"HtmlElement",
+				"HtmlElementsManager"
+			],
+			[
+				"getCol",
+				"getColNick"
+			],
+			[
+				"Obs",
+				"Observable"
+			],
+			[
+				"plano",
+				"planoId"
+			],
+			[
+				"getModel",
+				"getModelInstance"
+			],
+			[
+				"boolean",
+				"booleanQuestion"
+			],
+			[
+				"ca",
+				"candidate"
+			],
+			[
+				"new",
+				"newNames"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"tra",
+				"transformProcessTimeArrayIntoRespectivePhpInlineArray"
+			],
+			[
+				"curr",
+				"currencyInFront"
+			],
+			[
+				"visualiz",
+				"visualizacaodeplanos"
+			],
+			[
+				"relatedMo",
+				"relatedModelName"
+			],
+			[
+				"rout",
+				"routetr	tableRowRoute"
+			],
+			[
+				"app",
+				"application"
+			],
+			[
+				"Mon",
+				"MoneyUtilities"
+			],
+			[
+				"MOny",
+				"MoneyUtilities"
+			],
+			[
+				"auth",
+				"authPortal"
+			],
+			[
+				"lei",
+				"leiteDiario"
+			],
+			[
+				"getTOtal",
+				"getTotalDescontos"
+			],
+			[
+				"getFRETE",
+				"getFretePrecoVal"
+			],
+			[
+				"for",
+				"formatToMoney"
+			],
+			[
+				"mo",
+				"monthIndex"
+			],
+			[
+				"Cota",
+				"CotaCapitalTable"
+			],
+			[
+				"hierarc",
+				"hierarchyObjectName"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carro.php",
+			"settings":
+			{
+				"buffer_size": 1600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/FiliaisController.php",
+			"settings":
+			{
+				"buffer_size": 2242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filiais.php",
+			"settings":
+			{
+				"buffer_size": 4022,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Fornecedores.php",
+			"settings":
+			{
+				"buffer_size": 2570,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Interacoes.php",
+			"settings":
+			{
+				"buffer_size": 2758,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Vendas.php",
+			"settings":
+			{
+				"buffer_size": 2787,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Planos.php",
+			"settings":
+			{
+				"buffer_size": 2134,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/PlanoHistoricos.php",
+			"settings":
+			{
+				"buffer_size": 2590,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Cambios.php",
+			"settings":
+			{
+				"buffer_size": 2190,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Clientes.php",
+			"settings":
+			{
+				"buffer_size": 2693,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Empresa.php",
+			"settings":
+			{
+				"buffer_size": 3022,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/config/module.config.php",
+			"settings":
+			{
+				"buffer_size": 23475,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/linterphp.sublime-build",
+	"command_palette":
+	{
+		"height": 39.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				":u",
+				"Snippet: user"
+			],
+			[
+				":wq",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 507.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"showPanel",
+			"panel",
+			"hidePanel",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Papels.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/EmpresasController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/EventManager.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Utils/Encryption.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuario.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckUsers/src/AckUsers/Model/Users.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Locale/Data/uk_UA.xml",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckMvc/src/AckMvc/Controller/AbstractTableRowController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filial.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit/Tests/TextUI/failure-isolation.phpt",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carros.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filiais.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit/Tests/TextUI/filter-class-isolation.phpt",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Validator/File/IsImage.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/Validate/File/IsImageTest.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/CarroCombustiveis.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/src/AckContact/Emails/ContatoAck.php",
+		"/home/jeancarlo/Projects/ControlaCar/composer.json",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carro.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/PlanosController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Db/TableAbstract.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuarios.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Year.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/CNPJ.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Placa.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/DataAbstraction/config.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Utils/Money.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Utils/Number.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Empresa.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Empresas.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/config.module.config.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/docs/layout-metis/assets/lib/validationengine/demos/demoOnForm.html",
+		"/home/jeancarlo/Projects/Snippets/sublime/convobj.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Db/Metadata/Object/ColumnObject.php",
+		"/home/jeancarlo/Projects/Snippets/sublime/money.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit-mock-objects/Tests/MockObjectTest.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckAgenda/Module.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckUsers/src/AckUsers/Observer/NewUser.php",
+		"/home/jeancarlo/Projects/Snippets/sublime/namespace.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/Files",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckAgenda/src/AckAgenda/Model/Frequencys.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckDb/src/AckDb/ZF1/TableAbstract.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Data/Manager.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Fone.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/Module.php",
+		"/home/jeancarlo/Projects/Snippets/sublime/datamanager.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Model/DataContainer.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Utils/Date.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Test/DbAdapter.php",
+		"/home/jeancarlo/Projects/Snippets/sublime/sw.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/tags",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Mail/Transport/FileOptions.php",
+		"/home/jeancarlo/Projects/ControlaCar/docs/jean/controlacar.sublime-project",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/docs/layout-metis/assets/lib/tablesorter/docs/example-meta-parsers.html",
+		"/home/jeancarlo/Projects/ControlaCar/logs/error",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/config/module.config.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/IndexController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/config/module.config.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Controller/ModulosController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Controller/ModulosController.php.disabled",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Controller/VersoesdoackController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Controller/TestController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckMvc/src/AckMvc/Controller/TableRowAutomatorAbstract.DEPRECATED.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Controller/ServicesproviderController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckMvc/src/AckMvc/Controller/Traits/BasicControllerUtilities.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckMvc/src/AckMvc/Controller/Base.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/src/AckContact/Model/Notificacoes.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/src/AckContact/Controller/NotificacoesController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/view/controla-car/layout/partials/mainMenu.phtml",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/view/ack-contact/notificacoes/minhasnotificacoes.phtml",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/config/module.config.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Controller-Basics.xml",
+		"/home/jeancarlo/Projects/ControlaCar/carrosController.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Memory/AccessController.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Pdf/Action/SetOCGState.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/Application/_files/BootstrapBaseCircularDependency.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit/Tests/_files/BankAccount.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Rating.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContact/src/AckContact/Model/Notificacao.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Ldap/Filter/NotFilter.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Db/Sql/Predicate/NotIn.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit/Tests/_files/NoTestCases.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Tool/Project/Context/System/NotOverwritable.php",
+		"/home/jeancarlo/Projects/ControlaCar/docs/database/novoNomeBancoDefault.sql",
+		"/home/jeancarlo/Projects/ControlaCar/public/plugins/devil/raty-2.5.2/lib/jquery.raty.js",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/public/ack-core2013-09-16/plugins/raty-2.5.2/lib/jquery.raty.js",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Input.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/docs/layout-metis/assets/lib/animate/source/fadeInUp.css",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/composer/include_paths.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/phpunit/phpunit/PHPUnit/Framework/Constraint/IsNull.php",
+		"/home/jeancarlo/Projects/ControlaCar/init_autoloader.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckUsers/src/AckUsers/Controller/UsuariosController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/HtmlElements/Float.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/Config/Writer/ArrayTest.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/Application/Resource/ResourceAbstractTest.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckDb/src/AckDb/ZF1/RowAbstract.php",
+		"/home/jeancarlo/Projects/ControlaCar/README.md",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/view/controla-car/planos/confirmarcompra.phtml",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/FiliaisController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterForm.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterAbstract.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/View/Interface.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/Module.php",
+		"/home/jeancarlo/Projects/ControlaCar/public/plugins/devil/jquery.maskMoney.js",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckDb/src/AckDb/ZF1/ZF1/Db/Adapter/Mysqli.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckUsers/src/AckUsers/Traits/AuthenticatedController.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/AuthTest.php",
+		"/home/jeancarlo/Projects/ControlaCar/public/plugins/uploads/com/adobe/utils/ArrayUtil.as",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/bin/autoload_example.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/library/Zend/Gdata/App/AuthException.php",
+		"/home/jeancarlo/Projects/ack_default/module/Portal/src/Portal/Controller/MovimentacaoleiteController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContent/src/AckContent/Controller/TextosdeajudaController.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckContent/config/module.config.php",
+		"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/view/controla-car/layout/components/footer.phtml",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Utils/Ajax.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Controller-Request.xml",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Reflection-Examples.xml",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Registry.xml",
+		"/home/jeancarlo/Projects/ControlaCar/config/autoload/zenddevelopertools.local.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/cs/module_specs/Zend_Exception.xml",
+		"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/Model/ZF2Module.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Navigation-Containers.xml",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/documentation/manual/de/module_specs/Zend_Validate-NotEmpty.xml",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Ldap/Node/RootDse/eDirectory.php",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework/library/Zend/Di/Exception/UndefinedReferenceException.php",
+		"/home/jeancarlo/Projects/ControlaCar/public/plugins/uploads/com/adobe/utils/IntUtil.as",
+		"/home/jeancarlo/Projects/Snippets/sublime/utils.sublime-snippet",
+		"/home/jeancarlo/Projects/ControlaCar/vendor/zendframework/zendframework1.old/tests/Zend/UriTest.php"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 124.0,
+		"where_history":
+		[
+			"/home/jeancarlo/Projects/ControlaCar/module/AckCore/src/AckCore/DataAbstraction/Service",
+			"/home/jeancarlo/Projects/ControlaCar/module/",
+			"/home/jeancarlo/Projects/ControlaCar/module/AckContact",
+			"/home/jeancarlo/Projects/ControlaCar/module",
+			"/home/jeancarlo/Projects/ControlaCar/module/ControlaCar",
+			"/home/jeancarlo/Projects/ControlaCar/module"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"loadItens",
+			"getFilialId",
+			"filial_id",
+			"getEmpresaId",
+			"hasCOlumn",
+			"tables",
+			"$this->ajax",
+			"getONlyAvailable",
+			"ack-core/plugins",
+			"plugins",
+			"inclusionDateColumn",
+			"passwordColumn",
+			"encrypt",
+			"DataMinner",
+			"Utils",
+			"realParents",
+			"AckDataMinner",
+			" {}",
+			"checks",
+			"this.",
+			"');\n",
+			"each",
+			"dataM",
+			"findFromParent",
+			"$package",
+			"package",
+			"getMainP",
+			"getMainPackageName",
+			"package",
+			"ViewMode",
+			"'default'",
+			"evtBeforeReturnLocal",
+			"routerAjax",
+			"findFromParent",
+			"enableModularizedPackages",
+			"modularizedPackages",
+			"default",
+			"AckDataMinner",
+			"getUserRow",
+			"\"",
+			"ControllerConfig",
+			"controllerConfig",
+			"ControllerConfig",
+			"$this->config",
+			"getConfig()",
+			"config",
+			"controllerConfig",
+			"planos",
+			"htmlManager",
+			"get('htmlManager'",
+			"serviceLo",
+			"cache",
+			"htmlManager",
+			"htmlElementsManager",
+			"disableLayout",
+			"layoutDisa",
+			"layoutIsDisabled",
+			"ion evtBefore",
+			"'htmlManager'",
+			"('htmlManager')",
+			"HTMLMANAGER",
+			"$",
+			"?>');",
+			"excluir",
+			"ServicesProvider",
+			"modelRelationsEntitysBuilder",
+			"relations",
+			"planos",
+			"$",
+			"Users",
+			"Empresas",
+			"Facade::getEnderecoSite()",
+			"buildUrl",
+			"evtLoadItensOnColumnIterator",
+			"$relations",
+			"getModelsNames",
+			"setHumanizedIdentifier",
+			"ion valid",
+			"evtLoadItensOnQuery",
+			"renderColumnApproved",
+			"namespace AckCore",
+			"FACADE",
+			"columns",
+			"DDL",
+			"ddl",
+			"getTableModelsNamesFromModule",
+			"getModelsName",
+			"setHumanizedIdentifier",
+			"getModelsNames",
+			"relations",
+			"modelName",
+			"'].',",
+			"System\\Db",
+			"System\\Db\\RowAbstract",
+			"tableName",
+			"getTabl",
+			"getTableNaem",
+			"getPublicPath",
+			"getAllModulesAvailable",
+			"checkModuleExistence",
+			"checkModuleInexistence",
+			"\\AckCore\\Utils\\String",
+			";\n",
+			"(\n",
+			"\\Utils\\String::getInstanceFromName() ",
+			"modelRelationsEntitysBuilder",
+			"evtAfterGetScopedDataLocal",
+			" protected $relations = array(\n        '1:n' => array(\n                    array('model'=>'AckContent\\Model\\AjudaCategorias','reference'=>'categoria_id','elementTitle'=>'Categoria','relatedRowUrlTemplate'=>'/categoriasdetextosdeajuda/editar/{id}'),\n                ),\n    );",
+			"/** @var Auth  */",
+			"/** @var Auth  */ =",
+			"/** @var Auth  */ $auth = $this->getHelperPluginManager()->getServiceLocator()->get('auth');  if ($auth->hasIdentity()) { 	$user = $auth->getIdentity()",
+			"time",
+			"0",
+			"auth",
+			"AckDb\\ZF1\\TableAbstract",
+			"getApplicationConfig",
+			"System\\Object\\",
+			"System\\Vars\\",
+			"System\\Core",
+			"System\\Db\\",
+			"$templat",
+			"\"",
+			"evtBeforeRunLocal",
+			"System\\Object",
+			"Usuario",
+			"dg",
+			"priority",
+			"login"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"getEmpresaId",
+			"empresa_id",
+			"getFilialId",
+			"plugins/devil",
+			"'data'",
+			"'",
+			"CustomConfig",
+			"customConfig",
+			"CustomConfig",
+			"$this->mergedConfig",
+			"getMergedConfig()",
+			"\\$",
+			"array(\"model\"=>\"\\ControlaCar\\Model\\Empresas\",\"reference\"=>\"empresa_id\",\"elementTitle\"=>\"Empresa\",\"relatedRowUrlTemplate\"=>\"/empresas/editar/{id}\"),",
+			"\\$",
+			"namespace AckContact",
+			"AckDb\\ZF1",
+			"AckDb\\ZF1\\RowAbstract",
+			"StringUtils",
+			"Auth",
+			"ControlaCar\\Db\\TableAbstract",
+			"AckCore\\Utils\\",
+			"AckCore\\Vars\\",
+			"AckCore",
+			"AckDb\\ZF1\\",
+			"'",
+			"AckCore\\Utils",
+			"controla-car",
+			"ControlaCar",
+			"AckCore\\Validate",
+			"AckCore\\Search",
+			"AckCore\\Scripts",
+			"AckCore\\Mail",
+			"AckCore\\Log",
+			"AckCore\\Legacy",
+			"AckCore\\Language",
+			"AckCore\\DataAbstraction",
+			"AckCore\\Data",
+			"AckUsers\\Access",
+			"AckCore\\Interfaces",
+			"AckAcl",
+			"AckCore\\Vars",
+			"AckCore\\Utils",
+			"AckCore",
+			"AckCore\\Interfaces",
+			"AckMvc",
+			"AckUsers\\Auth",
+			"AckCore\\Registry",
+			"AckDb\\ZF1",
+			"AckCore",
+			"",
+			"0,00",
+			"0%",
+			"\\$",
+			"save",
+			"\\$",
+			"CotacapitalController"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carro.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 576.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Controller/FiliaisController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2239,
+								2239
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 964.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filiais.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3967,
+								3967
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1282.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Fornecedores.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1815,
+								1815
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1008.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Interacoes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2299,
+								2299
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close"
+							],
+							"rulers":
+							[
+								5.9,
+								6.2
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 840.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Vendas.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2285,
+								2285
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Planos.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1740,
+								1740
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 864.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/PlanoHistoricos.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2065,
+								2065
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Cambios.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1690,
+								1690
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1152.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Clientes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2693,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2036,
+								2036
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1152.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/src/ControlaCar/Model/Empresa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/jeancarlo/Projects/ControlaCar/module/ControlaCar/config/module.config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"rulers":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 186.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "controlacar.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"empresa.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Empresa.php"
+			],
+			[
+				"usuario.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuario.php"
+			],
+			[
+				"abstracttablerowcontroller",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/AbstractTableRowController.php"
+			],
+			[
+				"filiais.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filiais.php"
+			],
+			[
+				"filiaiscontro",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Controller/FiliaisController.php"
+			],
+			[
+				"carros.",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carros.php"
+			],
+			[
+				"carro.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carro.php"
+			],
+			[
+				"config.php",
+				"ControlaCar/module/AckCore/src/AckCore/DataAbstraction/config.php"
+			],
+			[
+				"money.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Money.php"
+			],
+			[
+				"number.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Number.php"
+			],
+			[
+				"filial.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filial.php"
+			],
+			[
+				"fili",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Filial.php"
+			],
+			[
+				"controlacar/db/tableabstract",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Db/TableAbstract.php"
+			],
+			[
+				"usuarios.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuarios.php"
+			],
+			[
+				"datamanager.php",
+				"ControlaCar/module/AckCore/src/AckCore/Data/Manager.php"
+			],
+			[
+				"tableab",
+				"module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"fone.php",
+				"module/AckCore/src/AckCore/HtmlElements/Fone.php"
+			],
+			[
+				"empresas.php",
+				"module/ControlaCar/src/ControlaCar/Model/Empresas.php"
+			],
+			[
+				"tablea",
+				"module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"data/manager",
+				"module/AckCore/src/AckCore/Data/Manager.php"
+			],
+			[
+				"basiccontrollerutilities",
+				"module/AckMvc/src/AckMvc/Controller/Traits/BasicControllerUtilities.php"
+			],
+			[
+				"controllerbase",
+				"module/AckMvc/src/AckMvc/Controller/Base.php"
+			],
+			[
+				"tableabstract",
+				"module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"notificacoes",
+				"module/AckContact/src/AckContact/Model/Notificacoes.php"
+			],
+			[
+				"input.php",
+				"module/AckCore/src/AckCore/HtmlElements/Input.php"
+			],
+			[
+				"interpreterfo",
+				"module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterForm.php"
+			],
+			[
+				"money",
+				"module/AckCore/src/AckCore/Utils/Money.php"
+			],
+			[
+				"zf1/zf1/db/adapter/mysqli.php",
+				"module/AckDb/src/AckDb/ZF1/ZF1/Db/Adapter/Mysqli.php"
+			],
+			[
+				"zf1/db/adapter/mysqli.php",
+				"module/AckDb/src/AckDb/ZF1/ZF1/Db/Adapter/Mysqli.php"
+			],
+			[
+				"authenticatedcontroller",
+				"module/AckUsers/src/AckUsers/Traits/AuthenticatedController.php"
+			],
+			[
+				"usuarioscontroller",
+				"module/AckUsers/src/AckUsers/Controller/UsuariosController.php"
+			],
+			[
+				"ackusers/controller/usuarioscontroller",
+				"ControlaCar/module/AckUsers/src/AckUsers/Controller/UsuariosController.php"
+			],
+			[
+				"encryption",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Encryption.php"
+			],
+			[
+				"users.php",
+				"ControlaCar/module/AckUsers/src/AckUsers/Model/Users.php"
+			],
+			[
+				"utilsajax",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Ajax.php"
+			],
+			[
+				"textosdeajuda",
+				"ControlaCar/module/AckContent/src/AckContent/Controller/TextosdeajudaController.php"
+			],
+			[
+				"planoscontroller",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Controller/PlanosController.php"
+			],
+			[
+				"ontrolacar/model/usuarios.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuarios.php"
+			],
+			[
+				"datamanager.",
+				"ControlaCar/module/AckCore/src/AckCore/Data/Manager.php"
+			],
+			[
+				"datamanager",
+				"Snippets/sublime/datamanager.sublime-snippet"
+			],
+			[
+				"base.php",
+				"module/AckMvc/src/AckMvc/Controller/Base.php"
+			],
+			[
+				"abstracttable",
+				"module/AckMvc/src/AckMvc/Controller/AbstractTableRowController.php"
+			],
+			[
+				"ackcore/src/ackcore/htmlelements/fone.php",
+				"module/AckCore/src/AckCore/HtmlElements/Fone.php"
+			],
+			[
+				"/ackdb/zf1/tableabstract.ph",
+				"module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"elementa",
+				"module/AckCore/src/AckCore/HtmlElements/ElementAbstract.php"
+			],
+			[
+				"sidecolumn",
+				"module/AckCore/src/AckCore/View/Helper/SideColumn.php"
+			],
+			[
+				"module/ackcore/module.php",
+				"module/AckCore/Module.php"
+			],
+			[
+				"interpreter",
+				"module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterAbstract.php"
+			],
+			[
+				"interpretera",
+				"module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterAbstract.php"
+			],
+			[
+				"inter",
+				"vendor/zendframework/zendframework1.old/library/Zend/View/Interface.php"
+			],
+			[
+				"params.php",
+				"vendor/zendframework/zendframework/library/Zend/Mvc/Controller/Plugin/Params.php"
+			],
+			[
+				"params",
+				"vendor/zendframework/zendframework/library/Zend/Code/Scanner/ParameterScanner.php"
+			],
+			[
+				"redirect.php",
+				"vendor/zendframework/zendframework/library/Zend/Mvc/Controller/Plugin/Redirect.php"
+			],
+			[
+				"tableabstr",
+				"module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"interpreterform",
+				"module/AckCore/src/AckCore/DataAbstraction/Service/InterpreterForm.php"
+			],
+			[
+				"view/portal/imprimir/relatorioleite-visualizar.phtml",
+				"module/Portal/view/portal/imprimir/relatorioleite-visualizar.phtml"
+			],
+			[
+				"htmlmanager",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/HtmlElementsManager.php"
+			],
+			[
+				"htmlmna",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/HtmlElementsManager.php"
+			],
+			[
+				"ackcore/view/helper/sidecolumn",
+				"ControlaCar/module/AckCore/src/AckCore/View/Helper/SideColumn.php"
+			],
+			[
+				"city.php",
+				"ControlaCar/module/AckLocale/src/AckLocale/Model/City.php"
+			],
+			[
+				"/ackcore/src/ackcore/data/manager.php",
+				"ControlaCar/module/AckCore/src/AckCore/Data/Manager.php"
+			],
+			[
+				"viewmodel",
+				"ControlaCar/vendor/zendframework/zendframework/library/Zend/View/Model/ViewModel.php"
+			],
+			[
+				"modelrelationstohtmlelementsconverter",
+				"ControlaCar/module/AckCore/src/AckCore/Controller/Helper/ModelRelationsToHtmlElementsConverter.php"
+			],
+			[
+				"abstractt",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/AbstractTableRowController.php"
+			],
+			[
+				"tablerowautomatorabstract.ph",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/TableRowAutomatorAbstract.php"
+			],
+			[
+				"metatagsman",
+				"ControlaCar/module/AckCore/src/AckCore/Observer/MetatagsManager.php"
+			],
+			[
+				"controller/observer/facadesyncer",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/Observer/FacadeSyncer.php"
+			],
+			[
+				"ackmvc/controller/observer/authenticator.php",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/Observer/Authenticator.php"
+			],
+			[
+				"/src/ackmvc/controller/base.php",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/Base.php"
+			],
+			[
+				"observer/updateorder.php",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/Observer/UpdateOrder.php"
+			],
+			[
+				"table",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"empresacontroll",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Controller/EmpresasController.php"
+			],
+			[
+				"tableabstract.php",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"rowabstract",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/RowAbstract.php"
+			],
+			[
+				"usuario.p",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Usuario.php"
+			],
+			[
+				"rowa",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/RowAbstract.php"
+			],
+			[
+				"date",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Date.php"
+			],
+			[
+				"routema",
+				"ControlaCar/vendor/zendframework/zendframework/library/Zend/Mvc/Router/RouteMatch.php"
+			],
+			[
+				"routemat",
+				"ControlaCar/vendor/zendframework/zendframework/library/Zend/Mvc/Router/RouteMatch.php"
+			],
+			[
+				"relationsmappe",
+				"ControlaCar/module/AckDevel/src/AckDevel/Model/RelationsMapper.php"
+			],
+			[
+				"agen",
+				"ControlaCar/module/AckAgenda/src/AckAgenda/Model/Agendamentos.php"
+			],
+			[
+				"zf2module",
+				"ControlaCar/module/AckCore/src/AckCore/Model/ZF2Module.php"
+			],
+			[
+				"date.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Date.php"
+			],
+			[
+				"utilsdate.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Date.php"
+			],
+			[
+				"filtersdate.php",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/Filters/Date.php"
+			],
+			[
+				"forminterpreter",
+				"ControlaCar/vendor/zendframework/zendframework/library/Zend/ModuleManager/Feature/InputFilterProviderInterface.php"
+			],
+			[
+				"frequen",
+				"ControlaCar/module/AckAgenda/src/AckAgenda/Model/Frequencys.php"
+			],
+			[
+				"mensagens",
+				"ControlaCar/module/AckContact/src/AckContact/Controller/MensagensController.php"
+			],
+			[
+				"arr.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Arr.php"
+			],
+			[
+				"clientes.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Clientes.php"
+			],
+			[
+				"carros.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Carros.php"
+			],
+			[
+				"carroco",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/CarroCombustiveis.php"
+			],
+			[
+				"carrostatust",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/CarroStatusTable.php"
+			],
+			[
+				"dbutils",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/Utils.php"
+			],
+			[
+				"zf2mo",
+				"ControlaCar/module/AckCore/src/AckCore/Model/ZF2Module.php"
+			],
+			[
+				"intera",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Interacoes.php"
+			],
+			[
+				"interacoes",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Interacoes.php"
+			],
+			[
+				"vendas.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/Vendas.php"
+			],
+			[
+				"zf2moduel",
+				"ControlaCar/module/AckCore/src/AckCore/Model/ZF2Module.php"
+			],
+			[
+				"ackagenda/src/ackagenda/model/frequency.php",
+				"ControlaCar/module/AckAgenda/src/AckAgenda/Model/Frequency.php"
+			],
+			[
+				"utilscmd",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Cmd.php"
+			],
+			[
+				"datacon",
+				"ControlaCar/module/AckCore/src/AckCore/Model/DataContainer.php"
+			],
+			[
+				"tableabstra",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"cmd.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Cmd.php"
+			],
+			[
+				"ddl.php",
+				"ControlaCar/module/AckDb/src/AckDb/Model/DDL.php"
+			],
+			[
+				"fornecedorcate",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Model/FornecedorCategorias.php"
+			],
+			[
+				"relationsmapp",
+				"ControlaCar/module/AckDevel/src/AckDevel/Model/RelationsMapper.php"
+			],
+			[
+				"zf2module.php",
+				"ControlaCar/module/AckCore/src/AckCore/Model/ZF2Module.php"
+			],
+			[
+				"/ackcore/facade",
+				"ControlaCar/module/AckCore/src/AckCore/Facade.php"
+			],
+			[
+				"useackcore/object",
+				"ControlaCar/module/AckCore/src/AckCore/Object.php"
+			],
+			[
+				"ackcoreutilscmd",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/Cmd.php"
+			],
+			[
+				"tablerowa",
+				"ControlaCar/module/AckMvc/src/AckMvc/Controller/TableRowAutomatorAbstract.php"
+			],
+			[
+				"ackcore/observer/traits/observable.php",
+				"ControlaCar/module/AckCore/src/AckCore/Observer/Traits/Observable.php"
+			],
+			[
+				"layout/partials/navigation/menu.phtm",
+				"ControlaCar/module/ControlaCar/view/controla-car/layout/partials/navigation/menu.phtml"
+			],
+			[
+				"module/ackacl/src/ackacl/model/acl",
+				"ControlaCar/module/AckAcl/src/AckAcl/Model/Acl.php"
+			],
+			[
+				"ackdb/zf1/tableabstract",
+				"ControlaCar/module/AckDb/src/AckDb/ZF1/TableAbstract.php"
+			],
+			[
+				"/ackusers/src/ackusers/model/users.php",
+				"ControlaCar/module/AckUsers/src/AckUsers/Model/Users.php"
+			],
+			[
+				"module/ackcore/src/ackcore/facade.php",
+				"ControlaCar/module/AckCore/src/AckCore/Facade.php"
+			],
+			[
+				"/htmlelements/norelationblock.php",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/NORelationBlock.php"
+			],
+			[
+				"relationblockabstract",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/RelationBlockAbstract.php"
+			],
+			[
+				"onrelationblock",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/ONRelationBlock.php"
+			],
+			[
+				"ckcore/utils/string.php",
+				"ControlaCar/module/AckCore/src/AckCore/Utils/String.php"
+			],
+			[
+				"relationblockabstract.php",
+				"ControlaCar/module/AckCore/src/AckCore/HtmlElements/RelationBlockAbstract.php"
+			],
+			[
+				"polish",
+				"ControlaCar/module/AckContent/src/AckContent/View/Helper/PolishedBoot.php"
+			],
+			[
+				"controlacar/db/tableabstract.php",
+				"ControlaCar/module/ControlaCar/src/ControlaCar/Db/TableAbstract.php"
+			],
+			[
+				"traits",
+				"ControlaCar/module/AckUsers/src/AckUsers/Traits/AuthenticatedController.php"
+			],
+			[
+				"ackusers/traits/authenticatedcontroller.ph",
+				"ControlaCar/module/AckUsers/src/AckUsers/Traits/AuthenticatedController.php"
+			],
+			[
+				"authenticatedcontroller.php",
+				"ControlaCar/module/AckUsers/src/AckUsers/Traits/AuthenticatedController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 360.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

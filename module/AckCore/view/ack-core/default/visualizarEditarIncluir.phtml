@@ -1,0 +1,90 @@
+<?php
+    $config = $this->config;
+
+    if(isset($config['iframeVersion'])) {
+        require_once __DIR__ .'/../layout/components/head.phtml';
+    }
+
+
+    $formInterpreter = $this->getHelperPluginManager()->getServiceLocator()->get('InterpreterForm');
+    $elements = $formInterpreter->setCustomConfig($config)->buildElementsFromRow($config["row"]);
+?>
+
+
+<input type="hidden"  class="pageInfo" data-container='{"rowId":"<?php echo $config['row']->getId()->getBruteVal(); ?>","urlGateway":"<?php echo $config['urlGateway'] ?>","actionName":"<?php echo $this->layout()->actionName; ?>","parameters":"<?php echo (isset($config['iframeVersion'])) ? "noLayout" : "" ?>"}'/>
+
+
+
+<div class="row" id="rowContainer">
+    <div class="col-xs-12 col-md-7 col-lg-8">
+        <div class="row">
+            <div class="col-xs-12 form">
+            <?php
+                //renderiza os elementos principais
+                if (is_array($elements)) {
+                    foreach($elements as $element) {
+                        $element->render();
+                    }
+                }
+            ?>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="btn-group">
+                <?php
+                    if(!isset($config['disableBack'])) {
+                        $this->htmlManager->getInstanceOf("Link")
+                        ->setName("voltar")
+                        ->appendClass('btn-default')
+                        ->setValue("Voltar")
+                        ->setTitle("Voltar")
+                        ->setPermission("+rw")
+                        ->setUrl($config['urlScoped'])
+                        ->render();
+                    }
+
+                    $this->htmlManager->getInstanceOf("Button")->setName("save")->appendClass('actionButton')->appendClass('btn')->appendClass('btn-primary')->setValue("Salvar")->setTitle("Salvar")->setPermission("+rw")->appendTag('data-container','{"dataMinnerMethod":"sendParent","actionName":"save"}')->render();
+                ?>
+                </div>
+                <div class="pull-right">
+                    <?php
+
+                    $afterRemoveUrl = (isset($config['afterRemoveUrl'])) ? $config['afterRemoveUrl'] : $config['urlScoped'];
+
+                    $this->htmlManager->getInstanceOf("Link")->setUrl($afterRemoveUrl)->setName("removeRow_".$config['row']->getId()->getBruteVal())->appendClass('btn-danger removeRow')->setValue("Excluir")->setTitle("Excluir")->setPermission("+rw")->render();
+
+                    ?>
+                    <script>
+
+                    $(window).load(function()
+                    {
+                        ackTableRowList = serviceLocator.get('AckTableRowList');
+                        CheckItens = ackTableRowList.getCheckItensInstance();
+                        RemoveItens = ackTableRowList.getRemoveItensInstance().Factory(CheckItens);
+                        RemoveItens.bindPersonalButtons();
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br class="visible-xs visible-sm" />
+    <div class="col-xs-12 col-md-5 col-lg-4">
+    <?php
+        //renderiza a coluna lateral
+        $this->sideColumn($config);
+    ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+    <?php
+        //renderiza modulos adicionais
+        if(isset($config["belowMainSection"])) foreach($config["belowMainSection"] as $element) $element->render();
+    ?>
+
+    </div>
+</div>
+<div id="cover"></div>

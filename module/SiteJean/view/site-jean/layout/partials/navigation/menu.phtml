@@ -1,0 +1,46 @@
+<?php
+$sm = $this->getHelperPluginManager()->getServiceLocator();
+$auth = $sm->get('Auth');
+
+$hasIdentity = $auth->hasIdentity();
+
+$renderMenuRecursively = function ($pages,&$self,$params = null) use ($auth, $hasIdentity) {
+?>
+<ul class="<?php echo (!empty($params) && in_array('firstTime',$params)) ? 'nav navbar-nav' : 'dropdown-menu' ?>">
+  <?php
+    foreach ($pages as $page) :
+
+      if ($page->get('auth-required') && !$hasIdentity) {
+        continue;
+      } else if($page->get('no-auth-required') && $hasIdentity) {
+        continue;
+      }
+
+    ?>
+    <li class="<?php echo (count($page->getPages())) ? 'dropdown ' : '' ?><?php echo (!empty($params) && in_array('dropdownNested',$params)) ? 'dropdown-nested ' : '' ?> <?php echo (count($page->getPages()) && !empty($params) && in_array('dropdownNested',$params)) ? 'parent-dropdown-nested ' : '' ?>" >
+        <?php
+          if (count($page->getPages())):
+        ?>
+            <a class="dropdown-toggle" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><?php echo $page->getLabel(); ?><b class="caret"></b></a>
+        <?php
+          else:
+        ?>
+            <a href="<?php echo $page->getHref() ?>">
+              <?php echo $page->getLabel() ?>
+            </a>
+        <?php
+          endif;
+        ?>
+    <?php
+      if (count($page->getPages())) :
+        $self($page->getPages(), $self);
+      endif;
+    ?>
+    </li>
+    <?php
+    endforeach;
+    ?>
+</ul>
+<?php
+  };
+$renderMenuRecursively($this->container,$renderMenuRecursively,array('renderHome','firstTime'));

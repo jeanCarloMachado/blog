@@ -1,0 +1,46 @@
+RewriteEngine On
+
+# Rewrite domain.org-> domain.com
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^www\.imgstock\.com$ [NC]
+RewriteRule (.*) https://www.imgstock.com/$1 [R=301,L]
+
+
+RewriteCond %{HTTPS} On
+RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteCond %{HTTPS}s ^on(s)|
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+## port requirement (bail if not 443)
+RewriteCond %{SERVER_PORT} !^443$
+## exceptions
+#RewriteCond %{REQUEST_URI} ^/somepath$ [OR]
+#RewriteCond %{REQUEST_URI} ^/anotherpath$
+## force traffic to https equivalent
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.*\.(jpg|gif|png|css|js)) [NC]
+RewriteRule ^(.*)$ /$1 [L]
+
+RewriteCond %{REQUEST_URI} ^(.*) [NC]
+RewriteRule ^(includes) - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?v1=$1 [PT,L,QSA]
+
+
+php_flag magic_quotes_gpc Off
+php_value magic_quotes_gpc Off
+
+#ambinente de desenvolvimento
+# para setar deve estar habilitada a configuração:
+# AllowOverride FileInfo
+SetEnv "APPLICATION_ENV" "production"

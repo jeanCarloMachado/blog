@@ -1,0 +1,16 @@
+<?php
+    //pega o viewmodel do controlador
+    $children = $this->viewModel()->getCurrent()->getChildren();
+    $child = reset($children);
+    if ($child) {
+        $variables = $child->getVariables();
+        if(is_object($variables)) {
+           extract($variables->getArrayCopy());
+        }
+    }
+?>
+<?php require_once "components/superior.phtml" ?>
+
+<?php echo $this->content; ?>
+
+<?php require_once "components/footer.phtml" ?>

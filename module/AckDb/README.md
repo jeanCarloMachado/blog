@@ -1,0 +1,1 @@
+Módulo de esqueleto para ser copiado no momento de criação de um novo módulo.

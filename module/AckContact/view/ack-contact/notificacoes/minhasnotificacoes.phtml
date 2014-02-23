@@ -1,0 +1,23 @@
+
+<ul>
+<?php
+
+    if (!empty($this->notificacoes)):
+    foreach($this->notificacoes as $notificacao) :
+
+?>
+<li>
+<p><?php echo $notificacao->getTitulo()->getVal(); ?> - <?php echo $notificacao->getData()->fromMysql()->getVal(); ?></p>
+<p><?php echo $notificacao->getConteudo()->getVal(); ?></p>
+
+</li>
+<?php
+    endforeach;
+    else:
+?>
+    <li>Nenhuma notificação disponível</li>
+<?php
+    endif;
+?>
+
+</ul>

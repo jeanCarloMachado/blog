@@ -1,0 +1,33 @@
+
+                <div class="modulo <?= $controllerName ?>">
+                    <?php \AckCore\HtmlElements\Explain::getInstance()->setName("moduleDescription")->render();?>
+
+                    <div class="slide colunas">
+                        <div class="collumA form">
+
+                            <?php
+                                $automator = new \AckCore\HtmlElements\Automator;
+
+                                $config = array("building" => (isset($building) ? $building : false));
+
+
+                                foreach($row->vars as $key => $column) :
+
+                                    $config["key"] = $key;
+                                    $automator->getProper($column,$config);
+
+                                endforeach;
+
+                            ?>
+
+                        </div><!-- END collumA -->
+                        <!-- • • • • -->
+                        <div class="collumB">
+                             <?php echo $this->visible($row,$disableVisible) ?>
+                            <?php
+\AckCore\HtmlElements\LanguageSelector::getInstance()->render() ?>
+                        </div>
+
+                        <span class="clearBoth"></span>
+                    </div><!-- END slide -->
+                </div><!-- END modulo -->

@@ -1,0 +1,61 @@
+<?php
+    require_once \AckCore\Facade::getPublicPath()."/../module/AckCore/view/ack-core/default/element.phtml";
+?>
+
+<?php
+//###################################################################################
+//################################# listagem de módulos ###########################################
+//###################################################################################
+  if($row->getId()->getBruteVal() && $modules && \AckCore\Facade::getCurrentUser()->hasModulePermission(\AckUsers\Model\Users::moduleId)) :
+?>
+                <div class="modulo permissoes <?php echo $row->getId()->getVal() ? "incluir" : "editar" ?>">
+                      <?php \AckCore\HtmlElements\Explain::getInstance()->setName("modulePermisson")->render();?>
+
+                    <div class="slide <?php echo $row->getId()->getVal() ? "incluir" : "editar" ?>">
+                        <div class="lista list_permissoes">
+                            <div class="header">
+                                <span class="borda"></span>
+                                <div>
+                                    <div class="secao"><button><em>Seção</em></button></div>
+                                    <div class="permissao"><button><em>Tipo de permissão</em></button></div>
+                                </div>
+                                <span class="borda"></span>
+                            </div><!-- END header -->
+                            <!-- • • • • -->
+                            <ol class="listaPermissoes">
+                                <?php foreach($modules as $module) : ?>
+                                    <li>
+                                        <div>
+                                            <span class="secao">
+                                            <b><a href="/ack/modulos/editar/<?php echo $module->getId()->getVal() ?>"><?php echo $module->getTituloPt()->getVal() ?></a></b>
+                                            </span>
+
+                                            <div class="radioGrup">
+                                                <label>
+                                                    <input type="radio" value="0" name="<?php echo $module->getId()->getBruteVal() ?>" <?php if(!$module->getUserPermissionLevel($row->getId()->getBruteVal())) { ?> checked="checked" <?php } ?> >
+                                                    <em>Não disponível</em>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" value="1" name="<?php echo $module->getId()->getBruteVal() ?>" <?php if($module->getUserPermissionLevel($row->getId()->getBruteVal()) == 1) { ?> checked="checked" <?php } ?> >
+                                                    <em>Somente leitura</em>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" value="2" name="<?php echo $module->getId()->getBruteVal() ?>" <?php if($module->getUserPermissionLevel($row->getId()->getBruteVal()) == 2) { ?> checked="checked" <?php } ?> >
+                                                    <em>Controle completo</em>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ol><!-- END listaPermissoes -->
+                        </div><!-- END lista -->
+                           <span class="clearBoth"></span>
+                    </div><!-- END slide -->
+                </div><!-- END modulo -->
+<?php
+    endif;
+//###################################################################################
+//################################# END listagem de módulos ########################################
+//###################################################################################
+?>
+<input type="hidden" id="id_usuario" value="<?php echo $row->getid()->getVal() ?>" >

@@ -1,0 +1,23 @@
+<!-- Menu de informações genéricas do sistema importantes para o usuário as quais devem permanecer em todas as páginas -->
+<?php
+
+    if ($this->getHelperPluginManager()->getServiceLocator()->get('auth')->isAuth()) {
+        $user = $this->getHelperPluginManager()->getServiceLocator()->get('auth')->getUserObject();
+    }
+?>
+
+<div id="wrapper">
+    <div class="menuInfo topo">
+        <a href="/ack" id="logoACK"><img src="/ack-core/images/ack_Logo.png" width="76" height="52" alt="Painel ACK" /> </a>
+        <ul>
+        <?php if ($user) : ?>
+            <li><p>Bem-vindo <a href="/ack/usuarios/editar/<?php echo $user->getId()->getBruteVal() ?>" title="Editar perfil" class="link"><?php echo  $user->getNomeTratamento()->getVal() ?></a>, <?php echo $user->getLastAcessMessage(); ?></p></li>
+            <li class="separador">|</li>
+            <li><a href="/" target="_blank" title="Visualize o site: " class="link">Acessar o site</a></li>
+            <li class="separador">|</li>
+            <li><a href="/ack/index/logoff" title="Sair do painel" class="btn_sair"><em>Sair</em></a></li>
+        <?php endif; ?>
+        </ul>
+    </div>
+
+    <hr />
