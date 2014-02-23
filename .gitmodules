@@ -21,9 +21,6 @@
 [submodule "module/AckProducts"]
 	path = module/AckProducts
 	url = git@github.com:jeanCarloMachado/AckProducts.git
-[submodule "module/AckAcl"]
-	path = module/AckAcl
-	url = git@github.com:jeanCarloMachado/AckAcl.git
 [submodule "module/AckLocale"]
 	path = module/AckLocale
 	url = git@github.com:jeanCarloMachado/AckLocale.git
