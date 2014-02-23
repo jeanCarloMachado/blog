@@ -27,7 +27,6 @@
 [submodule "module/AckCmd"]
 	path = module/AckCmd
 	url = git@github.com:jeanCarloMachado/AckCmd.git
-
 [submodule "module/AckAgenda"]
 	path = module/AckAgenda
 	url = git@github.com:jeanCarloMachado/AckAgenda.git
