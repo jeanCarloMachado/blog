@@ -1,4 +1,5 @@
-[submodule "module/AckCore"] path = module/AckCore
+[submodule "module/AckCore"] 
+    path = module/AckCore
 	url = git@github.com:jeanCarloMachado/AckCore.git
 [submodule "module/AckUsers"]
 	path = module/AckUsers
@@ -29,4 +30,7 @@
 	url = git@github.com:jeanCarloMachado/AckCmd.git
 [submodule "module/AckAgenda"]
 	path = module/AckAgenda
-	url = git@github.com:jeanCarloMachado/AckAgenda.git
+    url = git@github.com:jeanCarloMachado/AckAgenda.git
+[submodule "module/AckBlog"]
+	path = module/AckBlog
+	url = git@github.com:jeanCarloMachado/AckBlog.git
