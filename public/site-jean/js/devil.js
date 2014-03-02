@@ -246,9 +246,9 @@ function AckTableRowForm ()
         //da setup dos botões de enviar
         $(".actionButton").click(function(){
             
-
-            tinyMCE.triggerSave();
-
+            if (typeof tinyMce == "object") {
+                tinyMCE.triggerSave();
+            }
             if($(this).attr('data-container')) {
 
                 buttonParameters = JSON.parse($(this).attr('data-container'));

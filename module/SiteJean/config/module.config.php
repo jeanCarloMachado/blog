@@ -17,8 +17,7 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SiteJean\Controller',
-                        "controller" => "Index",
-                        'action' => "index"
+                        "controller" => "Index", 'action' => "index"
                     ),
                 ),
             ),
@@ -83,6 +82,12 @@ return array(
             'route' => 'posts',
             'auth-required' => true,
         ),
+    
+        array(
+            'label' => 'Contatos recebidos',
+            'route' => 'contatosimples',
+            'auth-required' => true,
+        ),
 
         array(
             'label' => 'Perfil',
@@ -106,6 +111,11 @@ return array(
                     'route' => 'logoff',
                 ),
             ),
+        ),
+        
+        array(
+            'label' => 'Contato',
+            'route' => 'contatar',
         ),
 
         array(
