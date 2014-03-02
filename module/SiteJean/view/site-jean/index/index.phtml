@@ -1,4 +1,18 @@
+<h5>Últimas postagens</h5>
 
-<h1>
-Mensagem introdutória
-</h1>
+<div>
+<?php
+foreach($this->posts as $post) :
+?>
+<div>
+    <h3><?php echo $post->getTitulo()->getVal(); ?></h3>
+
+    <div>
+        <?php echo $post->getConteudo()->getVal() ?>
+    </div>
+</div>
+<?php
+endforeach;
+?>
+
+<div>

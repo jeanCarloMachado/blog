@@ -15,7 +15,6 @@ $config =  array(
       "modules" => array (
         'SiteJean',
         'AckCore',
-        //'AckAcl',
         'AckAgenda',
         'AckDb',
         'AckMvc',
@@ -25,6 +24,7 @@ $config =  array(
         'AckLocale',
         'AckContent',
         'AckContact',
+        'AckBlog',
         'DluTwBootstrap'
     ),#ENDMODULES_HASH
 

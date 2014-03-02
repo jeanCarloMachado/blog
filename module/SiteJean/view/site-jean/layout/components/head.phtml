@@ -24,14 +24,16 @@ $this->headLink()->appendStylesheet($basePath . '/site-jean/css/style.site-jean.
 <?php
 //jQuery and Twitter Bootstrap JS libraries
 
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/jquery-1.10.2.min.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/jquery-migrate-1.2.1.min.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/jquery-ui-1.10.3.custom.min.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/jquery.ui.datepicker-pt-BR.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/bootstrap.min.js');
-$this->inlineScript()->appendFile($basePath . '/plugins/colorbox-master/jquery.colorbox-min.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/devil.js');
-$this->inlineScript()->appendFile($basePath . '/site-jean/js/script.site-jean.js');
+$this->inlineScript()->offsetSetFile(1, $basePath . '/site-jean/js/jquery-1.10.2.min.js');
+$this->inlineScript()->offsetSetFile(2, $basePath . '/site-jean/js/jquery-migrate-1.2.1.min.js');
+$this->inlineScript()->offsetSetFile(3, $basePath . '/site-jean/js/jquery-ui-1.10.3.custom.min.js');
+$this->inlineScript()->offsetSetFile(4, $basePath . '/site-jean/js/jquery.ui.datepicker-pt-BR.js');
+$this->inlineScript()->offsetSetFile(5, $basePath . '/site-jean/js/bootstrap.min.js');
+$this->inlineScript()->offsetSetFile(6, $basePath . '/plugins/colorbox-master/jquery.colorbox-min.js');
+//espaço para o tinymce (opcional)
+
+$this->inlineScript()->offsetSetFile(8, $basePath . '/site-jean/js/devil.js');
+$this->inlineScript()->offsetSetFile(9, $basePath . '/site-jean/js/script.site-jean.js');
 
 
 

@@ -18,6 +18,15 @@ class IndexController extends Base
      */
     public function indexAction()
     {
+        $variables = array();
+
+        $variables['posts'] = $this->getServiceLocator()
+            ->get('Posts')
+            ->toObject()
+            ->get();
+
+        $this->viewModel->setVariables($variables);
+
         return $this->viewModel;
     }
 }

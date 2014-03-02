@@ -5,6 +5,7 @@ return array(
            'SiteJean\Controller\Index' => 'SiteJean\Controller\IndexController',
            'SiteJean\Controller\Dashboard' => 'SiteJean\Controller\DashboardController',
            "SiteJean\Controller\Usuarios" => "SiteJean\Controller\UsuariosController",
+           "SiteJean\Controller\Posts" => "SiteJean\Controller\PostsController",
            //#NEW_CONTROLLERS_HERE_DO_NOT_REMOVE_THIS
         ),
     ),
@@ -74,6 +75,12 @@ return array(
         array(
             'label' => 'Usuários',
             'route' => 'usuarios',
+            'auth-required' => true,
+        ),
+
+	array(
+            'label' => 'Posts',
+            'route' => 'posts',
             'auth-required' => true,
         ),
 

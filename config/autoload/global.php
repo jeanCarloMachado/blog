@@ -26,27 +26,4 @@ return array(
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
-
-    "content_managed_controllers" => array(
-                "\AckCore\Controller\DadosgeraisController",
-                "\AckContent\Controller\InstitucionalController",
-                "\AckCore\Controller\ModulosController",
-                "\AckLocale\Controller\EnderecosController",
-                "\AckContact\Controller\ContatosController",
-                "\AckProducts\Controller\ProdutosController",
-                "\AckContent\Controller\ConteudosController",
-                "\AckCore\Controller\DashboardController",
-                "\AckProducts\Controller\CategoriasdeprodutosController",
-                "\AckProducts\Controller\ServicosController",
-                "\AckContent\Controller\TextosController",
-                "\AckContact\Controller\CurriculosController",
-                "\AckSales\Controller\OrcamentosController",
-                "\AckContent\Controller\DestaquesController",
-                "\AckSales\Controller\StatusorcamentosController",
-                "\AckContent\Controller\TextosController",
-                "\AckUsers\Controller\UsuariosController",
-                "\AckCore\Controller\LogsController",
-                "\AckAgenda\Controller\TarefasController",
-    )
-
 );
