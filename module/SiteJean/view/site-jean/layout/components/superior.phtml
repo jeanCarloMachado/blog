@@ -2,14 +2,24 @@
 
 <body>
 
-<div id="fb-root"></div> <script>(function(d, s, id) {   var js, fjs = d.getElementsByTagName(s)[0];   if (d.getElementById(id)) return;   js = d.createElement(s); js.id = id;   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1402355320025389";   fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div> 
+<script>
+(function(d, s, id) {   
+    var js, fjs = d.getElementsByTagName(s)[0];   if (d.getElementById(id)) return;   js = d.createElement(s); js.id = id;   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1402355320025389";   fjs.parentNode.insertBefore(js, fjs); 
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
 
 
+	<section role="main" class="container">
 
 		<div id="topo" class="row">
 			<div class="col-xs-12 col-md-4">
-				<!-- <a href="<?php echo $this->url('dashboard'); ?>" title="Controla car"><img src="<?php echo $this->basePath("/site-jean/img/logo.png"); ?>" alt="Controla car" class="img-logo" /></a> -->
-			</div>
+           
+            <h1>Vida de backend</h1>
+
+            <p> Um blog para registrar algumas experiências de um gran desconhecido progamador backend. Posts sobre PHP, Zend Framework, Linux, filosofia entre outros. </p>
+            </div>
             <div class="col-xs-12 col-md-8">
                 <br class="visible-md visible-lg" />
                 <br class="visible-md visible-lg" />
@@ -38,7 +48,6 @@
 
 
 
-	<section role="main" class="container">
         <?php
 
             $messages = (isset($messages)) ? $messages : array();
