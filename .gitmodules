@@ -34,3 +34,10 @@
 [submodule "module/AckBlog"]
 	path = module/AckBlog
 	url = git@github.com:jeanCarloMachado/AckBlog.git
+[submodule "module/AckCMS"]
+	path = module/AckCMS
+	url = git@github.com:jeanCarloMachado/AckCMS.git
+[submodule "module/AckCEO"]
+	path = module/AckCEO
+	url = git@github.com:jeanCarloMachado/AckCEO.git
+

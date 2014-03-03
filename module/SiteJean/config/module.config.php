@@ -33,6 +33,18 @@ return array(
                     ),
                 ),
             ),
+            'sobre' => array (
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/sobre',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SiteJean\Controller',
+                        "controller" => "Index",
+                        'action' => "sobre"
+                    ),
+                ),
+            ),
+
 
         ),
     ),
@@ -61,34 +73,51 @@ return array(
      'default' => array(
 
         array(
-            'label' => 'Home',
+            'label' => 'Postagens',
             'route' => 'home',
         ),
 
         array(
-            'label' => 'Dashboard',
-            'route' => 'dashboard',
-            'auth-required' => true,
+            'label' => 'Sobre',
+            'route' => 'sobre',
         ),
-
+       
         array(
-            'label' => 'Usuários',
-            'route' => 'usuarios',
-            'auth-required' => true,
+            'label' => 'Contato',
+            'route' => 'contatar',
+            'no-auth-required' => true,
         ),
+        
+        array (
 
-	array(
-            'label' => 'Posts',
-            'route' => 'posts',
             'auth-required' => true,
-        ),
-    
-        array(
-            'label' => 'Contatos recebidos',
-            'route' => 'contatosimples',
-            'auth-required' => true,
-        ),
+            'label' => 'Admin',
+            'route' => 'configuracoes',
+            'pages' => array(
+                array(
+                    'label' => 'Dashboard',
+                    'route' => 'dashboard',
+                    'auth-required' => true,
+                ),
+                 array(
+                    'label' => 'Configurações',
+                    'route' => 'configuracoes',
+                    'auth-required' => true,
+                ),
+                array(
+                    'label' => 'Posts',
+                    'route' => 'posts',
+                    'auth-required' => true,
+                ),
+            
+                array(
+                    'label' => 'Contatos',
+                    'route' => 'contatosimples',
+                    'auth-required' => true,
+                ),
+            )
 
+        ),
         array(
             'label' => 'Perfil',
             'route' => 'perfil',
@@ -112,17 +141,7 @@ return array(
                 ),
             ),
         ),
-        
-        array(
-            'label' => 'Contato',
-            'route' => 'contatar',
-        ),
-
-        array(
-            'label' => 'Entrar',
-            'route' => 'login',
-            'no-auth-required' => true,
-        ),
+      
     ),
   ),
 );

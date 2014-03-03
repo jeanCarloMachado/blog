@@ -25,6 +25,8 @@ $config =  array(
         'AckContent',
         'AckContact',
         'AckBlog',
+        'AckCEO',
+        'AckCMS',
         'DluTwBootstrap'
     ),#ENDMODULES_HASH
 

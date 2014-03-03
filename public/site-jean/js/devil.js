@@ -194,8 +194,14 @@ function AckDataMinner ()
         elements = Parent.find(elementTypes);
 
         elements.each(function() {
-            if($(this).attr("name"))
-             data[$(this).attr("name")] = $(this).attr("value");
+            
+            //pula os radio buttons desmarcados 
+            if ($(this).attr('type') == 'radio' && !$(this).is(':checked')) {
+            
+            } else {
+                 data[$(this).attr("name")] = $(this).attr("value");
+
+            }
         });
 
         return data;
@@ -245,8 +251,8 @@ function AckTableRowForm ()
 
         //da setup dos botões de enviar
         $(".actionButton").click(function(){
-            
-            if (typeof tinyMce == "object") {
+           
+            if (typeof tinyMCE != "undefined") {
                 tinyMCE.triggerSave();
             }
             if($(this).attr('data-container')) {
