@@ -1,3 +1,6 @@
+<?php
+    $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
+?>
 <h5>Últimas postagens</h5>
 
 <div>
@@ -8,8 +11,20 @@ foreach($this->posts as $post) :
     <h3><?php echo $post->getTitulo()->getVal(); ?></h3>
 
     <div>
-        <?php echo $post->getConteudo()->getVal() ?>
+        <?php echo $post->getConteudo()->showNChars(500)->getVal() ?>
     </div>
+
+    <?php
+    $serviceLocator->get('HtmlElementsManager')->getInstanceOf('Button')
+        ->setName('view-details')
+        ->setValue('Leia mais')
+        ->setTitle('Leia mais')
+        ->setPermission('+rw')
+        ->appendClass('btn btn-success')
+        ->setUrl($this->url('view-post', array ('id' => $post->getId()->getVal(), 'title' => $post->getTitulo()->toUrl()->getVal())))
+        ->render();
+
+    ?>
 </div>
 
 <hr />
