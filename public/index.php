@@ -28,11 +28,13 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  */
 
+
+
 // session_start();
 // $_SESSION = array();
 
 // Define application environment
-if ( !defined('APPLICATION_ENV') || getenv('APPLICATION_ENV') == 'development' ) {
+if (0 && !defined('APPLICATION_ENV') || getenv('APPLICATION_ENV') == 'development' ) {
     ini_set('display_errors',1);
     ini_set('display_startup_errors',1);
     error_reporting(E_ALL );
