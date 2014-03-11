@@ -27,7 +27,6 @@
  * @version   GIT: <6.4>
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  */
-
 // session_start();
 // $_SESSION = array();
 
