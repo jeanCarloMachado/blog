@@ -34,7 +34,7 @@ class IndexController extends Base
     {
         $variables = array();
 
-        $variables['post'] = $this->getServiceLocator()
+        $variables['row'] = $this->getServiceLocator()
             ->get('Posts')
             ->toObject()
             ->getOne(array('id'=>2));
