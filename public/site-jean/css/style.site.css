@@ -73,6 +73,7 @@ h2.relatorio {
 footer {
     margin-top: 20px;
     font-size: 0.95em;
+    padding: 0 0 !important;
 }
 
 ul.nav a {
@@ -99,8 +100,3 @@ body {
 }
 
 
-#teste {
-    background: url("/estagios/img/fundo_topo.jpg") no-repeat calc(100% - 15px) bottom #FFFFFF;
-    color: blue;
-    background-color: black;
-}
