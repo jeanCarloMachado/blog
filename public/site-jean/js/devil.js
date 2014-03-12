@@ -225,8 +225,15 @@ function AckDataMinner ()
                 elements = $(this).find(elementTypes);
 
                 elements.each(function() {
-                    if($(this).attr("name"))
-                     data[dataKey][$(this).attr("name")] = $(this).attr("value");
+
+                    //pula os radio buttons desmarcados 
+                    if ($(this).attr('type') == 'radio' && !$(this).is(':checked')) {
+                    
+                    } else {
+                        if($(this).attr("name"))
+                         data[dataKey][$(this).attr("name")] = $(this).attr("value");
+                    }
+
                 });
             }
         });
