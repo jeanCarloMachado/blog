@@ -1,6 +1,6 @@
 <?php
     $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
-    $filter = new Zend\Filter\StripTags(array('allowTags' => '<br><div>'));
+    $filter = new Zend\Filter\StripTags(array('allowTags' => 'br div hr b'));
 ?>
 <h5>Últimas postagens</h5>
 
