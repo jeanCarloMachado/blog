@@ -1,5 +1,6 @@
 <?php
     $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
+    $filter = new Zend\Filter\StripTags(array('allowTags' => '<br><div>'));
 ?>
 <h5>Últimas postagens</h5>
 
@@ -7,11 +8,13 @@
 <?php
 foreach($this->posts as $post) :
 ?>
+<hr />
 <div>
-    <h3><?php echo $post->getTitulo()->getVal(); ?></h3>
-
-    <div>
-        <?php echo $post->getConteudo()->showNChars(500)->getVal() ?>
+    <h3 style="display:inline"><?php echo $post->getTitulo()->getVal(); ?></h3><small> (<?php echo $post->getData()->getVal(); ?>)</small>
+    <br />
+    <br />
+    <div >
+        <?php echo $filter->filter($post->getConteudo()->showNChars(500)->getVal()); ?>
     </div>
 
     <?php
@@ -26,8 +29,6 @@ foreach($this->posts as $post) :
 
     ?>
 </div>
-
-<hr />
 
 <?php
 endforeach;
