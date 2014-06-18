@@ -14,7 +14,6 @@ class IndexController extends Base
 {
     /**
      * página incial do site
-     * @return [type] [description]
      */
     public function indexAction()
     {
@@ -42,7 +41,5 @@ class IndexController extends Base
         $this->viewModel->setVariables($variables);
 
         return $this->viewModel;
-
-
     }
 }
