@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 2.11.11.3
+-- version 4.0.6deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tempo de Geração: Mar 02, 2014 as 09:24 PM
--- Versão do Servidor: 5.1.73
--- Versão do PHP: 5.3.3
+-- Host: localhost
+-- Generation Time: Jun 18, 2014 at 08:22 PM
+-- Server version: 5.5.35-0ubuntu0.13.10.2
+-- PHP Version: 5.5.3-1ubuntu2.1
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,13 +17,13 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de Dados: `site`
+-- Database: `site`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackagenda_agendamento`
+-- Table structure for table `ackagenda_agendamento`
 --
 
 CREATE TABLE IF NOT EXISTS `ackagenda_agendamento` (
@@ -39,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `ackagenda_agendamento` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Extraindo dados da tabela `ackagenda_agendamento`
+-- Dumping data for table `ackagenda_agendamento`
 --
 
 INSERT INTO `ackagenda_agendamento` (`id`, `cliente_id`, `carro_id`, `data`, `titulo`, `observacoes`, `atendido`, `status`, `filial_id`) VALUES
@@ -57,7 +58,7 @@ INSERT INTO `ackagenda_agendamento` (`id`, `cliente_id`, `carro_id`, `data`, `ti
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackagenda_lembrete`
+-- Table structure for table `ackagenda_lembrete`
 --
 
 CREATE TABLE IF NOT EXISTS `ackagenda_lembrete` (
@@ -73,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `ackagenda_lembrete` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
--- Extraindo dados da tabela `ackagenda_lembrete`
+-- Dumping data for table `ackagenda_lembrete`
 --
 
 INSERT INTO `ackagenda_lembrete` (`id`, `nome`, `descricao`, `autor_id`, `total_lido`, `ordem`, `visivel`, `status`) VALUES
@@ -105,7 +106,7 @@ INSERT INTO `ackagenda_lembrete` (`id`, `nome`, `descricao`, `autor_id`, `total_
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackagenda_tarefas`
+-- Table structure for table `ackagenda_tarefas`
 --
 
 CREATE TABLE IF NOT EXISTS `ackagenda_tarefas` (
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `ackagenda_tarefas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
--- Extraindo dados da tabela `ackagenda_tarefas`
+-- Dumping data for table `ackagenda_tarefas`
 --
 
 INSERT INTO `ackagenda_tarefas` (`id`, `nome`, `responsavel_atual_id`, `descricao`, `data_ultimarealizacao`, `data_expiracao`, `frequencia_id`, `total_lido`, `ordem`, `status`, `visivel`) VALUES
@@ -144,7 +145,7 @@ INSERT INTO `ackagenda_tarefas` (`id`, `nome`, `responsavel_atual_id`, `descrica
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackblog_post`
+-- Table structure for table `ackblog_post`
 --
 
 CREATE TABLE IF NOT EXISTS `ackblog_post` (
@@ -156,21 +157,35 @@ CREATE TABLE IF NOT EXISTS `ackblog_post` (
   `visivel` tinyint(1) NOT NULL DEFAULT '1',
   `status` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
--- Extraindo dados da tabela `ackblog_post`
+-- Dumping data for table `ackblog_post`
 --
 
 INSERT INTO `ackblog_post` (`id`, `titulo`, `conteudo`, `publicado`, `data`, `visivel`, `status`) VALUES
-(1, 'Migrando do Sublime Text para o Vim - Parte I', '<p>ADFASD adsasdfas</p>', 1, '2014-03-08 00:00:00', 1, 1),
-(2, 'Sobre', '<p>asdf as</p>', 0, '2014-03-02 00:00:00', 1, 1),
-(3, 'Post 2', '<p>teste teste</p>', 1, '2014-03-28 00:00:00', 1, 1);
+(1, 'Migrando do Sublime Text para o Vim - Parte I', '<p>ADFASD adsasdfas</p>', 0, '2014-03-08 00:00:00', 1, 1),
+(2, 'Sobre Jean', '<p><img src="http://m.c.lnkd.licdn.com/mpr/pub/image-Alws6sAJoT-dUuxucY8TpGI09ETF3XQpALdNpDTH9R_YtbERAlwNrV4J9rba3qVWi45h/jean-carlo-machado.jpg" alt="" width="100" height="100" /></p>\n<p>&nbsp;</p>\n<p>Sou um programador backend, apaixonado por Linux, eletr&ocirc;nica, programa&ccedil;&atilde;o e ci&ecirc;ncia em geral.</p>\n<p>Como voc&ecirc; j&aacute;&nbsp; deve ter observado: n&atilde;o sou nenhum especialista em layout; outrossim, minha especialidade &eacute; na constru&ccedil;&atilde;o do <a href="http://pt.wikipedia.org/wiki/Front-end_e_back-end" target="_blank"><em>backend</em></a> - a l&oacute;gica que roda por tr&aacute;s da beleza. Outrossim,&nbsp;n&atilde;o &eacute; por isso que eu n&atilde;o possa participar na constru&ccedil;&atilde;o de belos trabalhos.</p>\n<p>&nbsp;</p>\n<p>Segue alguns dos <em>jobs</em> aos quais colaborei:</p>\n<p>&nbsp;</p>\n<p><strong><a href="http://www.elefran.com.br">Elefran</a></strong></p>\n<p>Poderosa interface de busca em NoSQL, Zend Framework 2, entre outros recursos emergentes.&nbsp;</p>\n<hr />\n<p><strong><a href="http://www.giulian.com.br/">Giulian</a></strong></p>\n<p>Fui respons&aacute;vel por todo o backend deste projeto, ele conta com uma ferramente de previs&atilde;o e c&aacute;lculo de or&ccedil;amentos, analisando as dist&acirc;ncias das mudan&ccedil;as, calculando a metragem, entre outros par&acirc;metros, dinamicamente. O sistema cont&eacute;m tamb&eacute;m um CMS onde &eacute; poss&iacute;vel acompanhar e negociar or&ccedil;amentos, rotear or&ccedil;amentos entre a equipe, bem como fazer a gest&atilde;o de todo o sistema.</p>\n<hr />\n<p><strong><a href="https://www.ikro.com.br/">Ikro</a>&nbsp;</strong></p>\n<p>Constru&iacute; o sistema em sua vers&atilde;o incial, posteriormente ele foi modificado por outro profissional; todavia, sua manuten&ccedil;&atilde;o retornou a minha responsabilidade. Conta com uma arquitetura de busca extremamante flex&iacute;vel que considera diversos par&acirc;metros e restri&ccedil;&otilde;es de neg&oacute;cio do cliente. O sistema tamb&eacute;m &eacute; not&aacute;vel por sua complexa arquitetura de sincroniza&ccedil;&atilde;o de bases de dados a qual roda durante per&iacute;odos de pouca utiliza&ccedil;&atilde;o do site. Possui tamb&eacute;m um CMS onde, al&eacute;m da gest&atilde;o de conte&uacute;do, &eacute; poss&iacute;vel obter-se dumps de dados relevantes, em demanda - relevante para o neg&oacute;cio do cliente.</p>\n<hr />\n<p><strong><a href="https://www.imgstock.com/">ImgStock</a></strong></p>\n<p>O primeiro e-commerce de fotos nacional,&nbsp;nele voc&ecirc; pode comprar imagens atrav&eacute;s de cr&eacute;ditos adquiridos via Paypal. E, como todo o e-comerce deveria ser, este implementa v&aacute;rios testes de seguran&ccedil;a, duplica&ccedil;&atilde;o de processos, trabalha exclusivamente via https entre outros detalhes s&oacute;rdidos de seguran&ccedil;a na computa&ccedil;&atilde;o. Conta com um CMS que, al&eacute;m de suas atribui&ccedil;&otilde;es normais, faz gest&atilde;o de contas e customiza&ccedil;&atilde;o de imagens. As imagens, antes de serem disponibilizadas para o cliente, passam por um longo processo computacional, a saber: gera&ccedil;&atilde;o de vers&otilde;es menores, marca d''agua, exporta&ccedil;&atilde;o baseada em pacotes de tamanho customiz&aacute;vel, expira&ccedil;&atilde;o de validade, entre outros mecanismos.</p>\n<hr />\n<p><strong><a href="http://www.mercur.com.br/">Mercur</a></strong></p>\n<p>N&atilde;o fui eu quem come&ccedil;ou este projeto; contudo, cabe a mim dar a ele continuidade e manutan&ccedil;&atilde;o, outrossim, sua estrutura &eacute; uma c&oacute;pia da arquitetura de um CMS desenvolvido por mim em Zend Framework 2. Conta com um poderoso sistema de cache, CMS capaz de criar p&aacute;ginas, variados sub-sistemas, entre outros recursos.</p>\n<hr />\n<p><strong><a href="http://portalrcc.coopsantaclara.com.br/">PORTAL DE RELACIONAMENTOS</a>&nbsp; da Sta. Clara</strong></p>\n<p>Consulta a d&eacute;bitos de cart&atilde;o, impress&atilde;o de extratos, integra&ccedil;&atilde;o com DB2, uma vers&atilde;o especializada para Totems, etc. No momento que escrevi isso, o link ainda n&atilde;o havia sido liberado ao p&uacute;blico; contudo, como em breve estar&aacute;, resolvi publicar de antem&atilde;o.</p>\n<p>&nbsp;</p>\n<hr />\n<p>&nbsp;</p>\n<p>Existem alguns outros trabalhos que, embora j&aacute; prontos, n&atilde;o est&atilde;o dispon&iacute;veis online os quais apenas farei men&ccedil;&atilde;o:</p>\n<p><strong>PFC </strong>- hangout em v&iacute;deo com o "chefe", one-page, Zend Framework 2, etc.</p>\n<p><strong>Abradi RS Hotsite</strong> - &nbsp;Zend Framework 2.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Se voc&ecirc; gostou do meu perfil? Caso sim, voc&ecirc; pode me contatar atrav&egrave;s da sess&atilde;o de&nbsp;<a href="http://jeancarlomachado.com.br/contato" target="_blank">contato</a> do site.</p>', 0, '2014-03-02 00:00:00', 1, 1),
+(3, 'Casos interessantes para o uso de traits', '<div class="container">\n<div class="row">\n<div class="span12"><br /><br />A vers&atilde;o 5.4 do PHP veio acompanhada com o conceito de trait. A grosso modo, trata-se de uma solu&ccedil;&atilde;o para agrupar recursos sem&acirc;nticos e disponibiliz&aacute;-los &agrave;s classes - uma esp&eacute;cie de plug-and-play de fun&ccedil;&otilde;es e atributos. Certamente a linguagem se tornou mais interessante ap&oacute;s esta funcionalidade; todavia, um dos grandes receios relacionados as traits &eacute; que o programador fa&ccedil;a bagun&ccedil;a com os conceitos de heran&ccedil;a e acabe por superutilizar o recurso. Deve-se saber distinguir at&eacute; quando cabe a uma funcionalidade ser herdada ou "plugada". Uma boa dica &eacute; <strong>guardar em traits o que pode ser reutilizado em classes completamente diferentes daquela a qual voc&ecirc; est&aacute; trabalhando</strong>.<img style="float: right;" src="/galeria/2d8df5362d1a229db482d799247c5be5.jpg" alt="" width="28" height="18" /></div>\n<div class="span12">&nbsp;<br />\n<div class="span12">&nbsp;</div>\n<hr />\n<div class="span12">&nbsp;</div>\nSegue um exemplo de trait que utilizo para implementar o padr&atilde;o de projeto <a href="http://en.wikipedia.org/wiki/Observer_pattern" target="_blank"><em>observer</em></a>:<br /><br /><strong>Observer</strong> <strong>- trait</strong><br /><br /></div>\n<div class="span12">&nbsp;<img src="/galeria/a72f3f84f2983d38a6dba17d910e78f8.jpg" alt="" /></div>\n<div class="span12">&nbsp;</div>\n<div class="span12">Note que esta &eacute; uma funcionalidade desej&aacute;vel um muitas classes, logo, vale o custo de transform&aacute;-la em trait. <br /><br /><strong>Utiliza&ccedil;&atilde;o</strong><br /><br />Na classe que receber&aacute; o recurso deve-se deve-se incluir o namespace - se aplic&aacute;vel; e a &uacute;nica peculiaridade &eacute; o use dentro da classe, que indica a implementa&ccedil;&atilde;o da trait.<br /><br /><br /><img src="/galeria/84965f8a9df0a0ba352fd5d2e0678188.jpg" alt="" /></div>\n<div class="span12"><strong><em>use</em></strong> para incluir ao namespace. <br /><br /><br /><img src="/galeria/db5bf709c8b70c6e3861adea5e6e4af5.jpg" alt="" /></div>\n<div class="span12">&nbsp;<strong><em>use</em></strong> para "plugar" as funcionalidades &agrave; classe.<br /><br />Cumpridos estes requisitos basta apenas utilizar as funcionalidades.<br /><br /><img src="/galeria/4824a5ecbfea1d0298d4ba9b3fd3a465.jpg" alt="" />\n<div class="span12"><br /><br /></div>\n<hr />\n<div class="span12"><strong>&nbsp;Getter e setter gen&eacute;rico - para os pregui&ccedil;osos</strong><br /><br /><br />Aqui tenho uma implementa&ccedil;&atilde;o de getter e setter "din&acirc;mico", aplic&aacute;vel para vari&aacute;veis as quais somente se conhecer&aacute; em <em>runtime</em>.</div>\n<div class="span12">&nbsp;</div>\n<div class="span12"><br /><strong>Getter and Setter - trait</strong><br /><br /><img src="/galeria/b82b48bda06f2fc3a12f68a120eb5395.jpg" alt="" /><br /><br /><br /><br />Note que este recurso tamb&eacute;m &eacute; aplic&aacute;vel no mais variado n&uacute;mero de classes.</div>\n<div class="span12">\n<div class="span12"><br /><br />Resumindo, traits s&atilde;o bacanas, possibilitam-lhe trabalhar na forma de "heran&ccedil;a m&uacute;ltipla" que muitas linguagens robustas como C++ suportam, e, cuidando para preservar a heran&ccedil;a tradicional no <em>extends,</em> podemos melhorar muito o desenvolvimento padronizado e &aacute;gil em PHP.</div>\n<div class="span12">&nbsp;</div>\n<div class="span12">&nbsp;</div>\n</div>\n<br />\n<p>&nbsp;</p>\n<!-- By ConnerT HTML & CSS Enthusiast --></div>\n</div>\n</div>', 0, '2014-03-28 00:00:00', 1, 1),
+(12, 'Como o Zend Framework é testado', '<p>Neste post pretendo esbo&ccedil;ar o processo de testes que ocorre para o desenvolvimento do Zend Framework, aplic&aacute;vel tamb&eacute;m, ao contruir-se aplica&ccedil;&otilde;es no mesmo.</p>\n<p>&nbsp;</p>', 0, '0000-00-00 00:00:00', 1, 1),
+(4, 'Do Software Livre e da Liberadade dos Usuários', '<p>Existem muitos enganos quando falamos sobre software livre, ent&atilde;o, antes de mais nada, vou apresentar uma defini&ccedil;&atilde;o que melhor se encaixa com as opini&otilde;es da comunidade relacionada. Software livre muitas vezes &eacute; confundido com software de gra&ccedil;a, ledo engano; d&aacute;-se devido ao duplo significado da palavra livre em nosso idioma. N&atilde;o obstante, software livre n&atilde;o fala nada &agrave; respeito de pre&ccedil;o, outrossim, sobre a liberdade do usu&aacute;rio, mais precisamente as quatro que seguem (STALLMAN 2010).</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Liberdade 0:</strong> A liberdade de rodar o programa.</p>\n<p style="margin-bottom: 0cm;"><strong>Liberdade 1: </strong>A liberdade de estudar como o programa funciona e adapt&aacute;-lo &agrave;s suas necessidades.</p>\n<p style="margin-bottom: 0cm;"><strong>Liberdade 2:</strong> A liberdade de redistribuir c&oacute;pias a fim de ajudar outras pessoas.</p>\n<p style="margin-bottom: 0cm;"><strong>Liberadde 3: </strong>A liberdade de melhorar o programa e disponibiliz&aacute;-lo para a comunidade para que mais pessoas possam se beneficiar das modifica&ccedil;&otilde;es.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Por que software n&atilde;o deve ter donos?</strong>&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; O custo da constru&ccedil;&atilde;o de software reside somente <span lang="pt-PT">na</span> cria&ccedil;&atilde;o do primeiro programa, ap&oacute;s isso, a fim de copiar o software, apenas uma quantia desprez&iacute;vel de energia el&eacute;trica &eacute; utilizada. Logo, quando n&atilde;o h&aacute; custo para a replica&ccedil;&atilde;o de algo justifica-se que os usu&aacute;rios possam se beneficiar desta facilidade, tanto copiando para si, quanto para a comunidade em que se est&aacute; inserido. Contudo, grande parcela dos criadores de software, em m&atilde;os poder conferido-lhes atrav&eacute;s dos "direitos autorais", tomam-lhes estas liberdades; restringindo-os a somente realizar c&oacute;pias autorizadas por si, imbu&iacute;das de altos lucros. Este procedimento fere a liberdade da sociedade revelando-nos uma realidade n&atilde;o muito satisfat&oacute;ria: a vontade dos criadores &eacute; mais importante que a do p&uacute;blico em geral.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; A constitui&ccedil;&atilde;o dos EUA, em sua concep&ccedil;&atilde;o inicial, trata de direitos autorais ou copyright como uma forma de estimular os criadores a produzirem mais, a fim de aumentar a disponibilidade de trabalhos intelectuais para a comunidade (STALLMAN 2010, p&aacute;g 79). Fica claramente exposto que o objetivo das leis de direitos autorais tem como prop&oacute;sito final a beneficia&ccedil;&atilde;o dos usu&aacute;rios, n&atilde;o das casas de software ou criadores em geral. N&atilde;o &eacute; um direito natural dos produtores e sim uma concess&atilde;o em detrimento das pessoas. Nesse sentido, revela-se a contradi&ccedil;&atilde;o dos objetivos mais b&aacute;sicos das leis de direitos autorais para com o panorama geral observado no mercado de software moderno.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Do direito de melhorar o software</strong></p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Grandes corpora&ccedil;&otilde;es como a Microsoft dominam a oferta de software, principalmente os mais gen&eacute;ricos como: editores de texto e sistemas operacionais. Isso implica em malef&iacute;cios econ&ocirc;micos e &eacute;ticos como a inabilidade de competir ou at&eacute; a possibilidade da realiza&ccedil;&atilde;o de atividades indesejadas no computador do usu&aacute;rio, sejam: obten&ccedil;&atilde;o de dados inautorizados sobre suas atividades ou at&eacute; mesmo a restri&ccedil;&atilde;o de algumas de suas atividades, como o direito de emprestar software ou utilizar uma vers&atilde;o concorrente. Esse tipo de atitude d&aacute;-se porque, diferentemente de software livre, os softwares destas corpora&ccedil;&otilde;es s&atilde;o uma caixa preta onde ningu&eacute;m, a n&atilde;o ser seus criadores, sabem o que est&aacute; acontecendo j&aacute; que o c&oacute;digo fonte n&atilde;o &eacute; disponibilizado.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Para que se compreenda melhor as diferen&ccedil;as entre o c&oacute;digo fonte e o software disponibilizado pelas empresas de software n&atilde;o livre segue uma breve explica&ccedil;&atilde;o.</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Um software, de modo geral, &eacute; primeiramente escrito em uma linguagem de programa&ccedil;&atilde;o de alto n&iacute;vel, ou seja, uma linguagem de relativa f&aacute;cil interpreta&ccedil;&atilde;o por seres humanos; esta parte do software &eacute; chamada de c&oacute;digo fonte. Contudo, para rodar estes softwares nos computadores, faz-se necess&aacute;rio transform&aacute;-los em algo que o computador entenda - esta &eacute; a chamada linguagem de m&aacute;quina composta, basicamente, por zeros e uns. O software, nesta forma, dificilmente ser&aacute; modificado por outra pessoa pois o c&oacute;digo de m&aacute;quina &eacute; de dific&iacute;lima dificuldade de comprenss&atilde;o aos seres humanos. &Eacute; na forma de c&oacute;digo de m&aacute;quina que as empresas de software n&atilde;o livre disponibilizam seus produtos, objetivando assim que ningu&eacute;m a n&atilde;o ser elas mesmas possam compreender e melhorar seu funcionamento. J&aacute; o software livre, quando tratando do direito de compartilhar, (direito 1 e 3) se refere ao c&oacute;digo fonte, abre-se assim, a possibilidade da cria&ccedil;&atilde;o de comunidades de desenvolvimento e aprendizagem ao redor de softwares livres respeitando sempre &agrave;s individualidades de seus usu&aacute;rios e de modo algum tirando-lhes suas liberdades.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Do direito de compartilhar</strong></p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Software pode ser razoavelmente comparado com uma receita, ambos s&atilde;o um conjunto de instru&ccedil;&otilde;es que, quando seguidas por um computador ou uma pessoa respectivamente, geram um resultado espec&iacute;fico. Imagine que voc&ecirc; preparou uma receita e convida seus amigos para um jantar, ao final do jantar um de seus amigos lhe pede a receitar. Recusar compartilhar software &eacute;, nesse sentido, o mesmo que recusar compartilhar a receita. Amigos desejam compartilhar, ambos est&atilde;o cientes que n&atilde;o lhes causar&aacute; mal algum faz&ecirc;-lo e com pouco esfor&ccedil;o &eacute; poss&iacute;vel copi&aacute;-la, at&eacute; mesmo a pessoa que recebe a receita pode vir &agrave; modific&aacute;-la e preparar uma ainda mais gostosa, disponibilizando sua vers&atilde;o de volta para seu amigo, refor&ccedil;ando ainda mais o senso de comunidade e compartilhamento. Agora imagine um mundo em que fosse-lhe negado o direito de emprestar receitas para seus amigos, que compartilhar receitas fosse considerado um crime comparado com o ato de assaltar e saquear navios. Isso em detrimento de gigantes corpora&ccedil;&otilde;es fabricadoras de receitas, que n&atilde;o poderiam ser copiadas, outrossim, somente adquiridas por pre&ccedil;os injustos em locais autorizados. &Eacute; claro que este n&atilde;o &eacute; o mundo em que queremos viver.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>A origem do software livre</strong></p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; O termo software livre foi cunhado por Richard Stallman, na &eacute;poca trabalhava no MIT <em>Instituto Tecnol&oacute;gico de Massachusetts</em>, na &aacute;rea de intelig&ecirc;ncia artificial. Este, por ingressar na computa&ccedil;&atilde;o em seus prim&oacute;rdios, vivenciou uma &eacute;poca que o software era algo comunit&aacute;rio; n&atilde;o haviam alega&ccedil;&otilde;es de direitos autorais, as pessoas compartilhavam os fontes, o mundo da ci&ecirc;ncia da computa&ccedil;&atilde;o era gentil e nobre. Com a crescente pr&aacute;tica de cria&ccedil;&atilde;o de software privado cujas corpora&ccedil;&otilde;es pioneiras destacam-se: IBM e Microsoft e Apple, Stallman via-se cada vez mais frustrado, obrigado &agrave; utilizar software os quais via falhas que tinha capacidade mas n&atilde;o a autoriza&ccedil;&atilde;o para consertar. A soma destas frusta&ccedil;&otilde;es culminou na cria&ccedil;&atilde;o da do projeto GNU.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; GNU &eacute; primeiramente uma ideia, desvinculado de qualquer institui&ccedil;&atilde;o privada tem por objetivo principal a cria&ccedil;&atilde;o de software livre de prop&oacute;sito gen&eacute;rico. Inicialmente objetivava-se cria&ccedil;&atilde;o de um sistema operacional, pe&ccedil;a de software chave para a utiliza&ccedil;&atilde;o de qualquer computador. Stallman, juntamente uma comunidade crescente de hackers foram aos poucos juntando os componentes e por fim criaram o que hoje &eacute; chamado sistema operacional GNU\\Linux, vulgarmente conhecido como Linux. Atualmente, conta com um variado ecossistema de programas e uma vibrante comunidade, capazes de suprir todas as necessidades de softwares pagos com uma alternativa livre em disponibiliza&ccedil;&atilde;o e suporte. Criou-se tamb&eacute;m a licen&ccedil;a GNU GPL (GNU Public License) que possibilita a utiliza&ccedil;&atilde;o dos poderes dos "direitos autorais" de uma forma invertida, esta cont&eacute;m um mecanismo que faz com que, quando um software a utilize, todos os trabalhos derivados dele devam, necessariamente, vir com os mesmos direitos inclusos (direitos 0 &agrave; 3). Isso faz com que todo o software livre seja imune aos maquiavelismos das corpora&ccedil;&otilde;es pois co&iacute;be que as mesmas copiem um software livre e comecem a disponbiliz&aacute;-lo de uma forma n&atilde;o livre.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Software livre &eacute; como comunismo</strong></p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Algumas pessoas com conceitos muito superficiais sobre software livre &agrave;s vezes cometem a fal&aacute;cia de alegar que este se parece com o comunismo na Uni&atilde;o Sovi&eacute;tica. Ideologias &agrave; parte, contudo, se olharmos analiticamente ao cerne do argumento, notamos que &eacute; o inverso que efetivamente se aplica. Na Uni&atilde;o Sovi&eacute;tica cada m&aacute;quina de c&oacute;pia tinha um guarda para prevenir c&oacute;pias ilegais sendo necess&aacute;rio que os indiv&iacute;duos praticassem c&oacute;pias ilegais, m&atilde;o &agrave; m&atilde;o, pr&aacute;tica conhecida como Samizdat. Sendo assim, software privado se enquadra muito mais com as ideiologias da Uni&atilde;o sovi&eacute;tica do que o software livre.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Como &eacute; poss&iacute;vel criar programas competitivos atrav&eacute;s de software livre</strong></p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Primeiramente deve-se entender que o objetivo do software livre n&atilde;o &eacute; a degrada&ccedil;&atilde;o da profiss&atilde;o de programador. Isso provavelmente n&atilde;o ir&aacute; acontecer com software livre pois o movimento livre n&atilde;o objetiva que todo o software seja livre, outrossim, busca-se somente que softwares de car&aacute;ter gen&eacute;rico o sejam. S&atilde;o estes que criam interesse de uma parcela significativa da sociedade e melhor podem se beneficiar com a cria&ccedil;&atilde;o de uma comunidade. Corroborando com este argumento, RAYMOND 2011 aponta que 95% de todo o esfor&ccedil;o dedicado na constru&ccedil;&atilde;o de software &eacute; para a elabora&ccedil;&atilde;o de software customizado para empresas. Fica claro que grandes modifica&ccedil;&otilde;es na infraestutura de desenvolvimento de software n&atilde;o s&atilde;o necess&aacute;rios para efetuar-se uma profunda transforma&ccedil;&atilde;o &eacute;tica na &aacute;rea.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Mesmo que nem todos os softwares precisem ser livres para termos uma sociedade livre, n&atilde;o pode-se tomar por premissa que a constru&ccedil;&atilde;o de software livre seja algo n&atilde;o vi&aacute;vel economicamente. Benef&iacute;cios pr&aacute;ticos podem ser extra&iacute;dos &agrave; partir de uma economia orientada ao software livre. RAYMOND 2011 aponta que optar por tornar um software livre pode ser uma jogada empresarial de sucesso em meio a um mercado concorrido. Novos nichos tamb&eacute;m emergem &agrave; partir de uma economia de software livre, a CYAGNUS foi a primeira empresa a investir em venda de suporte para software livre e obteve grande sucesso em seu nicho. Atualmente grandes corpora&ccedil;&otilde;es existem baseadas neste tipo de trabalho como: RedHat, OpenSuse, Canonical entre outras, que contratam programadores por sal&aacute;rios invej&aacute;veis se comparado com os sal&aacute;rios de profissionais de software em geral e contam com o benef&iacute;cio de proporcionar sentimento de recompensa por estar fazendo o bem, trabalhando em favor da humanidade em geral, atrav&eacute;s da cria&ccedil;&atilde;o de software livre.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Outros benef&iacute;cios pr&aacute;ticos, n&atilde;o muito &oacute;bvios, s&atilde;o que em m&eacute;dia o software livre &eacute; mais confi&aacute;vel, escrito com melhor qualidade, melhor documentado e com melhor suporte do que software n&atilde;o livre. STALLMAN 2010 aponta que em pesquisas realizadas sua suite de edi&ccedil;&atilde;o de textos, o EMacs, em todos os aspectos no par&aacute;grafo mencionados se comporta melhor que seu principal rival de c&oacute;digo fechado o Microsoft Word.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;&nbsp;&nbsp; Desde muito tempo a comunidade de software livre est&aacute; ativa, contudo, no Brasil, como em muitos outros pa&iacute;ses, a desinforma&ccedil;&atilde;o a respeito deste gr&atilde; importante assunto &eacute; o que impera. Na grande maioria dos casos um indiv&iacute;duo manda formatar seu computador com algum conhecido, mesmo em muitas lojas especializadas, e n&atilde;o sabe que o que traz para casa &eacute; software n&atilde;o livre, sem licen&ccedil;a ou vulgarmente conhecidos como software pirata, que objetiva tomar-lhe as liberdades em detrimento de conceder um pouco mais de poder para as multinacionais que os constru&iacute;ram. Sim, desinforma&ccedil;&atilde;o &eacute; um problema, contudo n&atilde;o o &uacute;nico. A grande maioria do p&uacute;blico n&atilde;o leigo, com ci&ecirc;ncia do software livre, n&atilde;o utiliza as ferramentas as quais necessita de car&aacute;ter livre, seja por estar acostumado &agrave; utilizar o concorrente pago, seja pela falta componente n&atilde;o essencial o qual deseja, resumindo: fatores pr&aacute;ticos. Contudo, assim como este trabalho n&atilde;o tem o objetivo de demonstrar os benef&iacute;cios pr&aacute;ticos da utiliza&ccedil;&atilde;o de software livre, superficialmente abordados, n&atilde;o podemos colocar nossos valores pr&aacute;ticos sobre a &eacute;tica. Dessa forma, haveremos de buscar meios de conscientizar os usu&aacute;rios de computador &agrave; respeito de suas escolhas e implica&ccedil;&otilde;es relativas &agrave; utiliza&ccedil;&atilde;o de determinado software. Espero que este material, de alguma forma, contribua nesta busca.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><img style="display: block; margin-left: auto; margin-right: auto;" src="/galeria/b616898dfe26682a4484e0606f1e5019.png" alt="" width="113" height="110" /></p>\n<p style="margin-bottom: 0cm; text-align: left;">Agora quando voc&ecirc; ver esta imagem n&atilde;o v&aacute; pensar que todo o nerd &eacute; um adorador do dem&ocirc;nio. Este &eacute; o mascote da ideia GNU.</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;">&nbsp;</p>\n<p style="margin-bottom: 0cm;"><strong>Refer&ecirc;ncias</strong></p>\n<p style="margin-bottom: 0cm;">STALLMAN, Richard M.. Free Software Free Society. Boston MA. ISBN 978-1441436856. SoHo Books 2010.</p>\n<p style="margin-bottom: 0cm;">RAYMOND, Eric S.. The Cathedral &amp; The Bazar - Musings on Linux and Open Source by an accidental revolutionary. San Bernardino CA. ISBN 978-0-596-00108-7. O'' Reilly 2011.</p>\n<p>&nbsp;</p>', 1, '2014-03-11 00:00:00', 1, 1),
+(5, 'Controle de hardware via porta paralela', '<p>&nbsp;</p>\n<p>Recuperei este post de um antigo blog meu e, a fim de n&atilde;o perd&ecirc;-lo, publiquei-o aqui.</p>\n<p>&nbsp;</p>\n<p>O script desenvolvido utiliza das fun&ccedil;&otilde;es de bit a bit do C para deslocar o 1 de um byte composto inicialmente por 10000000 para o lado.</p>\n<p>No segundo momento seria: 01000000, depois: 00100000 e assim sucessivamente.</p>\n<p>Na sa&iacute;da pode-se colocar um conjunto de LED''s, de modo que estes, de uma forma linear, pisquem. </p>\n<p>&nbsp;</p>\n<hr />\n<p><br /> O c&oacute;digo:<br /> <br /> <br /> #include &nbsp; <br /> #include &lt;sys/io.h&gt; // biblioteca respons&aacute;vel pelo controle de hardware</p>\n<p><br /> unsigned int Saida; &nbsp; &nbsp; // a sa&iacute;da da porta precisa ser um inteiro sem sinal pois a paralela tem 8 saidas<br /> <br /> <br /> int openPort(void); <br /> void controlerPort(void);<br /> void closePort(void);<br /> <br /> <br /> void main (void)<br /> {<br /> &nbsp;&nbsp;&nbsp; openPort();<br /> &nbsp;&nbsp;&nbsp; controlerPort(); &nbsp; &nbsp; &nbsp; <br /> &nbsp;&nbsp;&nbsp; closePort();<br /> }<br /> <br /> int openPort(void)<br /> {</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp; // 0x378 &eacute; o endere&ccedil;o padr&atilde;o da primeira porta paralela para pc''s</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp; // io perm pede permiss&atilde;o para o sistema operacional para obter o</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp; // controle sobre a porta<br />&nbsp;&nbsp;&nbsp;&nbsp; if(!ioperm(0X378,3,1)) return 0;<br /> }<br /> <br /> <br /> void closePort(void)<br /> {</p>\n<p>&nbsp;&nbsp;&nbsp; //zera a sa&iacute;da antes de fechar<br /> &nbsp;&nbsp;&nbsp; outb(0, 0x378);<br /> &nbsp;&nbsp;&nbsp; ioperm(0x378,3,0); //passa-se 0 no ultimo parametro para se fechar a porta<br /> }<br /> <br /> <br /> void controlerPort(void)<br /> {<br /> &nbsp;&nbsp;&nbsp; int i,a;<br /> &nbsp;&nbsp;&nbsp; for(a = 0; a &lt;= 10 ; a++)<br /> &nbsp;&nbsp;&nbsp; {<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Saida = 1;<br /> <br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for(i = 0; i &lt;= 7; i++)<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; outb(Saida, 0x378); // imprime sa&iacute;da na porta<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; printf("%d\\n", Saida);<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Saida = Saida &lt;&lt; 1; // desloca o bit para a direita<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; sleep(1); //para por 1 segundo<br /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br /> &nbsp;&nbsp;&nbsp; }<br /> }</p>\n<p>Para funcionar talvez seja necess&aacute;rio habilitar o funcionamento da porta atrav&eacute;s da BIOS do seu<br /> computador.</p>', 1, '2014-03-23 00:00:00', 1, 1),
+(6, 'NGINX com FastCGI lado a lado com o APACHE', '<p>Recentemente urgiu a necessidade de ter a &uacute;ltima vers&atilde;o do PHP no servidor da empresa onde trabalho. Contudo, o sistema utiliza o plesk, com as diversas customiza&ccedil;&otilde;es que este servi&ccedil;o faz ao apache e suas respectivas instala&ccedil;&otilde;es do PHP fica dif&iacute;cil fazer qualquer customiza&ccedil;&atilde;o, outrossim, a propabilidade que quebrar o servidor &eacute; alta. Sendo assim, pesquisei a possibilidade de instalar outro servidor web, preservando as seguintes condi&ccedil;&otilde;es/requisitos: n&atilde;o alterar as configura&ccedil;&otilde;es do apache e suportar v&aacute;rias vers&otilde;es do PHP em paralelo. Resumindo, conheci o NGINX,&nbsp; e com as customiza&ccedil;&otilde;es que aqui apresentarei, foi poss&iacute;vel alcan&ccedil;ar os requisitos al&eacute;m disso, experienciar um servidor web muito mais agrad&aacute;vel de se administrar.</p>\n<p>O NGINX pareceu-me muito mais organizado em rela&ccedil;&atilde;o ao Apache, principalmente quando relativo aos arquivos de configura&ccedil;&atilde;o: mais limpos e melhor organizados, utilizando um padr&atilde;o quase JSON. A inexist&ecirc;ncia de .htaccess tamb&eacute;m me deixou contente pois estes sempre s&atilde;o de dif&iacute;cil compreens&atilde;o bem como necessitam estar juntamente &agrave; aplica&ccedil;&atilde;o; a estrat&eacute;gia do NGINX &eacute; manter todas estas configura&ccedil;&otilde;es na pr&oacute;pria virtualhost. O NGINX &eacute; tamb&eacute;m conhecido por sua escalabilidade e maior performance em aplica&ccedil;&otilde;es tipo <em>plain text</em>.</p>\n<p><img src="/galeria/ddbf7b22b98e27c9b529fac735a77f2e.jpg" alt="" width="154" height="87" /></p>\n<p>&nbsp;</p>\n<p><strong>Observa&ccedil;&otilde;es</strong>:</p>\n<p>Testei este processo em duas m&aacute;quinas, uma com CentoOS 5.8 e outra com Centos 6.5, as diferen&ccedil;as para ambos est&atilde;o discritas ao longo do texto. Para utilizar em outras distribui&ccedil;&otilde;es, pode-se variar o processo de instala&ccedil;&atilde;o do NGINX e o local de resid&ecirc;ncia dos arquivos de configura&ccedil;&atilde;o.</p>\n<p>Utilizei a seguintes conven&ccedil;&atilde;o de nomenclatura: todo o c&oacute;digo fonte e estrangeirismos est&atilde;o em <em>it&aacute;lico</em>.</p>\n<p>&nbsp;</p>\n<p>&nbsp;<strong>PASSO 1 - COMPILANDO O PHP<br /></strong></p>\n<p>Primeiramente devemos fazer o download de&nbsp; uma vers&atilde;o do PHP no site <a href="/posts/editar/php.net/downloads.php">php.net</a>.</p>\n<p>Baixei a mais nova vers&atilde;o est&aacute;vel no tempo de publica&ccedil;&atilde;o deste post&nbsp; &agrave; dizer: 5.5.12.</p>\n<p><em> mkdir -p ~/builds/php &amp;&amp; cd ~/builds/php </em></p>\n<p><em>wget <a href="http://us1.php.net/get/php-5.5.12.tar.gz/from/a/mirror">http://us1.php.net/get/php-5.5.12.tar.gz/from/a/mirror</a></em></p>\n<p>&nbsp;</p>\n<p>Extraia e entre na pasta</p>\n<p>Para tar.gz</p>\n<p><em>tar -zxvf php-5.5.12.tar.gz</em></p>\n<p>Para tar.bz2</p>\n<p><em> tar -jxf php-5.5.12.tar.gz</em></p>\n<p>&nbsp;</p>\n<p><em>cd php-5.5.12</em></p>\n<p>&nbsp;</p>\n<p>Configure as op&ccedil;&otilde;es e extens&otilde;es que deseja nesta instala&ccedil;&atilde;o - minhas op&ccedil;&otilde;es padr&otilde;es s&atilde;o da forma que segue:</p>\n<p><em>./configure --prefix=/opt/php-5.5.12 --with-pdo-pgsql --with-zlib-dir --with-freetype-dir --enable-mbstring --with-libxml-dir=/usr --enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --with-pgsql --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --with-mhash --enable-zip --with-pcre-regex --with-mysql --with-pdo-mysql --with-mysqli --with-jpeg-dir=/usr --with-png-dir=/usr --enable-gd-native-ttf --with-openssl --with-fpm-user=nginx --with-fpm-group=nginx --with-libdir=lib64 --enable-ftp --with-imap --with-imap-ssl --with-kerberos --with-gettext --enable-cgi</em> <br /><br /> Algumas coisas devem ser levadas em considera&ccedil;&atilde;o neste ponto:</p>\n<ul>\n<li>Deve-se habilitar o fast-cgi como mostrado no &uacute;ltimo par&acirc;metro: <em>--enable-cgi</em></li>\n<li>Deve-se setar o local de instala&ccedil;&atilde;o atrav&eacute;s do par&acirc;metro <em> --prefix=/opt/php-5.5.12</em></li>\n<li>Se desejas utilizar a mesma instala&ccedil;&atilde;o do php com o apache via FPM deves utilizar os par&acirc;metros:<em> fpm-user=apache --with-fpm-group=</em><em>apache</em>.</li>\n</ul>\n<p>Se voc&ecirc; n&atilde;o compila com frequ&ecirc;ncia em seu computador, provavelmente necessitar&aacute; resolver depenc&ecirc;ncias antes de compilar. O escopo este post n&atilde;o leva em considera&ccedil;&atilde;o o provisionamento de bibliotecas; entretanto, a maioria dos erros s&atilde;o facilmente remedi&aacute;veis quando jogados no Google :).</p>\n<p>&nbsp;</p>\n<p>Os execut&aacute;veis necess&aacute;rios para a compila&ccedil;&atilde;o podem ser instalados atrav&eacute;s do comando:</p>\n<p><em>yum groupinstall "Development Tools" "Development Libraries"</em></p>\n<p>Compile o php e instale-o:<br /><em> make &amp;&amp; make install</em><br /> <br /><br /> Copie o php.ini de sua compila&ccedil;&atilde;o para o local necess&aacute;rio na instala&ccedil;&atilde;o:<br /><em> cp -rf ~/builds/php/php-5.5.12/php.ini-production /opt/php-5.5.12/lib/php.ini</em><br /><br /> Se fores utilizar o php.ini que o PHP gera, ao menos adicione o <em>timezone</em> isso pode poupar-lhe grandes problemas.<br /><em> echo "date.timezone = \\"America/Sao_Paulo\\"" &gt;&gt; /opt/php-5.5.12/lib/php.ini</em><br /><br /> Para um php.ini j&aacute; configurado para o desenvolvimento testado em php 5.5.9 &agrave; 5.5.12 confira <a href="https://gist.github.com/jeanCarloMachado/3e9b0bde19db16176623">aqui</a>.<br /><br /><br /><br /><strong> PASSO 2 - INSTALANDO O&nbsp; NGINX</strong> <br /><br /> Instale os reposit&oacute;rios requisitos:</p>\n<p><br /> Para CentOS 6<br /> <em>rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</em><br /><em> rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm</em><br /> <br /><br />Para CentOS 5<br /> <em>rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm</em><br /><em> rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm</em><br /> <br /><br /> Adicione o reposit&oacute;rio de nginx em<em> /etc/yum.repos.d/nginx.repo</em><br /><br /> <em>[nginx]</em><br /><em> name=nginx repo</em><br /><em> baseurl=http://nginx.org/packages/centos/$releasever/$basearch/</em><br /><em> gpgcheck=0</em><br /><em> enabled=1</em><br /> <br /><br /> Para verificar as vers&otilde;es dispon&iacute;veis do NGINX digite:<br /><em> yum --enablerepo=remi list nginx</em><br /><br /> Instale com o seguinte comando:<br /><em> yum --enablerepo=remi install nginx</em></p>\n<p>&nbsp;</p>\n<p><strong>PASSO 3 - CONFIGURANDO O NGINX</strong><br /> <br /> Depois da instala&ccedil;&atilde;o devemos fazer modifica&ccedil;&otilde;es no arquivo de configura&ccedil;&atilde;o do nginx <em>/etc/nginx/nginx.conf</em> para que cumpra com nossos requisitos.</p>\n<p><br /> &Eacute; recomend&aacute;vel trocar o valor de <em>worker_processes</em> para o n&uacute;mero de processadores de seu servidor. Pode-se conseguir esta informa&ccedil;&atilde;o atrav&eacute;s do comando:</p>\n<p><em>cat /proc/cpuinfo | grep processor | wc -l</em></p>\n<p>Adicione a cl&aacute;usula se desejares reescrever as configura&ccedil;&otilde;es de log em suas virtualhosts:<br /><br /> <em>http {</em><br /><em> # Debug rewrite rules </em><br /><em> rewrite_log on;</em><br /><em> }</em><br /><br /> Elimine a configura&ccedil;&atilde;o default de servidor do nginx:</p>\n<p><em> rm /etc/nginx/conf.d/default.conf</em></p>\n<p><br /><br /> Adicione a virtualhost de seu php (e mais qualquer uma que deseje criar) no arquivo <em>/etc/nginx/conf.d/virtual.conf</em><br /> <br /> <em>server {</em><br /><em>&nbsp;&nbsp;&nbsp;&nbsp; server_name 127.0.0.1;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; listen 5512;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; root ~/tests/php/5.5.12;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; index index.php;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; fastcgi_index index.php;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; error_log /var/log/nginx/error.log debug;</em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; location ~ \\.htaccess {</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; deny all;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; }</em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; location / {</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; index index.php;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; }</em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; #rewrite engine equivalente ao .htaccess</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; #funciona out of the box com os principais frameworks</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; # dispon&iacute;veis</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; error_page 404 = /index.php;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; if (!-e $request_filename) {</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; rewrite ^.*$ /index.php last;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; }</em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; location ~ \\.php {</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; try_files $uri =404;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; include /etc/nginx/fastcgi_params;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; keepalive_timeout 0;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; # essa parte &eacute; importante, a porta aqui selecionada deve ser a mesma do script de inicializa&ccedil;&atilde;o do nginx</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; # para a vers&atilde;o coreta do php</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; fastcgi_pass 127.0.0.1:9000;</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; }</em><br /><em> }</em></p>\n<p><br /><br />A fim de que consigamos trabalhar com m&uacute;ltiplas vers&otilde;es do php necessitamos alterar o script de inicializa&ccedil;&atilde;o do daemon e for&ccedil;&aacute;-lo a ouvir portas espec&iacute;ficas para cada vers&atilde;o do PHP que desejarmos. No arquivo <em> /etc/init.d/nginx</em> procure pela fun&ccedil;&atilde;o <em>start() {}</em>&nbsp; e altere seu conte&uacute;do para que fique equivalente a este:<br /><br /> <em>start() {</em><br /><em>&nbsp;&nbsp;&nbsp;&nbsp; USER=nobody </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_55_BIND=127.0.0.1:9000 </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_55_CGI=/opt/php-5.5.11/bin/php-cgi </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_FCGI_CHILDREN=15 </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_FCGI_MAX_REQUESTS=1000 </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_CGI_ARGS="- USER=$USER PATH=/usr/bin</em></p>\n<p><em>&nbsp;&nbsp;&nbsp;&nbsp; PHP_FCGI_CHILDREN=$PHP_FCGI_CHILDREN</em></p>\n<p><em>&nbsp;&nbsp;&nbsp;&nbsp; PHP_FCGI_MAX_REQUESTS=$PHP_FCGI_MAX_REQUESTS" </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; PHP_55_CGI_ARGS="${PHP_CGI_ARGS} ${PHP_55_CGI} -b ${PHP_55_BIND}" </em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; killall -q -w -u ${USER} nginx </em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; killall -q -w -u ${USER} ${PHP_55_CGI} </em><br /> <br /><em> &nbsp;&nbsp;&nbsp;&nbsp; /usr/bin/env -- $PHP_55_CGI_ARGS &amp; </em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; /usr/sbin/nginx</em><br /><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; retval=$?</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; echo</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; [ $retval -eq 0 ] &amp;&amp; touch $lockfile</em><br /><em> &nbsp;&nbsp;&nbsp;&nbsp; return $retval</em><br /><em> }</em></p>\n<p>&nbsp;</p>\n<p>Neste caso forcei o NGINX a direcionar para o PHP 5.5.12 todas as chamadas na porta 9000, sendo assim, duplicando-se as configura&ccedil;&otilde;es de todas as entradas <em>PHP_55</em>* para outra, por exemplo: <em>PHP_53*, </em>possibilita-se utilizar mais de uma vers&atilde;o do PHP. Necess&aacute;rio lembrar que a respectiva porta configruada aqui, tamb&eacute;m deve estar na virtualhost para que consigamos unir a vers&atilde;o espec&iacute;fica do PHP para com sua respectiva aplica&ccedil;&atilde;o, como no caso da sess&atilde;o da virtualhost acima: <em> fastcgi_pass 127.0.0.1:9000;</em>.</p>\n<p>Marque o servi&ccedil;o para inicar junto ao boot do servidor</p>\n<p><em>chkconfig nginx on</em></p>\n<p>&nbsp;</p>\n<p><strong>PASSO 4 - FIREWALL</strong></p>\n<p><br /> Caso voc&ecirc; utilize firewall ser&aacute; necess&aacute;rio liberar as portas utilizadas - neste tutorial: 9000 (porta do servi&ccedil;o nginx), 5512 (porta da virtualhost para PHP 5.5.12).<br /> Para isso adicione as seguintes regras no seu /etc/sysconfig/iptables<br /><br /> <em>-A VZ_INPUT -p tcp -m tcp --dport&nbsp;5512 -j ACCEPT</em><br /><em> -A VZ_INPUT -p tcp -m tcp --dport 9000 -j ACCEPT</em><br /><em> -A VZ_OUTPUT -p tcp -m tcp --sport&nbsp;<em>9000</em> -j ACCEPT</em><br /><em> -A VZ_OUTPUT -p tcp -m tcp --sport&nbsp;5512 -j ACCEPT</em><br /><br /> Reinicie o servi&ccedil;o:<br /><em> /etc/init.d/iptables restart</em></p>\n<p>&nbsp;</p>\n<p><strong>PASSO 5 - TESTANDO A CONFIGURA&Ccedil;&Atilde;O</strong><br /> <br /><br /> Vamos adicionar um php.info para testarmos a configura&ccedil;&atilde;o<br /><br /> <em>mkdir ~/tests/php/5.5.12</em><br /><em> touch ~/tests/php/5.5.12/index.php</em><br /><em> echo "&lt;\\?php phpinfo(); " <!--?php phpinfo(); "<!--?php phpinfo(); " <!--?php phpinfo(); " ------> &gt; ~/tests/php/5.5.12/index.php</em></p>\n<p>&nbsp;</p>\n<p>Inicie o<em> NGINX:</em></p>\n<p><em>/etc/init.d/nginx start<br /></em></p>\n<p><br /> Agora teste atrav&eacute;s de seu navegador o endere&ccedil;o:&nbsp;<br /><em> {Meu IP}:5512</em></p>\n<p>&nbsp;</p>\n<p><em>Como j&aacute; mencionado, o nginx n&atilde;o utiliza .htaccess&nbsp; - a configura&ccedil;&atilde;o equivalente fica na virtualhost. O exemplo de configura&ccedil;&atilde;o de virtualhost aqui exposto j&aacute; implementa as instru&ccedil;&otilde;es necess&aacute;rias para funcionar out-of-the-box nos principais frameworks PHP do mercado; entretanto, se necessitares de configura&ccedil;&otilde;es .htacess diferentes do aqui exposto recomendo&nbsp;<a href="http://www.anilcetin.com/">este</a> conversor .htaccess/nginx. Este foi o &uacute;nico a traduzir com sucesso umas instru&ccedil;&otilde;es obscuras que alguns dos sites que dou suporte utilizam. </em></p>\n<p>&nbsp;</p>\n<p><em>&nbsp;</em></p>\n<p>&nbsp;</p>\n<p>N&atilde;o construi a funcionalidade de coment&aacute;rios no meu blog ainda, mas se voc&ecirc; tiver alguma d&uacute;vida pode me contatar atrav&eacute;s da sess&atilde;o de contato do mesmo.</p>\n<p>&nbsp;</p>', 1, '2014-05-01 00:00:00', 1, 1),
+(7, 'Como a Google testa software - Review', '<p>N&atilde;o existe um setor de testes, outrossim, o que seria entendio como testes faz parte do setor de melhorias.</p>\n<p>Existem tr&ecirc;s pap&eacute;is principais no processo de testes: PWE, .. .</p>\n<p>&nbsp;</p>\n<p>Os programadores s&atilde;o parte do processo de testes, e o processo decorre durante o per&iacute;odo de desenvolvimento. Cabe aos programadores produzirem c&oacute;digo de facil testabilidade, bem como produzir testes unit&aacute;rios.</p>\n<p>&nbsp;</p>\n<p>Testes automatizados de amplo escopo s&atilde;o vistos com olhos ruins pela empresa, visto que eles acabam por moldar o processo de desenvolvimento. Eles d&atilde;o prefer&ecirc;ncia por automatizar pequenos processo separadamente.</p>\n<p>&nbsp;</p>\n<p>O ambiente de desenvolvimento &eacute; similar ao de produ&ccedil;&atilde;o, existe vers&otilde;es espec&iacute;ficas de ferramentas para rodar, tanto no desenvolvimeto, quanto nos builds. Procura-se sempre manter o mais pr&oacute;ximo poss&iacute;vel o ambiente de desenvolvimenhto do de produ&ccedil;&atilde;o para que supresas s&atilde;o ocorram.</p>\n<p>&nbsp;</p>\n<p>Existem v&aacute;rias vers&otilde;es de sofware at&eacute; chegar em um beta.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>A estrategia de desnvolvimento da empresa &eacute; lan&ccedil;ar cedo, com poucas funcionalidades, o m&iacute;nimo necess&aacute;rio para fazer o software funcional. &Agrave; partir da&iacute; incrementar em itera&ccedil;&oacute;es com pequenas funcionalidades cada. Este processo diminui o stress permitindo que as funcinalidades sejam testadas com maior amplitude, visto que s&atilde;o disponibilizadas em menor quantidade por itera&ccedil;&atilde;o.</p>\n<p>&nbsp;</p>\n<p>Linguagem para o mapeamento de interfaces e protocolos, gera o c&oacute;digo automaticamente. Principais linguagens: C++, Java, Phython e Javascript.</p>', 0, '2014-05-06 00:00:00', 1, 1),
+(9, 'O crepúsculo dos ídolos', '<p>Princ&iacute;pios de cria&ccedil;&atilde;o dos erros:</p>\n<p>Uma explica&ccedil;&atilde;o qualquer &eacute; prefer&iacute;vel &agrave; falta de explica&ccedil;&atilde;o.</p>\n<p>&nbsp;</p>', 0, '0000-00-00 00:00:00', 1, 1),
+(10, 'Argumentos e contra-argumentos à respeito da não existência de Deus.', '<p>Muitas vezes o assunto: Deus e ci&ecirc;ncia podem coexitir?,&nbsp; j&aacute; foi tratado, dessa vez, desejo expressar minha posi&ccedil;&atilde;o relativa ao assunto.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Primeiramente devemos nos perguntar que Deus? N&atilde;o vou me deter ao cl&aacute;ssico argumento al&aacute; Dawkins: que deus? Odin, Zeus, Jeov&aacute;, etc - a fim de elevar o argumento da plausabilidade em detrenimento de muitas religi&otilde;es j&aacute; terem existido na terra, segundo uma palestra que vi, registrado mais de dez mil religi&otilde;es. Outrossim, quero abordar a tem&aacute;tica de que forma de Deus crist&atilde;o voc&ecirc; se refere. Um Deus b&iacute;blio literal, que toma por verdade tudo o que l&aacute; est&aacute; escrito da forma que foi escrita, sem segundas interpreta&ccedil;&atilde;os. Ou ent&atilde;o um Deus mais ameno, personificado em Jesus Cristo, cuja &uacute;nica caracter&iacute;stica marcante - &agrave; principio - &eacute; o amor incondicional por seus filhos, uma suaviza&ccedil;&atilde;o, digamos, do Deus b&iacute;blico, onde tudo pode ser tomador por uma interpreta&ccedil;&atilde;o n&atilde;o direta como alguns estudiosos b&iacute;blicos dizem: o que voc&ecirc; tem que entender dessa passagem &eacute; o que os ap&oacute;stolos quiseram que entend&eacute;ssemos desta mensagem.</p>\n<p>Meu ponto aqui, &eacute; tentar demonstrar que o primeiro Deus &eacute; cientificamente refutado e o segundo, cientificamente improv&aacute;vel.</p>\n<p>&nbsp;</p>\n<p>Argumentos:</p>\n<p>Dos milagres:</p>\n<p>Deus parou o Sol para um carinha l&aacute; - primeiramente, deus n&atilde;o pode ter parado o Sol para que as sombras n&atilde;o se movessem aqui na Terra, outrossim, o que os ap&oacute;stolos quiseram dizer aqui &eacute; que deus parou a Terra. Agora paremos para imaginar as consequ&ecirc;ncias deste acontecimento, a terra gira em torno de seu eixo a uma velocidade x. Ao menos que deus tenha levado um tempo consider&aacute;vel para desacelerar, ter&iacute;amos sentido fortemente as consequ&ecirc;ncias desse acontecimento.</p>\n<p>&nbsp;</p>\n<p>Atrav&eacute;s da espectroscopia podemos dizer a que dist&acirc;ncia um corpo celeste est&aacute; de n&oacute;s, e como a velocidade da luz n&atilde;o se move infinitamente r&aacute;pida, h&aacute; um tempo at&eacute; que sua luz chegue at&eacute; n&oacute;s. Sendo assim, h&aacute; de haver um tempo consider&aacute;vel para que a luz dos corpos mais distantes de nosso universo chege at&eacute; nos, devido a sua manginitude. E de fato h&aacute;, estudos apontam que a luz mais antiga que chega at&eacute; n&oacute;s tem cerca de quatorze bilh&otilde;es de anos/luz. Sendo assim, a luz destes locais demorou, acredite se quiser: quatorze bilh&otilde;es de anos para chegar at&eacute; n&oacute;s. Isso &eacute; cientificamente comprovado, sendo assim, que espa&ccedil;o existe para a argumenta&ccedil;&atilde;o de que a terra tem cerca de 6 mil anos, como os registro das genealogias b&iacute;blicas apontam?.</p>\n<p>&nbsp;</p>\n<p>Com estes argumentos, eu espero ter demonstrado que ser crist&atilde;o literal n&atilde;o &eacute; mais racionalmente compat&iacute;vel. A menos que voc? acredite em um Deus abstrato e de caracter&iacute;sticas intalg&iacute;veis e infalse&aacute;veis, voc&ecirc; vive uma vida de contradi&ccedil;&atilde;o, longe do que pode ser considerado razo&aacute;vel.</p>', 0, '0000-00-00 00:00:00', 1, 1);
+INSERT INTO `ackblog_post` (`id`, `titulo`, `conteudo`, `publicado`, `data`, `visivel`, `status`) VALUES
+(11, 'Git essentials', '<p>&nbsp;This post aims to be a set of commands and definitions of what I consider essential to the development of well versioned projects using Git. This is probably not a good conceitual manual, instead, a day of job pratical view is being seeked. If you are looking for a conceitual manual you can find it on the git official manual page <a href="http://git-scm.com/documentation">here</a>.</p>\n<p>&nbsp;</p>\n<p>Before you continue I must harm you: this is a work in progress and it certainly has many lack''s on continuity and clarity - now go ahead if you want.</p>\n<p>&nbsp;</p>\n<p>This is a rolling release post, so it makes the worth to view again if you already done.</p>\n<p>&nbsp;</p>\n<p><strong>1.0 List of commands<br /></strong></p>\n<p>&nbsp;</p>\n<p><strong>1.1 Basics</strong></p>\n<p>These commands are suitable&nbsp;to make and manage a project locally, no network is necessary to work this&nbsp;way.</p>\n<p>&nbsp;</p>\n<p><strong>1.1.1 Initialising a project</strong></p>\n<p><em>git init .</em></p>\n<p>Inits a git project on the current directory. This command created hidden files on .git directory with all necessary stuf to make a git project run.</p>\n<p>&nbsp;</p>\n<p><strong>1.1.2 &nbsp;Including files to git tree</strong></p>\n<p><em>git add .</em></p>\n<p>Add files to git tree, if the dot is passed it means that the current directory and all it`s children will be scanned to new files that are not yet on git tree.</p>\n<p>&nbsp;</p>\n<p><strong>1.1.3 Commiting</strong></p>\n<p><em>git commit -m "message here"</em></p>\n<p>Create''s git objects with the modifications of all added files that are different from the commit linked by the HEAD pointer. Moves the HEAD pointer to the new created commit.</p>\n<p>&nbsp;</p>\n<p><strong>1.2 Branches</strong></p>\n<p>The git cvs could be visualized as a three, the base compost of the initials objects - created by commits - branches are the division of objects versions. Talking about software, is nice to create banches allways when a new funcitionality is being created.</p>\n<p>&nbsp;</p>\n<p>Obs: Do not get yourself confused, branches is not the most adequate way to create versions. It could be better acomplished by tagging.</p>\n<p>&nbsp;</p>\n<p><strong>1.3 - Working with remote repositoryes</strong></p>\n<p>A very well way to work remotely is using github. First of all you have to <a href="https://help.github.com/articles/generating-ssh-keys">setup your ssh keys</a>.</p>\n<p>&nbsp;</p>\n<p><strong><em>1.3.1 git remote subsystem</em></strong></p>\n<p>&nbsp;</p>\n<p>Git remote is a set of operation for dealing with - obviously - remote repository''s.</p>\n<p>The most usefult of the commands is: <em>git remote add remote alias remoteUrl</em>, the default naming remote is the origin, so:</p>\n<p>&nbsp;</p>\n<p><em>git remote add origin&nbsp;<a href="mailto:git@github.com:jeanCarloMachado/devil-easy-git.git">git@github.com:jeanCarloMachado/devil-easy-git.git</a></em></p>\n<p>&nbsp;</p>\n<p><strong>1.3.3 Sending your modifications</strong></p>\n<p><em>git push origin master</em></p>\n<p>This command compare''s your commits tree&nbsp;with the remote one, in this case the remote&nbsp;<em>origin</em> on the branch <em>master</em>. If there is any difference, it sends the altered&nbsp;objects to the remote and updates it''s HEAD pointer.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><strong>2&nbsp;&nbsp;- FOR A EASY GIT EXPIRENCE</strong></p>\n<p>&nbsp;Working with git is easy by default, but there''s some mechanical process in many usually tasks. For example, the process of making alterations on code and sending it to the server. For the sake of these tasks <a href="https://github.com/jeanCarloMachado/devil-easy-git">here</a>&nbsp;are some automation scripts I''m working on.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>', 1, '2014-06-02 00:00:00', 1, 1),
+(14, 'The God Delusion Ending', '<p>&nbsp;</p>\n<p>Here''s a quite impressive talk of Richard Dawkings in the end of this Movie:&nbsp;<a href="https://www.youtube.com/watch?v=9FiHRVb_uE0">The God Delusion</a></p>\n<p>There is no all seeing all loving god to keep us free from harm. But atheism is not a recipe for dispair, I think the opposite: by disclaiming the idea of a next life we can take more excitement in this one. The here and now is not something to be endured before eternal bliss or damanation. The here and now is all we have: an inspiration to make the most of it. So atheism is life affirming in a way religion can neve be.</p>\n<p>Look around you, nature demands our attention, beg''s us to explore, to question. Religion can provide only fossils ultimatly unsatisfiable answers; science, in constantly seeking real explanations, constantly reveals the true magesty of our world in all it''s complexity. People sometimes say: there''s must be more than just this world, than just this life, but how much more do you want?. We are going to die and that makes us the luky ones; most people are never going to die because their never going to be born. The number of people who could be here in my place outnumber the sand grains of Sahara. If you think in all different ways that our genes can be permuted, you and I are quite grotescly luky to be here. The number of events that have to happen in order for you to exist; in order for me to exist - we are privileged to be alive and we should make the most of our time on this world.</p>\n<p>&nbsp;</p>\n<p><strong>&nbsp;Tradu&ccedil;&atilde;o livre:&nbsp;</strong></p>\n<p>N&atilde;o h&aacute; um Deus que tudo ama e tudo v&ecirc; cuidando de n&oacute;s. Mas ate&iacute;smo n&atilde;o &eacute; um convite ao&nbsp;desespero, penso que seja o contr&aacute;rio: descartando a ideia de uma pr&oacute;xima vida n&oacute;s somos levados a levar esta com mais empenho. O aqui e agora n&atilde;o &eacute; algo passageiro preludiando prazer ou desespero eterno. O aqui e agora &eacute; tudo o que temos: uma inpira&ccedil;&atilde;o para tirarmos o m&aacute;ximo dessa vida. Nessa perspectiva, ateismo &eacute; a afirma&ccedil;&atilde;o da vida de uma forma que a religi&atilde;o nunca ser&aacute;.</p>\n<p>Olhe ao redor, a natureza nos demanda aten&ccedil;&atilde;o, nos pede que exploremos, que questinemos. A&nbsp;religi&atilde;o nos fornece apenas f&oacute;sseis de respostas insatisfat&oacute;rias; ci&ecirc;ncia em contrapartida, por estar sempre buscando as explica&ccedil;&otilde;es reais, constantemente revela a verdadeira magestade de nosso mundo em toda sua complexidade. As pessoas &agrave;s vezes dizem: deve haver mais do que apenas este mundo, que apenas esta vida, mas quanto mais voc&ecirc; deseja?. N&oacute;s vamos todos um dia morrer e isso faz de n&oacute;s os mais sortudos; a maioria das pessoas nunca vai morrer porque elas nunca v&atilde;o nascer. O n&uacute;mero de pessoas que poderia estar aqui no meu lugar &eacute; maior do que o n&uacute;mero de gr&atilde;os de areia do Saara. Se voc&ecirc; pensar em todas as diferentes formas em que os nossos genes poderiam ter sido&nbsp;permutados - voc&ecirc; e eu somos grotescamente sortudos. O n&uacute;mero de eventos que tiveram que acontecer para que voc&ecirc; exista, para que eu exista - n&oacute;s somos privilegiados por estarmos vivos e n&oacute;s devemos fazer o melhor de nosso tempo neste mundo.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>', 1, '2014-06-04 00:00:00', 1, 1),
+(13, 'Curiosidades e dicas sobre PHP', '<p>Este post &eacute; dedicado a apresentar algumas dicas e curiosidades sobre PHP que est&atilde;o, normalmente, distanciadas do senso comum, mesmo algumas delas sendo extremamente simples e &uacute;teis. Ele est&aacute; sendo&nbsp;desenvolvido de forma rolling release, sendo assim, vale &agrave; pena conferir novamente se voc&ecirc; j&aacute; o fez antes.</p>\n<p><br />&nbsp;</p>\n<p><strong>&nbsp;&nbsp;DICA 1 - Ao declarar o retorno de uma fun&ccedil;&atilde;o cuidado com os par&ecirc;nteses.</strong></p>\n<hr />\n<p>&nbsp;</p>\n<div style="color: #c7254e;">\n<div class="line number17 index16 alt2">&nbsp; &nbsp; public&nbsp;function&nbsp;bar()</div>\n<div class="line number18 index17 alt1">&nbsp;&nbsp;&nbsp;&nbsp;{</div>\n<div class="line number11 index10 alt2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return($this-&gt;bar);</div>\n<div class="line number12 index11 alt1">&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n</div>\n<div class="line number12 index11 alt1">Se voc&ecirc; declarar dessa forma e depois retornar a vari&aacute;vel como uma refer&ecirc;ncia obter&aacute; um erro:</div>\n<div class="line number12 index11 alt1">\n<div style="color: #c7254e;">\n<div class="line number17 index16 alt2">&nbsp; &nbsp; public&nbsp;function&nbsp;bar()</div>\n<div class="line number18 index17 alt1">&nbsp;&nbsp;&nbsp;&nbsp;{</div>\n<div class="line number18 index17 alt1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//c&oacute;digo com problema</div>\n<div class="line number11 index10 alt2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(&amp;$this-&gt;bar);</div>\n<div class="line number12 index11 alt1">&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n</div>\n</div>\n<div class="line number12 index11 alt1">&nbsp;\n<div class="line number12 index11 alt1">O recomend&aacute;vel &eacute; n&atilde;o utilizar par&ecirc;nteses em retornos.</div>\n<div style="color: #c7254e;">\n<div class="line number12 index11 alt1">\n<div class="line number17 index16 alt2">&nbsp; &nbsp; public&nbsp;function&nbsp;bar()</div>\n<div class="line number18 index17 alt1">&nbsp;&nbsp;&nbsp;&nbsp;{</div>\n<div class="line number11 index10 alt2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&amp;$this-&gt;bar;</div>\n<div class="line number12 index11 alt1">&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n</div>\n</div>\n<div class="line number12 index11 alt1">&nbsp;</div>\n<div class="line number12 index11 alt1">&nbsp;</div>\n<div class="line number12 index11 alt1">&nbsp;</div>\n<div class="line number12 index11 alt1">&nbsp;</div>\n<div class="line number12 index11 alt1"><strong>&nbsp;DICA 2 - &nbsp;Heran&ccedil;a em interfaces</strong></div>\n</div>\n<hr />\n<div class="line number13 index12 alt2">&nbsp;</div>\n<div class="line number14 index13 alt1">Heran&ccedil;a todo mundo conhece, mas voc&ecirc; sabia que &eacute; poss&iacute;vel criar heran&ccedil;a em interfaces?</div>\n<div class="line number14 index13 alt1">&nbsp;</div>\n<div class="line number14 index13 alt1">\n<div style="color: #c7254e;">\n<div class="line number27 index26 alt2">/**</div>\n<div class="line number28 index27 alt1">&nbsp;* Subcomponent exceptions</div>\n<div class="line number29 index28 alt2">&nbsp;*/</div>\n<div class="line number30 index29 alt1">// In Zend/Foo/Bar/Exception/ExceptionInterface.php</div>\n<div class="line number31 index30 alt2">namespace Zend\\Foo\\Bar\\Exception;</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number33 index32 alt2">use Zend\\Foo\\Exception\\ExceptionInterface as FooExceptionInterface;</div>\n<div class="line number34 index33 alt1">&nbsp;</div>\n<div class="line number35 index34 alt2">interface ExceptionInterface extends FooExceptionInterface</div>\n<div class="line number36 index35 alt1">{</div>\n<div class="line number37 index36 alt2">}</div>\n</div>\n<div class="line number37 index36 alt2">&nbsp;</div>\n<div class="line number37 index36 alt2">&nbsp;</div>\n<div class="line number37 index36 alt2">&nbsp;</div>\n<div class="line number37 index36 alt2"><strong>DICA 3 - Informa&ccedil;&atilde;o sobre fun&ccedil;&otilde;es, m&eacute;todos e classes offline</strong></div>\n<div class="line number37 index36 alt2"><hr />\n<div class="line number13 index12 alt2">&nbsp;</div>\n<div class="line number13 index12 alt2">Nesse caso pode-se utilizar a API de reflex&atilde;o do php, para exemplificar, execute os seguintes comandos no terminal:</div>\n<div class="line number13 index12 alt2">&nbsp;</div>\n<div class="line number13 index12 alt2">&nbsp;</div>\n<div class="line number13 index12 alt2">\n<div class="line number31 index30 alt2">\n<pre class="shellcode">$ php --rf strlen\n$ php --rc finfo\n$ php --re json\n$ php --ri dom</pre>\n</div>\n<div class="line number32 index31 alt1">Mais informa&ccedil;&otilde;es <a href="http://www.php.net/manual/en/book.reflection.php">aqui</a>.</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1"><strong>DICA 4 - Conhe&ccedil;a e sempre que poss&iacute;vel, utilize SPL</strong></div>\n<div class="line number32 index31 alt1"><hr />A SPL &eacute; a bliblioteca padr&atilde;o do php &nbsp;- Standard PHP Library, conhecendo-a voc&ecirc; pode sobreescrever o funcionamento de diversas fun&ccedil;&otilde;es pr&eacute;-concebidas para linguagem, exemplo - reescrevendo a fun&ccedil;&atilde;o count():</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div style="color: #c7254e;">\n<div class="line number32 index31 alt1"><span class="keyword">class&nbsp;</span><span class="default">CountMe&nbsp;</span><span class="keyword">implements&nbsp;</span><span class="default">Countable&nbsp;<br /></span><span class="keyword">{&nbsp;<br /><br />&nbsp;&nbsp;&nbsp; protected&nbsp;</span><span class="default">$_myCount&nbsp;</span><span class="keyword">=&nbsp;</span><span class="default">3</span><span class="keyword">;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp; public function&nbsp;</span><span class="default">count</span><span class="keyword">()&nbsp;<br />&nbsp;&nbsp;&nbsp; {&nbsp;<br />&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; return&nbsp;</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">_myCount</span><span class="keyword">;&nbsp;<br />&nbsp;&nbsp;&nbsp; }&nbsp;<br /><br />}&nbsp;<br /><br /></span><span class="default">$countable&nbsp;</span><span class="keyword">= new&nbsp;</span><span class="default">CountMe</span><span class="keyword">();&nbsp;<br />echo&nbsp;</span><span class="default">count</span><span class="keyword">(</span><span class="default">$countable</span><span class="keyword">); // o resultado ser&aacute; 3</span></div>\n</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1"><span class="comment">Mais informa&ccedil;&otilde;es <a href="http://php.net/manual/en/book.spl.php">aqui</a>.</span></div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1">&nbsp;</div>\n<div class="line number32 index31 alt1">\n<div class="line number37 index36 alt2">&nbsp;</div>\n<div class="line number37 index36 alt2"><strong>DICA 5 - PHP na linha de comando</strong></div>\n<div class="line number37 index36 alt2"><hr />\n<div class="line number13 index12 alt2">&nbsp;</div>\n<div class="line number13 index12 alt2">PHP tem in&uacute;meras funcionalidades via linha de comando, as que considero mais &uacute;teis s&atilde;o:</div>\n<div class="line number13 index12 alt2">&nbsp;&nbsp;</div>\n<div class="line number13 index12 alt2">\n<div class="line number31 index30 alt2">\n<pre class="shellcode">$ php -a //um shell iterativo php - estilo o do Python\n$ php -i //phpinfo() vers&atilde;o terminal\n</pre>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><strong>DICA 6 - Links &uacute;teis</strong></p>\n<hr />\n<div class="line number13 index12 alt2">&nbsp;<a href="http://www.phptherightway.com/">http://www.phptherightway.com/</a></div>\n<p><br /><br /><br /></p>\n<p><img src="http://www.php.net/images/logo.php" alt="" width="68" height="34" /><br /> Se voc&ecirc; tem alguma sugest&atilde;o &agrave; este post, fique &agrave; vontade de me contatar por e-mail.</p>\n<p><br /><br /></p>', 1, '2014-05-17 00:00:00', 1, 1),
+(15, 'To Record', '<p>If it is annoying you simply get rid of it.</p>\n<p>&nbsp;</p>\n<p>The hardest first</p>', 0, '2014-06-10 00:00:00', 1, 1),
+(16, 'Facilitando a vida - backup de banco de dados', '<p>Todo o programador minimamente descente utiliza alguma esp&eacute;cie de controle de vers&atilde;o em seus projetos - geralmente acompanhado por um servi&ccedil;o de hopedagem como o Github. Essa estrat&eacute;gia&nbsp;garante, ou quase, que o c&oacute;digo n&atilde;o se perca; contudo, muitas vezes essas ferramentas n&atilde;o solucionam&nbsp;um aspecto muito comum de problemas de software: a persist&ecirc;ncia do banco de dados. E, no caso de programadores backend, muitas vezes o database no servidor de testes fica dias defazado em rela&ccedil;&atilde;o ao database em sua m&aacute;quina.&nbsp;Em vista desse problema criei dois scripts: um para efeturar um backup de todo o sgbd, e outro para importar os dados novamente.&nbsp;Este post &eacute; dedicado a explicar o funcionamento destes scripts.</p>\n<p><img src="http://www.mysql.com/common/logos/logo-mysql-110x57.png" alt="" width="110" height="57" /></p>\n<p>&nbsp;</p>\n<p><strong>databases-save</strong></p>\n<p>Este comando conecta ao sgbd e exporta cada database para um arquivo chamado: nomedobanco.sql, respectivamente. No exemplo abaixo est&aacute; descrito como utilizar o script para exportar os bancos de dados &agrave; cada hora utilizando&nbsp;o cron em um sistema Linux. A op&ccedil;&atilde;o -v &eacute; para tornar a execu&ccedil;&atilde;o mais detalhada (verbose). Caso o arquivo j&aacute; existe o script sobreescreve o arquivo com o novo conte&uacute;do. &nbsp;Para mais op&ccedil;&otilde;es pode-se encontrar a documeta&ccedil;&atilde;o com o par&acirc;metro&nbsp;--help.</p>\n<p>Exemplo:</p>\n<p><em>echo "0 * * * * root /projects/devil-database-utilities/databases-save -v /projects/databases" &gt; /tmp/cron-save-database; crontab /tmp/cron-save-database</em></p>\n<p>&nbsp;</p>\n<p><strong>database-setup-folder</strong></p>\n<p>Este comando importa todos os arquivos .sql encontrados no diret&oacute;rio passado, criando o banco de dados com o nome do arquivo - excluindo a parte ".sql".</p>\n<p>Exemplo:</p>\n<p><em>/projects/devil-database-utilities/database-setup-folder -v /projects/databases</em></p>\n<p>&nbsp;</p>\n<p>Fica f&aacute;cil de ver como so dois scripts podem trabalhar em conjunto, um exportando em uma m&aacute;quina com os bancos j&aacute; instalados, e o outro criando os bancos &agrave; partir do mesmo diret&oacute;rio contendo os bancos que o primeiro exportou.</p>\n<p>Utilizando-se das vantagens do cron - como acima demonstrado - &nbsp;pode-se obter uma automatiza&ccedil;&atilde;o relevante. Uma utiliza&ccedil;&atilde;o&nbsp;interessante, &eacute; colocar o diret&oacute;rio em algum servi&ccedil;o da nuvem a fim de que os dados n&atilde;o se percam, algo do tipo: ~/Dropbox/databases. Todavia, acredito&nbsp;que o caso mais &uacute;til deste sistema de backup de banco &eacute; utilizando um sistema de virtualiza&ccedil;&atilde;o do ambiente de desenvolvimento como o vagrant - utilizado no meu caso.</p>\n<p>&nbsp;</p>\n<p>Apesar de solu&ccedil;&otilde;es extremamente simples dispon&iacute;veis, backups dos bancos de dados no ambiente de desenvolvimento s&atilde;o muitas vezes deixados de lado, somente lembrados ap&oacute;s alguma&nbsp;esp&eacute;cie de desastre. Similar a este t&oacute;pico &eacute; a automatiza&ccedil;&atilde;o de processos do git - a qual estou desenvolvendo um projeto bem maior - que pode ser encontrado <a href="https://github.com/jeanCarloMachado/devil-easy-git">aqui</a>, assunto que&nbsp;em outro momento tratarei em meu blog. Para um exemplo de utiliza&ccedil;&atilde;o desses scripts com o vagrant, <a href="https://github.com/jeanCarloMachado/vagrant">aqui</a>&nbsp;pode-se encontrar meu projeto de webserver com vagrant - utilizados da mesma forma que dispostos nos exemplos. Em outro post tamb&eacute;m pretendo abordar vagrant para webservers com profundidade.</p>\n<p>&nbsp;</p>\n<p>Os scripts aqui mencionados encontram-se ne github e podem ser clonados/baixos <a href="https://github.com/jeanCarloMachado/devil-database-utilities">aqui</a>.</p>\n<p>D&uacute;vidas, dicas e sujest&otilde;es atrav&eacute;s do contato do site ou como uma issue no projeto.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>', 1, '2014-06-12 00:00:00', 1, 1),
+(17, 'Ricard Dawkins - Militant Atheism - TED talk - Work in progress', '<p>I transcript and translated this awsome Richard Dawkin''s TED talk, that you can see here.</p>\n<p>&nbsp;</p>\n<p>That splendid music, the comming in music. The triumphal&nbsp;march from Aida&nbsp;is the music I chosen for my funneral, and you can see why it is triumphal. I am, i will, i wont feel anything - but if i could i would feel triumphal at having lived at all. And having lived in this esplendid planet, and having me given the opportunity to understand something about why i was where in the first place before note being here. Can you understand my quaint english accent?.</p>\n<p>&nbsp;</p>\n<p>Smiles</p>\n<p>Like everybody else i was entraced yesterday by the animal session Robbert Foll and Franz Lanting, &nbsp;anothers. The beauty of the things that they showed, the only slide jaring note was when Jafrey said the mustang the most explendid creatures that god put on these earth. Now of&nbsp;course we know that he dont really mean that, but on this country at the moment you cant be too careful. Im a biologist and the central theory of our subject, the theory of design: Darwins theory of evolution by natural selection. In professional circles everywhere its of course universally accepted. In non professional circles outside america its largely ignored, but in non professional circles whithin america it arises so much hostility that its fair to say that the american biologists are in state of war. The war is so warry against pressent whit coath cases comming one state after another that i feel i have to say somethig about it. If you want to know what i have to say about Darwinism itself i''m afraid you have to look at my books which&nbsp;you wont find in&nbsp;the bookstore outside.</p>\n<p>&nbsp;</p>\n<p>Contempory coath cases often concerns a enegely new version of creationism called intelligent design or id. Dont be fooled theres nothing new about id, it''s just creationism under another name. Were''re christand &nbsp;- i choose the world advairsly - &nbsp;for tatical political reasons, the arguments&nbsp;of the so called id theory are the same&nbsp;old arguments that have beign refuted again and again since Darwin down to the present days. There is an effective evolution lobby coordenating the fight on behalf of science and i tried to do what i can to help them. But them get quite upset when people like me dare to mention that we happen to be atheists as well as evolutionists. They see us as rocking the boat, you can understand why. Creationists is lacking any coherent scientific argument for their case &nbsp;- fallback on the popular phobia against atheism. Teach your children evolution in biology class and they will soon move to drugs, grand alluciny and sexual prevation.&nbsp;</p>\n<p>In fact of course educated theologians from the pope down affirming their support in evolution. This book "Find Darwings God" by Kenneth Muller is one of the most affective attacks on Intelligent Design as&nbsp;I know and its also more affective because it is written by a devoted Christian. People like Kenneth Muller could be called a god sent to the evolution lobby. Because they expose the lie that evolutionism is as matter of fact tent do mount o atheism; people like me on the other hand, rock the boat. But here i want to say something nice about creationists and its not the thing i often do so listen carefuly. I think that they are right about one thing, i thing they are right that evolution is fundamentally hostile to religion. I have already said that many individually evolutionists its like the pope - but also religios but i think they are delluding theirselfs. I beleve a true undestanding of Darwinism is deeply corosive to religious faith. Now it may sound as thought&nbsp;im about to preach atheism. And i want to reassure you that is not im going&nbsp;to do. In an audience as sophisticated as this one that would be preaching to the quire. Instead what i want to urge upon you is militant atheism. But that is putting it too negatively. If i was a person who are interested in preserving religious faith i would be very afraid of the positive power of evoulution &nbsp;science generally but evolution in particular to inspire and entroll preciselly because it is atheistic.</p>\n<p>&nbsp;</p>\n<p>Now the difficult problem for any&nbsp;theory of biological design is to explain the massive statistica improbability of living things. Statistical improbability in a direction of good design, complexity is no the word for this. The standard creatinist argument, there is only one, they all reduce for this one, takes off from statistical improbability: "Living creatures are too complex to have come about from change - therefore there''s must have a designer".</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>', 0, '2014-06-13 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackceo_metatags`
+-- Table structure for table `ackceo_metatags`
 --
 
 CREATE TABLE IF NOT EXISTS `ackceo_metatags` (
@@ -184,19 +199,32 @@ CREATE TABLE IF NOT EXISTS `ackceo_metatags` (
   `class_name` varchar(255) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
--- Extraindo dados da tabela `ackceo_metatags`
+-- Dumping data for table `ackceo_metatags`
 --
 
 INSERT INTO `ackceo_metatags` (`id`, `title`, `author`, `description`, `keywords`, `robots`, `revisit`, `class_name`, `related_id`) VALUES
-(1, 'Vida de backend', 'Jean Carlo Machado', 'Blog sobre a vida de um profissional backend', 'Programação, Computação, Desenvolvimento de sistemas, PHP, C, C++, Padrões de Projetos', '1', '7', '', 0);
+(1, 'Vida de backend', 'Jean Carlo Machado', 'Blog sobre a vida de um profissional backend', 'Programação, Computação, Desenvolvimento de sistemas, PHP, C, C++, Padrões de Projetos', '1', '7', '', 0),
+(2, 'Do Software Livre e da Liberadade dos Usuários', 'Jean Carlo Machado', 'Conceitos chave sobre o software livre e os problemas decorrentes de uma sociedade de código fechado.', 'GNU, Software livre, sociedade, Stallman', '1', '', '\\AckBlog\\Model\\Posts', 4),
+(3, 'Casos interessantes para o uso de traits', 'Jean Carlo Machado', 'Alguns exemplos de como a funcionalidade de traits do php pode ser utilizada sem que se destruam os conceitos de OO.', 'PHP, traits, 5.4', '1', '', '\\AckBlog\\Model\\Posts', 3),
+(4, 'Controle de hardware via porta paralela', 'Jean Carlo Machado', 'Guia rápido para programação de porta paralela utilizando C', 'C, Porta paralela', '1', '7', '\\AckBlog\\Model\\Posts', 5),
+(5, 'NGINX com FastCGI lado a lado com o APACHE', 'Jean Carlo Machado', 'Aborda a instalação do NGINX com suporte à múltiplas versões do PHP funcional quando em paralelo com o Apache.', 'NGINX, CENTOS, Servidor web, PHP, Fast-CGI', '', '', '\\AckBlog\\Model\\Posts', 6),
+(6, '', '', '', '', '', '', '\\AckBlog\\Model\\Posts', 7),
+(7, '', '', '', '', '', '', '\\AckBlog\\Model\\Posts', 10),
+(8, 'Sobre Jean Carlo Machado', 'Jean Carlo Machado', 'Breve descrição sobre Jean e os trabalhos que desenvolveu', 'Programador, PHP, Zend Framework', '', '7', '\\AckBlog\\Model\\Posts', 2),
+(9, 'Curiosidades e dicas sobre PHP', 'Jean Carlo Machado', 'Este post é dedicado a apresentar algumas dicas e curiosidades sobre PHP que estão, normalmente, distanciadas do senso comum.', 'PHP, boas práticas, curiosidades', '1', '7', '\\AckBlog\\Model\\Posts', 13),
+(10, 'Git essentials', 'Jean Carlo Machado', ' This post aims to be a set of commands and definition of what i consider essential to the development of well versioned projects using Git.', 'Git, facilities, pratical', '1', '7', '\\AckBlog\\Model\\Posts', 11),
+(11, 'The God Delusion Ending', 'Richard Dawkings', 'Richard Dawkings inspirational talk - freely translated', '', '', '', '\\AckBlog\\Model\\Posts', 14),
+(12, '', '', '', '', '1', '7', '\\AckBlog\\Model\\Posts', 15),
+(13, 'Facilitando a vida - backup de banco de dados', 'Jean Carlo Machado', 'Scripts para automatizar backup’s no MySQL', 'Mysql, bash script, backup, bash', '1', '7', '\\AckBlog\\Model\\Posts', 16),
+(14, 'Ricard Dawkins - Militant Atheism - TED talk', 'Jean Carlo Machado', '', 'Atheism, TED, Richard Dawkings', '1', '7', '\\AckBlog\\Model\\Posts', 17);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackcontact_contato_simples`
+-- Table structure for table `ackcontact_contato_simples`
 --
 
 CREATE TABLE IF NOT EXISTS `ackcontact_contato_simples` (
@@ -208,19 +236,22 @@ CREATE TABLE IF NOT EXISTS `ackcontact_contato_simples` (
   `status` tinyint(4) NOT NULL DEFAULT '1',
   `visivel` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Extraindo dados da tabela `ackcontact_contato_simples`
+-- Dumping data for table `ackcontact_contato_simples`
 --
 
 INSERT INTO `ackcontact_contato_simples` (`id`, `email`, `conteudo`, `data`, `lido`, `status`, `visivel`) VALUES
-(1, 'jean@icub.com.br', '<p>123456 asdfasd</p>', '2014-03-07 00:00:00', 0, 1, 1);
+(1, 'jean@icub.com.br', '<p>123456 asdfasd</p>', '2014-03-07 00:00:00', 0, 1, 1),
+(14, 'teste@jeancarlomachado.com.br', 'teste teste', '2014-03-03 21:30:02', 0, 1, 1),
+(15, 'teste', 'teste', '2014-03-07 01:00:13', 0, 1, 1),
+(16, 'edson.machado@yahoo.com.br', 'Quero saber como anda este programador formidável, além de tudo um adorável filho.', '2014-05-20 20:35:48', 0, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackcontact_mensagem`
+-- Table structure for table `ackcontact_mensagem`
 --
 
 CREATE TABLE IF NOT EXISTS `ackcontact_mensagem` (
@@ -235,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `ackcontact_mensagem` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Extraindo dados da tabela `ackcontact_mensagem`
+-- Dumping data for table `ackcontact_mensagem`
 --
 
 INSERT INTO `ackcontact_mensagem` (`id`, `remetente_id`, `destinatario_id`, `titulo`, `mensagem`, `data`, `status`) VALUES
@@ -244,7 +275,7 @@ INSERT INTO `ackcontact_mensagem` (`id`, `remetente_id`, `destinatario_id`, `tit
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackcontact_notificacao`
+-- Table structure for table `ackcontact_notificacao`
 --
 
 CREATE TABLE IF NOT EXISTS `ackcontact_notificacao` (
@@ -259,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `ackcontact_notificacao` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Extraindo dados da tabela `ackcontact_notificacao`
+-- Dumping data for table `ackcontact_notificacao`
 --
 
 INSERT INTO `ackcontact_notificacao` (`id`, `titulo`, `conteudo`, `tipo_id`, `usuario_id`, `visivel`, `status`) VALUES
@@ -269,7 +300,7 @@ INSERT INTO `ackcontact_notificacao` (`id`, `titulo`, `conteudo`, `tipo_id`, `us
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackcontent_ajuda`
+-- Table structure for table `ackcontent_ajuda`
 --
 
 CREATE TABLE IF NOT EXISTS `ackcontent_ajuda` (
@@ -284,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `ackcontent_ajuda` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Extraindo dados da tabela `ackcontent_ajuda`
+-- Dumping data for table `ackcontent_ajuda`
 --
 
 INSERT INTO `ackcontent_ajuda` (`id`, `titulo`, `descricao`, `categoria_id`, `ordem`, `visivel`, `status`) VALUES
@@ -294,7 +325,7 @@ INSERT INTO `ackcontent_ajuda` (`id`, `titulo`, `descricao`, `categoria_id`, `or
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackcontent_ajuda_categoria`
+-- Table structure for table `ackcontent_ajuda_categoria`
 --
 
 CREATE TABLE IF NOT EXISTS `ackcontent_ajuda_categoria` (
@@ -307,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `ackcontent_ajuda_categoria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Extraindo dados da tabela `ackcontent_ajuda_categoria`
+-- Dumping data for table `ackcontent_ajuda_categoria`
 --
 
 INSERT INTO `ackcontent_ajuda_categoria` (`id`, `nome`, `ordem`, `status`, `visivel`) VALUES
@@ -317,7 +348,7 @@ INSERT INTO `ackcontent_ajuda_categoria` (`id`, `nome`, `ordem`, `status`, `visi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_categoria`
+-- Table structure for table `ackknow_categoria`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_categoria` (
@@ -329,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `ackknow_categoria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Extraindo dados da tabela `ackknow_categoria`
+-- Dumping data for table `ackknow_categoria`
 --
 
 INSERT INTO `ackknow_categoria` (`id`, `nome`, `status`, `visivel`) VALUES
@@ -348,7 +379,7 @@ INSERT INTO `ackknow_categoria` (`id`, `nome`, `status`, `visivel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_categoria_hierarquia`
+-- Table structure for table `ackknow_categoria_hierarquia`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_categoria_hierarquia` (
@@ -360,15 +391,10 @@ CREATE TABLE IF NOT EXISTS `ackknow_categoria_hierarquia` (
   KEY `fk_ack_conhecimento_categoria_has_ack_conhecimento_categoria_` (`categoria_superior_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Extraindo dados da tabela `ackknow_categoria_hierarquia`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_conhecimento`
+-- Table structure for table `ackknow_conhecimento`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_conhecimento` (
@@ -386,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `ackknow_conhecimento` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=60 ;
 
 --
--- Extraindo dados da tabela `ackknow_conhecimento`
+-- Dumping data for table `ackknow_conhecimento`
 --
 
 INSERT INTO `ackknow_conhecimento` (`id`, `titulo`, `abstrato`, `usuario_id`, `ultima_alteracao`, `total_lido`, `status`, `visivel`, `categoria_principal`) VALUES
@@ -454,7 +480,7 @@ INSERT INTO `ackknow_conhecimento` (`id`, `titulo`, `abstrato`, `usuario_id`, `u
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_conhecimento_relacao`
+-- Table structure for table `ackknow_conhecimento_relacao`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_conhecimento_relacao` (
@@ -464,15 +490,10 @@ CREATE TABLE IF NOT EXISTS `ackknow_conhecimento_relacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Extraindo dados da tabela `ackknow_conhecimento_relacao`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_debate`
+-- Table structure for table `ackknow_debate`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_debate` (
@@ -485,7 +506,7 @@ CREATE TABLE IF NOT EXISTS `ackknow_debate` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Extraindo dados da tabela `ackknow_debate`
+-- Dumping data for table `ackknow_debate`
 --
 
 INSERT INTO `ackknow_debate` (`id`, `tema`, `abstrato`, `visivel`, `status`) VALUES
@@ -505,7 +526,7 @@ INSERT INTO `ackknow_debate` (`id`, `tema`, `abstrato`, `visivel`, `status`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackknow_exercicio`
+-- Table structure for table `ackknow_exercicio`
 --
 
 CREATE TABLE IF NOT EXISTS `ackknow_exercicio` (
@@ -519,7 +540,7 @@ CREATE TABLE IF NOT EXISTS `ackknow_exercicio` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Extraindo dados da tabela `ackknow_exercicio`
+-- Dumping data for table `ackknow_exercicio`
 --
 
 INSERT INTO `ackknow_exercicio` (`id`, `pergunta`, `resposta`, `conhecimento_id`, `status`, `visivel`) VALUES
@@ -530,7 +551,7 @@ INSERT INTO `ackknow_exercicio` (`id`, `pergunta`, `resposta`, `conhecimento_id`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `acklocale_cidade`
+-- Table structure for table `acklocale_cidade`
 --
 
 CREATE TABLE IF NOT EXISTS `acklocale_cidade` (
@@ -543,7 +564,7 @@ CREATE TABLE IF NOT EXISTS `acklocale_cidade` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5591 ;
 
 --
--- Extraindo dados da tabela `acklocale_cidade`
+-- Dumping data for table `acklocale_cidade`
 --
 
 INSERT INTO `acklocale_cidade` (`id`, `nome`, `cep`, `estado_id`) VALUES
@@ -6144,7 +6165,7 @@ INSERT INTO `acklocale_cidade` (`id`, `nome`, `cep`, `estado_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `acklocale_estado`
+-- Table structure for table `acklocale_estado`
 --
 
 CREATE TABLE IF NOT EXISTS `acklocale_estado` (
@@ -6155,7 +6176,7 @@ CREATE TABLE IF NOT EXISTS `acklocale_estado` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
--- Extraindo dados da tabela `acklocale_estado`
+-- Dumping data for table `acklocale_estado`
 --
 
 INSERT INTO `acklocale_estado` (`id`, `nome`, `sigla`) VALUES
@@ -6190,7 +6211,7 @@ INSERT INTO `acklocale_estado` (`id`, `nome`, `sigla`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ackusers_usuario`
+-- Table structure for table `ackusers_usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `ackusers_usuario` (
@@ -6212,16 +6233,16 @@ CREATE TABLE IF NOT EXISTS `ackusers_usuario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Extraindo dados da tabela `ackusers_usuario`
+-- Dumping data for table `ackusers_usuario`
 --
 
 INSERT INTO `ackusers_usuario` (`id`, `nome`, `email`, `senha`, `inclusao_data`, `ultimo_acesso`, `salt`, `foreign_id`, `class_name`, `endereco`, `cidade_id`, `fone`, `empresa_id`, `filial_id`) VALUES
-(1, 'Jean Carlo Machado', 'jean@icub.com.br', 'e10adc3949ba59abbe56e057f20f883e', '2014-02-06 00:00:00', '2013-11-21 00:00:00', 'ZMTw1tfdhW0=', 0, '', 'asdfasd', 0, '(12) 3412-3412', 0, 2);
+(1, 'Jean Carlo Machado', 'contato@jeancarlomachado.com.br', '82710fd61f01a4563bc0d558a218dbc7', '2014-02-06 00:00:00', '2013-11-21 00:00:00', 'ZMTw1tfdhW0=', 0, '', 'Rua Pedro Guerra, 412, Bairro Ponte Seca, Carlos Barbosa, Rio Grande do Sul.', 0, '(54) 91342171', 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_conteudos`
+-- Table structure for table `ack_conteudos`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_conteudos` (
@@ -6240,7 +6261,7 @@ CREATE TABLE IF NOT EXISTS `ack_conteudos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=171 ;
 
 --
--- Extraindo dados da tabela `ack_conteudos`
+-- Dumping data for table `ack_conteudos`
 --
 
 INSERT INTO `ack_conteudos` (`id`, `identificador`, `acoes`, `titulo`, `descricao`, `titulo_ajuda`, `conteudo_ajuda`, `valor_default`, `front`, `status`, `visivel`) VALUES
@@ -6420,7 +6441,7 @@ INSERT INTO `ack_conteudos` (`id`, `identificador`, `acoes`, `titulo`, `descrica
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuarios_grupos`
+-- Table structure for table `ack_usuarios_grupos`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos` (
@@ -6434,7 +6455,7 @@ CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='grupos de usuários no banco tabela real (não relacao)' AUTO_INCREMENT=5 ;
 
 --
--- Extraindo dados da tabela `ack_usuarios_grupos`
+-- Dumping data for table `ack_usuarios_grupos`
 --
 
 INSERT INTO `ack_usuarios_grupos` (`id`, `nome`, `descricao_pt`, `ordem`, `visivel`, `status`) VALUES
@@ -6446,7 +6467,7 @@ INSERT INTO `ack_usuarios_grupos` (`id`, `nome`, `descricao_pt`, `ordem`, `visiv
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuarios_grupos_hierarquia`
+-- Table structure for table `ack_usuarios_grupos_hierarquia`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos_hierarquia` (
@@ -6457,7 +6478,7 @@ CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos_hierarquia` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Extraindo dados da tabela `ack_usuarios_grupos_hierarquia`
+-- Dumping data for table `ack_usuarios_grupos_hierarquia`
 --
 
 INSERT INTO `ack_usuarios_grupos_hierarquia` (`id`, `master_id`, `slave_id`) VALUES
@@ -6466,7 +6487,7 @@ INSERT INTO `ack_usuarios_grupos_hierarquia` (`id`, `master_id`, `slave_id`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuarios_grupos_permissoes`
+-- Table structure for table `ack_usuarios_grupos_permissoes`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos_permissoes` (
@@ -6477,15 +6498,10 @@ CREATE TABLE IF NOT EXISTS `ack_usuarios_grupos_permissoes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Extraindo dados da tabela `ack_usuarios_grupos_permissoes`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuarios_hierarquia`
+-- Table structure for table `ack_usuarios_hierarquia`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuarios_hierarquia` (
@@ -6495,15 +6511,10 @@ CREATE TABLE IF NOT EXISTS `ack_usuarios_hierarquia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Extraindo dados da tabela `ack_usuarios_hierarquia`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuario_configuracao`
+-- Table structure for table `ack_usuario_configuracao`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuario_configuracao` (
@@ -6519,7 +6530,7 @@ CREATE TABLE IF NOT EXISTS `ack_usuario_configuracao` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Extraindo dados da tabela `ack_usuario_configuracao`
+-- Dumping data for table `ack_usuario_configuracao`
 --
 
 INSERT INTO `ack_usuario_configuracao` (`id`, `ip`, `lang`, `usuario_id`, `main_menu_cache`, `status`, `visivel`) VALUES
@@ -6530,7 +6541,7 @@ INSERT INTO `ack_usuario_configuracao` (`id`, `ip`, `lang`, `usuario_id`, `main_
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_usuario_grupo`
+-- Table structure for table `ack_usuario_grupo`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_usuario_grupo` (
@@ -6541,7 +6552,7 @@ CREATE TABLE IF NOT EXISTS `ack_usuario_grupo` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='tabela de relação entre os grupos de usuários e os usuários' AUTO_INCREMENT=5 ;
 
 --
--- Extraindo dados da tabela `ack_usuario_grupo`
+-- Dumping data for table `ack_usuario_grupo`
 --
 
 INSERT INTO `ack_usuario_grupo` (`id`, `grupo_id`, `usuario_id`) VALUES
@@ -6552,7 +6563,7 @@ INSERT INTO `ack_usuario_grupo` (`id`, `grupo_id`, `usuario_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ack_visitas`
+-- Table structure for table `ack_visitas`
 --
 
 CREATE TABLE IF NOT EXISTS `ack_visitas` (
@@ -6560,24 +6571,1046 @@ CREATE TABLE IF NOT EXISTS `ack_visitas` (
   `data` datetime NOT NULL,
   `ip` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1022 ;
 
 --
--- Extraindo dados da tabela `ack_visitas`
+-- Dumping data for table `ack_visitas`
 --
 
 INSERT INTO `ack_visitas` (`id`, `data`, `ip`) VALUES
 (1, '2014-02-22 23:04:20', '127.0.0.1'),
 (2, '2014-03-01 15:08:43', '127.0.0.1'),
-(3, '2014-03-02 14:28:16', '127.0.0.1');
+(3, '2014-03-02 14:28:16', '127.0.0.1'),
+(4, '2014-03-03 00:05:55', '201.35.190.82'),
+(5, '2014-03-03 00:15:53', '66.220.158.112'),
+(6, '2014-03-03 00:16:02', '201.35.176.94'),
+(7, '2014-03-03 00:16:03', '173.252.73.118'),
+(8, '2014-03-03 13:16:03', '192.169.84.93'),
+(9, '2014-03-03 13:17:04', '142.91.245.130'),
+(10, '2014-03-03 13:17:14', '142.91.245.132'),
+(11, '2014-03-03 13:17:33', '142.91.245.136'),
+(12, '2014-03-03 13:17:35', '108.177.181.237'),
+(13, '2014-03-03 13:17:37', '74.63.226.142'),
+(14, '2014-03-03 13:18:03', '74.63.226.139'),
+(15, '2014-03-03 13:18:38', '142.91.245.141'),
+(16, '2014-03-03 13:19:02', '192.169.84.89'),
+(17, '2014-03-03 13:19:17', '192.169.84.90'),
+(18, '2014-03-03 13:24:17', '108.177.181.238'),
+(19, '2014-03-03 13:24:33', '142.91.245.134'),
+(20, '2014-03-03 13:24:52', '142.91.245.137'),
+(21, '2014-03-03 13:25:03', '142.91.245.142'),
+(22, '2014-03-03 13:25:09', '142.91.245.135'),
+(23, '2014-03-03 13:27:03', '108.177.181.236'),
+(24, '2014-03-03 13:27:26', '142.91.245.133'),
+(25, '2014-03-03 13:28:45', '108.177.181.235'),
+(26, '2014-03-03 13:29:14', '74.63.226.141'),
+(27, '2014-03-03 13:30:00', '192.169.84.91'),
+(28, '2014-03-03 13:30:48', '208.115.242.115'),
+(29, '2014-03-03 13:32:58', '142.91.245.131'),
+(30, '2014-03-03 13:35:04', '198.204.231.179'),
+(31, '2014-03-03 13:35:54', '23.19.89.174'),
+(32, '2014-03-03 14:55:51', '190.120.227.251'),
+(33, '2014-03-03 16:11:06', '201.35.190.82'),
+(34, '2014-03-03 16:51:02', '201.89.152.219'),
+(35, '2014-03-03 17:05:08', '184.168.87.30'),
+(36, '2014-03-03 21:20:48', '177.6.39.210'),
+(37, '2014-03-04 04:03:02', '66.249.75.216'),
+(38, '2014-03-04 08:41:29', '179.218.164.73'),
+(39, '2014-03-04 08:45:32', '177.156.250.18'),
+(40, '2014-03-04 09:06:05', '177.156.32.42'),
+(41, '2014-03-04 11:00:03', '201.35.190.82'),
+(42, '2014-03-04 11:18:36', '200.232.207.249'),
+(43, '2014-03-04 13:30:39', '189.63.134.201'),
+(44, '2014-03-04 13:56:49', '187.10.158.249'),
+(45, '2014-03-04 15:24:03', '179.190.143.247'),
+(46, '2014-03-04 16:09:38', '187.66.180.200'),
+(47, '2014-03-04 17:18:13', '177.4.29.119'),
+(48, '2014-03-04 18:25:58', '65.55.213.70'),
+(49, '2014-03-04 22:12:16', '201.47.10.161'),
+(50, '2014-03-05 00:05:22', '201.23.162.6'),
+(51, '2014-03-05 03:17:11', '80.82.70.118'),
+(52, '2014-03-05 07:14:37', '187.1.141.29'),
+(53, '2014-03-05 09:45:06', '177.4.26.97'),
+(54, '2014-03-05 17:54:21', '192.0.82.173'),
+(55, '2014-03-06 00:38:57', '65.55.213.70'),
+(56, '2014-03-06 11:39:14', '177.4.26.97'),
+(57, '2014-03-06 13:22:10', '189.103.37.94'),
+(58, '2014-03-06 14:47:27', '200.132.6.6'),
+(59, '2014-03-06 21:38:30', '187.54.188.8'),
+(60, '2014-03-07 09:34:30', '66.249.76.176'),
+(61, '2014-03-08 10:03:46', '14.145.153.242'),
+(62, '2014-03-08 12:43:53', '201.23.163.9'),
+(63, '2014-03-09 08:26:07', '157.55.36.49'),
+(64, '2014-03-10 21:04:54', '66.249.64.23'),
+(65, '2014-03-11 02:51:20', '201.21.230.62'),
+(66, '2014-03-11 19:51:23', '201.35.149.148'),
+(67, '2014-03-12 09:04:52', '201.35.149.148'),
+(68, '2014-03-12 16:58:54', '69.164.111.198'),
+(69, '2014-03-12 20:09:52', '187.5.236.140'),
+(70, '2014-03-14 12:12:09', '187.5.236.140'),
+(71, '2014-03-14 16:49:09', '65.55.213.70'),
+(72, '2014-03-15 01:19:40', '177.130.47.105'),
+(73, '2014-03-15 01:20:50', '75.98.9.252'),
+(74, '2014-03-15 12:31:46', '187.36.13.89'),
+(75, '2014-03-15 13:39:36', '38.99.82.191'),
+(76, '2014-03-16 03:14:37', '66.249.73.176'),
+(77, '2014-03-16 21:21:06', '66.249.74.76'),
+(78, '2014-03-17 13:48:01', '200.102.112.254'),
+(79, '2014-03-19 00:04:26', '200.102.112.254'),
+(80, '2014-03-20 10:30:50', '66.249.76.176'),
+(81, '2014-03-21 18:19:32', '189.103.37.94'),
+(82, '2014-03-22 08:23:04', '66.249.64.203'),
+(83, '2014-03-22 12:35:50', '64.246.165.170'),
+(84, '2014-03-22 23:40:13', '177.6.38.202'),
+(85, '2014-03-23 00:26:50', '78.129.148.101'),
+(86, '2014-03-23 00:30:10', '66.249.82.216'),
+(87, '2014-03-23 01:17:34', '62.210.129.149'),
+(88, '2014-03-23 01:21:12', '37.130.227.133'),
+(89, '2014-03-23 01:21:59', '194.132.32.42'),
+(90, '2014-03-23 01:29:11', '178.32.181.105'),
+(91, '2014-03-23 01:30:36', '89.207.132.76'),
+(92, '2014-03-23 01:32:18', '96.47.226.21'),
+(93, '2014-03-23 01:32:51', '185.16.200.176'),
+(94, '2014-03-23 01:32:58', '185.17.93.142'),
+(95, '2014-03-23 01:33:05', '46.167.245.172'),
+(96, '2014-03-23 01:33:19', '176.67.169.223'),
+(97, '2014-03-23 01:33:26', '78.108.63.44'),
+(98, '2014-03-23 01:33:41', '173.254.216.66'),
+(99, '2014-03-23 01:33:49', '171.25.193.20'),
+(100, '2014-03-23 01:37:11', '37.59.40.61'),
+(101, '2014-03-23 01:37:18', '96.44.189.102'),
+(102, '2014-03-23 01:37:32', '77.247.181.162'),
+(103, '2014-03-23 01:37:37', '171.25.193.131'),
+(104, '2014-03-23 01:37:52', '96.47.226.22'),
+(105, '2014-03-23 01:37:58', '128.117.43.92'),
+(106, '2014-03-23 01:38:03', '79.172.193.32'),
+(107, '2014-03-23 01:38:09', '95.130.9.89'),
+(108, '2014-03-23 01:38:15', '88.80.187.215'),
+(109, '2014-03-23 01:38:21', '77.247.181.164'),
+(110, '2014-03-23 01:38:25', '77.109.139.26'),
+(111, '2014-03-23 01:38:29', '199.87.154.255'),
+(112, '2014-03-23 01:38:38', '144.76.16.66'),
+(113, '2014-03-23 01:39:09', '62.210.206.25'),
+(114, '2014-03-23 01:39:59', '94.126.178.1'),
+(115, '2014-03-23 01:40:03', '178.254.39.32'),
+(116, '2014-03-23 01:40:18', '178.32.181.107'),
+(117, '2014-03-23 01:40:33', '77.109.141.138'),
+(118, '2014-03-23 01:40:41', '213.108.105.253'),
+(119, '2014-03-23 01:40:46', '5.104.224.246'),
+(120, '2014-03-23 01:40:56', '37.218.245.206'),
+(121, '2014-03-23 01:41:05', '94.102.49.175'),
+(122, '2014-03-23 01:41:11', '72.52.91.30'),
+(123, '2014-03-23 01:41:17', '178.33.67.197'),
+(124, '2014-03-23 01:41:49', '79.134.234.200'),
+(125, '2014-03-23 01:41:54', '212.83.187.52'),
+(126, '2014-03-23 01:42:02', '178.32.181.108'),
+(127, '2014-03-23 01:42:08', '193.110.157.151'),
+(128, '2014-03-23 01:42:13', '112.169.153.61'),
+(129, '2014-03-23 01:42:36', '64.113.32.29'),
+(130, '2014-03-23 01:42:50', '178.217.187.39'),
+(131, '2014-03-23 01:42:54', '96.44.189.101'),
+(132, '2014-03-23 01:43:02', '74.120.13.132'),
+(133, '2014-03-23 01:43:07', '96.47.226.20'),
+(134, '2014-03-23 01:43:25', '204.8.156.142'),
+(135, '2014-03-23 01:43:35', '91.233.116.68'),
+(136, '2014-03-23 01:45:34', '37.59.162.218'),
+(137, '2014-03-23 01:45:40', '178.218.212.214'),
+(138, '2014-03-23 01:45:53', '79.134.235.5'),
+(139, '2014-03-23 01:46:04', '72.52.91.19'),
+(140, '2014-03-23 01:46:14', '128.204.203.103'),
+(141, '2014-03-23 01:46:26', '18.187.1.68'),
+(142, '2014-03-23 01:46:41', '178.32.181.110'),
+(143, '2014-03-23 01:46:47', '46.149.22.4'),
+(144, '2014-03-23 01:47:03', '185.2.138.125'),
+(145, '2014-03-23 01:47:12', '178.32.181.97'),
+(146, '2014-03-23 01:47:40', '178.175.139.138'),
+(147, '2014-03-23 01:47:55', '37.221.161.234'),
+(148, '2014-03-23 01:48:12', '129.123.7.6'),
+(149, '2014-03-23 01:48:18', '82.94.251.227'),
+(150, '2014-03-23 01:48:35', '195.37.190.67'),
+(151, '2014-03-23 01:48:40', '78.108.63.46'),
+(152, '2014-03-23 01:48:52', '198.50.236.219'),
+(153, '2014-03-23 01:49:03', '95.130.9.190'),
+(154, '2014-03-23 01:49:45', '178.162.193.213'),
+(155, '2014-03-23 01:50:08', '37.251.139.25'),
+(156, '2014-03-23 01:50:24', '78.46.51.124'),
+(157, '2014-03-23 01:50:30', '77.244.254.230'),
+(158, '2014-03-23 01:50:49', '223.223.175.253'),
+(159, '2014-03-23 01:51:15', '89.187.142.208'),
+(160, '2014-03-23 01:51:31', '46.165.221.166'),
+(161, '2014-03-23 01:51:42', '141.255.165.92'),
+(162, '2014-03-23 01:51:57', '178.20.55.16'),
+(163, '2014-03-23 01:52:15', '178.32.181.103'),
+(164, '2014-03-23 01:52:24', '193.138.216.101'),
+(165, '2014-03-23 01:52:29', '91.219.237.161'),
+(166, '2014-03-23 01:52:50', '178.32.181.101'),
+(167, '2014-03-23 01:53:02', '141.212.108.13'),
+(168, '2014-03-23 01:53:35', '74.120.12.135'),
+(169, '2014-03-23 01:53:47', '78.46.247.36'),
+(170, '2014-03-23 01:54:02', '77.109.138.42'),
+(171, '2014-03-23 01:54:17', '31.172.30.2'),
+(172, '2014-03-23 01:54:57', '91.213.8.84'),
+(173, '2014-03-23 01:55:12', '193.107.17.71'),
+(174, '2014-03-23 01:55:23', '91.213.8.235'),
+(175, '2014-03-23 01:55:52', '176.67.169.201'),
+(176, '2014-03-23 02:03:33', '166.70.207.2'),
+(177, '2014-03-23 02:05:54', '77.247.181.163'),
+(178, '2014-03-23 02:06:27', '178.63.97.34'),
+(179, '2014-03-23 02:06:50', '5.135.180.223'),
+(180, '2014-03-23 02:07:57', '178.18.17.174'),
+(181, '2014-03-23 02:10:14', '178.32.181.102'),
+(182, '2014-03-23 02:10:40', '96.44.189.100'),
+(183, '2014-03-23 02:11:17', '173.254.216.68'),
+(184, '2014-03-23 02:11:56', '171.25.193.235'),
+(185, '2014-03-23 02:12:37', '81.219.51.199'),
+(186, '2014-03-23 02:14:23', '31.172.30.3'),
+(187, '2014-03-23 02:14:54', '37.221.161.235'),
+(188, '2014-03-23 02:15:16', '5.104.224.5'),
+(189, '2014-03-23 02:15:41', '85.114.142.172'),
+(190, '2014-03-23 02:16:50', '91.185.200.222'),
+(191, '2014-03-23 02:17:19', '192.81.249.23'),
+(192, '2014-03-23 02:17:35', '88.198.184.30'),
+(193, '2014-03-23 02:18:28', '81.89.96.88'),
+(194, '2014-03-23 02:19:14', '173.254.216.67'),
+(195, '2014-03-23 02:20:43', '46.149.23.63'),
+(196, '2014-03-23 02:20:55', '37.148.163.38'),
+(197, '2014-03-23 02:21:19', '209.222.8.196'),
+(198, '2014-03-23 02:21:55', '5.135.154.8'),
+(199, '2014-03-23 02:22:22', '192.99.8.96'),
+(200, '2014-03-23 02:22:34', '31.172.30.1'),
+(201, '2014-03-23 02:26:12', '178.32.172.126'),
+(202, '2014-03-23 02:27:06', '198.73.50.71'),
+(203, '2014-03-23 02:27:17', '198.96.155.3'),
+(204, '2014-03-23 02:28:20', '31.31.73.71'),
+(205, '2014-03-23 02:28:34', '37.153.194.171'),
+(206, '2014-03-23 02:29:11', '74.120.12.140'),
+(207, '2014-03-23 02:29:41', '46.23.73.39'),
+(208, '2014-03-23 02:30:27', '62.210.195.135'),
+(209, '2014-03-23 02:33:01', '178.32.181.96'),
+(210, '2014-03-23 02:33:57', '178.17.170.19'),
+(211, '2014-03-23 02:34:18', '62.220.135.129'),
+(212, '2014-03-23 02:34:42', '37.218.244.212'),
+(213, '2014-03-23 02:35:16', '65.183.151.13'),
+(214, '2014-03-23 02:37:46', '46.182.106.190'),
+(215, '2014-03-23 02:38:24', '192.3.108.67'),
+(216, '2014-03-23 02:38:35', '146.185.177.103'),
+(217, '2014-03-23 02:39:25', '77.95.231.11'),
+(218, '2014-03-23 02:41:40', '178.32.181.98'),
+(219, '2014-03-23 02:42:34', '5.135.215.243'),
+(220, '2014-03-23 02:43:23', '54.186.9.176'),
+(221, '2014-03-23 02:44:57', '161.53.74.122'),
+(222, '2014-03-23 02:45:43', '37.221.162.226'),
+(223, '2014-03-23 02:47:22', '31.172.30.4'),
+(224, '2014-03-23 02:48:49', '85.159.237.23'),
+(225, '2014-03-23 02:49:55', '77.247.181.165'),
+(226, '2014-03-23 02:51:54', '195.228.45.176'),
+(227, '2014-03-23 02:52:06', '216.218.134.12'),
+(228, '2014-03-23 02:52:17', '204.124.83.130'),
+(229, '2014-03-23 02:54:04', '94.242.252.41'),
+(230, '2014-03-23 02:54:26', '178.32.181.104'),
+(231, '2014-03-23 02:56:37', '178.32.181.109'),
+(232, '2014-03-23 02:57:00', '5.39.84.59'),
+(233, '2014-03-23 02:57:11', '178.217.184.36'),
+(234, '2014-03-23 02:57:21', '85.214.26.21'),
+(235, '2014-03-23 02:57:47', '89.108.86.11'),
+(236, '2014-03-23 02:57:59', '128.2.142.104'),
+(237, '2014-03-23 02:58:09', '88.191.153.199'),
+(238, '2014-03-23 02:58:45', '128.208.2.233'),
+(239, '2014-03-23 03:00:56', '81.89.96.89'),
+(240, '2014-03-23 03:01:52', '94.242.251.112'),
+(241, '2014-03-23 03:02:17', '77.109.139.87'),
+(242, '2014-03-23 03:04:58', '88.191.158.147'),
+(243, '2014-03-23 03:07:22', '178.32.181.100'),
+(244, '2014-03-23 03:07:52', '69.64.39.206'),
+(245, '2014-03-23 03:11:44', '195.154.13.10'),
+(246, '2014-03-23 03:12:03', '188.226.216.218'),
+(247, '2014-03-23 03:12:37', '162.243.53.75'),
+(248, '2014-03-23 03:13:40', '176.67.169.213'),
+(249, '2014-03-23 03:13:52', '173.208.196.215'),
+(250, '2014-03-23 03:15:56', '77.244.254.227'),
+(251, '2014-03-23 03:16:32', '198.50.236.217'),
+(252, '2014-03-23 03:22:42', '69.167.81.86'),
+(253, '2014-03-23 03:23:54', '109.74.151.149'),
+(254, '2014-03-23 04:13:58', '87.219.22.231'),
+(255, '2014-03-23 12:06:58', '177.6.38.202'),
+(256, '2014-03-23 14:16:17', '187.52.22.122'),
+(257, '2014-03-24 09:55:19', '189.103.37.94'),
+(258, '2014-03-24 10:12:04', '201.89.178.133'),
+(259, '2014-03-26 00:54:12', '201.89.178.133'),
+(260, '2014-03-26 05:28:46', '157.55.33.37'),
+(261, '2014-03-26 20:02:59', '177.4.11.189'),
+(262, '2014-03-26 20:06:05', '200.132.6.6'),
+(263, '2014-03-26 23:55:18', '65.55.213.70'),
+(264, '2014-03-26 23:55:25', '65.55.213.72'),
+(265, '2014-03-28 15:10:52', '177.4.11.189'),
+(266, '2014-03-29 14:43:11', '157.55.34.183'),
+(267, '2014-03-29 19:05:07', '118.244.186.157'),
+(268, '2014-03-29 21:03:42', '157.55.33.102'),
+(269, '2014-03-29 23:46:40', '177.2.143.200'),
+(270, '2014-03-30 11:48:39', '157.55.35.99'),
+(271, '2014-03-30 17:24:44', '118.244.186.157'),
+(272, '2014-03-31 00:04:42', '157.56.93.62'),
+(273, '2014-03-31 09:25:32', '118.244.186.157'),
+(274, '2014-03-31 12:36:46', '212.117.156.225'),
+(275, '2014-03-31 13:32:38', '157.55.32.76'),
+(276, '2014-04-01 03:47:30', '157.56.229.188'),
+(277, '2014-04-01 15:22:51', '189.73.163.164'),
+(278, '2014-04-01 21:57:30', '118.244.186.157'),
+(279, '2014-04-01 23:33:29', '157.55.33.29'),
+(280, '2014-04-02 05:30:35', '66.249.76.176'),
+(281, '2014-04-02 13:05:00', '65.55.52.111'),
+(282, '2014-04-02 19:10:21', '118.244.186.157'),
+(283, '2014-04-02 22:28:41', '157.55.32.61'),
+(284, '2014-04-03 09:28:55', '66.249.76.204'),
+(285, '2014-04-03 12:16:36', '157.55.34.177'),
+(286, '2014-04-03 15:17:28', '66.249.66.11'),
+(287, '2014-04-03 21:32:21', '118.244.186.157'),
+(288, '2014-04-04 00:37:19', '157.55.33.49'),
+(289, '2014-04-04 03:45:44', '157.55.33.20'),
+(290, '2014-04-04 11:43:10', '157.55.32.143'),
+(291, '2014-04-04 16:44:35', '66.249.73.176'),
+(292, '2014-04-04 17:00:45', '118.244.186.157'),
+(293, '2014-04-04 21:00:16', '80.82.70.118'),
+(294, '2014-04-04 21:28:24', '157.56.92.161'),
+(295, '2014-04-05 08:43:17', '157.55.35.99'),
+(296, '2014-04-05 10:44:18', '201.15.191.162'),
+(297, '2014-04-05 20:19:20', '64.246.161.190'),
+(298, '2014-04-06 06:37:19', '180.76.6.142'),
+(299, '2014-04-06 08:26:04', '157.55.33.95'),
+(300, '2014-04-06 18:05:58', '118.244.186.157'),
+(301, '2014-04-07 08:04:02', '157.55.35.41'),
+(302, '2014-04-08 01:52:39', '157.55.34.74'),
+(303, '2014-04-08 11:55:04', '118.244.186.157'),
+(304, '2014-04-08 14:06:29', '157.55.35.38'),
+(305, '2014-04-09 01:41:40', '157.56.93.40'),
+(306, '2014-04-09 11:32:06', '118.244.186.157'),
+(307, '2014-04-09 13:25:58', '157.55.32.81'),
+(308, '2014-04-10 00:38:14', '65.55.52.86'),
+(309, '2014-04-10 02:22:47', '180.76.5.64'),
+(310, '2014-04-10 10:25:29', '118.244.186.157'),
+(311, '2014-04-10 12:32:32', '65.55.24.237'),
+(312, '2014-04-10 13:40:51', '162.213.42.131'),
+(313, '2014-04-10 13:41:07', '162.213.42.135'),
+(314, '2014-04-10 13:41:18', '162.213.42.132'),
+(315, '2014-04-10 18:04:22', '180.76.5.170'),
+(316, '2014-04-11 00:22:04', '157.55.35.53'),
+(317, '2014-04-11 03:57:11', '157.56.229.246'),
+(318, '2014-04-11 09:07:40', '118.244.186.157'),
+(319, '2014-04-11 12:54:37', '157.55.33.252'),
+(320, '2014-04-11 17:16:37', '157.56.229.246'),
+(321, '2014-04-11 19:09:02', '157.55.32.233'),
+(322, '2014-04-12 06:52:00', '65.55.52.108'),
+(323, '2014-04-12 11:39:33', '118.244.186.157'),
+(324, '2014-04-12 12:59:19', '157.55.32.110'),
+(325, '2014-04-12 19:53:04', '157.56.92.153'),
+(326, '2014-04-13 00:08:19', '189.10.169.45'),
+(327, '2014-04-13 03:51:24', '118.244.186.157'),
+(328, '2014-04-13 08:17:15', '157.55.33.91'),
+(329, '2014-04-13 17:50:44', '202.46.57.81'),
+(330, '2014-04-13 17:51:10', '119.63.193.194'),
+(331, '2014-04-13 18:25:59', '118.244.186.157'),
+(332, '2014-04-13 19:44:18', '202.46.62.19'),
+(333, '2014-04-13 19:44:27', '119.63.193.131'),
+(334, '2014-04-13 21:47:14', '202.46.48.24'),
+(335, '2014-04-13 21:47:28', '119.63.193.195'),
+(336, '2014-04-13 23:15:43', '189.63.132.151'),
+(337, '2014-04-13 23:44:52', '202.46.58.33'),
+(338, '2014-04-14 01:46:32', '202.46.53.32'),
+(339, '2014-04-14 03:47:46', '202.46.62.208'),
+(340, '2014-04-14 05:44:32', '202.46.57.62'),
+(341, '2014-04-14 05:44:41', '119.63.193.130'),
+(342, '2014-04-14 06:38:00', '157.55.35.50'),
+(343, '2014-04-14 07:49:59', '202.46.62.202'),
+(344, '2014-04-14 09:14:00', '180.76.6.148'),
+(345, '2014-04-14 09:47:01', '202.46.57.65'),
+(346, '2014-04-14 09:47:17', '119.63.193.194'),
+(347, '2014-04-14 11:23:04', '118.244.186.157'),
+(348, '2014-04-14 11:52:38', '202.46.56.40'),
+(349, '2014-04-14 11:53:10', '119.63.193.131'),
+(350, '2014-04-14 13:47:02', '202.46.49.72'),
+(351, '2014-04-14 13:47:18', '119.63.193.195'),
+(352, '2014-04-14 15:49:59', '202.46.55.192'),
+(353, '2014-04-14 17:44:49', '202.46.62.31'),
+(354, '2014-04-14 18:39:48', '157.55.32.186'),
+(355, '2014-04-14 19:44:25', '202.46.56.47'),
+(356, '2014-04-14 20:30:49', '201.35.149.223'),
+(357, '2014-04-14 20:31:02', '66.249.88.176'),
+(358, '2014-04-14 20:32:17', '72.14.199.6'),
+(359, '2014-04-14 21:47:12', '202.46.54.47'),
+(360, '2014-04-14 23:45:12', '202.46.52.34'),
+(361, '2014-04-15 01:24:06', '157.55.33.15'),
+(362, '2014-04-15 01:46:04', '119.63.193.194'),
+(363, '2014-04-15 02:50:05', '180.76.6.143'),
+(364, '2014-04-15 03:47:05', '202.46.48.23'),
+(365, '2014-04-15 03:47:20', '119.63.193.195'),
+(366, '2014-04-15 03:50:04', '65.55.52.112'),
+(367, '2014-04-15 05:50:06', '202.46.63.43'),
+(368, '2014-04-15 06:49:40', '157.55.34.177'),
+(369, '2014-04-15 07:44:49', '202.46.57.67'),
+(370, '2014-04-15 09:47:14', '202.46.48.26'),
+(371, '2014-04-15 09:47:30', '119.63.193.130'),
+(372, '2014-04-15 10:15:53', '118.244.186.157'),
+(373, '2014-04-15 11:44:21', '202.46.52.23'),
+(374, '2014-04-15 11:44:29', '119.63.193.132'),
+(375, '2014-04-15 13:46:25', '202.46.62.31'),
+(376, '2014-04-15 15:47:15', '202.46.57.66'),
+(377, '2014-04-15 15:47:31', '119.63.193.195'),
+(378, '2014-04-15 17:45:29', '202.46.63.40'),
+(379, '2014-04-15 18:01:00', '157.55.34.173'),
+(380, '2014-04-15 19:44:36', '202.46.56.50'),
+(381, '2014-04-15 21:47:31', '202.46.54.47'),
+(382, '2014-04-15 21:47:47', '119.63.193.130'),
+(383, '2014-04-15 23:45:29', '202.46.57.69'),
+(384, '2014-04-16 01:49:02', '202.46.62.17'),
+(385, '2014-04-16 03:46:52', '202.46.50.158'),
+(386, '2014-04-16 05:44:19', '202.46.63.120'),
+(387, '2014-04-16 05:44:27', '119.63.193.194'),
+(388, '2014-04-16 06:09:37', '157.55.36.37'),
+(389, '2014-04-16 07:44:55', '202.46.55.190'),
+(390, '2014-04-16 07:45:04', '119.63.193.195'),
+(391, '2014-04-16 09:47:29', '202.46.54.54'),
+(392, '2014-04-16 11:44:24', '202.46.55.59'),
+(393, '2014-04-16 11:44:33', '119.63.193.130'),
+(394, '2014-04-16 13:46:33', '202.46.54.110'),
+(395, '2014-04-16 15:47:52', '202.46.63.125'),
+(396, '2014-04-16 17:23:08', '157.56.229.190'),
+(397, '2014-04-16 17:45:21', '202.46.55.36'),
+(398, '2014-04-16 17:45:33', '119.63.193.194'),
+(399, '2014-04-16 19:08:41', '118.244.186.157'),
+(400, '2014-04-16 19:44:45', '202.46.62.34'),
+(401, '2014-04-16 19:44:55', '119.63.193.131'),
+(402, '2014-04-16 21:47:16', '202.46.62.14'),
+(403, '2014-04-16 22:02:58', '66.249.76.176'),
+(404, '2014-04-16 23:44:54', '202.46.54.44'),
+(405, '2014-04-16 23:45:03', '119.63.193.195'),
+(406, '2014-04-17 01:45:18', '202.46.55.190'),
+(407, '2014-04-17 01:45:30', '119.63.193.130'),
+(408, '2014-04-17 02:44:38', '189.63.132.151'),
+(409, '2014-04-17 03:47:01', '202.46.62.24'),
+(410, '2014-04-17 04:26:04', '65.55.24.218'),
+(411, '2014-04-17 05:44:45', '202.46.57.82'),
+(412, '2014-04-17 07:44:21', '202.46.54.41'),
+(413, '2014-04-17 07:44:30', '119.63.193.194'),
+(414, '2014-04-17 09:47:22', '66.249.66.216'),
+(415, '2014-04-17 09:47:23', '202.46.50.18'),
+(416, '2014-04-17 10:00:54', '189.74.208.196'),
+(417, '2014-04-17 11:44:16', '202.46.56.47'),
+(418, '2014-04-17 11:44:26', '119.63.193.131'),
+(419, '2014-04-17 13:46:02', '202.46.52.21'),
+(420, '2014-04-17 13:46:16', '119.63.193.195'),
+(421, '2014-04-17 15:49:35', '202.46.50.12'),
+(422, '2014-04-17 15:51:46', '65.55.24.234'),
+(423, '2014-04-17 17:01:04', '189.103.33.225'),
+(424, '2014-04-17 18:32:40', '118.244.186.157'),
+(425, '2014-04-18 03:01:48', '180.76.5.18'),
+(426, '2014-04-18 04:18:07', '157.55.32.75'),
+(427, '2014-04-18 08:33:10', '118.244.186.157'),
+(428, '2014-04-18 15:45:33', '157.55.33.101'),
+(429, '2014-04-19 00:26:36', '157.55.35.33'),
+(430, '2014-04-19 02:08:21', '180.76.6.40'),
+(431, '2014-04-19 04:30:07', '118.244.186.157'),
+(432, '2014-04-19 07:51:24', '202.46.63.124'),
+(433, '2014-04-19 07:51:52', '119.63.193.132'),
+(434, '2014-04-19 09:31:31', '64.246.161.190'),
+(435, '2014-04-19 14:12:06', '183.60.48.25'),
+(436, '2014-04-19 19:50:29', '202.46.62.207'),
+(437, '2014-04-19 19:50:54', '119.63.193.131'),
+(438, '2014-04-20 00:21:41', '157.55.33.214'),
+(439, '2014-04-20 04:08:48', '118.244.186.157'),
+(440, '2014-04-20 05:50:33', '202.46.48.14'),
+(441, '2014-04-20 05:50:58', '119.63.193.195'),
+(442, '2014-04-20 12:10:07', '65.55.52.95'),
+(443, '2014-04-20 17:48:17', '118.244.186.157'),
+(444, '2014-04-20 19:49:36', '202.46.49.75'),
+(445, '2014-04-20 19:49:59', '119.63.193.130'),
+(446, '2014-04-20 23:11:07', '157.55.32.227'),
+(447, '2014-04-20 23:53:04', '202.46.55.59'),
+(448, '2014-04-20 23:53:35', '119.63.193.195'),
+(449, '2014-04-21 07:50:40', '202.46.55.190'),
+(450, '2014-04-21 07:51:05', '119.63.193.130'),
+(451, '2014-04-21 11:52:47', '202.46.58.29'),
+(452, '2014-04-21 11:53:17', '119.63.193.131'),
+(453, '2014-04-21 11:56:39', '157.56.92.165'),
+(454, '2014-04-22 00:43:32', '157.55.32.184'),
+(455, '2014-04-22 03:17:25', '118.244.186.157'),
+(456, '2014-04-22 10:08:27', '157.56.92.164'),
+(457, '2014-04-22 13:55:15', '201.89.150.108'),
+(458, '2014-04-22 17:13:30', '189.103.33.225'),
+(459, '2014-04-22 20:36:41', '201.15.156.114'),
+(460, '2014-04-23 01:49:17', '202.46.63.40'),
+(461, '2014-04-23 01:49:38', '119.63.193.132'),
+(462, '2014-04-23 02:14:49', '23.88.167.181'),
+(463, '2014-04-23 07:32:14', '157.56.92.150'),
+(464, '2014-04-23 09:09:52', '179.224.242.104'),
+(465, '2014-04-23 11:52:22', '202.46.51.42'),
+(466, '2014-04-23 11:52:52', '119.63.193.131'),
+(467, '2014-04-23 17:36:57', '157.55.32.26'),
+(468, '2014-04-24 02:35:22', '23.88.167.181'),
+(469, '2014-04-24 04:47:40', '157.55.33.101'),
+(470, '2014-04-24 08:00:53', '180.76.5.21'),
+(471, '2014-04-24 09:19:22', '189.72.194.187'),
+(472, '2014-04-24 18:35:06', '157.56.92.144'),
+(473, '2014-04-24 18:51:00', '157.56.93.93'),
+(474, '2014-04-25 00:20:49', '180.76.6.16'),
+(475, '2014-04-25 03:44:42', '157.56.93.187'),
+(476, '2014-04-25 09:46:22', '202.46.49.13'),
+(477, '2014-04-25 09:46:41', '119.63.193.194'),
+(478, '2014-04-25 16:44:51', '66.249.70.216'),
+(479, '2014-04-25 17:03:02', '157.55.32.86'),
+(480, '2014-04-26 02:54:10', '157.55.35.96'),
+(481, '2014-04-26 07:48:57', '202.46.53.62'),
+(482, '2014-04-26 07:49:22', '119.63.193.132'),
+(483, '2014-04-26 09:45:47', '202.46.50.15'),
+(484, '2014-04-26 09:46:03', '119.63.193.194'),
+(485, '2014-04-26 11:42:45', '202.46.49.17'),
+(486, '2014-04-26 13:45:43', '202.46.54.43'),
+(487, '2014-04-26 13:45:59', '119.63.193.195'),
+(488, '2014-04-26 15:45:30', '202.46.63.44'),
+(489, '2014-04-26 17:44:02', '202.46.56.47'),
+(490, '2014-04-26 19:42:51', '202.46.48.27'),
+(491, '2014-04-26 19:43:00', '119.63.193.131'),
+(492, '2014-04-27 01:44:52', '202.46.62.91'),
+(493, '2014-04-27 03:10:17', '157.55.35.52'),
+(494, '2014-04-27 03:45:51', '202.46.49.127'),
+(495, '2014-04-27 03:46:06', '119.63.193.194'),
+(496, '2014-04-27 05:44:27', '202.46.54.110'),
+(497, '2014-04-27 05:44:38', '119.63.193.130'),
+(498, '2014-04-27 09:46:29', '202.46.51.43'),
+(499, '2014-04-27 11:42:41', '202.46.56.43'),
+(500, '2014-04-27 13:42:19', '157.56.93.63'),
+(501, '2014-04-27 19:45:22', '201.37.166.86'),
+(502, '2014-04-27 21:14:50', '201.14.245.15'),
+(503, '2014-04-27 22:50:20', '54.221.168.197'),
+(504, '2014-04-27 22:50:21', '54.224.176.147'),
+(505, '2014-04-27 22:50:24', '198.27.69.78'),
+(506, '2014-04-27 22:50:25', '198.211.104.25'),
+(507, '2014-04-28 01:44:33', '202.46.57.64'),
+(508, '2014-04-28 01:44:46', '119.63.193.131'),
+(509, '2014-04-28 02:13:55', '157.55.33.24'),
+(510, '2014-04-28 03:46:23', '202.46.62.11'),
+(511, '2014-04-28 03:46:40', '119.63.193.195'),
+(512, '2014-04-28 04:39:53', '157.56.229.184'),
+(513, '2014-04-28 07:42:35', '202.46.56.49'),
+(514, '2014-04-28 07:42:44', '119.63.193.130'),
+(515, '2014-04-28 09:45:43', '202.46.50.16'),
+(516, '2014-04-28 09:45:58', '119.63.193.194'),
+(517, '2014-04-28 11:42:50', '202.46.62.23'),
+(518, '2014-04-28 13:45:14', '202.46.48.11'),
+(519, '2014-04-28 13:45:28', '119.63.193.132'),
+(520, '2014-04-28 23:44:07', '202.46.56.55'),
+(521, '2014-04-28 23:44:18', '119.63.193.195'),
+(522, '2014-04-29 00:25:22', '157.56.92.175'),
+(523, '2014-04-29 01:45:31', '202.46.56.54'),
+(524, '2014-04-29 01:45:44', '119.63.193.130'),
+(525, '2014-04-29 12:17:25', '189.103.33.225'),
+(526, '2014-04-29 12:23:45', '157.55.35.44'),
+(527, '2014-04-29 13:23:09', '157.56.92.150'),
+(528, '2014-04-29 13:49:15', '157.56.92.174'),
+(529, '2014-04-29 17:44:16', '202.46.58.30'),
+(530, '2014-04-29 17:44:27', '119.63.193.132'),
+(531, '2014-04-29 21:45:50', '202.46.50.13'),
+(532, '2014-04-29 21:46:05', '119.63.193.195'),
+(533, '2014-04-29 23:28:09', '192.34.59.53'),
+(534, '2014-04-29 23:44:13', '202.46.54.40'),
+(535, '2014-04-29 23:44:24', '119.63.193.194'),
+(536, '2014-04-29 23:57:18', '118.244.186.157'),
+(537, '2014-04-30 05:23:24', '157.55.33.91'),
+(538, '2014-04-30 05:43:22', '202.46.62.24'),
+(539, '2014-04-30 05:58:13', '66.249.75.216'),
+(540, '2014-04-30 13:44:48', '202.46.63.121'),
+(541, '2014-04-30 13:45:01', '119.63.193.131'),
+(542, '2014-04-30 15:46:16', '202.46.58.29'),
+(543, '2014-04-30 15:46:31', '119.63.193.130'),
+(544, '2014-04-30 17:47:07', '65.55.52.95'),
+(545, '2014-04-30 17:52:26', '180.76.5.169'),
+(546, '2014-04-30 19:44:06', '202.46.54.56'),
+(547, '2014-04-30 19:44:18', '119.63.193.132'),
+(548, '2014-04-30 21:35:26', '118.244.186.157'),
+(549, '2014-04-30 21:48:04', '202.46.48.18'),
+(550, '2014-04-30 21:48:26', '119.63.193.194'),
+(551, '2014-05-01 03:45:45', '202.46.62.22'),
+(552, '2014-05-01 07:24:10', '66.249.75.216'),
+(553, '2014-05-01 07:30:29', '157.56.229.88'),
+(554, '2014-05-01 14:12:10', '177.203.123.165'),
+(555, '2014-05-01 15:46:17', '202.46.62.30'),
+(556, '2014-05-01 15:46:31', '119.63.193.131'),
+(557, '2014-05-01 16:20:38', '177.203.122.100'),
+(558, '2014-05-01 16:28:17', '69.171.230.115'),
+(559, '2014-05-01 17:45:00', '202.46.52.30'),
+(560, '2014-05-01 17:45:12', '119.63.193.194'),
+(561, '2014-05-01 18:18:32', '200.203.11.194'),
+(562, '2014-05-01 18:30:33', '201.14.244.39'),
+(563, '2014-05-01 19:05:54', '173.252.74.116'),
+(564, '2014-05-01 19:10:21', '201.11.209.57'),
+(565, '2014-05-01 19:16:53', '201.14.251.224'),
+(566, '2014-05-01 21:41:10', '162.243.170.60'),
+(567, '2014-05-02 01:44:35', '202.46.53.39'),
+(568, '2014-05-02 01:44:46', '119.63.193.195'),
+(569, '2014-05-02 07:22:42', '118.244.186.157'),
+(570, '2014-05-02 09:37:18', '201.14.242.109'),
+(571, '2014-05-02 09:45:24', '189.114.112.97'),
+(572, '2014-05-02 10:46:29', '157.55.33.180'),
+(573, '2014-05-02 19:43:50', '202.46.63.45'),
+(574, '2014-05-02 19:44:00', '119.63.193.194'),
+(575, '2014-05-03 01:37:51', '157.55.32.106'),
+(576, '2014-05-03 01:46:38', '202.46.52.31'),
+(577, '2014-05-03 06:42:42', '118.244.186.157'),
+(578, '2014-05-03 10:36:01', '66.249.75.216'),
+(579, '2014-05-03 11:27:07', '201.23.163.21'),
+(580, '2014-05-03 14:31:27', '65.55.24.221'),
+(581, '2014-05-03 20:27:37', '177.156.51.25'),
+(582, '2014-05-03 22:01:45', '162.243.170.57'),
+(583, '2014-05-04 02:39:16', '157.55.32.83'),
+(584, '2014-05-04 05:44:22', '202.46.62.33'),
+(585, '2014-05-04 05:44:32', '119.63.193.131'),
+(586, '2014-05-04 07:44:00', '202.46.53.68'),
+(587, '2014-05-04 07:44:09', '119.63.193.132'),
+(588, '2014-05-04 07:54:50', '118.244.186.157'),
+(589, '2014-05-04 11:50:49', '202.46.53.63'),
+(590, '2014-05-04 11:51:18', '119.63.193.195'),
+(591, '2014-05-04 13:46:16', '202.46.58.32'),
+(592, '2014-05-04 13:46:32', '119.63.193.130'),
+(593, '2014-05-04 18:37:47', '157.55.34.168'),
+(594, '2014-05-04 22:35:52', '177.4.192.108'),
+(595, '2014-05-05 01:45:33', '202.46.62.93'),
+(596, '2014-05-05 01:45:47', '119.63.193.194'),
+(597, '2014-05-05 04:08:25', '157.56.92.149'),
+(598, '2014-05-05 13:15:03', '201.14.250.7'),
+(599, '2014-05-05 13:30:45', '162.243.170.60'),
+(600, '2014-05-05 13:45:54', '202.46.53.63'),
+(601, '2014-05-05 13:46:08', '119.63.193.195'),
+(602, '2014-05-05 16:42:36', '157.56.93.42'),
+(603, '2014-05-05 19:49:33', '202.46.49.13'),
+(604, '2014-05-05 19:49:56', '119.63.193.130'),
+(605, '2014-05-05 20:21:04', '66.249.75.216'),
+(606, '2014-05-05 21:07:31', '118.244.186.157'),
+(607, '2014-05-06 01:22:12', '157.55.32.84'),
+(608, '2014-05-06 05:44:29', '202.46.48.13'),
+(609, '2014-05-06 05:44:39', '119.63.193.131'),
+(610, '2014-05-06 12:59:08', '65.55.52.87'),
+(611, '2014-05-06 14:02:40', '189.63.132.151'),
+(612, '2014-05-06 15:39:03', '118.244.186.157'),
+(613, '2014-05-06 19:59:22', '201.14.243.140'),
+(614, '2014-05-06 20:59:43', '201.14.243.31'),
+(615, '2014-05-06 21:14:48', '201.14.250.175'),
+(616, '2014-05-07 01:44:59', '202.46.56.53'),
+(617, '2014-05-07 01:45:10', '119.63.193.194'),
+(618, '2014-05-07 03:20:20', '162.243.170.60'),
+(619, '2014-05-07 09:46:57', '202.46.62.206'),
+(620, '2014-05-07 09:47:14', '119.63.193.195'),
+(621, '2014-05-07 13:46:05', '202.46.54.59'),
+(622, '2014-05-07 13:46:19', '119.63.193.131'),
+(623, '2014-05-07 14:26:57', '157.55.33.112'),
+(624, '2014-05-07 15:46:52', '202.46.60.62'),
+(625, '2014-05-07 16:22:46', '118.244.186.157'),
+(626, '2014-05-07 16:50:25', '189.103.33.225'),
+(627, '2014-05-07 20:38:58', '177.203.123.120'),
+(628, '2014-05-08 01:39:11', '157.55.33.17'),
+(629, '2014-05-08 03:46:32', '202.46.54.54'),
+(630, '2014-05-08 03:46:47', '119.63.193.130'),
+(631, '2014-05-08 09:46:52', '202.46.51.41'),
+(632, '2014-05-08 09:47:11', '119.63.193.194'),
+(633, '2014-05-08 13:31:01', '157.55.35.47'),
+(634, '2014-05-08 13:47:52', '202.46.54.46'),
+(635, '2014-05-08 15:47:16', '202.46.62.205'),
+(636, '2014-05-08 15:47:33', '119.63.193.196'),
+(637, '2014-05-08 17:50:27', '202.46.63.71'),
+(638, '2014-05-08 17:50:53', '119.63.193.195'),
+(639, '2014-05-08 19:45:29', '202.46.54.43'),
+(640, '2014-05-09 02:32:10', '157.56.229.88'),
+(641, '2014-05-09 03:48:41', '118.244.186.157'),
+(642, '2014-05-09 04:59:34', '208.68.38.125'),
+(643, '2014-05-09 17:51:20', '157.56.92.153'),
+(644, '2014-05-10 02:42:18', '118.244.186.157'),
+(645, '2014-05-10 03:12:29', '157.55.35.40'),
+(646, '2014-05-10 08:40:59', '177.135.110.199'),
+(647, '2014-05-10 08:41:00', '173.252.74.115'),
+(648, '2014-05-10 11:43:48', '202.46.54.49'),
+(649, '2014-05-10 11:43:53', '119.63.193.131'),
+(650, '2014-05-10 16:12:59', '201.14.244.155'),
+(651, '2014-05-10 16:22:15', '157.55.35.83'),
+(652, '2014-05-10 23:00:43', '123.151.149.222'),
+(653, '2014-05-11 02:56:59', '118.244.186.157'),
+(654, '2014-05-11 05:44:04', '202.46.62.97'),
+(655, '2014-05-11 05:44:14', '119.63.193.196'),
+(656, '2014-05-11 07:50:33', '198.211.104.25'),
+(657, '2014-05-11 07:52:18', '119.63.193.131'),
+(658, '2014-05-11 11:51:51', '202.46.57.62'),
+(659, '2014-05-11 11:52:20', '119.63.193.195'),
+(660, '2014-05-11 16:03:41', '66.249.73.176'),
+(661, '2014-05-11 16:06:27', '118.244.186.157'),
+(662, '2014-05-11 18:01:42', '157.55.32.106'),
+(663, '2014-05-12 01:47:51', '202.46.63.93'),
+(664, '2014-05-12 01:48:10', '119.63.193.195'),
+(665, '2014-05-12 05:48:59', '65.55.52.114'),
+(666, '2014-05-12 07:36:38', '183.60.48.25'),
+(667, '2014-05-12 10:29:11', '118.244.186.157'),
+(668, '2014-05-12 15:46:02', '202.46.50.13'),
+(669, '2014-05-12 15:46:16', '119.63.193.131'),
+(670, '2014-05-12 19:48:26', '202.46.62.200'),
+(671, '2014-05-12 19:48:48', '119.63.193.196'),
+(672, '2014-05-12 21:28:36', '157.55.32.147'),
+(673, '2014-05-13 01:45:45', '202.46.53.39'),
+(674, '2014-05-13 01:45:58', '119.63.193.195'),
+(675, '2014-05-13 03:10:51', '118.244.186.157'),
+(676, '2014-05-13 03:46:12', '202.46.55.26'),
+(677, '2014-05-13 03:46:27', '119.63.193.132'),
+(678, '2014-05-13 05:44:12', '202.46.53.31'),
+(679, '2014-05-13 05:44:22', '119.63.193.130'),
+(680, '2014-05-13 07:44:11', '202.46.48.23'),
+(681, '2014-05-13 09:46:53', '202.46.48.16'),
+(682, '2014-05-13 10:23:24', '192.81.211.192'),
+(683, '2014-05-13 10:33:24', '65.55.52.97'),
+(684, '2014-05-13 11:44:07', '202.46.62.93'),
+(685, '2014-05-13 11:44:15', '119.63.193.196'),
+(686, '2014-05-13 13:46:28', '202.46.55.193'),
+(687, '2014-05-13 13:46:43', '119.63.193.131'),
+(688, '2014-05-13 14:01:59', '64.233.172.216'),
+(689, '2014-05-13 15:45:48', '202.46.55.23'),
+(690, '2014-05-13 17:45:13', '202.46.62.17'),
+(691, '2014-05-13 19:44:12', '202.46.52.23'),
+(692, '2014-05-13 19:44:22', '119.63.193.132'),
+(693, '2014-05-13 21:46:28', '202.46.53.34'),
+(694, '2014-05-13 21:46:43', '119.63.193.130'),
+(695, '2014-05-13 21:53:47', '157.55.35.87'),
+(696, '2014-05-13 23:41:27', '177.132.223.121'),
+(697, '2014-05-13 23:44:30', '202.46.63.129'),
+(698, '2014-05-14 01:45:50', '202.46.54.50'),
+(699, '2014-05-14 01:46:03', '119.63.193.196'),
+(700, '2014-05-14 03:19:42', '118.244.186.157'),
+(701, '2014-05-14 07:06:24', '157.56.93.82'),
+(702, '2014-05-14 14:15:34', '66.249.66.236'),
+(703, '2014-05-14 17:13:05', '118.244.186.157'),
+(704, '2014-05-14 18:07:54', '66.249.66.212'),
+(705, '2014-05-15 03:46:17', '202.46.55.33'),
+(706, '2014-05-15 03:46:33', '119.63.193.196'),
+(707, '2014-05-15 06:10:52', '157.55.36.36'),
+(708, '2014-05-15 11:42:21', '202.46.62.105'),
+(709, '2014-05-15 11:47:44', '118.244.186.157'),
+(710, '2014-05-15 11:50:40', '66.249.75.2'),
+(711, '2014-05-15 12:59:57', '162.243.170.60'),
+(712, '2014-05-15 14:42:52', '80.82.70.112'),
+(713, '2014-05-15 15:46:13', '202.46.54.51'),
+(714, '2014-05-15 18:05:31', '157.55.35.44'),
+(715, '2014-05-15 20:39:36', '177.203.122.148'),
+(716, '2014-05-15 22:29:50', '66.249.75.5'),
+(717, '2014-05-16 01:17:27', '54.198.66.159'),
+(718, '2014-05-16 03:01:00', '118.244.186.157'),
+(719, '2014-05-16 06:04:16', '157.56.92.158'),
+(720, '2014-05-16 15:35:44', '189.114.75.67'),
+(721, '2014-05-16 17:01:41', '118.244.186.157'),
+(722, '2014-05-16 17:38:37', '177.143.203.53'),
+(723, '2014-05-16 17:41:10', '157.55.35.95'),
+(724, '2014-05-16 19:43:47', '202.46.57.80'),
+(725, '2014-05-16 19:43:57', '119.63.193.130'),
+(726, '2014-05-16 19:46:38', '201.14.250.141'),
+(727, '2014-05-17 06:09:26', '157.55.35.108'),
+(728, '2014-05-17 07:43:58', '202.46.50.16'),
+(729, '2014-05-17 07:44:09', '119.63.193.196'),
+(730, '2014-05-17 11:16:47', '177.4.192.189'),
+(731, '2014-05-17 11:41:43', '202.46.63.124'),
+(732, '2014-05-17 11:41:51', '119.63.193.195'),
+(733, '2014-05-17 13:46:00', '202.46.55.20'),
+(734, '2014-05-17 15:45:41', '202.46.60.60'),
+(735, '2014-05-17 15:45:57', '119.63.193.194'),
+(736, '2014-05-17 17:03:10', '201.89.155.123'),
+(737, '2014-05-17 17:15:39', '157.55.33.106'),
+(738, '2014-05-17 17:44:02', '202.46.52.31'),
+(739, '2014-05-17 17:44:13', '119.63.193.132'),
+(740, '2014-05-17 18:39:19', '189.103.35.19'),
+(741, '2014-05-18 01:33:50', '157.56.92.174'),
+(742, '2014-05-18 07:55:03', '66.85.140.110'),
+(743, '2014-05-18 11:04:05', '54.207.11.150'),
+(744, '2014-05-18 14:37:52', '157.55.34.32'),
+(745, '2014-05-18 15:12:14', '66.249.64.23'),
+(746, '2014-05-19 09:04:42', '157.55.35.93'),
+(747, '2014-05-19 11:16:19', '162.243.170.60'),
+(748, '2014-05-19 15:48:48', '202.46.63.120'),
+(749, '2014-05-19 15:49:11', '119.63.193.132'),
+(750, '2014-05-19 17:32:40', '66.85.144.237'),
+(751, '2014-05-19 20:53:42', '157.55.32.114'),
+(752, '2014-05-20 00:49:09', '173.244.215.194'),
+(753, '2014-05-20 06:56:54', '157.55.33.95'),
+(754, '2014-05-20 18:22:27', '157.55.32.142'),
+(755, '2014-05-20 19:48:30', '202.46.57.69'),
+(756, '2014-05-20 19:48:53', '119.63.193.130'),
+(757, '2014-05-20 20:30:22', '198.133.224.185'),
+(758, '2014-05-20 20:33:54', '177.203.122.111'),
+(759, '2014-05-21 10:19:58', '65.55.24.247'),
+(760, '2014-05-21 11:11:21', '109.68.190.145'),
+(761, '2014-05-21 12:20:57', '173.244.206.13'),
+(762, '2014-05-21 12:40:16', '66.249.65.146'),
+(763, '2014-05-21 15:38:16', '198.211.110.246'),
+(764, '2014-05-21 18:56:52', '66.249.65.133'),
+(765, '2014-05-21 22:04:38', '54.203.178.242'),
+(766, '2014-05-21 22:24:17', '65.55.24.219'),
+(767, '2014-05-21 22:25:28', '54.244.247.32'),
+(768, '2014-05-21 23:53:17', '202.46.63.42'),
+(769, '2014-05-21 23:53:52', '119.63.193.196'),
+(770, '2014-05-22 03:15:59', '115.29.176.183'),
+(771, '2014-05-22 05:56:22', '173.244.206.19'),
+(772, '2014-05-22 08:49:46', '198.133.224.185'),
+(773, '2014-05-22 10:50:40', '157.55.32.107'),
+(774, '2014-05-22 12:13:52', '66.249.70.216'),
+(775, '2014-05-22 13:53:01', '85.233.79.6'),
+(776, '2014-05-22 23:33:19', '157.55.32.144'),
+(777, '2014-05-22 23:51:27', '202.46.62.206'),
+(778, '2014-05-22 23:51:59', '119.63.193.131'),
+(779, '2014-05-22 23:57:14', '109.68.191.26'),
+(780, '2014-05-23 07:49:00', '202.46.60.62'),
+(781, '2014-05-23 09:35:16', '157.55.33.252'),
+(782, '2014-05-23 20:22:54', '208.68.38.202'),
+(783, '2014-05-23 20:58:22', '198.133.224.185'),
+(784, '2014-05-23 21:57:32', '157.55.36.52'),
+(785, '2014-05-24 03:32:29', '66.249.73.176'),
+(786, '2014-05-24 07:49:18', '202.46.48.12'),
+(787, '2014-05-24 07:49:44', '119.63.193.130'),
+(788, '2014-05-24 14:51:18', '157.55.33.79'),
+(789, '2014-05-24 23:19:18', '187.113.218.141'),
+(790, '2014-05-25 03:32:55', '157.56.229.245'),
+(791, '2014-05-25 07:37:21', '66.249.73.176'),
+(792, '2014-05-25 07:50:52', '66.85.140.110'),
+(793, '2014-05-25 09:03:25', '89.248.162.170'),
+(794, '2014-05-25 09:30:59', '198.133.224.185'),
+(795, '2014-05-25 12:06:09', '65.55.24.215'),
+(796, '2014-05-25 23:34:45', '157.55.32.106'),
+(797, '2014-05-26 02:53:39', '198.211.106.56'),
+(798, '2014-05-26 03:50:10', '202.46.57.63'),
+(799, '2014-05-26 03:50:35', '119.63.193.130'),
+(800, '2014-05-26 06:08:56', '64.246.165.140'),
+(801, '2014-05-26 10:58:11', '157.55.32.87'),
+(802, '2014-05-26 12:59:38', '66.249.73.176'),
+(803, '2014-05-26 17:32:08', '66.85.144.237'),
+(804, '2014-05-26 21:37:26', '198.133.224.185'),
+(805, '2014-05-26 22:43:48', '157.55.33.44'),
+(806, '2014-05-27 00:43:22', '173.244.215.194'),
+(807, '2014-05-27 14:27:25', '157.56.92.142'),
+(808, '2014-05-27 16:57:20', '177.143.203.53'),
+(809, '2014-05-27 17:05:43', '177.18.183.242'),
+(810, '2014-05-27 18:54:46', '66.249.73.176'),
+(811, '2014-05-27 19:01:04', '17.102.43.154'),
+(812, '2014-05-27 19:50:17', '202.46.54.120'),
+(813, '2014-05-27 19:50:40', '119.63.193.131'),
+(814, '2014-05-27 23:42:29', '157.56.92.155'),
+(815, '2014-05-28 07:40:50', '202.46.52.32'),
+(816, '2014-05-28 07:40:56', '119.63.193.195'),
+(817, '2014-05-28 09:56:49', '198.133.224.185'),
+(818, '2014-05-28 10:36:26', '17.102.41.105'),
+(819, '2014-05-28 11:04:51', '109.68.190.145'),
+(820, '2014-05-28 11:32:03', '177.143.203.53'),
+(821, '2014-05-28 12:09:04', '173.244.206.13'),
+(822, '2014-05-28 15:05:16', '54.204.20.249'),
+(823, '2014-05-28 15:49:48', '202.46.62.22'),
+(824, '2014-05-28 15:50:13', '119.63.193.132'),
+(825, '2014-05-28 16:54:12', '66.249.73.176'),
+(826, '2014-05-28 20:40:27', '157.55.34.25'),
+(827, '2014-05-29 00:56:03', '198.199.66.80'),
+(828, '2014-05-29 05:52:35', '173.244.206.19'),
+(829, '2014-05-29 09:05:03', '157.55.32.57'),
+(830, '2014-05-29 21:08:08', '157.55.33.214'),
+(831, '2014-05-29 21:58:05', '198.133.224.185'),
+(832, '2014-05-29 23:16:35', '187.127.24.238'),
+(833, '2014-05-29 23:46:55', '109.68.191.26'),
+(834, '2014-05-30 07:23:14', '157.55.39.6'),
+(835, '2014-05-30 09:32:02', '177.203.122.241'),
+(836, '2014-05-31 11:01:20', '198.133.224.185'),
+(837, '2014-05-31 12:41:33', '157.55.39.140'),
+(838, '2014-06-01 01:02:51', '157.55.39.67'),
+(839, '2014-06-01 06:30:36', '198.199.83.127'),
+(840, '2014-06-01 07:56:56', '66.85.140.110'),
+(841, '2014-06-01 15:51:12', '209.190.113.82'),
+(842, '2014-06-02 00:53:05', '198.133.224.185'),
+(843, '2014-06-02 13:25:21', '157.55.39.245'),
+(844, '2014-06-02 17:05:51', '66.249.16.212'),
+(845, '2014-06-02 17:05:54', '66.249.85.176'),
+(846, '2014-06-02 17:34:09', '66.85.144.237'),
+(847, '2014-06-02 22:14:19', '177.4.192.67'),
+(848, '2014-06-03 00:46:09', '173.244.215.194'),
+(849, '2014-06-03 07:14:55', '157.55.39.162'),
+(850, '2014-06-03 11:50:39', '201.89.149.188'),
+(851, '2014-06-03 13:28:34', '202.46.52.21'),
+(852, '2014-06-03 13:28:34', '119.63.193.132'),
+(853, '2014-06-03 15:26:19', '202.46.57.69'),
+(854, '2014-06-03 15:26:19', '119.63.193.194'),
+(855, '2014-06-03 16:14:01', '157.55.39.148'),
+(856, '2014-06-03 17:26:37', '202.46.49.70'),
+(857, '2014-06-03 17:26:38', '119.63.193.130'),
+(858, '2014-06-03 19:26:10', '202.46.63.121'),
+(859, '2014-06-03 21:26:23', '202.46.62.29'),
+(860, '2014-06-03 23:26:14', '202.46.55.56'),
+(861, '2014-06-04 01:26:14', '202.46.62.205'),
+(862, '2014-06-04 01:26:14', '119.63.193.195'),
+(863, '2014-06-04 03:26:22', '202.46.56.40'),
+(864, '2014-06-04 05:26:09', '202.46.54.50'),
+(865, '2014-06-04 07:26:12', '202.46.53.34'),
+(866, '2014-06-04 07:26:12', '119.63.193.131'),
+(867, '2014-06-04 08:19:37', '80.82.70.112'),
+(868, '2014-06-04 09:26:24', '202.46.63.123'),
+(869, '2014-06-04 11:17:09', '109.68.190.145'),
+(870, '2014-06-04 11:26:09', '202.46.58.34'),
+(871, '2014-06-04 12:18:39', '173.244.206.13'),
+(872, '2014-06-04 13:26:17', '202.46.62.100'),
+(873, '2014-06-04 13:26:18', '119.63.193.195'),
+(874, '2014-06-04 14:34:25', '157.55.39.160'),
+(875, '2014-06-04 15:26:18', '202.46.57.84'),
+(876, '2014-06-04 15:26:19', '119.63.193.132'),
+(877, '2014-06-04 17:26:13', '202.46.62.24'),
+(878, '2014-06-04 19:26:32', '202.46.55.32'),
+(879, '2014-06-04 19:26:33', '119.63.193.131'),
+(880, '2014-06-04 21:26:22', '202.46.48.17'),
+(881, '2014-06-04 21:26:23', '119.63.193.194'),
+(882, '2014-06-04 23:04:53', '201.89.151.143'),
+(883, '2014-06-04 23:26:10', '202.46.49.16'),
+(884, '2014-06-04 23:43:56', '201.89.152.91'),
+(885, '2014-06-05 01:07:54', '157.55.39.139'),
+(886, '2014-06-05 01:26:01', '191.247.228.21'),
+(887, '2014-06-05 01:26:16', '202.46.55.33'),
+(888, '2014-06-05 03:26:21', '202.46.48.18'),
+(889, '2014-06-05 03:26:23', '119.63.193.130'),
+(890, '2014-06-05 05:26:13', '202.46.62.104'),
+(891, '2014-06-05 05:49:43', '173.244.206.19'),
+(892, '2014-06-05 09:26:31', '119.63.193.131'),
+(893, '2014-06-05 11:26:10', '202.46.56.50'),
+(894, '2014-06-05 11:56:14', '177.203.122.123'),
+(895, '2014-06-05 13:26:15', '202.46.58.36'),
+(896, '2014-06-05 13:26:15', '119.63.193.195'),
+(897, '2014-06-05 14:04:25', '198.133.224.185'),
+(898, '2014-06-05 15:26:21', '202.46.56.45'),
+(899, '2014-06-05 15:26:21', '119.63.193.132'),
+(900, '2014-06-05 17:26:19', '202.46.53.35'),
+(901, '2014-06-05 17:27:15', '192.81.219.93'),
+(902, '2014-06-05 19:26:32', '202.46.62.21'),
+(903, '2014-06-05 21:26:22', '119.63.193.130'),
+(904, '2014-06-05 23:49:32', '109.68.191.26'),
+(905, '2014-06-06 01:26:14', '202.46.57.85'),
+(906, '2014-06-06 01:26:15', '119.63.193.131'),
+(907, '2014-06-06 15:47:56', '202.46.48.28'),
+(908, '2014-06-06 15:48:18', '119.63.193.130'),
+(909, '2014-06-06 19:25:58', '157.55.39.1'),
+(910, '2014-06-07 07:46:40', '64.246.165.10'),
+(911, '2014-06-07 07:48:40', '202.46.62.13'),
+(912, '2014-06-07 07:49:05', '119.63.193.194'),
+(913, '2014-06-07 08:58:01', '157.55.39.25'),
+(914, '2014-06-07 12:04:51', '157.55.39.235'),
+(915, '2014-06-07 13:10:04', '201.14.245.149'),
+(916, '2014-06-07 15:13:19', '157.55.39.74'),
+(917, '2014-06-07 19:47:51', '202.46.50.158'),
+(918, '2014-06-07 19:48:12', '119.63.193.132'),
+(919, '2014-06-08 06:35:19', '157.55.39.235'),
+(920, '2014-06-08 07:49:19', '202.46.56.55'),
+(921, '2014-06-08 07:49:45', '119.63.193.194'),
+(922, '2014-06-08 07:51:26', '66.85.140.110'),
+(923, '2014-06-08 09:46:06', '202.46.50.16'),
+(924, '2014-06-08 09:46:25', '119.63.193.131'),
+(925, '2014-06-08 13:46:14', '202.46.62.13'),
+(926, '2014-06-08 17:28:34', '157.55.39.68'),
+(927, '2014-06-09 06:09:21', '157.55.39.68'),
+(928, '2014-06-09 09:46:12', '202.46.57.64'),
+(929, '2014-06-09 09:46:30', '119.63.193.194'),
+(930, '2014-06-09 15:47:23', '202.46.52.35'),
+(931, '2014-06-09 17:32:55', '66.85.144.237'),
+(932, '2014-06-09 19:48:16', '202.46.56.49'),
+(933, '2014-06-09 20:33:36', '66.249.74.76'),
+(934, '2014-06-09 21:46:36', '157.55.39.68'),
+(935, '2014-06-09 23:09:15', '50.57.164.250'),
+(936, '2014-06-10 00:52:27', '173.244.215.194'),
+(937, '2014-06-10 02:23:19', '54.185.0.100'),
+(938, '2014-06-10 10:47:16', '157.55.39.226'),
+(939, '2014-06-10 15:48:03', '202.46.50.12'),
+(940, '2014-06-10 15:48:26', '119.63.193.131'),
+(941, '2014-06-10 16:27:58', '198.211.102.105'),
+(942, '2014-06-10 19:30:45', '54.185.0.100'),
+(943, '2014-06-10 23:10:42', '201.89.155.63'),
+(944, '2014-06-10 23:19:05', '66.249.66.216'),
+(945, '2014-06-11 01:46:39', '202.46.52.34'),
+(946, '2014-06-11 01:47:00', '119.63.193.194'),
+(947, '2014-06-11 02:07:12', '198.133.224.185'),
+(948, '2014-06-11 05:25:51', '157.55.39.29'),
+(949, '2014-06-11 06:15:23', '186.67.35.171'),
+(950, '2014-06-11 10:58:59', '66.249.76.176'),
+(951, '2014-06-11 11:00:30', '109.68.190.145'),
+(952, '2014-06-11 11:06:06', '54.185.0.100'),
+(953, '2014-06-11 12:05:30', '173.244.206.13'),
+(954, '2014-06-11 13:45:45', '202.46.48.24'),
+(955, '2014-06-11 13:46:02', '119.63.193.132'),
+(956, '2014-06-11 15:35:04', '189.103.32.6'),
+(957, '2014-06-11 17:26:43', '157.55.39.29'),
+(958, '2014-06-12 04:10:16', '207.46.13.17'),
+(959, '2014-06-12 05:53:48', '173.244.206.19'),
+(960, '2014-06-12 07:47:34', '202.46.49.73'),
+(961, '2014-06-12 07:47:57', '119.63.193.196'),
+(962, '2014-06-12 13:25:01', '189.103.32.6'),
+(963, '2014-06-12 14:20:39', '66.249.73.176'),
+(964, '2014-06-12 17:40:39', '198.133.224.185'),
+(965, '2014-06-12 19:50:54', '216.38.216.101'),
+(966, '2014-06-12 20:31:36', '201.89.156.131'),
+(967, '2014-06-12 20:58:31', '177.2.142.149'),
+(968, '2014-06-12 21:13:35', '177.203.123.111'),
+(969, '2014-06-12 21:47:57', '202.46.54.40'),
+(970, '2014-06-12 21:48:20', '119.63.193.130'),
+(971, '2014-06-12 22:21:02', '201.89.152.81'),
+(972, '2014-06-12 23:52:45', '109.68.191.26'),
+(973, '2014-06-13 02:53:57', '157.55.39.34'),
+(974, '2014-06-13 08:46:40', '201.14.251.172'),
+(975, '2014-06-13 09:07:18', '177.4.192.120'),
+(976, '2014-06-13 09:24:45', '201.14.245.87'),
+(977, '2014-06-13 11:17:36', '177.4.192.64'),
+(978, '2014-06-13 17:36:05', '177.203.122.111'),
+(979, '2014-06-13 21:46:34', '202.46.62.24'),
+(980, '2014-06-13 21:46:54', '119.63.193.131'),
+(981, '2014-06-13 21:49:45', '64.72.135.223'),
+(982, '2014-06-13 22:39:28', '201.89.151.5'),
+(983, '2014-06-14 01:45:30', '202.46.62.16'),
+(984, '2014-06-14 01:45:47', '119.63.193.194'),
+(985, '2014-06-14 09:46:03', '202.46.49.75'),
+(986, '2014-06-14 09:46:22', '119.63.193.195'),
+(987, '2014-06-14 13:46:19', '202.46.62.15'),
+(988, '2014-06-14 13:46:38', '119.63.193.132'),
+(989, '2014-06-14 14:09:59', '92.42.51.121'),
+(990, '2014-06-14 19:35:58', '198.133.224.185'),
+(991, '2014-06-15 03:05:39', '192.241.142.56'),
+(992, '2014-06-15 07:49:05', '202.46.62.30'),
+(993, '2014-06-15 07:49:30', '119.63.193.132'),
+(994, '2014-06-15 07:57:01', '66.85.140.110'),
+(995, '2014-06-15 16:38:02', '201.87.154.2'),
+(996, '2014-06-15 19:47:15', '202.46.60.11'),
+(997, '2014-06-16 03:06:14', '157.55.39.4'),
+(998, '2014-06-16 03:53:05', '157.55.39.227'),
+(999, '2014-06-16 16:39:44', '198.133.224.185'),
+(1000, '2014-06-16 17:16:00', '177.203.122.48'),
+(1001, '2014-06-16 17:40:36', '66.85.144.237'),
+(1002, '2014-06-16 19:47:02', '202.46.52.30'),
+(1003, '2014-06-16 19:47:24', '119.63.193.131'),
+(1004, '2014-06-16 21:46:51', '202.46.48.26'),
+(1005, '2014-06-16 21:47:12', '119.63.193.196'),
+(1006, '2014-06-16 22:15:45', '54.85.41.74'),
+(1007, '2014-06-17 00:36:29', '173.244.215.194'),
+(1008, '2014-06-17 01:46:23', '202.46.48.23'),
+(1009, '2014-06-17 01:46:42', '119.63.193.132'),
+(1010, '2014-06-18 04:27:32', '157.55.39.71'),
+(1011, '2014-06-18 04:33:26', '207.46.13.54'),
+(1012, '2014-06-18 07:23:59', '198.133.224.185'),
+(1013, '2014-06-18 07:47:25', '202.46.63.79'),
+(1014, '2014-06-18 07:47:47', '119.63.193.132'),
+(1015, '2014-06-18 11:02:49', '109.68.190.145'),
+(1016, '2014-06-18 11:50:12', '202.46.53.35'),
+(1017, '2014-06-18 11:50:42', '119.63.193.195'),
+(1018, '2014-06-18 12:19:19', '173.244.206.13'),
+(1019, '2014-06-18 12:23:19', '23.81.179.226'),
+(1020, '2014-06-18 12:54:31', '177.203.123.14'),
+(1021, '2014-06-18 15:34:17', '187.113.252.238');
 
 --
--- Restrições para as tabelas dumpadas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para a tabela `ackknow_categoria_hierarquia`
+-- Constraints for table `ackknow_categoria_hierarquia`
 --
 ALTER TABLE `ackknow_categoria_hierarquia`
   ADD CONSTRAINT `fk_ack_conhecimento_categoria_has_ack_conhecimento_categoria_` FOREIGN KEY (`categoria_superior_id`) REFERENCES `ackknow_categoria` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_ack_conhecimento_categoria_has_ack_conhecimento_categoria_1` FOREIGN KEY (`categoria_inferior_id`) REFERENCES `ackknow_categoria` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
