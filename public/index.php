@@ -30,17 +30,6 @@
 // session_start();
 // $_SESSION = array();
 
-// Define application environment
-if (0 && !defined('APPLICATION_ENV') || getenv('APPLICATION_ENV') == 'development' ) {
-    ini_set('display_errors',1);
-    ini_set('display_startup_errors',1);
-    error_reporting(E_ALL );
-} else {
-    ini_set('display_errors', 0);
-    ini_set('display_startup_errors', 0);
-    error_reporting(-1);
-    putenv('APPLICATION_ENV', 'production');
-}
 
 //In order for paths relative to your application directory to work, you must have the directive chdir(dirname(__DIR__));
 chdir(dirname(__DIR__));
