@@ -28,10 +28,3 @@ RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
 #php_flag magic_quotes_gpc Off
 #php_value magic_quotes_gpc Off
 
-
-#ambinente de desenvolvimento
-# para setar deve estar habilitada a configuração:
-# AllowOverride FileInfo
-SetEnv "APPLICATION_ENV" "production"
-
-
