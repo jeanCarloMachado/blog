@@ -6,42 +6,7 @@ if(!basePath) alert("O endereço base < basePath > não foi informado! ");
 $(window).load(function()
 {
     setupUrls();
-
-
-    calcMediaFinalMgr();
 });
-
-
-
-
-function calcMediaFinal()
-{
-    //calcula a média final caso esta exista
-    avaliacaoTotal = $('input[name="avaliacao_total"]');
-
-    elements = $('.ONRelationBlock').find('span');
-
-    total = 0;
-    $(elements).each(function() {
-        total += parseFloat($(this).text());
-    });
-
-    $(avaliacaoTotal).val(total);
-}
-
-function calcMediaFinalMgr()
-{
-    avaliacaoTotal = $('input[name="avaliacao_total"]');
-
-    if($(avaliacaoTotal).val()) {
-
-        calcMediaFinal();
-
-        $(avaliacaoTotal).on('blur', function() {
-            calcMediaFinal();
-        });
-    }
-}
 
 function setupUrls()
 {

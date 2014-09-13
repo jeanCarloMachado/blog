@@ -189,15 +189,20 @@ function AckDataMinner ()
 
     this.findFromParent  = function (Parent) {
 
+
+        // Create the event
+        var event = new CustomEvent("devilSearchingData", {  });
+        document.dispatchEvent(event);
+
         var data = {};
 
         elements = Parent.find(elementTypes);
 
         elements.each(function() {
-            
-            //pula os radio buttons desmarcados 
+
+            //pula os radio buttons desmarcados
             if ($(this).attr('type') == 'radio' && !$(this).is(':checked')) {
-            
+
             } else {
                  data[$(this).attr("name")] = $(this).attr("value");
 
@@ -210,6 +215,11 @@ function AckDataMinner ()
 
 
     this.findGroupsFromParent  = function (Parent) {
+
+
+        // Create the event
+        var event = new CustomEvent("devilSearchingData", {  });
+        document.dispatchEvent(event);
 
         var data = {};
 
@@ -226,9 +236,9 @@ function AckDataMinner ()
 
                 elements.each(function() {
 
-                    //pula os radio buttons desmarcados 
+                    //pula os radio buttons desmarcados
                     if ($(this).attr('type') == 'radio' && !$(this).is(':checked')) {
-                    
+
                     } else {
                         if($(this).attr("name"))
                          data[dataKey][$(this).attr("name")] = $(this).attr("value");
@@ -258,7 +268,7 @@ function AckTableRowForm ()
 
         //da setup dos botões de enviar
         $(".actionButton").click(function(){
-           
+
             if (typeof tinyMCE != "undefined") {
                 tinyMCE.triggerSave();
             }
