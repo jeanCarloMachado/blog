@@ -1,0 +1,62 @@
+<?php $config = \AckCore\Facade::getInstance()->getControllerConfig(); ?>
+<div class="modulo <?= $controllerName ?>">
+    <?php \AckCore\HtmlElements\Explain::getInstance()->setName("moduleDescription")->render();?>
+    <div class="slide colunas">
+        <div class="collumA form">
+            <?php
+                $elements =   \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setControllerConfig($config)->buildElementsFromRow($row);
+                if(is_array($elements))
+                foreach($elements as $element)
+                    $element->render();
+            ?>
+        </div><!-- END collumA -->
+        <!-- • • • • -->
+        <div class="collumB">
+            <?php echo $this->visible($row,$disableVisible) ?>
+            <?php echo $this->highlight($row,$disableHightlight) ?>
+            <?php \AckCore\HtmlElements\LanguageSelector::getInstance()->render() ?>
+              <?php
+                unset($config["blacklist"]);
+                $config["whitelist"] = (isset($colB["whitelist"]) && !empty($colB["whitelist"])) ? $colB["whitelist"] : array();
+                $elements =   \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setContext(\AckCore\DataAbstraction\Service\InterpreterForm::COL2)->setControllerConfig($config)->buildElementsFromRow($row);
+                if(is_array($elements))
+                foreach($elements as $element)
+                    $element->render();
+            ?>
+        </div>
+        <span class="clearBoth"></span>
+    </div><!-- END slide -->
+</div><!-- END modulo -->
+
+
+
+<?php if($row->getId()->getBruteVal()) : ?>
+
+<span class="clearBoth"></span>
+<div class="modulo categorys">
+  <?php \AckCore\HtmlElements\Explain::getInstance()->setName("categorysDescription")->render();?>
+  <?php
+
+     $checksAction = array();
+     foreach($categorys as $child) :
+        $checksAction[] = \AckCore\HtmlElements\Check::getInstance(true)
+                                            ->setChecked($child->isChildOf($row,"\AckProducts\Model\ProductsCategorys","produtos_id","categorias_id"))
+                                            ->setTitle($child->getNome()->getBruteVal())
+                                            ->setValue($child->getId()->getBruteVal())
+                                            ->setPermission("+rw")
+                                            ->setName("categorys");
+     endforeach;
+
+      $blockActions = \AckCore\HtmlElements\CheckBlock::getInstance()
+      ->setChecks($checksAction)
+      ->setTitle("Categorias  de produtos")
+      ->setName("categorys")
+      ->setPermission("+rw")
+      ->render();
+  ?>
+</div>
+
+<?php endif; ?>
+
+
+<span class="clearBoth"></span>

@@ -1,0 +1,13 @@
+<div class="modulo <?= $controllerName ?>">
+        <div class="slide">
+                        <div>
+             <?php
+        if(!empty($rows))
+            foreach($rows as $element) :
+                if(in_array($element->getIdentificador()->getBruteVal(),$blacklistHelpIdentifiers))
+                continue;
+        ?>
+        <?php \AckCore\HtmlElements\Explain:: Factory($element->vars["descricao"],$element->vars["titulo"]->getVal())->render();?>
+        <?php  endforeach; ?>
+                        </div>
+                    </div>

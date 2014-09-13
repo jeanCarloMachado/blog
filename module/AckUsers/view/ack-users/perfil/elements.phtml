@@ -1,0 +1,23 @@
+<?php
+$backUser = \AckCore\Facade::getCurrentUser();
+?>
+
+<div class="parentFull" id="dashboard">
+  <a href="" target="_blank" title="Visite o site" id="preview"><span></span><img src="/devil/imagens/thumbAck.jpg" width="364" height="224" alt="preview do site" /></a>
+
+    <!-- • • • • -->
+
+    <div class="modulo Wfull" id="dadosSite">
+
+        <!-- • • • • -->
+        <ul>
+            <li>Aprender:           <var> <?php $know->render() ?></var>.</li>
+            <li>Tarefas: <var><?php echo $tasksStr ?></var</li>
+            <li>Lembrar: <var><?php echo $reminderStr ?></var</li>
+       </ul>
+
+       <!-- • • • • -->
+     <?php \AckCore\HtmlElements\Link::getInstance()->setUrl("/ack/conhecimentos")->setTitle("Conhecimentos")->setPermission("+rw")->render(); ?>
+     <?php \AckCore\HtmlElements\Link::getInstance()->setUrl("/ack/lembretes")->setTitle("Lembretes")->setPermission("+rw")->render(); ?>
+     <?php \AckCore\HtmlElements\Link::getInstance()->setUrl("/ack/tarefas")->setTitle("Tarefas")->setPermission("+rw")->render(); ?>
+     <?php \AckCore\HtmlElements\Link::getInstance()->setUrl("/ack/diarios")->setTitle("Diários")->setPermission("+rw")->render(); ?>

@@ -1,0 +1,36 @@
+<?php
+echo $this->partial("/ack-core/layout/default/partials/elementSuperior.phtml",array("controllerName"=>$controllerName));
+
+
+$config = \AckCore\Facade::getInstance()->getControllerConfig();
+
+    $elements = \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setControllerConfig($config)->buildElementsFromRow($row);
+    if(is_array($elements))
+    foreach($elements as $element)
+        $element->render();
+?>
+</div>
+<div class="collumB">
+    <?php echo $this->visible($row,$disableVisible) ?>
+    <?php echo $this->highlight($row,$disableHightlight) ?>
+    <?php \AckCore\HtmlElements\LanguageSelector::getInstance()->render() ?>
+      <?php
+        unset($config["blacklist"]);
+        $config["whitelist"] = (isset($colB["whitelist"]) && !empty($colB["whitelist"])) ? $colB["whitelist"] : array();
+        $elements =   \AckCore\DataAbstraction\Service\InterpreterForm::getInstance()->setContext(\AckCore\DataAbstraction\Service\InterpreterForm::COL2)->setControllerConfig($config)->buildElementsFromRow($row);
+        if(is_array($elements))
+        foreach($elements as $element)
+            $element->render();
+    ?>
+
+<?php
+
+echo $this->partial("/ack-core/layout/default/partials/elementInferior.phtml","ack-core");
+//###################################################################################
+//################################# renderiza os elementos abaixo da seção principal, enviados pelo controlador ###########################################
+//###################################################################################
+    if(isset($belowMainSection)) foreach($belowMainSection as $element) $element->render();
+//###################################################################################
+//################################# END renderiza os elementos abaixo da seção principal, enviados pelo controlador ########################################
+//###################################################################################
+?>

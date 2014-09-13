@@ -1,0 +1,116 @@
+            <?php
+              // \System\Utils::dg($filters);
+            ?>
+
+            </div>
+                <div acao="carregar_filtro" class="filter-results-options filter-form">
+                    <div chave="filtros" class="field-block">
+                        <div class="filter-results-item idImagem">
+                            <p class="filter-results-title"><strong>Nome</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field">
+                                <p class="field-text">Nome:</p>
+                                <label class="placeholder">
+                                    <input type="text" autocomplete="off" class="placeholder-input no-valid" name="nome" />
+                                </label>
+                            </fieldset>
+                        </div>
+
+                        <div class="filter-results-item statusImagem">
+                            <p class="filter-results-title"><strong>Frequência</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field">
+                                <p class="field-text">Frequência:</p>
+                                <label class="placeholder">
+                                    <select name="frequencia_id" class="placeholder-select">
+                                        <option value="">Todas</option>
+                                        <?php 
+                                        foreach($Frequencys as $frequency) : ?>
+                                        <option value="<?php echo $frequency->getId()->getBruteVal() ?>"><?php echo $frequency->getNome()->getBruteVal() ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                  
+
+                        <div class="filter-results-item visivel">
+                            <p class="filter-results-title"><strong>Filtro de concluído no período</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field checkboxGruop">
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="visivel" class="placeholder-check" name="nao_visivel" />
+                                    <p class="field-text">Não Concluído</p>
+                                </label>
+
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="visivel" class="placeholder-check" name="visivel" />
+                                    <p class="field-text">Concluído</p>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                          <div class="filter-results-item visivel">
+                            <p class="filter-results-title"><strong>Filtro de atrasos</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field checkboxGruop">
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="nao_atrasado" class="placeholder-check" name="nao_visivel" />
+                                    <p class="field-text">Não Atrasados</p>
+                                </label>
+
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="atrasado" class="placeholder-check" name="visivel" />
+                                    <p class="field-text">Atrasados</p>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                              <div class="filter-results-item statusImagem">
+                            <p class="filter-results-title"><strong>Usuários</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field">
+                                <p class="field-text">Usuários:</p>
+                                <label class="placeholder">
+                                    <select name="responsavel_atual_id" class="placeholder-select">
+                                        <option value="">Todos</option>
+                                        <?php 
+                                        foreach($Users as $user) : ?>
+                                        <option value="<?php echo $user->getId()->getBruteVal() ?>"><?php echo $user->getNome()->getBruteVal() ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                           <div class="filter-results-item visivel">
+                            <p class="filter-results-title"><strong>Filtro de responsabilidades</strong></p>
+
+                            <span class="box-list-spacer"></span>
+
+                            <fieldset class="field checkboxGruop">
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="meus" class="placeholder-check" name="meus" />
+                                    <p class="field-text">Meus</p>
+                                </label>
+
+                                <label class="placeholder">
+                                    <input type="checkbox" autocomplete="off" radio="outros" class="placeholder-check" name="outros" />
+                                    <p class="field-text">Outros</p>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                        <button title="Filtrar" class="botao filtro"><span><var></var><em>Filtrar</em></span><var class="borda"></var></button>
+                    </div>

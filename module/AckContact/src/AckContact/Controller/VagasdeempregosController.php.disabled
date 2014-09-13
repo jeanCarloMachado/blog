@@ -1,0 +1,19 @@
+<?php
+namespace AckContact\Controller;
+use AckMvc\Controller\TableRowAutomatorAbstract as Controller;
+class VagasdeempregosController extends Controller
+{
+    protected $models = array("default"=>"\AckContact\Model\Vacancys");
+    protected $title = "Vaga";
+    protected $config = array (
+        "global" => array(
+            //"columnSpacing" => 230,
+            "showId" => true,
+            "elementsSettings"=>array("nome"=>array("columnSpacing"=>600,"orderSelector"=>true)),
+            "blacklist"=>array("id","ordem","status","visivel")
+        ),
+        "index" => array(
+            "whitelist"=>array("id","fakeid","nome","visivel")
+        )
+    );
+}

@@ -1,0 +1,19 @@
+<?php $this->layout()->setTemplate('error/404'); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Estágios</title>
+</head>
+<body>
+<div class="erroBox">
+    <h1>Algum erro ocorreu</h1>
+    <p>Clique <a href="<?php echo \AckCore\Facade::getEnderecoSite(); ?>">aqui</a> para voltar à home do site.</p>
+    <p>Ou contate o <a href="mailto:julia.silva@bento.ifrs.edu.br">administrador</a> do sistema.</p>
+    <img src="/SiteJean/img/notFound.jpg" alt="Página não encontrada." width="100%" height="800px"/>
+
+
+</div><!-- END erroBox -->
+</body>
+</html>

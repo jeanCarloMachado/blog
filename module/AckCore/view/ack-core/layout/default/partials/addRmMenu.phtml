@@ -1,0 +1,21 @@
+<!-- menu de adicionar e remover itens -->
+<?php if(!isset($disableADDREMOVE)) : ?>
+        <div class="boxBotoes">
+
+            <?php
+
+            if(!isset($disableAdd)) :
+                $addButtonTitle = ($addButtonTitle) ? $addButtonTitle : "Adicionar ".($title);
+                \AckCore\HtmlElements\Button::getInstance()->setPermission("+rw")->setName("add")->setUrl("/ack/".$controllerName."/incluir")->setTitle($addButtonTitle)->render();
+            endif;
+            ?>
+
+            <?php
+            if(!isset($disableRemove)):
+                $rmButtonTitle = ($rmButtonTitle) ? $rmButtonTitle : "Excluir ".$this->pluralize($title);
+                \AckCore\HtmlElements\Button::getInstance()->setPermission("+rw")->setName("excluir")->setTitle($rmButtonTitle)->render();
+            endif;
+            ?>
+
+    </div><!-- END boxBotoes -->
+<?php endif; ?>

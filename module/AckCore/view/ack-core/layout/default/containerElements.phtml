@@ -1,0 +1,118 @@
+<?php
+    if($pageType == \AckMvc\Controller\TableRowAutomatorAbstract::TYPE_LIST && !isset($disableSuperiorListMenu)):
+
+     //###################################################################################
+    //################################# menu superior ###########################################
+    //###################################################################################
+?>
+            <div id="lista<?php echo $this->pluralize($title) ?>" class="modulo listagem">
+            <div class="head">
+
+        <?php echo $this->partial("/ack-core/layout/default/partials/addRmMenu.phtml",array(
+                                                                                            "disableADDREMOVE"=>$disableADDREMOVE,
+                                                                                            "disableAdd"=>$disableAdd,
+                                                                                            "addButtonTitle"=>$addButtonTitle,
+                                                                                            "rmButtonTitle" => $rmButtonTitle,
+                                                                                            "title"=>$title,
+                                                                                            "controllerName"=>$controllerName,
+                                                                                            "disableRemove"=>$disableRemove,
+                                                                                            ));?>
+
+        <?php \AckCore\HtmlElements\Explain::getInstance()->setName("lista")->render();?>
+
+        <?php
+             if(!isset($disableFilters) || $disableFilters == false) {
+
+                 if(isset($filters_file)) {
+                    $controllerConfigCpy = $variables->getArrayCopy();
+                     $filters = \AckCore\DataAbstraction\Service\InterpreterFilter::getInstance()->setControllerConfig($controllerCpy)->getFromRow($row);
+                    require_once $filters_file;
+                } else {
+                    if(!isset($disableAutoFilters) || $disableAutoFilters == false) {
+
+                            $controllerCpy = $variables->getArrayCopy();
+                            $filters = \AckCore\DataAbstraction\Service\InterpreterFilter::getInstance()->setControllerConfig($controllerCpy)->getFromRow($row);
+                            if(!empty($filters)) :
+        ?>
+                            </div>
+                                <div acao="carregar_filtro" class="filter-results-options filter-form">
+                                <div chave="filtros" class="field-block">
+                                <?php
+                                    foreach($filters as $filter) {
+                                        $filter->render();
+                                    }
+                                ?>
+                                <button title="Filtrar" class="botao filtro"><span><var></var><em>Filtrar</em></span><var class="borda"></var></button>
+                            </div>
+        <?php
+                            endif;
+
+                    }
+                }
+            }
+         ?>
+        </div>
+<<<<<<< HEAD
+
+
+        <?php if(!isset($disableModuleHeader)) : ?>
+        <div class="list">
+            <div class="border left"></div>
+            <div class="border right"></div>
+            <div class="list-table">
+                <div class="list-row header">
+        <?php endif; ?>
+
+=======
+
+        <div class="slide lista list_<?= $controllerName ?>">
+        <?php if(!isset($disableModuleHeader)) : ?>
+            <div class="header">
+                <span class="borda"></span>
+        <?php endif; ?>
+>>>>>>> SiteJean-master
+<?php
+
+
+    //###################################################################################
+    //################################# END menu superior ########################################
+    //###################################################################################
+    endif;
+ ?>
+
+<<<<<<< HEAD
+<?php #echo $this->headTitle() ?>
+=======
+>>>>>>> SiteJean-master
+<?php echo $this->content; ?>
+
+<?php if(!isset($disableAutoMountListFooter)) : ?>
+
+<<<<<<< HEAD
+    <?php if(!isset($disableModuleFooter)) : ?>
+                </div><!-- END header -->
+    <?php endif; ?>
+    <?php if(!isset($disableLoadMore)) : ?>
+            </div>
+            <button class="load-more" title="Carregar mais resultados"><span>Exibir mais resultados</span></button>
+        </div>
+       <span class="clearBoth"></span>
+    </div><!-- END modulo -->
+    <?php endif; ?>
+<?php endif; ?>
+</div><!-- END parentFull -->
+=======
+<?php if(!isset($disableModuleFooter)) : ?>
+<span class="borda"></span>
+        </div><!-- END header -->
+<?php endif; ?>
+          <?php if(!isset($disableLoadMore)) : ?>
+                <ol></ol>
+                    <button class="carregarMais" title="Carregar mais resultados" name="destaques"><span class="borda esq"></span><em>Exibir mais resultados</em><span class="borda dir"></span></button>
+                  </div><!-- END lista -->
+                   <span class="clearBoth"></span>
+                    </div><!-- END modulo -->
+                    <?php endif; ?>
+         <?php endif; ?>
+                </div><!-- END parentFull -->
+>>>>>>> SiteJean-master

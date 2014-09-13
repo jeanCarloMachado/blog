@@ -1,0 +1,29 @@
+<?php
+    $config = \AckCore\Facade::getInstance()->getControllerConfig();
+?>
+<div class="modulo <?= $controllerName ?>">
+    <?php \AckCore\HtmlElements\Explain::getInstance()->setName("moduleDescription")->render();?>
+
+    <div class="slide colunas">
+        <div class="collumA form parentDataDispatcher">
+            <?php
+                $automator = new \AckCore\HtmlElements\Automator;
+                $automator->getProperColumns($row,$config);
+            ?>
+        </div><!-- END collumA -->
+        <!-- • • • • -->
+        <div class="collumB">
+            <?php echo $this->visible($row,$disableVisible) ?>
+            <?php  \AckCore\HtmlElements\LanguageSelector::getInstance()->render() ?>
+
+              <?php
+                $automator = new \AckCore\HtmlElements\Automator;
+                unset($config["blacklist"]);
+                $config["whitelist"] = (is_array($colB["whitelist"])) ? $colB["whitelist"] : array();
+                $automator->getProperColumns($row,$config);
+            ?>
+
+        </div>
+        <span class="clearBoth"></span>
+    </div><!-- END slide -->
+</div><!-- END modulo -->

@@ -1,0 +1,50 @@
+<?php
+$model = new \AckCore\Model\Languages();
+$resultLanguages = $model->toObject()->get();
+
+if(count($resultLanguages) > 1) :
+?>
+
+<div class="modulo idiomasSite listagem" id="idiomas">
+	<?php \AckCore\HtmlElements\Explain::getInstance()->setName("idiomsDescription")->render();?>
+
+	<div class="slide">
+		<div class="lista list_idiomas">
+			<div class="header">
+				<span class="borda"></span>
+
+				<div>
+					<div class="idioma"><button><em>Idioma</em></button></div>
+					<div class="apreviatura"><button><em>Abreviatura</em></button></div>
+					<div class="visivel"><button><em>Visível</em></button></div>
+				</div>
+
+				<span class="borda"></span>
+			</div>
+
+			<!-- END header -->
+			<ol class="listaIdiomas">
+				<?php foreach ($resultLanguages as $language) : ?>
+				<!--  Importante o ID da <li> ser passado para o NAME do <input>  -->
+				<li id="<?= $language->getid()->getBruteVal() ?>">
+					<div>
+						<span class="idioma"><?php echo $language->getnome()->getVal() ?></span>
+						<span class="abreviatura"><?php print(strtoupper($language->getAbreviatura()->getVal())); ?></span>
+					<div class="checkboxACK">
+
+					<i class="visivel <?php if($language->getVisivel()->getVal() == "1") :?> ok<?php endif; ?>">
+						<input type="checkbox" value="<?php echo $language->getId()->getBruteVal(); ?>" name="idiomas"<?php if($language->getVisivel()->getVal() == "1") : ?> checked="checked"<?php endif; ?> />
+					</i>
+				</li>
+				<?php endforeach; ?>
+			</ol>
+			<!-- end listaIdiomas -->
+		</div>
+		<!-- end lista -->
+
+		<span class="clearBoth"></span>
+	</div>
+	<!-- END slide -->
+</div>
+<!-- end modulo -->
+<?php endif; ?>

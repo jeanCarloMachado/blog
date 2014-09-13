@@ -1,0 +1,23 @@
+<?php
+    $row =& $customScope->row;
+    if(isset($row)) :
+    //###################################################################################
+    //################################# configuração da página ###########################################
+    //###################################################################################
+?>
+
+<input type="hidden" id="infoPagina" data-info='{"modulo":"<?php echo $customScope->moduleName ?>", "arquivoRetorno":"<?php echo $customScope->controllerName ?>" , "id":"<?php echo $row->getId()->getBruteVal() ?>", "acao":"<?= ($row->getId()->getBruteVal()) ? "editar" : "incluir" ?>"}'/>
+
+<input type="hidden" id="dataACK"
+        data-id="<?php echo $row->getId()->getBruteVal() ?>"
+        data-acao="<?= ($row->getId()->getBruteVal()) ? "editar" : "incluir" ?>"
+        data-modulo="<?php echo $customScope->moduleName ?>"
+        data-arquivoRetorno="<?php echo $customScope->controllerName ?>"
+    />
+
+<?php
+    //###################################################################################
+    //################################# END configuração da página ########################################
+    //###################################################################################
+endif;
+?>

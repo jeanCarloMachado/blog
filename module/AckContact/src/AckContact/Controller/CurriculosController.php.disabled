@@ -1,0 +1,83 @@
+<?php
+namespace AckContact\Controller;
+use AckMvc\Controller\TableRowAutomatorAbstract;
+class CurriculosController extends TableRowAutomatorAbstract
+{
+    protected $models = array("default" => "AckContact\Model\Curriculos");
+    /**
+     * colocar no singlular
+     * @type {String}
+     */
+    protected $title = "Trabalhe Conosco";
+    protected $config = array(
+        "global" => array(
+            "showId" => true,
+            "permission" => "+r",
+            "showOnlyNotEmptyFields" => true,
+            "disableAdd" => true,
+            "disableSave" => true,
+            "disableVisible" => true,
+            "blacklist" => array("id", "status", "visivel", "anexo", "escolaridade", "tempopermanencia", "atualmenteempregado", "nomeempresa", "cargo", "estado"),
+            "elementsSettings" => array(
+                "observacoes" => array("type" => "TextArea"),
+                "atualmenteempregado" => array("type" => "BooleanSelector"),
+                "suashabilidades" => array("type" => "TextArea"),
+                "curso" => array("type" => "TextArea"),
+                "atividades" => array("type"=>"TextArea"),
+                "nome"=>array("type"=>"Input"),
+                "anexo" => array("type"=>"DownloadableFile"),
+                "fakeid"=>array("columnSpacing"=> 80),
+                "email"=>array("columnSpacing"=> 200)
+            ),
+        ),
+        "index" => array(
+            "whitelist" => array(
+                "id",
+                "fakeid",
+                "nome",
+                "email",
+            ),
+            "blacklist" => array(),
+            "rmButtonTitle" => "Excluir Currículos",
+        ),
+        "editar" => array(
+            "colB" => array(
+                "whitelist" => array("anexo")
+            )
+        )
+    );
+
+  public function getCategoryData(&$config)
+  {
+      if ($this->params("action") == "editar" || $this->params("action") == "incluir" ) {
+
+      //###################################################################################
+      //################################# relacionamento 1=>N com Vacancys ###########################################
+      //###################################################################################
+        if ($config["row"]->getVagaId()->getBruteVal()) {
+
+            //instancia o modelo de relação
+            $modelVacancys = new \AckContact\Model\Vacancys;
+            $Vacancys = $modelVacancys->toObject()->onlyAvailable()->get();
+            $selectVacancys = \AckCore\HtmlElements\Select::getInstance()->setName("vaga_id")->setTitle("Vaga")->setPermission('rw')->setValue(0);
+
+            //testa se já está setada a coluna da linha com relação externa
+            if($config["row"]->getVagaId()->getBruteVal())
+             $where = (array("id"=>$config["row"]->getVagaId()->getBruteVal()));
+
+            //pega a linha relacionada (caso ela existir)
+            $selectedRow = $modelVacancys->getOne($where);
+
+            foreach ($Vacancys as $row) {
+                $selected = ($selectedRow->getId()->getBruteVal() == $row->getId()->getBruteVal()) ? true : false;
+                $selectVacancys->setOption($row->getId()->getBruteVal(),$row->getNome()->getVal(),$selected);
+            }
+            $selectVacancys->setPermission("+r");
+            $config["toRenderCOL2"][] =& $selectVacancys;
+        }
+      //###################################################################################
+      //################################# END relacionamento 1=>N com Vacancys########################################
+      //###################################################################################
+      }
+  }
+}
