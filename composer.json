@@ -3,6 +3,7 @@
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
         "zendframework/zend-developer-tools": "dev-master",
-        "dlu/dlutwbootstrap": "dev-master"
+        "dlu/dlutwbootstrap": "dev-master",
+        "erusev/parsedown": "dev-master"
     }
 }
