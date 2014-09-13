@@ -15,7 +15,7 @@
 
 		<div id="topo" class="row">
 			<div class="col-xs-12 col-md-4">
-           
+
             <a href="http://jeancarlomachado.com.br"><h1>Vida de backend</h1></a>
 
             <p> Um blog para registrar algumas experiências de um desconhecido programador backend. Posts sobre PHP, Zend Framework, Linux, eletrônica, filosofia entre outros. </p>
@@ -32,19 +32,6 @@
 
 		<!-- Menu de informações genéricas do sistema importantes para o usuário as quais devem permanecer em todas as páginas -->
 		<?php echo $this->partial("/site-jean/layout/partials/mainMenu.phtml"); ?>
-
-        <?php
-            $sm = $this->getHelperPluginManager()->getServiceLocator();
-            $sm = $this->getHelperPluginManager()->getServiceLocator();
-            $routeMatch = $sm->get('Application')->getMvcEvent()->getRouteMatch();
-
-            if($routeMatch->getMatchedRouteName() != 'home' ) {
-				echo $this->partial("/site-jean/layout/partials/breadCrumbs.phtml");
-            }
-		?>
-	
-
-
 
 
 
