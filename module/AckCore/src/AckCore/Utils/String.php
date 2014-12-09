@@ -28,7 +28,7 @@ class String
 {
     public static function stripTags($str)
     {
-        return strip_tags($str); 
+        return strip_tags($str);
     }
 
     public static function sanitize(&$str)
@@ -39,7 +39,7 @@ class String
 
     public static function makeInstance($str)
     {
-        $instance = new $str;
+        $instance = new $str();
 
         return $instance;
     }
@@ -227,14 +227,27 @@ class String
                 return $arr;
         }
 
-        public static function showNChars($str,$n = 100,$suffix = "...")
+            /**
+         * mostra um número n de caracteres da string str
+         * se passar disso contactena o sufixo
+         */
+        public static function showNChars($str, $n = 100, $suffix = '...')
         {
-                if (strlen($str) > $n) {
-                        $str = substr($str, 0,$n);
-                        $str.=$suffix;
-                }
 
-                return $str;
+          if (strlen($str) < $n) {
+            return $str;
+          }
+
+          $str = substr($str, 0, $n);
+
+          $restChars = strrpos($str, ' ');
+
+          $n = $n - ($n - $restChars);
+
+          $str = substr($str, 0, $n);
+          $str.=$suffix;
+
+          return $str;
         }
 
         public static function toUrl($str)

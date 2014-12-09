@@ -114,7 +114,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $config['row'] = $model->onlyNotDeleted()->toObject()->getOne(array('id'=>(int) $this->params('id')));
 
-        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $config ); 
+        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $config );
 
         $this->viewModel->config = $config;
 
@@ -122,7 +122,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $this->evtBeforeReturnLocal();
 
-        
         return $this->viewModel;
     }
 
@@ -185,21 +184,18 @@ abstract class AbstractTableRowController extends AbstractActionController imple
             $json['status'] = 0;
             $json['mensagem'] = $e->getMessage();
         }
-        
+
         //se a query retornou um objeto salva somente o id em result
-        if(is_object($result)) {
+        if (is_object($result)) {
             $result = $result->getId()->getBruteVal();
         }
 
-
         $this->evtAfterMainSave($result);
 
-            
         //salva os plugins
         $contextData['data'] = $data;
-        $contextData['class_name'] = $this->getModelName(); 
-        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $contextData); 
-
+        $contextData['class_name'] = $this->getModelName();
+        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $contextData);
 
         $json['id'] = ($result) ?  $result : $id;
         if ($this->ajax['parameters'] == 'noLayout' && $json['url']) {
@@ -353,7 +349,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     {
        //========================= notifica o evento =========================
        {
-            $event = new AckEvent;
+            $event = new AckEvent();
             $event->setType(EventManager::TYPE_ACTION_DISPATCH);
             $event->setControllerName( $this->params ( '__CONTROLLER__'));
             $event->setNamespace($this->params ( '__NAMESPACE__'));
@@ -407,10 +403,8 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         $template = $this->getTemplatePath($templateFile);
         $this->viewModel->setTemplate($template);
 
-
-        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $cfg); 
+        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $cfg);
         $this->viewModel->config = $cfg;
-
 
         $this->evtBeforeRun();
     }
@@ -523,7 +517,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
                 if (isset($relationConfig['model'])) {
 
                     $modelName = $relationConfig['model'];
-                    $modelInstance = new $modelName;
+                    $modelInstance = new $modelName();
                     $value = $modelInstance->toObject()->getOne(array('id'=>$element->getBruteVal()));
 
                     if (!empty($value)) {
