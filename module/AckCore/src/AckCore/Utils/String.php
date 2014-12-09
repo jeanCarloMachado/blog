@@ -233,7 +233,6 @@ class String
          */
         public static function showNChars($str, $n = 100, $suffix = '...')
         {
-
           if (strlen($str) < $n) {
             return $str;
           }
