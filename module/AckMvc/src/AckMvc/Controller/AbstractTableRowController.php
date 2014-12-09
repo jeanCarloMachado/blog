@@ -257,7 +257,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
                     if ($elementId == 'id') {
                         $result['grupo'][$rowId][$elementId] = $element->getBruteVal();
                     } else {
-                        $result['grupo'][$rowId][$elementId] = $element->stripTags()->showNChars()->getVal();
+                        $result['grupo'][$rowId][$elementId] = strip_tags($element->showNChars()->getVal());
                     }
 
                     $this->evtLoadItensOnColumnIterator($elementId,$element,$rowId,$vars, $result, $config);
