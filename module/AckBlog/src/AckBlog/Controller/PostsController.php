@@ -29,7 +29,7 @@
  */
 namespace AckBlog\Controller;
 use AckMvc\Controller\AbstractTableRowController as Controller;
-
+use Zend\View\Model\ViewModel;
 /**
  * gerenciamento PostsController
  *
@@ -110,5 +110,28 @@ class PostsController extends Controller
         $this->viewModel->setVariables($data);
 
         return $this->viewModel;
+    }
+
+    public function jsonAction()
+    {
+        $id = $this->params('id');
+        $data = array();
+
+        $entity = $this->getModelInstance()
+            ->toObject()
+            ->onlyAvailable()
+            ->getOne(array('id'=>(int) $id));
+
+        $data['row'] = $entity;
+
+        if ($entity->getTipo()->getBruteVal() == \AckBlog\Model\Posts::TYPE_MARKDOWN) {
+            $data['isMarkdown'] = true;
+        } else {
+            $data['isMarkdown'] = false;
+        }
+
+        echo json_encode($data, true);
+
+        return $this->getResponse();
     }
 }

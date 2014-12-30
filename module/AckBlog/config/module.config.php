@@ -23,9 +23,9 @@ return array(
                             'action' => 'lista'
                         ),
                 ),
-            ), 
+            ),
 
-         'view-post' => array(
+        'view-post' => array(
                     'type'    => 'Segment',
                     'priority' => 666,
                      'options' => array(
@@ -40,7 +40,24 @@ return array(
                             'action' => 'visualizar'
                         ),
                 ),
-            ), 
+            ),
+
+        'json-post' => array(
+                    'type'    => 'Segment',
+                    'priority' => 666,
+                     'options' => array(
+                        'route'    => '/post/json/:id[/:title]',
+                        'constraints' => array(
+                            'id'     => '[0-9]+',
+                            'title' => '(.*)'
+                        ),
+                        'defaults' => array(
+                            '__NAMESPACE__' => 'AckBlog\Controller',
+                            'controller' => 'Posts',
+                            'action' => 'json'
+                        ),
+                ),
+            ),
         ),
     ),
 
