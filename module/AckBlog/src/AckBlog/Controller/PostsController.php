@@ -68,7 +68,6 @@ class PostsController extends Controller
         if ($this->params("action") == "editar" || $this->params("action") == "incluir" ) {
 
             $config = $this->viewModel->config;
-
             $select = \AckCore\HtmlElements\Select::Factory($this->viewModel->config["row"]->vars["tipo"])->setPermission(2);
             $select->setOption(1,'HTML', ($config['row']->getTipo()->getBruteVal() == 1));
             $select->setOption(2,'Markdown', ($config['row']->getTipo()->getBruteVal() == 2));

@@ -22,7 +22,7 @@ class IndexController extends Base
         $variables['posts'] = $this->getServiceLocator()
             ->get('Posts')
             ->toObject()
-            ->get(array('publicado'=>1),array('order'=> 'id DESC'));
+            ->get(array('publicado'=>1),array('order'=> 'data DESC'));
 
         $this->viewModel->setVariables($variables);
 
