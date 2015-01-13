@@ -221,7 +221,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         $model = $this->getModelInstance();
         $config = (!empty($this->viewModel->config)) ? $this->viewModel->config : array();
 
-        $itensPerPage = isset($this->ajax['itensPerPage'])) ? $this->ajax['itensPerPage'] $this->itensPerPage;
+        $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
 
         $params = array('limit'=>array('offset'=>$this->ajax['itensCount'], 'count'=> $itensPerPage));
 
