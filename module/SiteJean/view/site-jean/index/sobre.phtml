@@ -2,7 +2,10 @@
     <h3><?php echo $row->getTitulo()->getVal(); ?></h3>
 
     <div>
-        <?php echo $row->getConteudo()->getVal() ?>
+        <?php
+            $parsedown = new \Parsedown();
+            echo $parsedown->text($row->getConteudo()->getVal());
+        ?>
     </div>
 </div>
 
