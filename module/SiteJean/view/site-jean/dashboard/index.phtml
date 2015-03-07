@@ -8,9 +8,8 @@
 
                   <!-- lista da esquerda -->
                   <ul>
-                        <li>Número de visitas do site no mês: <var><?= $this->info()->totalVisitsThisMonth() ?></var></li>
+                        <li>Número de visitas do site no mês: <var><?php $this->info()->totalVisitsThisMonth(); ?></var></li>
                         <li>Total de visitas do site:         <var><?php echo $this->info()->totalVisits() ?></var></li>
-                        <li>Média mensal de visitas:          <var><?php echo $this->info()->totalVisitsAverage(); ?></var></li>
                         <li> Total de contatos: <var><?php echo $serviceLocator->get('Contacts')->count(); ?></var></li>
                         <li> Total de posts: <var><?php echo $serviceLocator->get('Posts')->count(); ?></var></li>
                   </ul>
