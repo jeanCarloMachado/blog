@@ -53,4 +53,14 @@ class Posts extends Table
      * @var string
      */
     protected $_row = '\AckBlog\Model\Post';
+
+    public function getTotalPubished()
+    {
+        return count($this->get(array('publicado'=>true)));
+    }
+
+    public function getPublishedAverage()
+    {
+        return count($this->get(array('publicado'=>true))) * 100 / $this->count();
+    }
 }

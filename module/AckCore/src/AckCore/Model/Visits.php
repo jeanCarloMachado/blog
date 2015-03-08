@@ -1,5 +1,6 @@
 <?php
 namespace AckCore\Model;
+
 use AckDb\ZF1\TableAbstract;
 /**
  * versão de comentários 1.3
@@ -29,10 +30,6 @@ class Visits extends TableAbstract
         return $result;
     }
 
-    /**
-     * total de visitas no mês
-     * @return Ambigous <[type], number>
-     */
     public function getTotalCurrMonth()
     {
         $query = "SELECT count(id) FROM ".$this->getTableName()." WHERE MONTH(data)=".date("m")." AND YEAR(data)=".date("Y");
@@ -54,12 +51,12 @@ class Visits extends TableAbstract
         $i = 0;
         $sum = 0;
 
-        if(!empty($result[0]))
+        if (!empty($result[0])) {
             foreach ($result as $element) {
-
-                $sum+= $element["count(id)"] ;
+                $sum += $element["count(id)"];
                 $i++;
             }
+        }
 
         return ($i != 0) ? $sum/$i : 0;
     }

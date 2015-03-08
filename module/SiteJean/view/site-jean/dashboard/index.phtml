@@ -1,22 +1,47 @@
 <?php
-      $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
+    $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
+
+    $visits = $serviceLocator->get('AckCore\Model\Visits');
+    $contacts = $serviceLocator->get('Contacts');
+    $posts = $serviceLocator->get('Posts');
 ?>
 <div class="row">
 	<div class="col-xs-12">
 		<div class="jumbotron">
 			<!-- TODO: Form aqui -->
-
-                  <!-- lista da esquerda -->
+            <!-- lista da esquerda -->
                   <ul>
-                        <li>Número de visitas do site no mês: <var><?php $this->info()->totalVisitsThisMonth(); ?></var></li>
-                        <li>Total de visitas do site:         <var><?php echo $this->info()->totalVisits() ?></var></li>
-                        <li> Total de contatos: <var><?php echo $serviceLocator->get('Contacts')->count(); ?></var></li>
-                        <li> Total de posts: <var><?php echo $serviceLocator->get('Posts')->count(); ?></var></li>
+                        <li>
+                            Número de visitas do site no mês:
+                            <var><?php $visits->getTotalCurrMonth(); ?></var>
+                        </li>
+                        <li>
+                            Total de visitas do site:
+                            <var><?php echo $visits->getTotal() ?></var></li>
+                        </li>
+                        <li>
+                            Média de vistas por post:
+                            <var><?php echo $visits->getTotal() / $posts->count() ?></var></li>
+                        <li>
+
+                            Total de contatos:
+                            <var><?php echo $contacts->count(); ?></var>
+                        </li>
+                        <li>
+                            Total de posts:
+                            <var><?php echo $posts->count(); ?></var>
+                        </li>
+                        <li>
+                            Total de posts publicados:
+                            <var><?php echo $posts->getTotalPubished(); ?></var>
+                        </li>
+
+                        <li>
+                            Percentual de posts publicados:
+                            <var><?php echo $posts->getPublishedAverage(); ?>%</var>
+                        </li>
+
                   </ul>
 		</div>
-
-            <div>
-                  <h3>Altertas de novidades</h3>
-            </div>
 	</div>
 </div>
