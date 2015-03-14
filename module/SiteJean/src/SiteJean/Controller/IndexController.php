@@ -42,4 +42,19 @@ class IndexController extends Base
 
         return $this->viewModel;
     }
+
+    public function goalsAction()
+    {
+        $variables = array();
+
+        $variables['row'] = $this->getServiceLocator()
+            ->get('Posts')
+            ->toObject()
+            ->getOne(array('id'=>70));
+
+        $this->viewModel->setVariables($variables);
+        $this->viewModel->setTerminal(true);
+
+        return $this->viewModel;
+    }
 }

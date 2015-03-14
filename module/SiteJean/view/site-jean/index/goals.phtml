@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>My goals</title>
+<meta name="robots" content="noindex">
+</head>
+
+<body>
+    <div>
+        <h3><?php echo $row->getTitulo()->getVal(); ?></h3>
+
+        <div>
+            <?php
+                $parsedown = new \Parsedown();
+                echo $parsedown->text($row->getConteudo()->getVal());
+            ?>
+        </div>
+    </div>
+
+    <hr />
+
+    </body>
+</html>
