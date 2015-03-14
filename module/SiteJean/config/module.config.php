@@ -45,6 +45,18 @@ return array(
                 ),
             ),
 
+            'goals' => array (
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/goals',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SiteJean\Controller',
+                        "controller" => "Index",
+                        'action' => "goals"
+                    ),
+                ),
+            ),
+
 
         ),
     ),
