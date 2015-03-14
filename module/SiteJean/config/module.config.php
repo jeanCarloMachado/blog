@@ -11,52 +11,51 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'home' => array (
+            'home' => array(
                 'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SiteJean\Controller',
-                        "controller" => "Index", 'action' => "index"
+                        "controller" => "Index", 'action' => "index",
                     ),
                 ),
             ),
 
-            'dashboard' => array (
+            'dashboard' => array(
                 'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/dashboard',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SiteJean\Controller',
                         "controller" => "Dashboard",
-                        'action' => "index"
+                        'action' => "index",
                     ),
                 ),
             ),
-            'sobre' => array (
+            'sobre' => array(
                 'type'    => 'literal',
                 'options' => array(
                     'route'    => '/sobre',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SiteJean\Controller',
                         "controller" => "Index",
-                        'action' => "sobre"
+                        'action' => "sobre",
                     ),
                 ),
             ),
 
-            'goals' => array (
+            'goals' => array(
                 'type'    => 'literal',
                 'options' => array(
                     'route'    => '/goals',
                     'defaults' => array(
                         '__NAMESPACE__' => 'SiteJean\Controller',
                         "controller" => "Index",
-                        'action' => "goals"
+                        'action' => "goals",
                     ),
                 ),
             ),
-
 
         ),
     ),
@@ -65,19 +64,19 @@ return array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-         'template_map' => array(
-            'SiteJean/layout'           => __DIR__ . '/../view/site-jean/layout/layout.phtml',
-            'layout/layout'           => __DIR__ . '/../view/site-jean/layout/layout.phtml',
+        'template_map' => array(
+            'SiteJean/layout'           => __DIR__.'/../view/site-jean/layout/layout.phtml',
+            'layout/layout'           => __DIR__.'/../view/site-jean/layout/layout.phtml',
 
         ),
         'template_path_stack' => array(
-            'SiteJean' => __DIR__ . '/../view',
+            'SiteJean' => __DIR__.'/../view',
         ),
     ),
 
   'service_manager' => array(
      'factories' => array(
-         'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory', // <-- add this
+         'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
      ),
  ),
 
@@ -93,14 +92,14 @@ return array(
             'label' => 'Sobre',
             'route' => 'sobre',
         ),
-       
+
         array(
             'label' => 'Contato',
             'route' => 'contatar',
             'no-auth-required' => true,
         ),
-        
-        array (
+
+        array(
 
             'auth-required' => true,
             'label' => 'Admin',
@@ -121,13 +120,13 @@ return array(
                     'route' => 'posts',
                     'auth-required' => true,
                 ),
-            
+
                 array(
                     'label' => 'Contatos',
                     'route' => 'contatosimples',
                     'auth-required' => true,
                 ),
-            )
+            ),
 
         ),
         array(
@@ -153,7 +152,6 @@ return array(
                 ),
             ),
         ),
-      
     ),
   ),
 );
