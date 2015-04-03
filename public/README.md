@@ -1,2 +1,0 @@
-ATENÇÃO!
-Quando é executado um processo de instalação TODOS os arquivos aqui dispostos, a não ser os default do sistema e os iniciados por <.> são removidos, bem como são inseridos os específicos da instalação. Logo, não deixe cópias de arquivos que não deseja perder neste diretório.

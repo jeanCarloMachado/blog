@@ -1,1 +1,0 @@
-ALTER TABLE `ackblog_post` ADD `tipo` TINYINT NOT NULL DEFAULT '1' AFTER `data`
