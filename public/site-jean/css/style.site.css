@@ -1,3 +1,6 @@
+html, body {
+    font-family: 'Cousine';
+}
 
 #cover {
   position: absolute;
