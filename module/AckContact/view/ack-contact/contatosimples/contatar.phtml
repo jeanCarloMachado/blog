@@ -1,4 +1,4 @@
-<div>
+<div class="contactScreen">
 
 <?php $serviceLocator = $this->getHelperPluginManager()->getServiceLocator(); ?>
 
@@ -9,7 +9,7 @@
 <p>Quer entrar em contato comigo? É muito simples! Cadastre seus dados nos campos abaixo, e envie suas ideias, observações, reclamações, dúvidas ou sugestões. Vai ser um prazer conversar com você.</p>
 <hr />
 
-<div id="rowContainer" class="form row" >
+<div id="rowContainer">
 <?php
 //renderiza os elementos principais
 $serviceLocator->get('InterpreterForm')->setCustomConfig($contatoConfig)->renderElementsFromRow($this->contatoPrototype);
