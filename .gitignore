@@ -16,3 +16,4 @@ vendor/!devil!
 composer.lock
 public/galeria/*
 config/autoload/local.php
+*un~
