@@ -6,6 +6,9 @@ html, body {
     margin: 10px;
 }
 
+#mainMenu {
+    background-color: white;
+}
 
 @media print {
     a[href]:after {
