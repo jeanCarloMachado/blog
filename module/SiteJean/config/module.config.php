@@ -6,7 +6,6 @@ return array(
            'SiteJean\Controller\Dashboard' => 'SiteJean\Controller\DashboardController',
            "SiteJean\Controller\Usuarios" => "SiteJean\Controller\UsuariosController",
            "SiteJean\Controller\Posts" => "SiteJean\Controller\PostsController",
-           //#NEW_CONTROLLERS_HERE_DO_NOT_REMOVE_THIS
         ),
     ),
     'router' => array(
@@ -56,11 +55,22 @@ return array(
                     ),
                 ),
             ),
+            'report' => array(
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/report',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SiteJean\Controller',
+                        "controller" => "Index",
+                        'action' => "report",
+                    ),
+                ),
+            ),
 
         ),
     ),
 
-  'view_manager' => array(
+    'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
@@ -74,13 +84,13 @@ return array(
         ),
     ),
 
-  'service_manager' => array(
+    'service_manager' => array(
      'factories' => array(
          'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
      ),
- ),
+    ),
 
-  'navigation' => array(
+    'navigation' => array(
      'default' => array(
 
         array(
@@ -114,18 +124,18 @@ return array(
                     'label' => 'Configurações',
                     'route' => 'configuracoes',
                     'auth-required' => true,
-                ),
-                array(
+                 ),
+                 array(
                     'label' => 'Posts',
                     'route' => 'posts',
                     'auth-required' => true,
-                ),
+                 ),
 
-                array(
+                 array(
                     'label' => 'Contatos',
                     'route' => 'contatosimples',
                     'auth-required' => true,
-                ),
+                 ),
             ),
 
         ),
@@ -152,6 +162,6 @@ return array(
                 ),
             ),
         ),
+     ),
     ),
-  ),
 );
