@@ -5,6 +5,8 @@ use Zend\View\Model\ViewModel;
 
 class PostsController extends Controller
 {
+    protected $models = array('default'=>'\AckBlog\Model\Posts');
+
     protected $config = array(
         'global' => array(
             'blacklist' => array(
@@ -22,7 +24,6 @@ class PostsController extends Controller
         ),
     );
 
-    protected $models = array('default'=>'\AckBlog\Model\Posts');
 
     protected function evtAfterGetScopedData()
     {
