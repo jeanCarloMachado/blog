@@ -6,7 +6,6 @@ $config =  array(
         'AckDb',
         'AckMvc',
         'AckUsers',
-        'AckCmd',
         'AckLocale',
         'AckContent',
         'AckContact',
@@ -14,7 +13,7 @@ $config =  array(
         'AckCEO',
         'AckCMS',
         'DluTwBootstrap'
-    ),#ENDMODULES_HASH
+    ),
 
     'module_listener_options' => array(
         'module_paths' => array(
@@ -26,8 +25,5 @@ $config =  array(
         ),
     ) ,
 );
-
-if (!getenv('APPLICATION_ENV')  ||  getenv('APPLICATION_ENV') == 'development') {
-}
 
 return $config;
