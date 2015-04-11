@@ -1,40 +1,6 @@
 <?php
-/**
- * recebe mensagens e as mostra em um bloco de conteúdo
- * no padrão twb
- *
- * AckDefault - Cub
- *
- * LICENSE:  This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * @author     Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
- * @copyright  Copyright (C) CUB
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- */
 namespace AckContent\View\Helper;
 use Zend\View\Helper\AbstractHelper;
-/**
- * recebe mensagens e as mostra em um bloco de conteúdo
- * no padrão twb
- *
- * @category Business
- * @package  AckDefault
- * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
- * @link     http://github.com/zendframework/zf2 for the canonical source repository
- */
 class NotificationBlock extends AbstractHelper
 {
     protected static $instance;
@@ -100,21 +66,26 @@ class NotificationBlock extends AbstractHelper
        if(!empty($this->messages)) :
            foreach($this->messages as $message) :
 
+              $content = $message['message'];
+              $content = (is_array($content)) ? reset($content) : $content;
+              $content = (is_array($content)) ? reset($content) : $content;
+              $content = (is_array($content)) ? reset($content) : $content;
+
             if (isset($message['type']) && $message['type'] == E_USER_ERROR):
             ?>
                 <div class="alert alert-danger notificationArea">
                 <button class="close" data-dismiss="alert" type="button">×</button>
-                <?php echo $message["message"]; ?>
+                <?php echo $content; ?>
                 </div>
             <?php elseif (!isset($message['type'])): ?>
                 <div class="alert alert-success notificationArea">
                 <button class="close" data-dismiss="alert" type="button">×</button>
-                 <?php echo $message["message"]; ?>
+                <?php echo $content; ?>
                 </div>
             <?php elseif(isset($message['type']) && $message['type'] == E_NOTICE): ?>
                 <div class="alert alert-info notificationArea">
                 <button class="close" data-dismiss="alert" type="button">×</button>
-                 <?php echo $message["message"]; ?>
+                 <?php echo $content; ?>
                 </div>
             <?php
             endif;

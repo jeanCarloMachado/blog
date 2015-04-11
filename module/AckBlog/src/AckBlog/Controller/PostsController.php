@@ -24,9 +24,6 @@ class PostsController extends Controller
 
     protected $models = array('default'=>'\AckBlog\Model\Posts');
 
-      /**
-     * funçao para ser sobreescrita pelo usuário
-     */
     protected function evtAfterGetScopedData()
     {
         if ($this->params("action") == "editar" || $this->params("action") == "incluir" ) {

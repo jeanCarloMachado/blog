@@ -5,3 +5,4 @@ return array(
     'AckBlog\Model\NewRow'                  => __DIR__ . '/src/AckBlog/Model/NewRow.php',
     'AckBlog\Model\News'                    => __DIR__ . '/src/AckBlog/Model/News.php',
 );
+
