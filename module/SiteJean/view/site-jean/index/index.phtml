@@ -26,15 +26,15 @@ endforeach;
 <?php
 if ($currentPage >= 1) :
 ?>
-<a  class="btn btn-default" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
+<a  class="btn btn-info" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
 <?php
 endif;
 ?>
 
 <?php
- if ($currentPage =< $totalPages) :
+ if ($currentPage <= $totalPages) :
 ?>
-<a class="btn btn-default" id="navigationOlder" href="/?page=<?php echo $currentPage+1 ?>">Antigos</a>
+<a class="btn btn-info" id="navigationOlder" href="/?page=<?php echo $currentPage+1 ?>">Antigos</a>
 <?php
  endif;
 ?>
