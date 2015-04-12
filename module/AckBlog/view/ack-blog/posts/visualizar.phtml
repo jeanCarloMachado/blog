@@ -13,19 +13,7 @@
         ?>
     </div>
 <div>
-    <div>
-        <?php
-            $serviceLocator->get('HtmlElementsManager')->getInstanceOf('Button')
-                ->setName('view-details')
-                ->setTitle('Voltar')
-                ->setPermission('+rw')
-                ->appendClass('btn btn-info')
-                ->setUrl($this->url('home', array('id' => $row->getId()->getVal(), 'title' => $row->getTitulo()->toUrl()->getVal())))
-                ->render();
-
-            ?>
-    </div>
-
+    <button type="button" class="btn btn-info" onclick="window.history.back();">Voltar</button>
 </div>
 
 </div>
