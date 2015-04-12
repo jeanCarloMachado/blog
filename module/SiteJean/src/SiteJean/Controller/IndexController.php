@@ -6,7 +6,7 @@ use AckMvc\Controller\Base;
 class IndexController extends Base
 {
     const POSTS_PER_PAGE = 4;
-    private $currentPage = 1;
+    private $currentPage = 0;
 
     public function indexAction()
     {
