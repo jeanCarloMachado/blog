@@ -10,28 +10,35 @@ foreach($this->posts as $post) :
 ?>
 <hr />
 <div>
-    <h3 style="display:inline"><?php echo $post->getTitulo()->getVal(); ?></h3><small> (<?php echo $post->getData()->getVal(); ?>)</small>
-    <br />
-    <br />
+    <h3 style="display:inline"><a href="<?php echo $this->url('view-post', array ('id' => $post->getId()->getVal())) ?>"><?php echo $post->getTitulo()->getVal(); ?></a></h3><small> (<?php echo $post->getData()->getVal(); ?>)</small>
     <div >
         <?php echo $filter->filter($post->getConteudo()->showNChars(500)->getVal()); ?>
     </div>
 
-    <?php
-    $serviceLocator->get('HtmlElementsManager')->getInstanceOf('Button')
-        ->setName('view-details')
-        ->setValue('Leia mais')
-        ->setTitle('Leia mais')
-        ->setPermission('+rw')
-        ->appendClass('btn btn-success')
-        ->setUrl($this->url('view-post', array ('id' => $post->getId()->getVal(), 'title' => $post->getTitulo()->toUrl()->getVal())))
-        ->render();
-
-    ?>
 </div>
 
 <?php
 endforeach;
 ?>
+
+
+<div id="historyNavigationButtons">
+<?php
+if ($currentPage > 1) :
+?>
+<a  class="btn btn-success" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
+<?php
+endif;
+?>
+
+<?php
+ if ($currentPage < $totalPages) :
+?>
+<a class="btn btn-success" id="navigationOlder" href="/?page=<?php echo $currentPage+1 ?>">Antigos</a>
+<?php
+ endif;
+?>
+
+</div>
 
 <div>

@@ -10,6 +10,14 @@ html, body {
     background-color: white;
 }
 
+#historyNavigationButtons {
+    display: inline;
+}
+
+#navigationOlder {
+    float: right;
+}
+
 @media print {
     a[href]:after {
         content: none;
@@ -55,6 +63,7 @@ footer {
     margin-top: 20px;
     font-size: 0.95em;
     padding: 0 0 !important;
+    background-color: white !important;
 }
 
 ul.nav a {
