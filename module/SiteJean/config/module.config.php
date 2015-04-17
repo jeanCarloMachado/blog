@@ -32,6 +32,17 @@ return array(
                     ),
                 ),
             ),
+            'feed' => array(
+                'type'    => 'literal',
+                'options' => array(
+                    'route'    => '/feed',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SiteJean\Controller',
+                        "controller" => "Index",
+                        'action' => "feed",
+                    ),
+                ),
+            ),
             'sobre' => array(
                 'type'    => 'literal',
                 'options' => array(

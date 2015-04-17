@@ -1,6 +1,6 @@
 <?php
 /**
- * funções de manipulação de strings
+ * funções de manipulação de strings.
  *
  * PHP version 5
  *
@@ -20,10 +20,12 @@
  * @author     Jean Carlo Machado <j34nc4rl0@gmail.com>
  * @license    http://www.gnu.org/copyleft/lesser.html  LGPL License 3
  * @copyright  Copyright (C) CUB
+ *
  * @link       http://www.icub.com.br
  */
 
 namespace AckCore\Utils;
+
 class String
 {
     public static function stripTags($str)
@@ -45,26 +47,28 @@ class String
     }
 
     /**
-    * pega o nome puro de um controlador deprecated
-    * @param unknown $str
-    * @return string
-    */
+     * pega o nome puro de um controlador deprecated.
+     *
+     * @param unknown $str
+     *
+     * @return string
+     */
     public static function getCleanClassName($str)
     {
-        if (strtolower(substr($str,0,3)) == "ack") {
-            $str = substr($str,3);
+        if (strtolower(substr($str, 0, 3)) == "ack") {
+            $str = substr($str, 3);
         }
-        if (strtolower(substr($str,-11)) == "_controller") {
-            $str = substr($str,0,-11);
+        if (strtolower(substr($str, -11)) == "_controller") {
+            $str = substr($str, 0, -11);
         }
 
         return $str;
-  }
-        public static function replaceSpecialCharsForAscEquiv($var, $enc = 'UTF-8')
-        {
-            //$var = str_replace("&_", "e_", $var);
+    }
+    public static function replaceSpecialCharsForAscEquiv($var, $enc = 'UTF-8')
+    {
+        //$var = str_replace("&_", "e_", $var);
             $var = htmlentities($var);
-             $acentos = array(
+        $acentos = array(
                    'a' => '/&Atilde;|&atilde;|&Aacute;|&aacute;|&Acirc;|&acirc;|&Agrave;|&agrave;|&Aring;|&aring;|&Auml;|&auml;|&ordf;/',
                    'c' => '/&ccedil;|&Ccedil;/',
                    'e' => '/&Eacute;|&eacute;|&Ecirc;|&ecirc;|&Egrave;|&egrave;|&Euml;|&euml;/',
@@ -75,14 +79,14 @@ class String
                    'y' => '/&Yacute;|&yacute;|&yen;|&Yuml;|&yuml;/',
             );
 
-             $var = preg_replace($acentos, array_keys($acentos), $var);
+        $var = preg_replace($acentos, array_keys($acentos), $var);
 
-            return $var;
-        }
+        return $var;
+    }
 
-        public function replaceAcentuationForEntity($var, $enc = 'UTF-8')
-        {
-                $acentos = array(
+    public static function replaceAcentuationForEntity($var, $enc = 'UTF-8')
+    {
+        $acentos = array(
                         'a' => '/&Atilde;|&atilde;|&Aacute;|&aacute;|&Acirc;|&acirc;|&Agrave;|&agrave;|&Aring;|&aring;|&Auml;|&auml;|&ordf;/',
                         'c' => '/&ccedil;|&Ccedil;/',
                         'e' => '/&Eacute;|&eacute;|&Ecirc;|&ecirc;|&Egrave;|&egrave;|&Euml;|&euml;/',
@@ -90,249 +94,273 @@ class String
                         'n' => '/&Ntilde;|&ntilde;/',
                         'o' => '/&Oacute;|&oacute;|&Ocirc;|&ocirc;|&Ograve;|&ograve;|&Oslash;|&oslash;|&ordm;|&Otilde;|&otilde;|&Ouml;|&ouml;/',
                         'u' => '/&Uacute;|&uacute;|&Ucirc;|&ucirc;|&Ugrave;|&ugrave;|&Uuml;|&uuml;/',
-                        'y' => '/&Yacute;|&yacute;|&yen;|&Yuml;|&yuml;/');
+                        'y' => '/&Yacute;|&yacute;|&yen;|&Yuml;|&yuml;/', );
 
-                $var = preg_replace($acentos, array_keys($acentos), htmlentities($var, ENT_NOQUOTES, $enc));
+        $var = preg_replace($acentos, array_keys($acentos), htmlentities($var, ENT_NOQUOTES, $enc));
                 //$var = strtolower($var);
                 return $var;
-        }
+    }
 
         /**
-         * retorna uma string com suas palavras com o primeiro elemento em caixa alta
+         * retorna uma string com suas palavras com o primeiro elemento em caixa alta.
+         *
          * @param  string $str [description]
+         *
          * @return [type]      [description]
          */
         public static function upWords(string $str)
         {
-                $str = strtolower($str);
-                $str = preg_replace('#\s(como?|d[aeo]s?|desde|para|por|que|sem|sob|sobre|trás)\s#ie', '" ".strtolower("\1")." "', ucwords($str));
+            $str = strtolower($str);
+            $str = preg_replace('#\s(como?|d[aeo]s?|desde|para|por|que|sem|sob|sobre|trás)\s#ie', '" ".strtolower("\1")." "', ucwords($str));
 
-                return $str;
+            return $str;
         }
         /**
          * (MELHORAR ESSA FUNÇÃO)
          * procura similaridades entre calledName e name
-         * removendo os sufixos de name
+         * removendo os sufixos de name.
+         *
          * @param unknown $calledName
          * @param unknown $arrayNames
          */
-        public static function matchWithoutSuffixes($calledName,$name)
+        public static function matchWithoutSuffixes($calledName, $name)
         {
-                $calledName = strtolower($calledName);
-                $name = strtolower($name);
+            $calledName = strtolower($calledName);
+            $name = strtolower($name);
 
-                if($calledName == $name)
+            if ($calledName == $name) {
+                return $name;
+            }
 
-                        return $name;
-
-                $oldName = $name;
-                $oldCalledName = $calledName;
+            $oldName = $name;
+            $oldCalledName = $calledName;
 
                 //testa se o name é explodível
                 {
-                        $name = explode("_",$name);
+                        $name = explode("_", $name);
 
-                        if(count($name) <= 1 )
+                        if (count($name) <= 1) {
+                            return;
+                        }
 
-                                return null;
-
-                        if($calledName == $name[count($name) -1])
-
-                                return $oldName;
+                        if ($calledName == $name[count($name) -1]) {
+                            return $oldName;
+                        }
                 }
 
-                return null;
+            return;
         }
 
         /**
-         * retorna uma posicao específica de uma string explodiad em array
+         * retorna uma posicao específica de uma string explodiad em array.
+         *
          * @param  string  $position     [description]
          * @param  [type]  $str          [description]
          * @param  string  $explodeKey   [description]
          * @param  boolean $triggerError [description]
+         *
          * @return [type]                [description]
          */
-        public static function getPositionFromExplode($position = "last",$str,$explodeKey='-',$triggerError = false)
+        public static function getPositionFromExplode($position = "last", $str, $explodeKey = '-', $triggerError = false)
         {
-                $arr = explode($explodeKey,$str);
+            $arr = explode($explodeKey, $str);
 
-                if (is_int($position)) {
-
-                        if($triggerError && !array_key_exists($position,$arr))
-                                throw new \Exception("posição $position não encontrada no array.");
-
-                        return @$arr[$position];
-                } elseif ($position == "last") {
-                        return end($arr);
+            if (is_int($position)) {
+                if ($triggerError && !array_key_exists($position, $arr)) {
+                    throw new \Exception("posição $position não encontrada no array.");
                 }
 
-                throw new \Exception("Funcionalidade ainda não mapeada");
+                return @$arr[$position];
+            } elseif ($position == "last") {
+                return end($arr);
+            }
+
+            throw new \Exception("Funcionalidade ainda não mapeada");
         }
 
         /**
          * testa se determinada string tem sufixo de
-         * algum idioma no sistema, caso tenha retorna-o
+         * algum idioma no sistema, caso tenha retorna-o.
+         *
          * @param unknown $string
          */
         public static function hasLangSuffix($string)
         {
-                $container = \AckCore\Facade::getInstance();
-                $langSuffixes = $container->getLanguageSuffixes();
+            $container = \AckCore\Facade::getInstance();
+            $langSuffixes = $container->getLanguageSuffixes();
 
-                $string = explode("_", $string);
-                if(count($string) <= 1)
-
-                        return false;
-
-                $string = end($string);
-
-                if(in_array($string, $langSuffixes))
-
-                        return $string;
-
+            $string = explode("_", $string);
+            if (count($string) <= 1) {
                 return false;
+            }
+
+            $string = end($string);
+
+            if (in_array($string, $langSuffixes)) {
+                return $string;
+            }
+
+            return false;
         }
 
         /**
-         * retorna a extençãod e uma string (o valor depois do último ponto)
+         * retorna a extençãod e uma string (o valor depois do último ponto).
+         *
          * @param  [type] $str [description]
+         *
          * @return [type]      [description]
          */
         public static function getExtension($str)
         {
-                $str = explode(".",$str);
+            $str = explode(".", $str);
 
-                return end($str);
+            return end($str);
         }
 
         /**
-         * limpa um array ou string
+         * limpa um array ou string.
+         *
          * @param  [type] $arr [description]
+         *
          * @return [type]      [description]
          */
         public static function clean($arr)
         {
-                if(!empty($arr))
-                        foreach ($arr as $key => $element) {
-                                if(is_array($element))
-                                        $arr[$key] = self::clean($element);
-                                else {
-                                        $str = trim($element);
-                                        $invalid_characters = array("$", "%", "#", "<", ">", "|");
-                                        $str = str_replace($invalid_characters, "", $str);
-                                        $arr[$key] = $str;
-                                }
-                        }
+            if (!empty($arr)) {
+                foreach ($arr as $key => $element) {
+                    if (is_array($element)) {
+                        $arr[$key] = self::clean($element);
+                    } else {
+                        $str = trim($element);
+                        $invalid_characters = array("$", "%", "#", "<", ">", "|");
+                        $str = str_replace($invalid_characters, "", $str);
+                        $arr[$key] = $str;
+                    }
+                }
+            }
 
-                return $arr;
-        }
-
-            /**
-         * mostra um número n de caracteres da string str
-         * se passar disso contactena o sufixo
-         */
-        public static function showNChars($str, $n = 100, $suffix = '...')
-        {
-          if (strlen($str) < $n) {
-            return $str;
-          }
-
-          $str = substr($str, 0, $n);
-
-          $restChars = strrpos($str, ' ');
-
-          $n = $n - ($n - $restChars);
-
-          $str = substr($str, 0, $n);
-          $str.=$suffix;
-
-          return $str;
-        }
-
-        public static function toUrl($str)
-        {
-                $str = strtolower(utf8_decode($str)); $i=1;
-                $str = strtr($str, utf8_decode('àáâãäåæçèéêëìíîïñòóôõöøùúûýýÿ'), 'aaaaaaaceeeeiiiinoooooouuuyyy');
-                $str = preg_replace("/([^a-z0-9])/",'-',utf8_encode($str));
-                while($i>0) $str = str_replace('--','-',$str,$i);
-                if (substr($str, -1) == '-') $str = substr($str, 0, -1);
-                return $str;
+            return $arr;
         }
 
         /**
-         * retorna os nomes das pastas das views no padrão zf2
+         * mostra um número n de caracteres da string str
+         * se passar disso contactena o sufixo.
+         */
+        public static function showNChars($str, $n = 100, $suffix = '...')
+        {
+            if (strlen($str) < $n) {
+                return $str;
+            }
+
+            $str = substr($str, 0, $n);
+
+            $restChars = strrpos($str, ' ');
+
+            $n = $n - ($n - $restChars);
+
+            $str = substr($str, 0, $n);
+            $str .= $suffix;
+
+            return $str;
+        }
+
+    public static function toUrl($str)
+    {
+        $str = strtolower(utf8_decode($str));
+        $i = 1;
+        $str = strtr($str, utf8_decode('àáâãäåæçèéêëìíîïñòóôõöøùúûýýÿ'), 'aaaaaaaceeeeiiiinoooooouuuyyy');
+        $str = preg_replace("/([^a-z0-9])/", '-', utf8_encode($str));
+        while ($i>0) {
+            $str = str_replace('--', '-', $str, $i);
+        }
+        if (substr($str, -1) == '-') {
+            $str = substr($str, 0, -1);
+        }
+
+        return $str;
+    }
+
+        /**
+         * retorna os nomes das pastas das views no padrão zf2.
+         *
          * @param  [type] $str [description]
+         *
          * @return [type]      [description]
          */
         public static function getZF2ViewFormat(&$str)
         {
-                $strCpy = $str;
-                $upperStack = array();
+            $strCpy = $str;
+            $upperStack = array();
 
-                for ($i = 0; $i < strlen($strCpy); $i++) {
-                        if (ctype_upper($strCpy[$i]) && $i != 0) {
-                                $upperStack[] = $strCpy[$i];
-                        }
+            for ($i = 0; $i < strlen($strCpy); $i++) {
+                if (ctype_upper($strCpy[$i]) && $i != 0) {
+                    $upperStack[] = $strCpy[$i];
                 }
+            }
 
-                foreach ($upperStack as $char) {
-                        $newChar = strtolower($char);
-                        $newChar = "-".$newChar;
-                        $str = str_replace($char, $newChar, $str);
-                }
-                $str = strtolower($str);
-                if($str[0] == "-")
-                    $str = substr($str,1);
+            foreach ($upperStack as $char) {
+                $newChar = strtolower($char);
+                $newChar = "-".$newChar;
+                $str = str_replace($char, $newChar, $str);
+            }
+            $str = strtolower($str);
+            if ($str[0] == "-") {
+                $str = substr($str, 1);
+            }
         }
 
-       /**
-        * da espace de uma string
-        * @param  [type] $str [description]
-        * @return [type]      [description]
-        */
+        /**
+         * da espace de uma string.
+         *
+         * @param  [type] $str [description]
+         *
+         * @return [type]      [description]
+         */
         public static function escape($str)
         {
-                return $str;
+            return $str;
 
-                $str = str_replace('\n', '', $str);
+            $str = str_replace('\n', '', $str);
 
-                return mysql_escape_string($str);
+            return mysql_escape_string($str);
         }
 
-        public static function unEscape($str)
-        {
-                return $str;
+    public static function unEscape($str)
+    {
+        return $str;
 
-                $str = stripslashes($str);
+        $str = stripslashes($str);
 
-                return mysql_real_escape_string($str);
-        }
+        return mysql_real_escape_string($str);
+    }
         /**
-         * search and replace recursivo à partir de dir
+         * search and replace recursivo à partir de dir.
+         *
          * @param  [type] $dir           [description]
          * @param  [type] $stringsearch  [description]
          * @param  [type] $stringreplace [description]
+         *
          * @return [type]                [description]
          */
         public static function searchAndReplace($dir, $stringsearch, $stringreplace)
         {
             $listDir = array();
             if ($handler = opendir($dir)) {
-                while (($sub = readdir($handler)) !== FALSE) {
+                while (($sub = readdir($handler)) !== false) {
                     if ($sub != "." && $sub != ".." && $sub != "Thumb.db") {
                         if (is_file($dir."/".$sub)) {
-                            if (substr_count($sub,'.php') || substr_count($sub,'.xml')) {
+                            if (substr_count($sub, '.php') || substr_count($sub, '.xml')) {
                                 $getfilecontents = file_get_contents($dir."/".$sub);
-                                if (substr_count($getfilecontents,$stringsearch)>0) {
-                                $replacer = str_replace($stringsearch,$stringreplace,$getfilecontents);
+                                if (substr_count($getfilecontents, $stringsearch)>0) {
+                                    $replacer = str_replace($stringsearch, $stringreplace, $getfilecontents);
                                 // Let's make sure the file exists and is writable first.
                                   if (is_writable($dir."/".$sub)) {
                                       if (!$handle = fopen($dir."/".$sub, 'w')) {
-                                           echo "Cannot open file (".$dir."/".$sub.")";
-                                           exit;
+                                          echo "Cannot open file (".$dir."/".$sub.")";
+                                          exit;
                                       }
                                       // Write $somecontent to our opened file.
-                                      if (fwrite($handle, $replacer) === FALSE) {
+                                      if (fwrite($handle, $replacer) === false) {
                                           echo "Cannot write to file (".$dir."/".$sub.")";
                                           exit;
                                       }
@@ -342,10 +370,10 @@ class String
                                       echo "The file ".$dir."/".$sub." is not writable";
                                   }
                                 }
-                                }
+                            }
                             $listDir[] = $sub;
                         } elseif (is_dir($dir."/".$sub)) {
-                            $listDir[$sub] = self::searchAndReplace($dir."/".$sub,$stringsearch,$stringreplace);
+                            $listDir[$sub] = self::searchAndReplace($dir."/".$sub, $stringsearch, $stringreplace);
                         }
                     }
                 }
@@ -358,7 +386,9 @@ class String
     /**
      * pega strings contendo nomes no padrão do banco
      * e as transforma em strings líveis pelo usuário.
-     * @param  [type] $str [description]
+     *
+     * @param [type] $str [description]
+     *
      * @return [type] [description]
      */
     public static function humanizeDbName($str)

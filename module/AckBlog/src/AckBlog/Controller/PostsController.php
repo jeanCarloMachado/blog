@@ -24,7 +24,6 @@ class PostsController extends Controller
         ),
     );
 
-
     protected function evtAfterGetScopedData()
     {
         if ($this->params("action") == "editar" || $this->params("action") == "incluir" ) {
