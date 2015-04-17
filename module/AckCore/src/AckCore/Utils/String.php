@@ -66,7 +66,6 @@ class String
     }
     public static function replaceSpecialCharsForAscEquiv($var, $enc = 'UTF-8')
     {
-        //$var = str_replace("&_", "e_", $var);
             $var = htmlentities($var);
         $acentos = array(
                    'a' => '/&Atilde;|&atilde;|&Aacute;|&aacute;|&Acirc;|&acirc;|&Agrave;|&agrave;|&Aring;|&aring;|&Auml;|&auml;|&ordf;/',
