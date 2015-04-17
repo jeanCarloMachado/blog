@@ -39,7 +39,7 @@ class IndexController extends Base
         $filter = new \Zend\Filter\StripTags(array('allowTags' => ''));
 
         foreach($posts as $post) {
-            $content = $filter->filter($post->getConteudo()->getVal());
+            $content = $filter->filter($post->getConteudo()->showNChars(3500)->getVal());
             $content = str_replace('&', '', $content);
 
             if (empty($content)) {
