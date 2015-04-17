@@ -51,11 +51,15 @@ class IndexController extends Base
             $entry->setTitle($post->getTitulo()->getVal());
             $entry->setLink('http://jeancarlomachado.com.br/post/visualizar/'.$post->getId()->getVal());
             $entry->addAuthor($authorData);
-            $entry->setDateModified(time());
 
             $metatagsModel = $this->getServiceLocator()->get('Metatags');
             $where = array('class_name'=>$post->getTableModelName(),'related_id'=>$post->getId()->getBruteVal());
             $meta = $metatagsModel->toObject()->getOne($where);
+
+
+            $modified = $post->getData()->getBruteVal() ?: time();
+            $entry->setDateModified();
+
             $description = $meta->getDescription()->getValue();
 
             if (empty($description)) {
