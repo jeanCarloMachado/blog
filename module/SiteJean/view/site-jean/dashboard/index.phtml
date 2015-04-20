@@ -13,28 +13,32 @@
                   <ul>
                         <li>
                             Total de visitas do site:
-                            <var><?php echo $visits->getTotal() ?></var></li>
+                            <var><?php echo (int) $visits->getTotal() ?></var></li>
+                        </li>
+                        <li>
+                            Total de visitas hoje:
+                            <var><?php echo $visits->getTotalForDate(new \Datetime('now')) ?></var>
                         </li>
                         <li>
                             Média de vistas por post:
-                            <var><?php echo $visits->getTotal() / $posts->count() ?></var></li>
+                            <var><?php echo (int) ($visits->getTotal() / $posts->count()) ?></var></li>
                         <li>
 
                             Total de contatos:
-                            <var><?php echo $contacts->count(); ?></var>
+                            <var><?php echo (int) $contacts->count(); ?></var>
                         </li>
                         <li>
                             Total de posts:
-                            <var><?php echo $posts->count(); ?></var>
+                            <var><?php echo (int) $posts->count(); ?></var>
                         </li>
                         <li>
                             Total de posts publicados:
-                            <var><?php echo $posts->getTotalPubished(); ?></var>
+                            <var><?php echo (int) $posts->getTotalPubished(); ?></var>
                         </li>
 
                         <li>
                             Percentual de posts publicados:
-                            <var><?php echo $posts->getPublishedAverage(); ?>%</var>
+                            <var><?php echo (int) $posts->getPublishedAverage(); ?>%</var>
                         </li>
 
                   </ul>

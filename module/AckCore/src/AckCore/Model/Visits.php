@@ -2,25 +2,11 @@
 namespace AckCore\Model;
 
 use AckDb\ZF1\TableAbstract;
-/**
- * versão de comentários 1.3
- * todas as classes extendendo TableAbstract representam uma tabela
- * no banco de dados, mais que isso, na maioria dos casos são utilizadas também como uma entidade lógica
- * mostrada no front, a excessão são as tabelas de relacionamentos n_n
- * @author jean
- */
+
 class Visits extends TableAbstract
 {
-    /**
-     * nome da tabela no banco de dados
-     * @var unknown
-     */
     protected $_name = "ack_visitas";
 
-    /**
-     * nome da classe simbolizando uma linha (deve estender System_Row_Abstract)
-     * @var unknown
-     */
     protected $_row = "\AckCore\Model\Visit";
 
     public function getTotal()
@@ -30,6 +16,15 @@ class Visits extends TableAbstract
         return $result;
     }
 
+    public function getTotalForDate(\Datetime $date)
+    {
+        $query = "SELECT count(id) FROM ".$this->getTableName()."
+            WHERE MONTH(data)=".$date->format("m")." AND YEAR(data)=".$date->format("Y")." AND DAY(data)=".$date->format("d");
+        $result = $this->run($query);
+        $result = reset($result);
+
+        return $result["count(id)"];
+    }
     public function getTotalCurrMonth()
     {
         $query = "SELECT count(id) FROM ".$this->getTableName()." WHERE MONTH(data)=".date("m")." AND YEAR(data)=".date("Y");
@@ -40,7 +35,8 @@ class Visits extends TableAbstract
     }
 
     /**
-     * média mensal de visitas
+     * média mensal de visitas.
+     *
      * @return Ambigous <[type], number>
      */
     public function getMonthAverage()
