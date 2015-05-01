@@ -1,32 +1,4 @@
 <?php
-/**
- * facilitadores para controllers
- *
- * AckDefault - Cub
- *
- * LICENSE:  This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- *
- * PHP version 5
- *
- * @category  WebApps
- * @package   AckDefault
- * @author    Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @copyright 2013 Copyright (C) CUB
- * @license   http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
- * @version   GIT: <6.4>
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- */
 namespace AckMvc\Controller\Traits;
 
 use Zend\View\Model\ViewModel;
@@ -35,15 +7,6 @@ use Zend\Mvc\Controller\PluginManager;
 
 use AckCore\Facade;
 
-/**
- * facilitadores para controllers
- *
- * @category Business
- * @package  AckDefault
- * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
- * @link     http://github.com/zendframework/zf2 for the canonical source repository
- */
 trait BasicControllerUtilities
 {
 
@@ -66,10 +29,10 @@ trait BasicControllerUtilities
     {
         $this->setViewModel(new ViewModel());
 
-        //guarda o ajax
         if (!empty($_POST) && (isset($_POST["ajaxACK"]) || isset($_POST["ajaxData"]))) {
 
-            $this->ajax  = (isset($_POST["ajaxACK"])) ? json_decode($_POST["ajaxACK"],true) : json_decode($_POST["ajaxData"],true);
+            $this->ajax  = (isset($_POST["ajaxData"])) ? $_POST["ajaxData"]: $_POST["ajaxACK"];
+            $this->ajax = json_decode($this->ajax, true);
             $this->bruteAjax = $this->ajax;
             $this->ajax = \AckCore\Utils\Arr::escapeArray($this->ajax);
         }

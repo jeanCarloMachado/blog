@@ -1,33 +1,5 @@
 <?php
 
-/**
- * description
- *
- * AckDefault - Cub
- *
- * LICENSE:  This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- *
- * PHP version 5
- *
- * @category  WebApps
- * @package   AckDefault
- * @author    Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @copyright 2013 Copyright (C) CUB
- * @license   http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
- * @version   GIT: <6.4>
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- */
 namespace AckMvc\Controller;
 
 use AckCore\Utils\Arr as ArrayObject;
@@ -35,25 +7,16 @@ use AckCore\Facade;
 use Zend\Mvc\Controller\AbstractActionController;
 use AckCore\Utils\Ajax;
 use Zend\View\Model\ViewModel;
-use  \AckCore\DataAbstraction\Service\InterpreterSearch;
+use AckCore\DataAbstraction\Service\InterpreterSearch;
 use AckCore\Event\Event as AckEvent;
 use AckCore\Event\EventManager;
 use Zend\Mvc\InjectApplicationEventInterface;
-use Zend\EventManager\EventInterface as Event;
 use AckCore\Stdlib\Observer\Observable as ObservableTrait;
 use AckMvc\Controller\Traits\BasicControllerUtilities;
 use AckMvc\Model\RelatedModel;
 use AckCore\Facade\ApplicationConfiguration;
-use \AckCore\Data\Manager as DataManager;
-/**
- * abstração base para controllers e rows
- *
- * @category Business
- * @package  AckDefault
- * @author   Jean Carlo Machado <j34nc4rl0@gmail.com>
- * @license  http://www.gnu.org/copyleft/lesser.html  LGPL License 3 2013
- * @link     http://github.com/zendframework/zf2 for the canonical source repository
- */
+use AckCore\Data\Manager as DataManager;
+
 abstract class AbstractTableRowController extends AbstractActionController implements InjectApplicationEventInterface
 {
     use BasicControllerUtilities;
@@ -61,10 +24,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     use RelatedModel;
     use ApplicationConfiguration;
 
-    /**
-     * a chave default chama-se 'default'
-     * @var array
-     */
     public $ajax = array();
     protected $viewModel = null;
     protected $itensPerPage = 20;
@@ -73,19 +32,17 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
     protected $filesActions = array(
         'lista.phtml' => array('lista'),
-        'visualizarEditarIncluir.phtml' => array('visualizar','editar','incluir')
+        'visualizarEditarIncluir.phtml' => array('visualizar','editar','incluir'),
     );
 
     /**
      * objeto container das informaçẽos
-     * relativas a renderização
+     * relativas a renderização.
+     *
      * @var [type]
      */
     protected $scopedData = null;
 
-    /**
-     * plugin manager necessita desta função
-     */
     //========================= actions =========================
 
     public function listaAction()
@@ -112,9 +69,9 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $config = $this->viewModel->config;
 
-        $config['row'] = $model->onlyNotDeleted()->toObject()->getOne(array('id'=>(int) $this->params('id')));
+        $config['row'] = $model->onlyNotDeleted()->toObject()->getOne(array('id' => (int) $this->params('id')));
 
-        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $config );
+        $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $config);
 
         $this->viewModel->config = $config;
 
@@ -126,7 +83,8 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     }
 
     /**
-     * functionalidade default de salvar
+     * functionalidade default de salvar.
+     *
      * @return [type] [description]
      */
     public function saveAjax()
@@ -141,9 +99,9 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         $config = $this->viewModel->config;
 
         //prepara o retorno
-        $json = array('status'=>1,'mensagem'=>'Dados salvos com sucesso.');
+        $json = array('status' => 1,'mensagem' => 'Dados salvos com sucesso.');
 
-        /**
+        /*
          * prepara as variáveis de entrada
          */
         //pega o nome do modelo dependendo se é categoria ou não
@@ -153,15 +111,15 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         try {
             //salva os dados propriamente
             if ($id) {
-                $where = array('id'=>$id);
+                $where = array('id' => $id);
                 if (!isset($config['disableExceptionEncapsulation'])) {
-                      try {
-                            $result = $model->update($defaultRow, $where);
-                        } catch (\Exception $e) {
-                            $this->getServiceLocator()->get('AjaxUtils')->notifyStatus(false, $e->getMessage());
-                        }
+                    try {
+                        $result = $model->update($defaultRow, $where);
+                    } catch (\Exception $e) {
+                        $this->getServiceLocator()->get('AjaxUtils')->notifyStatus(false, $e->getMessage());
+                    }
                 } else {
-                      $result = $model->update($defaultRow, $where);
+                    $result = $model->update($defaultRow, $where);
                 }
             } else {
                 if (!isset($config['disableExceptionEncapsulation'])) {
@@ -174,7 +132,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
                         }
                     } catch (\Exception $e) {
                         $this->getServiceLocator()->get('AjaxUtils')->notifyStatus(false, $e->getMessage());
-
                     }
                 } else {
                     $result = $model->create($defaultRow['data']);
@@ -199,7 +156,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $json['id'] = ($result) ?  $result : $id;
         if ($this->ajax['parameters'] == 'noLayout' && $json['url']) {
-            $json['url'].='/nolayout';
+            $json['url'] .= '/nolayout';
             $json['parameters'] = 'noLayout';
         }
 
@@ -211,7 +168,8 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
     /**
      * carrega uma quantidade
-     * de itens filtrando-os se necessário
+     * de itens filtrando-os se necessário.
+     *
      * @return [type] [description]
      */
     public function loadItensAjax()
@@ -223,11 +181,12 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
 
-        $params = array('limit'=>array('offset'=>$this->ajax['itensCount'], 'count'=> $itensPerPage));
+        $params = array('limit' => array('offset' => $this->ajax['itensCount'], 'count' => $itensPerPage));
 
         if (!empty($config['order'])) {
             $params['order'] = $config['order'];
-        } if (empty($params['order'])) {
+        }
+        if (empty($params['order'])) {
             if ($model->hasColumn('ordem')) {
                 $params['order'] = 'ordem DESC';
             } elseif ($model->hasColumn('nome')) {
@@ -241,7 +200,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         $url = $this->buildUrl('editar');
 
-        /**
+        /*
          * remove os elementos html das strings
          */
         $result['grupo'] = array();
@@ -250,7 +209,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
                 $vars = $row->getVars();
 
                 foreach ($vars as $elementId => $element) {
-
                     if (isset($config['returnFalseInCols']) && in_array($elementId, $config['returnFalseInCols'])) {
                         $result['grupo'][$rowId][$elementId] = 'false';
                         continue;
@@ -262,7 +220,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
                         $result['grupo'][$rowId][$elementId] = strip_tags($element->showNChars()->getVal());
                     }
 
-                    $this->evtLoadItensOnColumnIterator($elementId,$element,$rowId,$vars, $result, $config);
+                    $this->evtLoadItensOnColumnIterator($elementId, $element, $rowId, $vars, $result, $config);
                 }
                 $result['grupo'][$rowId]['url_linha'] = $url.'/'.$row->getId()->getVal().'/id';
             }
@@ -297,14 +255,13 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         if (isset($config['fillRelations'])) {
             foreach ($config['fillRelations'] as $relation) {
-
                 $modelName = substr($relation['model'], 1);
                 $relationConfig = $this->getModelInstance()->getRelationConfigFromModelName($modelName);
 
                 if (!empty($relationConfig)) {
                     $setCall = 'set'.str_replace('_', '', $relationConfig['reference']);
                     $row->$setCall($relation['id']);
-               }
+                }
             }
         }
 
@@ -320,7 +277,8 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     }
 
     /**
-     * [excluirAction description]
+     * [excluirAction description].
+     *
      * @return [type] [description]
      */
     protected function deleteAjax()
@@ -329,9 +287,9 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         //pega o nome do modelo dependendo se é categoria ou não
         $model = $this->getModelInstance();
 
-        $json = array('status'=>1,'mensagem'=>'Operação realizada com sucesso!');
+        $json = array('status' => 1,'mensagem' => 'Operação realizada com sucesso!');
         foreach ($this->ajax['ids'] as $element) {
-            $result = $model->delete(array('id'=>$element));
+            $result = $model->delete(array('id' => $element));
         }
 
         $this->evtBeforeReturnLocal();
@@ -343,18 +301,16 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     //========================= eventos privados =========================
     /**
      * executado localmente para efeturar os
-     * serviços da classe
-     *
-     * @return void null
+     * serviços da classe.
      */
     final private function evtBeforeRunLocal()
     {
-       //========================= notifica o evento =========================
-       {
+        //========================= notifica o evento =========================
+        {
             $event = new AckEvent();
             $event->setType(EventManager::TYPE_ACTION_DISPATCH);
-            $event->setControllerName( $this->params ( '__CONTROLLER__'));
-            $event->setNamespace($this->params ( '__NAMESPACE__'));
+            $event->setControllerName($this->params('__CONTROLLER__'));
+            $event->setNamespace($this->params('__NAMESPACE__'));
             $event->setActionName($this->params('action'));
             //$event->setAcl($this->getServiceLocator()->get('acl'));
             $this->notify($event);
@@ -366,7 +322,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         }
 
         if (!isset($this->config['global']) &&  !isset($this->config[$this->params('action')])) {
-
             $this->config = $this->getServiceLocator()->get('AutomaticallyGeneratedControllerConfig')
                 ->setModelInstance($this->getModelInstance())
                 ->getConfig();
@@ -376,7 +331,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         if (empty($this->config[$this->params('action')])) {
             $cfg = $this->config['global'];
         } else {
-            $cfg = ArrayObject::mergeReplacingOnlyFinalKeys($this->config['global'],$this->config[$this->params('action')]);
+            $cfg = ArrayObject::mergeReplacingOnlyFinalKeys($this->config['global'], $this->config[$this->params('action')]);
         }
 
         //========================= trata as especificadades de nolayout =========================
@@ -413,8 +368,9 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
     /**
      * testa se o usuário solicitou que o
-     * layout seja desabilitado
-     * @return boolean habilitado ou não
+     * layout seja desabilitado.
+     *
+     * @return bool habilitado ou não
      */
     protected function layoutDisabledRequest()
     {
@@ -423,7 +379,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
     protected function disableLayout(&$cfg)
     {
-        $params = explode('-',$this->params('params'));
+        $params = explode('-', $this->params('params'));
 
         $cfg['afterRemoveUrl'] = 'javascript:void(0);';
 
@@ -432,20 +388,19 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         //========================= prepara os valores passados por parâmentros para setà-los automaticamente =========================
         if (count($params) > 1 && $this->params('action') == 'incluir') {
             $relatedModelId = end($params);
-            $relatedModelId = explode('=',$relatedModelId);
+            $relatedModelId = explode('=', $relatedModelId);
 
             if ($relatedModelId > 1) {
-
                 $relatedModel = reset($relatedModelId);
                 $relatedId = end($relatedModelId);
 
-                $cfg['fillRelations'] = array(array('model'=>$relatedModel, 'id'=>$relatedId));
+                $cfg['fillRelations'] = array(array('model' => $relatedModel, 'id' => $relatedId));
             }
         }
         //======================= END prepara os valores passados por parâmentros para setà-los automaticamente =======================
 
         $this->viewModel->setTerminal(true);
-        $cfg['nolayout']=true;
+        $cfg['nolayout'] = true;
         $cfg['iframeVersion'] = true;
         $cfg['disableBack'] = true;
 
@@ -453,9 +408,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     }
 
     /**
-     * chamada local executada antes de retornars
-     *
-     * @return void null
+     * chamada local executada antes de retornars.
      */
     final private function evtBeforeReturnLocal()
     {
@@ -463,9 +416,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     }
 
     /**
-     * função executada após pegar o conteúdo de escopo
-     *
-     * @return void retorna os conteúdos de escopo
+     * função executada após pegar o conteúdo de escopo.
      */
     protected function evtAfterGetScopedDataLocal()
     {
@@ -481,7 +432,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     }
 
     /**
-     * executado na iteração de uma coluna de uma linha no carregar mais
+     * executado na iteração de uma coluna de uma linha no carregar mais.
      *
      * @param string   $key       nome da coluna no banco de dados
      * @param Variable $element   objeto do tipo variável contendo o valor retornado
@@ -500,27 +451,23 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         array &$result,
         array &$config
     ) {
-
         if ($key == 'id') {
             $result['grupo'][$iterator]['fakeid'] = $element->getVal();
         }
 
         //testa se é uma relação 1:n, caso sim, tenta mapeầ-la
-        if (preg_match('/.{1,}id$/', $key) ) {
-
+        if (preg_match('/.{1,}id$/', $key)) {
             $value = 'Não informado';
 
-            if (null ==! $this->getModelInstance()->getRelations()['1:n'] && $element->getBruteVal()) {
-
+            if (null == !$this->getModelInstance()->getRelations()['1:n'] && $element->getBruteVal()) {
                 $value = 'Relação inalcançável';
 
                 $relationConfig = $this->getModelInstance()->getRelationConfigFromColumnName($this->getModelInstance()->getRowPrototype()->vars[$key]->getColumnName());
 
                 if (isset($relationConfig['model'])) {
-
                     $modelName = $relationConfig['model'];
                     $modelInstance = new $modelName();
-                    $value = $modelInstance->toObject()->getOne(array('id'=>$element->getBruteVal()));
+                    $value = $modelInstance->toObject()->getOne(array('id' => $element->getBruteVal()));
 
                     if (!empty($value)) {
                         $getFunction = $modelInstance->getMeta();
@@ -531,18 +478,15 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
                         $value = $value->$getFunction()->getVal();
                     }
-
                 }
-
             }
 
             $result['grupo'][$iterator][$key] = $value;
-
         }
     }
 
     /**
-     * chamado por carregar mais no momento da execução da consulta
+     * chamado por carregar mais no momento da execução da consulta.
      *
      * @param array $where  cláusulas where
      * @param array $params parametros adicionais
@@ -560,40 +504,50 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     //======================= END eventos privados =======================
     //========================= eventos públicos =========================
     /**
-     * executada antes de retornar a página
+     * executada antes de retornar a página.
      */
-    protected function evtBeforeReturn() {}
+    protected function evtBeforeReturn()
+    {
+    }
 
     /**
-     * executada antes de rodar a página
+     * executada antes de rodar a página.
      */
-    protected function evtBeforeRun() {}
+    protected function evtBeforeRun()
+    {
+    }
 
     /**
-     * pega os dados das categorias pra mandar para a renderização
+     * pega os dados das categorias pra mandar para a renderização.
+     */
+    protected function evtAfterGetScopedData()
+    {
+    }
+
+    /**
+     * executado depois de salvar os dados principais.
      *
-     * @return void
-     */
-    protected function evtAfterGetScopedData() {}
-
-    /**
-     * executado depois de salvar os dados principais
      * @param resultado do salvamento principal $result
      */
-    protected function evtAfterMainSave($saveResult) {}
+    protected function evtAfterMainSave($saveResult)
+    {
+    }
 
     /**
-     * ao despachar o controller
-     * @param  ZendMvcMvcEvent $e evento zend
-     * @return return          null
+     * ao despachar o controller.
+     *
+     * @param ZendMvcMvcEvent $e evento zend
+     *
+     * @return return null
      */
     public function onDispatch(\Zend\Mvc\MvcEvent $e)
     {
-        $controllerName = $this->params ( '__CONTROLLER__', 'index');
-        $actionName     = $this->params ( 'action', 'index');
+        $controllerName = $this->params('__CONTROLLER__', 'index');
+        $actionName     = $this->params('action', 'index');
+
         $e->getViewModel()->setVariables(
-            array('controllerName'=> $controllerName,
-                'actionName' => $actionName)
+            array('controllerName' => $controllerName,
+                'actionName' => $actionName, )
         );
 
         return parent::onDispatch($e);
@@ -602,14 +556,13 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     //========================= utils do escopo =========================
     protected function getTemplateFileFromAction($actionName)
     {
-
         foreach ($this->filesActions as $templateFile => $actions) {
-            if (in_array($actionName,$actions)) {
+            if (in_array($actionName, $actions)) {
                 return $templateFile;
             }
         }
 
-        return null;
+        return;
     }
 
     protected function getTemplatePath($templateFile)
@@ -632,8 +585,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         } else {
             return 'ack-core/default/'.$templateFile;
         }
-
     }
     //======================= END utils do escopo =======================
-
 }
