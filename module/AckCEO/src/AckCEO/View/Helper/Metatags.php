@@ -42,7 +42,8 @@ class Metatags extends AbstractHelper
                 $meta = $metaMain;
                 unset($metaMain);
             } else {
-                if(empty($meta->getTitle())) {
+		$title = $meta->getTitle();
+                if(empty($title)) {
 
                     $meta->setTitle($metaMain->getTitle()->getBruteVal());
 
