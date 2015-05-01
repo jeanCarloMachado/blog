@@ -1,4 +1,5 @@
 <?php
+
     //pega o viewmodel do controlador
     $children = $this->viewModel()->getCurrent()->getChildren();
     $child = reset($children);
@@ -32,6 +33,7 @@ $this->inlineScript()->offsetSetFile(6, $basePath . '/plugins/colorbox-master/jq
 $this->inlineScript()->offsetSetFile(8, $basePath . '/site-jean/js/devil.js');
 $this->inlineScript()->offsetSetFile(9, $basePath . '/site-jean/js/script.site.js');
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -51,8 +53,13 @@ $this->inlineScript()->offsetSetFile(9, $basePath . '/site-jean/js/script.site.j
     <script type="text/javascript">
         var basePath = "<?php echo ($this->basePath()) ? $this->basePath() : '/'; ?>";
     </script>
-    <?php echo $this->headScript() ?>
-    <?php echo $this->inlineScript(); ?>
+
+<script type="text/javascript" src="/site-jean/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/site-jean/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="/site-jean/js/jquery.ui.datepicker-pt-BR.js"></script>
+<script type="text/javascript" src="/site-jean/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/site-jean/js/devil.js"></script>
+<script type="text/javascript" src="/site-jean/js/script.site.js"></script>
 
     <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -101,7 +108,7 @@ ga('send', 'pageview');
 <footer class="container hidden-print">
                     <a href="#topo" class="hidden-md hidden-lg">Topo&nbsp;<span class="glyphicon glyphicon-circle-arrow-up"></span></a>
                     </div>
-                        <a target="_blank" href="http://jeancarlomachado.com.br/feed">Feed</a> |
+                    <a target="_blank" href="<?php echo $basePath?>/feed">Feed</a> |
                         <a href="<?php echo $this->url('sobre'); ?>">Sobre</a> |
                         <a target="_blank" href="https://github.com/jeanCarloMachado">Github</a> |
                         <a target="_blank" href="http://www.linkedin.com/pub/jean-carlo-machado/77/159/53b">LinkedIn</a> |
@@ -114,4 +121,5 @@ ga('send', 'pageview');
 
 </body>
 </html>
+
 
