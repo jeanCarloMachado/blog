@@ -203,7 +203,7 @@ abstract class ElementAbstract extends HtmlEncapsulated
         foreach ($this->require as $required) {
 
             $getterCall = 'get'.$required;
-            $result = $this->$getterCall()
+            $result = $this->$getterCall();
 
             if(empty($result)) {
                 throw new \Exception("O elemento $elementURI não dispõe do campo obrigatório { $required } preenchido");
