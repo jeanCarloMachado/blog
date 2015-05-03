@@ -12,7 +12,6 @@ Thumbs.db
 run/vagrant/.vagrant
 vendor/*
 vendor/!devil!
-composer.lock
 public/galeria/*
 config/autoload/local.php
 *un~
