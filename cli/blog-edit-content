@@ -1,0 +1,83 @@
+#!/bin/bash
+
+verbose=0
+baseUrl=$BLOG_URL
+postId=0
+editor=$EDITOR
+
+function getHelp {
+    printf "
+Edit an post on my blog
+Usage:\n
+$0 --post-id postId
+
+Optional paramters:
+--base-url http://base-url
+
+Examples:
+None
+\n "
+}
+
+function isEmpty {
+    if [ -z "$1" -o "$1" == " " ]
+    then
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+[ $(isEmpty $@) != 0 ] && {
+    printf "$(getHelp)"
+    exit 0
+}
+
+args=("$@")
+for i in "$@"
+do
+    if [[ "$i" = "--help" ]] || [[ "$i" = "-h" ]]; then
+       printf "$(getHelp)"
+       exit 0
+    elif [[ "$i" = "-v" ]] || [[ "$i" = "--verbose" ]]; then
+        verbose=1
+        echo "Verbose found"
+    elif [[ "$i" = "--post-id" ]]; then
+        postId=${args[$counter + 1]}
+    elif [[ "$i" = "--base-url" ]]; then
+        baseUrl=${args[$counter + 1]}
+    elif [[ "$i" =~  ^- ]]; then
+        echo "Invalid parameter: $i"
+        exit 1
+    fi
+    counter=$[$counter + 1]
+done
+
+saveLocallyPath="/tmp/edit-post-$postId-$$.md"
+
+[[ $verbose = 1 ]] && {
+    echo "Save locally path: $saveLocallyPath"
+}
+
+jsonData=`curl -X POST -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" "$baseUrl/post/json/$postId"`
+
+[[ $verbose = 1 ]] && {
+    echo "JsonData: $jsonData"
+}
+
+json-is-valid "$jsonData"
+
+if [ $? -ne 0 ]; then
+    echo "Invalid JSON return"
+    exit 1
+fi
+
+content=`node -pe 'JSON.parse(process.argv[1]).row.vars.conteudo.bruteValue' "$jsonData"`
+echo "$content" > $saveLocallyPath
+
+printf "\n\n In case of trouble a copy of the eddited file is on: $saveLocallyPath \n\n\n"
+
+$editor $saveLocallyPath
+
+blog-save-post $saveLocallyPath $postId
+
