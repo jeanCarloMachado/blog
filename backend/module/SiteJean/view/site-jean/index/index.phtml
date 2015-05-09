@@ -3,7 +3,7 @@
     $serviceLocator = $this->getHelperPluginManager()->getServiceLocator();
     $filter = new Zend\Filter\StripTags(array('allowTags' => 'br div hr b'));
 ?>
-<h5>Últimas postagens</h5>
+<h5>Latest Posts</h5>
 
 <section>
 <?php
@@ -26,7 +26,7 @@ endforeach;
 <?php
 if ($currentPage >= 1) :
 ?>
-<a  class="btn btn-info" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
+<a class="btn btn-info" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
 <?php
 endif;
 ?>
