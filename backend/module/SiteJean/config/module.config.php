@@ -105,12 +105,12 @@ return array(
      'default' => array(
 
         array(
-            'label' => 'Postagens',
+            'label' => 'Home',
             'route' => 'home',
         ),
 
         array(
-            'label' => 'Sobre',
+            'label' => 'About',
             'route' => 'sobre',
         ),
      ),
