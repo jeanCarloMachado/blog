@@ -113,31 +113,6 @@ return array(
             'label' => 'Sobre',
             'route' => 'sobre',
         ),
-
-        array(
-            'label' => 'Contato',
-            'route' => 'contatar',
-            'no-auth-required' => true,
-        ),
-
-        array(
-
-            'auth-required' => true,
-            'label' => 'Admin',
-            'route' => 'configuracoes',
-            'pages' => array(
-                array(
-                    'label' => 'Dashboard',
-                    'route' => 'dashboard',
-                    'auth-required' => true,
-                ),
-                array(
-                    'label' => 'Sair',
-                    'route' => 'logoff',
-                ),
-            ),
-
-        ),
      ),
     ),
 );

@@ -5,25 +5,24 @@
 ?>
 <h5>Últimas postagens</h5>
 
-<div>
+<section>
 <?php
 foreach($this->posts as $post) :
 ?>
-<hr />
-<div>
+<article>
     <h3 style="display:inline"><a href="<?php echo $this->url('view-post', array ('id' => $post->getId()->getVal())) ?>"><?php echo $post->getTitulo()->getVal(); ?></a></h3><small> (<?php echo $post->getData()->getVal(); ?>)</small>
     <div >
         <?php echo $filter->filter($post->getConteudo()->showNChars(500)->getVal()); ?>
     </div>
 
-</div>
-
+</article>
+<hr>
 <?php
 endforeach;
 ?>
+</section>
 
 
-<div id="historyNavigationButtons">
 <?php
 if ($currentPage >= 1) :
 ?>
@@ -39,9 +38,4 @@ endif;
 <?php
  endif;
 ?>
-
-</div>
-
-<div>
-
 
