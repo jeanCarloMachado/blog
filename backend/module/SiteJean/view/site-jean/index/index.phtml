@@ -26,7 +26,7 @@ endforeach;
 <?php
 if ($currentPage >= 1) :
 ?>
-<a class="btn btn-info" href="/?page=<?php echo $currentPage -1 ?>">Novos</a>
+<a class="btn btn-info" href="/?page=<?php echo $currentPage -1 ?>">Newer</a>
 <?php
 endif;
 ?>
@@ -34,7 +34,7 @@ endif;
 <?php
  if ($currentPage <= $totalPages) :
 ?>
-<a class="btn btn-info" id="navigationOlder" href="/?page=<?php echo $currentPage+1 ?>">Antigos</a>
+<a class="btn btn-info" id="navigationOlder" href="/?page=<?php echo $currentPage+1 ?>">Older</a>
 <?php
  endif;
 ?>
