@@ -1,5 +1,6 @@
 <?php
 namespace AckBlog\Controller;
+
 use AckMvc\Controller\AbstractTableRowController as Controller;
 use Zend\View\Model\ViewModel;
 
@@ -29,7 +30,9 @@ class PostsController extends Controller
         if ($this->params("action") == "editar" || $this->params("action") == "incluir" ) {
 
             $config = $this->viewModel->config;
-            $select = \AckCore\HtmlElements\Select::Factory($this->viewModel->config["row"]->vars["tipo"])->setPermission(2);
+            $select = \AckCore\HtmlElements\Select::Factory(
+                $this->viewModel->config["row"]->vars["tipo"]
+            )->setPermission(2);
             $select->setOption(1,'HTML', ($config['row']->getTipo()->getBruteVal() == 1));
             $select->setOption(2,'Markdown', ($config['row']->getTipo()->getBruteVal() == 2));
 
@@ -72,10 +75,11 @@ class PostsController extends Controller
             $data['isMarkdown'] = false;
         }
 
+
         $this->viewModel->setVariables($data);
 
         return $this->viewModel;
-    }
+   }
 
     public function jsonAction()
     {
@@ -95,8 +99,19 @@ class PostsController extends Controller
             $data['isMarkdown'] = false;
         }
 
-        echo json_encode($data, true);
+        $data['metatag'] = $this->getMetatagForEntity($entity);
+
+        $json = json_encode($data, true);
+        echo $json;
 
         return $this->getResponse();
+    }
+
+    private function getMetatagForEntity($entity)
+    {
+        $metatagsModel = $this->getServiceLocator()->get('Metatags');
+
+        $where = array('class_name' => $entity->getTableModelName(),'related_id' => $entity->getId()->getBruteVal());
+        return $metatagsModel->toObject()->getOne($where);
     }
 }

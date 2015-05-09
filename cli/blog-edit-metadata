@@ -69,16 +69,24 @@ json-is-valid "$jsonData"
 
 if [ $? -ne 0 ]; then
     echo "Invalid JSON return"
+    echo $jsonData
     exit 1
 fi
+
 
 title=`node -pe 'JSON.parse(process.argv[1]).row.vars.titulo.bruteValue' "$jsonData"`
 date=`node -pe 'JSON.parse(process.argv[1]).row.vars.data.bruteValue' "$jsonData"`
 published=`node -pe 'JSON.parse(process.argv[1]).row.vars.publicado.bruteValue' "$jsonData"`
+description=`node -pe 'JSON.parse(process.argv[1]).metatag.vars.description.bruteValue' "$jsonData"`
+keywords=`node -pe 'JSON.parse(process.argv[1]).metatag.vars.keywords.bruteValue' "$jsonData"`
 
 printf "Title=$title
 Date=$date
-Published=$published" > $saveLocallyPath
+Published=$published
+Description=$description
+Keywords=$keywords
+
+" > $saveLocallyPath
 
 printf "\n\n In case of trouble a copy of the eddited file is on: $saveLocallyPath \n\n\n"
 

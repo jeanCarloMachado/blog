@@ -43,8 +43,6 @@ abstract class AbstractTableRowController extends AbstractActionController imple
      */
     protected $scopedData = null;
 
-    //========================= actions =========================
-
     public function listaAction()
     {
         $this->evtBeforeRunLocal();
