@@ -72,12 +72,17 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-content=`node -pe 'JSON.parse(process.argv[1]).row.vars.conteudo.bruteValue' "$jsonData"`
-echo "$content" > $saveLocallyPath
+title=`node -pe 'JSON.parse(process.argv[1]).row.vars.titulo.bruteValue' "$jsonData"`
+date=`node -pe 'JSON.parse(process.argv[1]).row.vars.data.bruteValue' "$jsonData"`
+published=`node -pe 'JSON.parse(process.argv[1]).row.vars.publicado.bruteValue' "$jsonData"`
+
+printf "Title=$title
+Date=$date
+Published=$published" > $saveLocallyPath
 
 printf "\n\n In case of trouble a copy of the eddited file is on: $saveLocallyPath \n\n\n"
 
 $editor $saveLocallyPath
 
-blog-save-post $saveLocallyPath $postId
+blog-save-post-metadata $saveLocallyPath $postId
 

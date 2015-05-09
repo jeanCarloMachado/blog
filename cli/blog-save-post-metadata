@@ -1,0 +1,46 @@
+#!/bin/bash
+
+baseUrl=$BLOG_URL
+
+function getHelp {
+    printf "
+    saves a post on my blog
+    $0 <full-path-to-file-with-content> <postId>
+"
+echo "\n"
+}
+
+function isEmpty {
+    if [ -z "$1" -o "$1" == " " ]
+    then
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+[ $(isEmpty $@) != 0 ] || [ $(isEmpty $1) != 0 ] || [ $(isEmpty $1) != 0 ] && {
+    printf "$(getHelp)"
+    exit 0
+}
+
+fileWthContent=$1
+
+if [ ! -e $fileWthContent ]; then
+    printf "$(getHelp)"
+    exit 0
+fi
+
+postId=$2
+
+
+title=`cat $fileWthContent | sed "1q;d" | cut -d'=' -f2`
+date=`cat $fileWthContent | sed "2q;d" | cut -d'=' -f2`
+published=` cat $fileWthContent | sed "3q;d" | cut -d'=' -f2`
+
+
+jsonData='{"data":{"default":{"id":"'$postId'", "titulo":"'$title'", "publicado": "'$published'", "data": "'$date'"}},"parameters":"","id":"'$postId'","action":"save"}'
+
+jsonEncodedData=`echo "$jsonData" | json-urlencode`
+jsonEncodedData='ajaxACK='"$jsonEncodedData"
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Connection: keep-alive" -H "Cache-Control: no-cache" -d $jsonEncodedData $baseUrl/posts/routerAjax

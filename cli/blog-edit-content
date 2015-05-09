@@ -79,5 +79,5 @@ printf "\n\n In case of trouble a copy of the eddited file is on: $saveLocallyPa
 
 $editor $saveLocallyPath
 
-blog-save-post $saveLocallyPath $postId
+blog-save-post-content $saveLocallyPath $postId
 

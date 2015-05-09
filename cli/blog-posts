@@ -35,14 +35,16 @@ do
     fi
     counter=$[$counter + 1]
 done
-#======================== END parameters interpretation =======================
-#========================= getPosts =========================
 
 
 jsonData=`curl -X POST -H "Accept-Language: pt_BR" -H "Content-Type:application/x-www-form-urlencoded" -H "Cache-Control: no-cache"  -d "ajaxACK=%7B%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A0%2C+\"itensPerPage\"%3A+1000%7D" $baseUrl`
 
 [ $verbose = 1 ] && {
     echo "Request result $jsonData"
+
+
+
+    echo "Listing all posts from $BLOG_URL"
 }
 
 counter=0
@@ -53,5 +55,3 @@ while [[ $( echo `node -pe "JSON.parse(process.argv[1]).grupo[$counter].id" "$js
 
     counter=$[$counter + 1]
 done
-
-
