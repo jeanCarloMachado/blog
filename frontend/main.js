@@ -56,6 +56,10 @@ addEventListener('load-posts', function (e) {
     data = JSON.parse(xmlhttp.responseText);
     var posts = data.grupo;
     var postsList = document.getElementById("posts-list");
+    while (postsList.firstChild) {
+            postsList.removeChild(postsList.firstChild);
+    }
+
     for(i = 0; i < posts.length; i++) {
         var li = document.createElement('li');
         var article = document.createElement('article');
@@ -93,6 +97,7 @@ addEventListener('load-post', function (e) {
     xmlhttp= new XMLHttpRequest();
     xmlhttp.open("POST", config.backendUrl+"/post/json/"+window.currentPost, false);
     xmlhttp.send();
+
     data = JSON.parse(xmlhttp.responseText);
     var title = document.createTextNode(data.row.vars.titulo.bruteValue);
     var content = document.createTextNode(data.row.vars.conteudo.bruteValue);
@@ -100,7 +105,11 @@ addEventListener('load-post', function (e) {
 
     var postViewPort = document.getElementById("post");
     var article = postViewPort.children[0];
-    console.log(article);
+
+    while (article.firstChild) {
+            article.removeChild(article.firstChild);
+    }
+
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
@@ -109,7 +118,6 @@ addEventListener('load-post', function (e) {
     header.appendChild(h1);
     header.appendChild(date);
     div.appendChild(content);
-    article.html = '';
     article.appendChild(header);
     article.appendChild(div);
 });
