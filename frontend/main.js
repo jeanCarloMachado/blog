@@ -94,17 +94,26 @@ addEventListener('load-posts', function (e) {
 
 
 addEventListener('load-post', function (e) {
-    xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("POST", config.backendUrl+"/post/json/"+window.currentPost, false);
-    xmlhttp.send();
+    var data = getPostDataById(window.currentPost);
+    var postViewPort = document.getElementById("post");
+    createArticleFromPostData(data, postViewPort);
+});
 
-    data = JSON.parse(xmlhttp.responseText);
+
+addEventListener('load-about', function (e) {
+    var data = getPostDataById(2);
+    var postViewPort = document.getElementById("about");
+
+    createArticleFromPostData(data, postViewPort);
+});
+
+function createArticleFromPostData(data, container) {
+
     var title = document.createTextNode(data.row.vars.titulo.bruteValue);
     var content = document.createTextNode(data.row.vars.conteudo.bruteValue);
     var date = document.createTextNode(data.row.vars.data.bruteValue);
 
-    var postViewPort = document.getElementById("post");
-    var article = postViewPort.children[0];
+    var article = container.children[0];
 
     while (article.firstChild) {
             article.removeChild(article.firstChild);
@@ -120,4 +129,12 @@ addEventListener('load-post', function (e) {
     div.appendChild(content);
     article.appendChild(header);
     article.appendChild(div);
-});
+
+}
+
+function getPostDataById(id) {
+    xmlhttp= new XMLHttpRequest();
+    xmlhttp.open("POST", config.backendUrl+"/post/json/"+id, false);
+    xmlhttp.send();
+    return JSON.parse(xmlhttp.responseText);
+}
