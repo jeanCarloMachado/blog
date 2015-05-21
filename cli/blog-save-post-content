@@ -40,7 +40,6 @@ newContent="${newContent//\"/\\\"}"
 newContent="${newContent//\//\\/}"
 newContent="${newContent//
 /\\n}"
-echo $newContent; sleep 3
 
 jsonData='{"data":{"default":{"id":"'$postId'", "conteudo":"'$newContent'"}},"parameters":"","id":"'$postId'","action":"save"}'
 

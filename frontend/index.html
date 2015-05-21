@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jean Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+    <header>
+        <h1> Jean Carlo Machado </h1>
+
+        <nav>
+            <ul>
+                <li>Blog</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+
+    <h3>Latest posts</h3>
+    <ul>
+        <li ng-repeat="post in main.posts">
+            <article>
+                <header>
+                    <h1>{{post.title}}</h1>{{post.date}}
+                </header>
+
+                <div>
+                {{post.description}}
+                </div>
+
+            </article>
+        </li>
+    </ul>
+
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                   <a target="_blank" href="https://github.com/jeanCarloMachado">Github</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.linkedin.com/pub/jean-carlo-machado/77/159/53b">LinkedIn</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://twitter.com/JeanCarloMachad">Twitter</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://stackoverflow.com/users/3344920/jean-carlo-machado">StackOverflow</a>
+                </li>
+            </ul>
+        </nav>
+        @2015 Jean Carlo Machado
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="main.ctrl.js"></script>
+
+</body>
+</html>
