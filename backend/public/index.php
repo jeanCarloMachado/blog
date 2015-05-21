@@ -1,5 +1,11 @@
 <?php
 
+if (isset($_SERVER['REQUEST_METHOD'])
+    && $_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 date_default_timezone_set('America/Sao_Paulo');
 chdir(dirname(__DIR__));
 
