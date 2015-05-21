@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Jean Blog</title>
     <link rel="stylesheet" href="style.css">
-    <link href='http://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li>
-                    <a id="link-posts" href="javascript:void(0);">Blog</a>
+                    <a class="link-posts" href="javascript:void(0);">Blog</a>
                 </li>
                 <li>
                     <a id="link-about" href="javascript:void(0);">About</a>
@@ -36,19 +36,14 @@
 
     <div id="post" class="view-port">
         <article>
-            <header>
-                <h1>{{post.title}}</h1>{{post.date}}
-            </header>
-
-            <div>
-            {{post.description}}
-            </div>
-
         </article>
+        <a class="link-posts">Back</a>
     </div>
 
     <div id="about" class="view-port">
-        ABOUT
+        <article>
+        </article>
+        <a class="link-posts">Back</a>
     </div>
 
     <footer>
