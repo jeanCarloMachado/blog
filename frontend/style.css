@@ -1,9 +1,13 @@
+html, body {
+  font-family: 'Cousine';
+}
+
 body {
     color: #586e75;
     background-color: #002b36;
 }
 
-ul
-{
+ul {
     list-style-type: none;
 }
+
