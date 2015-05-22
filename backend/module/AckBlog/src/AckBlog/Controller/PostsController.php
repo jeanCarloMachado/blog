@@ -95,6 +95,15 @@ class PostsController extends Controller
 
         if ($entity->getTipo()->getBruteVal() == \AckBlog\Model\Posts::TYPE_MARKDOWN) {
             $data['isMarkdown'] = true;
+
+            $returnMarkdown = $this->getServiceLocator()
+                ->get('Request')->getHeaders()->get('Accept')->getPrioritized();
+
+            if (reset($returnMarkdown)->typeString == 'text/markdown')  {
+                $parsedown = new \Parsedown();
+                $data['row']->vars['conteudo']->setBruteValue($parsedown->text($entity->getConteudo()->getVal()));
+            }
+
         } else {
             $data['isMarkdown'] = false;
         }

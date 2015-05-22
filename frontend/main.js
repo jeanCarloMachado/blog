@@ -1,5 +1,8 @@
+window.loadedPosts = 0;
+
 var config = {
-    backendUrl: "http://blog-backend"
+    backendUrl: "http://blog-backend",
+    itensPerPage: 10
 }
 
 function hideAllViewPorts() {
@@ -18,6 +21,7 @@ function loadViewPort(id) {
         }
     }
 
+    window.currentViewPort = id;
     var event = new Event('load-'+id);
     dispatchEvent(event);
 }
@@ -51,14 +55,16 @@ addEventListener('load-posts', function (e) {
     xmlhttp= new XMLHttpRequest();
     xmlhttp.open("POST", config.backendUrl+"/posts/routerAjax", false);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send("ajaxACK=%7B%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A0%2C+\"itensPerPage\"%3A+5%7D");
+    xmlhttp.send(
+    "ajaxACK=%7B%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
+    );
 
     data = JSON.parse(xmlhttp.responseText);
     var posts = data.grupo;
-    var postsList = document.getElementById("posts-list");
-    while (postsList.firstChild) {
-            postsList.removeChild(postsList.firstChild);
+    if (posts.length == 0){
+        window.noMorePosts = true;
     }
+    var postsList = document.getElementById("posts-list");
 
     for(i = 0; i < posts.length; i++) {
         var li = document.createElement('li');
@@ -71,7 +77,6 @@ addEventListener('load-posts', function (e) {
         var div = document.createElement('div');
         var content = document.createTextNode(posts[i].conteudo);
 
-        a.class = 'link-posts';
         a.id = posts[i].id;
 
         a.onclick = function() {
@@ -107,10 +112,26 @@ addEventListener('load-about', function (e) {
     createArticleFromPostData(data, postViewPort);
 });
 
+
+window.onscroll = function() {
+
+    if (atBottom()
+        && !window.scroll.lock
+        && !window.noMorePosts
+        && window.currentViewPort == 'posts'
+        ) {
+        window.scroll.lock = true;
+        window.loadedPosts+=config.itensPerPage;
+        var event = new Event('load-posts');
+        dispatchEvent(event);
+        window.scroll.lock = false;
+    }
+}
+
 function createArticleFromPostData(data, container) {
 
     var title = document.createTextNode(data.row.vars.titulo.bruteValue);
-    var content = document.createTextNode(data.row.vars.conteudo.bruteValue);
+    var content = data.row.vars.conteudo.bruteValue;
     var date = document.createTextNode(data.row.vars.data.bruteValue);
 
     var article = container.children[0];
@@ -126,15 +147,33 @@ function createArticleFromPostData(data, container) {
     h1.appendChild(title);
     header.appendChild(h1);
     header.appendChild(date);
-    div.appendChild(content);
+    div.innerHTML = content;
     article.appendChild(header);
     article.appendChild(div);
-
 }
 
 function getPostDataById(id) {
     xmlhttp= new XMLHttpRequest();
     xmlhttp.open("POST", config.backendUrl+"/post/json/"+id, false);
+    xmlhttp.setRequestHeader("Accept","text/markdown;level=100");
     xmlhttp.send();
     return JSON.parse(xmlhttp.responseText);
+}
+
+function atBottom() {
+    var totalHeight, currentScroll, visibleHeight;
+
+    if (document.documentElement.scrollTop) {
+        currentScroll = document.documentElement.scrollTop;
+    } else {
+        currentScroll = document.body.scrollTop;
+    }
+
+    totalHeight = document.body.offsetHeight;
+    visibleHeight = document.documentElement.clientHeight;
+    if (totalHeight <= currentScroll + visibleHeight ) {
+        return true;
+    }
+
+    return false;
 }
