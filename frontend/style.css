@@ -7,6 +7,7 @@
     font-size: 1.5em;
 }
 
+
 #latest-posts {
     padding-left: 40px;
 }
@@ -27,7 +28,14 @@ nav {
     text-align: center;
 }
 
-h1 {
+.post-title {
+    display: inline;
+    margin-right: 30px;
+}
+
+header {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 article,

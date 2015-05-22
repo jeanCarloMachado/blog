@@ -62,19 +62,12 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     public function editarAction()
     {
         $this->evtBeforeRunLocal();
-
         $model = $this->getModelInstance();
-
         $config = $this->viewModel->config;
-
         $config['row'] = $model->onlyNotDeleted()->toObject()->getOne(array('id' => (int) $this->params('id')));
-
         $this->getServiceLocator()->get('AckControllerPluginManager')->notify(__FUNCTION__, $config);
-
         $this->viewModel->config = $config;
-
         $this->evtAfterGetScopedDataLocal();
-
         $this->evtBeforeReturnLocal();
 
         return $this->viewModel;
@@ -164,70 +157,54 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         return $this->response;
     }
 
-    /**
-     * carrega uma quantidade
-     * de itens filtrando-os se necessário.
-     *
-     * @return [type] [description]
-     */
     public function loadItensAjax()
     {
         $this->evtBeforeRunLocal();
-        //pega o nome do modelo dependendo se é categoria ou não
         $model = $this->getModelInstance();
         $config = (!empty($this->viewModel->config)) ? $this->viewModel->config : array();
 
-        $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
-
-        $params = array('limit' => array('offset' => $this->ajax['itensCount'], 'count' => $itensPerPage));
-
-        if (!empty($config['order'])) {
-            $params['order'] = $config['order'];
+        $where = (isset($config['where'])) ? $config['where'] : array();
+        if (isset($this->ajax['visivel'])) {
+            $where['visivel'] = $this->ajax['visivel'];
         }
-        if (empty($params['order'])) {
-            if ($model->hasColumn('ordem')) {
-                $params['order'] = 'ordem DESC';
-            } elseif ($model->hasColumn('nome')) {
-                $params['order'] = 'nome ASC';
-            } else {
-                $params['order'] = 'id DESC';
+
+            $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
+
+            $params = array('limit' => array('offset' => $this->ajax['itensCount'], 'count' => $itensPerPage));
+
+            if (!empty($config['order'])) {
+                $params['order'] = $config['order'];
             }
-        }
+            if (empty($params['order'])) {
+                if ($model->hasColumn('ordem')) {
+                    $params['order'] = 'ordem DESC';
+                } elseif ($model->hasColumn('nome')) {
+                    $params['order'] = 'nome ASC';
+                } else {
+                    $params['order'] = 'id DESC';
+                }
+            }
 
-        $resultObjects = $this->evtLoadItensOnQuery($config['where'], $params, $config);
+            $resultObjects = $this->evtLoadItensOnQuery($where, $params, $config);
 
-        $url = $this->buildUrl('editar');
+            $url = $this->buildUrl('editar');
 
-        /*
-         * remove os elementos html das strings
-         */
-        $result['grupo'] = array();
-        if (!empty($resultObjects)) {
-            foreach ($resultObjects as $rowId => $row) {
-                $vars = $row->getVars();
+            $result['grupo'] = array();
+            if (!empty($resultObjects)) {
+                foreach ($resultObjects as $rowId => $row) {
+                    $vars = $row->getVars();
 
                 foreach ($vars as $elementId => $element) {
-                    if (isset($config['returnFalseInCols']) && in_array($elementId, $config['returnFalseInCols'])) {
-                        $result['grupo'][$rowId][$elementId] = 'false';
-                        continue;
-                    }
-
                     if ($elementId == 'id') {
                         $result['grupo'][$rowId][$elementId] = $element->getBruteVal();
                     } else {
-                        $result['grupo'][$rowId][$elementId] = strip_tags($element->showNChars()->getVal());
+                        $result['grupo'][$rowId][$elementId] = strip_tags($element->showNChars(500)->getVal());
                     }
 
                     $this->evtLoadItensOnColumnIterator($elementId, $element, $rowId, $vars, $result, $config);
                 }
-                $result['grupo'][$rowId]['url_linha'] = $url.'/'.$row->getId()->getVal().'/id';
             }
         }
-
-        $result['showButton'] = (count($result['grupo']) < $this->itensPerPage) ? false : true;
-        $result['status'] = 1;
-        $result['disableSuccessNotifiction'] = true;
-        $result['mensagem'] = 'Itens carregados com sucesso';
 
         $this->evtBeforeReturnLocal();
         Ajax::notifyEnd($result);
@@ -340,16 +317,16 @@ abstract class AbstractTableRowController extends AbstractActionController imple
 
         //seta as urls
         if (empty($cfg['urlGateway'])) {
-            $cfg['urlGateway'] =  $this->buildUrl('routerAjax');
+            $cfg['urlGateway'] = $this->buildUrl('routerAjax');
         }
         if (empty($cfg['urlScoped'])) {
             $cfg['urlScoped'] = $this->buildUrl();
         }
         if (empty($cfg['urlAdd'])) {
-            $cfg['urlAdd']  = $this->buildUrl('incluir');
+            $cfg['urlAdd'] = $this->buildUrl('incluir');
         }
         if (empty($cfg['urlElement'])) {
-            $cfg['urlElement']  = $this->buildUrl('editar');
+            $cfg['urlElement'] = $this->buildUrl('editar');
         }
 
         //seta o manager dos elmentos html
@@ -494,7 +471,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
      */
     public function evtLoadItensOnQuery(&$where = null, array &$params = null, array &$config)
     {
-        $model =  $this->getModelInstance();
+        $model = $this->getModelInstance();
         $this->getServiceLocator()->get('InterpreterSearch')->setRelatedModel($model)->alterQueryClausules($this->ajax, $where, $params);
 
         return $model->toObject()->onlyNotDeleted()->get($where, $params);
@@ -541,7 +518,7 @@ abstract class AbstractTableRowController extends AbstractActionController imple
     public function onDispatch(\Zend\Mvc\MvcEvent $e)
     {
         $controllerName = $this->params('__CONTROLLER__', 'index');
-        $actionName     = $this->params('action', 'index');
+        $actionName = $this->params('action', 'index');
 
         $e->getViewModel()->setVariables(
             array('controllerName' => $controllerName,

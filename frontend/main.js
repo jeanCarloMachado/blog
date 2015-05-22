@@ -56,7 +56,7 @@ addEventListener('load-posts', function (e) {
     xmlhttp.open("POST", config.backendUrl+"/posts/routerAjax", false);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(
-    "ajaxACK=%7B%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
+    "ajaxACK=%7B%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
     );
 
     data = JSON.parse(xmlhttp.responseText);
@@ -72,9 +72,17 @@ addEventListener('load-posts', function (e) {
         var header = document.createElement('header');
         var h1 = document.createElement('h1');
         var a = document.createElement('a');
-        var title = document.createTextNode(posts[i].titulo);
-        var date = document.createTextNode(posts[i].data);
         var div = document.createElement('div');
+
+        var title = document.createTextNode(posts[i].titulo);
+        header.appendChild(h1);
+
+        if (posts[i].data && posts[i].data != '0000-00-00 00:00:00') {
+            var date = document.createTextNode(Date.parse(posts[i].data).toDateString());
+            header.appendChild(date);
+        }
+
+
         var content = document.createTextNode(posts[i].conteudo);
 
         a.id = posts[i].id;
@@ -85,9 +93,8 @@ addEventListener('load-posts', function (e) {
             loadViewPort('post');
         };
 
-        header.appendChild(h1);
-        header.appendChild(date);
         h1.appendChild(a);
+        h1.className = 'post-title';
         a.appendChild(title);
         article.appendChild(header);
         article.appendChild(div);
@@ -130,23 +137,29 @@ window.onscroll = function() {
 
 function createArticleFromPostData(data, container) {
 
-    var title = document.createTextNode(data.row.vars.titulo.bruteValue);
-    var content = data.row.vars.conteudo.bruteValue;
-    var date = document.createTextNode(data.row.vars.data.bruteValue);
-
-    var article = container.children[0];
-
-    while (article.firstChild) {
-            article.removeChild(article.firstChild);
-    }
-
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
 
-    h1.appendChild(title);
+    var title = document.createTextNode(data.row.vars.titulo.bruteValue);
+    var content = data.row.vars.conteudo.bruteValue;
+
     header.appendChild(h1);
-    header.appendChild(date);
+
+    if (data.row.vars.data.bruteValue && data.row.vars.data.bruteValue != '0000-00-00 00:00:00') {
+        var date = document.createTextNode(Date.parse(data.row.vars.data.bruteValue).toDateString());
+        header.appendChild(date);
+    }
+
+    var article = container.children[0];
+
+    while (article.firstChild) {
+        article.removeChild(article.firstChild);
+    }
+
+
+    h1.appendChild(title);
+    h1.className = 'post-title';
     div.innerHTML = content;
     article.appendChild(header);
     article.appendChild(div);
