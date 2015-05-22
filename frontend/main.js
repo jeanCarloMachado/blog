@@ -56,7 +56,7 @@ addEventListener('load-posts', function (e) {
     xmlhttp.open("POST", config.backendUrl+"/posts/routerAjax", false);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(
-    "ajaxACK=%7B%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
+    "ajaxACK=%7B%22publicado%22%3A%221%22%2C%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
     );
 
     data = JSON.parse(xmlhttp.responseText);
