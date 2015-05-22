@@ -167,6 +167,9 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         if (isset($this->ajax['visivel'])) {
             $where['visivel'] = $this->ajax['visivel'];
         }
+        if (isset($this->ajax['publicado'])) {
+            $where['publicado'] = $this->ajax['publicado'];
+        }
 
             $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
 
