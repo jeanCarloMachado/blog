@@ -167,25 +167,17 @@ abstract class AbstractTableRowController extends AbstractActionController imple
         if (isset($this->ajax['visivel'])) {
             $where['visivel'] = $this->ajax['visivel'];
         }
-        if (isset($this->ajax['publicado'])) {
-            $where['publicado'] = $this->ajax['publicado'];
-        }
 
             $itensPerPage = isset($this->ajax['itensPerPage']) ? $this->ajax['itensPerPage'] : $this->itensPerPage;
 
             $params = array('limit' => array('offset' => $this->ajax['itensCount'], 'count' => $itensPerPage));
+        if (isset($this->ajax['order'])) {
+            $params['order'] = $this->ajax['order'];
+        }
 
-            if (!empty($config['order'])) {
-                $params['order'] = $config['order'];
-            }
+
             if (empty($params['order'])) {
-                if ($model->hasColumn('ordem')) {
-                    $params['order'] = 'ordem DESC';
-                } elseif ($model->hasColumn('nome')) {
-                    $params['order'] = 'nome ASC';
-                } else {
-                    $params['order'] = 'id DESC';
-                }
+                $params['order'] = 'id DESC';
             }
 
             $resultObjects = $this->evtLoadItensOnQuery($where, $params, $config);
