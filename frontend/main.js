@@ -1,7 +1,7 @@
 window.loadedPosts = 0;
 
 var config = {
-    backendUrl: "http://blog-backend",
+    backendUrl: "http://jeancarlomachado.com.br",
     itensPerPage: 10
 }
 
