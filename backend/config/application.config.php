@@ -12,7 +12,6 @@ $config =  array(
         'AckBlog',
         'AckCEO',
         'AckCMS',
-        'DluTwBootstrap'
     ),
 
     'module_listener_options' => array(
