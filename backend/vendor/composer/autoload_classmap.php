@@ -6,5 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DluTwBootstrap\\Module' => $vendorDir . '/dlu/dlutwbootstrap/Module.php',
 );

@@ -2,7 +2,6 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "~2",
-        "dlu/dlutwbootstrap": "dev-master",
         "erusev/parsedown": "dev-master"
     }
 }

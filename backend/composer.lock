@@ -4,68 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffa1508642637be6d51a2723bb0737ea",
+    "hash": "e2a50a5b72c3b7867add1124441b58e3",
     "packages": [
-        {
-            "name": "dlu/dlutwbootstrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/dlu/dlutwbootstrap.git",
-                "reference": "843d123dbb8e2eba65d4ef58f7cdaf7f59b0d51d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/dlu/dlutwbootstrap/get/843d123dbb8e2eba65d4ef58f7cdaf7f59b0d51d.zip",
-                "reference": "843d123dbb8e2eba65d4ef58f7cdaf7f59b0d51d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "zendframework/zendframework": ">=2.1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "DluTwBootstrap": "src/"
-                },
-                "classmap": [
-                    "./Module.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "New-BSD-License"
-            ],
-            "authors": [
-                {
-                    "name": "David Lukas",
-                    "homepage": "http://www.zfdaily.com"
-                }
-            ],
-            "description": "ZF2 module to generate Twitter Bootstrap UI - forms, navigation, etc.",
-            "homepage": "https://bitbucket.org/dlu/dlutwbootstrap",
-            "keywords": [
-                "dlutwbootstrap",
-                "module",
-                "twitter bootstrap",
-                "zend framework 2",
-                "zf2"
-            ],
-            "time": "2013-03-27 12:05:57"
-        },
         {
             "name": "erusev/parsedown",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "468d1e3da8bde049debee7f484a4f9c4b26b41ba"
+                "reference": "b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/468d1e3da8bde049debee7f484a4f9c4b26b41ba",
-                "reference": "468d1e3da8bde049debee7f484a4f9c4b26b41ba",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a",
+                "reference": "b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a",
                 "shasum": ""
             },
             "type": "library",
@@ -91,20 +43,20 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-03-18 18:44:57"
+            "time": "2015-04-29 20:22:24"
         },
         {
             "name": "zendframework/zendframework",
-            "version": "2.4.0",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "628b809fcadcd326f2074a9815e5b1fce57077ef"
+                "reference": "6ca85dcf2e9de67beb9bffd4e121e5a3a730b649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/628b809fcadcd326f2074a9815e5b1fce57077ef",
-                "reference": "628b809fcadcd326f2074a9815e5b1fce57077ef",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/6ca85dcf2e9de67beb9bffd4e121e5a3a730b649",
+                "reference": "6ca85dcf2e9de67beb9bffd4e121e5a3a730b649",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +122,7 @@
                 "ircmaxell/random-lib": "~1.1",
                 "mikey179/vfsstream": "~1.2",
                 "phpunit/phpcov": "~2.0",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "~4.6",
                 "satooshi/php-coveralls": "dev-master"
             },
             "suggest": {
@@ -189,8 +141,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev",
-                    "dev-develop": "2.4-dev"
+                    "dev-master": "2.4-dev",
+                    "dev-develop": "2.5-dev"
                 }
             },
             "autoload": {
@@ -208,7 +160,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2015-03-31 15:39:14"
+            "time": "2015-05-11 16:17:05"
         },
         {
             "name": "zendframework/zendxml",
@@ -260,7 +212,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dlu/dlutwbootstrap": 20,
         "erusev/parsedown": 20
     },
     "prefer-stable": false,
