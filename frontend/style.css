@@ -6,18 +6,29 @@ header {
     text-align: center;
 }
 
-
-#latest-posts {
-    margin-left: 40px;
+body {
+    margin: 10%;
 }
 
-.post-title {
-    display: inline;
-    float: center;
+
+footer {
+    margin-top: 50px;
+    padding-bottom: 5px;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.date-container {
-    float: left;
-    color: green;
+span {
+    padding-bottom: 50px;
 }
+
+footer nav,  footer nav ul li {
+    display:inline;
+    margin: 10px;
+}
+
+
+
 

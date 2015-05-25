@@ -13,7 +13,6 @@ function hideAllViewPorts() {
 }
 
 function loadViewPort(id) {
-
     var elements = document.getElementsByClassName("view-port");
     for (i = 0; i < elements.length; i++) {
         if (elements[i].id == id) {
@@ -41,8 +40,7 @@ function attachButtonsListeners() {
     }
 }
 
-function attachBackAction(element)
-{
+function attachBackAction(element) {
     element.onclick = function() {
         hideAllViewPorts();
         loadViewPort('posts');
@@ -73,14 +71,11 @@ addEventListener('load-posts', function (e) {
     if (posts.length == 0){
         window.noMorePosts = true;
     }
-    var postsList = document.getElementById("posts-list");
+    var postsList = document.getElementById("posts");
 
     for(i = 0; i < posts.length; i++) {
-        var li = document.createElement('li');
-
         var article = createArticle(posts[i].id, posts[i].titulo, posts[i].conteudo, posts[i].data);
-        li.appendChild(article);
-        postsList.appendChild(li);
+        postsList.appendChild(article);
     }
 });
 
@@ -114,12 +109,11 @@ addEventListener('load-about', function (e) {
 
 
 window.onscroll = function() {
-
     if (atBottom()
         && !window.scroll.lock
         && !window.noMorePosts
         && window.currentViewPort == 'posts'
-        ) {
+       ) {
         window.scroll.lock = true;
         window.loadedPosts+=config.itensPerPage;
         var event = new Event('load-posts');
@@ -128,20 +122,24 @@ window.onscroll = function() {
     }
 }
 
-function createArticle(id, title, content, date = null)
-{
-    var title = document.createTextNode(title);
+function createArticle(id, title, content, date) {
     var article = document.createElement('article');
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
+    var title = document.createTextNode(title);
 
+
+    header.appendChild(h1);
     if (date && date != '0000-00-00 00:00:00') {
+        var span = document.createElement('span');
         var date = document.createTextNode(Date.parse(date).toDateString());
-        header.appendChild(date);
+        span.appendChild(date);
+        header.appendChild(span);
     }
 
     var a = document.createElement('a');
+
     a.id = id;
     a.onclick = function() {
         hideAllViewPorts();
@@ -153,7 +151,6 @@ function createArticle(id, title, content, date = null)
     h1.appendChild(a);
 
 
-    header.appendChild(h1);
 
     while (article.firstChild) {
         article.removeChild(article.firstChild);
@@ -183,12 +180,12 @@ function getPostDataById(id) {
     return JSON.parse(xmlhttp.responseText);
 }
 
-function createBackButton()
-{
+function createBackButton() {
     var a = document.createElement('a');
     a.appendChild(document.createTextNode('Back'))
     a.class = 'link-posts';
     attachBackAction(a);
+    a.href = 'javascript:void(0);';
 
     return a;
 }
