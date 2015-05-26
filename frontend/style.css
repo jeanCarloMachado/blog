@@ -8,6 +8,8 @@ header {
 
 body {
     margin: 10%;
+    font-size: 16px;
+    font-family: 'EB Garamond', serif;
 }
 
 
@@ -37,5 +39,6 @@ a:link {
 a:visited {
     color: #0000EE;
 }
+
 
 
