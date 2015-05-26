@@ -2,6 +2,7 @@ window.loadedPosts = 0;
 
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
+    frontendUrl: "http://jeancarlomachado.com.br",
     itensPerPage: 10
 }
 
@@ -12,21 +13,33 @@ function hideAllViewPorts() {
     }
 }
 
-function loadViewPort(id) {
+function loadViewPort(viewPortId) {
+
+    if (viewPortId != 'post') {
+        window.currentId = null;
+    }
+
     var elements = document.getElementsByClassName("view-port");
     for (i = 0; i < elements.length; i++) {
-        if (elements[i].id == id) {
+        if (elements[i].id == viewPortId) {
             elements[i].style.display = "block";
         }
     }
 
-    window.currentViewPort = id;
-    var event = new Event('load-'+id);
+    window.currentViewPort = viewPortId;
+    var event = new Event('load-'+viewPortId);
     dispatchEvent(event);
+
+    url = '/#/'+viewPortId;
+    if (window.currentId) {
+        url+= '/'+currentId;
+    }
+
+    window.history.pushState({"html":document.html,"pageTitle":document.pageTitle},"", url);
 }
 
+
 hideAllViewPorts();
-loadViewPort('loading');
 
 document.getElementById("link-about").onclick = function() {
     hideAllViewPorts();
@@ -54,7 +67,16 @@ document.getElementById("link-feed").href = config.backendUrl + '/feed';
 
 window.onload = function () {
     hideAllViewPorts();
-    loadViewPort('posts');
+
+    var url = window.location.href;
+    if (url.match(/post[^s]/)) {
+        var currentId = url.split('/');
+        var currentId = currentId[currentId.length - 1];
+        window.currentId = currentId;
+        loadViewPort('post');
+    } else {
+        loadViewPort('posts');
+    }
 }
 
 
@@ -81,7 +103,7 @@ addEventListener('load-posts', function (e) {
 
 
 addEventListener('load-post', function (e) {
-    var data = getPostDataById(window.currentPost);
+    var data = getPostDataById(window.currentId);
     var postViewPort = document.getElementById("post");
     var article = createArticleFromPostData(data, postViewPort);
 
@@ -143,7 +165,7 @@ function createArticle(id, title, content, date) {
     a.id = id;
     a.onclick = function() {
         hideAllViewPorts();
-        window.currentPost = this.id;
+        window.currentId = this.id;
         loadViewPort('post');
     };
 
