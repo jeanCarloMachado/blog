@@ -30,5 +30,12 @@ footer nav,  footer nav ul li {
 }
 
 
+a:link {
+    color: #0000EE;
+}
+
+a:visited {
+    color: #0000EE;
+}
 
 
