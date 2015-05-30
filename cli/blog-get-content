@@ -3,7 +3,6 @@
 verbose=0
 baseUrl=$BLOG_URL
 postId=0
-editor=$EDITOR
 
 function getHelp {
     printf "
@@ -33,25 +32,29 @@ function isEmpty {
     exit 0
 }
 
-args=("$@")
-for i in "$@"
-do
-    if [[ "$i" = "--help" ]] || [[ "$i" = "-h" ]]; then
-       printf "$(getHelp)"
-       exit 0
-    elif [[ "$i" = "-v" ]] || [[ "$i" = "--verbose" ]]; then
-        verbose=1
-        echo "Verbose found"
-    elif [[ "$i" = "--post-id" ]]; then
-        postId=${args[$counter + 1]}
-    elif [[ "$i" = "--base-url" ]]; then
-        baseUrl=${args[$counter + 1]}
-    elif [[ "$i" =~  ^- ]]; then
-        echo "Invalid parameter: $i"
-        exit 1
-    fi
-    counter=$[$counter + 1]
-done
+if [ $(isEmpty $1) == 0 ] && [ $(isEmpty $2) != 0 ]; then
+    postId=$1
+else
+    args=("$@")
+    for i in "$@"
+    do
+        if [[ "$i" = "--help" ]] || [[ "$i" = "-h" ]]; then
+        printf "$(getHelp)"
+        exit 0
+        elif [[ "$i" = "-v" ]] || [[ "$i" = "--verbose" ]]; then
+            verbose=1
+            echo "Verbose found"
+        elif [[ "$i" = "--post-id" ]]; then
+            postId=${args[$counter + 1]}
+        elif [[ "$i" = "--base-url" ]]; then
+            baseUrl=${args[$counter + 1]}
+        elif [[ "$i" =~  ^- ]]; then
+            echo "Invalid parameter: $i"
+            exit 1
+        fi
+        counter=$[$counter + 1]
+    done
+fi
 
 saveLocallyPath="/tmp/edit-post-$postId-$$.md"
 
@@ -75,9 +78,4 @@ fi
 content=`node -pe 'JSON.parse(process.argv[1]).row.vars.conteudo.bruteValue' "$jsonData"`
 echo "$content" > $saveLocallyPath
 
-printf "\n\n In case of trouble a copy of the eddited file is on: $saveLocallyPath \n\n\n"
-
-$editor $saveLocallyPath
-
-blog-save-post-content $saveLocallyPath $postId
-
+echo $saveLocallyPath

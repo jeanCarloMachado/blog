@@ -4,10 +4,9 @@ baseUrl=$BLOG_URL
 
 function getHelp {
     printf "
-    saves a post on my blog
-    $0 <full-path-to-file-with-content> <postId>
+    saves a post metadata on my blog
+    $0 <postId> <full-path-to-file-with-content>
 "
-echo "\n"
 }
 
 function isEmpty {
@@ -24,15 +23,14 @@ function isEmpty {
     exit 0
 }
 
-fileWthContent=$1
+fileWthContent=$2
 
 if [ ! -e $fileWthContent ]; then
     printf "$(getHelp)"
     exit 0
 fi
 
-postId=$2
-
+postId=$1
 
 title=`cat $fileWthContent | sed "1q;d" | cut -d'=' -f2`
 date=`cat $fileWthContent | sed "2q;d" | cut -d'=' -f2`
@@ -45,4 +43,5 @@ jsonData='{"data":{"metatags": { "author": "Jean Carlo Machado", "title": "'$tit
 
 jsonEncodedData=`echo "$jsonData" | json-urlencode`
 jsonEncodedData='ajaxACK='"$jsonEncodedData"
+
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Connection: keep-alive" -H "Cache-Control: no-cache" -d $jsonEncodedData $baseUrl/posts/routerAjax

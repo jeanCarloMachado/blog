@@ -5,7 +5,7 @@ baseUrl=$BLOG_URL
 function getHelp {
     printf "
     saves a post on my blog
-    $0 <full-path-to-file-with-content> <postId>
+    $0 <postId> <full-path-to-file-with-content>
 "
 echo "\n"
 }
@@ -24,14 +24,14 @@ function isEmpty {
     exit 0
 }
 
-fileWthContent=$1
+fileWthContent=$2
 
 if [ ! -e $fileWthContent ]; then
     printf "$(getHelp)"
     exit 0
 fi
 
-postId=$2
+postId=$1
 
 newContent=`cat $fileWthContent`
 newContent="${newContent//\\/\\\\}"
