@@ -68,13 +68,7 @@ class PostsController extends Controller
         }
 
         $data['row'] = $entity;
-
-        if ($entity->getTipo()->getBruteVal() == \AckBlog\Model\Posts::TYPE_MARKDOWN) {
-            $data['isMarkdown'] = true;
-        } else {
-            $data['isMarkdown'] = false;
-        }
-
+        $data['isMarkdown'] = true;
 
         $this->viewModel->setVariables($data);
 
@@ -92,20 +86,14 @@ class PostsController extends Controller
             ->getOne(array('id'=>(int) $id));
 
         $data['row'] = $entity;
+        $data['isMarkdown'] = true;
 
-        if ($entity->getTipo()->getBruteVal() == \AckBlog\Model\Posts::TYPE_MARKDOWN) {
-            $data['isMarkdown'] = true;
+        $returnMarkdown = $this->getServiceLocator()
+            ->get('Request')->getHeaders()->get('Accept')->getPrioritized();
 
-            $returnMarkdown = $this->getServiceLocator()
-                ->get('Request')->getHeaders()->get('Accept')->getPrioritized();
-
-            if (reset($returnMarkdown)->typeString == 'text/markdown')  {
-                $parsedown = new \Parsedown();
-                $data['row']->vars['conteudo']->setBruteValue($parsedown->text($entity->getConteudo()->getVal()));
-            }
-
-        } else {
-            $data['isMarkdown'] = false;
+        if (reset($returnMarkdown)->typeString == 'text/markdown')  {
+            $parsedown = new \Parsedown();
+            $data['row']->vars['conteudo']->setBruteValue($parsedown->text($entity->getConteudo()->getVal()));
         }
 
         $data['metatag'] = $this->getMetatagForEntity($entity);
