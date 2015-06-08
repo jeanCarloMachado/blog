@@ -6,14 +6,16 @@ var config = {
     itensPerPage: 10
 }
 
-function hideAllViewPorts() {
+function hideAllViewPorts()
+{
     var elements = document.getElementsByClassName("view-port");
     for (i = 0; i < elements.length; i++) {
         elements[i].style.display = "none";
     }
 }
 
-function loadViewPort(viewPortId) {
+function loadViewPort(viewPortId)
+{
 
     if (viewPortId != 'post') {
         window.currentId = null;
@@ -41,20 +43,22 @@ function loadViewPort(viewPortId) {
 
 hideAllViewPorts();
 
-document.getElementById("link-about").onclick = function() {
+document.getElementById("link-about").onclick = function () {
     hideAllViewPorts();
     loadViewPort('about');
 };
 
-function attachButtonsListeners() {
+function attachButtonsListeners()
+{
     elements = document.getElementsByClassName("link-posts")
     for (i = 0; i < elements.length; i++) {
         attachBackAction(elements[i]);
     }
 }
 
-function attachBackAction(element) {
-    element.onclick = function() {
+function attachBackAction(element)
+{
+    element.onclick = function () {
         hideAllViewPorts();
         loadViewPort('posts');
     };
@@ -85,17 +89,17 @@ addEventListener('load-posts', function (e) {
     xmlhttp.open("POST", config.backendUrl+"/posts/routerAjax", false);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(
-    "ajaxACK=%7B%22publicado%22%3A%221%22%2C%22order%22%3A%22data DESC%22%2C%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
+        "ajaxACK=%7B%22publicado%22%3A%221%22%2C%22order%22%3A%22data DESC%22%2C%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
     );
 
     data = JSON.parse(xmlhttp.responseText);
     var posts = data.grupo;
-    if (posts.length == 0){
+    if (posts.length == 0) {
         window.noMorePosts = true;
     }
     var postsList = document.getElementById("posts");
 
-    for(i = 0; i < posts.length; i++) {
+    for (i = 0; i < posts.length; i++) {
         var article = createArticle(posts[i].id, posts[i].titulo, posts[i].conteudo, posts[i].data);
         postsList.appendChild(article);
     }
@@ -130,7 +134,7 @@ addEventListener('load-about', function (e) {
 });
 
 
-window.onscroll = function() {
+window.onscroll = function () {
     if (atBottom()
         && !window.scroll.lock
         && !window.noMorePosts
@@ -144,26 +148,30 @@ window.onscroll = function() {
     }
 }
 
-function createArticle(id, title, content, date) {
+function createArticle(id, title, content, date)
+{
     var article = document.createElement('article');
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
     var title = document.createTextNode(title);
 
-
+    h1.className = 'article-title';
     header.appendChild(h1);
+    header.className ='article-header'
+
     if (date && date != '0000-00-00 00:00:00') {
         var span = document.createElement('span');
         var date = document.createTextNode(Date.parse(date).toDateString());
         span.appendChild(date);
+        span.className = 'article-date';
         header.appendChild(span);
     }
 
     var a = document.createElement('a');
 
     a.id = id;
-    a.onclick = function() {
+    a.onclick = function () {
         hideAllViewPorts();
         window.currentId = this.id;
         loadViewPort('post');
@@ -171,8 +179,6 @@ function createArticle(id, title, content, date) {
 
     a.appendChild(title);
     h1.appendChild(a);
-
-
 
     while (article.firstChild) {
         article.removeChild(article.firstChild);
@@ -185,7 +191,8 @@ function createArticle(id, title, content, date) {
     return article;
 }
 
-function createArticleFromPostData(data, container) {
+function createArticleFromPostData(data, container)
+{
     return createArticle(
         data.row.vars.id.bruteValue,
         data.row.vars.titulo.bruteValue,
@@ -194,7 +201,8 @@ function createArticleFromPostData(data, container) {
     );
 }
 
-function getPostDataById(id) {
+function getPostDataById(id)
+{
     xmlhttp= new XMLHttpRequest();
     xmlhttp.open("POST", config.backendUrl+"/post/json/"+id, false);
     xmlhttp.setRequestHeader("Accept","text/markdown;level=100");
@@ -202,17 +210,19 @@ function getPostDataById(id) {
     return JSON.parse(xmlhttp.responseText);
 }
 
-function createBackButton() {
+function createBackButton()
+{
     var a = document.createElement('a');
     a.appendChild(document.createTextNode('Back'))
-    a.class = 'link-posts';
+    a.className = 'link-posts';
     attachBackAction(a);
     a.href = 'javascript:void(0);';
 
     return a;
 }
 
-function atBottom() {
+function atBottom()
+{
     var totalHeight, currentScroll, visibleHeight;
 
     if (document.documentElement.scrollTop) {

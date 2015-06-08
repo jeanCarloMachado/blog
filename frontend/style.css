@@ -12,7 +12,6 @@ body {
     font-family: 'EB Garamond', serif;
 }
 
-
 footer {
     margin-top: 50px;
     padding-bottom: 5px;
@@ -45,4 +44,26 @@ code{
     border:black dashed 1px;
     padding:6px;
     word-break: break-all;
+}
+
+.view-port {
+    max-width: 800px;
+    margin: auto;
+}
+
+article {
+    margin-top: 10px;
+}
+
+.article-header {
+    display:table-row;
+}
+
+.article-title {
+    float: left;
+}
+
+.article-date {
+    float: right;
+    margin: 40px;
 }
