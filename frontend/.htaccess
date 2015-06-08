@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Rewrite domain.org-> domain.com
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} ^www\.jeancarlomachado\.com\.br$ [NC]
+RewriteRule (.*) http://jeancarlomachado.com/$1 [R=301,L]
+

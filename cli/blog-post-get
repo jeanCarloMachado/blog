@@ -44,10 +44,14 @@ else
         elif [[ "$i" = "-v" ]] || [[ "$i" = "--verbose" ]]; then
             verbose=1
             echo "Verbose found"
-        elif [[ "$i" = "--post-id" ]]; then
+        elif [[ "$i" = "-i" ]] || [[ "$i" = "--post-id" ]]; then
             postId=${args[$counter + 1]}
+        elif [[ "$i" = "-m" ]] || [[ "$i" = "--metadata" ]]; then
+            metadata=${args[$counter + 1]}
         elif [[ "$i" = "--base-url" ]]; then
             baseUrl=${args[$counter + 1]}
+        elif [[ "$i" = "--destination" ]]; then
+            destination=${args[$counter + 1]}
         elif [[ "$i" =~  ^- ]]; then
             echo "Invalid parameter: $i"
             exit 1
@@ -56,26 +60,35 @@ else
     done
 fi
 
-saveLocallyPath="/tmp/edit-post-$postId-$$.md"
-
-[[ $verbose = 1 ]] && {
-    echo "Save locally path: $saveLocallyPath"
+[ -z $destination ]  && {
+    destination="/tmp/post-$postId-$$.md"
 }
 
-jsonData=`curl -X POST -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" "$baseUrl/post/json/$postId"`
+request='curl -X POST -H "Content-Type: multipart/form-data" '$baseUrl/post/json/$postId
 
 [[ $verbose = 1 ]] && {
-    echo "JsonData: $jsonData"
+    echo "Request: $request"
+    echo "Saving location: $destination"
+}
+
+jsonData=`$request`
+
+[[ $verbose = 1 ]] && {
+    echo "Result: $jsonData"
 }
 
 json-is-valid "$jsonData"
 
 if [ $? -ne 0 ]; then
     echo "Invalid JSON return"
-    echo $jsonData
     exit 1
 fi
 
+if [ -z $metadata ]; then 
+
+    content=`node -pe 'JSON.parse(process.argv[1]).row.vars.conteudo.bruteValue' "$jsonData"`
+
+else
 
 title=`node -pe 'JSON.parse(process.argv[1]).row.vars.titulo.bruteValue' "$jsonData"`
 date=`node -pe 'JSON.parse(process.argv[1]).row.vars.data.bruteValue' "$jsonData"`
@@ -83,12 +96,15 @@ published=`node -pe 'JSON.parse(process.argv[1]).row.vars.publicado.bruteValue' 
 description=`node -pe 'JSON.parse(process.argv[1]).metatag.vars.description.bruteValue' "$jsonData"`
 keywords=`node -pe 'JSON.parse(process.argv[1]).metatag.vars.keywords.bruteValue' "$jsonData"`
 
-printf "Title=$title
+content="Title=$title
 Date=$date
 Published=$published
 Description=$description
 Keywords=$keywords
 
-" > $saveLocallyPath
+"
 
-echo $saveLocallyPath
+fi
+
+echo "$content" > $destination
+
