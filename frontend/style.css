@@ -18,12 +18,10 @@ footer {
     margin-right: auto;
 }
 
-
 footer nav,  footer nav ul li {
     display:inline;
     margin: 10px;
 }
-
 
 a:link {
     color: #0000EE;
