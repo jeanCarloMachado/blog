@@ -5,4 +5,5 @@ RewriteCond %{HTTP_HOST} ^www$ [NC]
 RewriteRule (.*) http://jeancarlomachado.com.br/$1 [R=301,L]
 
 Redirect 301 /sobre /#/about
+Redirect 301 /posts/visualizar/ /#/post/
 
