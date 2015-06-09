@@ -68,7 +68,6 @@ attachButtonsListeners();
 
 //document.getElementById("link-feed").href = config.backendUrl + '/feed';
 
-
 window.onload = function () {
     hideAllViewPorts();
 
