@@ -16,7 +16,6 @@ function hideAllViewPorts()
 
 function loadViewPort(viewPortId)
 {
-
     if (viewPortId != 'post') {
         window.currentId = null;
     }
@@ -73,8 +72,11 @@ window.onload = function () {
 
     var url = window.location.href;
     if (url.match(/post[^s]/)) {
-        var currentId = url.split('/');
-        var currentId = currentId[currentId.length - 1];
+        url =  url.split('/');
+        var currentId = url[url.length - 1];
+        if (isNaN(currentId)) {
+            currentId = url[url.length - 2];
+        }
         window.currentId = currentId;
         loadViewPort('post');
     } else {
