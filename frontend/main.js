@@ -79,6 +79,8 @@ window.onload = function () {
         }
         window.currentId = currentId;
         loadViewPort('post');
+    } else if (url.match(/about/)) {
+        loadViewPort('about');
     } else {
         loadViewPort('posts');
     }
