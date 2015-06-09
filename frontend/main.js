@@ -136,10 +136,11 @@ addEventListener('load-about', function (e) {
 
 
 window.onscroll = function () {
-    if (atBottom()
+    if (
+        window.currentViewPort == 'posts'
+        && atBottom()
         && !window.scroll.lock
         && !window.noMorePosts
-        && window.currentViewPort == 'posts'
        ) {
         window.scroll.lock = true;
         window.loadedPosts+=config.itensPerPage;
