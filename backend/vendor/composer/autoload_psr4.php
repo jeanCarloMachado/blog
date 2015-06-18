@@ -6,5 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Zend\\' => array($vendorDir . '/zendframework/zendframework/library/Zend'),
+    'Zend\\Stratigility\\' => array($vendorDir . '/zendframework/zend-stratigility/src'),
+    'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
+    'Zend\\Escaper\\' => array($vendorDir . '/zendframework/zend-escaper/src'),
+    'Zend\\Diactoros\\' => array($vendorDir . '/zendframework/zend-diactoros/src'),
+    'Zend\\Db\\' => array($vendorDir . '/zendframework/zend-db/src'),
+    'Zend\\Config\\' => array($vendorDir . '/zendframework/zend-config/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Blog\\' => array($baseDir . '/src/Blog'),
 );

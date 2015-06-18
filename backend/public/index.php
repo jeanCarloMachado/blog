@@ -1,28 +1,47 @@
 <?php
 
-if (isset($_SERVER['REQUEST_METHOD'])
-    && $_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit;
-}
+use Zend\Stratigility\MiddlewarePipe;
+use Zend\Diactoros\Server;
+use Blog\Service\Post;
 
-date_default_timezone_set('America/Sao_Paulo');
-chdir(dirname(__DIR__));
+require __DIR__ . '/../vendor/autoload.php';
 
-define('REQUEST_MICROTIME', microtime(true));
+$files = glob('../config/{global,local}*.php', GLOB_BRACE);
+$config = Zend\Config\Factory::fromFiles($files);
 
-// Setup autoloading
-require 'init_autoloader.php';
+$app    = new MiddlewarePipe();
+$server = Server::createServer($app, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
 
-if (!defined('APPLICATION_PATH')) {
-    define('APPLICATION_PATH', realpath(__DIR__.'/../'));
-}
+$adapter = new Zend\Db\Adapter\Adapter($config['database']);
 
-$appConfig = include APPLICATION_PATH.'/config/application.config.php';
+$app->pipe('/', function ($req, $res, $next) {
+    if ($req->getUri()->getPath() !== '/') {
+        return $next($req, $res);
+    }
+    return $res->end('My blog is currently at jeancarlomachado.com.br');
+});
 
-if (file_exists(APPLICATION_PATH.'/config/development.config.php')) {
-    $appConfig = Zend\Stdlib\ArrayUtils::merge($appConfig, include APPLICATION_PATH.'/config/development.config.php');
-}
+$app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
+    $post = new Post($adapter);
 
-// Run the application!
-Zend\Mvc\Application::init($appConfig)->run();
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $result = $post->find($id);
+    } else {
+        $result = $post->findAll();
+    }
+
+    //$parsedown = new parsedown();
+    //$parsedown->setmarkupescaped(true);
+    //$result = $parsedown->text($posts);
+    if (isset($_GET['resume']) && $_GET['resume'] == 1) {
+        $result = $post->getOnlyResumeOfContent($result);
+    }
+
+
+    return $res->end(json_encode($result, true));
+});
+
+
+
+$server->listen();

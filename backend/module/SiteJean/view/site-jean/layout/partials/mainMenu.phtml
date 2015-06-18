@@ -1,8 +1,0 @@
-<nav class="navbar navbar-default hidden-print" role="navigation">
-		<div class="navbar-collapse" id="mainMenu">
-		<?php
-			$partial = array('/site-jean/layout/partials/navigation/menu.phtml', 'default');
-			echo $this->navigation('navigation')->menu()->setPartial($partial)->setMinDepth(0)->setMaxDepth()->setUlClass('nav navbar-nav')->render();
-		?>
-	</div><!-- /.navbar-collapse -->
-</nav>
