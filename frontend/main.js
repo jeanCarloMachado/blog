@@ -3,6 +3,8 @@ window.loadedPosts = 0;
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
+    //backendUrl: "http://backend.blog",
+    //frontendUrl: "http://blog",
     itensPerPage: 10
 }
 
@@ -89,14 +91,13 @@ window.onload = function () {
 
 addEventListener('load-posts', function (e) {
     xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("POST", config.backendUrl+"/posts/routerAjax", false);
-    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.open("GET", config.backendUrl+"/posts?resume=1", false);
     xmlhttp.send(
-        "ajaxACK=%7B%22publicado%22%3A%221%22%2C%22order%22%3A%22data DESC%22%2C%22visivel%22%3A%221%22%2C%22action%22%3A%22loadItens%22%2C%22itensCount%22%3A"+window.loadedPosts+"%2C+\"itensPerPage\"%3A+"+config.itensPerPage+"%7D"
+        "firstResult="+window.loadedPosts+"&itensPerPage="+config.itensPerPage
     );
 
-    data = JSON.parse(xmlhttp.responseText);
-    var posts = data.grupo;
+    var posts= JSON.parse(xmlhttp.responseText);
+
     if (posts.length == 0) {
         window.noMorePosts = true;
     }
@@ -198,20 +199,20 @@ function createArticle(id, title, content, date)
 function createArticleFromPostData(data, container)
 {
     return createArticle(
-        data.row.vars.id.bruteValue,
-        data.row.vars.titulo.bruteValue,
-        data.row.vars.conteudo.bruteValue,
-        data.row.vars.data.bruteValue
+        data.id,
+        data.titulo,
+        data.conteudo,
+        data.data
     );
 }
 
 function getPostDataById(id)
 {
     xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("POST", config.backendUrl+"/post/json/"+id, false);
-    xmlhttp.setRequestHeader("Accept","text/markdown;level=100");
+    xmlhttp.open("POST", config.backendUrl+"/posts?id="+id, false);
     xmlhttp.send();
-    return JSON.parse(xmlhttp.responseText);
+
+    return JSON.parse(xmlhttp.responseText)[0];
 }
 
 function createBackButton()
