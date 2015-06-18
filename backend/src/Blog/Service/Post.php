@@ -3,6 +3,7 @@
 namespace Blog\Service;
 
 use Zend\Db\Adapter\Adapter;
+
 class Post
 {
     private $adapter;
@@ -32,7 +33,7 @@ class Post
     {
         $result = [];
 
-        foreach($data as $entry) {
+        foreach ($data as $entry) {
             $result[] = $entry;
         }
 
@@ -42,11 +43,25 @@ class Post
     public function getOnlyResumeOfContent($content)
     {
         $maxLen = 200;
-        foreach($content as $key => $entry) {
-            if (strlen($entry['conteudo']) > $maxLen)
-                $content[$key]['conteudo'] = substr($entry['conteudo'], 0, $maxLen);
+        foreach ($content as $key => $entry) {
+            if (strlen($entry['conteudo']) > $maxLen) {
+                $content[$key]['conteudo'] = $this->showNChars($entry['conteudo']);
+            }
         }
 
         return $content;
+    }
+
+    public static function showNChars($str, $n = 100, $suffix = '...')
+    {
+        if (strlen($str) < $n) {
+            return $str;
+        }
+        $str = substr($str, 0, $n);
+        $restChars = strrpos($str, ' ');
+        $n = $n - ($n - $restChars);
+        $str = substr($str, 0, $n);
+
+        return $str;
     }
 }
