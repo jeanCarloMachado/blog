@@ -45,14 +45,14 @@ class Post
         $maxLen = 200;
         foreach ($content as $key => $entry) {
             if (strlen($entry['conteudo']) > $maxLen) {
-                $content[$key]['conteudo'] = $this->showNChars($entry['conteudo']);
+                $content[$key]['conteudo'] = $this->showNChars($entry['conteudo'], $maxLen);
             }
         }
 
         return $content;
     }
 
-    public static function showNChars($str, $n = 100, $suffix = '...')
+    public static function showNChars($str, $n = 100)
     {
         if (strlen($str) < $n) {
             return $str;
