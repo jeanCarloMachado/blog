@@ -42,7 +42,7 @@ class Post
 
     public function getOnlyResumeOfContent($content)
     {
-        $maxLen = 200;
+        $maxLen = 300;
         foreach ($content as $key => $entry) {
             if (strlen($entry['conteudo']) > $maxLen) {
                 $content[$key]['conteudo'] = $this->showNChars($entry['conteudo'], $maxLen);
