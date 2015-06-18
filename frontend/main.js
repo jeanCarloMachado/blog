@@ -3,8 +3,8 @@ window.loadedPosts = 0;
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
-    //backendUrl: "http://backend.blog",
-    //frontendUrl: "http://blog",
+    backendUrl: "http://backend.blog",
+    frontendUrl: "http://blog",
     itensPerPage: 10
 }
 
@@ -39,7 +39,11 @@ function loadViewPort(viewPortId)
     }
 
     window.history.pushState({"html":document.html,"pageTitle":document.pageTitle},"", url);
+
+    var event = new Event('viewport-rendered');
+    dispatchEvent(event);
 }
+
 
 
 hideAllViewPorts();
@@ -136,7 +140,6 @@ addEventListener('load-about', function (e) {
     postViewPort.appendChild(article);
     postViewPort.appendChild(createBackButton());
 });
-
 
 window.onscroll = function () {
     if (

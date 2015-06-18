@@ -44,7 +44,7 @@ code{
 }
 
 article {
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
 .article-header {
@@ -53,9 +53,10 @@ article {
 
 .article-title {
     float: left;
+    margin: 0 auto;
 }
 
 .article-date {
     float: right;
-    margin: 40px;
+    margin-left: 40px;
 }
