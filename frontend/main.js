@@ -3,14 +3,15 @@ window.loadedPosts = 0;
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
-    //backendUrl: "http://backend.blog",
-    //frontendUrl: "http://blog",
+    backendUrl: "http://backend.blog",
+    frontendUrl: "http://blog",
     itensPerPage: 10
 }
 
 function hideAllViewPorts()
 {
     var elements = document.getElementsByClassName("view-port");
+
     for (i = 0; i < elements.length; i++) {
         elements[i].style.display = "none";
     }
@@ -95,10 +96,9 @@ window.onload = function () {
 
 addEventListener('load-posts', function (e) {
     xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("GET", config.backendUrl+"/posts?resume=1", false);
-    xmlhttp.send(
-        "firstResult="+window.loadedPosts+"&itensPerPage="+config.itensPerPage
-    );
+    var uri = "/posts?resume=1&firstResult="+window.loadedPosts+"&maxResults="+config.itensPerPage;
+    xmlhttp.open("GET", config.backendUrl+uri, false);
+    xmlhttp.send();
 
     var posts= JSON.parse(xmlhttp.responseText);
 
@@ -214,7 +214,7 @@ function createArticleFromPostData(data, container)
 function getPostDataById(id)
 {
     xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("POST", config.backendUrl+"/posts.md?id="+id, false);
+    xmlhttp.open("POST", config.backendUrl+"/post.md?id="+id, false);
     xmlhttp.send();
 
     return JSON.parse(xmlhttp.responseText)[0];

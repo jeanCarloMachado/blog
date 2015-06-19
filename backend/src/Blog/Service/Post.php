@@ -13,10 +13,17 @@ class Post
         $this->adapter = $adapter;
     }
 
-    public function findAll()
+    public function findAll($firstResult = null, $maxResults = null)
     {
-        $stmt = $this->adapter->query('SELECT * FROM `ackblog_post` WHERE publicado = 1 order by data desc');
-        $result = $stmt->execute();
+        $sql = 'SELECT * FROM `ackblog_post` WHERE publicado = 1 order by data desc';
+        if ($firstResult !== null && $maxResults !== null) {
+            $sql.= ' LIMIT ?, ?';
+            $stmt = $this->adapter->query($sql);
+            $result = $stmt->execute([$firstResult, $maxResults]);
+        } else {
+            $stmt = $this->adapter->query($sql);
+            $result = $stmt->execute();
+        }
 
         return $this->toArray($result);
     }

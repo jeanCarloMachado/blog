@@ -3,6 +3,7 @@
 use Zend\Stratigility\MiddlewarePipe;
 use Zend\Diactoros\Server;
 use Blog\Service\Post;
+use Blog\Service\Markdown;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -25,9 +26,11 @@ $app->pipe('/', function ($req, $res, $next) {
 $app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
 
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $result = $post->find($id);
+    if (isset($_GET['firstResult'])) {
+        $result = $post->findAll(
+            $_GET['firstResult'],
+            $_GET['maxResults']
+        );
     } else {
         $result = $post->findAll();
     }
@@ -36,26 +39,23 @@ $app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
         $result = $post->getOnlyResumeOfContent($result);
     }
 
+    $result = json_encode($result, true);
+    return $res->end($result);
+});
+
+$app->pipe('/post', function ($req, $res, $next) use ($adapter) {
+    $post = new Post($adapter);
+
+    if (!isset($_GET['id'])) {
+        throw new \Exception('You must passa a filter');
+    }
+
+    $id = $_GET['id'];
+    $result = $post->find($id);
 
     if (preg_match('/md$/', $req->getUri()->getPath())) {
-
-        $parsedown = new Parsedown;
-        $textToMarkdown = function ($data) use ($parsedown, &$textToMarkdown) {
-            if (is_array($data)) {
-                foreach ($data as $key => $entry) {
-                    if ($key == 'conteudo')
-                        $result[$key] = $textToMarkdown($entry);
-                    else
-                        $result[$key] = $entry;
-                }
-
-                return $result;
-            }
-
-            return $parsedown->text($data);
-        };
-
-        $result = $textToMarkdown($result);
+        $markdown = new Markdown(new Parsedown, $result);
+        $result = $markdown->convert();
     }
 
     $result = json_encode($result, true);
