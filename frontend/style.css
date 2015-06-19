@@ -39,12 +39,13 @@ code{
 }
 
 .view-port {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
 }
 
 article {
     margin-top: 60px;
+    line-height: 150%;
 }
 
 .article-header {
