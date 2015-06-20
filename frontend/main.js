@@ -130,6 +130,19 @@ addEventListener('load-post', function (e) {
     var postViewPort = document.getElementById("post");
     var article = createArticle(data.id, data.title, data.conteudo, data.data);
 
+    alterMetadataFromArticle(data);
+
+    while (postViewPort.hasChildNodes()) {
+        postViewPort.removeChild(postViewPort.lastChild);
+    }
+
+    postViewPort.appendChild(article);
+    postViewPort.appendChild(createBackButton());
+    window.scrollTo(0, 0);
+});
+
+function alterMetadataFromArticle(data) {
+
     document.title = data.title;
     var metas = document.getElementsByTagName("meta");
     for (var i=0; i< metas.length;i++) {
@@ -141,21 +154,14 @@ addEventListener('load-post', function (e) {
             metas[i].content = data.keywords;
         }
     }
-
-    while (postViewPort.hasChildNodes()) {
-        postViewPort.removeChild(postViewPort.lastChild);
-    }
-
-    postViewPort.appendChild(article);
-    postViewPort.appendChild(createBackButton());
-    window.scrollTo(0, 0);
-});
+}
 
 
 addEventListener('load-about', function (e) {
     var data = getPostDataById(2);
     var postViewPort = document.getElementById("about");
     var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
+    alterMetadataFromArticle(data);
 
     while (postViewPort.hasChildNodes()) {
         postViewPort.removeChild(postViewPort.lastChild);
