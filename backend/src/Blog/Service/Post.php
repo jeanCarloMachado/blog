@@ -7,25 +7,44 @@ use Zend\Db\Adapter\Adapter;
 class Post
 {
     private $adapter;
+    private $root = false;
 
     public function __construct(Adapter $adapter)
     {
         $this->adapter = $adapter;
     }
 
-    public function findAll($firstResult = null, $maxResults = null)
+    public function findAll(array $params)
     {
-        $sql = 'SELECT * FROM `ackblog_post` WHERE publicado = 1 order by data desc';
-        if ($firstResult !== null && $maxResults !== null) {
-            $sql.= ' LIMIT ?, ?';
-            $stmt = $this->adapter->query($sql);
-            $result = $stmt->execute([$firstResult, $maxResults]);
-        } else {
-            $stmt = $this->adapter->query($sql);
-            $result = $stmt->execute();
+        $sql = 'SELECT * FROM `ackblog_post` WHERE 1=1 ';
+
+        $queryParams = [];
+
+        if (!$this->root) {
+            $sql.= 'AND publicado = 1 ';
         }
 
-        return $this->toArray($result);
+        $sql.=' order by data desc';
+
+        if (isset($params['firstResult']) 
+            && isset($params['maxResults'])) {
+
+            $sql.= ' LIMIT ?, ?';
+            $queryParams[] = $params['firstResult'];
+            $queryParams[] = $params['maxResults'];
+        } 
+
+
+        $stmt = $this->adapter->query($sql);
+        $result = $stmt->execute($queryParams);
+
+        $result = $this->toArray($result);
+
+        if (isset($params['resume']) && $params['resume'] == 1) {
+            $result = $this->getOnlyResumeOfContent($result);
+        }
+
+        return $result;
     }
 
     public function find($id)
@@ -47,7 +66,7 @@ class Post
         return $result;
     }
 
-    public function getOnlyResumeOfContent($content)
+    private function getOnlyResumeOfContent($content)
     {
         $maxLen = 300;
         foreach ($content as $key => $entry) {
@@ -59,7 +78,7 @@ class Post
         return $content;
     }
 
-    public static function showNChars($str, $n = 100)
+    private static function showNChars($str, $n = 100)
     {
         if (strlen($str) < $n) {
             return $str;
@@ -70,5 +89,17 @@ class Post
         $str = substr($str, 0, $n);
 
         return $str;
+    }
+
+    public function getRoot()
+    {
+        return $this->root;
+    }
+    
+    public function setRoot($root)
+    {
+        $this->root = $root;
+    
+        return $this;
     }
 }

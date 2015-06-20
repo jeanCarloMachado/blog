@@ -25,23 +25,11 @@ $app->pipe('/', function ($req, $res, $next) {
 
 $app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
-
-    if (isset($_GET['firstResult'])) {
-        $result = $post->findAll(
-            $_GET['firstResult'],
-            $_GET['maxResults']
-        );
-    } else {
-        $result = $post->findAll();
-    }
-
-    if (isset($_GET['resume']) && $_GET['resume'] == 1) {
-        $result = $post->getOnlyResumeOfContent($result);
-    }
-
+    $result = $post->findAll($_GET);
     $result = json_encode($result, true);
     return $res->end($result);
 });
+
 
 $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
@@ -61,5 +49,15 @@ $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
     $result = json_encode($result, true);
     return $res->end($result);
 });
+
+$app->pipe('/root/posts', function ($req, $res, $next) use ($adapter) {
+    $post = new Post($adapter);
+    $result = $post->setRoot(true)->findAll($_GET);
+    $result = json_encode($result, true);
+    return $res->end($result);
+});
+
+
+
 
 $server->listen();
