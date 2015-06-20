@@ -118,24 +118,19 @@ $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
 
     $filter = new \Zend\Filter\StripTags(array('allowTags' => ''));
     foreach ($result as $postData) {
-
         $entry = $feed->createEntry();
         $entry->setTitle($postData['titulo']);
         $entry->setLink('http://jeancarlomachado.com.br/#/post/'.$postData['id']);
         $entry->addAuthor($authorData);
         $entry->setDateModified(time());
 
-        $postWithMeta = $post->find($postData['id']);
+        $markdown = new Markdown(new Parsedown(), $postData['conteudo']);
+        $content = $markdown->convert();
+        $content = $filter->filter($content);
+        $content = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%-]/s', '', $content);
 
-        if (isset($postWithMeta['description'])) {
-            $description = $postWithMeta['description'];
-        }
-
-        if (empty($description)) {
-            $content = $filter->filter($postData['conteudo']);
-            $content = str_replace('&', '', $content);
-            $description = $content;
-        }
+        //$description = $post->find($postData['id'])[0]['description'];
+        $description = $content;
 
         $entry->setDescription($description);
         $entry->setContent($content);
