@@ -2,56 +2,21 @@
 
 namespace Blog\Service;
 
-use Zend\Db\Adapter\Adapter;
-
-class Post
+class Post extends Crud
 {
-    private $adapter;
     private $root = false;
-
-    public function __construct(Adapter $adapter)
-    {
-        $this->adapter = $adapter;
-    }
-
-    public function update($id, array $data)
-    {
-        if (!$id) {
-            throw new \Exception('Theres no id to update');
-        }
-
-        if (empty($data)) {
-            throw new \Exception('Theres no data to update');
-        }
-
-        $adapter = $this->adapter;
-        $qi = function($name) use ($adapter) { 
-            return $adapter->platform->quoteIdentifier($name);  
-        };
-
-        $fp = function($name) use ($adapter) { 
-            return $adapter->driver->formatParameterName($name);  
-        };
-
-        $sql = 'UPDATE `ackblog_post` SET ';
-
-        foreach ($data as $key => $entry) {
-            $sql.= " ".$qi($key)." = ".$fp($key);
-        }
-
-        $sql .= ' WHERE id = ?';
-
-        $stmt = $this->adapter->query($sql);
-        $data['id'] = $id;
-        $stmt->execute($data);
-
-        return true;
-    }
+    protected $tableName = 'ackblog_post';
+    protected $columns = [
+        'conteudo', 
+        'titulo',
+        'publicado',
+        'data'
+    ];
 
     public function findAll(array $params)
     {
-        $sql = 'SELECT * FROM `ackblog_post` 
-            WHERE 1=1 ';
+        $sql = "SELECT * FROM `$this->tableName` 
+            WHERE 1=1 ";
 
         $queryParams = [];
 
@@ -81,36 +46,15 @@ class Post
         return $result;
     }
 
-    public function find($id)
-    {
-        $stmt = $this->adapter->query(
-            'SELECT * FROM ackblog_post JOIN ackceo_metatags 
-            WHERE ackblog_post.id = ackceo_metatags.related_id 
-            AND ackblog_post.id = ?'
-        );
-
-        $result = $stmt->execute(array($id));
-
-        return $this->toArray($result);
-    }
-
-    private function toArray($data)
-    {
-        $result = [];
-
-        foreach ($data as $entry) {
-            $result[] = $entry;
-        }
-
-        return $result;
-    }
-
     private function getOnlyResumeOfContent($content)
     {
         $maxLen = 300;
         foreach ($content as $key => $entry) {
             if (strlen($entry['conteudo']) > $maxLen) {
-                $content[$key]['conteudo'] = $this->showNChars($entry['conteudo'], $maxLen);
+                $content[$key]['conteudo'] = $this->showNChars(
+                    $entry['conteudo'], 
+                    $maxLen
+                );
             }
         }
 

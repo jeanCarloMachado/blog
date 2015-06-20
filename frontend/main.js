@@ -128,7 +128,7 @@ addEventListener('load-posts', function (e) {
 addEventListener('load-post', function (e) {
     var data = getPostDataById(window.currentId);
     var postViewPort = document.getElementById("post");
-    var article = createArticle(data.id, data.title, data.conteudo, data.data);
+    var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
 
     alterMetadataFromArticle(data);
 
@@ -143,7 +143,7 @@ addEventListener('load-post', function (e) {
 
 function alterMetadataFromArticle(data) {
 
-    document.title = data.title;
+    document.title= data.titulo;
     var metas = document.getElementsByTagName("meta");
     for (var i=0; i< metas.length;i++) {
         console.log(metas[i].name);
@@ -155,7 +155,6 @@ function alterMetadataFromArticle(data) {
         }
     }
 }
-
 
 addEventListener('load-about', function (e) {
     var data = getPostDataById(2);

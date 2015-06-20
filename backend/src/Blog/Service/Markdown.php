@@ -21,7 +21,6 @@ class Markdown
         $this->data = $data;
     }
 
-
     public function convert()
     {
         $parsedown = $this->converter;

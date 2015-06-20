@@ -39,9 +39,6 @@ description=` cat $fileWthContent | sed "4q;d" | cut -d'=' -f2`
 keywords=` cat $fileWthContent | sed "5q;d" | cut -d'=' -f2`
 
 
-jsonData='{"data":{"metatags": { "author": "Jean Carlo Machado", "title": "'$title'", "description": "'$description'", "keywords": "'$keywords'"}, "default":{"id":"'$postId'", "titulo":"'$title'", "publicado": "'$published'", "data": "'$date'"}},"parameters":"","id":"'$postId'","action":"save"}'
+data="author=Jean Carlo Machado&title=$title&description=$description&title=$title&keywords=$keywords&titulo=$title&publicado=$published&data=$date"
 
-jsonEncodedData=`echo "$jsonData" | json-urlencode`
-jsonEncodedData='ajaxACK='"$jsonEncodedData"
-
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Connection: keep-alive" -H "Cache-Control: no-cache" -d $jsonEncodedData $baseUrl/posts/routerAjax
+curl -X PUT -d "$data" $baseUrl/root/post/$postId

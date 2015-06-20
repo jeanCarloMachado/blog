@@ -3,6 +3,7 @@
 use Zend\Stratigility\MiddlewarePipe;
 use Zend\Diactoros\Server;
 use Blog\Service\Post;
+use Blog\Service\Metadata;
 use Blog\Service\Markdown;
 
 require __DIR__.'/../vendor/autoload.php';
@@ -71,6 +72,11 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         $post = new Post($adapter);
         $post->setRoot(true);
         $post->update($id, $data);
+
+        $postEntity = $post->find($id);
+        $postEntity = reset($postEntity);
+        $meta= new Metadata($adapter);
+        $meta->update($postEntity['related_id'], $data);
 
         return $res->end();
     }
