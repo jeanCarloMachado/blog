@@ -50,7 +50,8 @@ class Post
 
     public function findAll(array $params)
     {
-        $sql = 'SELECT * FROM `ackblog_post` WHERE 1=1 ';
+        $sql = 'SELECT * FROM `ackblog_post` 
+            WHERE 1=1 ';
 
         $queryParams = [];
 
@@ -68,7 +69,6 @@ class Post
             $queryParams[] = $params['maxResults'];
         } 
 
-
         $stmt = $this->adapter->query($sql);
         $result = $stmt->execute($queryParams);
 
@@ -84,7 +84,9 @@ class Post
     public function find($id)
     {
         $stmt = $this->adapter->query(
-            'SELECT * FROM `ackblog_post` WHERE id = ? order by data desc'
+            'SELECT * FROM ackblog_post JOIN ackceo_metatags 
+            WHERE ackblog_post.id = ackceo_metatags.related_id 
+            AND ackblog_post.id = ?'
         );
 
         $result = $stmt->execute(array($id));

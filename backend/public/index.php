@@ -29,26 +29,24 @@ $app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
     $result = $post->findAll($_GET);
     $result = json_encode($result, true);
+
     return $res->end($result);
 });
 
-
 $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
+
+    $id = substr($req->getUri()->getPath(), 1);
+
+    if (!(string) (int) $id == $id) {
+        throw new Exception('You must pass an id');
+    }
+
     $post = new Post($adapter);
-
-    if (!isset($_GET['id'])) {
-        throw new \Exception('You must passa a filter');
-    }
-
-    $id = $_GET['id'];
     $result = $post->find($id);
-
-    if (preg_match('/md$/', $req->getUri()->getPath())) {
-        $markdown = new Markdown(new Parsedown, $result);
-        $result = $markdown->convert();
-    }
-
+    $markdown = new Markdown(new Parsedown(), $result);
+    $result = $markdown->convert();
     $result = json_encode($result, true);
+
     return $res->end($result);
 });
 
@@ -57,27 +55,27 @@ $app->pipe('/root/posts', function ($req, $res, $next) use ($adapter) {
     $post->setRoot(true);
     $result = $post->findAll($_GET);
     $result = json_encode($result, true);
+
     return $res->end($result);
 });
 
 $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
     $id = substr($req->getUri()->getPath(), 1);
 
-    if (!(string)(int) $id == $id) {
-        throw new Exception('You must pass an int');
+    if (!(string) (int) $id == $id) {
+        throw new Exception('You must pass an id');
     }
-    
-    if  ($_SERVER['REQUEST_METHOD'] == 'PUT') {
-        parse_str(file_get_contents("php://input"), $data);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+        parse_str(file_get_contents('php://input'), $data);
         $post = new Post($adapter);
         $post->setRoot(true);
         $post->update($id, $data);
+
         return $res->end();
     }
 
     throw new \Exception('Cannot find an proper action');
 });
-
-
 
 $server->listen();

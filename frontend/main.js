@@ -3,11 +3,10 @@ window.loadedPosts = 0;
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
-    //backendUrl: "http://backend.blog",
-    //frontendUrl: "http://blog",
+    backendUrl: "http://backend.blog",
+    frontendUrl: "http://blog",
     itensPerPage: 10
 }
-
 
 function hideAllViewPorts()
 {
@@ -40,13 +39,18 @@ function loadViewPort(viewPortId)
         url+= '/'+currentId;
     }
 
-    window.history.pushState({"html":document.html,"pageTitle":document.pageTitle},"", url);
+    window.history.pushState(
+        {
+            "html":document.html,
+            "pageTitle":document.pageTitle
+        },
+        "",
+        url
+    );
 
     var event = new Event('viewport-rendered');
     dispatchEvent(event);
 }
-
-
 
 hideAllViewPorts();
 
@@ -97,7 +101,9 @@ window.onload = function () {
 
 addEventListener('load-posts', function (e) {
     xmlhttp= new XMLHttpRequest();
-    var uri = "/posts?resume=1&firstResult="+window.loadedPosts+"&maxResults="+config.itensPerPage;
+    var uri = "/posts?resume=1&firstResult="
+    +window.loadedPosts+"&maxResults="+config.itensPerPage;
+
     xmlhttp.open("GET", config.backendUrl+uri, false);
     xmlhttp.send();
 
@@ -109,16 +115,32 @@ addEventListener('load-posts', function (e) {
     var postsList = document.getElementById("posts");
 
     for (i = 0; i < posts.length; i++) {
-        var article = createArticle(posts[i].id, posts[i].titulo, posts[i].conteudo, posts[i].data);
+        var article = createArticle(
+            posts[i].id,
+            posts[i].titulo,
+            posts[i].conteudo,
+            posts[i].data
+        );
         postsList.appendChild(article);
     }
 });
 
-
 addEventListener('load-post', function (e) {
     var data = getPostDataById(window.currentId);
     var postViewPort = document.getElementById("post");
-    var article = createArticleFromPostData(data, postViewPort);
+    var article = createArticle(data.id, data.title, data.conteudo, data.data);
+
+    document.title = data.title;
+    var metas = document.getElementsByTagName("meta");
+    for (var i=0; i< metas.length;i++) {
+        console.log(metas[i].name);
+        if (metas[i].name == 'Description') {
+            metas[i].content = data.description;
+        }
+        if (metas[i].name == 'Keywords') {
+            metas[i].content = data.keywords;
+        }
+    }
 
     while (postViewPort.hasChildNodes()) {
         postViewPort.removeChild(postViewPort.lastChild);
@@ -133,7 +155,7 @@ addEventListener('load-post', function (e) {
 addEventListener('load-about', function (e) {
     var data = getPostDataById(2);
     var postViewPort = document.getElementById("about");
-    var article = createArticleFromPostData(data, postViewPort);
+    var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
 
     while (postViewPort.hasChildNodes()) {
         postViewPort.removeChild(postViewPort.lastChild);
@@ -202,20 +224,11 @@ function createArticle(id, title, content, date)
     return article;
 }
 
-function createArticleFromPostData(data, container)
-{
-    return createArticle(
-        data.id,
-        data.titulo,
-        data.conteudo,
-        data.data
-    );
-}
 
 function getPostDataById(id)
 {
     xmlhttp= new XMLHttpRequest();
-    xmlhttp.open("POST", config.backendUrl+"/post.md?id="+id, false);
+    xmlhttp.open("POST", config.backendUrl+"/post/"+id, false);
     xmlhttp.send();
 
     return JSON.parse(xmlhttp.responseText)[0];
