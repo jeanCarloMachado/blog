@@ -84,6 +84,8 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         $meta = new Metadata($adapter);
         $meta->update($postEntity['related_id'], $data);
 
+        @unlink('/tmp/feed');
+
         return $res->end();
     }
 
@@ -103,6 +105,11 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
 });
 
 $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
+
+    if (file_exists('/tmp/feed')) {
+        return $res->end(file_get_contents('/tmp/feed'));
+    }
+
     $post = new Post($adapter);
     $result = $post->findAll($_GET);
 
@@ -141,7 +148,10 @@ $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
         $feed->addEntry($entry);
     }
 
-    return $res->end($feed->export('atom'));
+    $feedContent = $feed->export('atom');
+    file_put_contents('/tmp/feed', $feedContent);
+
+    return $res->end($feedContent);
 });
 
 $server->listen();
