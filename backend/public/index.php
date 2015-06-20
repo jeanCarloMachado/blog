@@ -8,7 +8,11 @@ use Blog\Service\Markdown;
 use Zend\Feed\Writer\Feed;
 
 
+date_default_timezone_set('America/Sao_Paulo');
+
 require __DIR__.'/../vendor/autoload.php';
+
+
 
 $files = glob('../config/{global,local}*.php', GLOB_BRACE);
 $config = Zend\Config\Factory::fromFiles($files);
