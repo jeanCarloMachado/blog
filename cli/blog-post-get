@@ -64,13 +64,14 @@ fi
     destination="/tmp/post-$postId-$$.md"
 }
 
-curl $baseUrl/root/post/$postId
+request="curl $baseUrl/root/post/$postId"
 
 [[ $verbose = 1 ]] && {
     echo "Saving location: $destination"
+    echo "PostId: $postId"
 }
 
-sonData=`$request`
+jsonData=`$request`
 
 [[ $verbose = 1 ]] && {
     echo "Result: $jsonData"
@@ -85,15 +86,15 @@ fi
 
 if [ -z $metadata ]; then 
 
-    content=`node -pe 'JSON.parse(process.argv[1]).conteudo' "$jsonData"`
+    content=`node -pe 'JSON.parse(process.argv[1])[0].conteudo' "$jsonData"`
 
 else
 
-title=`node -pe 'JSON.parse(process.argv[1]).titulo' "$jsonData"`
-date=`node -pe 'JSON.parse(process.argv[1]).data' "$jsonData"`
-published=`node -pe 'JSON.parse(process.argv[1]).publicado' "$jsonData"`
-description=`node -pe 'JSON.parse(process.argv[1]).description' "$jsonData"`
-keywords=`node -pe 'JSON.parse(process.argv[1]).keywords' "$jsonData"`
+title=`node -pe 'JSON.parse(process.argv[1])[0].titulo' "$jsonData"`
+date=`node -pe 'JSON.parse(process.argv[1])[0].data' "$jsonData"`
+published=`node -pe 'JSON.parse(process.argv[1])[0].publicado' "$jsonData"`
+description=`node -pe 'JSON.parse(process.argv[1])[0].description' "$jsonData"`
+keywords=`node -pe 'JSON.parse(process.argv[1])[0].keywords' "$jsonData"`
 
 content="Title=$title
 Date=$date
