@@ -81,6 +81,20 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         return $res->end();
     }
 
+   if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (!(string) (int) $id == $id) {
+            throw new Exception('You must pass an id');
+        }
+
+        $post = new Post($adapter);
+        $result = $post->find($id);
+        $result = json_encode($result, true);
+
+        return $res->end($result);
+    }
+
+
+
     throw new \Exception('Cannot find an proper action');
 });
 

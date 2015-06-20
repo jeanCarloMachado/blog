@@ -48,6 +48,8 @@ while [[ $( echo `node -pe "JSON.parse(process.argv[1])[$counter].id" "$jsonData
     printf `node -pe "JSON.parse(process.argv[1])[$counter].id" "$jsonData"`
 
     printf ' - '
+    printf `node -pe "JSON.parse(process.argv[1])[$counter].publicado" "$jsonData"`
+    printf ' - '
     echo `node -pe "JSON.parse(process.argv[1])[$counter].titulo" "$jsonData"`
 
     counter=$[$counter + 1]
