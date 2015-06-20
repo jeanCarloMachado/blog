@@ -6,7 +6,10 @@
         "zendframework/zend-diactoros": "dev-master",
         "zendframework/zend-stratigility": "dev-master",
         "zendframework/zend-db": "dev-master",
-        "zendframework/zend-config": "~2.5"
+        "zendframework/zend-config": "~2.5",
+        "zendframework/zend-servicemanager": "~2.5",
+        "zendframework/zend-filter": "~2.5",
+        "zendframework/zend-feed": "~2.5"
     },
 
     "require-dev": {

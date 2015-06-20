@@ -1,10 +1,9 @@
 <?php
 
 namespace Blog\Service;
-use Parsedown;
 
 /**
-* * @author Jean Carlo Machado <contato@jeancarlomachado.com.br>
+ * * @author Jean Carlo Machado <contato@jeancarlomachado.com.br>
  */
 class Markdown
 {
@@ -27,10 +26,11 @@ class Markdown
         $textToMarkdown = function ($data) use ($parsedown, &$textToMarkdown) {
             if (is_array($data)) {
                 foreach ($data as $key => $entry) {
-                    if ($key == 'conteudo')
+                    if ($key == 'conteudo') {
                         $result[$key] = $textToMarkdown($entry);
-                    else
+                    } else {
                         $result[$key] = $entry;
+                    }
                 }
 
                 return $result;

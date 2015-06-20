@@ -7,32 +7,31 @@ class Post extends Crud
     private $root = false;
     protected $tableName = 'ackblog_post';
     protected $columns = [
-        'conteudo', 
+        'conteudo',
         'titulo',
         'publicado',
-        'data'
+        'data',
     ];
 
     public function findAll(array $params)
     {
-        $sql = "SELECT * FROM `$this->tableName` 
+        $sql = "SELECT * FROM `$this->tableName`
             WHERE 1=1 ";
 
         $queryParams = [];
 
         if (!$this->root) {
-            $sql.= 'AND publicado = 1 ';
+            $sql .= 'AND publicado = 1 ';
         }
 
-        $sql.=' order by data desc';
+        $sql .= ' order by data desc';
 
-        if (isset($params['firstResult']) 
+        if (isset($params['firstResult'])
             && isset($params['maxResults'])) {
-
-            $sql.= ' LIMIT ?, ?';
+            $sql .= ' LIMIT ?, ?';
             $queryParams[] = $params['firstResult'];
             $queryParams[] = $params['maxResults'];
-        } 
+        }
 
         $stmt = $this->adapter->query($sql);
         $result = $stmt->execute($queryParams);
@@ -52,7 +51,7 @@ class Post extends Crud
         foreach ($content as $key => $entry) {
             if (strlen($entry['conteudo']) > $maxLen) {
                 $content[$key]['conteudo'] = $this->showNChars(
-                    $entry['conteudo'], 
+                    $entry['conteudo'],
                     $maxLen
                 );
             }
@@ -78,11 +77,11 @@ class Post extends Crud
     {
         return $this->root;
     }
-    
+
     public function setRoot($root)
     {
         $this->root = $root;
-    
+
         return $this;
     }
 }
