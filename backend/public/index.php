@@ -11,7 +11,9 @@ $files = glob('../config/{global,local}*.php', GLOB_BRACE);
 $config = Zend\Config\Factory::fromFiles($files);
 
 $app = new MiddlewarePipe();
-$server = Server::createServer($app, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
+$server = Server::createServer(
+    $app, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES
+);
 
 $adapter = new Zend\Db\Adapter\Adapter($config['database']);
 
@@ -52,11 +54,29 @@ $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
 
 $app->pipe('/root/posts', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
-    $result = $post->setRoot(true)->findAll($_GET);
+    $post->setRoot(true);
+    $result = $post->findAll($_GET);
     $result = json_encode($result, true);
     return $res->end($result);
 });
 
+$app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
+    $id = substr($req->getUri()->getPath(), 1);
+
+    if (!(string)(int) $id == $id) {
+        throw new Exception('You must pass an int');
+    }
+    
+    if  ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+        parse_str(file_get_contents("php://input"), $data);
+        $post = new Post($adapter);
+        $post->setRoot(true);
+        $post->update($id, $data);
+        return $res->end();
+    }
+
+    throw new \Exception('Cannot find an proper action');
+});
 
 
 

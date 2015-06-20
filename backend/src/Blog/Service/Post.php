@@ -14,6 +14,40 @@ class Post
         $this->adapter = $adapter;
     }
 
+    public function update($id, array $data)
+    {
+        if (!$id) {
+            throw new \Exception('Theres no id to update');
+        }
+
+        if (empty($data)) {
+            throw new \Exception('Theres no data to update');
+        }
+
+        $adapter = $this->adapter;
+        $qi = function($name) use ($adapter) { 
+            return $adapter->platform->quoteIdentifier($name);  
+        };
+
+        $fp = function($name) use ($adapter) { 
+            return $adapter->driver->formatParameterName($name);  
+        };
+
+        $sql = 'UPDATE `ackblog_post` SET ';
+
+        foreach ($data as $key => $entry) {
+            $sql.= " ".$qi($key)." = ".$fp($key);
+        }
+
+        $sql .= ' WHERE id = ?';
+
+        $stmt = $this->adapter->query($sql);
+        $data['id'] = $id;
+        $stmt->execute($data);
+
+        return true;
+    }
+
     public function findAll(array $params)
     {
         $sql = 'SELECT * FROM `ackblog_post` WHERE 1=1 ';
@@ -49,7 +83,10 @@ class Post
 
     public function find($id)
     {
-        $stmt = $this->adapter->query('SELECT * FROM `ackblog_post` WHERE id = ? order by data desc');
+        $stmt = $this->adapter->query(
+            'SELECT * FROM `ackblog_post` WHERE id = ? order by data desc'
+        );
+
         $result = $stmt->execute(array($id));
 
         return $this->toArray($result);

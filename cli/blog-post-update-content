@@ -1,0 +1,41 @@
+#!/bin/bash
+
+baseUrl=$BLOG_URL
+
+function getHelp {
+    printf "
+    saves a post on my blog
+    $0 <postId> <full-path-to-file-with-content>
+"
+echo "\n"
+}
+
+function isEmpty {
+    if [ -z "$1" -o "$1" == " " ]
+    then
+        echo 1
+    else
+        echo 0
+    fi
+}
+
+[ $(isEmpty $@) != 0 ] || [ $(isEmpty $1) != 0 ] || [ $(isEmpty $1) != 0 ] && {
+    printf "$(getHelp)"
+    exit 0
+}
+
+fileWthContent=$2
+
+if [ ! -e $fileWthContent ]; then
+    printf "$(getHelp)"
+    exit 0
+fi
+
+postId=$1
+
+newContent=`cat $fileWthContent`
+
+data="conteudo=$newContent"
+
+curl -X PUT -d "$data" $baseUrl/root/post/$postId
+

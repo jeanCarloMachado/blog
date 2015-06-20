@@ -10,7 +10,7 @@ do
     id=`echo $i | cut -d"-" -f1`
     id=`trim $id`
     fileName="$id"
-    blog-post-get -i $id --destination ~/posts/$fileName
+    blog-post -i $id --destination ~/posts/$fileName
 done
 
 IFS=$IFSCPY
