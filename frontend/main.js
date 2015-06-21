@@ -125,6 +125,7 @@ addEventListener('load-posts', function (e) {
         postsList.appendChild(article);
     }
     window.scroll.lock = false;
+    window.loadedPosts+=config.itensPerPage;
 });
 
 
@@ -177,8 +178,7 @@ addEventListener('load-about', function (e) {
     var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
     alterMetadataFromArticle(data);
 
-    postViewPort.appendChild(article);
-    postViewPort.appendChild(createBackButton());
+    postViewPort.insertBefore(article ,postViewPort.firstChild);
     window.scrollTo(0, 0);
 
     return window.aboutLoaded = true;
@@ -192,7 +192,6 @@ window.onscroll = function () {
         && !window.noMorePosts
        ) {
         window.scroll.lock = true;
-        window.loadedPosts+=config.itensPerPage;
         var event = new Event('load-posts');
         dispatchEvent(event);
     }
@@ -249,17 +248,6 @@ function getPostDataById(id)
     xmlhttp.send();
 
     return JSON.parse(xmlhttp.responseText)[0];
-}
-
-function createBackButton()
-{
-    var a = document.createElement('a');
-    a.appendChild(document.createTextNode('Back'))
-    a.className = 'link-posts';
-    attachBackAction(a);
-    a.href = 'javascript:void(0);';
-
-    return a;
 }
 
 function atBottom()
