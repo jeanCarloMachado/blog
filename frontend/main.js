@@ -34,7 +34,7 @@ function loadViewPort(viewPortId)
     var event = new Event('load-'+viewPortId);
     dispatchEvent(event);
 
-    url = '/#/'+viewPortId;
+    url = '/#!/'+viewPortId;
     if (window.currentId) {
         url+= '/'+currentId;
     }
@@ -62,6 +62,7 @@ document.getElementById("link-about").onclick = function () {
 function attachButtonsListeners()
 {
     elements = document.getElementsByClassName("link-posts")
+
     for (i = 0; i < elements.length; i++) {
         attachBackAction(elements[i]);
     }
@@ -116,41 +117,44 @@ addEventListener('load-posts', function (e) {
 
     for (i = 0; i < posts.length; i++) {
         var article = createArticle(
-            posts[i].id,
+            posts[i].id,    
             posts[i].titulo,
             posts[i].conteudo,
             posts[i].data
         );
         postsList.appendChild(article);
     }
+    window.scroll.lock = false;
 });
+
 
 addEventListener('load-post', function (e) {
     var data = getPostDataById(window.currentId);
     var postViewPort = document.getElementById("post");
     var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
+    article.className = 'currentPost';
 
     alterMetadataFromArticle(data);
 
-    while (postViewPort.hasChildNodes()) {
-        postViewPort.removeChild(postViewPort.lastChild);
+    var currentPosts = document.getElementsByClassName('currentPost');
+    while(currentPosts[0]) {
+        currentPosts[0].parentNode.removeChild(currentPosts[0]);
     }
 
-    postViewPort.appendChild(article);
-    postViewPort.appendChild(createBackButton());
+    postViewPort.insertBefore(article ,postViewPort.firstChild);
     window.scrollTo(0, 0);
-    
-    $config = {
-        "identifier": 'jeancarlomachado',
-        "title": document.title,
-        "url": window.location.href
-    }
+
+    var config = {
+        'identifier': 'jeancarlomachado',
+        'title': document.title,
+        'url': window.location.href,
+        'shortname': 'jeancarlomachado'
+    };
     enableDisqus(config);
 });
 
 function alterMetadataFromArticle(data) {
-
-    document.title= data.titulo;
+    document.title = data.titulo;
     var metas = document.getElementsByTagName("meta");
     for (var i=0; i< metas.length;i++) {
         console.log(metas[i].name);
@@ -164,18 +168,20 @@ function alterMetadataFromArticle(data) {
 }
 
 addEventListener('load-about', function (e) {
+    if (window.aboutLoaded) {
+        return;
+    }
+    
     var data = getPostDataById(2);
     var postViewPort = document.getElementById("about");
     var article = createArticle(data.id, data.titulo, data.conteudo, data.data);
     alterMetadataFromArticle(data);
 
-    while (postViewPort.hasChildNodes()) {
-        postViewPort.removeChild(postViewPort.lastChild);
-    }
-
     postViewPort.appendChild(article);
     postViewPort.appendChild(createBackButton());
     window.scrollTo(0, 0);
+
+    return window.aboutLoaded = true;
 });
 
 window.onscroll = function () {
@@ -189,7 +195,6 @@ window.onscroll = function () {
         window.loadedPosts+=config.itensPerPage;
         var event = new Event('load-posts');
         dispatchEvent(event);
-        window.scroll.lock = false;
     }
 }
 
@@ -199,8 +204,6 @@ function createArticle(id, title, content, date)
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
-    var comments = document.createElement('div');
-    comments.id="disqus_thread";
     var title = document.createTextNode(title);
 
     h1.className = 'article-title';
@@ -234,7 +237,6 @@ function createArticle(id, title, content, date)
     div.innerHTML = content;
     article.appendChild(header);
     article.appendChild(div);
-    article.appendChild(comments);
 
     return article;
 }
@@ -280,7 +282,7 @@ function atBottom()
 }
 
 
-function enableDisqus(config, sso_config) { 
+function enableDisqus(config) { 
   if (enableDisqus.loaded) {
     DISQUS.reset({
       reload: true,
@@ -306,15 +308,6 @@ function enableDisqus(config, sso_config) {
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
  
-    if (sso_config) {
-      var remote_auth_s3 = sso_config.message + " " + sso_config.sig + " " + sso_config.timestamp;
-      var body = "var disqus_config = function() {\n" + 
-                 "  this.page.remote_auth_s3 = \"" + remote_auth_s3     + "\";\n" + 
-                 "  this.page.api_key        = \"" + sso_config.api_key + "\";\n" + 
-                 "};\n"
-      appendScriptTagWithBody(body)
-    }
- 
     enableDisqus.loaded = true;
   }
 }
@@ -327,4 +320,6 @@ function appendScriptTagWithBody(body) {
   console.log(body);
   document.getElementsByTagName('body')[0].appendChild(dso);
 }
+
+
 
