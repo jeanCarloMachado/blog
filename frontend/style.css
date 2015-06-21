@@ -61,3 +61,11 @@ article {
     float: right;
     margin-left: 40px;
 }
+
+#loaderImage {
+    position:absolute;
+    width:16px; /*image width */
+    height:16px; /*image height */
+    left:50%; 
+    margin-left:8px; /*image width/2 */
+}

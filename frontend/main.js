@@ -19,16 +19,12 @@ function hideAllViewPorts()
 
 function loadViewPort(viewPortId)
 {
+    document.getElementById('loading').style.display = "block";
     if (viewPortId != 'post') {
         window.currentId = null;
     }
 
-    var elements = document.getElementsByClassName("view-port");
-    for (i = 0; i < elements.length; i++) {
-        if (elements[i].id == viewPortId) {
-            elements[i].style.display = "block";
-        }
-    }
+
 
     window.currentViewPort = viewPortId;
     var event = new Event('load-'+viewPortId);
@@ -50,6 +46,11 @@ function loadViewPort(viewPortId)
 
     var event = new Event('viewport-rendered');
     dispatchEvent(event);
+
+
+    document.getElementById('loading').style.display = "none";
+    var viewPort = document.getElementById(viewPortId);
+    viewPort.style.display = "block";
 }
 
 hideAllViewPorts();
