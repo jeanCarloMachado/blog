@@ -192,6 +192,8 @@ function createArticle(id, title, content, date)
     var header = document.createElement('header');
     var h1 = document.createElement('h1');
     var div = document.createElement('div');
+    var comments = document.createElement('div');
+    comments.id="disqus_thread";
     var title = document.createTextNode(title);
 
     h1.className = 'article-title';
@@ -225,6 +227,7 @@ function createArticle(id, title, content, date)
     div.innerHTML = content;
     article.appendChild(header);
     article.appendChild(div);
+    article.appendChild(comments);
 
     return article;
 }
