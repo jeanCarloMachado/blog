@@ -1,5 +1,6 @@
 ul {
     list-style-type: none;
+    padding: 0;
 }
 
 header {
@@ -17,6 +18,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 footer nav,  footer nav ul li {
     display:inline;
@@ -65,7 +67,6 @@ article {
 #loaderImage {
     position:absolute;
     width:16px; /*image width */
-    height:16px; /*image height */
     left:50%; 
-    margin-left:16px; /*image width/2 */
+    margin-left: -8px; /*image width/2 */
 }
