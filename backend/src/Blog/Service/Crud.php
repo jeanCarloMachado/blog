@@ -25,15 +25,6 @@ class Crud
             throw new \Exception('Theres no data to update');
         }
 
-        $adapter = $this->adapter;
-        $qi = function($name) use ($adapter) { 
-            return $adapter->platform->quoteIdentifier($name);  
-        };
-
-        $fp = function($name) use ($adapter) { 
-            return $adapter->driver->formatParameterName($name);  
-        };
-
         $sql = "UPDATE `$this->tableName` SET ";
 
         foreach ($data as $key => $entry) {
@@ -41,22 +32,23 @@ class Crud
                 unset($data[$key]);
                 continue;
             }
+            
+            if ($key == 'data' || $key == 'publicado') {
+                $sql.= $key."='".$entry."',";
+                unset($data[$key]);
+                continue;
+            }
 
-            $sql.= $key."='".$entry."',";
+            $sql.= 
+            $this->adapter->platform->quoteIdentifier($key) 
+            . ' = ' . $this->adapter->driver->formatParameterName($key).',';
         }
         $sql = substr($sql, 0, -1);
+
         $sql .= ' WHERE id = '.$id;
 
-        try {
-            $stmt = $this->adapter->query($sql);
-            $stmt->execute();
-        } catch (\Exception $e) {
-            die(
-                'Sql: '.$sql.PHP_EOL
-                .'Data: '.implode($data,'|').PHP_EOL
-                .'Message: '.$e->getMessage()
-            );
-        }
+        $stmt = $this->adapter->query($sql);
+        $stmt->execute($data);
 
         return true;
     }
@@ -114,4 +106,16 @@ class Crud
         return $result;
     }
 
+
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+    
+    public function setColumns($columns)
+    {
+        $this->columns = $columns;
+    
+        return $this;
+    }
 }

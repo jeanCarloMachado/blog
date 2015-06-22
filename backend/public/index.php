@@ -7,12 +7,9 @@ use Blog\Service\Metadata;
 use Blog\Service\Markdown;
 use Zend\Feed\Writer\Feed;
 
-
 date_default_timezone_set('America/Sao_Paulo');
 
 require __DIR__.'/../vendor/autoload.php';
-
-
 
 $files = glob('../config/{global,local}*.php', GLOB_BRACE);
 $config = Zend\Config\Factory::fromFiles($files);
@@ -79,10 +76,15 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         $post->setRoot(true);
         $post->update($id, $data);
 
-        $postEntity = $post->find($id);
-        $postEntity = reset($postEntity);
         $meta = new Metadata($adapter);
-        $meta->update($postEntity['related_id'], $data);
+        foreach ($data as $column => $value) {
+            if (array_key_exists($column, $meta->getColumns())) {
+                $postEntity = $post->find($id);
+                $postEntity = reset($postEntity);
+                $meta->update($postEntity['related_id'], $data);
+                break;
+            }
+        }
 
         @unlink('/tmp/feed');
 
@@ -140,7 +142,6 @@ $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
         $content = $filter->filter($content);
         $content = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%-]/s', '', $content);
 
-        //$description = $post->find($postData['id'])[0]['description'];
         $description = $content;
 
         $entry->setDescription($description);
