@@ -47,8 +47,11 @@ $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
 
     $post = new Post($adapter);
     $result = $post->find($id);
-    $markdown = new Markdown(new Parsedown(), $result);
-    $result = $markdown->convert();
+
+    $parsedown = new Parsedown();
+    $parsedown->setMarkupEscaped(true);
+
+    $result[0]['conteudo'] = $parsedown->text($result[0]['conteudo']);
     $result = json_encode($result, true);
 
     return $res->end($result);
