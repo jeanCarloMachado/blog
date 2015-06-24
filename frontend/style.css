@@ -70,3 +70,16 @@ article {
     left:50%; 
     margin-left: -8px; /*image width/2 */
 }
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+input[type="text"].focus {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}

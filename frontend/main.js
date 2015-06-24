@@ -3,8 +3,8 @@ window.loadedPosts = 0;
 var config = {
     backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
-    //backendUrl: "http://backend.blog",
-    //frontendUrl: "http://blog",
+    backendUrl: "http://backend.blog",
+    frontendUrl: "http://blog",
     itensPerPage: 10
 }
 
@@ -23,8 +23,6 @@ function loadViewPort(viewPortId)
     if (viewPortId != 'post') {
         window.currentId = null;
     }
-
-
 
     window.currentViewPort = viewPortId;
     var event = new Event('load-'+viewPortId);
@@ -81,6 +79,7 @@ attachButtonsListeners();
 
 document.getElementById("link-feed").href = config.backendUrl + '/feed';
 
+
 window.onload = function () {
     hideAllViewPorts();
 
@@ -98,7 +97,60 @@ window.onload = function () {
     } else {
         loadViewPort('posts');
     }
+
+    var search = document.getElementById("search");
+    search.onkeyup= function () {
+        if (this.value.length == 0) {
+            hideAllViewPorts();
+            loadViewPort('posts');
+            return;
+        }
+
+        if (this.value.length > 2) {
+            hideAllViewPorts();
+            loadViewPort('search-result');
+            window.blog = {};
+            window.blog.searchTerm = this.value;
+            return;
+        }
+    };
 }
+
+
+addEventListener('load-search-result', function (e) {
+    xmlhttp= new XMLHttpRequest();
+    var uri = "/posts?resume=1&search="+window.blog.searchTerm;
+
+    xmlhttp.open("GET", config.backendUrl+uri, false);
+    xmlhttp.send();
+
+    var posts= JSON.parse(xmlhttp.responseText);
+
+    var postsList = document.getElementById("search-result");   
+
+    while (postsList.childNodes.length > 1) {
+        postsList.removeChild(postsList.lastChild);
+    }
+
+    if (posts.length) {
+        for (i = 0; i < posts.length; i++) {
+            var article = createArticle(
+                posts[i].id,    
+                posts[i].titulo,
+                posts[i].conteudo,
+                posts[i].data
+            );
+            postsList.appendChild(article);
+        }
+    } else {
+
+        var message = document.createTextNode('No content found');
+        var p = document.createElement('p');
+        p.appendChild(message);
+        postsList.appendChild(p);
+    }
+    document.getElmentById('link-posts').className+="visited";
+});
 
 
 addEventListener('load-posts', function (e) {

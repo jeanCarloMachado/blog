@@ -23,6 +23,7 @@
                 </li>
             </ul>
         </nav>
+            <input type="text" class="style-4" name="search" id="search" placeholder="Search"/>
     </header>
 
     <div id="loading" class="view-port">
@@ -30,16 +31,20 @@
     </div>
 
     <div id="posts" class="view-port">
-        <h6 id="latest-posts">Latest posts</h6>
+            <h6 id="latest-posts">Latest posts</h6>
     </div>
 
-    <div id="post" class="view-port">
+    <div id="post" class="view-port" style="display=none">
         <a class="link-posts" href="javascript:void(0);" >Back</a>
         <div id="disqus_thread" ></div>
     </div>
 
-    <div id="about" class="view-port">
+    <div id="about" class="view-port" style="display=none">
         <a class="link-posts" href="javascript:void(0);" >Back</a>
+    </div>
+
+    <div id="search-result" class="view-port" style="display=none">
+        <h6>Search Result</h6>
     </div>
 
     <footer>
