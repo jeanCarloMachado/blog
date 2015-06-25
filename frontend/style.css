@@ -18,7 +18,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
-
+input, select, textarea, button{font-family:inherit;}
 
 footer nav,  footer nav ul li {
     display:inline;
