@@ -10,10 +10,6 @@ class Markdown
     private $converter;
     private $data;
 
-    /**
-     * @param mixed $converter
-     * @param mixed $data
-     */
     public function __construct($converter, $data)
     {
         $this->converter = $converter;

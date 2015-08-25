@@ -9,9 +9,7 @@ class Feed
 {
     public function hasCache()
     {
-        if (file_exists('/tmp/feed')) {
-            return file_get_contents('/tmp/feed');
-        }
+        return file_exists('/tmp/feed');
     }
 
     public function getCache()

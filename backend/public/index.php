@@ -78,6 +78,26 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         throw new Exception('You must pass an id');
     }
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        parse_str(file_get_contents('php://input'), $data);
+
+        if (!isset($data['titulo'])) {
+            $data['titulo'] = $data['metatag']['title'];
+        }
+
+        $post = new Post($adapter);
+        $post->setRoot(true);
+        $postId = $post->create($data);
+
+        $meta = new Metadata($adapter);
+        $data = $data['metatag'];
+        $data['related_id'] = $postId;
+        $meta->create($data);
+
+        (new BlogFeed)->removeCache();
+        return $res->end();
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
         parse_str(file_get_contents('php://input'), $data);
         $post = new Post($adapter);
@@ -95,7 +115,6 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         }
 
         (new BlogFeed)->removeCache();
-
         return $res->end();
     }
 

@@ -10,10 +10,44 @@ class Crud
     protected $adapter;
     protected $tableName = '';
     protected $columns = [];
+    protected $quotedColumns = [];
 
     public function __construct(Adapter $adapter)
     {
         $this->adapter = $adapter;
+    }
+
+    public function create(array $data)
+    {
+        $sql = "INSERT INTO `$this->tableName` (";
+        $values = " VALUES (";
+
+        foreach ($data as $key => $value) {
+            if (!in_array($key, $this->columns)) {
+                unset($data[$key]);
+                continue;
+            }
+
+            $sql .= $key.", ";
+            if (in_array($key, $this->quotedColumns)) {
+                $values .= "'".$value."', ";
+            } else {
+                $values .= $value.", ";
+            }
+        }
+
+        $sql = substr($sql, 0, -2);
+        $sql .= ')';
+        $values= substr($values, 0, -2);
+        $values.= ')';
+
+        $sql.= $values;
+
+        $stmt = $this->adapter->query($sql);
+        $stmt->execute();
+
+        $result = $this->adapter->getDriver()->getLastGeneratedValue();
+        return $result;
     }
 
     public function update($id, array $data)

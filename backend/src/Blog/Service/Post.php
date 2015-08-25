@@ -13,6 +13,11 @@ class Post extends Crud
         'data',
     ];
 
+    protected $quotedColumns = [
+        'conteudo',
+        'titulo',
+    ];
+
     public function findAll(array $params)
     {
         $sql = "SELECT * FROM `$this->tableName`
@@ -25,7 +30,7 @@ class Post extends Crud
         }
 
         if (isset($params['search'])) {
-            $sql .= "AND ( titulo LIKE '%".$params['search']."%' OR  conteudo LIKE '%".$params['search']."%' ) ";
+            $sql .= "AND ( titulo LIKE '%".$params['search']."%' OR conteudo LIKE '%".$params['search']."%' ) ";
         }
 
         $sql .= ' order by data desc';

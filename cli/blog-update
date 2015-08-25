@@ -1,6 +1,7 @@
 #!/bin/bash
 
 baseUrl=$BLOG_URL
+verbose=0
 
 function getHelp {
     printf "
@@ -19,9 +20,16 @@ function isEmpty {
     fi
 }
 
-[ $(isEmpty $@) != 0 ] || [ $(isEmpty $1) != 0 ] || [ $(isEmpty $1) != 0 ] && {
+
+[ $(isEmpty $@) != 0 ] || [ $(isEmpty $1) != 0 ] || [ $(isEmpty $2) != 0 ] && {
     printf "$(getHelp)"
     exit 0
+}
+
+
+[[ $3 = '-v' ]] && {
+	verbose=1
+	echo "Verbose Found"
 }
 
 fileWthContent=$2
@@ -37,5 +45,10 @@ newContent=`cat $fileWthContent`
 
 data="conteudo=$newContent"
 
-curl -X PUT -d "$data" $baseUrl/root/post/$postId
+request="curl -X PUT -d \"$data\" $baseUrl/root/post/$postId"
 
+[[ $verbose = 1 ]] && {
+	echo "$request"
+}
+
+curl -X PUT -d "$data" $baseUrl/root/post/$postId
