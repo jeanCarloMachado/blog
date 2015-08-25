@@ -1,6 +1,7 @@
 #!/bin/bash
 
 baseUrl=$BLOG_URL
+scriptDir=$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )
 
 function getHelp {
     printf "
@@ -21,8 +22,29 @@ function isEmpty {
 read -p "Type the title: " $title
 read -p "Type the description: " $description
 read -p "Type the keyworkds: " $keywords
+now=`date +'%F %T'`
 
 
 data="conteudo=&metatag[author]=Jean Carlo Machado&metatag[title]=$title&metatag[description]=$description&metatag[keywords]=$keywords&publicado=0"
 
-curl -X POST -d "$data" $baseUrl/root/post
+postId=`curl -X POST -d "$data" $baseUrl/root/post`
+
+re='^[0-9]+$'
+if ! [[ $postId =~ $re  ]] ; then
+    echo "Result is not a number: $postId"
+    exit 1
+fi
+
+metaDestination="/home/jean/projects/writing/meta/$postId-meta.md"
+contentDestination="/home/jean/projects/writing/"$postId".md"
+
+cp -rf $scriptDir/template/meta.md $metaDestination
+sed -i "s/MyTitle/$title/g" $metaDestination
+sed -i "s/MyDescription/$description/g" $metaDestination
+sed -i "s/MyKeywords/$keywords/g" $metaDestination
+sed -i "s/MyDate/$now/g" $metaDestination
+
+touch $contentDestination
+
+echo "$contentDestination"
+
