@@ -4,8 +4,8 @@ baseUrl=$BLOG_URL
 
 function getHelp {
     printf "
-    saves a post metadata on my blog
-    $0 <postId> <full-path-to-file-with-content>
+    saves a new post on my blog
+    $0
 "
 }
 
@@ -18,27 +18,11 @@ function isEmpty {
     fi
 }
 
-[ $(isEmpty $@) != 0 ] || [ $(isEmpty $1) != 0 ] || [ $(isEmpty $1) != 0 ] && {
-    printf "$(getHelp)"
-    exit 0
-}
-
-fileWthContent=$2
-
-if [ ! -e $fileWthContent ]; then
-    printf "$(getHelp)"
-    exit 0
-fi
-
-postId=$1
-
-title=`cat $fileWthContent | sed "1q;d" | cut -d'=' -f2`
-date=`cat $fileWthContent | sed "2q;d" | cut -d'=' -f2`
-published=` cat $fileWthContent | sed "3q;d" | cut -d'=' -f2`
-description=` cat $fileWthContent | sed "4q;d" | cut -d'=' -f2`
-keywords=` cat $fileWthContent | sed "5q;d" | cut -d'=' -f2`
+read -p "Type the title: " $title
+read -p "Type the description: " $description
+read -p "Type the keyworkds: " $keywords
 
 
-data="author=Jean Carlo Machado&title=$title&description=$description&title=$title&keywords=$keywords&titulo=$title&publicado=$published&data=$date"
+data="conteudo=&metatag[author]=Jean Carlo Machado&metatag[title]=$title&metatag[description]=$description&metatag[keywords]=$keywords&publicado=0"
 
-curl -X PUT -d "$data" $baseUrl/root/post/$postId
+curl -X POST -d "$data" $baseUrl/root/post

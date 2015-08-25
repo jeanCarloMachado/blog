@@ -95,7 +95,7 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         $meta->create($data);
 
         (new BlogFeed)->removeCache();
-        return $res->end();
+        return $res->end($postId);
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {

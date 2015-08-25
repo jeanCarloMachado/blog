@@ -1,0 +1,3 @@
+#!/bin/bash
+
+blog-posts-get > /home/jean/projects/writing/posts
