@@ -5,7 +5,7 @@ use Zend\Diactoros\Server;
 use Blog\Service\Post;
 use Blog\Service\Metadata;
 use Blog\Service\Markdown;
-use Zend\Feed\Writer\Feed;
+use Blog\Service\Feed as BlogFeed;
 
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -16,7 +16,12 @@ $config = Zend\Config\Factory::fromFiles($files);
 
 $app = new MiddlewarePipe();
 $server = Server::createServer(
-    $app, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES
+    $app,
+    $_SERVER,
+    $_GET,
+    $_POST,
+    $_COOKIE,
+    $_FILES
 );
 
 $adapter = new Zend\Db\Adapter\Adapter($config['database']);
@@ -89,71 +94,38 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
             }
         }
 
-        @unlink('/tmp/feed');
+        (new BlogFeed)->removeCache();
 
         return $res->end();
     }
 
-   if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-       if (!(string) (int) $id == $id) {
-           throw new Exception('You must pass an id');
-       }
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (!(string) (int) $id == $id) {
+            throw new Exception('You must pass an id');
+        }
 
-       $post = new Post($adapter);
-       $result = $post->find($id);
-       $result = json_encode($result, true);
+        $post = new Post($adapter);
+        $result = $post->find($id);
+        $result = json_encode($result, true);
 
-       return $res->end($result);
-   }
+        return $res->end($result);
+    }
 
     throw new \Exception('Cannot find an proper action');
 });
 
 $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
 
-    if (file_exists('/tmp/feed')) {
-        return $res->end(file_get_contents('/tmp/feed'));
+    $feed = new BlogFeed;
+    if ($feed->hasCache()) {
+        return $res->end($feed->getCache());
     }
 
     $post = new Post($adapter);
     $result = $post->findAll($_GET);
 
-    $authorData = array(
-        'name' => 'Jean Carlo Machado',
-        'email' => 'cotato@jeancarlomachado.com.br',
-        'uri' => 'http://jeancarlomachado.com.br/about',
-    );
+    $feedContent = $feed->create($result);
 
-    $feed = new Feed();
-    $feed->setTitle('Jean Carlo Machado\'s Blog');
-    $feed->setLink('http://jeancarlomachado.com.br');
-    $feed->setFeedLink('http://backend.jeancarlomachado.com.br/feed', 'atom');
-    $feed->addAuthor($authorData);
-
-    $feed->setDateModified(time());
-
-    $filter = new \Zend\Filter\StripTags(array('allowTags' => ''));
-    foreach ($result as $postData) {
-        $entry = $feed->createEntry();
-        $entry->setTitle($postData['titulo']);
-        $entry->setLink('http://jeancarlomachado.com.br/#/post/'.$postData['id']);
-        $entry->addAuthor($authorData);
-        $entry->setDateModified(time());
-
-        $markdown = new Markdown(new Parsedown(), $postData['conteudo']);
-        $content = $markdown->convert();
-        $content = $filter->filter($content);
-        $content = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%-]/s', '', $content);
-
-        $description = $content;
-
-        $entry->setDescription($description);
-        $entry->setContent($content);
-        $feed->addEntry($entry);
-    }
-
-    $feedContent = $feed->export('atom');
-    file_put_contents('/tmp/feed', $feedContent);
 
     return $res->end($feedContent);
 });

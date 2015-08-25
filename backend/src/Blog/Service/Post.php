@@ -24,7 +24,6 @@ class Post extends Crud
             $sql .= 'AND publicado = 1 ';
         }
 
-
         if (isset($params['search'])) {
             $sql .= "AND ( titulo LIKE '%".$params['search']."%' OR  conteudo LIKE '%".$params['search']."%' ) ";
         }
