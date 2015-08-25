@@ -19,11 +19,10 @@ function isEmpty {
     fi
 }
 
-read -p "Type the title: " $title
-read -p "Type the description: " $description
-read -p "Type the keyworkds: " $keywords
+read -p "Type the title: " title
+read -p "Type the description: " description
+read -p "Type the keyworkds: " keywords
 now=`date +'%F %T'`
-
 
 data="conteudo=&metatag[author]=Jean Carlo Machado&metatag[title]=$title&metatag[description]=$description&metatag[keywords]=$keywords&publicado=0"
 
