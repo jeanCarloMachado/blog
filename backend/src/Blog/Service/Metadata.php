@@ -2,13 +2,13 @@
 
 namespace Blog\Service;
 
-class Metadata extends Crud
+class Metatag extends Crud
 {
-    protected $tableName = 'ackceo_metatags';
+    protected $tableName = 'metatag';
     protected $columns = [
-        'title', 
-        'description', 
-        'author', 
+        'title',
+        'description',
+        'author',
         'keywords'
     ];
 }

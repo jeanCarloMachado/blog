@@ -2,6 +2,7 @@
 
 namespace Blog\Service;
 
+use Blog\Model\Metatag;
 use Zend\Db\Adapter\Adapter;
 
 class Crud
@@ -21,8 +22,7 @@ class Crud
             throw new \Exception('Theres no id to update');
         }
 
-        if (empty($data)) {
-            throw new \Exception('Theres no data to update');
+        if (empty($data)) { throw new \Exception('Theres no data to update');
         }
 
         $sql = "UPDATE `$this->tableName` SET ";
@@ -32,16 +32,16 @@ class Crud
                 unset($data[$key]);
                 continue;
             }
-            
+
             if ($key == 'data' || $key == 'publicado') {
-                $sql.= $key."='".$entry."',";
+                $sql .= $key."='".$entry."',";
                 unset($data[$key]);
                 continue;
             }
 
-            $sql.= 
-            $this->adapter->platform->quoteIdentifier($key) 
-            . ' = ' . $this->adapter->driver->formatParameterName($key).',';
+            $sql .=
+            $this->adapter->platform->quoteIdentifier($key)
+            .' = '.$this->adapter->driver->formatParameterName($key).',';
         }
         $sql = substr($sql, 0, -1);
 
@@ -55,20 +55,19 @@ class Crud
 
     public function findAll(array $params)
     {
-        $sql = "SELECT * FROM `$this->tableName` 
+        $sql = "SELECT * FROM `$this->tableName`
             WHERE 1=1 ";
 
         $queryParams = [];
 
-        $sql.=' order by data desc';
+        $sql .= ' order by data desc';
 
-        if (isset($params['firstResult']) 
+        if (isset($params['firstResult'])
             && isset($params['maxResults'])) {
-
-            $sql.= ' LIMIT ?, ?';
+            $sql .= ' LIMIT ?, ?';
             $queryParams[] = $params['firstResult'];
             $queryParams[] = $params['maxResults'];
-        } 
+        }
 
         $stmt = $this->adapter->query($sql);
         $result = $stmt->execute($queryParams);
@@ -85,8 +84,8 @@ class Crud
     public function find($id)
     {
         $stmt = $this->adapter->query(
-            "SELECT * FROM $this->tableName JOIN ackceo_metatags 
-            WHERE $this->tableName.id = ackceo_metatags.related_id 
+            "SELECT * FROM $this->tableName JOIN ".Metatag::TABLE_NAME."
+            WHERE $this->tableName.id = ".Metatag::TABLE_NAME.".related_id
             AND $this->tableName.id = ?"
         );
 
@@ -106,16 +105,15 @@ class Crud
         return $result;
     }
 
-
     public function getColumns()
     {
         return $this->columns;
     }
-    
+
     public function setColumns($columns)
     {
         $this->columns = $columns;
-    
+
         return $this;
     }
 }

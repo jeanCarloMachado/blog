@@ -5,7 +5,7 @@ namespace Blog\Service;
 class Post extends Crud
 {
     private $root = false;
-    protected $tableName = 'ackblog_post';
+    protected $tableName = 'post';
     protected $columns = [
         'conteudo',
         'titulo',
