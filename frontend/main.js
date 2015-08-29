@@ -2,9 +2,9 @@ window.loadedPosts = 0;
 hideAllViewPorts();
 
 var config = {
-    backendUrl: "http://backend.blog",
-    frontendUrl: "http://blog",
-    ackendUrl: "http://backend.jeancarlomachado.com.br",
+    // backendUrl: "http://backend.blog",
+    // frontendUrl: "http://blog",
+    backendUrl: "http://backend.jeancarlomachado.com.br",
     frontendUrl: "http://jeancarlomachado.com.br",
     itensPerPage: 10
 }
