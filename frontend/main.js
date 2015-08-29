@@ -4,8 +4,8 @@ hideAllViewPorts();
 var config = {
     backendUrl: "http://backend.blog",
     frontendUrl: "http://blog",
-    // backendUrl: "http://backend.jeancarlomachado.com.br",
-    // frontendUrl: "http://jeancarlomachado.com.br",
+    ackendUrl: "http://backend.jeancarlomachado.com.br",
+    frontendUrl: "http://jeancarlomachado.com.br",
     itensPerPage: 10
 }
 
