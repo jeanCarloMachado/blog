@@ -4,7 +4,6 @@ use Zend\Stratigility\MiddlewarePipe;
 use Zend\Diactoros\Server;
 use Blog\Service\Post;
 use Blog\Service\Metadata;
-use Blog\Service\Markdown;
 use Blog\Service\Feed as BlogFeed;
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -56,6 +55,9 @@ $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
     $parsedown = new Parsedown();
     $parsedown->setMarkupEscaped(true);
 
+    if (!isset($result[0]['conteudo'])) {
+        $result[0]['conteudo'] = '';
+    }
     $result[0]['conteudo'] = $parsedown->text($result[0]['conteudo']);
     $result = json_encode($result, true);
 
@@ -94,7 +96,8 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
         $data['related_id'] = $postId;
         $meta->create($data);
 
-        (new BlogFeed)->removeCache();
+        (new BlogFeed())->removeCache();
+
         return $res->end($postId);
     }
 
@@ -114,7 +117,8 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
             }
         }
 
-        (new BlogFeed)->removeCache();
+        (new BlogFeed())->removeCache();
+
         return $res->end();
     }
 
@@ -135,7 +139,7 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
 
 $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
 
-    $feed = new BlogFeed;
+    $feed = new BlogFeed();
     if ($feed->hasCache()) {
         return $res->end($feed->getCache());
     }
@@ -144,7 +148,6 @@ $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
     $result = $post->findAll($_GET);
 
     $feedContent = $feed->create($result);
-
 
     return $res->end($feedContent);
 });

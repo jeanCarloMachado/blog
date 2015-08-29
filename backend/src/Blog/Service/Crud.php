@@ -20,7 +20,7 @@ class Crud
     public function create(array $data)
     {
         $sql = "INSERT INTO `$this->tableName` (";
-        $values = " VALUES (";
+        $values = ' VALUES (';
 
         foreach ($data as $key => $value) {
             if (!in_array($key, $this->columns)) {
@@ -28,25 +28,26 @@ class Crud
                 continue;
             }
 
-            $sql .= $key.", ";
+            $sql .= $key.', ';
             if (in_array($key, $this->quotedColumns)) {
                 $values .= "'".$value."', ";
             } else {
-                $values .= $value.", ";
+                $values .= $value.', ';
             }
         }
 
         $sql = substr($sql, 0, -2);
         $sql .= ')';
-        $values= substr($values, 0, -2);
-        $values.= ')';
+        $values = substr($values, 0, -2);
+        $values .= ')';
 
-        $sql.= $values;
+        $sql .= $values;
 
         $stmt = $this->adapter->query($sql);
         $stmt->execute();
 
         $result = $this->adapter->getDriver()->getLastGeneratedValue();
+
         return $result;
     }
 
@@ -56,7 +57,8 @@ class Crud
             throw new \Exception('Theres no id to update');
         }
 
-        if (empty($data)) { throw new \Exception('Theres no data to update');
+        if (empty($data)) {
+            throw new \Exception('Theres no data to update');
         }
 
         $sql = "UPDATE `$this->tableName` SET ";
