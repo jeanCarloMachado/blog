@@ -88,7 +88,7 @@ article {
     margin: 0 auto;
 }
 
-.article-date {
+time {
     float: right;
     margin-left: 40px;
 }

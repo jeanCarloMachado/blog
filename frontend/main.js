@@ -255,11 +255,13 @@ function createArticle(id, title, content, date)
     header.className ='article-header'
 
     if (date && date != '0000-00-00 00:00:00') {
-        var span = document.createElement('span');
-        var date = document.createTextNode(Date.parse(date).toDateString());
-        span.appendChild(date);
-        span.className = 'article-date';
-        header.appendChild(span);
+        var time = document.createElement('time');
+        var timeStr = document.createTextNode(Date.parse(date).toDateString());
+        time.datetime=date.split(' ')[0];
+        time.pubdate = "pubdate";
+
+        time.appendChild(timeStr);
+        header.appendChild(time);
     }
 
     var a = document.createElement('a');
