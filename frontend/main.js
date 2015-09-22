@@ -265,8 +265,8 @@ function createArticle(id, title, content, date)
     }
 
     var a = document.createElement('a');
-
     a.id = id;
+    a.href = 'javascript:void(0);';
     a.onclick = function () {
         hideAllViewPorts();
         window.currentId = this.id;
