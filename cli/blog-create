@@ -34,7 +34,7 @@ if ! [[ $postId =~ $re  ]] ; then
     exit 1
 fi
 
-metaDestination="/home/jean/projects/writing/meta/$postId-meta.md"
+metaDestination="/home/jean/projects/writing/meta/"$postId".md"
 contentDestination="/home/jean/projects/writing/"$postId".md"
 
 cp -rf $scriptDir/template/meta.md $metaDestination

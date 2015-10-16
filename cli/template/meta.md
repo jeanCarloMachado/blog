@@ -1,6 +1,6 @@
 Title=MyTitle
 Date=MyDate
-Published=MyPublished
+Published=1
 Description=MyDescription
 Keywords=MyKeywords
 
