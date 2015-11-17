@@ -1,0 +1,18 @@
+apache:
+    image: eminetto/apache
+    ports:
+        - "80:80"
+    volumes:
+        - .:/var/www/html/blog
+        - ./apache/dev.conf:/etc/apache2/sites-enabled/001-clipp.conf
+    links:
+        - mysql
+mysql:
+    image: mysql
+    ports:
+        - "3306:3306"
+    environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=blog
+        - MYSQL_USER=blog
+        - MYSQL_PASSWORD=blog
