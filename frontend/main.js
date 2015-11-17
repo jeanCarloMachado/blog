@@ -94,7 +94,6 @@ window.onload = function () {
         loadViewPort('post');
     } else if (url.match(/about/)) {
         loadViewPort('about');
-        window.currentId = 2;
     } else {
         loadViewPort('posts');
     }
@@ -215,6 +214,7 @@ function alterMetadataFromArticle(data) {
 }
 
 addEventListener('load-about', function (e) {
+    window.currentId = 2;
     if (window.aboutLoaded) {
         return;
     }
