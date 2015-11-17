@@ -94,6 +94,7 @@ window.onload = function () {
         loadViewPort('post');
     } else if (url.match(/about/)) {
         loadViewPort('about');
+        window.currentId = 2;
     } else {
         loadViewPort('posts');
     }
@@ -268,6 +269,10 @@ function createArticle(id, title, content, date)
     a.id = id;
     a.href = 'javascript:void(0);';
     a.onclick = function () {
+        if (window.currentId) {
+            return;
+        }
+
         hideAllViewPorts();
         window.currentId = this.id;
         loadViewPort('post');
