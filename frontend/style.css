@@ -18,7 +18,7 @@ header {
 body {
     margin: 10%;
     font-size: 24px;
-    font: "Eb Garamond", serif;
+	font-family: Georgia,Times,Times New Roman,serif;
 }
 
 footer {
@@ -27,15 +27,18 @@ footer {
     margin-right: auto;
 }
 
-input, select, textarea, button{font-family:inherit;}
+input, select, textarea, button{
+    font-family: 'Playfair Display', serif;
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-    font: Courier, sans-serif;
+h6,
+a {
+    font-family: 'Playfair Display', serif;
 }
 
 ul li {
