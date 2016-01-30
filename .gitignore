@@ -16,3 +16,4 @@ public/galeria/*
 config/autoload/local.php
 *un~
 backend/vendor
+*.sql
