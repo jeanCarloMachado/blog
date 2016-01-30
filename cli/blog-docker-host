@@ -1,0 +1,12 @@
+#!/bin/bash
+
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+if command_exists ip ; then
+    echo $(ip addr | grep "inet.*docker0" | cut -d' ' -f6 | cut -d'/' -f1)
+fi
+
+if command_exists docker-machine ; then
+    echo $(docker-machine ip default)
+fi

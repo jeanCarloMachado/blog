@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh -t  root@$BLOG_IP "mysqldump -u root -p$BLOG_REMOTE_DATABASE_PASSWD blog > /tmp/blog-latest.sql"
+scp root@$BLOG_IP:/tmp/blog-latest.sql blog-latest.sql

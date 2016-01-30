@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BLOG_PORT=3306
+maxRetries=60
+i=0
+while [ $i -lt $maxRetries -a  $(nc $BLOG_HOST $BLOG_PORT &> /dev/null; echo $?) -ne 0 ]; do
+    echo "[$i] Waiting for database to show up on $BLOG_HOST:$BLOG_PORT"
+    i=$[$i+1]
+    sleep 1
+done
+
+[ $i -eq $maxRetries ] && {
+    echo "Expired total retries ..."
+    exit 1
+}
+
+mysql -uroot -proot -e "use blog;SET FOREIGN_KEY_CHECKS=1;
+source blog-latest.sql"
+
