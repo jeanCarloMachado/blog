@@ -17,3 +17,4 @@ config/autoload/local.php
 *un~
 backend/vendor
 *.sql
+frontend/node_modules

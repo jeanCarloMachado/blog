@@ -7,5 +7,9 @@ docker:
 	sudo systemctl start docker
 	docker-compose stop
 	docker-compose up -d
+	blog-database-copy
 	blog-database-reset
+
+dist:
+
 
