@@ -47,6 +47,6 @@ gulp.task('jshint', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('src/js/**/*.js', ['jshint', 'build-js']);
-	gulp.watch('src/**/*.html', ['build-html']);
+	gulp.watch('src/**/*.html', ['build-html', 'copy-assets']);
 	gulp.watch('src/css/**/*.css', ['build-css']);
 });

@@ -41,6 +41,10 @@ a {
     font-family: 'Playfair Display', serif;
 }
 
+a:visited{
+    color: blue;
+}
+
 ul li {
     display:inline;
     margin: 10px;
