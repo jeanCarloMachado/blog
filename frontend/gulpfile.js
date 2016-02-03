@@ -12,7 +12,7 @@ var backendUrl= "http://api.blog",
 
 
 // create a default task and just log a message
-gulp.task('default', ['build-js', 'build-html', 'build-css'], function() {
+gulp.task('default', ['build-js', 'build-html', 'build-css', 'copy-assets'], function() {
     gutil.log("Environment: " +  environment);
 });
 
@@ -32,6 +32,11 @@ gulp.task('build-css', function() {
 gulp.task('build-html', function() {
 	return gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/'));
+});
+
+gulp.task('copy-assets', function() {
+	return gulp.src('src/asset/**/*.*')
+		.pipe(gulp.dest('dist/asset/'));
 });
 
 gulp.task('jshint', function() {
