@@ -9,6 +9,7 @@ docker:
 	docker-compose up -d
 	blog-database-copy
 	blog-database-reset
+	cd frontend && gulp
 
 dist:
 

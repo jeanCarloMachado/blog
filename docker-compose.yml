@@ -6,7 +6,7 @@ apache:
         - "80:80"
     volumes:
         - .:/var/www/html/blog
-        - ./apache/dev.conf:/etc/apache2/sites-enabled/001-clipp.conf
+        - ./devops/apache/dev.conf:/etc/apache2/sites-enabled/001-clipp.conf
     links:
         - mysql
 mysql:

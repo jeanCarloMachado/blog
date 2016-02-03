@@ -2,10 +2,8 @@ window.loadedPosts = 0;
 hideAllViewPorts();
 
 var config = {
-    // backendUrl: "http://api.blog",
-    // frontendUrl: "http://blog",
-    backendUrl: "http://backend.jeancarlomachado.com.br",
-    frontendUrl: "http://jeancarlomachado.com.br",
+    backendUrl: "BLOG_BACKEND_URL",
+    frontendUrl: "BLOG_FRONTEND_URL",
     itensPerPage: 10
 }
 
@@ -100,7 +98,7 @@ window.onload = function () {
 
     var search = document.getElementById("search");
     search.onkeyup= function () {
-        if (this.value.length == 0) {
+        if (this.value.length === 0) {
             hideAllViewPorts();
             loadViewPort('posts');
             return;
@@ -163,7 +161,7 @@ addEventListener('load-posts', function (e) {
 
     var posts= JSON.parse(xmlhttp.responseText);
 
-    if (posts.length == 0) {
+    if (posts.length === 0) {
         window.noMorePosts = true;
     }
     var postsList = document.getElementById("posts");
@@ -204,10 +202,10 @@ function alterMetadataFromArticle(data) {
     var metas = document.getElementsByTagName("meta");
     for (var i=0; i< metas.length;i++) {
         console.log(metas[i].name);
-        if (metas[i].name == 'Description') {
+        if (metas[i].name === 'Description') {
             metas[i].content = data.description;
         }
-        if (metas[i].name == 'Keywords') {
+        if (metas[i].name === 'Keywords') {
             metas[i].content = data.keywords;
         }
     }
@@ -232,7 +230,7 @@ addEventListener('load-about', function (e) {
 
 window.onscroll = function () {
     if (
-        window.currentViewPort == 'posts'
+        window.currentViewPort === 'posts'
         && atBottom()
         && !window.scroll.lock
         && !window.noMorePosts
@@ -320,7 +318,5 @@ function atBottom()
 
     return false;
 }
-
-
 
 
