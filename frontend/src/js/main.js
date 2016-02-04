@@ -260,6 +260,7 @@ function createArticle(id, title, content, date)
         time.pubdate = "pubdate";
 
         time.appendChild(timeStr);
+        time.style.fontSize = "0.7em";
         header.appendChild(time);
     }
 

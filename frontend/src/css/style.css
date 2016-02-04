@@ -9,10 +9,11 @@ header {
 
 #myname {
     font-weight:normal;
-    font-size: 1.3em;
+    font-size: 1.6em;
     display: inline;
     margin: 0;
     padding: 0;
+    line-height: 1.25;
 }
 
 body {
@@ -38,11 +39,18 @@ h4,
 h5,
 h6,
 a {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+}
+
+a {
+    color: #B1ACB9;
+    text-decoration: none;
+    line-height: 0.5
 }
 
 a:visited{
-    color: blue;
+    text-decoration: none;
+    color: #B1ACB9;
 }
 
 ul li {
