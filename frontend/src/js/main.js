@@ -133,9 +133,9 @@ addEventListener('load-search-result', function (e) {
     if (posts.length) {
         for (i = 0; i < posts.length; i++) {
             var article = createArticle(
-                posts[i].id,    
+                posts[i].id,
                 posts[i].titulo,
-                posts[i].conteudo,
+                posts[i].description,
                 posts[i].data
             );
             postsList.appendChild(article);
@@ -255,12 +255,12 @@ function createArticle(id, title, content, date)
 
     if (date && date != '0000-00-00 00:00:00') {
         var time = document.createElement('time');
+        time.className+="articleTime";
         var timeStr = document.createTextNode(Date.parse(date).toDateString());
         time.datetime=date.split(' ')[0];
         time.pubdate = "pubdate";
 
         time.appendChild(timeStr);
-        time.style.fontSize = "0.7em";
         header.appendChild(time);
     }
 

@@ -4,16 +4,20 @@ ul {
 }
 
 header {
-    text-align: center;
+    text-align: left;
+    max-width: 700px;
+    margin: auto;
+}
+
+header li {
+    font-size: 0.7em;
 }
 
 #myname {
-    font-weight:normal;
-    font-size: 1.6em;
+    font-size: 1.5em;
     display: inline;
     margin: 0;
     padding: 0;
-    line-height: 1.25;
 }
 
 body {
@@ -53,6 +57,11 @@ a:visited{
     color: #B1ACB9;
 }
 
+header nav ul {
+    margin-top: 3px;
+    margin-bottom: 20%;
+}
+
 ul li {
     display:inline;
     margin: 10px;
@@ -80,28 +89,22 @@ code {
     margin: auto;
 }
 
+.article-title {
+    margin-bottom: 0px;
+}
+
 article {
     margin-top: 60px;
     line-height: 150%;
 }
 
-.article-header {
-    display:table-row;
-}
-
-.article-title {
-    float: left;
-    margin: 0 auto;
+.articleTime {
+    color: #B1ACB9;
+    font-size: 0.6em;
 }
 
 article header a {
-    text-decoration: none;
     color: black;
-}
-
-time {
-    float: right;
-    margin-left: 40px;
 }
 
 #loaderImage {
