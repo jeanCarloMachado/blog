@@ -22,7 +22,7 @@ header li {
 
 body {
     margin: 10%;
-    font-size: 24px;
+    font-size: 25px;
 	font-family: Georgia,Times,Times New Roman,serif;
 }
 
@@ -70,7 +70,7 @@ ul li {
 code {
     font: "Droid Sans Mono", sans-serif;
     line-height: 1.6em;
-    font-size: 14px;
+    font-size: 0.8em;
     padding: 0.1em 0.5em 0.3em 0.7em;
     border-left: 11px solid #ccc;
     margin: 1.7em 0 1.7em 0.3em;

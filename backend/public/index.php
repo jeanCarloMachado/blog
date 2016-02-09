@@ -36,12 +36,6 @@ $app->pipe('/', function ($req, $res, $next) {
 $app->pipe('/posts', function ($req, $res, $next) use ($adapter) {
     $post = new Post($adapter);
     $result = $post->findAll($_GET);
-    $parsedown = new Parsedown();
-    $parsedown->setMarkupEscaped(true);
-    foreach($result as $key => $value) {
-        $result[$key]['conteudo'] = $parsedown->text(preg_replace('/#/','',$value['conteudo']));
-    }
-
     $result = json_encode($result, true);
 
     return $res->end($result);
@@ -57,6 +51,14 @@ $app->pipe('/post', function ($req, $res, $next) use ($adapter) {
 
     $post = new Post($adapter);
     $result = $post->find($id);
+
+    $parsedown = new Parsedown();
+    $parsedown->setMarkupEscaped(true);
+
+    if (!isset($result[0]['conteudo'])) {
+        $result[0]['conteudo'] = '';
+    }
+    $result[0]['conteudo'] = $parsedown->text($result[0]['conteudo']);
     $result = json_encode($result, true);
 
     return $res->end($result);
