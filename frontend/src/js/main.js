@@ -146,7 +146,6 @@ addEventListener('load-search-result', function (e) {
             postsList.appendChild(article);
         }
     } else {
-
         var message = document.createTextNode('No content found');
         var p = document.createElement('p');
         p.appendChild(message);
@@ -158,6 +157,7 @@ addEventListener('load-search-result', function (e) {
 
 addEventListener('load-posts', function (e) {
     xmlhttp= new XMLHttpRequest();
+	//window.loadedPosts = 666;
     var uri = "/posts?resume=1&firstResult="
     +window.loadedPosts+"&maxResults="+config.itensPerPage;
 

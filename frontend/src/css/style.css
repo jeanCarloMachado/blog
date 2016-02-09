@@ -3,10 +3,14 @@ ul {
     padding: 0;
 }
 
+#main-header {
+	padding-top: 10%;
+}
+
 header {
     text-align: left;
-    max-width: 800px;
     margin: auto;
+    max-width: 800px;
 }
 
 header li {
@@ -29,11 +33,6 @@ body {
 	font-family: Georgia,Times,Times New Roman,serif;
 }
 
-footer {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 input, select, textarea, button{
     font-family: 'Playfair Display', serif;
@@ -56,7 +55,6 @@ a {
 a {
     color: #B1ACB9;
     text-decoration: none;
-    line-height: 0.5
 }
 
 
@@ -73,6 +71,7 @@ ul li {
 .view-port {
     max-width: 800px;
     margin: auto;
+	padding-bottom: 350px;
 }
 
 .article-title {
@@ -98,7 +97,7 @@ article header a {
     width:16px; /*image width */
     left:50%;
     margin-left: -8px; /*image width/2 */
-}
+}e
 
 input[type="text"] {
   padding: 10px;
@@ -113,3 +112,35 @@ input[type="text"].focus {
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
 }
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#wrapper {
+   min-height:100%;
+   position:relative;
+}
+
+footer, #footerhr {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	height:100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 200px;
+	background-color: #fafafa;
+	text-align: center;
+}
+
+#footerhr{
+    border-color: #B1ACB9;
+}
+
+footer a {
+	font-size: 0.8em;
+}
+
