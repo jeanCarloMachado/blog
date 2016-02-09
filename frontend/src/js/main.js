@@ -170,7 +170,7 @@ addEventListener('load-posts', function (e) {
         var article = createArticle(
             posts[i].id,
             posts[i].titulo,
-            posts[i].conteudo,
+            posts[i].description,
             posts[i].data
         );
         postsList.appendChild(article);

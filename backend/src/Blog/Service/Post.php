@@ -2,6 +2,8 @@
 
 namespace Blog\Service;
 
+use Blog\Model\Metatag;
+
 class Post extends Crud
 {
     private $root = false;
@@ -20,8 +22,10 @@ class Post extends Crud
 
     public function findAll(array $params)
     {
-        $sql = "SELECT * FROM `$this->tableName`
-            WHERE 1=1 ";
+        $sql = "SELECT * FROM $this->tableName JOIN ".Metatag::TABLE_NAME."
+            WHERE $this->tableName.id = ".Metatag::TABLE_NAME.".related_id
+            AND 1=1 ";
+
 
         $queryParams = [];
 

@@ -3,7 +3,7 @@
 namespace Blog\Service;
 
 /**
- * * @author Jean Carlo Machado <contato@jeancarlomachado.com.br>
+ * @author Jean Carlo Machado <contato@jeancarlomachado.com.br>
  */
 class Markdown
 {
