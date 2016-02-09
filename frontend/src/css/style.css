@@ -10,12 +10,15 @@ header {
 }
 
 header li {
-    font-size: 0.7em;
+    font-size: 0.6em;
+}
+
+h1 {
+    font-size: 1.4;
 }
 
 #myname {
-    font-size: 1.5em;
-    display: inline;
+    font-size: 1.6em;
     margin: 0;
     padding: 0;
 }
@@ -52,10 +55,6 @@ a {
     line-height: 0.5
 }
 
-a:visited{
-    text-decoration: none;
-    color: #B1ACB9;
-}
 
 header nav ul {
     margin-top: 3px;
@@ -82,7 +81,7 @@ code {
     padding-bottom: 2em;
     overflow: visible;
     overflow-x: auto;
-    }
+}
 
 .view-port {
     max-width: 800px;

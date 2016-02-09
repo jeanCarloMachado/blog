@@ -124,7 +124,7 @@ addEventListener('load-search-result', function (e) {
 
     var posts= JSON.parse(xmlhttp.responseText);
 
-    var postsList = document.getElementById("search-result");   
+    var postsList = document.getElementById("search-result");
 
     while (postsList.childNodes.length > 1) {
         postsList.removeChild(postsList.lastChild);
@@ -266,7 +266,7 @@ function createArticle(id, title, content, date)
 
     var a = document.createElement('a');
     a.id = id;
-    a.href = 'javascript:void(0);';
+    a.href = config.frontendUrl+'/#!/post/'+id;
     a.onclick = function () {
         if (window.currentId) {
             return;
@@ -275,6 +275,7 @@ function createArticle(id, title, content, date)
         hideAllViewPorts();
         window.currentId = this.id;
         loadViewPort('post');
+        preventDefault();
     };
 
     a.appendChild(title);
