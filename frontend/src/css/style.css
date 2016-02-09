@@ -39,6 +39,10 @@ input, select, textarea, button{
     font-family: 'Playfair Display', serif;
 }
 
+code {
+    font-size: 0.6em;
+}
+
 h1,
 h2,
 h3,
