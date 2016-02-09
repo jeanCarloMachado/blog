@@ -48,6 +48,11 @@ function loadViewPort(viewPortId)
     document.getElementById('loading').style.display = "none";
     var viewPort = document.getElementById(viewPortId);
     viewPort.style.display = "block";
+    blocks = document.querySelectorAll('pre code');
+    var i;
+    for (i = 0; i < blocks.length; i++) {
+        hljs.highlightBlock(blocks[i]);
+    }
 }
 
 
@@ -193,8 +198,9 @@ addEventListener('load-post', function (e) {
         currentPosts[0].parentNode.removeChild(currentPosts[0]);
     }
 
-    postViewPort.insertBefore(article ,postViewPort.firstChild);
+    postViewPort.insertBefore(article, postViewPort.firstChild);
     window.scrollTo(0, 0);
+
 });
 
 function alterMetadataFromArticle(data) {
