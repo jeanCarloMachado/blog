@@ -22,7 +22,7 @@ class Post extends Crud
 
     public function findAll(array $params)
     {
-        $sql = "SELECT t1.id, t2.title, t1.conteudo, t1.publicado, t2.description, t1.data FROM $this->tableName  AS t1 LEFT JOIN ".Metatag::TABLE_NAME." as t2 ON ( t1.id = t2.related_id ) WHERE 1=1 ";
+        $sql = "SELECT t1.id, t2.title as titulo, t1.conteudo, t1.publicado, t2.description, t1.data FROM $this->tableName  AS t1 LEFT JOIN ".Metatag::TABLE_NAME." as t2 ON ( t1.id = t2.related_id ) WHERE 1=1 ";
 
         $queryParams = [];
 
