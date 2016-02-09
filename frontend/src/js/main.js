@@ -55,11 +55,19 @@ function loadViewPort(viewPortId)
     }
 }
 
+document.getElementById("link-favourites").onclick = function () {
+    hideAllViewPorts();
+    window.currentId = 107;
+    loadViewPort('post');
+    stopPropagation();
+};
 
 document.getElementById("link-about").onclick = function () {
     hideAllViewPorts();
     loadViewPort('about');
 };
+
+
 
 function attachButtonsListeners()
 {
