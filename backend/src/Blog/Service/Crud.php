@@ -120,9 +120,7 @@ class Crud
     public function find($id)
     {
         $stmt = $this->adapter->query(
-            "SELECT * FROM $this->tableName JOIN ".Metatag::TABLE_NAME."
-            WHERE $this->tableName.id = ".Metatag::TABLE_NAME.".related_id
-            AND $this->tableName.id = ?"
+         "SELECT t1.id, t2.title as titulo, t1.conteudo, t1.publicado, t2.description, t1.data, t2.related_id, t2.id as meta_id FROM $this->tableName  AS t1 LEFT JOIN ".Metatag::TABLE_NAME." as t2 ON ( t1.id = t2.related_id ) WHERE  t1.id = ?"
         );
 
         $result = $stmt->execute(array($id));

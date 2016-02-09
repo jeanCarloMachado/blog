@@ -102,19 +102,17 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
-        parse_str(file_get_contents('php://input'), $data);
+        $raw= file_get_contents('php://input');
+        parse_str($raw, $data);
         $post = new Post($adapter);
         $post->setRoot(true);
         $post->update($id, $data);
 
-        $meta = new Metadata($adapter);
-        foreach ($data as $column => $value) {
-            if (array_key_exists($column, $meta->getColumns())) {
-                $postEntity = $post->find($id);
-                $postEntity = reset($postEntity);
-                $meta->update($postEntity['related_id'], $data);
-                break;
-            }
+        if (isset($data['keywords'])) {
+            $meta = new Metadata($adapter);
+            $postEntity = $post->find($id);
+            $postEntity = reset($postEntity);
+            $meta->update($postEntity['meta_id'], $data);
         }
 
         (new BlogFeed())->removeCache();
