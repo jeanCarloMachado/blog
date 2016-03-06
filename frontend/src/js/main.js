@@ -55,18 +55,20 @@ function loadViewPort(viewPortId)
     }
 }
 
-document.getElementById("link-favourites").onclick = function () {
+window.addEventListener("hashchange", function(){
+    location.reload();
+})
+
+document.getElementById("link-favourites").addEventListener('click', function () {
     hideAllViewPorts();
     window.currentId = 107;
     loadViewPort('post');
-    stopPropagation();
-};
+});
 
-document.getElementById("link-about").onclick = function () {
+document.getElementById("link-about").addEventListener('click', function () {
     hideAllViewPorts();
     loadViewPort('about');
-};
-
+});
 
 
 function attachButtonsListeners()
@@ -80,10 +82,10 @@ function attachButtonsListeners()
 
 function attachBackAction(element)
 {
-    element.onclick = function () {
+    element.addEventListener('click', function () {
         hideAllViewPorts();
         loadViewPort('posts');
-    };
+    });
 }
 
 attachButtonsListeners();
@@ -208,7 +210,6 @@ addEventListener('load-post', function (e) {
 
     postViewPort.insertBefore(article, postViewPort.firstChild);
     window.scrollTo(0, 0);
-
 });
 
 function alterMetadataFromArticle(data) {
@@ -281,7 +282,7 @@ function createArticle(id, title, content, date)
     var a = document.createElement('a');
     a.id = id;
     a.href = config.frontendUrl+'/#!/post/'+id;
-    a.onclick = function () {
+    a.addEventListener("click", function () {
         if (window.currentId) {
             return;
         }
@@ -289,8 +290,7 @@ function createArticle(id, title, content, date)
         hideAllViewPorts();
         window.currentId = this.id;
         loadViewPort('post');
-        preventDefault();
-    };
+    });
 
     a.appendChild(title);
     h1.appendChild(a);
@@ -334,5 +334,4 @@ function atBottom()
 
     return false;
 }
-
 
