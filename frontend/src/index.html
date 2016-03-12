@@ -46,6 +46,8 @@
 
     <div id="post" class="view-port" style="display:none">
         <a class="link-posts" href="javascript:void(0);" >Back</a>
+
+        <div id="disqus_thread"></div>
     </div>
 
     <div id="about" class="view-port" style="display:none">
@@ -90,6 +92,52 @@
         });
 
     </script>
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.href;
+        };
+
+
+        /* * * Disqus Reset Function * * */
+        var resetDisqusPlugin = function () {
+            if (typeof DISQUS === 'undefined') {
+                setTimeout(function(){
+                    resetDisqusPlugin();
+                },3000);
+            } else {
+                try{
+                    DISQUS.reset({
+                        reload: true,
+                        config: function () {
+                            this.page.identifier = window.location.href;
+                            this.page.url = window.location.href;
+                            this.page.title = window.title;
+                        }
+                    });
+                } catch(e){}
+            }
+        };
+
+        var storedHash = window.location.hash;
+        window.setInterval(function () {
+            if (window.location.hash != storedHash && window.location.hash.match(/post[^s]/)) {
+                storedHash = window.location.hash;
+                resetDisqusPlugin();
+            }
+        }, 1000);
+
+        (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+            var d = document, s = d.createElement('script');
+
+            s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 	</div>
 </body>
 </html>
