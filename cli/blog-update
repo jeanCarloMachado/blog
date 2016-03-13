@@ -43,12 +43,14 @@ postId=$1
 
 newContent=`cat $fileWthContent`
 
-data="conteudo=$newContent"
+data="$newContent"
+# data=$(echo $data | url-encode)
 
-request="curl -X PUT -d \"$data\" $baseUrl/root/post/$postId"
+request="curl -X PUT  -d \"$data\" $baseUrl/root/post/$postId"
+echo $request
 
 [[ $verbose = 1 ]] && {
 	echo "$request"
 }
 
-curl -X PUT -d "$data" $baseUrl/root/post/$postId
+curl -X PUT -H "Only-Content: encodedBlogContent" -d "$data" $baseUrl/root/post/$postId

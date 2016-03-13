@@ -94,4 +94,9 @@ class Post extends Crud
 
         return $this;
     }
+
+    public function update($id, array $data)
+    {
+        return parent::update($id, $data);
+    }
 }

@@ -102,8 +102,14 @@ $app->pipe('/root/post', function ($req, $res, $next) use ($adapter) {
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
-        $raw= file_get_contents('php://input');
-        parse_str($raw, $data);
+        $raw = file_get_contents('php://input');
+        if (array_key_exists('Only-Content', getallheaders())) {
+            /* $raw= rawurldecode($raw); */
+            $data['conteudo'] = $raw;
+        } else {
+            parse_str($raw, $data);
+        }
+
         $post = new Post($adapter);
         $post->setRoot(true);
         $post->update($id, $data);
@@ -151,3 +157,5 @@ $app->pipe('/feed', function ($req, $res, $next) use ($adapter) {
 });
 
 $server->listen();
+
+
