@@ -1,16 +1,7 @@
-BLOG_HOST=$(shell blog-docker-host)
-export BLOG_HOST
+all: build serve
 
-all: docker
+build:
+	jekyll build
 
-docker:
-	sudo systemctl start docker
-	docker-compose stop
-	docker-compose up -d
-	blog-database-copy
-	blog-database-reset
-	cd frontend && gulp
-
-dist:
-
-
+serve:
+	jekyll serve
