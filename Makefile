@@ -1,11 +1,10 @@
 all: build serve
 
-build:
+build: clear
 	jekyll build
 serve:
 	jekyll serve
 clear:
-	jekyll clean
-
-deploy:
+	rm -rf _build
+deploy: build
 	rsync -a _build/ root@$(BLOG_IP):/var/www/html
