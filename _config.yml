@@ -8,6 +8,7 @@ name: Jean Carlo Machado
 description: My personal blog
 google_verification: null
 keywords: Jean, Developer, Sowftware
+url: http://jeancarlomachado.com.br/
 
 # File management
 include: [".htaccess"]
