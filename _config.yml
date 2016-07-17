@@ -5,9 +5,9 @@ permalink: /blog/:title.html
 
 # My variables
 name: Jean Carlo Machado
-description: Blog
+description: My personal blog
 google_verification: null
-
+keywords: Jean, Developer, Sowftware
 
 # File management
 include: [".htaccess"]
