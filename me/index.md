@@ -1,1 +1,0 @@
-../../writing/posts/2_about.md

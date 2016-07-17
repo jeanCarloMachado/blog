@@ -13,16 +13,10 @@ keywords: Jean, Developer, Sowftware
 include: [".htaccess"]
 exclude: ["README.md", "LICENSE"]
 
-# Sass
-sass:
-  style: :compressed
-  sass_dir: _sass
-
-
 # Markdown
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-  toc_levels:     1..6
+  toc_levels: 1..6
 
