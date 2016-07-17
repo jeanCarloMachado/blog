@@ -1,2 +1,27 @@
-source: ../writing
 destination: build
+# Blog settings
+permalink: /blog/:title.html
+
+
+# My variables
+name: Jean Carlo Machado
+description: Blog
+google_verification: null
+
+
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
