@@ -1,7 +1,7 @@
-destination: build
+destination: _build
+
 # Blog settings
 permalink: /blog/:title.html
-
 
 # My variables
 name: Jean Carlo Machado
@@ -24,4 +24,5 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-highlighter: rouge
+  toc_levels:     1..6
+

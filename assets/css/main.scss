@@ -1,13 +1,10 @@
 ---
 ---
 
-@import "reset";
-@import "config";
-
 body {
-    color: $color-black;
-    background: $color-white;
-    font-family: 'Inconsolata', ;
+    color: #272727;
+    background: #FFFFFF;
+    font-family: 'Inconsolata', 'Monaco' ;
     font-size: 100%;
     font-weight: 400;
 }
@@ -19,18 +16,18 @@ p {
     line-height: 150%;
 }
 a {
-  color: $color-link;
+  color: #1A0DAB;
   text-decoration: none;
   &:visited {
-    color: $color-link;
+    color: #1A0DAB;
     text-decoration: none;
   }
   &:hover {
-    color: $color-link;
+    color: #1A0DAB;
     text-decoration: underline;
   }
   &:active {
-    color: $color-link;
+    color: #1A0DAB;
     text-decoration: none;
   }
 }
@@ -39,7 +36,7 @@ ul {
     li {
         padding: 5px;
         padding-left: 10px;
-        @media screen and (max-width: $br) {
+        @media screen and (max-width: 600px) {
             padding: 10px 0 10px 0;
         }
     }
@@ -50,7 +47,7 @@ ul {
     max-width: 600px;
     margin: auto;
     padding: 60px 30px 60px 30px;
-    @media screen and (max-width: $br) {
+    @media screen and (max-width: 600px) {
         padding: 20px;
     }
 }
@@ -61,7 +58,7 @@ ul {
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: 50px;
-    @media screen and (max-width: $br) {
+    @media screen and (max-width: 600px) {
         display: block;
     }
     h1 {
@@ -77,17 +74,6 @@ ul {
         }
     }
 }
-
-
-.portfolio {
-    padding-bottom: 30px;
-    h1 {
-        font-size: 1.4em;
-        margin-bottom: 5px;
-    }
-}
-
-
 
 .blog {
     padding-bottom: 30px;
@@ -145,18 +131,18 @@ ul {
             li {
                 padding: 5px;
                 padding-left: 5px;
-                @media screen and (max-width: $br) {
+                @media screen and (max-width: 600px) {
                     padding: 10px 0 10px 0;
                 }
             }
-            @media screen and (max-width: $br) {
+            @media screen and (max-width: 600px) {
                 margin-left: 10px;
             }
         }
         img {
             margin-top: 10px;
             margin-bottom: 10px;
-            @media screen and (max-width: $br) {
+            @media screen and (max-width: 600px) {
                 width: 100%;
                 margin: auto;
             }
@@ -165,7 +151,7 @@ ul {
             padding: 3px;
             font-size: 0.9em;
             border-radius: 3px;
-            background: $color-grey;
+            background: #EEEEEE;
         }
         .highlight {
             margin: 10px;
@@ -173,16 +159,16 @@ ul {
             padding: 10px;
             line-height: 1.5;
             border-radius: 3px;
-            background: $color-black;
+            background: #272727;
             code {
-                color: $color-code;
+                color: #00FF00;
                 background: none;
             }
         }
         .codebreak {
             margin: 15px;
             border: 0;
-            border-bottom: 1px dashed $color-black;
+            border-bottom: 1px dashed #272727;
         }
     }
 }

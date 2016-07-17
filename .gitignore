@@ -4,4 +4,5 @@ nbproject
 .Trashes
 Thumbs.db
 *.sql
-build
+_build
+*cache*
