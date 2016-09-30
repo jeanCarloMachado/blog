@@ -1,1 +1,1 @@
-../writing/about.md
+../writing/wiki/about.md
