@@ -1,16 +1,12 @@
-all: build serve
+all: build
 
 build: clear
-	jekyll build
+	cp -rf /home/jean/Dropbox/posts _posts || true
+	docker run -v /home/jean/projects/blog:/mounted --entrypoint=/bin/sh blog_builder:latest -c "cd /mounted ; jekyll build"
 	cp /home/jean/projects/resume/resume.pdf /home/jean/projects/blog/_build/
-serve:
-	jekyll serve
 clear:
-	rm -rf _build
-deploy: build
-	cd /home/jean/projects/blog
-	rm about.md || true
-	cp -rf  ${ABOUT_FILE} about.md
+	rm -rf _build || true
 	rm -rf _posts || true
-	cp -rf  ${POSTS_DIR} _posts
+deploy:  build
+	cd /home/jean/projects/blog
 	rsync -a _build/ root@$(BLOG_IP):/var/www/html
