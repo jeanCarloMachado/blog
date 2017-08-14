@@ -1,7 +1,7 @@
 all: build
 
 build: clear
-	cp -rf /home/jean/Dropbox/posts _posts || true
+	cp -rf ${POSTS_DIR} _posts || true
 	docker run -v /home/jean/projects/blog:/mounted --entrypoint=/bin/sh blog_builder:latest -c "cd /mounted ; jekyll build"
 	cp /home/jean/projects/resume/resume.pdf /home/jean/projects/blog/_build/
 clear:
