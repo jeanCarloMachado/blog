@@ -2,7 +2,8 @@ all: build
 
 build: clear
 	cp -rf ${POSTS_DIR} _posts || true
-	docker run -v /home/jean/projects/blog:/mounted --entrypoint=/bin/sh blog_builder:latest -c "cd /mounted ; jekyll build"
+	bundle exec jekyll build
+	#docker run -v /home/jean/projects/blog:/mounted --entrypoint=/bin/sh blog_builder:latest -c "cd /mounted ; jekyll build"
 	cp /home/jean/projects/resume/resume.pdf /home/jean/projects/blog/_build/
 clear:
 	rm -rf _build || true
