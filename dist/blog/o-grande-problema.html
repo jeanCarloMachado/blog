@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="O grande problema">
+    
+
+    
+        <title>O grande problema da programação</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">O grande problema da programação</h1>
+    <p class="post__date">December 26, 2017</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Minha experiência como programador me levou a formar fortes opiniões
+sobre o que faz um software apodrecer. E de longe o maior problema que
+encontrei é a <strong>vontade do desenvolvedor ser proativo construindo coisas
+que ele não precisa no momento</strong>. Sim proatividade pode ser ruim. E <em>o
+maior inimigo do programador é ele mesmo</em>.</p>
+
+<p>Esse problema se aprensenta em várias maneiras:</p>
+
+<ul>
+  <li>criar um sistema mais “flexível” pros requisitos que podem aparecer</li>
+  <li>adicionar um código que vai entrar na próxima tarefa</li>
+  <li>otimizar qualquer parte do sistema para usuários que você ainda não tem</li>
+  <li>instalar frameworks “fullstack” sem precisar usar ele completamente</li>
+</ul>
+
+<p>E as consequências desse tipo de atitude incluem:</p>
+
+<ul>
+  <li>código desnecessariamente complexo de entender e manter</li>
+  <li>abstrações quebradas, que não servem ao propósito</li>
+  <li>runtime lento</li>
+  <li>alto acoplamento</li>
+</ul>
+
+<p>Por muito tempo eu adotei esse tipo de prática e consigo até descrever o
+processo mental que leva a esse tipo de coisa:</p>
+
+<ol>
+  <li>tenho que resolver esse problema</li>
+  <li>vou procurar por algum padrão que esse problema se encaixe pra ver se consigo
+ reusar alguma coisa</li>
+  <li>nesse momento não tem nenhum, mas eu sei que na próxima tarefa tem algo
+similar.  Vou fazer x nessa parte do componente pra depois ficar mais fácil</li>
+  <li>vou fazer o compontente pra essa tarefa</li>
+</ol>
+
+<p>Tô aqui pra defender que o passo 3 é sempre prejudicial. E quase nunca fica mais
+fácil. O contrário ocorre.</p>
+
+<p>O problema de assumir coisas é que a disciplina de software é complexa demais
+pra conseguirmos ser certeiros. São muitas as variáveis que vão decidir pra onde
+um sofware vai evoluir. E geralmente o software não evolui pra onde queremos. Uncle Bob certa vez disse que o melhor arquiteto
+é aquele que consegue <a href="http://blog.cleancoder.com/uncle-bob/2016/01/04/ALittleArchitecture.html">fazer que as decisões não precisem ser tomadas</a>.
+E nada pior que tomar decisões quando ainda não temos o <a href="http://www.jeancarlomachado.com.br/blog/thelastresponsiblemoment.html">maior número de informações</a> disponíveis.</p>
+
+<p>Quando você não segue esse princípio geralmente vai voltar pra refazer a
+funcionalidade pois os requisitos eram diferentes. Ou vai descobrir tarde demais
+que uma interface seria melhor descrita de outra forma. Ou vai gastar 5x mais
+tempo pra otimizar algo que vai rodar uma vez, ou que nas próximas décadas não
+vai precisar do nível de performance que você previu.</p>
+
+<p>O nome da prática que defendo aqui é o <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>. Não assumir que você vai precisar de coisas que você não sabe. E a considero um hábito fundamentador. Quando você se alinha com esse princípio outras práticas se tornam quase mandatórias. YAGNI te força a escrever testes pra conseguir refatorar na mudança dos requisitos. Força a apreciar <a href="http://www.jeancarlomachado.com.br/blog/interfaceless_programming.html">interfaces específicas e minimalistas</a> que são facilmente trocáveis. Força compor essas pequenas interfaces ao invés de criar dependências verticias.</p>
+
+<p>Ou seja, quer escrever bom software? Não caia na armadilha de assumir coias :).</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

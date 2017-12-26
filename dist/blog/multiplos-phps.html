@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Múltiplas instalações do PHP</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Múltiplas instalações do PHP</h1>
+    <p class="post__date">August 22, 2013</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Recentemente urgiu a necessidade de ter a última versão do PHP no
+servidor da empresa onde trabalho. Contudo, o sistema utiliza o Plesk,
+com as diversas customizações que este serviço faz ao apache e suas
+respectivas instalações do PHP fica difícil fazer qualquer customização,
+outrossim, a probabilidade que quebrar o servidor é alta. Sendo assim,
+pesquisei a possibilidade de instalar outro servidor web, preservando as
+seguintes condições/requisitos: não alterar as configurações do apache e
+suportar várias versões do PHP em paralelo. Resumindo, conheci o NGINX, 
+e com as customizações que aqui apresentarei, foi possível alcançar os
+requisitos além disso, experienciar um servidor web muito mais agradável
+de se administrar.</p>
+
+<p>O NGINX pareceu-me muito mais organizado em relação ao Apache,
+principalmente quando relativo aos arquivos de configuração: mais limpos
+e melhor organizados, utilizando um padrão quase json. A inexistência de
+<strong>.htaccess</strong> também me deixou contente pois estes sempre são de difícil
+compreensão bem como necessitam estar juntamente à aplicação; a
+estratégia do NGINX é manter todas estas configurações na própria
+virtualhost. O NGINX é também conhecido por sua escalabilidade e maior
+performance em aplicações tipo <em>plain text</em>.</p>
+
+<p><strong>Observações</strong>:</p>
+
+<p>Testei este processo em duas máquinas, uma com CentoOS 5.8 e outra com
+Centos 6.5, as diferenças para ambos estão descritas ao longo do texto.
+Para utilizar em outras distribuições, pode-se variar o processo de
+instalação do NGINX e o local de residência dos arquivos de
+configuração.</p>
+
+<p>Utilizei a seguintes convenção de nomenclatura: todo o código fonte e
+estrangeirismos estão em <em>itálico</em>.</p>
+
+<p> <strong>PASSO 1 - COMPILANDO O PHP</strong></p>
+
+<p>Primeiramente devemos fazer o download de  uma versão do PHP no site
+<a href="/posts/editar/php.net/downloads.php">php.net</a>.</p>
+
+<p>Baixei a mais nova versão estável no tempo de publicação deste post  à
+dizer: 5.5.12.</p>
+
+<p><code class="highlighter-rouge">mkdir -p ~/builds/php &amp;&amp; cd \~/builds/php</code></p>
+
+<p><code class="highlighter-rouge">wget &lt;http://us1.php.net/get/php-5.5.12.tar.gz/from/a/mirror&gt;</code></p>
+
+<p> </p>
+
+<p>Extraia e entre na pasta</p>
+
+<p>Para tar.gz</p>
+
+<p><code class="highlighter-rouge">tar -zxvf php-5.5.12.tar.gz</code></p>
+
+<p>Para tar.bz2</p>
+
+<p><code class="highlighter-rouge">tar -jxf php-5.5.12.tar.gz</code></p>
+
+<p><code class="highlighter-rouge">cd php-5.5.12</code></p>
+
+<p> </p>
+
+<p>Configure as opções e extensões que deseja nesta instalação - minhas
+opções padrões são da forma que segue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./configure --prefix=/opt/php-5.5.12 --with-pdo-pgsql --with-zlib-dir
+--with-freetype-dir --enable-mbstring --with-libxml-dir=/usr
+--enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib
+--with-gd --with-pgsql --disable-rpath --enable-inline-optimization
+--with-bz2 --with-zlib --enable-sockets --enable-sysvsem
+--enable-sysvshm --enable-pcntl --enable-mbregex --with-mhash
+--enable-zip --with-pcre-regex --with-mysql --with-pdo-mysql
+--with-mysqli --with-jpeg-dir=/usr --with-png-dir=/usr
+--enable-gd-native-ttf --with-openssl --with-fpm-user=nginx
+--with-fpm-group=nginx --with-libdir=lib64 --enable-ftp --with-imap
+--with-imap-ssl --with-kerberos --with-gettext --enable-cgi
+</code></pre>
+</div>
+
+<p>Algumas coisas devem ser levadas em consideração neste ponto:</p>
+
+<ul>
+  <li>Deve-se habilitar o fast-cgi como mostrado no último parâmetro:
+<em>–enable-cgi</em></li>
+  <li>Deve-se setar o local de instalação através do parâmetro
+<em>–prefix=/opt/php-5.5.12</em></li>
+  <li>Se desejas utilizar a mesma instalação do php com o apache via FPM
+deves utilizar os parâmetros: <em>fpm-user=apache
+–with-fpm-group=apache</em>.</li>
+</ul>
+
+<p>Se você não compila com frequência em seu computador, provavelmente
+necessitará resolver depencências antes de compilar. O escopo este post
+não leva em consideração o provisionamento de bibliotecas; entretanto, a
+maioria dos erros são facilmente remediáveis quando jogados no Google
+:).</p>
+
+<p>Os executáveis necessários para a compilação podem ser instalados
+através do comando:</p>
+
+<p><code class="highlighter-rouge">yum groupinstall "Development Tools" "Development Libraries"</code></p>
+
+<p>Compile o php e instale-o:
+ <code class="highlighter-rouge">make &amp;&amp; make install</code></p>
+
+<p>Copie o php.ini de sua compilação para o local necessário na
+instalação:
+ <code class="highlighter-rouge">cp -rf ~/builds/php/php-5.5.12/php.ini-production
+/opt/php-5.5.12/lib/php.ini</code></p>
+
+<p>Se fores utilizar o php.ini que o PHP gera, ao menos adicione o
+<em>timezone</em> isso pode poupar-lhe grandes problemas.
+ <code class="highlighter-rouge">echo "date.timezone = \"America/Sao\_Paulo\\"" &amp;gt;&amp;gt;
+/opt/php-5.5.12/lib/php.ini</code></p>
+
+<p>Para um php.ini já configurado para o desenvolvimento testado em php
+5.5.9 à 5.5.12 confira
+<a href="https://gist.github.com/jeanCarloMachado/3e9b0bde19db16176623">aqui</a>.</p>
+
+<p><strong>PASSO 2 - INSTALANDO O  NGINX</strong></p>
+
+<p>Instale os repositórios requisitos:</p>
+
+<p>Para CentOS 6
+ <code class="highlighter-rouge">rpm -Uvh
+http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</code>
+ <code class="highlighter-rouge">rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm</code></p>
+
+<p>Para CentOS 5
+ <code class="highlighter-rouge">rpm -Uvh
+http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm</code>
+ <code class="highlighter-rouge">rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm</code></p>
+
+<p>Adicione o repositório de nginx em
+ <code class="highlighter-rouge">/etc/yum.repos.d/nginx.repo</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> *[nginx\]*\
+ *name=nginx repo*
+ *baseurl=http://nginx.org/packages/centos/$releasever/\$basearch/*\
+ *gpgcheck=0*
+ *enabled=1*
+</code></pre>
+</div>
+
+<p>Para verificar as versões disponíveis do NGINX digite:
+ <code class="highlighter-rouge">yum --enablerepo=remi list nginx</code></p>
+
+<p>Instale com o seguinte comando:
+ <code class="highlighter-rouge">yum --enablerepo=remi install nginx</code></p>
+
+<p> </p>
+
+<p><strong>PASSO 3 - CONFIGURANDO O NGINX</strong></p>
+
+<p>Depois da instalação devemos fazer modificações no arquivo de
+configuração do nginx <em>/etc/nginx/nginx.conf</em> para que cumpra com nossos
+requisitos.</p>
+
+<p>É recomendável trocar o valor de <em>worker_processes</em> para o número de
+processadores de seu servidor. Pode-se conseguir esta informação através
+do comando:</p>
+
+<p><code class="highlighter-rouge">cat /proc/cpuinfo | grep processor | wc -l</code></p>
+
+<p>Adicione a cláusula se desejares reescrever as configurações de log em
+suas virtualhosts:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> http {
+ # Debug rewrite rules\
+ rewrite_log on;\
+ }
+</code></pre>
+</div>
+<p>Elimine a configuração default de servidor do nginx:</p>
+
+<p><code class="highlighter-rouge">rm /etc/nginx/conf.d/default.conf</code></p>
+
+<p>Adicione a virtualhost de seu php (e mais qualquer uma que deseje
+criar) no arquivo <code class="highlighter-rouge">/etc/nginx/conf.d/virtual.conf</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> *server {*
+*     server_name 127.0.0.1;*\
+ *     listen 5512;*
+ *     root ~/tests/php/5.5.12;*\
+ *     index index.php;*
+ *     fastcgi_index index.php;*\
+ *     error_log /var/log/nginx/error.log debug;*\
+
+ *     location ~ \\.htaccess {*\
+ *          deny all;*
+ *     }*
+
+ *     location / {*
+ *          index index.php;*
+ *     }*
+
+ *     #rewrite engine equivalente ao .htaccess*\
+ *     #funciona out of the box com os principais frameworks*\
+ *     # disponíveis*\
+ *     error_page 404 = /index.php;*\
+ *     if (!-e $request\_filename) {*\
+ *          rewrite ^.\*\$ /index.php last;*\
+ *     }*
+
+ *     location ~ \\.php {*\
+ *          try_files \$uri =404;*\
+ *          include /etc/nginx/fastcgi_params;*\
+ *          keepalive_timeout 0;*\
+ *          fastcgi_param SCRIPT\_FILENAME
+$document\_root\$fastcgi\_script\_name;*\
+ *          # essa parte é importante, a porta aqui selecionada deve
+ser a mesma do script de inicialização do nginx*
+ *          # para a versão coreta do php*\
+ *          fastcgi_pass 127.0.0.1:9000;*\
+ *     }*
+ *}*
+</code></pre>
+</div>
+
+<p>A fim de que consigamos trabalhar com múltiplas versões do php
+necessitamos alterar o script de inicialização do daemon e forçá-lo a
+ouvir portas específicas para cada versão do PHP que desejarmos. No
+arquivo <em>/etc/init.d/nginx</em> procure pela função <em>start() {}</em>  e altere
+seu conteúdo para que fique equivalente a este:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> *start() {*
+*     USER=nobody*
+ *     PHP_55\_BIND=127.0.0.1:9000*\
+ *     PHP_55\_CGI=/opt/php-5.5.11/bin/php-cgi*\
+ *     PHP_FCGI\_CHILDREN=15*\
+ *     PHP_FCGI\_MAX\_REQUESTS=1000*\
+ *     PHP_CGI\_ARGS="- USER=\$USER PATH=/usr/bin*
+
+*     PHP_FCGI\_CHILDREN=\$PHP\_FCGI\_CHILDREN*
+
+*     PHP_FCGI\_MAX\_REQUESTS=\$PHP\_FCGI\_MAX\_REQUESTS"*\
+ *     PHP_55\_CGI\_ARGS="\${PHP\_CGI\_ARGS} \${PHP\_55\_CGI} -b
+${PHP\_55\_BIND}"*\
+
+ *     killall -q -w -u ${USER} nginx*\
+
+ *     killall -q -w -u ${USER} \${PHP\_55\_CGI}*\
+
+ *     /usr/bin/env -- $PHP\_55\_CGI\_ARGS &amp;*\
+ *     /usr/sbin/nginx*
+
+ *     retval=$?*\
+ *     echo*
+ *     [ \$retval -eq 0 \] &amp;&amp; touch \$lockfile*\
+ *     return $retval*\
+ *}*
+</code></pre>
+</div>
+
+<p>Neste caso forcei o NGINX a direcionar para o PHP 5.5.12 todas as
+chamadas na porta 9000, sendo assim, duplicando-se as configurações de
+todas as entradas <em>PHP_55</em>* para outra, por exemplo: <em>PHP_53*,</em>
+possibilita-se utilizar mais de uma versão do PHP. Necessário lembrar
+que a respectiva porta configruada aqui, também deve estar na
+virtualhost para que consigamos unir a versão específica do PHP para com
+sua respectiva aplicação, como no caso da sessão da virtualhost acima:
+<em>fastcgi_pass 127.0.0.1:9000;</em>.</p>
+
+<p>Marque o serviço para inicar junto ao boot do servidor</p>
+
+<p><em>chkconfig nginx on</em></p>
+
+<p> </p>
+
+<p><strong>PASSO 4 - FIREWALL</strong></p>
+
+<p>Caso você utilize firewall será necessário liberar as portas utilizadas</p>
+<ul>
+  <li>neste tutorial: 9000 (porta do serviço nginx), 5512 (porta da
+virtualhost para PHP 5.5.12).
+ Para isso adicione as seguintes regras no seu /etc/sysconfig/iptables</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> -A VZ_INPUT -p tcp -m tcp --dport 5512 -j ACCEPT\
+ -A VZ_INPUT -p tcp -m tcp --dport 9000 -j ACCEPT\
+ -A VZ_OUTPUT -p tcp -m tcp --sport 9000 -j ACCEPT\
+ -A VZ_OUTPUT -p tcp -m tcp --sport 5512 -j ACCEPT\
+</code></pre>
+</div>
+
+<p>Reinicie o serviço:
+ <code class="highlighter-rouge">/etc/init.d/iptables restart</code></p>
+
+<p> </p>
+
+<h2 id="passo-5---testando-a-configuração">PASSO 5 - TESTANDO A CONFIGURAÇÃO</h2>
+
+<p>Vamos adicionar um php.info para testarmos a configuração</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir ~/tests/php/5.5.12
+touch ~/tests/php/5.5.12/index.php
+echo "&lt;?php phpinfo(); " &amp;gt; ~/tests/php/5.5.12/index.php
+</code></pre>
+</div>
+
+<h3 id="inicie-o-nginx">Inicie o NGINX:</h3>
+
+<p><code class="highlighter-rouge">/etc/init.d/nginx start</code></p>
+
+<p>Agora teste através de seu navegador o endereço: 
+<code class="highlighter-rouge"><span class="p">{</span><span class="err">Meu</span><span class="w"> </span><span class="err">IP</span><span class="p">}</span><span class="err">:</span><span class="mi">5512</span></code>
+ </p>
+
+<p>Como já mencionado, o nginx não utiliza .htaccess  - a configuração
+equivalente fica na virtualhost. O exemplo de configuração de
+virtualhost aqui exposto já implementa as instruções necessárias para
+funcionar out-of-the-box nos principais frameworks PHP do mercado;
+entretanto, se necessitares de configurações .htacess diferentes do aqui
+exposto recomendo <a href="http://www.anilcetin.com/">este</a> conversor
+.htaccess/nginx. Este foi o único a traduzir com sucesso umas instruções
+obscuras que alguns dos sites que dou suporte utilizam.*</p>
+
+<p> </p>
+
+<p>Não construi a funcionalidade de comentários no meu blog ainda, mas se
+você tiver alguma dúvida pode me contatar através da sessão de contato
+do mesmo.</p>
+
+<p> </p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="gestão, tarefas, produtividade, desenvolvimento de software, continuous delivery">
+    
+
+    
+        <title>Tarefas Pequenas</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Tarefas Pequenas</h1>
+    <p class="post__date">June 9, 2017</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Na Compufácil utilizamos o Coderockr Way para gestão do time de
+desenvolvimento. O Coderockr Way foi criado em partes pela necessidade
+de fazer a gestão da CompuFácil com as práticas que funcionaram
+melhor pra Coderockr e para a CompuFácil.</p>
+
+<p>Parte do Coderockr Way aplicado ao CompuFácil é que nenhuma tarefa
+pode levar mais de dois dias para ser concluída. O segredo desse
+raciocínio não é estritamente o período de “dois dias” o
+importante é haver um tempo limite pequeno para entrega de tarefas. O
+tempo limite permite organizarmos as tarefas de forma a terem tamanhos
+similares e por consequência gerarmos uma quantidade de entrega
+razoavelmente estável por “sprint”. Entregas similares habilitam a
+predizibilidade do futuro nos ajudando a estimar quanto tempo levaremos
+para desenvolver partes do sistema.</p>
+
+<p>Nem todas as tarefas vão ter um tamanho que se encaixe nesse período
+de dois dias. Muitas tarefas são muito complexas para serem realizadas
+durante o tempo limite. Por isso existe a necessidade de quebrar as
+tarefas em unidades menores que componham o todo.</p>
+
+<p>Essa disciplina nos força a termos muitas tarefas pequenas no board,
+que por consequência gera outro aspecto positivo: as entregas são
+pequenas e os code-reviews são pequenos. É comum menosprezar esse
+benefício mas na prática esse aspecto é vital. Existe um ditado que
+diz que um review de 10 linhas vai ter 10 comentários, já um review de
+1000 linhas não vai ter nenhum. E a realidade prova o ditado.</p>
+
+<p>Um aspecto que pode parecer negativo em ter tarefas pequenas é que
+as pessoas poderiam se aproveitar desse conceito para ficar criando
+tarefas desnecessárias a fim de procrastinar. Nossa experiência indica
+o contrário.</p>
+
+<p>Muitas vezes acontece que, em primeira análise, uma funcionalidade
+parece ter complexidade X mas na verdade tem complexidade 3X. Pois
+alguns aspectos necessários para sua realização não foram observados
+durante a análise. Então uma tarefa que levaria, digamos, 1.5 dias vai
+levar 4.5 dias. O que fazemos nessas situações? Renomeamos a tarefa
+para descrever o que foi feito no período válido dela e criamos outras
+tarefas para completar o trabalho.</p>
+
+<p>Alguns sentem que renomear tarefas é “roubar” no jogo. Entretanto
+é muito melhor pensar nisso como transparência. Se você passou 2 dias
+trabalhando em algo que então se provou ser apenas parte do trabalho
+que você tinha que fazer é muito mais semântico descrever o que você
+fez e criar outra tarefa do que tentar reduzir a real complexidade do
+problema. Dessa forma nosso Kanban é muito mais próximo da realidade e
+não existe trabalho escondido.</p>
+
+<p>Por fim, a killer feature dessa prática é o benefício psicológico.
+É fácil perder a motivação quando seu time aparenta não estar sendo
+produtivo. Com a conclusão de várias tarefas por semana a moral do
+time tende a ficar maior. Mais que isso, tarefas pequenas é sinônimo
+de entregas incrementais. O que permite uma melhora contínua do sistema
+perceptível para os clientes, que também ficam contentes.</p>
+
+<p>Se você ficou interessado no Coderockr Way e quer saber mais o Elton
+Minetto tem uma série de vídeos explicando o processo. Também fique
+atento ao nosso blog para mais novidades.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

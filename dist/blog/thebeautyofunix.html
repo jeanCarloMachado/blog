@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>The beauty of Unix</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">The beauty of Unix</h1>
+    <p class="post__date">March 12, 2016</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>The Unix Way is powerful. After some time adhering to its philosophy you
+may be surprised by how much it can do for you. Things you build
+or use can be assembled in new intricate ways in which the authors
+never expected.</p>
+
+<p>Last week I was in need to convert a curl data from the browser to a PHP
+array, so I could use it to debug Compufácil at phpunit. But the thing
+is, the request has a lot of data, so doing it by hand would be a pain in
+the ass.</p>
+
+<p>Look at the size of such a request, equivalent to that one I needed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>myRequest="curl
+'http://app.compufacil.dev/rpc/v1/inventory.post-purchase.json'
+-H 'Host: homolog.compufacil.com.br' -H 'User-Agent: Mozilla/5.0
+(X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0' -H
+'Accept: application/json, text/plain, */*' -H 'Accept-Language:
+pt_BR' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type:
+application/x-www-form-urlencoded' -H 'Authorization-Compufacil:
+apiCode' -H 'Referer:
+http://homolog.compufacil.com.br/app/' -H 'Cookie:
+_ga=GA1.3.427769913.1455651539; _gat=1; language=pt_BR;
+sessionId=eb8d7e2d5bd7450ce585e1509cc64e1c6140b999;subscription_status=2
+00; isAdmin=true' --data
+'shippingInfo%5Baddress%5D=&amp;shippingInfo%5Bphone%5D=&amp;shippingInfo%5Bemai
+l%5D%5Baddress%5D=gandalf%40a.com&amp;shippingInfo%5Bemail%5D%5Btype%5D=2&amp;sh
+ippingInfo%5Bemail%5D%5Bid%5D=282&amp;shippingInfo%5BcontactPerson%5D=&amp;produ
+ctOfTradeCollection%5B0%5D%5Bprice%5D=110.01&amp;productOfTradeCollection%5B
+0%5D%5Bquantity%5D=1&amp;productOfTradeCollection%5B0%5D%5Bproduct%5D%5Bid%5
+D=2444&amp;eletronicInvoiceSerie=1&amp;discount=0&amp;freightPrice=0&amp;extraValue=0&amp;ca
+tegory%5Bid%5D=1184&amp;paymentMode%5Bid%5D=1445&amp;paymentMode%5Brange%5D%5B0%
+5D%5Bvalue%5D=27.51&amp;paymentMode%5Brange%5D%5B0%5D%5Bdate%5D=2016-03-12&amp;
+paymentMode%5Brange%5D%5B1%5D%5Bvalue%5D=27.5&amp;paymentMode%5Brange%5D%5B1
+%5D%5Bdate%5D=2016-04-12&amp;paymentMode%5Brange%5D%5B2%5D%5Bvalue%5D=27.5&amp;p
+aymentMode%5Brange%5D%5B2%5D%5Bdate%5D=2016-05-12&amp;paymentMode%5Brange%5D
+%5B3%5D%5Bvalue%5D=27.5&amp;paymentMode%5Brange%5D%5B3%5D%5Bdate%5D=2016-06-
+12&amp;account%5Bid%5D=621&amp;buyer%5Bid%5D=1046&amp;eletronicInvoiceModel=32&amp;eletr
+onicInvoiceNumber=1231&amp;flowGroup%5Bid%5D=57&amp;observation=My%20staff&amp;disco
+untIsPercentage=false'"array 
+</code></pre>
+</div>
+
+<p>As you probably noticed, i saved it’s value in an varible ($myRequest)
+so i don’t have to repeat myself with it along the post. Any way, I’ll
+show you here, step by step how I turned it into a PHP array.</p>
+
+<p>First I needed only the data, so I have to extract if from the rest:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo $myRequest | rev | cut -d" " -f1 | rev
+shippingInfo%5Baddress%5D=&amp;shippingInfo%5Bphone%5D=&amp;shippingInfo%5Bemail
+%5D%5Baddress%5D=gandalf%40a.com&amp;shippingInfo%5Bemail%5D%5Btype%5D=2&amp;shi
+ppingInfo%5Bemail%5D%5Bid%5D=282&amp;shippingInfo%5BcontactPerson%5D=&amp;produc
+tOfTradeCollection%5B0%5D%5Bprice%5D=110.01&amp;productOfTradeCollection%5B0
+%5D%5Bquantity%5D=1&amp;productOfTradeCollection%5B0%5D%5Bproduct%5D%5Bid%5D
+=2444&amp;eletronicInvoiceSerie=1&amp;discount=0&amp;freightPrice=0&amp;extraValue=0&amp;cat
+egory%5Bid%5D=1184&amp;paymentMode%5Bid%5D=1445&amp;paymentMode%5Brange%5D%5B0%5
+D%5Bvalue%5D=27.51&amp;paymentMode%5Brange%5D%5B0%5D%5Bdate%5D=2016-03-12&amp;pa
+ymentMode%5Brange%5D%5B1%5D%5Bvalue%5D=27.5&amp;paymentMode%5Brange%5D%5B1%5
+D%5Bdate%5D=2016-04-12&amp;paymentMode%5Brange%5D%5B2%5D%5Bvalue%5D=27.5&amp;pay
+mentMode%5Brange%5D%5B2%5D%5Bdate%5D=2016-05-12&amp;paymentMode%5Brange%5D%5
+B3%5D%5Bvalue%5D=27.5&amp;paymentMode%5Brange%5D%5B3%5D%5Bdate%5D=2016-06-12
+&amp;account%5Bid%5D=621&amp;buyer%5Bid%5D=1046&amp;eletronicInvoiceModel=32&amp;eletron
+icInvoiceNumber=1231&amp;flowGroup%5Bid%5D=57&amp;observation=My%20staff&amp;discoun
+tIsPercentage=false
+</code></pre>
+</div>
+
+<p>Reverting the string and splitting it by the space getting the first occurrence, after that reverting back did the trick for me.</p>
+
+<p>Now with the content in hand the next challenge is to decode it to get the natural form of the data.</p>
+
+<p>I know that PHP has a funciton to do that, so I wrote a small PHP script to do that for me.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># !/usr/bin/env php
+# file url-decode
+&lt;?php
+
+$data = $argv[1] ?? null;
+if (empty($data)) {
+    $data = fgets(STDIN);
+}
+
+$data = rawurldecode($data);
+echo $data;
+
+</code></pre>
+</div>
+
+<p>This small script simply get the data from an argument or from stdin and decode it.</p>
+
+<p>So this is our point now:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo $myRequest | rev | cut -d" " -f1 | rev | url-decode
+shippingInfo[address]=&amp;shippingInfo[phone]=&amp;shippingInfo[email][address]
+=gandalf@a.com&amp;shippingInfo[email][type]=2&amp;shippingInfo[email][id]=282&amp;s
+hippingInfo[contactPerson]=&amp;productOfTradeCollection[0][price]=110.01&amp;pr
+oductOfTradeCollection[0][quantity]=1&amp;productOfTradeCollection[0][produc
+t][id]=2444&amp;eletronicInvoiceSerie=1&amp;discount=0&amp;freightPrice=0&amp;extraValue
+=0&amp;category[id]=1184&amp;paymentMode[id]=1445&amp;paymentMode[range][0][value]=2
+7.51&amp;paymentMode[range][0][date]=2016-03-12&amp;paymentMode[range][1][value]
+=27.5&amp;paymentMode[range][1][date]=2016-04-12&amp;paymentMode[range][2][value
+]=27.5&amp;paymentMode[range][2][date]=2016-05-12&amp;paymentMode[range][3][valu
+e]=27.5&amp;paymentMode[range][3][date]=2016-06-12&amp;account[id]=621&amp;buyer[id]
+=1046&amp;eletronicInvoiceModel=32&amp;eletronicInvoiceNumber=1231&amp;flowGroup[id]
+=57&amp;observation=My staff&amp;discountIsPercentage=false
+</code></pre>
+</div>
+
+<p>From here I had to convert this data in an PHP array. But it happend
+that I already did something similar before. Once I wrote a script to
+convert JSON’s to PHP arrays, so I thought I might use it, but for doing
+so I would need this data as JSON.</p>
+
+<p>Luckly, it happens that I already wrote another tool to convert form-data to
+JSON as well.</p>
+
+<p>So here is the script to convert form-data to JSON:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># !/usr/bin/env php
+# file url-to-json
+&lt;?php
+
+$result = [];
+
+
+$data = $argv[1] ?? null;
+if (empty($data)) {
+    $data = fgets(STDIN);
+}
+
+parse_str($data, $result);
+echo json_encode($result, true);
+
+</code></pre>
+</div>
+
+<p>And after its usage the data is the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$echo $myRequest | rev | cut -d" " -f1 | rev | url-decode | url-to-json
+{"shippingInfo":{"address":"","phone":"","email":{"address":"gandalf@a.
+com","type":"2","id":"282"},"contactPerson":""},"productOfTradeCollecti
+on":[{"price":"110.01","quantity":"1","product":{"id":"2444"}}],"eletro
+nicInvoiceSerie":"1","discount":"0","freightPrice":"0","extraValue":"0"
+,"category":{"id":"1184"},"paymentMode":{"id":"1445","range":[{"value":
+"27.51","date":"2016-03-12"},{"value":"27.5","date":"2016-04-12"},{"val
+ue":"27.5","date":"2016-05-12"},{"value":"27.5","date":"2016-06-12"}]},
+"account":{"id":"621"},"buyer":{"id":"1046"},"eletronicInvoiceModel":"3
+2","eletronicInvoiceNumber":"1231","flowGroup":{"id":"57"},"observation
+":"My staff","discountIsPercentage":"false\n"}%
+</code></pre>
+</div>
+
+<p>And finally the script to convert JSON to a PHP array:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# !/usr/bin/env php
+# file export-php-from-json
+&lt;?php
+
+$data = $argv[1] ?? null;
+if (empty($data)) {
+    $data = fgets(STDIN);
+}
+
+if (empty($data)) {
+    echo "You must pass a valid JSON";
+    exit(1);
+}
+
+$data = json_decode($data, true);
+
+echo var_export($data);
+
+</code></pre>
+</div>
+
+<p>Using it all together:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo $myRequest | rev | cut -d" " -f1 | rev | url-decode | url-to-json | export-php-from-json 
+array (
+  'shippingInfo' =&gt; 
+  array (
+    'address' =&gt; '',
+    'phone' =&gt; '',
+    'email' =&gt; 
+    array (
+      'address' =&gt; 'gandalf@a.com',
+      'type' =&gt; '2',
+      'id' =&gt; '282',
+    ),
+    'contactPerson' =&gt; '',
+  ),
+  'productOfTradeCollection' =&gt; 
+  array (
+    0 =&gt; 
+    array (
+      'price' =&gt; '110.01',
+      'quantity' =&gt; '1',
+      'product' =&gt; 
+      array (
+        'id' =&gt; '2444',
+      ),
+    ),
+  ),
+  'eletronicInvoiceSerie' =&gt; '1',
+  'discount' =&gt; '0',
+  'freightPrice' =&gt; '0',
+  'extraValue' =&gt; '0',
+  'category' =&gt; 
+  array (
+    'id' =&gt; '1184',
+  ),
+  'paymentMode' =&gt; 
+  array (
+    'id' =&gt; '1445',
+    'range' =&gt; 
+    array (
+      0 =&gt; 
+      array (
+        'value' =&gt; '27.51',
+        'date' =&gt; '2016-03-12',
+      ),
+      1 =&gt; 
+      array (
+        'value' =&gt; '27.5',
+        'date' =&gt; '2016-04-12',
+      ),
+      2 =&gt; 
+      array (
+        'value' =&gt; '27.5',
+        'date' =&gt; '2016-05-12',
+      ),
+      3 =&gt; 
+      array (
+        'value' =&gt; '27.5',
+        'date' =&gt; '2016-06-12',
+      ),
+    ),
+  ),
+  'account' =&gt; 
+  array (
+    'id' =&gt; '621',
+  ),
+  'buyer' =&gt; 
+  array (
+    'id' =&gt; '1046',
+  ),
+  'eletronicInvoiceModel' =&gt; '32',
+  'eletronicInvoiceNumber' =&gt; '1231',
+  'flowGroup' =&gt; 
+  array (
+    'id' =&gt; '57',
+  ),
+  'observation' =&gt; 'My staff',
+  'discountIsPercentage' =&gt; 'false
+',
+)%
+</code></pre>
+</div>
+
+<p>To get even easier whe might write an alias for it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>alias curl-to-array=' rev | cut -d" " -f1 | rev | url-decode |
+url-to-json | export-php-from-json'
+</code></pre>
+</div>
+
+<p>Now you only need <code class="highlighter-rouge">echo $myRequest | curl-to-array</code> to turn any
+curl request in a PHP array format.</p>
+
+<p>So this is it. I wrote a generic tool to convert requests exported by
+the browser into PHP format by writing a simple script, some shell
+commands and two other simple scripts I wrote in another time for other
+purposes. And this is the beuty I mean, as the time goes on you find new
+purposes to old simple tools adehring to the Unix principles of wrinting
+little programs where which one do only one thing well, assembling them
+in new ways.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

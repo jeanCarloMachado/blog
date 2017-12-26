@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Sistema de plugins zf2</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Sistema de plugins zf2</h1>
+    <p class="post__date">May 9, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>O Zend Framework 2 utiliza uma interessante estrutura de plugins
+para seus controladores que vale o trabalho de uma segunda análise.
+Basicamente se você implementar o método <strong><em>setPluginManager</em></strong>
+em um controlador do tipo <strong><em>AbstractActionController</em></strong> ou
+<strong>AbstractRestfulController</strong> é lhe garantido o acesso a um conjunto
+de plugins pré-fabricados e a possibilidade de injetar novos. O
+objetivo deste post é criar uma estrutura similar para ser utilizada em
+um outro conjunto de classes que possam se beneficiar de plugins.</p>
+
+<p>Um plugin é basicamente uma classe (ou conjunto de classes) que
+realizam uma tarefa específica para um ou mais requisitante(s). Entre
+os plugins do zend Framework constam:</p>
+
+<ul>
+  <li><em>AcceptableViewModelSelector</em> seletor de ViewModel’s baseado em critérios do usuário</li>
+  <li><em>FlashMessenger</em> um sistema de notificações para o usuário</li>
+  <li><em>Forward</em> ajuda a construir um sistema <em>widgetizável</em> através de chamada de mais de um controller/action por requisição</li>
+  <li><em>Identity</em> recupera uma instância da entidade de usuário (autenticado)</li>
+  <li><em>Layout</em> auxilia em um conjunto de operações para o layout</li>
+  <li><em>Params</em> acesso facilitado de parâmetros das mais diversas fontes</li>
+  <li><em>Redirect</em> - Simplifica o processo de redirect (utilizando o sistema de rotas zf2)</li>
+  <li><em>Url</em> gerador de URL’s</li>
+</ul>
+
+<p>Para utilizar algum plugin em um controlador basta chamá-lo em uma das
+seguintes formas:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$plugin = $this-&gt;plugin('identity');
+//ou
+$plugin = $this-&gt;identity();
+</code></pre>
+</div>
+<p>Esta forma de trabalhar é interessante pois ajuda a desacoplar código;
+já vi muito código de mentores da comunidade com coisas do tipo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Budget
+{
+...
+    public function getIdentity($params)
+    {
+        return $this-&gt;getServiceLocator()-&gt;get('MyNamespace\Service\User')-&gt;getIdentity();
+    }
+...
+}
+</code></pre>
+</div>
+
+<p>Essa forma de trabalhar está longe de condizer com os padrões
+<a href="https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a>.</p>
+
+<p><code class="highlighter-rouge">S</code>ingle Responsability Principle - Budget não está mas cuidando
+exclusivamente de orçamentos, agora virou uma via para pegar
+identidades de usuários!</p>
+
+<p><code class="highlighter-rouge">O</code>pen Closed Principle - este princípio - a meu ver - não se
+aplica;</p>
+
+<p><code class="highlighter-rouge">L</code>iskov substitution principle - como este método é usado como
+um facilitador ele acaba quebrando a interface do objeto (tudo bem se
+<code class="highlighter-rouge">getIdentity</code> for privado), certamente os objetos vão continuar a
+compartilhar sua interface herdada mas foi adicionada complexidade a uma
+classe que pode ou não ser herdada, em outras palavras a substituição
+fica relativizada;</p>
+
+<p><code class="highlighter-rouge">I</code>nterface segregation principle - Se <code class="highlighter-rouge">getIdentity</code> estiver em
+uma interface o problema em potencial da substituição fica resolvido
+mas não é o caso geralmente;</p>
+
+<p><code class="highlighter-rouge">D</code>ependency inversion principle - n. a.</p>
+
+<p>Com isso em vista, especialmente o problema da responsabilidade única,
+me parece urgente a busca por uma alterantiva mais elegante.</p>
+
+<hr />
+
+<p>No projeto que desenvolvo, surgiu a necessidade de algo do tipo depois
+de os serviços (classes centrais da lógica de negócio) começarem a
+implementar um conjunto significante de interfaces para atenderem seus
+mais variados propósitos. Havia uma interface para injetar o serviço
+de traduções, outra para o identity, outra para cache e assim vai.
+Este problema foi solucionado herdando de <code class="highlighter-rouge">AbstractPluginManager</code>
+em <code class="highlighter-rouge">AbstractService</code> e configurando os plugins adequadamente.
+Talvez uma alternativa ainda melhor (em questões de OO) seja injetando
+uma instância de uma classe concreta de <code class="highlighter-rouge">AbstractPluginManager</code>,
+mas com injeção também haveria uma leve perda de performance , uma
+questão de trade-off’s.</p>
+
+<h4 id="o-caminho-da-herança---serviceabstract-como-gerenciador-de-plugins">O caminho da herança - ServiceAbstract como Gerenciador de Plugins</h4>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Core\Service</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Zend\ServiceManager\ServiceManager</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Zend\ServiceManager\ServiceManagerAwareInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Zend\ServiceManager\AbstractPluginManager</span><span class="p">;</span>
+
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">Service</span> <span class="k">extends</span> <span class="nx">AbstractPluginManager</span> <span class="k">implements</span> <span class="nx">ServiceManagerAwareInterface</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+
+    <span class="sd">/**
+     * plugin factories
+     * @var array
+     */</span>
+    <span class="k">protected</span> <span class="nv">$factories</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'identity'</span> <span class="o">=&gt;</span> <span class="s1">'Core\Service\Plugin\IdentityFactory'</span><span class="p">,</span>
+        <span class="s1">'translate'</span> <span class="o">=&gt;</span> <span class="s1">'Core\Service\Plugin\TranslateFactory'</span><span class="p">,</span>
+        <span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="s1">'Core\Service\Plugin\CacheFactory'</span><span class="p">,</span>
+    <span class="p">];</span>
+    
+    <span class="sd">/**
+     * validate a  plugin
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validatePlugin</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$plugin</span> <span class="nx">instanceof</span> <span class="nx">Plugin\PluginInterface</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span>
+            <span class="s1">'Plugin of type %s is invalid; must implement %s\Plugin\PluginInterface'</span><span class="p">,</span>
+            <span class="p">(</span><span class="nb">is_object</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">)</span> <span class="o">?</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">)</span> <span class="o">:</span> <span class="nb">gettype</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">)),</span>
+            <span class="nx">__NAMESPACE__</span>
+        <span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Method overloading: return/call plugins
+     *
+     * If the plugin is a functor, call it, passing the parameters provided.
+     * Otherwise, return the plugin instance.
+     *
+     * @param  string $method
+     * @param  array  $params
+     * @return mixed
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__call</span><span class="p">(</span><span class="nv">$method</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$plugin</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$method</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">is_callable</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">call_user_func_array</span><span class="p">(</span><span class="nv">$plugin</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$plugin</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>AbstractPluginManager define um método abstrato o: <code class="highlighter-rouge">validatePlugin</code>
+que deve ser implementado por seus filhos, neste caso validei
+se os plugins implementam a interface que defini para eles 
+<code class="highlighter-rouge">Plugin\PluginInterface</code>. Além da interface a implementar, existem
+três variáveis relevantes a criação de plugins</p>
+
+<ul>
+  <li><em>AbstractPluginManager::$factories</em> Recebe um array com os nomes Factories que retornam um plugin</li>
+  <li><em>AbstractPluginManager::$invokables</em> Recebe um array com os nomes de Plugins que podem ser instanciados sem a ajuda de uma factory</li>
+  <li><em>AbstractPluginManager::$aliases</em> Servem para dar apelidos aos
+plugins (por default os plugins são nomeados de acordo com o nome de
+suas classes)</li>
+</ul>
+
+<p>Para criar um invokable:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	protected $aliases = [
+		'identity' =&gt; '\Core\Service\Plugin\Identity'
+	];
+</code></pre>
+</div>
+
+<p>Para criar um alias:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>	protected $aliases = [
+		'identity' =&gt; 'useridentity'
+	];
+</code></pre>
+</div>
+
+<p>(A partir de então <code class="highlighter-rouge">$this-&gt;identity()</code> e  <code class="highlighter-rouge">$this-&gt;useridentity()</code> fazem a mesma coisa )</p>
+
+<p>O método <code class="highlighter-rouge">__call</code> é uma conveniência que nos possibilita
+chamar os plugins como se eles fossem membros da classe. A partir
+de então <code class="highlighter-rouge">$this-&gt;identity()</code> tem o mesmo resultado de
+<code class="highlighter-rouge">$this-&gt;get('identity')</code>.</p>
+
+<h4 id="uma-interface-para-os-plugins">Uma interface para os plugins</h4>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Core\Service\Plugin</span><span class="p">;</span>
+
+<span class="sd">/**
+ * base service plugin signature
+ *
+ * @category Application
+ * @package  Service
+ * @author   Jean Carlo Machado &lt;contato@jeancarlomachado.com.br&gt;
+ */</span>
+<span class="k">interface</span> <span class="nx">PluginInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Mesmo deixando a interface vazia é bom depender em abstrações, sendo assim a mantive.</p>
+
+<p><strong><em>Nota</em></strong>
+O método <code class="highlighter-rouge">__invoke()</code> está sendo utilizado em todos os plugins
+exemplificados abaixo mesmo assim não faz parte da interface. Em
+plugins com múltiplas intenções (ex: FlashMessenger) um método
+principal como o <code class="highlighter-rouge">__invoke</code> sugere um objeitvo principal que pode
+não ser verdadeiro.</p>
+
+<h4 id="plugin-identity">Plugin Identity</h4>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Core\Service\Plugin</span><span class="p">;</span>
+
+<span class="sd">/**
+ * identity plugin
+ *
+ * @category Application
+ * @package  Service
+ * @author   Jean Carlo Machado &lt;contato@jeancarlomachado.com.br&gt;
+ */</span>
+<span class="k">class</span> <span class="nc">Identity</span> <span class="k">implements</span> <span class="nx">PluginInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$authenticationService</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * Retrieve the current identity through the auth service
+     *
+     * @return Application\Model\User
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nv">$token</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">authenticationService</span><span class="o">-&gt;</span><span class="na">getIdentity</span><span class="p">(</span><span class="nv">$token</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAuthenticationService</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">authenticationService</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setAuthenticationService</span><span class="p">(</span><span class="nv">$authenticationService</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">authenticationService</span> <span class="o">=</span> <span class="nv">$authenticationService</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>OBS: Utilizo o método mágico <code class="highlighter-rouge">__invoke</code> para executar a
+funcionalidade do plugin sem precisar utilizar métodos.</p>
+
+<h4 id="factory-identity">Factory Identity</h4>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Core\Service\Plugin</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Zend\ServiceManager\FactoryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Zend\ServiceManager\ServiceLocatorInterface</span><span class="p">;</span>
+
+<span class="sd">/**
+ * factory for identity plugin
+ *
+ * @category Application
+ * @package  Service
+ * @author   Jean Carlo Machado &lt;contato@jeancarlomachado.com.br&gt;
+ */</span>
+<span class="k">class</span> <span class="nc">IdentityFactory</span> <span class="k">implements</span> <span class="nx">FactoryInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">createService</span><span class="p">(</span><span class="nx">ServiceLocatorInterface</span> <span class="nv">$serviceLocator</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$services</span> <span class="o">=</span> <span class="nv">$serviceLocator</span><span class="o">-&gt;</span><span class="na">getServiceLocator</span><span class="p">();</span>
+        <span class="nv">$helper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Identity</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$services</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s1">'Application\Service\Auth'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">setAuthenticationService</span><span class="p">(</span><span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'Application\Service\Auth'</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$helper</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>O importante aqui é implementar o <code class="highlighter-rouge">FactoryInterface</code>, a partir de
+então o <code class="highlighter-rouge">AbstractPluginManager</code> se responsabiliza por injetar uma
+instância de ServiceManager na chamada <code class="highlighter-rouge">createService</code> que pode ser
+utilizado para incluir as dependências necessárias no plugin.</p>
+
+<h3 id="plugin-cache">Plugin Cache</h3>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Core\Service\Plugin</span><span class="p">;</span>
+
+<span class="sd">/**
+ * cache plugin
+ *
+ * @category Application
+ * @package  Service
+ * @author   Jean Carlo Machado &lt;contato@jeancarlomachado.com.br&gt;
+ */</span>
+<span class="k">class</span> <span class="nc">Cache</span> <span class="k">implements</span> <span class="nx">PluginInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$cacheService</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * Retrieve the cache service
+     *
+     * @return Zend\Cache\Storage\Adapter\AbstractAdapter
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheService</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCacheService</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheService</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setCacheService</span><span class="p">(</span><span class="nv">$cacheService</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheService</span> <span class="o">=</span> <span class="nv">$cacheService</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p>No <code class="highlighter-rouge">_invoke</code> do plugin do cache retornei a própria instância de
+Cache, para facitilitar, visto que normalmente diversas operações
+são realizadas com esta classe em um serviço. Talvez o ideal seria
+implementar as chamadas mais utilizadas no plugin em detrimento de
+retornar todo o objeto pois as interface dos plugins devem prezar a
+simplicidade, segundo o SOL(I)D.</p>
+
+<hr />
+
+<p>Você ainda pode configurar o seu PluginManager para pegar os array’s de
+configuração nos configs do Zend, e criar uma factory para injetar em
+cada atrituto. Pode também injetar dinamicamente plugins atravás do
+método <code class="highlighter-rouge">setService($serviceName)</code> do seu gerenciador de plugins.</p>
+
+<p>Nota: Se você olhar a implementação de PluginManager
+você notará que o mesmo herda suas configurações de
+<code class="highlighter-rouge">Zend\ServiceManager\ServiceManager</code>, sendo assim não abuse pois este
+é um dos maiores objetos no Zend Framework2. Recomendo a estrutura
+somente quando lidando com classes chave ao projeto.</p>
+
+<p>Recapitulando, o código fica muito mais organizado sem aqueles get*’s
+fora de escopo pulando em cada classe importante do projeto.</p>
+
+<p>Sugestões, comentários e críticas são sempre bem vindos.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

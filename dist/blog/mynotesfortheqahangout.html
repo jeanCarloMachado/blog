@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>My notes for the QA Hangout</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">My notes for the QA Hangout</h1>
+    <p class="post__date">October 16, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I participated on a hangout about QA with PHP, you can check it
+out <a href="https://www.YouTube.com/watch?v=lSP70aT5f2Y">here</a>. I think
+It was a good one, we had even the right of a
+<a href="http://www.jack.eti.br/hangout-qa-em-php-ferramentas-tecnicas-e-processos/">review</a>.</p>
+
+<p>The following content is a collections of notes I build to orient
+my talk on the event.</p>
+
+<h2 id="braimstorm">Braimstorm</h2>
+
+<ul>
+  <li>
+    <p>Test ONLY business logic;</p>
+  </li>
+  <li>
+    <p>Write a new test VS add an assertion in the existing one
+  Always reduce to a valuable busiess requirement</p>
+  </li>
+  <li>
+    <p>Test the smaller scope possible on your small tests
+  If you prove the part you are proving the hole as
+  well;</p>
+  </li>
+  <li>
+    <p>Start small
+  On new features I usually put the test class and the class on
+  the same file till I’m encouraged enough by it’s features to
+  split;</p>
+  </li>
+  <li>
+    <p>Avoid databases if you can
+  It’s slow and Doctrine somethimes trows exceptions so we have to rebuild the
+  entire setup;</p>
+  </li>
+  <li>
+    <p>Coverage
+  Use data structures that make special cases go away - Which is the ideal size to get started with the logic?</p>
+  </li>
+  <li>
+    <p>Write only tests that fail</p>
+  </li>
+  <li>
+    <p>Tests size
+  Google don’t divide the tests in unity, integration,etc. They
+  use the small, medium and big.
+  I use an annotation size to define it</p>
+  </li>
+  <li>
+    <p>At google testing is called engineering of productivity</p>
+  </li>
+  <li>
+    <p>Medium tests can be used to test a hole feature
+  Convert you browser request into a test when something fails. In
+  php there is the var_export funciton that generates an array.</p>
+  </li>
+  <li>
+    <p>Make easy the reuse of features on tests
+  On Compufácil we use a collection of traits on tests so we can
+  avoid the trouble of instanciating may things. The traits
+  accept mixed arguments and try to do the best to create the
+  entity with only what the developer is wanting to pass to the
+  test.</p>
+  </li>
+  <li>
+    <p>The refactor is a troublesome step
+  If you see you can abstract, maybe your test will be totally
+  desintegrated.
+  So is nice to dismember the feature you want to test from the
+  begining so you avoid some trouble with abstractions.</p>
+  </li>
+  <li>
+    <p>Abuse of the concept of factories. If you use a library to
+manage dependencies better, so on the factory you can load
+environments variables and configurations to make your object
+proper to run tests and go in production.</p>
+  </li>
+  <li>
+    <p>Don’t test what the language can do for you:
+php 7 brings scalar types and return types that can assert speed up testing</p>
+  </li>
+</ul>
+
+<h3 id="php7">PHP7</h3>
+
+<p>Scalar types and return types for testing
+Expectations - to assert setup code
+Anonymous classes;</p>
+
+<h2 id="steps-tdd">Steps TDD</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>- Write a test
+- Make it pass with the fewer trouble possible
+- Refactor
+- Start again
+</code></pre>
+</div>
+
+<h3 id="benefits">Benefits</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>Confident refactoring
+</code></pre>
+</div>
+
+<h3 id="tools">Tools</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>php-beautifier and phpcs to check for style problems 
+pdepend - to generate statistics
+pyresttest - to test API's
+vfsStream - to test files
+mockery - to create mocks
+phpcop - to change dates
+</code></pre>
+</div>
+
+<h2 id="books">Books</h2>
+
+<p>Test-Driven Development By Example - Kent Beck
+How google tests software  - James Whittaker</p>
+
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

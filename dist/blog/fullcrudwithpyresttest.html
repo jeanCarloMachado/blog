@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Full crud with pyresttest</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Full crud with pyresttest</h1>
+    <p class="post__date">March 27, 2016</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>On Compufácil we use pyresttest as part of our testing environment.
+In our context its used to validate the integration of the API and to
+help with some clues of performance through benchmarking.</p>
+
+<p>I already wrote about pyresttest
+<a href="http://jeancarlomachado.com.br/#!/post/41">here</a>, but I touched the
+tests API superficially so now I intend to show how to test a full crud
+with it.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- config:
+    - testset: "Finance"
+    - generators:
+        - 'ACCESSTOKEN': {type: 'env_variable', variable_name: ACCESSTOKEN}
+- test:
+    - auth_username: "$BASIC_AUTH_USERNAME"
+    - auth_password: "$BASIC_AUTH_PASSWORD"
+    - group: "Category"
+    - name: "Post Category"
+    - url: "/rpc/v1/finance.post-category.json"
+    - method: "POST"
+    - expected_status: [200]
+    - body: {template: "name=category&amp;type=1&amp;active=false"}
+    - headers: {template: {"Authorization-Compufacil": "$ACCESSTOKEN"}}
+    - validators:
+        - compare: {jsonpath_mini: "status",     comparator: "eq",     expected: 1}
+    - extract_binds:
+            - 'CURRENTID': {'jsonpath_mini': 'id'}
+</code></pre>
+</div>
+
+<p>This is a simple creation, the important part here is that we are
+capturing the id through the extract_binds method so we can work
+with this entity further.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- test:
+    - auth_username: "$BASIC_AUTH_USERNAME"
+    - auth_password: "$BASIC_AUTH_PASSWORD"
+    - group: "Category"
+    - name: "Get Category by ID"
+    - url: "/rpc/v1/finance.get-category.json"
+    - method: "POST"
+    - expected_status: [200]
+    - body: {template: "id=$CURRENTID"}
+    - headers: {template: {"Authorization-Compufacil": "$ACCESSTOKEN"}}
+    - validators:
+        - extract_test: {jsonpath_mini: "0.name",  test: "exists"}
+        - extract_test: {jsonpath_mini: "1.name",  test: "not_exists"}
+</code></pre>
+</div>
+
+<p>Now we are getting the result from the GET API using the post
+resulted id.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- test:
+    - auth_username: "$BASIC_AUTH_USERNAME"
+    - auth_password: "$BASIC_AUTH_PASSWORD"
+    - group: "Category"
+    - name: "Put Category"
+    - url: "/rpc/v1/finance.put-category.json"
+    - method: "POST"
+    - expected_status: [200]
+    - body: {template: "id=$CURRENTID&amp;name=CategoryTestUpdated&amp;active=true&amp;type=1"}
+    - headers: {template: {"Authorization-Compufacil": "$ACCESSTOKEN"}}
+    - validators:
+        - compare: {jsonpath_mini: "status",     comparator: "eq",     expected: 1}
+</code></pre>
+</div>
+
+<p>The same rule applies here but for an update.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- test:
+    - auth_username: "$BASIC_AUTH_USERNAME"
+    - auth_password: "$BASIC_AUTH_PASSWORD"
+    - group: "Category"
+    - name: "Delete Category"
+    - url: "/rpc/v1/finance.delete-category.json"
+    - method: "POST"
+    - expected_status: [200]
+    - headers: {template: {"Authorization-Compufacil": "$ACCESSTOKEN"}}
+    - body: {template: "ids[0]=$CURRENTID"}
+    - validators:
+        - compare: {jsonpath_mini: "status",     comparator: "eq",     expected: 1}
+</code></pre>
+</div>
+
+<p>To finalize, simply deleting the entity.</p>
+
+<p>That’s it, if you know some additional trick about pyresttest let
+me know.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

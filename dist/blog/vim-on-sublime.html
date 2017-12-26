@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Use Vim mode on Sublime</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Use Vim mode on Sublime</h1>
+    <p class="post__date">April 15, 2014</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Um bom editor de textos/IDE sempre está por trás de um bom
+desenvolvedor. Essa poderia ser a <em>golden rule</em> da programação.
+Meu editor de texos é o Sublime, trata-se de um projeto recente com
+funcionalidades similares à editores como: Atom, TextMate, etc. Não
+obstante, fatores à dizer: excelente performance em projetos gigantes,
+múltiplos cursores, rapidez em localizar arquivos, etc, aumentam muito
+minha produtividade sendo diferenciais chave da minha escolha pelo
+Sublime (mesmo este não sendo open-source).</p>
+
+<p>Entretanto, como um tradicional cara <em>Unix like</em> aprecio enormemente
+o jeito Vim de editar texto. Não me entenda errado, não sou nenhum
+evangélico de Vim (<em>hater</em> de mouse), muito menos um expert no
+assunto. Mas o jeito do vim, quando navegando e editando um arquivo, é
+muitas vezes mais produtivo do que a navegação/edição tradicional:
+simplista e feita para estudantes de publicidade usuários do Microsoft
+Word e senhoras sem <em>background</em> em TI :P.</p>
+
+<p>O Vim como editor de textos é ótimo mas falha em diversos aspectos
+que uma IDE moderna trata trivialmente, como: gestão de múltiplos
+arquivos, buffers, suporte à mouse, etc. Este post tenciona apresentar
+alguns destes ótimos recursos do Vim e surgerir a integração destes
+no Sublime para que obtenhamos o melhor dos dois mundos.</p>
+
+<p>O grande trunfo do Vim é que ele contém algumas características de
+linguaguem e, como toda a linguagem, você junta elementos simples para
+criar padrões complexos e extremamente customizáveis.</p>
+
+<h3 id="classes-gramaticais">Classes Gramaticais</h3>
+
+<p>Na “linguagem” Vim você encontra as seguintes classes gramaticais:</p>
+
+<p><strong>Verbos</strong>: y <em>copiar</em>, p <em>colar</em>, c <em>mudar</em> , d <em>deletar</em>, / <em>buscar</em> ,
+= <em>identar</em>, etc</p>
+
+<p><strong>Substantivos</strong>: w <em>palavra</em>, s <em>sentença</em>, p <em>parágrafo</em>, b <em>bloco</em>,
+linha, etc</p>
+
+<p><strong>Advérbios</strong>: i <em>dentro</em>, a <em>ao redor</em>, t <em>até encontrar caractere x</em></p>
+
+<h3 id="palavras-compostas">Palavras compostas</h3>
+
+<p>Algumas funcionalidades comuns (que tomariam várias palavras) são
+reduzidas à atalhos, alguns deles seguem abaixo.</p>
+
+<p><code class="highlighter-rouge">} bloco superior, { bloco inferior</code></p>
+
+<p><code class="highlighter-rouge">0 início da linha, $ final da linha</code></p>
+
+<p><code class="highlighter-rouge">gg início do documento, G final do documento</code></p>
+
+<p><code class="highlighter-rouge">u transformar em caixa baixa, U tranformar em caixa alta</code></p>
+
+<p><code class="highlighter-rouge">yy copie a linha inteira</code></p>
+
+<p><code class="highlighter-rouge">. repita a última frase</code></p>
+
+<p><code class="highlighter-rouge">* busca pela palavra sob o cursor e move para a primeira ocorrência
+acima</code></p>
+
+<p><code class="highlighter-rouge"># busca pela palavra sob o cursor e move para a primeira ocorrência
+abaixo</code></p>
+
+<p><code class="highlighter-rouge">== reidenta a linha atual</code></p>
+
+<p><code class="highlighter-rouge">guu linha atual para caixa baixa</code></p>
+
+<p><code class="highlighter-rouge">gUU linha atual para caixa alta</code></p>
+
+<h3 id="modos">Modos</h3>
+
+<p>Para completar a funcionalidade de um editor, o Vim introduz o conceito
+de Modos que são contextos onde o significado das palavras podem mudar.</p>
+
+<p>1 v <em>seleção</em></p>
+
+<p>2 ESC <em>navegação</em></p>
+
+<p>3 : <em>comandos</em></p>
+
+<h3 id="exemplos">Exemplos</h3>
+
+<p>Alguns exemplos de utilização são: * <strong>xp</strong> swap de caracteres ae
+fica ea; * <strong>rX</strong> substitua o caractere no cursor por X; * <strong>c/foo</strong>
+altere o texto até a primeira ocorrência de foo; * <strong>viwy</strong> entre
+no modo de seleção, selecione dentro da palavra e copie. (copia a
+palavra sobre o cursor); * <strong>0v}p</strong> vá para o início da linha, entre
+em modo de seleção, suba um bloco e cole o conteúdo da memória; *
+<strong>ci”</strong> troque o conteúdo dentro das aspas; * <strong>yy3pESCgg.</strong> copie a
+linha atual e cole-a 3 vêzes abaixo, entre no modo de navagação,
+vá até o início do arquivo e repita a operação (copie a linha
+atual e cole-a 3 vêzes abaixo); * <strong>ESC3j12lv3wd</strong> entre no modo de
+navegação, desça 3 linhas, vá 12 caracteres à esquerda, entre no
+modo de seleção, selecione 3 palavras e as delete; * <strong>ESCggvGU</strong>
+entre no modo de navegação, vá para o início do arquivo, entre no
+modo de seleção, vá para o final do arquivo, transforme o selecionado
+em uppercase (mude todo o documento para caixa alta).</p>
+
+<p>Fica aqui exposto que, uma vez dominado a utilização básica do
+Vim, fica muito mais rápido fazer operações complexas através da
+“linguagem” Vim.</p>
+
+<h2 id="vim-no-sublime">Vim no Sublime</h2>
+
+<p>Vim e Sublime são feitos para a mesma coisa: editar textos; em outras
+palavras são concorrentes. Contudo, existem plugins no Sublime para
+imitar a linguagem do Vim. O padrão é o Vintage - que vem integrado
+com o Sublime - mas este sofre carência de funcionalidades. O melhor
+plugin que conheço de suporte à Vim é o Vintageous, dos recursos do
+Vim que conheço, nenhum falta à este plugin. O Vim no Sublime abre
+um leque de oportunidades novas quando utilizado junto com múltiplos
+cursores, mas isso é assunto para outro post.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

@@ -5,19 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    {% if page.keywords %}
-    <meta name="keywords" content="{{ page.keywords }}">
-    {% else %}
-    <meta name="keywords" content="{{ site.keywords }}">
-    {% endif %}
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
 
-    {% if page.title %}
-        <title>{{ page.title }}</title>
-    {% else %}
-        <title>{{ site.name }}</title>
-    {% endif %}
+    
+        <title>Page Does Not Exist...</title>
+    
 
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="My personal blog">
 
     <link rel="icon" href="/assets/img/favicon.ico">
 
@@ -31,7 +27,10 @@
 <body>
 
     <div class="wrapper">
-        {{ content }}
+        <p><a class="post__back" href="/">&lt;-- back</a></p>
+<br>
+<p>Sorry this page does not exist...</p>
+
     </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

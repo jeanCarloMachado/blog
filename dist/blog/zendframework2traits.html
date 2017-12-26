@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Zend Framework 2 Traits</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Zend Framework 2 Traits</h1>
+    <p class="post__date">June 24, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Zend Framework 2 starting from version 2.5 comes with a handy collection
+of traits that with no doubt could enhance the workflow of the majority
+of developers. For those who do not program in ZF2 it is a valuable
+asset as well - it may serve as an example of naming convention (at
+last!) and as an application of the so called horizontal reuse in PHP.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ack -g "Trait" vendor/zendframework/
+zend-inputfilter/src/InputFilterAwareTrait.php
+zend-code/src/Generator/TraitGenerator.php
+zend-code/src/Generator/TraitUsageInterface.php
+zend-code/src/Generator/TraitUsageGenerator.php
+zend-stdlib/src/Hydrator/HydratorAwareTrait.php
+zend-stdlib/src/Guard/NullGuardTrait.php
+zend-stdlib/src/Guard/AllGuardsTrait.php
+zend-stdlib/src/Guard/ArrayOrTraversableGuardTrait.php
+zend-stdlib/src/Guard/EmptyGuardTrait.php
+zend-log/src/LoggerAwareTrait.php
+zend-eventmanager/src/ListenerAggregateTrait.php
+zend-eventmanager/src/EventManagerAwareTrait.php
+zend-servicemanager/src/MutableCreationOptionsTrait.php 
+zend-servicemanager/src/ServiceLocatorAwareTrait.php
+zend-form/src/LabelAwareTrait.php 
+zend-form/src/FormFactoryAwareTrait.php
+zend-i18n/src/Translator/TranslatorAwareTrait.php
+
+</code></pre>
+</div>
+
+<p><strong>OBS: this is not an exaustive list, these are only from a little collection of ZF2’s modules that I use currently.</strong></p>
+
+<p>Those with at least a bit of experience of ZF2 probably already faced
+some <em>/AwareInterface$/</em> usage; this is Zend’s way of asserting <a href="https://en.wikipedia.org/wiki/Design_by_contract">design
+by contract</a>.</p>
+
+<p>Below is an example of utilization of the <em>ServiceLocatorAwareTrait</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
+
+namespace Core\Service;
+
+use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\ServiceManager\ServiceLocatorAwareTrait;
+
+class Metadata implements ServiceLocatorAwareInterface
+{
+    use ServiceLocatorAwareTrait;
+}
+
+</code></pre>
+</div>
+
+<p><em>OBS: This pattern of usage applies as well for all the other
+AwareTraits listed above</em>.</p>
+
+<p>To maintain the contract the interface <em>ServiceLocatorAwareInterface</em>
+must remain. Anyway now you are free from implementing it.</p>
+
+<p>Here is the implementation of <em>ServiceLocatorAwareTrait</em> (there are
+bigger aware interfaces than this one):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    protected $serviceLocator = null;
+
+    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
+    {
+        $this-&gt;serviceLocator = $serviceLocator;
+
+        return $this;
+    }
+
+    public function getServiceLocator()
+    {
+        return $this-&gt;serviceLocator;
+    }
+</code></pre>
+</div>
+
+<hr />
+
+<p>By browsing this files you note a worth mentioning pattern: almost all
+of them are followed with an respective interface.</p>
+
+<p>The exceptions are: - <em>Generators</em>: these aren’t event traits, they are
+classes for trait generation; - <em>Guards</em>: for argument type validation</p>
+<ul>
+  <li>which is a very recent resource (introduced on 2.3) - albeit I’m not
+certain if it will remain relevant with PHP 7.</li>
+</ul>
+
+<p>So keep your traits near it’s interfaces!</p>
+
+<p>That’s it, let me know if it was useful to you.</p>
+
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

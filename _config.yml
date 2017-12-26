@@ -1,4 +1,4 @@
-destination: _build
+destination: dist
 
 # Blog settings
 permalink: /blog/:title.html
