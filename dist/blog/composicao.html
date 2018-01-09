@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Composição">
+    
+
+    
+        <title>Vamos falar de composição</title>
+    
+
+    <meta name="description" content="My personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-NSFBQTG':true});</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49232964-2', 'auto');
+  ga('require', 'GTM-NSFBQTG');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Vamos falar de composição</h1>
+    <p class="post__date">December 28, 2017</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Na faculdade e na indústria nos deparamos com muitas “boas práticas” que a
+experiência mostra serem longe do ideal. Nesse post quero explorar isso no
+quesito composição.</p>
+
+<h2 id="req1---buscar-usuário">Req1 - Buscar Usuário</h2>
+
+<p>Considere o problema de buscar o perfil de um usuário no banco de dados.
+A opinião “mainstream” do que é considerado boas práticas é bem representado
+pelo código abaixo (com sérias simplificacões). Preciso pegar o perfil de um
+usuario. Crio uma classe que recebe o banco (ou alguma abstração do banco) e
+efetuo a busca.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>class Profile {
+    public function __construct($db)
+    {
+        $this-&gt;db = $db;
+    }
+
+    function get(int $id) {
+        return $this-&gt;db-&gt;query('Select * from User where id = %i', $id);
+    }
+}
+</code></pre>
+</div>
+
+<p>Não tenho tantos problemas até aí. Vou reservar as críticas pra depois.
+Agora vamos imaginar que temos um requisito extra.</p>
+
+<h2 id="req2---guardar-em-cache">Req2 - Guardar em cache</h2>
+
+<p>Precisamos guardar em cache o perfil do usuário. De modo que depois de
+requisitar a primeira vez ele não vá até o banco novamente.
+Bom, dado o código acima, imagino que a solução que 99% dos devs iriam seguir
+seria algo nessa linha:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>class Profile {
+    public function __construct($db, $cache)
+    {
+        $this-&gt;db = $db;
+        $this-&gt;cache = $cache;
+    }
+
+    function get(int $id) {
+        if ($this-&gt;cache-&gt;has($id)) {
+            return $this-&gt;cache-&gt;get($id);
+        }
+        $user = $this-&gt;db-&gt;query('Select * from User where id = %i', $id);
+
+        $this-&gt;cache-&gt;put($id, $user);
+
+        return $user;
+
+    }
+}
+</code></pre>
+</div>
+
+<p>Qual o problema dessa solução? Bom, primeiramente uma solução assim vai requerir
+bastente mocks pra testar. Sou forte defensor da heurística <strong>o que torna se
+código difícil de testar está errado</strong>. Mas tem algo mais fundamental aí que é o
+assunto desse post. O que é a operação de pegar o perfil quando pensamos
+<em>intuitivamente</em>? Envolve cache? Não. O código construído dessa maneira “empilha”
+complexidade e semântica de negócio, deixando de lado a intuição em favor da
+necessidade de negócio. Quanto mais requisitos temos que atender, mais quebramos
+as expectativas do leitor.</p>
+
+<p>Esse tipo de arquitetura dá origem ao problema chamado “banana gorilla”.
+Quando no meu sistema pedi uma banana e recebi uma banana, só que junto
+veio um gorila segurando ela.</p>
+
+<p><img src="https://i.imgur.com/kZisnyS.jpg" alt="bannana gorilla" /></p>
+
+<p>Será que tem uma forma melhor?</p>
+
+<p>Vamos tentar fazer esse código novamente, de um jeito diferente.</p>
+
+<h2 id="req1---buscar-usuário-1">Req1 - Buscar Usuário</h2>
+
+<p>O que envolve a busca do usuário na sua <em>essência</em>?
+<em>Envolve configurar corretamente um dispositivo de IO (nesse caso o banco) para
+retornar os dados corretos pra nós</em>. E qual a forma mais simples de fazer isso?</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>function getProfile(callable $persitence, int $id) {
+    return $persistence('Select * from User where id = %i', $id);
+}
+</code></pre>
+</div>
+<p>Só uma função comunica tudo que precisamos. E note o uso do
+callable. Não estou mais usando a api do banco no get-profile. Assumo
+que ela venha pronta pra mim, algo nessa linha: <code class="highlighter-rouge">$persistence =
+[$db, "query"];</code>. Mas o mais importante: é dessa forma que pensamos
+intuitivamente na operação de pegar um perfil.</p>
+
+<p>Só que ainda tem um problema. No modelo tradicional conseguimos separar o que é
+construção do que é uso. O banco de dados entra na construção do objeto e em
+“runtime” você só precisa passar o id. Como é que fazemos isso com uma função?</p>
+
+<h2 id="aplicação-parcial">Aplicação parcial</h2>
+
+<p>Várias linguagens de programação tem o conceito chamado de aplicação parcial.
+Onde você reduz uma função de múltiplos argumentos pra múltiplas funções de um
+argumento.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$append3 = function($a, $b, $c) {
+    return [$a, $b, $c];
+};
+$append1And2 = partial($append3)(1)(2);
+$append1And2(5)
+//[1,2,5]
+$append1And2(9)
+//[1,2,9]
+</code></pre>
+</div>
+
+<p>Uma implementação básica de aplicação parcial é assim:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>function partial(callable $callable, ...$args) {
+    $arity = (new \ReflectionFunction($callable))
+        -&gt;getNumberOfRequiredParameters();
+    return $args[$arity - 1] ?? false
+    ? $callable(...$args)
+    : function (...$passedArgs) use ($callable, $args) {
+        return partial($callable,
+            ...array_merge($args, $passedArgs)
+        );
+    };
+}
+</code></pre>
+</div>
+
+<p>Não é importante entender como a função partial funciona. O
+importante é compreender como usá-la. Com aplicação parcial em mãos
+conseguimos separar a construção da nossa função de seu uso.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$getProfileConcrete = partial('getProfile')([$db, 'query']);
+$getProfileConcrete(666);
+//[
+//  'id' =&gt; 666,
+//  'name' =&gt; 'Gandalf',
+//]
+</code></pre>
+</div>
+
+<p>Feito. Agora cumprimos o primeiro requisito da forma mais simples possível.
+Vamos ao segundo.</p>
+
+<h2 id="req2---guardar-em-cache-1">Req2 - Guardar em cache</h2>
+
+<p>Primeiramente temos que pensar qual é a essência do problema que
+estamos resolvendo. O cache está servindo o propósito de quando os
+dados de uma chamada já estão dispiníveis pegar do cache, senão
+pegar da própria chamada. Existe um design pattern exatamente com esse
+propósito chamado <a href="https://en.wikipedia.org/wiki/Memoization">memoize</a>.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>function memoize($func)
+{
+    return function() use ($func)
+    {
+        static $cache = [];
+
+        $args = func_get_args();
+        $key = md5(serialize($args));
+
+        if ( ! isset($cache[$key])) {
+            $cache[$key] = call_user_func_array($func, $args);
+        }
+
+        return $cache[$key];
+    };
+};
+</code></pre>
+</div>
+
+<p>Como apontei anteriormente o fato do guardar em cache estar dentro do get
+profile era um problema. Com o memoize é o contrário que acontece. O memoize
+recebe uma função e só executa ela (caso necessário). A diferença nesse caso é o
+acoplamento. Antes a função get-profile tinha  uma operação específica de cache
+dentro dela. Agora temos uma implementação genérica de cache que pode ser usada
+em qualquer função.</p>
+
+<p>E como juntamos as duas coisas?</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$getProfileConcrete = partial('getProfile')([$db, 'query']);
+$getProfileConcreteMemoized = memoize($getProfileConcrete);
+$getProfileConcreteMemoized(666);
+//GO TO THE DATABASE
+//[
+//  'id' =&gt; 666,
+//  'name' =&gt; 'Gandalf',
+//]
+$getProfileConcreteMemoized(666);
+//DON'T GO TO THE DATABASE
+//[
+//  'id' =&gt; 666,
+//  'name' =&gt; 'Gandalf',
+//]
+</code></pre>
+</div>
+
+<p>Agora compomos a função get profile com o memoized gerando uma nova função:
+<code class="highlighter-rouge">getProfileConcreteMemoized</code>. O comportamento é exatamente o mesmo do exemplo
+(1) . Quanto ao funcionamento, antes contruíamos tudo de antemão no construtor
+e, em runtime, executávamos a api. Agora vamos reduzindo as funções aplicando
+suas dependências até sobrar apenas a interface que queremos expor em runtime
+<code class="highlighter-rouge">callable(int $id)</code>. Se precisamos fazer algo extra na função colocamos funções
+ao redor dela.</p>
+
+<p>Vamos revisar os problemas levantados anteriormente. Antes era difícil testar,
+agora é trivial, <em>nada precisa ser mocado</em>, visto que as funcões fazem
+apenas uma coisa. <strong>As funções são intuitivas</strong>. Quem vai disputar que a
+implementação mais simples de get-profile é a demonstrada acima? E isso é um
+fator vital na construção de sistemas que duram. O fato de ser difícil (e feio)
+adicionar complexidade por dentro (complexidade vertical), ao invés de por
+fora (complexidade horizontal). Pra adicionar mais requisitos ao get profile é
+trivial.</p>
+
+<p>É só seguir a seguinte fórmula:</p>
+
+<p><strong>1 - Qual é a interface mais simples e indiscutível do problema que eu preciso
+resolver?</strong></p>
+
+<p>Vamos dizer que é um logger</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$logger = function(string $str);
+</code></pre>
+</div>
+
+<p>Bom, a interface mais simples é receber uma string pra logar.
+Se for um log de arquivo talvez tenha que ser maior:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$fileLoger = function($fileName, string $str) {
+    file_put_contents($fileName, $str);
+};
+</code></pre>
+</div>
+
+<p><strong>2 - Use aplicação parcial pra injetar dependências</strong></p>
+
+<p>Na hora de usar só estamos interessados em passar uma string, então vamos
+reduzir com aplicação parcial:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$fileLoggerContrete = partial($fileLogger)('/tmp/foo');
+</code></pre>
+</div>
+
+<p>Feito. Temos um logger.</p>
+
+<p><strong>3 - Junte as funções com composição horizontal</strong></p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$serviceLogger = (callable $logger, $serviceName, callable $service) {
+    return function ($args) use ($logger, $service, $serviceName) {
+        $logger("Service ".$serviceName." called with params ".serialize($args));
+        return call_user_func($service, $args);
+    }
+};
+
+$loggedGetProfile = $serviceLogger(
+    $fileLoggerContrete,
+    'getProfile',
+    $getProfileConcreteMemoized
+);
+
+//GO TO THE DATABASE
+//[
+//  'id' =&gt; 666,
+//  'name' =&gt; 'Gandalf',
+//]
+// AND LOG
+// Service getprofile called with params {666}
+</code></pre>
+</div>
+
+<p>Pronto! Implementamos um get-profile que guarda em cache e faz log sem precisar
+sujar o código get-profile. Melhor que isso. Todos esses componenetes criados
+são de propósito genérico e podem compor outros serviços sem nenhuma duplicação.
+Outro ponto iteressante é que reduzindo as api’s as seus callables fundamentais
+não temos nenhum acoplamento a biblioteca de terceiros no código em si.</p>
+
+<p>Ouvi boatos que aplicação parcial está vindo para o PHP como um componente da
+linguagem. Se isso acontecer vamos começar a ver cada vez mais implementações
+nesse estilo. Mas nada impede de começarmos agora :).</p>
+
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

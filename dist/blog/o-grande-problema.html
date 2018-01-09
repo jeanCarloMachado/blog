@@ -51,22 +51,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p class="post__date">December 26, 2017</p>
     <p class="post__meta"></p>
     <div class="post__content"?>
-        <p>Minha experiência como programador me levou a formar fortes opiniões
-sobre o que faz um software apodrecer. E de longe o maior problema que
-encontrei é a <strong>vontade do desenvolvedor ser proativo construindo coisas
-que ele não precisa no momento</strong>. Sim proatividade pode ser ruim. E <em>o
-maior inimigo do programador é ele mesmo</em>.</p>
+        <p>Desde que comecei a me interessar por programação o assunto: “como fazer um
+software que eu não venha a odiar” sempre pairou no topo das minhas preocupações.
+Com o tempo formei fortes opiniões.  Dei algumas <a href="https://www.slideshare.net/jeancarlomachado">palestras de clean code</a>. Mas não foi até recentemente que tive uma epifania sobre o maior problema que torna nossa profissão miserável.</p>
 
-<p>Esse problema se aprensenta em várias maneiras:</p>
+<p>De longe o maior problema na vida do programador é a <strong>vontade do programador de 
+ser proativo construindo coisas que ele não precisa no momento</strong>. Sim,
+<a href="http://www.jeancarlomachado.com.br/blog/thedestructivepowerofproactiveincompetents.html">proatividade pode ser ruim</a>. E <em>o maior inimigo do programador é ele mesmo</em>.</p>
+
+<p>Esse problema se aprensenta de várias formas:</p>
 
 <ul>
-  <li>criar um sistema mais “flexível” pros requisitos que podem aparecer</li>
-  <li>adicionar um código que vai entrar na próxima tarefa</li>
+  <li>criar um sistema mais “flexível” para os requisitos que podem aparecer</li>
+  <li>adicionar código que vai entrar na próxima tarefa</li>
   <li>otimizar qualquer parte do sistema para usuários que você ainda não tem</li>
-  <li>instalar frameworks “fullstack” sem precisar usar ele completamente</li>
+  <li>instalar frameworks “fullstack” sem precisar usar eles completamente</li>
 </ul>
 
-<p>E as consequências desse tipo de atitude incluem:</p>
+<p>E as consequências desse tipo de atitude incluem (mas não se limitam) a:</p>
 
 <ul>
   <li>código desnecessariamente complexo de entender e manter</li>
@@ -87,24 +89,36 @@ similar.  Vou fazer x nessa parte do componente pra depois ficar mais fácil</li
   <li>vou fazer o compontente pra essa tarefa</li>
 </ol>
 
-<p>Tô aqui pra defender que o passo 3 é sempre prejudicial. E quase nunca fica mais
-fácil. O contrário ocorre.</p>
+<p>Tô aqui pra defender que o passo 3 é sempre prejudicial.</p>
 
 <p>O problema de assumir coisas é que a disciplina de software é complexa demais
-pra conseguirmos ser certeiros. São muitas as variáveis que vão decidir pra onde
-um sofware vai evoluir. E geralmente o software não evolui pra onde queremos. Uncle Bob certa vez disse que o melhor arquiteto
+pra conseguirmos ser acurados. São muitas as variáveis que vão decidir pra onde
+um sofware vai evoluir. E geralmente o software não evolui pra onde queremos. Uncle Bob acerta quando diz que o melhor arquiteto
 é aquele que consegue <a href="http://blog.cleancoder.com/uncle-bob/2016/01/04/ALittleArchitecture.html">fazer que as decisões não precisem ser tomadas</a>.
 E nada pior que tomar decisões quando ainda não temos o <a href="http://www.jeancarlomachado.com.br/blog/thelastresponsiblemoment.html">maior número de informações</a> disponíveis.</p>
 
-<p>Quando você não segue esse princípio geralmente vai voltar pra refazer a
-funcionalidade pois os requisitos eram diferentes. Ou vai descobrir tarde demais
-que uma interface seria melhor descrita de outra forma. Ou vai gastar 5x mais
-tempo pra otimizar algo que vai rodar uma vez, ou que nas próximas décadas não
-vai precisar do nível de performance que você previu.</p>
+<p>Muitos desenvolvedores talvez não sintam a dor desse problema (ou não
+identificaram a raíz do problema). Especialmente se trocam de projeto
+continuamente. A dor de ter “pensado adiante” ocorre com muito mais
+clareza em produtos. Quando o lifetime é muito grande. Quando você tem
+que lidar com decisões de meses atrás. Aí fica muito claro pra você
+que não importa quanta “boa vontade” você teve em planejar pro futuro.
+Ele é muito diferente do que você planejou. E geralmente muito mais simples.</p>
 
-<p>O nome da prática que defendo aqui é o <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>. Não assumir que você vai precisar de coisas que você não sabe. E a considero um hábito fundamentador. Quando você se alinha com esse princípio outras práticas se tornam quase mandatórias. YAGNI te força a escrever testes pra conseguir refatorar na mudança dos requisitos. Força a apreciar <a href="http://www.jeancarlomachado.com.br/blog/interfaceless_programming.html">interfaces específicas e minimalistas</a> que são facilmente trocáveis. Força compor essas pequenas interfaces ao invés de criar dependências verticias.</p>
+<p><img src="https://i.imgur.com/hzMjBjY.jpg" alt="good bike bad bike" /></p>
 
-<p>Ou seja, quer escrever bom software? Não caia na armadilha de assumir coias :).</p>
+<p>O nome da prática que defendo aqui é <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>. Não assumir que você vai precisar de coisas que você não tem certeza. YAGNI não é uma defesa de código que não pode ser tocado.
+Não quer dizer que você não pode refatorar. Se for pra aumentar a clareza do que
+já existe você <a href="http://www.jeancarlomachado.com.br/blog/quando-refatorar.html">DEVE refatorar</a>. YAGNI é sobre não assumir coisas sem evidências. Uma forma de honestidade consigo mesmo e com o código.</p>
+
+<p>Considero o YAGNI um hábito fundamental. Quando você se alinha
+com esse princípio outras práticas se tornam quase mandatórias.
+YAGNI te força a escrever testes pra conseguir refatorar na mudança
+dos requisitos. Força a apreciar <a href="http://www.jeancarlomachado.com.br/blog/interfaceless_prog
+ramming.html">interfaces específicas e minimalistas</a> que são facilmente substituíveis. Força compor essas
+pequenas interfaces ao invés de criar dependências verticias.</p>
+
+<p>Resumindo, quer escrever bom software? Não caia na armadilha de assumir coisas :).</p>
 
     </div>
 
@@ -147,6 +161,11 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
                     });
                     });
 </script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
     </div>
 </body>

@@ -71,7 +71,6 @@ ul {
   .post__title {
     font-size: 1.6em;
     font-weight: 700;
-    text-decoration: underline;
     margin-top: 20px;
     margin-bottom: 5px; }
   .post__date {
@@ -80,7 +79,7 @@ ul {
   .post__content {
     padding-top: 40px; }
     .post__content h1 {
-      font-size: 1.25em;
+      font-size: 1.55em;
       font-weight: 700;
       margin-top: 30px;
       margin-bottom: 5px; }
@@ -118,26 +117,6 @@ ul {
         .post__content img {
           width: 100%;
           margin: auto; } }
-    .post__content code {
-      padding: 3px;
-      font-size: 0.9em;
-      border-radius: 3px;
-      background: #EEEEEE; }
-    .post__content .highlight {
-      margin: 10px;
-      margin-bottom: 15px;
-      padding: 10px;
-      line-height: 1.5;
-      border-radius: 3px;
-      background: #272727; }
-      .post__content .highlight code {
-        color: #00FF00;
-        background: none;
-        padding: 0; }
-    .post__content .codebreak {
-      margin: 15px;
-      border: 0;
-      border-bottom: 1px dashed #272727; }
 
 .about__title {
   font-size: 1.6em;
