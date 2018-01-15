@@ -1,5 +1,8 @@
 all: watch
 
+install:
+	bundle install
+
 build: clear
 	cp -rf ${POSTS_DIR} _posts || true
 	bundle exec jekyll build
