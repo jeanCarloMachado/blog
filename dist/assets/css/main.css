@@ -86,7 +86,8 @@ ul {
     .post__content p {
       font-size: 1em;
       line-height: 150%;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      text-align: justify; }
     .post__content a {
       text-decoration: underline; }
       .post__content a:hover {
