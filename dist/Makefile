@@ -16,5 +16,5 @@ clear:
 	rm -rf dist || true
 	rm -rf _posts || true
 deploy:  build
-	cd /home/jean/projects/blog
-	rsync -a dist/ root@$(BLOG_IP):/var/www/html
+	aws s3 cp dist/ s3://jeancarlomachado.site/ --recursive
+	aws cloudfront create-invalidation --distribution-id E1U7JVZD6QDSC6 --paths /*

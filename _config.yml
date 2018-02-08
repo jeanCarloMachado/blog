@@ -5,10 +5,10 @@ permalink: /blog/:title.html
 
 # My variables
 name: Jean Carlo Machado
-description: My personal blog
+description: Personal blog
 google_verification: null
 keywords: Jean, Developer, Sowftware
-url: http://jeancarlomachado.com.br/
+url: http://jeancarlomachado.net
 
 # File management
 include: [".htaccess"]
