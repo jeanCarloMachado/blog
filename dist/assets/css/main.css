@@ -113,7 +113,8 @@ ul {
           margin-left: 10px; } }
     .post__content img {
       margin-top: 10px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      max-width: 600px; }
       @media screen and (max-width: 600px) {
         .post__content img {
           width: 100%;
