@@ -4,7 +4,7 @@
 body {
     color: #272727;
     background: #FFFFFF;
-    font-family: 'Libre Baskerville';
+    font-family: 'Monaco';
     font-size: 100%;
     font-weight: 400;
 }
@@ -33,14 +33,13 @@ a {
 }
 ul {
     list-style: none;
+    padding: 0px;
     li {
-        padding: 5px;
-        padding-left: 10px;
-        @media screen and (max-width: 600px) {
-            padding: 10px 0 10px 0;
-        }
+        padding: 0px 0 10px 0;
     }
 }
+
+
 
 
 .wrapper {
@@ -69,7 +68,6 @@ ul {
         margin-top: 10px;
         li {
             display: inline;
-            padding: 0;
             padding-left: 5px;
         }
     }
@@ -85,6 +83,7 @@ ul {
 
 
 .post {
+    font-family: 'Libre Baskerville';
     padding-bottom: 30px;
     &__title {
         font-size: 1.6em;
