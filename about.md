@@ -2,10 +2,11 @@
 layout: about
 ---
 
-Hi, my name is Jean Carlo Machado. I'm a 25 years old, lead engineer at
-[CompuFácil](http://compufacil.com.br/), a financial management startup
-that focuses on user experience and simplicity. I specially care about
-science and open-source. I'm a citizen of the world.
+
+My name is Jean Carlo Machado, I'm a backend engineer at GYG. I
+care about science and open-source. I speak on software
+conferences and give courses on free technologies I'm passionate about.
+On my spare time I read, write and play the violin.
 
 Below are some of my breadcrumbs on the Web.
 
