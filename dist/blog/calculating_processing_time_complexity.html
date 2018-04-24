@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="O notation, algorithms complexity">
+    
+
+    
+        <title>Calculating processing time complexity</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Calculating processing time complexity</h1>
+    <p class="post__date">March 30, 2017</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I’m gonna solve a complexity analysis problem today. The objective of
+this process is to get a result of the complexity of the given algorithm
+in the O notation. Mastering the concepts here demonstrated enables one
+to measure the cost of any algorithm for any given input.</p>
+
+<h2 id="o-notation">O notation</h2>
+
+<p>For starters, the O notation demonstrates the theoretical cost of some
+algorithm, not the real one. Its goal is to get a generalizable approach
+to access complexity of algorithms. So the O notation discards every
+aspect that is specific to a given machine in which the algorithm
+is running on. It measures only the amount of “work” necessary for
+processing a bunch of data. With that, one is able to know the cost of
+the algorithm as the size of data grows.</p>
+
+<p>Some examples of the O notation you might find everywhere are:</p>
+
+<p>$ O(1) $</p>
+
+<p>Means that the time for some function to return the data does not grow
+with the size to the input.</p>
+
+<p>$ O(log  n) $</p>
+
+<p>Means that the time to compute the function increases in
+a logarithmic magnitude in comparison to the input.</p>
+
+<p>$ O(n) $</p>
+
+<p>Means that the time to compute some function increases
+linearly as the input increases.</p>
+
+<p>$ O(n!) $</p>
+
+<p>Means that its computing time increases by factorial terms
+(exponentially).</p>
+
+<p>I built a comparison of the growing curves for the above
+notations.
+<img src="http://i.imgur.com/2Yl0XjB.png" alt="O notation comparison" /></p>
+
+<h2 id="the-algorithm">The algorithm</h2>
+
+<p>Now let’s take a look at the algorithm we will access complexity.</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+</span>
+<span class="cp">#define TABLE_SIZE 2
+</span>
+<span class="kt">void</span> <span class="nf">display_boolean_table</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">vector</span><span class="p">,</span> <span class="kt">int</span> <span class="n">iterator</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">iterator</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="n">iterator</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'0'</span><span class="p">;</span>
+        <span class="n">display_boolean_table</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">iterator</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+        <span class="n">vector</span><span class="p">[</span><span class="n">size</span><span class="o">-</span><span class="n">iterator</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'1'</span><span class="p">;</span>
+        <span class="n">display_boolean_table</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">iterator</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">vector</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">vector</span><span class="p">;</span>
+    <span class="n">vector</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="n">TABLE_SIZE</span><span class="p">);</span>
+    <span class="n">display_boolean_table</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">TABLE_SIZE</span><span class="p">,</span> <span class="n">TABLE_SIZE</span><span class="p">);</span>
+    <span class="n">free</span> <span class="p">(</span><span class="n">vector</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This algorithm prints a boolean table given the TABLE_SIZE.
+If it has a size of 2, the output will be like this:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>0
+0
+0
+1
+1
+0
+1
+1
+
+</code></pre>
+</div>
+
+<h2 id="recurrence-relationship">Recurrence relationship</h2>
+
+<p>So, the first step is to find the recurrence relationship. The
+recurrence relationship is an mathematical approximation of the
+time taken by the algorithm.</p>
+
+<p>$ T(n)  = 2T(n-1) + O(1)$</p>
+
+<p>$ T(0)  = O(T) $</p>
+
+<p>The recurrence relationship above is demonstrating that the
+cost to compute an input of size <code class="highlighter-rouge">n</code> is two times the size of <code class="highlighter-rouge">n</code>,
+since the function is calling itself two times
+inside the algorithm. But at each recursive call the iterator is
+decremented, so the cost must be <code class="highlighter-rouge">-1</code>. So we got <code class="highlighter-rouge">2T(n-1)</code>. For the
+<code class="highlighter-rouge">O(1)</code> part, it composes the rest of the processing
+(without recursive calls and without the else.</p>
+
+<p>For the last part of the formula, that is executed when <code class="highlighter-rouge">iterator =
+0</code>, the have <code class="highlighter-rouge">O(T)</code>. Which implies that the cost to execute the
+<code class="highlighter-rouge">for</code> loop  is equal the size of the input, so <code class="highlighter-rouge">O(n)</code>.</p>
+
+<p>We are not done. With the recurrence relationship we get a math
+approximation of the algorithm itself. But to get a good notion of cost
+we need a more generalized version of it. For that we use something
+similar a proof by induction.</p>
+
+<h2 id="get-the-base-of-tn">Get the “base” of T(n)</h2>
+
+<p>We have to find a value for <code class="highlighter-rouge">T(n)</code> to see if we can infer a
+pattern of its output. So let’s assume a value for n and
+simplify it until we get a proper sequence of <code class="highlighter-rouge">T(n)</code>. Let’s start
+with 4.</p>
+
+<p>$ T(4) = 2T(3) + 1 $</p>
+
+<p>So, to know <code class="highlighter-rouge">T(4)</code> we need to know <code class="highlighter-rouge">T(3)</code>. More exactly, we need
+to know <code class="highlighter-rouge">2T(3)</code>. So let’s place it on the left side of our formula
+and apply the necessary modifications on the right.</p>
+
+<p>$ 2T(3) = 2^2T(2) + 2 $</p>
+
+<p>So two times <code class="highlighter-rouge">T(3)</code> is two times <code class="highlighter-rouge">T(2)</code> plus <code class="highlighter-rouge">2</code>. Now we need to
+know the value of $ 2^2T(2) $, let’s repeat the operation.</p>
+
+<p>$ 2^2T(2) = 2^3T(1) + 2^2 $</p>
+
+<p>Once again we repeat the operation, until we get on <code class="highlighter-rouge">T(0)</code> which
+we already know the value <code class="highlighter-rouge">T(0) = O(T) = 4</code>.</p>
+
+<p>$ 2^3T(1) = 2^4T(0) + 2^3 $</p>
+
+<p>So let’s cancel the duplicates in both sides to get our proper
+sequence.</p>
+
+<p>$ T(4) = \cancel{2T(3)} + 1 $</p>
+
+<p>$ \cancel{2T(3)} = \cancel{2^2T(2)} + 2 $</p>
+
+<p>$ \cancel{2^2T(2)} = \cancel{2^3T(1)} + 2^2 $</p>
+
+<p>$ \cancel{2^3T(1)} = 2^4T(0) + 2^3 $</p>
+
+<p>So in the end we get a proper growing sequence.</p>
+
+<p>$ T(4) = 1 + 2 + 2^2 + 2^3 + 2^4.4 $</p>
+
+<h2 id="generalize-tn-by-its-base-output">Generalize T(n) by it’s base output</h2>
+
+<p>With this pattern in hand we can generalize the cost per increment of n.</p>
+
+<p>$ T(n) = \sum_{i=0}^{n-1} 2^i  + 2^nn $</p>
+
+<p>And we can simplify the sum like the following:</p>
+
+<p>$  \sum_{i=0}^{n-1} 2^i  = 2^n - 1 $</p>
+
+<p>So we got:</p>
+
+<p>$ T(n) = 2^n - 1  + 2^nn $</p>
+
+<p>Finally we got an interesting generalization. We just have to extract
+the O notation from it. We want to know the theoretical cost of running
+the algorithm as the input grows. For that we just need the most costly
+part.</p>
+
+<p>And in this case the most costly part of the function is $2^nn$.
+In technical terms $2^nn$ grows asymptotically the rest of the
+function. So for the sake of complexity analysis the result is $O(2^nn)$.</p>
+
+<p>This cost is exponential so we may say properly that the algorithm is
+inefficient.</p>
+
+<p>I plotted the time cost of the function for 20 iterations. Take a
+look:</p>
+
+<p><img src="http://i.imgur.com/t4FgDpc.png" alt="Time cost" /></p>
+
+<p>And the complete equation compared with it’s O notation relevant
+part. Note how they practically don’t diverge, since the $ 2^nn $
+is much more expensive then the rest.</p>
+
+<p><img src="http://i.imgur.com/XJNhb2d.png" alt="Time cost comparisom" /></p>
+
+<p>That’s all, any doubts comment below.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Setup manual de views no ZF2</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Setup manual de views no ZF2</h1>
+    <p class="post__date">June 3, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Algum tempo atrás tive que setar from scratch uma camada de view
+Zend 2 para meu ambiente de testes. Segue aí a solução caso alguém
+precise de algo similar.</p>
+
+<p>A camada de view do Zend Framework 2 é composta por vários
+componentes - estruturados independentemente para permitir extensão e
+múltiplos usos. A documentação do Zend Framework aponta os seguintes
+componentes:</p>
+
+<ul>
+  <li>Contedores de variáveis: guardam variáveis e callbacks para
+serem representados na view</li>
+  <li>
+    <p>Modelos de visão (view-models): armazenam Contedores de variáveis, especificam qual template
+será utilizado, e implementam o padrão de software (Composite)[https://en.wikipedia.org/wiki/Composite_pattern]</p>
+  </li>
+  <li>
+    <p>Renderizadores: dado um Modelo de Visão, provêm uma representação
+do mesmo para ser retornado. O Zend Framework disponibiliza três
+renderizadores padrão: 1. PhpRenderer 2. JsonRenderer 3. FeedRenderer</p>
+  </li>
+  <li>Resolvedores: Utilizam de Strategies para mapear um template para
+um recurso que o Renderizador poderá consumir. - Estratégias de
+renderização - Estratégias de resposta</li>
+</ul>
+
+<p>Um processo de renderização Zend 2 se dá da
+seguinte forma: O Zend recebe uma requisição do usuário, ele faz
+todo o processamento prévio a view e A view do Zend 2 consiste em
+estratégias que mapeaiam as requisições para um renderizador e
+estratégias para injetar o resultado de uma renderização na resposta.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$renderer = new \Zend\View\Renderer\PhpRenderer();
+
+$translate = new \Zend\I18n\View\Helper\Translate();
+$translate-&gt;setTranslator( (new
+\Zend\I18n\Translator\TranslatorServiceFactory())-&gt;createService
+($serviceLocator) );
+
+$helperPluginManager = new \Zend\View\HelperPluginManager();
+$helperPluginManager-&gt;setService('translate', $translate);
+
+$renderer-&gt;setHelperPluginManager($helperPluginManager);
+
+$resolver = new \Zend\View\Resolver\AggregateResolver();
+
+$renderer-&gt;setResolver($resolver);
+
+$stack = new \Zend\View\Resolver\TemplatePathStack(array(
+'script_paths' =&gt; array( getenv('PROJECT_ROOT').  '/module/Application/view', ) ));
+
+$map = new \Zend\View\Resolver\TemplateMapResolver([
+'email-layout' =&gt; getenv('PROJECT_ROOT').
+'/module/Core/view/layout/layout-email.phtml' ]);
+
+$resolver-&gt;attach($stack);
+
+return $renderer;
+</code></pre>
+</div>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Search and Replace on console</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Search and Replace on console</h1>
+    <p class="post__date">June 26, 2014</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>My intent with this post is to enumerate the ways I know of searching
+and replacing in unix consoles. In the end I’ll elect the best one.</p>
+
+<h2 id="searching">Searching</h2>
+
+<h3 id="grep-grep--r-foo-bar">Grep <code class="highlighter-rouge">grep -R "foo" ~/bar</code></h3>
+
+<h3 id="ack">Ack</h3>
+
+<p><code class="highlighter-rouge">ack -R "foo" ~/bar</code></p>
+
+<h2 id="search-and-replace">Search and Replace</h2>
+
+<h3 id="awk-awk-gsubpatternreplacement-file">Awk <code class="highlighter-rouge">awk '{gsub(/pattern/,"replacement")}' file</code></h3>
+
+<h2 id="perl-perl--pi--w--e-ssearch_forreplace_withg-txt">Perl <code class="highlighter-rouge">perl -pi -w -e 's/SEARCH_FOR/REPLACE_WITH/g;' *.txt</code></h2>
+
+<h3 id="search-with-backup">Search with backup</h3>
+
+<p><code class="highlighter-rouge">perl -e "s/old_string/new_string/g;" -pi.save $(find DirectoryName
+-type f)</code></p>
+
+<h3 id="tr">Tr</h3>
+
+<p><code class="highlighter-rouge">tr 'string to be converted' 'string to replace' &lt;file.txt |tee
+file.txt</code></p>
+
+<h3 id="find-e-sed">Find e Sed</h3>
+
+<p><code class="highlighter-rouge">find module/ -name "*.php" -exec sed -i "s/Importando/Importing/g"
+{} \;</code></p>
+
+<h3 id="find-sed-e-xargs">Find, Sed e Xargs</h3>
+
+<p><code class="highlighter-rouge">find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'</code></p>
+
+<hr />
+
+<h2 id="grep-e-xargs">Grep e Xargs</h2>
+
+<p>Este método eu utilizo para buscar e fazer algo diferente de
+substituir.</p>
+
+<p><code class="highlighter-rouge">ls -a | egrep -l '^\..{2,}' | xargs rm -rf {} \;</code></p>
+
+<p>O <code class="highlighter-rouge">l</code> como parametro para o egrep serve para que o comando mostre
+somente os nomes dos arquivos, ideal para utilizar com comandos.</p>
+
+<h1 id="the-best-one">The best one</h1>
+
+<h1 id="searching-ack--rl-pattern-to-search">Searching <code class="highlighter-rouge">ack -Rl "pattern to search"</code></h1>
+
+<h1 id="replacing--s1pattertosearch-ack--rl-s1--xargs-sed--i">Replacing ``` s1=”patterToSearch” ack -Rl $s1 | xargs sed -i</h1>
+<p>”s/$s1/patternToReplace/g” ```</p>
+
+<h2 id="references">References</h2>
+
+<p>1.
+http://lifehacker.com/5810026/quickly-find-and-replace-text-across-multi
+ple-documents-via-the-command-line 2.
+http://askubuntu.com/questions/20414/find-and-replace-text-within-a-file
+-using-commands 3.
+http://www.brunolinux.com/02-The_Terminal/Find_and%20Replace_with_Sed.ht
+ml 4.
+https://rushi.wordpress.com/2008/08/05/find-replace-across-multiple-file
+s-in-linux/</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

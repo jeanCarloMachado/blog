@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>curl, Bash and Firefox mutualism</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">curl, Bash and Firefox mutualism</h1>
+    <p class="post__date">April 19, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>As my career directs me to an API First way of working I start to
+looking for ways to improve my development processes related to HTTP
+requests.</p>
+
+<p>One really nice work flow for debugging services is through
+CURL+Bash+Firefox ‘mutualism’. I’ll describe the precess I usually take
+below.</p>
+
+<h2 id="the-request">The Request</h2>
+
+<p>When I need to test a request there’s two common cases. First, I never
+used the request before so I have to write one from stratch with CURL.
+When the service is already being used I can simply <a href="http://i.imgur.com/hb1d23Z.png">get a copy of the
+CURL request made by the browser</a>.</p>
+
+<p>Any way, I usually end up with a request like this.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST -H "Authorization: token" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+http://clipp.dev/report/v1/finance.get_revenue.html  -d "filters[]"
+</code></pre>
+</div>
+
+<h2 id="automating-the-parts">Automating the parts</h2>
+
+<p>The next step I take is to update dynamic parts of the request through scripts.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST -H "Authorization: $(clipp-get-token)" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+http://clipp.dev/report/v1/finance.get_revenue.html  -d "filters[]"
+</code></pre>
+</div>
+<p>In this case I created a Bash script called <em>clipp-get-token</em>, it’s
+purpose is to return me a properly formatted and valid authentication
+token so I don’t have to bother with token timeouts.</p>
+
+<p>The relevant part of the script is as it follows.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>result=`curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
+-d "login=$user&amp;password=$passwd" http://clipp.dev/rpc/v1/application.authenticate.json`
+result=`echo $result | cut -d':' -f3 | cut -d'"' -f2`
+echo "$result"
+</code></pre>
+</div>
+
+<h2 id="the-result">The Result</h2>
+
+<p>The final step of the “mutualism” is, when appropriate, to redirect
+back to Firefox the request result so the browser is able to render it
+properly. There are many hard ways of doing that, like saving the CURL
+output on a file and opening it with Firefox. Hopefully I found out a
+way to send the CURL output to Firefox as a stream of text instead of a
+file.</p>
+
+<p>To achieve that, you must use firefox as it follows:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "stream" | firefox-developer "data:text/html;base64,$(base64 -w 0 &lt;&amp;0)"
+
+</code></pre>
+</div>
+
+<p><em>Note:</em> It only works with pipe, I’m yet to find a way to achieve the
+same with a redirection <code class="highlighter-rouge">&lt;&lt;</code>.</p>
+
+<p>This is specially useful when the server returns HTML because inspecting
+it on the terminal it’s not so good. But works as well with XML, even
+JSON is returned in a nice visual way.
+To illustrate a complete example of the flow is the request below.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST -H "Authorization: $(clipp-get-token)" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+http://clipp.dev/report/v1/finance.get_revenue.html  -d "filters[]" | sfox
+</code></pre>
+</div>
+
+<p>Sfox for <em>stream firefox</em> is simply a alias for the string previously
+showed, this way is clear and concise.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>alias sfox='firefox-developer "data:text/html;base64,$(base64 -w 0 &lt;&amp;0)"'
+</code></pre>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I like CURL on the terminal mainly because it’s more reliable for
+testing than on the application itself. The application is more propense
+to frontend bugs.</p>
+
+<p>Another good point of CURL is that it’s pure plain text so making
+scripts on Bash to it is extremly easy.</p>
+
+<p>Going further on my mutualism analogy, I could make an script to remove
+Firefox “crap headers” from the request. Another good point of research
+is to use the output as a parameter on an URL to be consumed and viewed
+through Firefox.</p>
+
+<p>Is up to the developer creativity to use old tools with new purposes and
+achieve new heights.</p>
+
+<p>Critics, advices and comments are appreciated.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

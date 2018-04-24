@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Dicas bash</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Dicas bash</h1>
+    <p class="post__date">March 12, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Este post é composto por um conjunto de dicas sobre bash que podem lhe ajudar a melhorar a performance com a ferramenta. Parte do material encontrei nas referências; não obstante, a grande maioria do conteúdo coletei de forma gradual conforme fui adquirindo experiência. O Bash, por default, utiliza com frequência os mesmos comandos que o Emacs, futuramente farei um post sobre como tornar o Bash mais parecido com o Vim.</p>
+
+<h2 id="Último-comando">Último comando</h2>
+<p>O fato deste grupo de funcionalidades não ser altamente conhecido por mais de uma vez me impressionou. Foi ele também o motivador da criação deste post.</p>
+
+<h3 id="reaproveitando-o-último-argumento-do-último-comando">Reaproveitando o último argumento do último comando</h3>
+<p><code class="highlighter-rouge">ESC+.</code> para repetir em seu bash o último argumento do último comando.</p>
+
+<h3 id="reaproveitando-o-último-comando">Reaproveitando o último comando</h3>
+<p>Utilize o comando <code class="highlighter-rouge">!!</code> para rodar o último comando e <code class="highlighter-rouge">!com</code> para rodar o último comando começando com <code class="highlighter-rouge">com</code>.</p>
+
+<h3 id="reaproveitando-a-saída-do-último-comando">Reaproveitando a saída do último comando</h3>
+<p>Se a saída do último comando foi de acordo com o esperado, você pode utilizá-la em outro comando utilizando <code class="highlighter-rouge">$(!!)</code>.</p>
+
+<h2 id="histórico">Histórico</h2>
+<ul>
+  <li><code class="highlighter-rouge">Ctrl-r</code>: Procurar no histórico (Enter quando encontrar o comando desejado para executá-lo).</li>
+  <li><code class="highlighter-rouge">Ctrl-r</code> duas vezes: procura no histórico o último item pesquisado.</li>
+  <li><code class="highlighter-rouge">Ctrl-g</code>: cancela a busca e retorna o comando antigo.</li>
+</ul>
+
+<h2 id="movimentações">Movimentações</h2>
+
+<p><code class="highlighter-rouge">Ctrl-Left|Right</code>: Navega palavra à palavra.</p>
+
+<h3 id="estilo-emacs">Estilo Emacs</h3>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl+a</code>: Move o cursor para o início da linha;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl+e</code>: Move o cursor para o final da linha;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl+f</code>: Move o cursor um caractere para a frente;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl+b</code>: Move o cursor um caractere para trás;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Alt+f</code>: Move o cursor uma palavra para a frente;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Alt+b</code>: Move o cursor uma palavra para trás.</p>
+  </li>
+</ul>
+
+<h2 id="modificação-de-strings">Modificação de strings</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-w</code>: Deleta toda a palavra à esquerda do cursor;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-k</code>: Deleta até o final da linha;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-u</code>: Deleta até o início da linha.</p>
+  </li>
+</ul>
+
+<h2 id="scroll-e-buffers">Scroll e buffers</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Shift-PageUp|PageDown</code>:  Faz scroll para cima;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-s</code>: Pausa a saída do terminal (o programa continua rodando);</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-q</code>: Libera a saída do terminal (depois de ter sido pausada);</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-l</code>: Limpa a tela.</p>
+  </li>
+</ul>
+
+<h2 id="controle-de-processos">Controle de processos</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-d</code>: <em>SIGKILL</em>;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-c</code>: mata o processo atual;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-z</code>: coloca o processo atual em background (<code class="highlighter-rouge">fg</code> para retornar).</p>
+  </li>
+</ul>
+
+<h2 id="bloqueando-e-desbloqueando-o-terminal">Bloqueando e desbloqueando o terminal</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-s</code> Bloqueia o terminal</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Ctrl-q</code> Desbloqueia o terminal</p>
+  </li>
+</ul>
+
+<h2 id="ranges">Ranges</h2>
+
+<h3 id="facilitando-o-backup">Facilitando o Backup</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cp /etc/http/conf.d/httpd.conf{,~}
+</code></pre>
+</div>
+<p>é equivalente à</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cp /etc/http/conf.d/httpd.conf /etc/http/conf.d/httpd.conf~
+
+</code></pre>
+</div>
+
+<h3 id="para-restaurar">Para restaurar</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cp /etc/http/conf.d/httpd.conf{~,}
+</code></pre>
+</div>
+
+<h3 id="ranges-em-meio-à-strings">Ranges em meio à strings</h3>
+
+<p>Geralmente não lembro desta funcionalidade nos raros casos que necessito dela mas algumas opções são:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /squashed/{usr,opt}/{rw,ro}
+</code></pre>
+</div>
+
+<p>equivalente à</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> mkdir -p /squashed/usr/rw \
+ /squashed/usr/ro \
+ /squashed/opt/rw \
+ /squashed/opt/ro
+</code></pre>
+</div>
+
+<h3 id="expansão-de-padrões">Expansão de padrões</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo {0..9}{A..Z}
+</code></pre>
+</div>
+<p>Imprime 260 combinações!</p>
+
+<p><strong>Novas dicas são extremamente bem vindas.</strong></p>
+
+<h2 id="referências">Referências</h2>
+<ol>
+  <li>http://feedproxy.google.com/~r/TheLinuxDaily/~3/kr-KdtCdank/</li>
+  <li>http://blog.falconindy.com/articles/savings-keystrokes-with-bash.html</li>
+  <li>http://teohm.com/blog/2012/01/04/shortcuts-to-move-faster-in-bash-command-line/</li>
+</ol>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

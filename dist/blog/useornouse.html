@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Use or no use</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Use or no use</h1>
+    <p class="post__date">April 28, 2016</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>After much discussing on pull requests and private chats here I’ll
+clarify my posture when dealing with the “use” statement versus the FQDN form of 
+importing classes.</p>
+
+<p>I would like to describe my opinions as the most pragmatic possible
+keeping clean code rules in mind. I’ll explain further this opinion.</p>
+
+<p>My posture can be generalized by the following rule: <em>if one use a
+class once it’s more economic, and don’t loose clarity, to use the<br />
+FQDN form; but if one use it twice or more it’s cheaper to use the use
+statement</em>.</p>
+
+<p>Let’s go to an example.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
+
+namepace MyProject;
+
+use MyProject\Car\PortInterface;
+
+class Car
+{
+    private $engine;
+    private $leftPort;
+    private $rightPort;
+
+    public function __construct(
+        \MyProject\Car\EngineInterface $engine,
+        PortInterface $leftPor, 
+        PortInterface $rightPort
+    )
+    {
+        $this-&gt;engine = $engine; 
+        $this-&gt;leftPort = $leftPort; 
+        $this-&gt;rightPort = $rightPort; 
+    }
+
+}
+
+</code></pre>
+</div>
+
+<p>As you can see, the port class is used twice and because of that I used
+the <em>use</em> statement. Now, since the Engine class I used a single time, I
+preferred to place the full FQDN.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "\MyProject\Car\EngineInterface" | wc -m
+31
+</code></pre>
+</div>
+<p>The engine as used above has 31 chars, on the use form I would
+have 35.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "use MyProject\Car\EngineInterface;" | wc -m
+35
+</code></pre>
+</div>
+
+<p>In the case of the ports, with the use I have 14 for each usage plus 33, totaling 61.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "PortInterface" | wc -m
+14
+
+echo "use MyProject\Car\PortInterface;" | wc -m
+33
+</code></pre>
+</div>
+
+<p>I would get 29, times two using FQDN, totaling 58
+chars.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "\MyProject\Car\PortInterface" | wc -m
+29
+
+</code></pre>
+</div>
+
+<p>61 is a little bigger than 58 but you can see how the use scales
+well for more occurrences. One might even use the alias resource
+to shorten the string for <em>Port</em> instead of <em>PortInterface</em> gaining
+18 chars!</p>
+
+<hr />
+
+<p>But some people might argue that I shouldn’t be so character
+pedantic. So let’s revise some other arguments.</p>
+
+<p>Anonymous - Maybe you should consider the namespace header as a form of
+centralizing all the dependencies?</p>
+
+<p><em>Since we are software craftsmen we are dealing with few
+dependencies and small classes so there’s no point in keeping them
+on the top, if a simple inspect on the file can give us the same clarity. And
+if one needs to count the coupling there’s tools for doing that.</em></p>
+
+<p>Anonymous - Maybe you should use the use alias resource as an easy
+way of swapping concrete classes? When an implementation changes
+it will be easier to change only the header of the document and
+not bothering of looking for the FQDN’s on the file.</p>
+
+<p><em>One should depend only upon abstractions not concreteness,
+and abstractions don’t change.
+And even if you depend upon some sporadic concreteness the as
+a clean coder your classes will be little so no problem in changing a
+few occurrences.</em></p>
+
+<p>Anonymous: It’s more performatic to use only FQDN’s.</p>
+
+<p><em>I’m not really sure about if it really is. Anyway, as a writer of
+software aming for people, that eventually will run on computers,
+one should keep in mind that micro optimizations like that are never
+welcome. It’s much better to think for clarity, instead of performance
+in these cases.</em></p>
+
+<p>Stated that I think my point remains true. The best selection script to
+choose between FQDN’s and uses is the programmer ease and readability.
+And thinking on that, my opinion is that first time use the FQDN, if the
+class repeats itself then move it to the header.</p>
+
+<p>Probably there some edge cases that these statements don’t apply,
+but generally I think they do. And I don’t see them as a kind of
+rule. The only rule is do do the code as cleaner as reasonably possible.</p>
+
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

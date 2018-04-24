@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>The pragmatic programmer notes</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">The pragmatic programmer notes</h1>
+    <p class="post__date">April 3, 2014</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Here are some of the key aspects of this amazing book: The pragmatic programmer.
+If you like these sparse ideas and want to go a step further I recommend that you buy the book.</p>
+
+<h2 id="characteristics-of-pragmatic-programmers">Characteristics of pragmatic programmers</h2>
+
+<ul>
+  <li>Early adopter/fast adapter;</li>
+  <li>Inquisitive;</li>
+  <li>Critical Thinker;</li>
+  <li>Realistic;</li>
+  <li>Jack of all trades;</li>
+</ul>
+
+<hr />
+
+<p>Within the overall structure of a project there is always room for individuality and craftsmanship. This is particular by true given the current state of software engineering. One hundred years from now, our engineering may seem as archaic as the techniques used by medieval cathedral builders seem to today’s civil engineers, while our craftsmanship will still be honored.</p>
+
+<hr />
+
+<p>Before you approach anyone to tell them why something cant be done, is late, or is broken, stop and listen to yourself. Talk to the rubber duck on your monitor, or the cat. Do your excuse sound reasonable, or stupid? How’s it going to sound to your boss?</p>
+
+<p>Run through the conversation in your mind. What is the other person likely to say? Will they ask, “Have your tried this..”  or “Didn’t you consider that?” How will you respond? Before you go and tell them the bad news, is there anything else you can try? Sometimes, you just know what they are going to say, so save them the trouble.</p>
+
+<hr />
+
+<p>One broken window - a badly designed piece of code, a poor management decision that the team must live with for the duration of the project - is all it takes to start the decline. If you find yourself working on a project with quite a few broken windows, it’s all too easy to slip into the mindset of “All the rest of this code is crap, I’ll just follow suit.”</p>
+
+<hr />
+
+<h2 id="portfolio">Portfolio</h2>
+
+<ul>
+  <li>Serious investors invest regularly - as a habit</li>
+  <li>Diversification is the key to long-term success</li>
+  <li>Smart investors balance their portfolio between conservative and high-risk, high-reward investments</li>
+  <li>Inventors try to buy low and sell high for maximum return</li>
+  <li>Portfolios should be reviewed and rebalanced periodically</li>
+</ul>
+
+<hr />
+
+<h2 id="opportunities-for-learning">Opportunities for Learning</h2>
+
+<p>So you are reading voraciously, you are on the top of all latest breaking developments in your field (not an easy thing to do), and somebody asks you a question. You don’t have the faintest idea what the answer is, and freely admit as much.</p>
+
+<p>Don’t let it stop there. Take it as a personal challenge to find the answer.</p>
+
+<p>If you cant find the answer yourself, find out who can. Don’t let it rest. Talking to other people will help build your personal network, and you may surprise yourself by finding solutions to other, unrelated problems along the way. And the old portfolio just keeps getting bigger.</p>
+
+<p>If you ask someone a question, you feel they’re impolite if they don’t respond. But how often do you fail to get back to people when they send you and e-mail or a memo asking for information or requesting some action? In the rush of everyday life, it’s easy to forget. Always respond to e-mails, even if the response is simple “I’ll get back to you later.” Keeping people informed makes them far more forgiving of the occasional slip, and makes them feel that you haven’t forgotten them.</p>
+
+<hr />
+
+<h2 id="orthogonality-of-systems">Orthogonality of systems</h2>
+
+<p>Two or more things are orthogonal if changes in one do not affect any of the others. In a well designed system, the database code will be orthogonal to the user interface: you can change the interface without affecting the database, and swap the database without affecting the interfaces.</p>
+
+<h3 id="benefits">Benefits:</h3>
+
+<ul>
+  <li>Eliminate effects between unrelated things.</li>
+  <li>Changes are localized.</li>
+  <li>Promotes reuse.</li>
+  <li>Disease sections of code are isolated.</li>
+  <li>The result system is less fragile.</li>
+  <li>Better tested.</li>
+  <li>Not tightly to a particular vendor.</li>
+</ul>
+
+<p>Have you noticed how some project teams are efficient, with everyone knowing what to do and contributing fully, while the members of other teams are constantly bickering and don’t seem able out of each others way?</p>
+
+<p>Often this is an orthogonality issue. When teams are organized with lots of overlap, members are confused about responsibilities. Every change needs a meeting of the entire team because any of the team might be affected.</p>
+
+<hr />
+
+<h3 id="law-of-demeter">Law of Demeter</h3>
+
+<p>If you need to change an object’s state, get the object to do it for you. This way code remains isolated from the other’s code’s implementation and increases the chances that you will remain orthogonal.</p>
+
+<p>Avoid similar functions - <strong>duplicated code is a symptom of structural problems</strong>.</p>
+
+<p><em>Building unit tests is itself an interesting test of orthogonality. What does it take to build and link a unit test? Do you have to drag in a large percentage of the rest of the system just to get the test compile or link? If so, you have found a module that is not well decoupled from the rest of the system.</em></p>
+
+<p>Bug fixing is also a good time to assess the orthogonality of the system as a whole. When you come across a problem, asses how localized the fix is. Do you change just one module, or the changes scattered thought the entire system? When you make a change, does it fix everything or the problems mysteriously arise? This is a good opportunity to bring automation to bear. If you use a source code control system tag bug fixes when you check the code back in after testing. You can run monthly reports analyzing trends in the number of source code files affected by each bug fix.</p>
+
+<hr />
+<h2 id="estimation">Estimation</h2>
+
+<p>By learning to estimate, and by developing this skill to the point where you have an intuitive feel for the magnitudes of things, you will be able to show an apparent magical ability to determine their feasibility. When someone says “well” send the backup over an ISDN line to the central site, “you’ll be able to know intuitively this is practical. When you’re coding, you’ll be able to know intuitively whether this is practical. When you’re coding, you’ll be able to know which subsystems need optimizing and which ones can be left alone.</p>
+
+<p>The first part of any estimation exercise is building an understanding of what’s being asked. As well as the accuracy issues discussed above, you need to have a grasp of the scope of the domain. Often this is implicit in the question, but you need to make it in a habit to think about the scope before starting to guess.</p>
+
+<h3 id="build-a-model">Build a model</h3>
+
+<p>Model building can be both creative and useful in the long term. Often the process of building the model leads to discoveries of underlying patterns and processes that weren’t apparent on the surface.</p>
+
+<h3 id="keep-track-of-your-estimating-prowess">Keep track of your estimating prowess</h3>
+
+<p>We think it’s a great idea to record your estimates so you can see how close you we’re. If an overall estimate involved calculating sub estimates, keep track of these as well.</p>
+
+<p>When an estimate turns out wrong, don’t just shrug and walk away.</p>
+
+<h3 id="what-to-say-when-asked-for-an-estimate">What to say when asked for an estimate</h3>
+
+<p>You say “I’ll get back to you”</p>
+
+<p>You almost always get better results if you slow the process down and spend some time going through the steps we describe in this section.Estimates given at the coffee machine will (like the coffee) come back to haunt you.</p>
+
+<hr />
+
+<h2 id="keep-knowledge-in-plain-text">Keep Knowledge in Plain Text</h2>
+
+<p>Benefits:</p>
+<ul>
+  <li>Insurance against obsolescence</li>
+  <li>Leverage (every tool in the computer universe can operate on plain text)</li>
+  <li>Easier testing</li>
+</ul>
+
+<h3 id="the-problem-of-guis">The problem of GUI’s</h3>
+
+<p>A benefit of GUIs is WYSIWYG - what you see is what you get. The disadvantage is WYSIAYG - what you see is <em>all</em> you get.</p>
+
+<p>Actions one cannot do with a GUI.</p>
+
+<ul>
+  <li>Find all .c files modified more recently than your makefile</li>
+  <li>Construct a zip/tar archive of my source</li>
+  <li>Which Java files have not been changed last week?</li>
+  <li>Of those files, which the awt libraries?</li>
+  <li>A list of all unique package names explicitly imported by your Java code.</li>
+</ul>
+
+<hr />
+
+<h2 id="one-editor">One Editor</h2>
+
+<p>Choose an editor, know it thoroughly, and use it for all editing tasks. If you use a single editor (or set of key bindings) across all text editing activities, you don’t have to stop and think to accomplish text manipulation: the necessary key strokes will be a reflex. The editor will be an extension of your hand; the keys will sing as they slice their way through text and thought. That’s our goal.</p>
+
+<p>A language to learn this year? Learn the language your editor uses.</p>
+
+<hr />
+
+<h2 id="source-code-control">Source code control</h2>
+
+<p>Make sure that everything is under source code control -  documentation, phone number lists, memos to vendors, makefiles, build and releases procedures, that little shell script that burns the CD master - everything.</p>
+
+<hr />
+
+<h2 id="debugging">Debugging</h2>
+
+<p>In the technical arena, you want to concentrate on fixing the problem, not the blame.</p>
+
+<p>Before you start debugging, it’s important to adopt the right mindset. You need to turn off many of the defenses you use each day to protect your ego, tune out any project pressures you may be under, and get yourself comfortable. Above all, remember the first rule of debugging:</p>
+
+<ul>
+  <li>Don’t Panic</li>
+</ul>
+
+<p>If your first reaction on witnessing a bug or seeing a bug report is “that’s impossible”, you are plainly wrong. Don’t waste a single neuron on the train of thought that begins “but that can’t happen” because quite clearly it <em>can</em>, and has.</p>
+
+<ul>
+  <li>Artificial tests don’t exercise enough of an application. You must brutally test both boundary conditions and realistic end-user usage patterns. You need this systematically.</li>
+</ul>
+
+<h3 id="bug-reproduction">Bug Reproduction</h3>
+
+<p>We want more than a bug that can be reproduced by following some long series of steps; we want a bug that can be reproduced with a single command. It’s a lot harder to fix a bug if you have to go through 15 steps to get to the point where the bug shows up. Sometimes by forcing yourself to isolate the circumstances that display the bug, you’ll even gain an insight on how to fix it.</p>
+
+<p>If you have no obvious place to start looking, you can always rely on a good old-fashioned binary search.</p>
+
+<p>The amount of surprise you feel when something goes wrong is directly proportional to the amount of trust and faith you have in the code being run. That’s why, when faced with a “surprising” failure, you must realize that one or more of your assumptions is wrong. Don’t gloss over a routine or piece of code involved in the bug because you “know” it works. Prove it. Prove it in the context, with this data, with these boundary conditions.</p>
+
+<p>If the bug is the result of bad data that was propagated through a couple of levels before causing the explosion, see if better parameter checking in those routines would have isolated it earlier.</p>
+
+<p>If it took a long time to fix this bug, ask yourself why. Is there anything you can do to make fixing this bug easier the next time around? Perhaps you could build in better testing hooks, or write a log file analyzer.</p>
+
+<p>Finally, if the bug is the result of someone’s wrong assumption, discuss the problem with the whole team: if one person misunderstands, then it’s possible many people do.</p>
+
+<hr />
+
+<h2 id="code-generators">Code generators</h2>
+
+<h3 id="passive-generators">Passive Generators</h3>
+
+<p>Passive code generators are run once to produce a result. From that point forward, the result becomes freestanding - it is divorced from do code generator.</p>
+
+<p>Uses:</p>
+
+<ul>
+  <li>Creating new source files;</li>
+  <li>Performing one-off conversions among programming languages;</li>
+  <li>Producing lookup tables and other resources that are expensive;</li>
+</ul>
+
+<h3 id="active-generators">Active Generators</h3>
+
+<p>Active code generators are used each time their results are required. The result is a throw away - it can always be reproduced by the code generator. Often, active code generators read some form of script or control file to produce their results.</p>
+
+<p>While passive code generators are simply a convenience their active cousins are a necessity if you want to follow the DRY principle. With an active code generator, you can take a single representation of some piece of knowledge and convert it into all forms your application needs. This is not duplication, because the derived forms are disposable and are generated as needed by the code generators (hence the word active).</p>
+
+<p>Whenever you find yourself trying to get two disparate environments to work together, you should consider active code generators.</p>
+
+<hr />
+
+<h2 id="pragmatic-paranoia">Pragmatic paranoia</h2>
+
+<p>Pragmatic programmers don’t trust themselves, either.</p>
+
+<hr />
+
+<h2 id="design-by-contract">Design by Contract</h2>
+
+<p>Be strict in what you sill accept before you begin, and promise as little as possible in return. Remember, if your contract indicates that you’ll accept anything and promise the world in return, then you’ve got a lot of code to write.</p>
+
+<p>The greatest benefit of using DBC may be that it forces the issue of requirements and guarantees to the forefront. Simply enumerating at design time what the input domain range is, what the boundary conditions are, and what the routine promises to deliver - or, more importantly, what it doesn’t promise to deliver - is a huge leap forward in writing better software. By not stating this things, you are back to programming by coincidence, which is where many projects start, finish and fail.</p>
+
+<p>It’s much easier to find and diagnose the problem by crashing early, at the site of the problem.</p>
+
+<hr />
+
+<h2 id="law-of-demeter-for-functions">Law of Demeter for functions</h2>
+
+<p>Any method of an object should call only methods belonging to: itself, any parameters received, any objects it creates and any directly held component objects.</p>
+
+<hr />
+
+<h2 id="meta-programming">Meta programming</h2>
+
+<p>We want to go beyond using meta data for simple preferences. We want to configure and drive the application via meta data as much as possible. Our goal is to think declaratively (specifying what is to be done, not how) and create highly dynamic and adaptable programs. We do this by adopting a general rule: program for the general case, and put the specifics somewhere else - outside the compiled code base. Put abstractions in code detail in Meta data.</p>
+
+<p>Benefits:</p>
+
+<p>It forces you to decouple your design, which results in a more flexible and adaptable program.</p>
+
+<p>It forces you to create a more robust abstract design by deferring details - deferring them all the way out of the program.</p>
+
+<ul>
+  <li>You can customize the application without recompiling it.</li>
+  <li>You can also use this level of customization to provide easy work around for critical bugs in live production systems.</li>
+  <li>Meta data can be expressed in a manner that’s much closer to the problem domain that in general-purpose programming language might be.</li>
+  <li>You may even be able to implement several different projects using the same application engine, but with different meta data.</li>
+</ul>
+
+<hr />
+
+<h2 id="programming-by-coincidence">Programming by Coincidence</h2>
+
+<p>Developers who don’t actively think about their code are programming by coincidence - the code might work, but theres no particular reason why.</p>
+
+<p>Why should you take the risk of messing with something that’s working?</p>
+
+<ul>
+  <li>It may not really be working - it might just look like this</li>
+  <li>The boundary condition you rely on may be just an accident. In different circumstances it might behave differently.</li>
+  <li>Undocumented behaviour may change with the next release of the library</li>
+  <li>Additional and unnecessary calls make your code slower</li>
+  <li>Additional calls also increase the risk of introducing new bugs on their own.</li>
+</ul>
+
+<p>For code you write that other will call, the basic principles of good modularization and of hiding implementation behind small, well-documented interfaces can all help. A well-specified contract can help eliminate misunderstandings.</p>
+
+<hr />
+
+<h2 id="how-to-program-deliberately">How to program deliberately</h2>
+
+<p>We want to spend less time churning out code, catch and fix errors as early in de development cycle as possible, and create fewer errors to begin with. It helps if we can program deliberately:</p>
+
+<ul>
+  <li>Always be aware of what you are doing. Fred let things get slowly out of hand, until he ended up boiled.</li>
+  <li>Don’t code blindfolded. Attempting to build an application you don’t fully understand, or to use a technology you aren’t familiar with, is an invitation to be misled by coincidences.</li>
+  <li>Proceed from a plan, whether that plan is in your head, on the back of a coktail napkin, or on a will-sized printout from a CASE tool.</li>
+  <li>Rely on reliable things. Don’t depend on accidents or assumptions. If you can’t tell the difference in particular circumstances, assume the worst.</li>
+  <li>Document your assumptions. Design by contract, can help to clarify your assumptions in own mind, as well as help communicate them to others.</li>
+  <li>
+    <p>Don’t just test your code, but test your assumptions as well. Don’t guess; actually try it. Write an assertion to test your assumptions. If your assertion is right, you have improved the documentation in your code. If you discover your assumption is wrong, then count yourself lucky.</p>
+  </li>
+  <li>
+    <p>Prioritize your effort. Spend time on the important aspects; more than likely, these are the hard parts. If you don’t have fundamentals or infrastructure correct, brilliant bells and whistles will be irrelevant.</p>
+  </li>
+  <li>Don’t be a slave to history. Don’t let existing code dictate future code. All code can be replaced if it’s no longer appropriate. Event within one program, don’t let what you’ve already done constrain what you do next - be ready to refactor. This decision may impact the project schedule. The assumption is that the impact will be less than the cost of not making the change.</li>
+</ul>
+
+<p>Pragmatic programmers think critically about all code, including our own. We constantly see room for improvement in our programs and our designs.</p>
+
+<hr />
+
+<h2 id="refactoring">Refactoring</h2>
+
+<p>Time pressure is often used as an excuse for not refactoring. But this excuse just doesn’t hold up; fail to refactor now, and there’ll be a far greater time investment to fix the problem down the road - when there are more dependencies to reckon with. Will there be more time available then? Not in our experience.</p>
+
+<p>Keep track of the things that need to be refactored. If you can’t refactor something immediately, make sure that it gets placed in the schedule. Make sure that the users of the affected code know that it’s scheduled to be refactored and how this might affect them.</p>
+
+<hr />
+
+<h2 id="testing-against-contract">Testing against Contract</h2>
+
+<p>We like to think of unit testing as testing against contract. We want to write test classes that ensure that a given unit honors it’s contract. This will tell us two things: whether the code meet the contract, and whether the contract means what we think it means. We want to test that the module delivers the functionality it promises over a wide range of test cases and boundary conditions.</p>
+
+<p>Once the subcomponents have been verified, then the module itself can be tested. This technique is a great way to reduce debugging effort: we can quickly concentrate on the likely source of the problem and not waste time reexamining it’s subcomponents.</p>
+
+<p>Why do we go to all this trouble? Above all, we want to avoid creating a “time bomb”- something that sits around unnoticed and blows up at an awkward moment later in the project. By emphasizing testing against contract, we can try to avoid as many of those downstream disasters as possible.</p>
+
+<hr />
+
+<h2 id="adhock-testing">Adhock testing</h2>
+<p>During debugging, we may end up creating some particular tests on-the-fly. These may be as simple as print statement, or a piece of code entered interactively in a debugging or IDE environment.</p>
+
+<p>At the end of the debugging session you need to formalize the adhock test. If the code broke once, it’s likely to break again. Don’t just throw away the test you created; add it to the existing unit test.</p>
+
+<hr />
+
+<h2 id="pragmatic-teams">Pragmatic teams</h2>
+
+<h3 id="no-broken-windows">No broken windows</h3>
+
+<p>Quality is a team issue. Teams as a hole should not tolerate broken windows - those small imperfections that no one fixes. The team must take responsibility for the quality of the product, supporting developers who understand the <em>no broken windows</em> philosophy, and encouraging those who haven’t yet discovered it.</p>
+
+<p>Keep metrics on new requirements (p. 209). The team needn’t reject changes out of hand - you simply need to be aware that they are happening. Otherwise, it will be you in the hot water.</p>
+
+<p>The closer to the user you’re allowed, the more senior you are.</p>
+
+<p>Civilization advances by extending the number of important operations we can perform without thinking. - Alfred North Whitehead</p>
+
+<hr />
+
+<h2 id="metrics-to-examine-code">Metrics to examine code</h2>
+
+<ul>
+  <li>Ciclomatic complexity</li>
+  <li>Inheritance fan-in (number of base classes) and fan-out (number of derived modules using this one as parent)</li>
+  <li>Response set (Decoupling and law of Demeter);</li>
+  <li>Class coupling ratios</li>
+</ul>
+
+<p>If you find a module whose metrics are marked different from all the rest, you need to ask yourself if it’s appropriate. For some modules, it may be ok to “blow the curve”. But those who don’t have a good excuse, it can indicate problems.</p>
+
+<p>If a bug slips through the net of existing tests, you need to add a new test to trap it next time.</p>
+
+<hr />
+
+<h2 id="its-all-writing">It’s all writing</h2>
+
+<p>Typically, developers don’t give much thought documentation. At best it is an unfortunate necessity; at worst it is threatened as a low-priority task in the hope that management will forget about it at the end of the project.</p>
+
+<p>Pragmatic programmers embrace documentation as an integral part of the overall development process. Writing documentation can be made easier by not duplicating effort or wasting time, and by keeping documentation close at hand - in the code itself if possible.</p>
+
+<p>Treat English as just another programming language.</p>
+
+<h3 id="comments">Comments</h3>
+
+<p>In general, comments should discuss why something is done, it’s purpose and it’s goal. The code already shows how it’s done, so commenting on this is redundant - and a violation of the DRY principle.</p>
+
+<p>Commenting source code gives you the perfect opportunity to document those elusive bits of a project that can’t be commented anywhere else: engineering trade offs, why decisions where made, what other alternatives where discarded and so on.</p>
+
+<p>One of the most important pieces of information that should appear in the source file is the author’s name - not necessarily who edited it last, but the honor. Attaching responsibility and accountability to the source code does wonders in keeping people honest.</p>
+
+<h3 id="executable-documents">Executable documents</h3>
+
+<p>Suppose we have a specification that lists the columns in a database table. Well then have a separate set of SQL commands to create the actual table in the database, and probably some kind of programming language record structure to hold the contents of a row in the table. The same information is repeated tree times. Change any one of these tree sources, and the other two are immediately out of date. This is a clear violation of the DRY principle.</p>
+
+<p>To correct this problem, we need to choose the authoritative source of information. This may be the specification, it may be a database schema tool, or it may be some third source altogether. Let’s choose the specification document as the source. It’s now our model for this process. We then need to export the information it contains as different views - a database schema and a high-level language record, for example.</p>
+
+<p>Documentation and code are different views of the same underlying model, but the view is all that should be different. Don’t let documentation be a second class citizen, banished from the main project workflow. Treat documentation with the same care you treat code, and the users (and maintainers who follow) will sing your praises.</p>
+
+<hr />
+
+<h2 id="relatively-easy-things-to-delight-the-common-user">Relatively easy things to delight the common user</h2>
+
+<ul>
+  <li>Balloon or tool tip help;</li>
+  <li>Keyboard shortcuts</li>
+  <li>A quick reference guide as a supplement to the users manual;</li>
+  <li>Colorization</li>
+  <li>Log files analyzers</li>
+  <li>Automated installation</li>
+  <li>Tools for checking the integrity of the systems</li>
+  <li>The ability to run multiple versions of the systems for training</li>
+  <li>A splash screen customized for their organization</li>
+</ul>
+
+<p>All of these things are relatively superficial, and don’t really overburden the system with feature bloat. However, each tells the users that the development team cared about producing a great system, one that was intended for real use. Just remember not to break the system adding these new features.</p>
+
+<p>We want to see pride and ownership. “I wrote this, and I stand behind by work.” Your signature should come to be recognized as an indicator of quality. People should see your name on a piece of code and expect it to be solid, well written, tested, and documented. A really professional job. Written by a professional. A pragmatic programmer.</p>
+
+<hr />
+
+<h2 id="professional-societies">Professional Societies</h2>
+
+<p>There are two world-class professional societies for programmers: the Association for Computing Machinery (ACM) and the IEEE Computer Society. We recommend that all programmers belong to one (or both) of these societies. In addition, developers outside the United States may want to join their national societies, such as BCS in the United Kingdom.</p>
+
+<p>Membership in a professional society has many benefits. The conferences and local meetings give you great opportunities to meet people with similar interests, and the special interest groups and technical committees give you the opportunity to participate in setting standards and guidelines used around the world. You will also get a lot out of their publications, from high-level discussions of industry practise to low-level computing theory.</p>
+
+<hr />
+
+<h2 id="building-a-library">Building a Library</h2>
+
+<p>We’re big on reading. A good programmer is always learning. Keeping current with book and periodicals can help.</p>
+
+<h3 id="periodicals">Periodicals</h3>
+
+<ul>
+  <li>IEEE Computer</li>
+  <li>IEEE Software</li>
+  <li>Communications of the ACM</li>
+  <li>SIGPLAN</li>
+  <li>Dr Dobbs Journal</li>
+  <li>The Perl Journal</li>
+  <li>Software Development Magazine</li>
+</ul>
+
+<h3 id="books">Books</h3>
+
+<ul>
+  <li>Object Oriented Software Construction</li>
+  <li>Design Patterns</li>
+  <li>Analysis Patterns</li>
+  <li>The Mytical Man Month</li>
+  <li>Dynamics of Software Development</li>
+  <li>Surviving Object-Oriented Projects: A Managers Guide</li>
+  <li>Unix</li>
+  <li>C++</li>
+  <li>Slashdot</li>
+  <li>Cetus Links</li>
+</ul>
+
+<p>That’s it thanks for the attention.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

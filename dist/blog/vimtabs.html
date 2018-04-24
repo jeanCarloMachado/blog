@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Vim tabs</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Vim tabs</h1>
+    <p class="post__date">June 17, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Tab support is great asset of Vim. Being able to keep many projects opened concurrently, each one with its files and settings - without performance loss - is certainly a good incentive for one to want to keep they computer uptime high. Was thinking on that which I was impelled to wrote this post reviewing the key aspects of tabs.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">:tabs</code> list all tabs;</li>
+  <li><code class="highlighter-rouge">:tabm n</code> move the current tab to the <em>n</em> position;</li>
+  <li><code class="highlighter-rouge">:tabm</code> move the current tab to the last position;</li>
+  <li><code class="highlighter-rouge">:tabn</code> go to the next tab;</li>
+  <li><code class="highlighter-rouge">:tabp</code> go to the previous window;</li>
+  <li><code class="highlighter-rouge">:tabclose n</code> close a tab;</li>
+  <li><code class="highlighter-rouge">:tabclose</code> close the current tab;</li>
+  <li><code class="highlighter-rouge">:tabonly</code> close all other tabs;</li>
+  <li><code class="highlighter-rouge">:tab drop {file}</code>  open {file} in a new tab, or jump to a window/tab containing the file if there is one;</li>
+  <li><code class="highlighter-rouge">:tab split</code> copy the current window to a new tab of its own;</li>
+  <li><code class="highlighter-rouge">2 gt</code> go to the second tab;</li>
+  <li><code class="highlighter-rouge">gT</code> go to the previous tab;</li>
+</ul>
+
+<h3 id="open-files-in-tabs">Open files in tabs</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vim -p file1 file2
+</code></pre>
+</div>
+
+<h2 id="usage-examples">Usage examples</h2>
+
+<blockquote>
+  <p>Tabs are great places to work on small tasks that fall outside your normal work flow.</p>
+</blockquote>
+
+<blockquote>
+  <p>If you are working in a buffer with most folds open, you can keep a second tab page showing the buffer with all folds closed for an “at a glance summary”.</p>
+</blockquote>
+
+<h3 id="view-help-pages">View Help Pages</h3>
+
+<p><code class="highlighter-rouge">
+:tab help foo
+</code></p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>http://vim.wikia.com/wiki/Quick_tips_for_using_tab_pages</li>
+  <li>http://vim.wikia.com/wiki/Using_tab_pages</li>
+</ol>
+
+<p>Comments are appreciated.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

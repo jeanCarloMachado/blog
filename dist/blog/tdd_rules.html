@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="TDD, C Development">
+    
+
+    
+        <title>TDD Rules in Any Language</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">TDD Rules in Any Language</h1>
+    <p class="post__date">November 20, 2016</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I’m working on a very complex problem on my master’s class, it deals
+with structural approaches to apply the bat metaheuristic on GPU.
+Beyond this big challenge, I wasnt used anymore to C development. The
+last time I made something for real with C was about 3 years ago
+and back then I had little experience, for that, I started this
+challenge with little confidence.</p>
+
+<p>Soon in the process I felt some mistrust of the behavior of the code.
+And as complexity increases this mistrust did as well. And when
+unexpected results appeared I started to became crazy and did a lot of
+suffered debug. Maybe there are some overwrite of memory biasing
+the values? Maybe there’s something I don’t understand happening
+with the random numbers?</p>
+
+<p>The thing is, when you have too much complexity is to easy to
+don’t feel confident about your code. I suffered a lot for one week or two
+until I embraced unit tests on C. Sure, I should had embraced TDD
+since the beginning, but as I said, I didn’t had the confidence to
+do it. Here that maximum applies: the developer don’t take the
+time to go fast.</p>
+
+<p>Anyway, it seems that it’s not at all that common, TDD on C, the most
+starred library I found was Unity, and it has about 0.3k likes. But
+certainly the major benefits of unit testing apply for as as much as for
+any other language. I even feel inclined to say that C is a perfect
+language for testing, since you’re forced to define contracts on header
+files and include the “concrete” one’s at compile time (ideal for
+mocking), it’s a kind of forced dependency inversion that
+the language design enforce.</p>
+
+<p>But in resume, now I’m much more confident of the behavior of my
+algorithm. I can say to my advisor, with confidence, that the behavior
+is expected given the premises.</p>
+
+<p>And, as a bonus, I found a bug on Unity and sent them a pull
+request which  is already merged.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

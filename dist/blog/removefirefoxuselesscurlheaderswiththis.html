@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Remove Firefox useless curl headers with this</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Remove Firefox useless curl headers with this</h1>
+    <p class="post__date">September 1, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I wrote
+<a href="https://github.com/jeanCarloMachado/personalScripts/blob/master/c
+url-remove-headers">this</a> small program, as part of my self-teaching
+experience with perl, to solve one tricky problem I used to face.
+When using Firefox I’m able to dump the requests that are made to
+Compufácil, but Firefox inserts lots of useless headers that only serve
+to turn the request impossible to read.</p>
+
+<p>This program gets this request full of crappy headers and leaves only
+the ones I didn’t blacklisted.</p>
+
+<p>Let’s go to an example:</p>
+
+<p>(This is the common request Firefox dumps me)</p>
+
+<p>``` curl-remove-headers “curl
+‘http://clipp.dev/RPC/v1/application.get-latest_messages-user.json’
+-H ‘Host: clipp.dev’ -H ‘User-Agent: Mozilla/5.0 (X11; Linux
+x86_64; rv:40.0) Gecko/20100101 Firefox/40.0’ -H ‘Accept:
+application/json, text/plain, <em>/</em>’ -H ‘Accept-Language:
+pt_BR’ –compressed -H ‘IGNORE_LOADING: true’ -H
+‘Authorization-Compufacil: 8fa10a93dd4e91dbc4b00c477da85b44a9a1cbb7’
+-H ‘Referer: http://clipp.dev/app/’ -H ‘Cookie:
+_ga=GA1.2.1889325007.1434573991; hblid=wQXcje4Y6M40D0I32M21A6GSESGBd102;
+olfsk=olfsk5011984582094807; wcsid=Kf5TvYDyGiwd8AbC2M21A4GQESGB00eE;
+_oklv=1441281680828%2CKf5TvYDyGiwd8AbC2M21A4GQESGB00eE;
+_okdetect=%7B%22token%22%3A%2214412816212760%22%2C%22proto%22%3A%22http%
+3A%22%2C%22host%22%3A%22clipp.dev%22%7D;
+_okbk=cd4%3Dtrue%2Cvi5%3D0%2Cvi4%3D1441281622752%2Cvi3%3Dactive%2Cvi2%3D
+false%2Cvi1%3Dfalse%2Ccd8%3Dchat%2Ccd6%3D0%2Ccd5%3Daway%2Ccd3%3Dfalse%2C
+cd2%3D0%2Ccd1%3D0%2C; _ok=5027-100-10-2842; language=pt_BR;
+sessionId=8fa10a93dd4e91dbc4b00c477da85b44a9a1cbb7; isAdmin=true’ -H
+‘Connection: keep-alive’ -H ‘Pragma: no-cache’ -H ‘Cache-Control:
+no-cache’ -H ‘Content-Length: 0’”</p>
+
+<p>```</p>
+
+<p>And the output</p>
+
+<p><code class="highlighter-rouge">curl
+'http://clipp.dev/RPC/v1/application.get-latest_messages-user.json'
+--compressed -H 'Authorization-Compufacil:
+8fa10a93dd4e91dbc4b00c477da85b44a9a1cbb7'</code></p>
+
+<p>For more of how to use Firefox and curl see <a href="http://jeancarlomachado.com.br/#!/post/99">this
+post</a> post.</p>
+
+<p>That’s it and DFTBA.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

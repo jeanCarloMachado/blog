@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Por um teclado mais produtivo</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Por um teclado mais produtivo</h1>
+    <p class="post__date">February 1, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Aposto que não é somente comigo que grande parte das teclas de teclado ficam subutilizadas. Para não dizer mal utilizadas; em alguns casos como o <em>CapsLock</em>. Pensando nisso, fiz um conjunto de modificações em meu teclado facilmente replicáveis em sistemas Linux.</p>
+
+<p>Meu sistema operacional: o <em>Archlinux</em>, e qualquer outra distro que se preze, utiliza o XKB para gerenciar teclados no X. Os comandos descritos abaixo vão funcionar para esses casos e somente na sessão atual. Para fazer com que as alterações persistam as sessões basta salvar o(s) comando(s) desejado(s) no arquivo <code class="highlighter-rouge">~/.xinitrc</code>.</p>
+
+<h2 id="capslock">Capslock</h2>
+
+<p>Desde que comecei a utilizar o computador utilizei o <em>Capslock</em> para digitar qualquer coisa em CAIXA ALTA. Nunca gostei dessa prática, mas também nunca tive motivos o bastante para parar de fazê-la. Não obstante, desde que adotei o Vim como ambiente de desenvolvimento e escrita, o <em>Capslock</em> se torna um estorvo por inserir comandos indesejados - visto que V e v no vim são comandos totalmente distintos.</p>
+
+<p>Levando isso em consideração decidi desabilitar o <em>Capslock</em>:</p>
+
+<h3 id="desabilitando">Desabilitando</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>setxkbmap -option caps:none
+</code></pre>
+</div>
+
+<h3 id="trocando-layouts">Trocando <em>layouts</em></h3>
+<p>Até então, eu vinha trocando os <em>layouts</em> <code class="highlighter-rouge">pt,en</code> de meus teclados utilizando o <code class="highlighter-rouge">alt+shift</code>, visto que o <em>Capslock</em> ficou livre de suas responsabilidades, resolvi utilizá-lo para trocar de <em>layout</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>setxkbmap -layout 'us,br' -option 'grp:caps_toggle,grp_led:caps'
+</code></pre>
+</div>
+
+<p>Para trocar com o <code class="highlighter-rouge">alt+shift</code> (modo antigo):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,br
+</code></pre>
+</div>
+
+<h2 id="reiniciando-o-x">Reiniciando o X</h2>
+
+<p>Até então eu vinha sentindo falta do comando tradicional para reiniciar a sessão</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>setxkbmap -option terminate:ctrl_alt_bksp
+</code></pre>
+</div>
+
+<h2 id="colando-no-terminal">Colando no terminal</h2>
+
+<p>O comando para colar no terminal é <code class="highlighter-rouge">shift+insert</code>, só que no teclado no macbook <code class="highlighter-rouge">insert</code> não existe. Abaixo segue uma solução de mapeamento do <code class="highlighter-rouge">insert</code> no lugar do <code class="highlighter-rouge">command</code> da direita. Dessa forma é possível colar no terminal utilizando as teclas <code class="highlighter-rouge">shift</code> da esquerda mais <code class="highlighter-rouge">command</code> da direita.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xmodmap -e "keycode 134 = Insert NoSymbol Insert"
+</code></pre>
+</div>
+
+<p>Em teoria o <code class="highlighter-rouge">xmodmap</code> funciona se colar o comando no <code class="highlighter-rouge">~/.xinitrc</code> - só que não no meu caso.</p>
+
+<p>A melhor alternativa que encontrei para persistir este comando foi colocando-o da seguinte forma no meu <code class="highlighter-rouge">~/.bashrc</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if [ -n "$DESKTOP_SESSION" ]; then
+    /usr/bin/xmodmap -e "keycode 134 = Insert NoSymbol Insert"
+fi
+</code></pre>
+</div>
+
+<p>Espero que estas dicas lhe sejam úteis. Caso tenha alguma dica de como otimizar o teclado - por favor, deixe-me saber.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

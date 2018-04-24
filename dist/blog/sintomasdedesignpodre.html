@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Sintomas de design podre</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Sintomas de design podre</h1>
+    <p class="post__date">February 1, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>Existem quatro sintomas primários que nos ajudam a identificar quando nosso design está apodrecendo. São ortogonais, mas relacionados de formas óbvias. Os sintomas são: rigidez, fragilidade, imobilidade, e viscosidade.</p>
+
+<h2 id="rigidez">Rigidez</h2>
+
+<p>É a tendência do software ser difícil de mudar, mesmo que de maneira simples. Cada mudança causa uma cascata de mudanças subsequentes em módulos independentes. O que começa como uma simples mudança de dois dias em um módulo cresce em uma maratona de mudanças de várias semanas alterando módulo atrás de módulo.</p>
+
+<p>Quando o software se comporta dessa forma os gerentes temem deixar os engenheiros arrumar problemas não críticos. Essa relutância deriva do fato que eles não sabem, com segurança, quando os engenheiros terminarão. Se os gerentes liberarem os engenheiros para resolverem tais problemas eles podem ficar ocupados por longos períodos.</p>
+
+<p>Quando o temor dos gerentes é tão agudo que eles se recusam a permitir mudanças no software é que a rigidez se estabelece. Aquilo que começou como deficiência no design terminou como uma controversa política gerencial.</p>
+
+<h2 id="fragilidade">Fragilidade</h2>
+
+<p>Intimamente relacionada com a rigidez é a fragilidade. É a tendência do software quebrar em diversos lugares toda a vez que ele muda. Com frequência as quebras ocorrem em áreas que não tem relacionamento conceitual com a área que mudou. Esses erros vão encher os corações dos gerentes com mal pressentimentos. Toda a vez que eles autorizam uma mudança eles temem que o software irá quebrar de alguma forma inexplicável. Conforme a fragilidade vai aumentando, a probabilidade de quebra aumenta, assimptoticamente se aproximando de 1. Esse tipo de software é impossível de manter. Cada ajuste faz ele piorar, introduzindo novos problemas para serem resolvidos. Tal software faz os gerentes e clientes suspeitarem que os desenvolvedores perderam o controle. Desconfiança reina e a credibilidade é perdida.</p>
+
+<h2 id="imobilidade">Imobilidade</h2>
+
+<p>É a inabilidade de reusar software de outros projetos ou de outras partes do mesmo projeto. Geralmente acontece de um engenheiro descobrir que precisa de um módulo similar ao que outro engenheiro escreveu. Não obstante, também geralmente acontece que o módulo em questão tem muita bagagem desnecessária. Depois de muito trabalho, os engenheiros descobrem que o trabalho requerido para separar as partes desejadas é muito grande para ser tolerado. E o software é simplesmente reescrito ao invés de reusado.</p>
+
+<h2 id="viscosidade">Viscosidade</h2>
+
+<p>Ela vem de duas formas: viscosidade de design, e viscosidade de ambiente. Quando em face a uma mudança, engenheiros geralmente encontram mais de uma maneira de efetuá-la . Algumas das formas preservam o design, outras não (os “hacks”). Quando os métodos preservados do design são mais difíceis de usar do que os “hacks” a viscosidade do design está alta. É mais fácil fazer a coisa errada do que a certa.</p>
+
+<p>Viscosidade de ambiente acontece quando o ambiente de desenvolvimento é lento e ineficiente. Por exemplo, se os tempos de compilação são muito longos os engenheiros vão ser tentados a fazer mudanças que não forcem grandes recompilações, mesmo que essas alterações não sejam as melhores do ponto de vista de design. Se o controle de versão requer horas para checar apenas uns poucos arquivos os engenheiros serão tentados a fazer modificações que requeiram o menor número de arquivos possível, ignorando se o design é preservado ou não.</p>
+
+<hr />
+
+<p>Esses quatro sintomas são sinais de arquitetura degradada. Qualquer aplicação que exiba-os está sofrendo de design apodrecido.</p>
+
+<p>Esta é uma parte que extraí do livro: <em>Design Principles and Design Patterns</em> de <em>Robert C. Martins</em>. Espero este <em>post</em> de alguma forma colabore para a constante luta contra o design ruim.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

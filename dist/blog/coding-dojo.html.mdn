@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>Primeiro Coding Dojo</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Primeiro Coding Dojo</h1>
+    <p class="post__date">March 12, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        Hoje participei do primeiro - mas de longe não último - *coding* dojo da minha vida. Tive uma impressão bastante positiva sobre o processo.
+
+Um dos acontecimentos do evento, o qual prendeu meu pensamento, foi uma distinção feita entre reescrita e refatoração. O argumento utilizado foi que refatoração se trata de manter o design original apenas ajustando suas bordas e que reescrita significa destruição do design original em detrimento de outro mais adequado aos novos requisitos. Nunca tive em mente esta distinção, não obstante, a dúvida ficou pairada na minha mente e decidi pesquisar sobre o assunto. E, como eu suspeitava a [definição de refacoring](http://c2.com/cgi/wiki?WhatIsRefactoring) é o processo de alteração de software de uma forma que ele não mude seu comportamento externo (nenhuma menção sobre design). Não obstante, este fluxo de pensamento me induziu a pensar no caso da viabilidade da refatoração. Assunto que me deparei nestas duas últimas semanas em vista de uma refatoração substancial de um [código apodrecendo](http://www.jeancarlomachado.com.br/post/visualizar/00074/sintomas-de-design-podre).
+
+Sou um programador. E acho que a postura correta do programador é que, em vista de um design melhor - para as necessidades atuais e futuras - sempre vale à pena a refatoração. Se você é um profissional na escrita de software é sua obrigação lutar pela base o mais limpa e concisa o possível. A postura de [If It Is Working Dont Change](http://c2.com/cgi/wiki?IfItIsWorkingDontChange) quase nunca é eficiente para o programador. Defender a manutenção do "design original" na hora da refatoração apenas "ajustando as pontas" soa um tanto quanto os *hacks* que geram [problemas de viscosidade](http://www.jeancarlomachado.com.br/post/visualizar/00074/sintomas-de-design-podre#Viscosidade). Em suma, se seus requisitos mudaram e seu software necessita de mudanças que o design não comporta, não me parece uma posição defensável para o programador - o profissional da escrita de software - defender a manutenção de algo insustentável.
+
+Obviamente o mundo não é tão binário quanto eu gostaria. Os interesses variam no projeto. Um programador ideal se preocupa como o código, defende-o, mas existem outros *stakeholders*, o gerente de projetos por exemplo. Cabe a este, entre outras tarefas, controlar os prazos; para ele geralmente não é evidente a necessidade de refatoração de um código e, mesmo quando evidente, algumas vezes não lhe parece uma boa ideia.
+
+Em vista deste conflito de interesses, para que as duas partes fiquem satisfeitas, é necessário um processo racional. [Este post](http://c2.com/cgi/wiki?EconomicsOfRefactoring) sobre Economia da refatoração aborda os fatores de influência na hora de considerar a refatoração, cabe a ambas as partes dialogar e decidir se o momento é adequado à refatoração ou não.
+
+# Referências
+1. http://c2.com/cgi/wiki?WhatIsRefactoring
+2. http://c2.com/cgi/wiki?EconomicsOfRefactoring
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

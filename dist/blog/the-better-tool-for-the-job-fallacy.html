@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="tools, software">
+    
+
+    
+        <title>The right tool for the right job FALLACY</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">The right tool for the right job FALLACY</h1>
+    <p class="post__date">March 4, 2018</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p><em>Use the right tool for the right job</em> I recall using this old adage
+myself many times. This piece of “wisdom” is
+often used as a cover for something nasty and we may be paying a price
+for it. More often than it should, this phrase is used to convey the
+sense that <em>all the tools have a proper case where they excel</em>. I’m here to
+argue that this is simply NOT the case.</p>
+
+<ul>
+  <li>Assembly</li>
+  <li>Fortran</li>
+  <li>Lisp</li>
+  <li>Ada</li>
+  <li>Perl</li>
+  <li>Java</li>
+  <li>ASP</li>
+  <li>PHP</li>
+  <li>JavaScript</li>
+</ul>
+
+<p>As this list goes on will be harder for you to agree with me, but my
+vision is that there is no good reason to use any of this languages to
+build new systems anymore.</p>
+
+<p>Imagine writing a new web API in assembly? Or C? Most of the developers
+will agree that is not reasonable. But once assembly was the default
+language to build <em>everything</em>. Better tools appeared and it’s simply not
+the case anymore. Unfortunately it becomes harder to reach a consensus that there
+are better languages than those on bottom of the list.</p>
+
+<p>The problem is that programming languages differ in ways most developers
+don’t want to talk about. Mainly because they are, more often than
+not, in a poor programming language, relatively speaking. And, since
+is <em>hard</em> to learn a new language, let alone the most powerful one’s,
+programmers get attached to what they already mastered. They will see as
+worse languages the one’s on the list prior the one’s they use, but will
+disagree with the better one’s that come after.</p>
+
+<p>This attachment is the very root of one of the nastier problems of
+the field. There are a bunch of new techniques demonstrably better of
+building software. But the industry (and college education) is stuck in
+the seventies. Literally, it seems that we need the old generation of
+developers to retire and the college staff to be renewed in order to see
+substantial progress.</p>
+
+<p><img src="https://i.imgur.com/Ru7crkq.jpg" alt="Beuvais cathedral" /></p>
+
+<blockquote>
+  <p><em>Just like the builders of Europe’s great Gothic cathedrals we’ve been honing our craft to the limits of material and structure. There is an unfinished Gothic cathedral in Beauvais, France, that stands witness to this deeply human struggle with limitations. It was intended to beat all previous records of height and lightness, but it suffered a series of collapses. Ad hoc measures like iron rods and wooden supports keep it from disintegrating, but obviously a lot of things went wrong. From a modern perspective, it’s a miracle that so many Gothic structures had been successfully completed without the help of modern material science, computer modelling, finite element analysis, and general math and physics. I hope future generations will be as admiring of the programming skills we’ve been displaying in building complex operating systems, web servers, and the internet infrastructure. And, frankly, they should, because we’ve done all this based on very flimsy theoretical foundations. We have to fix those foundations if we want to move forward.</em> - Bartosz Milewski’s</p>
+</blockquote>
+
+<p>And many times you’ll see arguments like <em>but Javascript has a imense
+community</em> or <em>is cheaper to pay and find PHP developers</em>. Undoubtedly
+this is all true. But these statements are not arguments in favor of these languages. 
+If you really need a piece of open-source that is in Javascript build a
+micro-service around it, but don’t dirt all your codebase because of this
+requirement. And the simple fact that is easier to find PHP developers
+is evidence that the average developer is part of the problem. The average is bad,
+and cheap. But if you really want to build the best software you have
+to reach the best developers. And they know their fights, their price (and their
+languages).</p>
+
+<p>Only the elite of software development and academy researchers can see
+clearly the advancements made on languages like:</p>
+
+<ul>
+  <li>Haskell</li>
+  <li>Rust</li>
+  <li>F#</li>
+</ul>
+
+<p>There is an spectrum of elegance in programming languages. And
+it’s a long journey to understand why type safety, type inference,
+flat-architectures, lazy evaluation languages make the top of them. But
+one must strive for it. Let’s stop learning a new framework <em>du jour</em> per week and
+stick with the fundamentals. The software field don’t have time to enter
+every lib hype. We have decades of software engineer practices to master
+in order get near the state of the art. Don’t be afraid to say that X
+is better than Y. Once we were afraid to say that traditional control
+structures were better and goto’s. There are better languages, better
+paradigms, better developers. Get better.</p>
+
+<p>Nevertheless there’s yet space for finding the right tool for the right job (some of
+you can stop hating me now). It’s reasonable to choose python for ML, go
+for thin webservices, bash for scripting, Rust for performance, Haskell
+for complex problems. But we have to make clear that - <em>even if
+there is no single right way of doing something, certainly there are much
+more plain wrong ways of doing so</em>.</p>
+
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

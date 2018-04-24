@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Jean, Developer, Sowftware">
+    
+
+    
+        <title>A year of my Arch installation</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">A year of my Arch installation</h1>
+    <p class="post__date">December 1, 2015</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I’ve been with the same installation of a Archlinux more than a year now.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo tune2fs -l /dev/sda2 | grep created
+Filesystem created:       Fri Oct 10 09:14:32 2014
+</code></pre>
+</div>
+<p>It may seem not a big deal but by my SO’s perspective probably this
+is the longest strike on the same distro.</p>
+
+<p>It was - as usual - a not easy year, but undoubtedly it was a fun
+one. Many times I broke things, but not even once I was unable to log
+back.</p>
+
+<h2 id="things-that-are-yet-broken">Things that are yet broken</h2>
+
+<p>The web cam is broken, there’s a project to solve it but it’s not
+finished yet. And probably it will never be, cause we depend
+upon the good will for liberating the specification.</p>
+
+<p>Kernel 4 is unstable for me and the Qt applications are barely
+usable. So for now I’m running an older lts version, following my
+philosophy of <a href="http://jeancarlomachado.com.br/#!/post/134">slow riding kernel
+upgrades</a>.</p>
+
+<p>This is in fact a partial true. It was certainly true right after
+the Kernel 4 release and it’s first minors. Now Qt applications are
+normally usable. And Kernel 4 improved a lot in stability
+but yet it’s far from the 3.15 version in my experience.</p>
+
+<h2 id="awesome-things">Awesome things</h2>
+
+<p>My desktop is incredible for my experience, totally customized and
+fitted for me, it answers to my unique requirements.
+With it I fell like I’m practising the perfect continuous
+improvement.</p>
+
+<p>I’m a full Unix guy since I’m using Arch. Now I’m a full time vim
+user, together with tmux and lots of other scripts my usage is
+simply ingenious.</p>
+
+<p>My battery duration is greater then on OSX. If I take care of
+what I’m using I can take it to 15 hours.</p>
+
+<p>Arch is about responsibility, the system will never grow outdated,
+so is up to the user to keep it fresh (don’t messing up with things).</p>
+
+<p>My system is pretty robust, and there’s no problem that I cannot tackle
+(beyond those already listed). This is partly about responsibility
+already mentioned. I now find really essential a extensive documentation
+about the software I use, and it gives me insights far beyond those
+simply “users” have.</p>
+
+<p>Yet following the responsibility principle, started doing almost daily
+backups with the really useful rsync.</p>
+
+<h2 id="the-future">The future</h2>
+
+<p>If I don’t mess up critically (and it’s backup) I’ll continue
+working with this installation till the end of times.</p>
+
+<p>I really feel on solid ground with Arch and the power it enables
+it’s users. Thanks Archlinux community!</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>

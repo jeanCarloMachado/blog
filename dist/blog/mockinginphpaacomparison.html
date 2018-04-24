@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="PHP,TDD">
+    
+
+    
+        <title>Mocking in PHP a comparison</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Mocking in PHP a comparison</h1>
+    <p class="post__date">May 8, 2016</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>If one is committed to TDD, one needs a fast test suite. And a fast test
+suite is only reachable through a lot of mocking. When testing a given
+class, ideally only it’s core behaviour is being tested and all the
+rest is mocked. In PHP there’s many ways of mocking. I’ll present
+in this post the one’s I’m used to and in which situations each one of
+them excels.</p>
+
+<h2 id="anonymous-classes">Anonymous classes</h2>
+
+<p>Anonymous classes API offer a clean way of mocking. I find them useful
+mainly when I don’t have to implement behaviour and the dependency
+signature is really simple.</p>
+
+<p>Another <em>trait</em> of anonymous classes is that the implementation is 
+forcibly in your face. With libs of mocking one sometimes see the
+implementation being searched and override before testing. Which can
+decrease readability.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>    private function getTransmitterMock()
+    {
+        return new class () {
+            public function transmit($nfe)
+            {
+
+            }
+        };
+    }
+
+</code></pre>
+</div>
+
+<h2 id="mockery">Mockery</h2>
+
+<p>The mockery is a good for spying, on simple cases.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        $uploadMock = \Mockery::mock('Core\Service\Upload\UploadInterface');
+        $uploadMock-&gt;shouldReceive('upload')
+            -&gt;once()
+            -&gt;andReturn((new \Core\Service\Upload\File))
+            -&gt;byDefault();
+
+</code></pre>
+</div>
+
+<p>One can define how it’s called as well. Ideal to test
+interaction with third party libs.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        $mockResponse = Mockery::mock();
+        $mockResponse-&gt;shouldReceive('get')
+            -&gt;withArgs(['89700000'])
+            -&gt;andReturn(
+                [
+                    'cep' =&gt; '89700-000',
+                    'localidade' =&gt; 'Concórdia',
+                    'uf' =&gt; 'SC',
+                    'bairro' =&gt; '',
+                    'complemento' =&gt; '',
+                ]
+            );
+
+</code></pre>
+</div>
+
+<p>I tend to see Mockery as an simpler mocking lib than PHP unit’s
+one,  but it sometimes lacks it’s power as well.</p>
+
+<p>And a last good aspect of Mockery is that it’s independent of test
+frameworks. For those who cannot rely on phpunit this might be a
+great choice.</p>
+
+<h2 id="phpunits-mocks-feature">PHPUnits Mocks Feature</h2>
+
+<p>The phpunit’s API is good to work together with concrete
+implementations, overriding only parts of a concrete class.</p>
+
+<p>The impression I’ve got it’s that it’s API is more verbose,
+nevertheless more powerful as well.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    $mock = $this-&gt;getMockBuilder('\Finance\Service\Category\GatewayInterface')
+        -&gt;setMethods(['saveCategory', 'getCategoryByName'])
+        -&gt;getMock();
+
+    $mock-&gt;method('saveCategory')-&gt;will(
+        $this-&gt;throwException(
+            PersistenceException::duplicatedEntry()
+        )
+    );
+
+</code></pre>
+</div>
+
+<p>Another good use for phpunit’s mocks features is to test if an given
+object is called with the right arguments when these given arguments
+needs some sort of processing.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    $mock = $this-&gt;getMockBuilder('PaymentService')
+        -&gt;setMethods(['create'])
+        -&gt;getMock();
+
+    $mock-&gt;method('create')
+        -&gt;with($this-&gt;callback(function ($arg) {
+            return (
+                $arg-&gt;getPhoneEntity()-&gt;getNumber() == '35242189'
+                &amp;&amp; $arg-&gt;getPhoneEntity()-&gt;getAreaCode() == '47'
+            );
+        }))-&gt;will($this-&gt;returnValue(null));
+
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This post is not supposed to dictate which option is better for
+mocking. It seems to me that each of those methods shines better
+in specific contexts. And this is the posture I stand for when
+mocking, I use the libs interchangeably, depending on the context.</p>
+
+<p>If you have a different opinion about these libs, or some advice
+about other libs please let me know :).</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>
