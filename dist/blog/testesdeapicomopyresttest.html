@@ -46,7 +46,7 @@
 
 <p>Em meu primeiro contato com a aplicação não era possível utilizar variáveis nos headers das requisições. Como isso era um fator de grande importância no caso do projeto que desenvolvo abri uma issue no Github e, em questão de uma semana, o problema estava resolvido. Reportei outras issues e todas foram respondidas ou atentidas prontamente.</p>
 
-<h4 id="instalaÇÃo"><a href="https://github.com/svanoort/pyresttest#user-content-installation-troubleshooting-and-special-cases">INSTALAÇÃO</a></h4>
+<h4 id="instalação"><a href="https://github.com/svanoort/pyresttest#user-content-installation-troubleshooting-and-special-cases">INSTALAÇÃO</a></h4>
 
 <p>Para instalar o pyrestest você precisa utilizar o comandos abaixo, importante ressaltar que o Python esperado é o Python 2.7 longe de ser o padrão nas distribuições Linux modernas.</p>
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/svanoort/pyresttest.git
@@ -100,7 +100,7 @@ Exemplo rodando um teste:</p>
 </code></pre>
 </div>
 
-<h4 id="utilizaÇÃo">UTILIZAÇÃO</h4>
+<h4 id="utilização">UTILIZAÇÃO</h4>
 <p>Apesar de a documentação comentar a possibilidade, não tive contato com o Pyresttest em json. O problema é que os exemplos se encontram, exclusivamente, em YAML. Sendo assim, o resto do post também apresentará o conteúdo em YAML.</p>
 
 <p>Existem 5 elementos de nível principal na API:</p>
@@ -167,7 +167,7 @@ Existem dois validators principais.</p>
 A primeira linha contém uma validação para cada campo. A chave <code class="highlighter-rouge">jsonpath_mini</code> define como os dados devem ser minerados, neste caso, através do caminho json. No exemplo está-se lendo cada coluna da primeira linha do resultado e comparando-se os valores com os esperados.
 OBS: O <code class="highlighter-rouge">$access_token</code> não faz parte da notação do Pyresttest, é apenas uma chave que eu uso para localizar onde o access token deve residir e dou replace em runtime pela access token gerada em uma autenticação feita em CURL. Esta “gambi” foi introduzida porque inicialmente o Pyresttest não suportava variáveis de ambinte em cabeçalhos HTTP. Atualmente opções mais elegantes estão disponíveis.</p>
 
-<h5 id="mÚltiplos-testes">MÚLTIPLOS TESTES</h5>
+<h5 id="múltiplos-testes">MÚLTIPLOS TESTES</h5>
 
 <p>É possível ter vários testes e benchmarks no mesmo arquivo. Segue um exemplo:</p>
 

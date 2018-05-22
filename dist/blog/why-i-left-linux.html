@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="keywords" content="Linux, desktops">
+    
+
+    
+        <title>Why I'm leaving Linux</title>
+    
+
+    <meta name="description" content="Personal blog">
+
+    <link rel="icon" href="/assets/img/favicon.ico">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="/">&lt;-- home</a>
+    <h1 class="post__title">Why I'm leaving Linux</h1>
+    <p class="post__date">May 16, 2018</p>
+    <p class="post__meta"></p>
+    <div class="post__content"?>
+        <p>I remember in the beginning of my career going to FISL and seeing a
+lecture from a Red Hat developer, without understanding almost anything,
+and thinking: I want to be a kernel developer like him one day. For 6
+long years I kept true to this goal. Now, that dream not only does not exist
+anymore, I’m quitting as a Linux laptop user. Let me explain you why.</p>
+
+<p>First of all Linux interfaces sucks. What is decent in modern standards
+is buggy (like pantheon), and what is stable is ancient (like LXDE). For
+long my opinion is that to be a real Linux user one should use as few
+GUI as possible. And I applied this philosophy to it’s limits. I spent
+about 4 years on the same minimal ArchLinux installation dropping every
+unnecessary piece of software.</p>
+
+<p>But if you enter the path of being a CLI hacker you end-up having to
+do everything yourself. Sure, you get a lot of power and understanding. But
+things that should be simple end up being extremely complex like:
+setting up printers, managing displays, connecting Bluetooth devices,
+configuring email, etc.</p>
+
+<p>And there are times that things don’t work at all. Something in the Kernel
+change and you end up getting problems forever. I recall losing 2/3 of
+my battery duration between the change from kernel 3.* to kernel 4.*.
+Never to recover.</p>
+
+<p>But the worse by far is when some shit happens and you have an
+appointment where your machine is necessary. I have two exemplary
+experiences, never to forget, which elucidate how much a Linux hacker
+suffer.</p>
+
+<p>Twice I was going to the podium and the remote display connection
+failed. Once I was up to give a course and while my students arrived at
+the room I - extremely nervous - recompiled the kernel to luckily get the HDMI working.</p>
+
+<p>Another time, during a conference in which I was expected to give a
+hands on talk, I was about to start and discovered that they had only
+VGA. Unfortunately after kernel 4 VGA stopped working. This time I could
+not fix the problem at all and had to borrow a friend’s computer to be
+able to do a much less impressive version of the lecture I prepared.</p>
+
+<p>But why this things happen to Linux? Are kernel developers sloppy? No.
+The answer is simpler than that: the Linux kernel is optimized for
+servers, not for desktops. If you loses battery life probably was because
+someone decided to trade it off with performance, latency or another
+thing that is much more important on servers. And they don’t care much
+about adding that driver you need since it will affect 0% of the user
+base while they can improve a minuscule part of the networking subsystem
+and affect everyone.</p>
+
+<p>But one would expect that desktop centered distributions like Ubuntu
+would take the time to improve users life. Turns out that distributions
+are much occupied packaging software from thousands of parties and
+testing if they work together. So even basic tweaks like optimizing
+cache pressure is not done in almost any distro. So your beloved
+notebook have a ultra-optimized piece of software that is extremely good
+at doing repetitive tasks to millions of clients. But really poor to
+handle your 15 applications without you noticing the cache swaps.</p>
+
+<p>Having a Linux installation can be an enlightening experience. I do
+recommend it if you are a novice interested in backend development. I
+learned a lot about OS’s, shell, Unix, and my career would not have been as
+good as it is without Linux. You can even beat all averageness with
+it. 90% of the time. I did it. But ultimately, if you want to get things
+done, and avoid the 10% true misery, you must outgrow it.</p>
+
+    </div>
+
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    var identifier = window.location.href.split('/');
+    identifier = identifier[identifier.length -1 ];
+    identifier.split('.')[0];
+
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = identifier;
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = '//jeancarlomachado.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+          bcancel: ["Extension","cancel"],
+              xcancel: ["Extension","cancel"],
+                  cancelto: ["Extension","cancel"]
+                    });
+                    });
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</body>
+
+</html>
