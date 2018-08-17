@@ -19,11 +19,19 @@ A citizen of the world.
 A honesty aficionado.
 
 
-    For my part, I will not give in to fear of the unknown. We all have our
-    role to play, and I hope only that when I have played mine, the world
-    will have been better for my having been in it.
+    I hate poetry about love
+    From the beauty virgin
+    To the perfect prince
+    What a shallow occupation
 
-    Candaith of the Dunedain - The Lord of the Rings Online
+    The stars, the quasars
+    The neutrinos, the quarks
+
+    The algorithm and the genome
+    Calculus and the neuron
+
+    Nature demands our attention
+    To wonder in it's secrets, a life's occupation!
 
 
 Below are some of my breadcrumbs on the Web.
