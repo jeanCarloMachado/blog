@@ -38,38 +38,38 @@ Need to talk to me? Enter in contact through contato@jeancarlomachado.com.br.
 More? There you have!
 
 
-    I hate poetry about love
-    From the beauty virgin
-    To the perfect prince
-    What a shallow occupation
+I hate poetry about love
+From the beauty virgin
+To the perfect prince
+What a shallow occupation
 
-    The stars, the quasars
-    The neutrinos, the quarks
+The stars, the quasars
+The neutrinos, the quarks
 
-    The algorithm and the genome
-    Calculus and the neuron
+The algorithm and the genome
+Calculus and the neuron
 
-    Nature demands our attention
-    To wonder in it's secrets, a life's occupation!
+Nature demands our attention
+To wonder in it's secrets, a life's occupation!
 
-    Jean Carlo Machado
-
-----
-
-
-    Make sure you remain straightforward, upright,
-    reverent, serious, unadorned, an ally of justice, pious, kind,
-    affectionate, and doing your duty with a will. Fight to be the
-    person philosophy tried to make you.
-
-    Marcus Aurelius, Meditations
+Jean Carlo Machado
 
 ----
 
-    For my part, I will not give in to fear of the unknown.
-    We all have our role to play
-    And I hope only that when I have played mine
-    The world will have been better for my having been in it.
 
-    Candaith of the Dunedain - The Lord of the Rings Online
+Make sure you remain straightforward, upright,
+reverent, serious, unadorned, an ally of justice, pious, kind,
+affectionate, and doing your duty with a will. Fight to be the
+person philosophy tried to make you.
+
+Marcus Aurelius, Meditations
+
+----
+
+For my part, I will not give in to fear of the unknown.
+We all have our role to play
+And I hope only that when I have played mine
+The world will have been better for my having been in it.
+
+Candaith of the Dunedain - The Lord of the Rings Online
 
