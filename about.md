@@ -71,5 +71,5 @@ We all have our role to play
 And I hope only that when I have played mine
 The world will have been better for my having been in it.
 
-Candaith of the Dunedain - The Lord of the Rings Online
+Candaith of the Dunedain
 
