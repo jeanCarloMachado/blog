@@ -73,3 +73,11 @@ The world will have been better for my having been in it.
 
 Candaith of the Dunedain
 
+---
+
+To see the world in a grain of sand.
+And a heaven in a wild flower.
+Hold infinity in the palm of your hand.
+And eternity in an hour.
+
+Willian Blake
