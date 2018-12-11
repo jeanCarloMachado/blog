@@ -1,0 +1,798 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+.about__content	dist/assets/css/main.css	/^.about__content {$/;"	c	language:CSS
+.about__content h1	dist/assets/css/main.css	/^  .about__content h1 {$/;"	s	language:CSS
+.about__content p	dist/assets/css/main.css	/^  .about__content p {$/;"	s	language:CSS
+.about__title	dist/assets/css/main.css	/^.about__title {$/;"	c	language:CSS
+.blog	dist/assets/css/main.css	/^.blog {$/;"	c	language:CSS
+.blog h1	dist/assets/css/main.css	/^  .blog h1 {$/;"	s	language:CSS
+.header	dist/assets/css/main.css	/^    .header {$/;"	c	language:CSS
+.header	dist/assets/css/main.css	/^.header {$/;"	c	language:CSS
+.header h1	dist/assets/css/main.css	/^  .header h1 {$/;"	s	language:CSS
+.header ul	dist/assets/css/main.css	/^  .header ul {$/;"	s	language:CSS
+.header ul li	dist/assets/css/main.css	/^    .header ul li {$/;"	s	language:CSS
+.post	dist/assets/css/main.css	/^.post {$/;"	c	language:CSS
+.post__content	dist/assets/css/main.css	/^  .post__content {$/;"	c	language:CSS
+.post__content a	dist/assets/css/main.css	/^    .post__content a {$/;"	s	language:CSS
+.post__content a:hover	dist/assets/css/main.css	/^      .post__content a:hover {$/;"	s	language:CSS
+.post__content em	dist/assets/css/main.css	/^    .post__content em {$/;"	s	language:CSS
+.post__content h1	dist/assets/css/main.css	/^    .post__content h1 {$/;"	s	language:CSS
+.post__content img	dist/assets/css/main.css	/^        .post__content img {$/;"	s	language:CSS
+.post__content img	dist/assets/css/main.css	/^    .post__content img {$/;"	s	language:CSS
+.post__content p	dist/assets/css/main.css	/^    .post__content p {$/;"	s	language:CSS
+.post__content strong	dist/assets/css/main.css	/^    .post__content strong {$/;"	s	language:CSS
+.post__content ul	dist/assets/css/main.css	/^        .post__content ul {$/;"	s	language:CSS
+.post__content ul	dist/assets/css/main.css	/^    .post__content ul {$/;"	s	language:CSS
+.post__content ul li	dist/assets/css/main.css	/^          .post__content ul li {$/;"	s	language:CSS
+.post__content ul li	dist/assets/css/main.css	/^      .post__content ul li {$/;"	s	language:CSS
+.post__date	dist/assets/css/main.css	/^  .post__date {$/;"	c	language:CSS
+.post__title	dist/assets/css/main.css	/^  .post__title {$/;"	c	language:CSS
+.wrapper	dist/assets/css/main.css	/^    .wrapper {$/;"	c	language:CSS
+.wrapper	dist/assets/css/main.css	/^.wrapper {$/;"	c	language:CSS
+1. Cadastrar os assuntos	_posts/2018-02-21-metodologia-whatnext.md	/^## 1. Cadastrar os assuntos$/;"	s	language:Markdown
+1. Cadastrar os assuntos	dist/blog/metodologia-whatnext.html	/^<h2 id="1-cadastrar-os-assuntos">1. Cadastrar os assuntos<\/h2>$/;"	i	language:HTML
+2. Estudar	_posts/2018-02-21-metodologia-whatnext.md	/^## 2. Estudar$/;"	s	language:Markdown
+2. Estudar	dist/blog/metodologia-whatnext.html	/^<h2 id="2-estudar">2. Estudar<\/h2>$/;"	i	language:HTML
+2D Mario like game in Quintus	_posts/2015-06-09-gamedevelopmentwandering.md	/^## 2D Mario like game in Quintus$/;"	s	language:Markdown
+2D Mario like game in Quintus	dist/blog/gamedevelopmentwandering.html	/^<h2 id="2d-mario-like-game-in-quintus">2D Mario like game in Quintus<\/h2>$/;"	i	language:HTML
+3 years of same Archlinux installation	dist/blog/3-years-archlinux.html	/^    <h1 class="post__title">3 years of same Archlinux installation<\/h1>$/;"	h	language:HTML
+3. Registrar a sessão	_posts/2018-02-21-metodologia-whatnext.md	/^## 3. Registrar a sessão$/;"	s	language:Markdown
+3. Registrar a sessão	dist/blog/metodologia-whatnext.html	/^<h2 id="3-registrar-a-sessão">3. Registrar a sessão<\/h2>$/;"	i	language:HTML
+3D RPG in Ogre 3D	dist/blog/gamedevelopmentwandering.html	/^<h2 id="3d-rpg-in-ogre-3d"><a href="https:\/\/github.com\/jeanCarloMachado\/rpg">3D RPG in Ogre /;"	i	language:HTML
+A beleza do método científico, segundo Huxley	dist/blog/metodo-cientifico-huxley.html	/^    <h1 class="post__title">A beleza do método científico, segundo Huxley<\/h1>$/;"	h	language:HTML
+A collection of summaries about Html Game Development	dist/blog/games-research.html	/^    <h1 class="post__title">A collection of summaries about Html Game Development<\/h1>$/;"	h	language:HTML
+A container for Statsd with Mongo Backend	dist/blog/acontainerforstatsdwithmongobackend.html	/^    <h1 class="post__title">A container for Statsd with Mongo Backend<\/h1>$/;"	h	language:HTML
+A conversa do interior	dist/blog/melhorar-a-conversa.html	/^    <h1 class="post__title">A conversa do interior<\/h1>$/;"	h	language:HTML
+A cool hack for rand	dist/blog/cool-hack-rand.html	/^    <h1 class="post__title">A cool hack for rand<\/h1>$/;"	h	language:HTML
+A day of mindfulness	_posts/2015-06-12-miracle-mindfulness.md	/^## A day of mindfulness$/;"	s	language:Markdown
+A day of mindfulness	dist/blog/miracle-mindfulness.html	/^<h2 id="a-day-of-mindfulness">A day of mindfulness<\/h2>$/;"	i	language:HTML
+A list of fallacies and biases	dist/blog/fallacies.html	/^    <h1 class="post__title">A list of fallacies and biases<\/h1>$/;"	h	language:HTML
+A minimal service manager setup	dist/blog/aminimalservicemanagersetup.html	/^    <h1 class="post__title">A minimal service manager setup<\/h1>$/;"	h	language:HTML
+A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han	_posts/2015-07-13-games-research.md	/^## A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han$/;"	s	language:Markdown
+A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han	dist/blog/games-research.html	/^<h2 id="a-situation-aware-cross-platform-architecture-for-ubiquitous-game---jung-hyun-han">A sit/;"	i	language:HTML
+A smart way of testing inside Vim	dist/blog/phpunit-tests-on-vim.html	/^    <h1 class="post__title">A smart way of testing inside Vim<\/h1>$/;"	h	language:HTML
+A year of my Arch installation	dist/blog/ayearofmyarchinstallation.html	/^    <h1 class="post__title">A year of my Arch installation<\/h1>$/;"	h	language:HTML
+Aborda pontos vitais na construção de experiências gratificantes	_posts/2015-07-13-games-research.md	/^#### Aborda pontos vitais na construção de experiências gratificantes$/;"	t	language:Markdown
+About Me:	_layouts/about.html	/^    <h1 class="about__title">About Me:<\/h1>$/;"	h	language:HTML
+About Me:	dist/about.html	/^    <h1 class="about__title">About Me:<\/h1>$/;"	h	language:HTML
+Abrir resultado da busca no vim	_posts/2015-06-08-dicasack.md	/^### Abrir resultado da busca no vim$/;"	S	language:Markdown
+Abrir resultado da busca no vim	dist/blog/dicasack.html	/^<h3 id="abrir-resultado-da-busca-no-vim">Abrir resultado da busca no vim<\/h3>$/;"	j	language:HTML
+Ack com pipe	_posts/2015-06-08-dicasack.md	/^## Ack com pipe$/;"	s	language:Markdown
+Ack com pipe	dist/blog/dicasack.html	/^<h2 id="ack-com-pipe">Ack com pipe<\/h2>$/;"	i	language:HTML
+Ack e Sed	_posts/2015-06-08-dicasack.md	/^## Ack e Sed$/;"	s	language:Markdown
+Ack e Sed	dist/blog/dicasack.html	/^<h2 id="ack-e-sed">Ack e Sed<\/h2>$/;"	i	language:HTML
+Acostume-se com o terminal	_posts/2014-02-19-como-aprender-php.md	/^## Acostume-se com o terminal$/;"	s	language:Markdown
+Acostume-se com o terminal	dist/blog/como-aprender-php.html	/^<h2 id="acostume-se-com-o-terminal">Acostume-se com o terminal<\/h2>$/;"	i	language:HTML
+Active Generators	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Active Generators$/;"	S	language:Markdown
+Active Generators	dist/blog/pragmatic-programmer-review.html	/^<h3 id="active-generators">Active Generators<\/h3>$/;"	j	language:HTML
+Adhock testing	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Adhock testing$/;"	s	language:Markdown
+Adhock testing	dist/blog/pragmatic-programmer-review.html	/^<h2 id="adhock-testing">Adhock testing<\/h2>$/;"	i	language:HTML
+Algumas conclusões bacanas	_posts/2015-07-13-games-research.md	/^#### Algumas conclusões bacanas$/;"	t	language:Markdown
+Alguns detalhes interessantes da história do HTML	_posts/2015-07-13-games-research.md	/^#### Alguns detalhes interessantes da história do HTML$/;"	t	language:Markdown
+Anonymous classes	_posts/2016-05-08-mockinginphpaacomparison.md	/^##  Anonymous classes$/;"	s	language:Markdown
+Anonymous classes	dist/blog/mockinginphpaacomparison.html	/^<h2 id="anonymous-classes">Anonymous classes<\/h2>$/;"	i	language:HTML
+Aplicação parcial	_posts/2017-12-28-composicao.md	/^## Aplicação parcial$/;"	s	language:Markdown
+Aplicação parcial	dist/blog/composicao.html	/^<h2 id="aplicação-parcial">Aplicação parcial<\/h2>$/;"	i	language:HTML
+Aprenda Git	_posts/2014-02-19-como-aprender-php.md	/^## Aprenda Git$/;"	s	language:Markdown
+Aprenda Git	dist/blog/como-aprender-php.html	/^<h2 id="aprenda-git">Aprenda Git<\/h2>$/;"	i	language:HTML
+Aprenda HTTP	_posts/2014-02-19-como-aprender-php.md	/^## Aprenda HTTP$/;"	s	language:Markdown
+Aprenda HTTP	dist/blog/como-aprender-php.html	/^<h2 id="aprenda-http">Aprenda HTTP<\/h2>$/;"	i	language:HTML
+Aprenda a linguagem não seus frameworks	_posts/2014-02-19-como-aprender-php.md	/^## Aprenda a linguagem não seus frameworks$/;"	s	language:Markdown
+Aprenda a linguagem não seus frameworks	dist/blog/como-aprender-php.html	/^<h2 id="aprenda-a-linguagem-não-seus-frameworks">Aprenda a linguagem não seus frameworks<\/h2>$/;"	i	language:HTML
+Archlinux wanderings changing GUI's	dist/blog/archlinuxwanderingsachanginggui27s.html	/^    <h1 class="post__title">Archlinux wanderings changing GUI's<\/h1>$/;"	h	language:HTML
+Arquivos de determinado pacote instalado	_posts/2015-10-04-dicaspacman.md	/^## Arquivos de determinado pacote instalado$/;"	s	language:Markdown
+Arquivos de determinado pacote instalado	dist/blog/dicaspacman.html	/^<h2 id="arquivos-de-determinado-pacote-instalado">Arquivos de determinado pacote instalado<\/h2>$/;"	i	language:HTML
+Ato moral	_posts/2014-05-19-ato-moral.md	/^####  Ato moral$/;"	t	language:Markdown
+Ato moral	dist/blog/ato-moral.html	/^    <h1 class="post__title">Ato moral<\/h1>$/;"	h	language:HTML
+Automating the parts	_posts/2015-04-19-curl-plus-firefox.md	/^## Automating the parts$/;"	s	language:Markdown
+Automating the parts	dist/blog/curl-plus-firefox.html	/^<h2 id="automating-the-parts">Automating the parts<\/h2>$/;"	i	language:HTML
+Automation bias	_posts/2015-03-03-fallacies.md	/^## Automation bias$/;"	s	language:Markdown
+Automation bias	dist/blog/fallacies.html	/^<h2 id="automation-bias">Automation bias<\/h2>$/;"	i	language:HTML
+Awesome things	_posts/2015-12-01-ayearofmyarchinstallation.md	/^## Awesome things$/;"	s	language:Markdown
+Awesome things	dist/blog/ayearofmyarchinstallation.html	/^<h2 id="awesome-things">Awesome things<\/h2>$/;"	i	language:HTML
+BENCHMARKS	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### BENCHMARKS$/;"	t	language:Markdown
+Benefits	_posts/2015-10-16-mynotesfortheqahangout.md	/^### Benefits$/;"	S	language:Markdown
+Benefits	dist/blog/mynotesfortheqahangout.html	/^<h3 id="benefits">Benefits<\/h3>$/;"	j	language:HTML
+Benefits:	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Benefits:$/;"	S	language:Markdown
+Benefits:	dist/blog/pragmatic-programmer-review.html	/^<h3 id="benefits">Benefits:<\/h3>$/;"	j	language:HTML
+Blog	README.md	/^# Blog$/;"	c	language:Markdown
+Blog Posts:	dist/index.html	/^    <h1>Blog Posts:<\/h1>$/;"	h	language:HTML
+Blog Posts:	index.html	/^    <h1>Blog Posts:<\/h1>$/;"	h	language:HTML
+Bloqueando e desbloqueando o terminal	_posts/2015-03-12-dicas-bash.md	/^## Bloqueando e desbloqueando o terminal$/;"	s	language:Markdown
+Bloqueando e desbloqueando o terminal	dist/blog/dicas-bash.html	/^<h2 id="bloqueando-e-desbloqueando-o-terminal">Bloqueando e desbloqueando o terminal<\/h2>$/;"	i	language:HTML
+Bons motivos para refatorar	_posts/2017-07-14-quando-refatorar.md	/^## Bons motivos para refatorar$/;"	s	language:Markdown
+Bons motivos para refatorar	dist/blog/quando-refatorar.html	/^<h2 id="bons-motivos-para-refatorar">Bons motivos para refatorar<\/h2>$/;"	i	language:HTML
+Books	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Books$/;"	S	language:Markdown
+Books	_posts/2015-10-16-mynotesfortheqahangout.md	/^## Books$/;"	s	language:Markdown
+Books	dist/blog/mynotesfortheqahangout.html	/^<h2 id="books">Books<\/h2>$/;"	i	language:HTML
+Books	dist/blog/pragmatic-programmer-review.html	/^<h3 id="books">Books<\/h3>$/;"	j	language:HTML
+Braimstorm	_posts/2015-10-16-mynotesfortheqahangout.md	/^## Braimstorm$/;"	s	language:Markdown
+Braimstorm	dist/blog/mynotesfortheqahangout.html	/^<h2 id="braimstorm">Braimstorm<\/h2>$/;"	i	language:HTML
+Break your pull requests	_posts/2015-09-29-hardlessonsfromcodereviews.md	/^# Break your pull requests$/;"	c	language:Markdown
+Break your pull requests	dist/blog/hardlessonsfromcodereviews.html	/^<h1 id="break-your-pull-requests">Break your pull requests<\/h1>$/;"	h	language:HTML
+Bug Reproduction	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Bug Reproduction$/;"	S	language:Markdown
+Bug Reproduction	dist/blog/pragmatic-programmer-review.html	/^<h3 id="bug-reproduction">Bug Reproduction<\/h3>$/;"	j	language:HTML
+Build a model	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Build a model$/;"	S	language:Markdown
+Build a model	dist/blog/pragmatic-programmer-review.html	/^<h3 id="build-a-model">Build a model<\/h3>$/;"	j	language:HTML
+Building a Cross-Platform Mobile Game with HTML5 - BARNETT, Joshua	_posts/2015-07-13-games-research.md	/^### Building a Cross-Platform Mobile Game with HTML5 - BARNETT, Joshua$/;"	S	language:Markdown
+Building a Cross-Platform Mobile Game with HTML5 - BARNETT, Joshua	dist/blog/games-research.html	/^<h3 id="building-a-cross-platform-mobile-game-with-html5---barnett-joshua">Building a Cross-Plat/;"	j	language:HTML
+Building a Library	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Building a Library$/;"	s	language:Markdown
+Building a Library	dist/blog/pragmatic-programmer-review.html	/^<h2 id="building-a-library">Building a Library<\/h2>$/;"	i	language:HTML
+Calculating processing time complexity	dist/blog/calculating_processing_time_complexity.html	/^    <h1 class="post__title">Calculating processing time complexity<\/h1>$/;"	h	language:HTML
+Capslock	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^## Capslock$/;"	s	language:Markdown
+Capslock	dist/blog/porumtecladomaisprodutivo.html	/^<h2 id="capslock">Capslock<\/h2>$/;"	i	language:HTML
+Cascading Style Sheets, PhD thesis - Håkon Wium Lie	_posts/2015-07-13-games-research.md	/^## Cascading Style Sheets, PhD thesis - Håkon Wium Lie$/;"	s	language:Markdown
+Cascading Style Sheets, PhD thesis - Håkon Wium Lie	dist/blog/games-research.html	/^<h2 id="cascading-style-sheets-phd-thesis---håkon-wium-lie">Cascading Style Sheets, PhD thesis /;"	i	language:HTML
+Characteristics of pragmatic programmers	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Characteristics of pragmatic programmers$/;"	s	language:Markdown
+Characteristics of pragmatic programmers	dist/blog/pragmatic-programmer-review.html	/^<h2 id="characteristics-of-pragmatic-programmers">Characteristics of pragmatic programmers<\/h2>$/;"	i	language:HTML
+Classes Gramaticais	_posts/2014-04-15-vim-on-sublime.md	/^###  Classes Gramaticais$/;"	S	language:Markdown
+Classes Gramaticais	dist/blog/vim-on-sublime.html	/^<h3 id="classes-gramaticais">Classes Gramaticais<\/h3>$/;"	j	language:HTML
+Clippboard	_posts/2017-09-10-3-years-archlinux.md	/^## Clippboard$/;"	s	language:Markdown
+Clippboard	dist/blog/3-years-archlinux.html	/^<h2 id="clippboard">Clippboard<\/h2>$/;"	i	language:HTML
+Code Checker	_posts/2016-08-15-code-style-compufacil.md	/^## Code Checker$/;"	s	language:Markdown
+Code Checker	dist/blog/code-style-compufacil.html	/^<h2 id="code-checker">Code Checker<\/h2>$/;"	i	language:HTML
+Code Style on Compufacil	dist/blog/code-style-compufacil.html	/^    <h1 class="post__title">Code Style on Compufacil<\/h1>$/;"	h	language:HTML
+Code generators	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Code generators$/;"	s	language:Markdown
+Code generators	dist/blog/pragmatic-programmer-review.html	/^<h2 id="code-generators">Code generators<\/h2>$/;"	i	language:HTML
+Code review references	dist/blog/codereviewreferences.html	/^    <h1 class="post__title">Code review references<\/h1>$/;"	h	language:HTML
+Colando no terminal	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^## Colando no terminal$/;"	s	language:Markdown
+Colando no terminal	dist/blog/porumtecladomaisprodutivo.html	/^<h2 id="colando-no-terminal">Colando no terminal<\/h2>$/;"	i	language:HTML
+Coloque a mão na massa	_posts/2014-02-19-como-aprender-php.md	/^## Coloque a mão na massa$/;"	s	language:Markdown
+Coloque a mão na massa	dist/blog/como-aprender-php.html	/^<h2 id="coloque-a-mão-na-massa">Coloque a mão na massa<\/h2>$/;"	i	language:HTML
+Comments	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Comments$/;"	S	language:Markdown
+Comments	dist/blog/pragmatic-programmer-review.html	/^<h3 id="comments">Comments<\/h3>$/;"	j	language:HTML
+Communicating only through interfaces	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^## Communicating only through interfaces$/;"	s	language:Markdown
+Communicating only through interfaces	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h2 id="communicating-only-through-interfaces">Communicating only through interfaces<\/h2>$/;"	i	language:HTML
+Como aprender PHP	dist/blog/como-aprender-php.html	/^    <h1 class="post__title">Como aprender PHP<\/h1>$/;"	h	language:HTML
+Comunidade	_posts/2014-02-19-como-aprender-php.md	/^## Comunidade$/;"	s	language:Markdown
+Comunidade	dist/blog/como-aprender-php.html	/^<h2 id="comunidade">Comunidade<\/h2>$/;"	i	language:HTML
+Concepts	_posts/2016-11-27-on-being-a-50-years-old-programmer.md	/^Concepts$/;"	s	language:Markdown
+Concepts	dist/blog/on-being-a-50-years-old-programmer.html	/^<h2 id="concepts">Concepts<\/h2>$/;"	i	language:HTML
+Conclui que HTML5 não é viável em geral para aplicações	_posts/2015-07-13-games-research.md	/^### Conclui que HTML5 não é viável em geral para aplicações$/;"	S	language:Markdown
+Conclui que HTML5 não é viável em geral para aplicações	dist/blog/games-research.html	/^<h3 id="conclui-que-html5-não-é-viável-em-geral-para-aplicações">Conclui que HTML5 não é /;"	j	language:HTML
+Concluindo...	_posts/2015-02-19-programador-mago.md	/^## Concluindo...$/;"	s	language:Markdown
+Concluindo...	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### Concluindo...$/;"	t	language:Markdown
+Concluindo…	dist/blog/programador-mago.html	/^<h2 id="concluindo">Concluindo…<\/h2>$/;"	i	language:HTML
+Conclusion	_posts/2015-04-19-curl-plus-firefox.md	/^## Conclusion$/;"	s	language:Markdown
+Conclusion	_posts/2016-05-08-mockinginphpaacomparison.md	/^##  Conclusion$/;"	s	language:Markdown
+Conclusion	_posts/2016-10-12-two-years-of-arch.md	/^## Conclusion$/;"	s	language:Markdown
+Conclusion	_posts/2017-09-10-3-years-archlinux.md	/^## Conclusion$/;"	s	language:Markdown
+Conclusion	_posts/2018-08-01-get-your-guide.md	/^## Conclusion$/;"	s	language:Markdown
+Conclusion	dist/blog/3-years-archlinux.html	/^<h2 id="conclusion">Conclusion<\/h2>$/;"	i	language:HTML
+Conclusion	dist/blog/curl-plus-firefox.html	/^<h2 id="conclusion">Conclusion<\/h2>$/;"	i	language:HTML
+Conclusion	dist/blog/get-your-guide.html	/^<h2 id="conclusion">Conclusion<\/h2>$/;"	i	language:HTML
+Conclusion	dist/blog/mockinginphpaacomparison.html	/^<h2 id="conclusion">Conclusion<\/h2>$/;"	i	language:HTML
+Conclusion	dist/blog/two-years-of-arch.html	/^<h2 id="conclusion">Conclusion<\/h2>$/;"	i	language:HTML
+Conclusão	_posts/2014-02-19-como-aprender-php.md	/^# Conclusão$/;"	c	language:Markdown
+Conclusão	_posts/2017-07-14-quando-refatorar.md	/^## Conclusão$/;"	s	language:Markdown
+Conclusão	dist/blog/como-aprender-php.html	/^<h1 id="conclusão">Conclusão<\/h1>$/;"	h	language:HTML
+Conclusão	dist/blog/quando-refatorar.html	/^<h2 id="conclusão">Conclusão<\/h2>$/;"	i	language:HTML
+Console RPG in C++	_posts/2015-06-09-gamedevelopmentwandering.md	/^## Console RPG in C++$/;"	s	language:Markdown
+Console RPG in C++	dist/blog/gamedevelopmentwandering.html	/^<h2 id="console-rpg-in-c">Console RPG in C++<\/h2>$/;"	i	language:HTML
+Conta com boas definições técnicas sobre o HTML	_posts/2015-07-13-games-research.md	/^#### Conta com boas definições técnicas sobre o HTML$/;"	t	language:Markdown
+Controle de processos	_posts/2015-03-12-dicas-bash.md	/^## Controle de processos$/;"	s	language:Markdown
+Controle de processos	dist/blog/dicas-bash.html	/^<h2 id="controle-de-processos">Controle de processos<\/h2>$/;"	i	language:HTML
+Cool personal unixy tools	dist/blog/little-unix-tools.html	/^    <h1 class="post__title">Cool personal unixy tools<\/h1>$/;"	h	language:HTML
+Copy to clipboard using pipe	_posts/2016-07-27-little-unix-tools.md	/^## Copy to clipboard using pipe$/;"	s	language:Markdown
+Copy to clipboard using pipe	dist/blog/little-unix-tools.html	/^<h2 id="copy-to-clipboard-using-pipe">Copy to clipboard using pipe<\/h2>$/;"	i	language:HTML
+Correlational errors	_posts/2015-03-03-fallacies.md	/^# Correlational errors$/;"	c	language:Markdown
+Correlational errors	dist/blog/fallacies.html	/^<h1 id="correlational-errors">Correlational errors<\/h1>$/;"	h	language:HTML
+Create a user and a group with the ids	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^## Create a user and a group with the ids$/;"	s	language:Markdown
+Create a user and a group with the ids	dist/blog/stop-struggling-with-docker-volumes.html	/^<h2 id="create-a-user-and-a-group-with-the-ids">Create a user and a group with the ids<\/h2>$/;"	i	language:HTML
+Creation vs Consuming	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## Creation vs Consuming$/;"	s	language:Markdown
+Creation vs Consuming	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="creation-vs-consuming">Creation vs Consuming<\/h2>$/;"	i	language:HTML
+DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012	_posts/2015-07-13-games-research.md	/^## DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012$/;"	s	language:Markdown
+DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012	dist/blog/games-research.html	/^<h2 id="developing-effect-of-html5-thechnology-in-web-game---yu-zhang-2012">DEVELOPING EFFECT OF/;"	i	language:HTML
+Debugging	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Debugging$/;"	s	language:Markdown
+Debugging	dist/blog/pragmatic-programmer-review.html	/^<h2 id="debugging">Debugging<\/h2>$/;"	i	language:HTML
+Debugging Doctrine Entities	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Debugging Doctrine Entities$/;"	S	language:Markdown
+Debugging Doctrine Entities	dist/blog/doctrine2contributiontouch.html	/^<h3 id="debugging-doctrine-entities">Debugging Doctrine Entities<\/h3>$/;"	j	language:HTML
+Decoupling strategies for Zend Framework 2 applications	dist/blog/decouplingstrategiesforzendframework2applications.html	/^    <h1 class="post__title">Decoupling strategies for Zend Framework 2 applications<\/h1>$/;"	h	language:HTML
+Desabilitando	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^### Desabilitando$/;"	S	language:Markdown
+Desabilitando	dist/blog/porumtecladomaisprodutivo.html	/^<h3 id="desabilitando">Desabilitando<\/h3>$/;"	j	language:HTML
+Design by Contract	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Design by Contract$/;"	s	language:Markdown
+Design by Contract	dist/blog/pragmatic-programmer-review.html	/^<h2 id="design-by-contract">Design by Contract<\/h2>$/;"	i	language:HTML
+Detect the uid and gid of the folder on the container	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^## Detect the uid and gid of the folder on the container$/;"	s	language:Markdown
+Detect the uid and gid of the folder on the container	dist/blog/stop-struggling-with-docker-volumes.html	/^<h2 id="detect-the-uid-and-gid-of-the-folder-on-the-container">Detect the uid and gid of the fol/;"	i	language:HTML
+Dicas	_posts/2014-02-19-como-aprender-php.md	/^### Dicas$/;"	S	language:Markdown
+Dicas	dist/blog/como-aprender-php.html	/^<h3 id="dicas">Dicas<\/h3>$/;"	j	language:HTML
+Dicas Ack	dist/blog/dicasack.html	/^    <h1 class="post__title">Dicas Ack<\/h1>$/;"	h	language:HTML
+Dicas Pacman	dist/blog/dicaspacman.html	/^    <h1 class="post__title">Dicas Pacman<\/h1>$/;"	h	language:HTML
+Dicas bash	dist/blog/dicas-bash.html	/^    <h1 class="post__title">Dicas bash<\/h1>$/;"	h	language:HTML
+Dicas do livro Clean Code de Robert C. Martin	dist/blog/dicasdolivrocleancodederobertc.martin.html	/^    <h1 class="post__title">Dicas do livro Clean Code de Robert C. Martin<\/h1>$/;"	h	language:HTML
+Distorting reality with docker	dist/blog/distorting_reallity_with_docker.html	/^    <h1 class="post__title">Distorting reality with docker<\/h1>$/;"	h	language:HTML
+Do sowftware livre e da liberdade dos usuários	dist/blog/sofware-livre.html	/^    <h1 class="post__title">Do sowftware livre e da liberdade dos usuários<\/h1>$/;"	h	language:HTML
+Doctrine 2 contribution touch	dist/blog/doctrine2contributiontouch.html	/^    <h1 class="post__title">Doctrine 2 contribution touch<\/h1>$/;"	h	language:HTML
+Documentação com o Swagger	dist/blog/documentacao-swagger.html	/^    <h1 class="post__title">Documentação com o Swagger<\/h1>$/;"	h	language:HTML
+Don't call persist on managed entities	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Don't call persist on managed entities$/;"	S	language:Markdown
+Don’t call persist on managed entities	dist/blog/doctrine2contributiontouch.html	/^<h3 id="dont-call-persist-on-managed-entities">Don’t call persist on managed entities<\/h3>$/;"	j	language:HTML
+Edit binary everywhere	_posts/2016-07-27-little-unix-tools.md	/^## Edit binary everywhere$/;"	s	language:Markdown
+Edit binary everywhere	dist/blog/little-unix-tools.html	/^<h2 id="edit-binary-everywhere">Edit binary everywhere<\/h2>$/;"	i	language:HTML
+Elogie para criar comportamentos	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^## Elogie para criar comportamentos$/;"	s	language:Markdown
+Elogie para criar comportamentos	dist/blog/ncaoesqueca7adesercbtimo.html	/^<h2 id="elogie-para-criar-comportamentos">Elogie para criar comportamentos<\/h2>$/;"	i	language:HTML
+Escape	_posts/2015-06-08-dicasack.md	/^## Escape$/;"	s	language:Markdown
+Escape	dist/blog/dicasack.html	/^<h2 id="escape">Escape<\/h2>$/;"	i	language:HTML
+Estilo Emacs	_posts/2015-03-12-dicas-bash.md	/^### Estilo Emacs$/;"	S	language:Markdown
+Estilo Emacs	dist/blog/dicas-bash.html	/^<h3 id="estilo-emacs">Estilo Emacs<\/h3>$/;"	j	language:HTML
+Estimation	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Estimation$/;"	s	language:Markdown
+Estimation	dist/blog/pragmatic-programmer-review.html	/^<h2 id="estimation">Estimation<\/h2>$/;"	i	language:HTML
+Even Better If...	_posts/2018-08-01-get-your-guide.md	/^## Even Better If... $/;"	s	language:Markdown
+Even Better If…	dist/blog/get-your-guide.html	/^<h2 id="even-better-if">Even Better If…<\/h2>$/;"	i	language:HTML
+Exception collections	_posts/2016-02-21-doctrine2contributiontouch.md	/^## Exception collections$/;"	s	language:Markdown
+Exception collections	dist/blog/doctrine2contributiontouch.html	/^<h2 id="exception-collections">Exception collections<\/h2>$/;"	i	language:HTML
+Executable documents	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Executable documents$/;"	S	language:Markdown
+Executable documents	dist/blog/pragmatic-programmer-review.html	/^<h3 id="executable-documents">Executable documents<\/h3>$/;"	j	language:HTML
+Exemplos	_posts/2014-04-15-vim-on-sublime.md	/^###  Exemplos$/;"	S	language:Markdown
+Exemplos	dist/blog/vim-on-sublime.html	/^<h3 id="exemplos">Exemplos<\/h3>$/;"	j	language:HTML
+Expansão de padrões	_posts/2015-03-12-dicas-bash.md	/^### Expansão de padrões$/;"	S	language:Markdown
+Expansão de padrões	dist/blog/dicas-bash.html	/^<h3 id="expansão-de-padrões">Expansão de padrões<\/h3>$/;"	j	language:HTML
+Facilitando o Backup	_posts/2015-03-12-dicas-bash.md	/^### Facilitando o Backup$/;"	S	language:Markdown
+Facilitando o Backup	dist/blog/dicas-bash.html	/^<h3 id="facilitando-o-backup">Facilitando o Backup<\/h3>$/;"	j	language:HTML
+Factory Identity	_posts/2015-05-09-plugins-zf2.md	/^#### Factory Identity$/;"	t	language:Markdown
+Faça sua biblioteca de objetos	_posts/2014-02-19-como-aprender-php.md	/^## Faça sua biblioteca de objetos$/;"	s	language:Markdown
+Faça sua biblioteca de objetos	dist/blog/como-aprender-php.html	/^<h2 id="faça-sua-biblioteca-de-objetos">Faça sua biblioteca de objetos<\/h2>$/;"	i	language:HTML
+Filtrando por tipo de arquivo	_posts/2015-06-08-dicasack.md	/^## Filtrando por tipo de arquivo$/;"	s	language:Markdown
+Filtrando por tipo de arquivo	dist/blog/dicasack.html	/^<h2 id="filtrando-por-tipo-de-arquivo">Filtrando por tipo de arquivo<\/h2>$/;"	i	language:HTML
+Find	_posts/2015-06-08-dicasack.md	/^## Find$/;"	s	language:Markdown
+Find	dist/blog/dicasack.html	/^<h2 id="find">Find<\/h2>$/;"	i	language:HTML
+Finding issues on Github	dist/blog/findingissuesongithub.html	/^    <h1 class="post__title">Finding issues on Github<\/h1>$/;"	h	language:HTML
+Fourh slide	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^#  Fourh slide$/;"	c	language:Markdown
+Fragilidade	_posts/2015-02-01-sintomasdedesignpodre.md	/^## Fragilidade$/;"	s	language:Markdown
+Fragilidade	dist/blog/sintomasdedesignpodre.html	/^<h2 id="fragilidade">Fragilidade<\/h2>$/;"	i	language:HTML
+Front in Floripa impressions	dist/blog/frontinfloripaimpressions.html	/^    <h1 class="post__title">Front in Floripa impressions<\/h1>$/;"	h	language:HTML
+Full crud with pyresttest	dist/blog/fullcrudwithpyresttest.html	/^    <h1 class="post__title">Full crud with pyresttest<\/h1>$/;"	h	language:HTML
+Fundamental software vs Software Helpers	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## Fundamental software vs Software Helpers$/;"	s	language:Markdown
+Fundamental software vs Software Helpers	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="fundamental-software-vs-software-helpers">Fundamental software vs Software Helpers<\/h2>$/;"	i	language:HTML
+Game development wandering	dist/blog/gamedevelopmentwandering.html	/^    <h1 class="post__title">Game development wandering<\/h1>$/;"	h	language:HTML
+Games independentes - LEMES, David Oliveira Este é um trabalho meio	_posts/2015-07-13-games-research.md	/^### Games independentes - LEMES, David Oliveira Este é um trabalho meio$/;"	S	language:Markdown
+Games independentes - LEMES, David Oliveira Este é um trabalho meio	dist/blog/games-research.html	/^        <h3 id="games-independentes---lemes-david-oliveira-este-é-um-trabalho-meio">Games indep/;"	j	language:HTML
+Generalize T(n) by it's base output	_posts/2017-03-30-calculating_processing_time_complexity.md	/^Generalize T(n) by it's base output$/;"	s	language:Markdown
+Generalize T(n) by it’s base output	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="generalize-tn-by-its-base-output">Generalize T(n) by it’s base output<\/h2>$/;"	i	language:HTML
+Get the "base" of T(n)	_posts/2017-03-30-calculating_processing_time_complexity.md	/^## Get the "base" of T(n)$/;"	s	language:Markdown
+Get the “base” of T(n)	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="get-the-base-of-tn">Get the “base” of T(n)<\/h2>$/;"	i	language:HTML
+Getting Technical	_posts/2018-08-01-get-your-guide.md	/^## Getting Technical $/;"	s	language:Markdown
+Getting Technical	dist/blog/get-your-guide.html	/^<h2 id="getting-technical">Getting Technical<\/h2>$/;"	i	language:HTML
+Give the permission in the host for the user and group	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^## Give the permission in the host for the user and group$/;"	s	language:Markdown
+Give the permission in the host for the user and group	dist/blog/stop-struggling-with-docker-volumes.html	/^<h2 id="give-the-permission-in-the-host-for-the-user-and-group">Give the permission in the host /;"	i	language:HTML
+Global Snippets	_posts/2016-07-27-little-unix-tools.md	/^## Global Snippets$/;"	s	language:Markdown
+Global Snippets	dist/blog/little-unix-tools.html	/^<h2 id="global-snippets">Global Snippets<\/h2>$/;"	i	language:HTML
+God Delusion Talk by Dawkins	dist/blog/dawkins-talk.html	/^    <h1 class="post__title">God Delusion Talk by Dawkins<\/h1>$/;"	h	language:HTML
+Going deeper	_posts/2018-08-19-reasons.md	/^## Going deeper$/;"	s	language:Markdown
+Going deeper	dist/blog/reasons.html	/^<h2 id="going-deeper">Going deeper<\/h2>$/;"	i	language:HTML
+Good why's	dist/blog/reasons.html	/^    <h1 class="post__title">Good why's<\/h1>$/;"	h	language:HTML
+Graphic environments	_posts/2016-10-12-two-years-of-arch.md	/^## Graphic environments$/;"	s	language:Markdown
+Graphic environments	dist/blog/two-years-of-arch.html	/^<h2 id="graphic-environments">Graphic environments<\/h2>$/;"	i	language:HTML
+Graphical Potential Games - Ortiz	_posts/2015-07-13-games-research.md	/^## Graphical Potential Games - Ortiz$/;"	s	language:Markdown
+Graphical Potential Games - Ortiz	dist/blog/games-research.html	/^<h2 id="graphical-potential-games---ortiz">Graphical Potential Games - Ortiz<\/h2>$/;"	i	language:HTML
+Hard lessons from code reviews	dist/blog/hardlessonsfromcodereviews.html	/^    <h1 class="post__title">Hard lessons from code reviews<\/h1>$/;"	h	language:HTML
+Histórico	_posts/2015-03-12-dicas-bash.md	/^## Histórico$/;"	s	language:Markdown
+Histórico	dist/blog/dicas-bash.html	/^<h2 id="histórico">Histórico<\/h2>$/;"	i	language:HTML
+Honesty	_posts/2018-04-18-myvalues.md	/^## Honesty$/;"	s	language:Markdown
+Honesty	dist/blog/myvalues.html	/^<h2 id="honesty">Honesty<\/h2>$/;"	i	language:HTML
+How to meditate	_posts/2016-03-27-quotesfromthebookwakingup.md	/^## How to meditate$/;"	s	language:Markdown
+How to meditate	dist/blog/quotesfromthebookwakingup.html	/^<h2 id="how-to-meditate">How to meditate<\/h2>$/;"	i	language:HTML
+How to program deliberately	_posts/2014-04-03-pragmatic-programmer-review.md	/^## How to program deliberately$/;"	s	language:Markdown
+How to program deliberately	dist/blog/pragmatic-programmer-review.html	/^<h2 id="how-to-program-deliberately">How to program deliberately<\/h2>$/;"	i	language:HTML
+Human readable JSON	_posts/2016-07-27-little-unix-tools.md	/^## Human readable JSON$/;"	s	language:Markdown
+Human readable JSON	dist/blog/little-unix-tools.html	/^<h2 id="human-readable-json">Human readable JSON<\/h2>$/;"	i	language:HTML
+Imobilidade	_posts/2015-02-01-sintomasdedesignpodre.md	/^## Imobilidade$/;"	s	language:Markdown
+Imobilidade	dist/blog/sintomasdedesignpodre.html	/^<h2 id="imobilidade">Imobilidade<\/h2>$/;"	i	language:HTML
+Impact	_posts/2018-04-18-myvalues.md	/^## Impact$/;"	s	language:Markdown
+Impact	dist/blog/myvalues.html	/^<h2 id="impact">Impact<\/h2>$/;"	i	language:HTML
+Inicie o NGINX:	_posts/2013-08-22-multiplos-phps.md	/^### Inicie o NGINX:$/;"	S	language:Markdown
+Inicie o NGINX:	dist/blog/multiplos-phps.html	/^<h3 id="inicie-o-nginx">Inicie o NGINX:<\/h3>$/;"	j	language:HTML
+Inspire-se nos grandes players	_posts/2014-02-19-como-aprender-php.md	/^## Inspire-se nos grandes players$/;"	s	language:Markdown
+Inspire-se nos grandes players	dist/blog/como-aprender-php.html	/^<h2 id="inspire-se-nos-grandes-players">Inspire-se nos grandes players<\/h2>$/;"	i	language:HTML
+Instalar pacotes locais	_posts/2015-10-04-dicaspacman.md	/^### Instalar pacotes locais$/;"	S	language:Markdown
+Instalar pacotes locais	dist/blog/dicaspacman.html	/^<h3 id="instalar-pacotes-locais">Instalar pacotes locais<\/h3>$/;"	j	language:HTML
+Issues	_posts/2016-10-12-two-years-of-arch.md	/^## Issues$/;"	s	language:Markdown
+Issues	_posts/2017-09-10-3-years-archlinux.md	/^## Issues$/;"	s	language:Markdown
+Issues	dist/blog/3-years-archlinux.html	/^<h2 id="issues">Issues<\/h2>$/;"	i	language:HTML
+Issues	dist/blog/two-years-of-arch.html	/^<h2 id="issues">Issues<\/h2>$/;"	i	language:HTML
+Issues remaining	_posts/2017-09-10-3-years-archlinux.md	/^### Issues remaining$/;"	S	language:Markdown
+Issues remaining	dist/blog/3-years-archlinux.html	/^<h3 id="issues-remaining">Issues remaining<\/h3>$/;"	j	language:HTML
+It's all writing	_posts/2014-04-03-pragmatic-programmer-review.md	/^## It's all writing$/;"	s	language:Markdown
+It’s all writing	dist/blog/pragmatic-programmer-review.html	/^<h2 id="its-all-writing">It’s all writing<\/h2>$/;"	i	language:HTML
+Jean Carlo Machado	dist/index.html	/^    <h1>Jean Carlo Machado<\/h1>$/;"	h	language:HTML
+Julgue a pessoa pelos princípios dessa pessoa, não pelos seus	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^# Julgue a pessoa pelos princípios dessa pessoa, não pelos seus$/;"	c	language:Markdown
+Julgue a pessoa pelos princípios dessa pessoa, não pelos seus	dist/blog/ncaoesqueca7adesercbtimo.html	/^<h1 id="julgue-a-pessoa-pelos-princípios-dessa-pessoa-não-pelos-seus">Julgue a pessoa pelos pr/;"	h	language:HTML
+Keep Knowledge in Plain Text	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Keep Knowledge in Plain Text$/;"	s	language:Markdown
+Keep Knowledge in Plain Text	dist/blog/pragmatic-programmer-review.html	/^<h2 id="keep-knowledge-in-plain-text">Keep Knowledge in Plain Text<\/h2>$/;"	i	language:HTML
+Keep track of your estimating prowess	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Keep track of your estimating prowess$/;"	S	language:Markdown
+Keep track of your estimating prowess	dist/blog/pragmatic-programmer-review.html	/^<h3 id="keep-track-of-your-estimating-prowess">Keep track of your estimating prowess<\/h3>$/;"	j	language:HTML
+Know the size of your UnitOfWork	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Know the size of your UnitOfWork$/;"	S	language:Markdown
+Know the size of your UnitOfWork	dist/blog/doctrine2contributiontouch.html	/^<h3 id="know-the-size-of-your-unitofwork">Know the size of your UnitOfWork<\/h3>$/;"	j	language:HTML
+Knowledge	_posts/2018-04-18-myvalues.md	/^## Knowledge$/;"	s	language:Markdown
+Knowledge	dist/blog/myvalues.html	/^<h2 id="knowledge">Knowledge<\/h2>$/;"	i	language:HTML
+Latex header	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^##  Latex header$/;"	s	language:Markdown
+Latex header	dist/blog/simplepresentationtemplatewithmarkdownandpandoc.html	/^<h2 id="latex-header">Latex header<\/h2>$/;"	i	language:HTML
+Law of Demeter	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Law of Demeter$/;"	S	language:Markdown
+Law of Demeter	dist/blog/pragmatic-programmer-review.html	/^<h3 id="law-of-demeter">Law of Demeter<\/h3>$/;"	j	language:HTML
+Law of Demeter for functions	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Law of Demeter for functions$/;"	s	language:Markdown
+Law of Demeter for functions	dist/blog/pragmatic-programmer-review.html	/^<h2 id="law-of-demeter-for-functions">Law of Demeter for functions<\/h2>$/;"	i	language:HTML
+Learning	_posts/2016-10-12-two-years-of-arch.md	/^## Learning$/;"	s	language:Markdown
+Learning	dist/blog/two-years-of-arch.html	/^<h2 id="learning">Learning<\/h2>$/;"	i	language:HTML
+Links interessantes	_posts/2015-06-08-dicasack.md	/^## Links interessantes$/;"	s	language:Markdown
+Links interessantes	dist/blog/dicasack.html	/^<h2 id="links-interessantes">Links interessantes<\/h2>$/;"	i	language:HTML
+Listagem de pacotes orfãos	_posts/2015-10-04-dicaspacman.md	/^## Listagem de pacotes orfãos$/;"	s	language:Markdown
+Listagem de pacotes orfãos	dist/blog/dicaspacman.html	/^<h2 id="listagem-de-pacotes-orfãos">Listagem de pacotes orfãos<\/h2>$/;"	i	language:HTML
+Lying	dist/blog/lying.html	/^    <h1 class="post__title">Lying<\/h1>$/;"	h	language:HTML
+Main Title	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^# Main Title$/;"	c	language:Markdown
+Makefile	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^##  Makefile$/;"	s	language:Markdown
+Makefile	dist/blog/simplepresentationtemplatewithmarkdownandpandoc.html	/^<h2 id="makefile">Makefile<\/h2>$/;"	i	language:HTML
+Math Game	dist/blog/gamedevelopmentwandering.html	/^<h2 id="math-game"><a href="http:\/\/jeancarlomachado.com.br\/game\/math\/index.html">Math Game</;"	i	language:HTML
+Mechanics over Politics	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## Mechanics over Politics$/;"	s	language:Markdown
+Mechanics over Politics	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="mechanics-over-politics">Mechanics over Politics<\/h2>$/;"	i	language:HTML
+Meditation Reveals and Heals	_posts/2015-06-12-miracle-mindfulness.md	/^## Meditation Reveals and Heals$/;"	s	language:Markdown
+Meditation Reveals and Heals	dist/blog/miracle-mindfulness.html	/^<h2 id="meditation-reveals-and-heals">Meditation Reveals and Heals<\/h2>$/;"	i	language:HTML
+Meta programming	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Meta programming$/;"	s	language:Markdown
+Meta programming	dist/blog/pragmatic-programmer-review.html	/^<h2 id="meta-programming">Meta programming<\/h2>$/;"	i	language:HTML
+Metodologia whatnext	dist/blog/metodologia-whatnext.html	/^    <h1 class="post__title">Metodologia whatnext<\/h1>$/;"	h	language:HTML
+Metrics to examine code	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Metrics to examine code$/;"	s	language:Markdown
+Metrics to examine code	dist/blog/pragmatic-programmer-review.html	/^<h2 id="metrics-to-examine-code">Metrics to examine code<\/h2>$/;"	i	language:HTML
+Mindfulness	_posts/2018-04-18-myvalues.md	/^## Mindfulness$/;"	s	language:Markdown
+Mindfulness	dist/blog/myvalues.html	/^<h2 id="mindfulness">Mindfulness<\/h2>$/;"	i	language:HTML
+Mockery	_posts/2016-05-08-mockinginphpaacomparison.md	/^##  Mockery$/;"	s	language:Markdown
+Mockery	dist/blog/mockinginphpaacomparison.html	/^<h2 id="mockery">Mockery<\/h2>$/;"	i	language:HTML
+Mocking in PHP a comparison	dist/blog/mockinginphpaacomparison.html	/^    <h1 class="post__title">Mocking in PHP a comparison<\/h1>$/;"	h	language:HTML
+Modificação de strings	_posts/2015-03-12-dicas-bash.md	/^## Modificação de strings$/;"	s	language:Markdown
+Modificação de strings	dist/blog/dicas-bash.html	/^<h2 id="modificação-de-strings">Modificação de strings<\/h2>$/;"	i	language:HTML
+Modos	_posts/2014-04-15-vim-on-sublime.md	/^###  Modos$/;"	S	language:Markdown
+Modos	dist/blog/vim-on-sublime.html	/^<h3 id="modos">Modos<\/h3>$/;"	j	language:HTML
+Morte	dist/blog/morte.html	/^    <h1 class="post__title">Morte<\/h1>$/;"	h	language:HTML
+Mount the file system	_posts/2016-10-04-sshfs.md	/^Mount the file system$/;"	s	language:Markdown
+Mount the file system	dist/blog/sshfs.html	/^<h2 id="mount-the-file-system">Mount the file system<\/h2>$/;"	i	language:HTML
+Movimentações	_posts/2015-03-12-dicas-bash.md	/^## Movimentações$/;"	s	language:Markdown
+Movimentações	dist/blog/dicas-bash.html	/^<h2 id="movimentações">Movimentações<\/h2>$/;"	i	language:HTML
+My Experience at GetYourGuide	dist/blog/get-your-guide.html	/^    <h1 class="post__title">My Experience at GetYourGuide<\/h1>$/;"	h	language:HTML
+My firt realization	_posts/2018-08-19-reasons.md	/^## My firt realization$/;"	s	language:Markdown
+My firt realization	dist/blog/reasons.html	/^<h2 id="my-firt-realization">My firt realization<\/h2>$/;"	i	language:HTML
+My notes for the QA Hangout	dist/blog/mynotesfortheqahangout.html	/^    <h1 class="post__title">My notes for the QA Hangout<\/h1>$/;"	h	language:HTML
+My quotes collection	dist/blog/quotes.html	/^    <h1 class="post__title">My quotes collection<\/h1>$/;"	h	language:HTML
+My take on PHP	dist/blog/view-on-php.html	/^    <h1 class="post__title">My take on PHP<\/h1>$/;"	h	language:HTML
+My values	dist/blog/myvalues.html	/^    <h1 class="post__title">My values<\/h1>$/;"	h	language:HTML
+MÚLTIPLOS TESTES	_posts/2015-05-08-testesdeapicomopyresttest.md	/^##### MÚLTIPLOS TESTES$/;"	T	language:Markdown
+Múltiplas instalações do PHP	dist/blog/multiplos-phps.html	/^    <h1 class="post__title">Múltiplas instalações do PHP<\/h1>$/;"	h	language:HTML
+No broken windows	_posts/2014-04-03-pragmatic-programmer-review.md	/^### No broken windows$/;"	S	language:Markdown
+No broken windows	dist/blog/pragmatic-programmer-review.html	/^<h3 id="no-broken-windows">No broken windows<\/h3>$/;"	j	language:HTML
+Notas do livro Crepúsculo dos ídolos - Nietzsche	dist/blog/review-crepusculo-dos-idolos-nietzsche.html	/^    <h1 class="post__title">Notas do livro Crepúsculo dos ídolos - Nietzsche<\/h1>$/;"	h	language:HTML
+Notas do livro Humano Demasiado Humano - Nietzsche	dist/blog/humano-demasiado-humano-nietzsche.html	/^    <h1 class="post__title">Notas do livro Humano Demasiado Humano - Nietzsche<\/h1>$/;"	h	language:HTML
+Notes of the Book How to win friends and influence people	dist/blog/notesofthebookahowtowinfriendsandinfluencepeople.html	/^    <h1 class="post__title">Notes of the Book How to win friends and influence people<\/h1>$/;"	h	language:HTML
+Não anuncie seu descontentamento como uma carga de cavalaria	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^## Não anuncie seu descontentamento como uma carga de cavalaria$/;"	s	language:Markdown
+Não anuncie seu descontentamento como uma carga de cavalaria	dist/blog/ncaoesqueca7adesercbtimo.html	/^<h2 id="não-anuncie-seu-descontentamento-como-uma-carga-de-cavalaria">Não anuncie seu desconte/;"	i	language:HTML
+Não esqueça de ser ótimo	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^# Não esqueça de ser ótimo$/;"	c	language:Markdown
+Não esqueça de ser ótimo	dist/blog/ncaoesqueca7adesercbtimo.html	/^        <h1 id="não-esqueça-de-ser-ótimo">Não esqueça de ser ótimo<\/h1>$/;"	h	language:HTML
+Não esqueça de ser ótimo	dist/blog/ncaoesqueca7adesercbtimo.html	/^    <h1 class="post__title">Não esqueça de ser ótimo<\/h1>$/;"	h	language:HTML
+Não utilize IDE's Java	_posts/2014-02-19-como-aprender-php.md	/^## Não utilize IDE's Java$/;"	s	language:Markdown
+Não utilize IDE’s Java	dist/blog/como-aprender-php.html	/^<h2 id="não-utilize-ides-java">Não utilize IDE’s Java<\/h2>$/;"	i	language:HTML
+O caminho da herança - ServiceAbstract como Gerenciador de Plugins	_posts/2015-05-09-plugins-zf2.md	/^####  O caminho da herança - ServiceAbstract como Gerenciador de Plugins$/;"	t	language:Markdown
+O código está “legado”	_posts/2017-07-14-quando-refatorar.md	/^## O código está “legado”$/;"	s	language:Markdown
+O código está “legado”	dist/blog/quando-refatorar.html	/^<h2 id="o-código-estálegado">O código está “legado”<\/h2>$/;"	i	language:HTML
+O código não está nos últimos padrões	_posts/2017-07-14-quando-refatorar.md	/^## O código não está nos últimos padrões$/;"	s	language:Markdown
+O código não está nos últimos padrões	dist/blog/quando-refatorar.html	/^<h2 id="o-código-não-está-nos-últimos-padrões">O código não está nos últimos padrões<\//;"	i	language:HTML
+O código:	_posts/2012-11-23-controle-porta-paralela.md	/^# O código:$/;"	c	language:Markdown
+O código:	dist/blog/controle-porta-paralela.html	/^<h1 id="o-código">O código:<\/h1>$/;"	h	language:HTML
+O grande problema da programação	dist/blog/o-grande-problema.html	/^    <h1 class="post__title">O grande problema da programação<\/h1>$/;"	h	language:HTML
+O grande redesign	dist/blog/grande-redesign.html	/^    <h1 class="post__title">O grande redesign<\/h1>$/;"	h	language:HTML
+O notation	_posts/2017-03-30-calculating_processing_time_complexity.md	/^## O notation$/;"	s	language:Markdown
+O notation	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="o-notation">O notation<\/h2>$/;"	i	language:HTML
+O programador fantasma	dist/blog/programador-fantasma.html	/^    <h1 class="post__title">O programador fantasma<\/h1>$/;"	h	language:HTML
+O que é a meditação	dist/blog/o-que-e-a-meditacao.html	/^    <h1 class="post__title">O que é a meditação<\/h1>$/;"	h	language:HTML
+Observer Expectancy	_posts/2015-03-03-fallacies.md	/^## Observer Expectancy$/;"	s	language:Markdown
+Observer Expectancy	dist/blog/fallacies.html	/^<h2 id="observer-expectancy">Observer Expectancy<\/h2>$/;"	i	language:HTML
+On being a 50 years old programmer	dist/blog/on-being-a-50-years-old-programmer.html	/^    <h1 class="post__title">On being a 50 years old programmer<\/h1>$/;"	h	language:HTML
+One Editor	_posts/2014-04-03-pragmatic-programmer-review.md	/^## One Editor$/;"	s	language:Markdown
+One Editor	dist/blog/pragmatic-programmer-review.html	/^<h2 id="one-editor">One Editor<\/h2>$/;"	i	language:HTML
+Openbox	_posts/2017-09-10-3-years-archlinux.md	/^## Openbox$/;"	s	language:Markdown
+Openbox	dist/blog/3-years-archlinux.html	/^<h2 id="openbox">Openbox<\/h2>$/;"	i	language:HTML
+Opportunities for Learning	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Opportunities for Learning$/;"	s	language:Markdown
+Opportunities for Learning	dist/blog/pragmatic-programmer-review.html	/^<h2 id="opportunities-for-learning">Opportunities for Learning<\/h2>$/;"	i	language:HTML
+Orientação à objetos	_posts/2014-02-19-como-aprender-php.md	/^## Orientação à objetos$/;"	s	language:Markdown
+Orientação à objetos	dist/blog/como-aprender-php.html	/^<h2 id="orientação-à-objetos">Orientação à objetos<\/h2>$/;"	i	language:HTML
+Orthogonality of systems	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Orthogonality of systems$/;"	s	language:Markdown
+Orthogonality of systems	dist/blog/pragmatic-programmer-review.html	/^<h2 id="orthogonality-of-systems">Orthogonality of systems<\/h2>$/;"	i	language:HTML
+PASSO 5 - TESTANDO A CONFIGURAÇÃO	_posts/2013-08-22-multiplos-phps.md	/^## PASSO 5 - TESTANDO A CONFIGURAÇÃO$/;"	s	language:Markdown
+PASSO 5 - TESTANDO A CONFIGURAÇÃO	dist/blog/multiplos-phps.html	/^<h2 id="passo-5---testando-a-configuração">PASSO 5 - TESTANDO A CONFIGURAÇÃO<\/h2>$/;"	i	language:HTML
+PHP7	_posts/2015-10-16-mynotesfortheqahangout.md	/^### PHP7$/;"	S	language:Markdown
+PHP7	dist/blog/mynotesfortheqahangout.html	/^<h3 id="php7">PHP7<\/h3>$/;"	j	language:HTML
+PHPUnits Mocks Feature	_posts/2016-05-08-mockinginphpaacomparison.md	/^##  PHPUnits Mocks Feature$/;"	s	language:Markdown
+PHPUnits Mocks Feature	dist/blog/mockinginphpaacomparison.html	/^<h2 id="phpunits-mocks-feature">PHPUnits Mocks Feature<\/h2>$/;"	i	language:HTML
+PYRESTTEST	dist/blog/testesdeapicomopyresttest.html	/^<h3 id="pyresttest"><a href="https:\/\/github.com\/svanoort\/pyresttest">PYRESTTEST<\/a><\/h3>$/;"	j	language:HTML
+Palavras compostas	_posts/2014-04-15-vim-on-sublime.md	/^###  Palavras compostas$/;"	S	language:Markdown
+Palavras compostas	dist/blog/vim-on-sublime.html	/^<h3 id="palavras-compostas">Palavras compostas<\/h3>$/;"	j	language:HTML
+Para restaurar	_posts/2015-03-12-dicas-bash.md	/^### Para restaurar$/;"	S	language:Markdown
+Para restaurar	dist/blog/dicas-bash.html	/^<h3 id="para-restaurar">Para restaurar<\/h3>$/;"	j	language:HTML
+Parents	_posts/2018-08-19-reasons.md	/^### Parents$/;"	S	language:Markdown
+Parents	dist/blog/reasons.html	/^        <h3 id="parents">Parents<\/h3>$/;"	j	language:HTML
+Passive Generators	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Passive Generators$/;"	S	language:Markdown
+Passive Generators	dist/blog/pragmatic-programmer-review.html	/^<h3 id="passive-generators">Passive Generators<\/h3>$/;"	j	language:HTML
+Pelo direito de te ofender	dist/blog/respeito.html	/^    <h1 class="post__title">Pelo direito de te ofender<\/h1>$/;"	h	language:HTML
+Periodicals	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Periodicals$/;"	S	language:Markdown
+Periodicals	dist/blog/pragmatic-programmer-review.html	/^<h3 id="periodicals">Periodicals<\/h3>$/;"	j	language:HTML
+Pesquisando por palavras "fechadas"	_posts/2015-06-08-dicasack.md	/^## Pesquisando por palavras "fechadas"$/;"	s	language:Markdown
+Pesquisando por palavras “fechadas”	dist/blog/dicasack.html	/^<h2 id="pesquisando-por-palavras-fechadas">Pesquisando por palavras “fechadas”<\/h2>$/;"	i	language:HTML
+Pesquisar os pacotes locais	_posts/2015-10-04-dicaspacman.md	/^## Pesquisar os pacotes locais$/;"	s	language:Markdown
+Pesquisar os pacotes locais	dist/blog/dicaspacman.html	/^<h2 id="pesquisar-os-pacotes-locais">Pesquisar os pacotes locais<\/h2>$/;"	i	language:HTML
+Pesquisar pacotes online	_posts/2015-10-04-dicaspacman.md	/^## Pesquisar pacotes online$/;"	s	language:Markdown
+Pesquisar pacotes online	dist/blog/dicaspacman.html	/^<h2 id="pesquisar-pacotes-online">Pesquisar pacotes online<\/h2>$/;"	i	language:HTML
+Plugin Cache	_posts/2015-05-09-plugins-zf2.md	/^### Plugin Cache$/;"	S	language:Markdown
+Plugin Cache	dist/blog/plugins-zf2.html	/^<h3 id="plugin-cache">Plugin Cache<\/h3>$/;"	j	language:HTML
+Plugin Identity	_posts/2015-05-09-plugins-zf2.md	/^#### Plugin Identity$/;"	t	language:Markdown
+Point to the volume in the startup	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^## Point to the volume in the startup$/;"	s	language:Markdown
+Point to the volume in the startup	dist/blog/stop-struggling-with-docker-volumes.html	/^<h2 id="point-to-the-volume-in-the-startup">Point to the volume in the startup<\/h2>$/;"	i	language:HTML
+Por um teclado mais produtivo	dist/blog/porumtecladomaisprodutivo.html	/^    <h1 class="post__title">Por um teclado mais produtivo<\/h1>$/;"	h	language:HTML
+Portfolio	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Portfolio$/;"	s	language:Markdown
+Portfolio	dist/blog/pragmatic-programmer-review.html	/^<h2 id="portfolio">Portfolio<\/h2>$/;"	i	language:HTML
+Posts:	_posts/2015-12-08-codereviewreferences.md	/^### Posts:$/;"	S	language:Markdown
+Posts:	dist/blog/codereviewreferences.html	/^<h3 id="posts">Posts:<\/h3>$/;"	j	language:HTML
+Pragmatic paranoia	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Pragmatic paranoia$/;"	s	language:Markdown
+Pragmatic paranoia	dist/blog/pragmatic-programmer-review.html	/^<h2 id="pragmatic-paranoia">Pragmatic paranoia<\/h2>$/;"	i	language:HTML
+Pragmatic teams	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Pragmatic teams$/;"	s	language:Markdown
+Pragmatic teams	dist/blog/pragmatic-programmer-review.html	/^<h2 id="pragmatic-teams">Pragmatic teams<\/h2>$/;"	i	language:HTML
+Presentation format	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^##  Presentation format$/;"	s	language:Markdown
+Presentation format	dist/blog/simplepresentationtemplatewithmarkdownandpandoc.html	/^<h2 id="presentation-format">Presentation format<\/h2>$/;"	i	language:HTML
+Primeiro faça depois otimize	dist/blog/primeiro-faca-depois-otimize.html	/^    <h1 class="post__title">Primeiro faça depois otimize<\/h1>$/;"	h	language:HTML
+Professional Societies	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Professional Societies$/;"	s	language:Markdown
+Professional Societies	dist/blog/pragmatic-programmer-review.html	/^<h2 id="professional-societies">Professional Societies<\/h2>$/;"	i	language:HTML
+Programador como mago de D&D	dist/blog/programador-mago.html	/^    <h1 class="post__title">Programador como mago de D&D<\/h1>$/;"	h	language:HTML
+Programming by Coincidence	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Programming by Coincidence$/;"	s	language:Markdown
+Programming by Coincidence	dist/blog/pragmatic-programmer-review.html	/^<h2 id="programming-by-coincidence">Programming by Coincidence<\/h2>$/;"	i	language:HTML
+Prototyping with Calc	dist/blog/prototypingwithcalc.html	/^    <h1 class="post__title">Prototyping with Calc<\/h1>$/;"	h	language:HTML
+Provincialism	dist/blog/Provicialism.html	/^    <h1 class="post__title">Provincialism<\/h1>$/;"	h	language:HTML
+Python != 2.7	_posts/2015-05-08-testesdeapicomopyresttest.md	/^##### Python != 2.7$/;"	T	language:Markdown
+Qual pacote determinado arquivo pertence	_posts/2015-10-04-dicaspacman.md	/^## Qual pacote determinado arquivo pertence$/;"	s	language:Markdown
+Qual pacote determinado arquivo pertence	dist/blog/dicaspacman.html	/^<h2 id="qual-pacote-determinado-arquivo-pertence">Qual pacote determinado arquivo pertence<\/h2>$/;"	i	language:HTML
+Quando refatorar	dist/blog/quando-refatorar.html	/^    <h1 class="post__title">Quando refatorar<\/h1>$/;"	h	language:HTML
+Quiet Breathing	_posts/2015-06-12-miracle-mindfulness.md	/^## Quiet Breathing$/;"	s	language:Markdown
+Quiet Breathing	dist/blog/miracle-mindfulness.html	/^<h2 id="quiet-breathing">Quiet Breathing<\/h2>$/;"	i	language:HTML
+Quotes from the book Waking Up	dist/blog/quotesfromthebookwakingup.html	/^    <h1 class="post__title">Quotes from the book Waking Up<\/h1>$/;"	h	language:HTML
+RODANDO OS BENCHMARKS	_posts/2015-05-08-testesdeapicomopyresttest.md	/^##### RODANDO OS BENCHMARKS$/;"	T	language:Markdown
+RODANDO OS TESTES	_posts/2015-05-08-testesdeapicomopyresttest.md	/^##### RODANDO OS TESTES$/;"	T	language:Markdown
+Ranges	_posts/2015-03-12-dicas-bash.md	/^## Ranges$/;"	s	language:Markdown
+Ranges	dist/blog/dicas-bash.html	/^<h2 id="ranges">Ranges<\/h2>$/;"	i	language:HTML
+Ranges em meio à strings	_posts/2015-03-12-dicas-bash.md	/^### Ranges em meio à strings$/;"	S	language:Markdown
+Ranges em meio à strings	dist/blog/dicas-bash.html	/^<h3 id="ranges-em-meio-à-strings">Ranges em meio à strings<\/h3>$/;"	j	language:HTML
+Reaproveitando a saída do último comando	_posts/2015-03-12-dicas-bash.md	/^### Reaproveitando a saída do último comando$/;"	S	language:Markdown
+Reaproveitando a saída do último comando	dist/blog/dicas-bash.html	/^<h3 id="reaproveitando-a-saída-do-último-comando">Reaproveitando a saída do último comando<\//;"	j	language:HTML
+Reaproveitando o último argumento do último comando	_posts/2015-03-12-dicas-bash.md	/^### Reaproveitando o último argumento do último comando$/;"	S	language:Markdown
+Reaproveitando o último argumento do último comando	dist/blog/dicas-bash.html	/^<h3 id="reaproveitando-o-último-argumento-do-último-comando">Reaproveitando o último argument/;"	j	language:HTML
+Reaproveitando o último comando	_posts/2015-03-12-dicas-bash.md	/^### Reaproveitando o último comando$/;"	S	language:Markdown
+Reaproveitando o último comando	dist/blog/dicas-bash.html	/^<h3 id="reaproveitando-o-último-comando">Reaproveitando o último comando<\/h3>$/;"	j	language:HTML
+Recalibrar	dist/blog/recalibrar.html	/^    <h1 class="post__title">Recalibrar<\/h1>$/;"	h	language:HTML
+Recurrence relationship	_posts/2017-03-30-calculating_processing_time_complexity.md	/^## Recurrence relationship$/;"	s	language:Markdown
+Recurrence relationship	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="recurrence-relationship">Recurrence relationship<\/h2>$/;"	i	language:HTML
+Refactoring	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Refactoring$/;"	s	language:Markdown
+Refactoring	dist/blog/pragmatic-programmer-review.html	/^<h2 id="refactoring">Refactoring<\/h2>$/;"	i	language:HTML
+Refactoring must be a constant	dist/blog/refactoringmustbeaconstant.html	/^    <h1 class="post__title">Refactoring must be a constant<\/h1>$/;"	h	language:HTML
+References http://akrabat.com/an-introduction-to-zendeventmanager/	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^# References http:\/\/akrabat.com\/an-introduction-to-zendeventmanager\/$/;"	c	language:Markdown
+References http://akrabat.com/an-introduction-to-zendeventmanager/	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h1 id="references-httpakrabatcoman-introduction-to-zendeventmanager">References http:\/\/akraba/;"	h	language:HTML
+Referências	_posts/2015-03-12-dicas-bash.md	/^## Referências$/;"	s	language:Markdown
+Referências	dist/blog/dicas-bash.html	/^<h2 id="referências">Referências<\/h2>$/;"	i	language:HTML
+Reflections on Service layer	dist/blog/reflectionsonservicelayer.html	/^    <h1 class="post__title">Reflections on Service layer<\/h1>$/;"	h	language:HTML
+Regex test	_posts/2016-07-27-little-unix-tools.md	/^## Regex test$/;"	s	language:Markdown
+Regex test	dist/blog/little-unix-tools.html	/^<h2 id="regex-test">Regex test<\/h2>$/;"	i	language:HTML
+Reiniciando o X	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^## Reiniciando o X$/;"	s	language:Markdown
+Reiniciando o X	dist/blog/porumtecladomaisprodutivo.html	/^<h2 id="reiniciando-o-x">Reiniciando o X<\/h2>$/;"	i	language:HTML
+Reinstalar pacotes com determinado padrão de nome	_posts/2015-10-04-dicaspacman.md	/^## Reinstalar pacotes com determinado padrão de nome$/;"	s	language:Markdown
+Reinstalar pacotes com determinado padrão de nome	dist/blog/dicaspacman.html	/^<h2 id="reinstalar-pacotes-com-determinado-padrão-de-nome">Reinstalar pacotes com determinado p/;"	i	language:HTML
+Relatively easy things to delight the common user	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Relatively easy things to delight the common user$/;"	s	language:Markdown
+Relatively easy things to delight the common user	dist/blog/pragmatic-programmer-review.html	/^<h2 id="relatively-easy-things-to-delight-the-common-user">Relatively easy things to delight the/;"	i	language:HTML
+Remove Firefox useless curl headers with this	dist/blog/removefirefoxuselesscurlheaderswiththis.html	/^    <h1 class="post__title">Remove Firefox useless curl headers with this<\/h1>$/;"	h	language:HTML
+Remove early	dist/blog/removeearly.html	/^    <h1 class="post__title">Remove early<\/h1>$/;"	h	language:HTML
+Req1 - Buscar Usuário	_posts/2017-12-28-composicao.md	/^## Req1 - Buscar Usuário$/;"	s	language:Markdown
+Req1 - Buscar Usuário	dist/blog/composicao.html	/^<h2 id="req1---buscar-usuário">Req1 - Buscar Usuário<\/h2>$/;"	i	language:HTML
+Req1 - Buscar Usuário	dist/blog/composicao.html	/^<h2 id="req1---buscar-usuário-1">Req1 - Buscar Usuário<\/h2>$/;"	i	language:HTML
+Req2 - Guardar em cache	_posts/2017-12-28-composicao.md	/^## Req2 - Guardar em cache$/;"	s	language:Markdown
+Req2 - Guardar em cache	dist/blog/composicao.html	/^<h2 id="req2---guardar-em-cache">Req2 - Guardar em cache<\/h2>$/;"	i	language:HTML
+Req2 - Guardar em cache	dist/blog/composicao.html	/^<h2 id="req2---guardar-em-cache-1">Req2 - Guardar em cache<\/h2>$/;"	i	language:HTML
+Retornando apenas os nomes dos arquivos	_posts/2015-06-08-dicasack.md	/^## Retornando apenas os nomes dos arquivos$/;"	s	language:Markdown
+Retornando apenas os nomes dos arquivos	dist/blog/dicasack.html	/^<h2 id="retornando-apenas-os-nomes-dos-arquivos">Retornando apenas os nomes dos arquivos<\/h2>$/;"	i	language:HTML
+Review your assumptions as soon as possible	dist/blog/reviewyourassumptionsassoonaspossible.html	/^    <h1 class="post__title">Review your assumptions as soon as possible<\/h1>$/;"	h	language:HTML
+Revisão do livro - A paisagem moral	dist/blog/paisagem-moral-harris.html	/^    <h1 class="post__title">Revisão do livro - A paisagem moral<\/h1>$/;"	h	language:HTML
+Rigidez	_posts/2015-02-01-sintomasdedesignpodre.md	/^## Rigidez$/;"	s	language:Markdown
+Rigidez	dist/blog/sintomasdedesignpodre.html	/^<h2 id="rigidez">Rigidez<\/h2>$/;"	i	language:HTML
+Running docker inside docker	_posts/2016-11-28-distorting_reallity_with_docker.md	/^Running docker inside docker$/;"	s	language:Markdown
+Running docker inside docker	dist/blog/distorting_reallity_with_docker.html	/^<h2 id="running-docker-inside-docker">Running docker inside docker<\/h2>$/;"	i	language:HTML
+Scroll e buffers	_posts/2015-03-12-dicas-bash.md	/^## Scroll e buffers$/;"	s	language:Markdown
+Scroll e buffers	dist/blog/dicas-bash.html	/^<h2 id="scroll-e-buffers">Scroll e buffers<\/h2>$/;"	i	language:HTML
+Second slide	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^# Second slide$/;"	c	language:Markdown
+Setup manual de views no ZF2	dist/blog/manual-view-setup-z2.html	/^    <h1 class="post__title">Setup manual de views no ZF2<\/h1>$/;"	h	language:HTML
+Sharing ssh sockets	_posts/2016-11-28-distorting_reallity_with_docker.md	/^Sharing ssh sockets$/;"	s	language:Markdown
+Sharing ssh sockets	dist/blog/distorting_reallity_with_docker.html	/^<h2 id="sharing-ssh-sockets">Sharing ssh sockets<\/h2>$/;"	i	language:HTML
+Simple graphite with Statsd container	dist/blog/graphite-and-statsd-container.html	/^    <h1 class="post__title">Simple graphite with Statsd container<\/h1>$/;"	h	language:HTML
+Simple presentation template with Markdown and Pandoc	dist/blog/simplepresentationtemplatewithmarkdownandpandoc.html	/^    <h1 class="post__title">Simple presentation template with Markdown and Pandoc<\/h1>$/;"	h	language:HTML
+Simples controle de porta paralela em C	dist/blog/controle-porta-paralela.html	/^    <h1 class="post__title">Simples controle de porta paralela em C<\/h1>$/;"	h	language:HTML
+Sintomas de design podre	dist/blog/sintomasdedesignpodre.html	/^    <h1 class="post__title">Sintomas de design podre<\/h1>$/;"	h	language:HTML
+Sistema de plugins zf2	dist/blog/plugins-zf2.html	/^    <h1 class="post__title">Sistema de plugins zf2<\/h1>$/;"	h	language:HTML
+Slow ride with kernel upgrades	dist/blog/slowridewithkernelupgrades.html	/^    <h1 class="post__title">Slow ride with kernel upgrades<\/h1>$/;"	h	language:HTML
+Smat Phones Application development using HTML5 and related	_posts/2015-07-13-games-research.md	/^## Smat Phones Application development using HTML5 and related$/;"	s	language:Markdown
+Smat Phones Application development using HTML5 and related	dist/blog/games-research.html	/^<h2 id="smat-phones-application-development-using-html5-and-related">Smat Phones Application dev/;"	i	language:HTML
+Solarized and shut	_posts/2016-10-12-two-years-of-arch.md	/^### Solarized and shut$/;"	S	language:Markdown
+Solarized and shut	dist/blog/two-years-of-arch.html	/^<h3 id="solarized-and-shut">Solarized and shut<\/h3>$/;"	j	language:HTML
+Source code control	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Source code control$/;"	s	language:Markdown
+Source code control	dist/blog/pragmatic-programmer-review.html	/^<h2 id="source-code-control">Source code control<\/h2>$/;"	i	language:HTML
+Sshfs	dist/blog/sshfs.html	/^    <h1 class="post__title">Sshfs<\/h1>$/;"	h	language:HTML
+Stack	_posts/2017-09-10-3-years-archlinux.md	/^## Stack$/;"	s	language:Markdown
+Stack	dist/blog/3-years-archlinux.html	/^<h2 id="stack">Stack<\/h2>$/;"	i	language:HTML
+Steps TDD	_posts/2015-10-16-mynotesfortheqahangout.md	/^## Steps TDD$/;"	s	language:Markdown
+Steps TDD	dist/blog/mynotesfortheqahangout.html	/^<h2 id="steps-tdd">Steps TDD<\/h2>$/;"	i	language:HTML
+Stop struggling with docker volumes	dist/blog/stop-struggling-with-docker-volumes.html	/^    <h1 class="post__title">Stop struggling with docker volumes<\/h1>$/;"	h	language:HTML
+Strategies of Decoupling	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^# Strategies of Decoupling$/;"	c	language:Markdown
+Strategies of Decoupling	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h1 id="strategies-of-decoupling">Strategies of Decoupling<\/h1>$/;"	h	language:HTML
+Strengths	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^### Strengths$/;"	S	language:Markdown
+Strengths	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="strengths">Strengths<\/h3>$/;"	j	language:HTML
+Strengths	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="strengths-1">Strengths<\/h3>$/;"	j	language:HTML
+Strengths - Adheres to the interface segregation principle - Allows	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^### Strengths - Adheres to the interface segregation principle - Allows$/;"	S	language:Markdown
+Strengths - Adheres to the interface segregation principle - Allows	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="strengths---adheres-to-the-interface-segregation-principle---allows">Strengths - Adheres/;"	j	language:HTML
+Só o nome do pacote	_posts/2015-10-04-dicaspacman.md	/^### Só o nome do pacote$/;"	S	language:Markdown
+Só o nome do pacote	dist/blog/dicaspacman.html	/^<h3 id="só-o-nome-do-pacote">Só o nome do pacote<\/h3>$/;"	j	language:HTML
+TDD Rules in Any Language	dist/blog/tdd_rules.html	/^    <h1 class="post__title">TDD Rules in Any Language<\/h1>$/;"	h	language:HTML
+TESTES	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### TESTES$/;"	t	language:Markdown
+Tarefas Pequenas	dist/blog/tarefas-pequenas.html	/^    <h1 class="post__title">Tarefas Pequenas<\/h1>$/;"	h	language:HTML
+Teachers	_posts/2018-08-19-reasons.md	/^## Teachers$/;"	s	language:Markdown
+Teachers	dist/blog/reasons.html	/^<h2 id="teachers">Teachers<\/h2>$/;"	i	language:HTML
+Technologies	_posts/2016-11-27-on-being-a-50-years-old-programmer.md	/^Technologies$/;"	s	language:Markdown
+Technologies	dist/blog/on-being-a-50-years-old-programmer.html	/^<h2 id="technologies">Technologies<\/h2>$/;"	i	language:HTML
+Tenha memória curta	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^## Tenha memória curta$/;"	s	language:Markdown
+Tenha memória curta	dist/blog/ncaoesqueca7adesercbtimo.html	/^<h2 id="tenha-memória-curta">Tenha memória curta<\/h2>$/;"	i	language:HTML
+Testes de API com o Pyresttest	dist/blog/testesdeapicomopyresttest.html	/^    <h1 class="post__title">Testes de API com  o Pyresttest<\/h1>$/;"	h	language:HTML
+Testing against Contract	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Testing against Contract$/;"	s	language:Markdown
+Testing against Contract	dist/blog/pragmatic-programmer-review.html	/^<h2 id="testing-against-contract">Testing against Contract<\/h2>$/;"	i	language:HTML
+The Culture	_posts/2018-08-01-get-your-guide.md	/^## The Culture $/;"	s	language:Markdown
+The Culture	dist/blog/get-your-guide.html	/^<h2 id="the-culture">The Culture<\/h2>$/;"	i	language:HTML
+The Request	_posts/2015-04-19-curl-plus-firefox.md	/^## The Request$/;"	s	language:Markdown
+The Request	dist/blog/curl-plus-firefox.html	/^<h2 id="the-request">The Request<\/h2>$/;"	i	language:HTML
+The Result	_posts/2015-04-19-curl-plus-firefox.md	/^## The Result$/;"	s	language:Markdown
+The Result	dist/blog/curl-plus-firefox.html	/^<h2 id="the-result">The Result<\/h2>$/;"	i	language:HTML
+The algorithm	_posts/2017-03-30-calculating_processing_time_complexity.md	/^## The algorithm$/;"	s	language:Markdown
+The algorithm	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="the-algorithm">The algorithm<\/h2>$/;"	i	language:HTML
+The bad	_posts/2018-09-02-view-on-php.md	/^## The bad$/;"	s	language:Markdown
+The bad	dist/blog/view-on-php.html	/^<h2 id="the-bad">The bad<\/h2>$/;"	i	language:HTML
+The beauty of Unix	dist/blog/thebeautyofunix.html	/^    <h1 class="post__title">The beauty of Unix<\/h1>$/;"	h	language:HTML
+The best alias you will ever have	dist/blog/thebestaliasyouwilleverhave.html	/^    <h1 class="post__title">The best alias you will ever have<\/h1>$/;"	h	language:HTML
+The destructive power of Proactive Incompetents	dist/blog/thedestructivepowerofproactiveincompetents.html	/^    <h1 class="post__title">The destructive power of Proactive Incompetents<\/h1>$/;"	h	language:HTML
+The future	_posts/2015-12-01-ayearofmyarchinstallation.md	/^## The future$/;"	s	language:Markdown
+The future	dist/blog/ayearofmyarchinstallation.html	/^<h2 id="the-future">The future<\/h2>$/;"	i	language:HTML
+The good	_posts/2018-09-02-view-on-php.md	/^## The good$/;"	s	language:Markdown
+The good	dist/blog/view-on-php.html	/^<h2 id="the-good">The good<\/h2>$/;"	i	language:HTML
+The hangman	_posts/2015-09-29-hardlessonsfromcodereviews.md	/^# The hangman$/;"	c	language:Markdown
+The hangman	dist/blog/hardlessonsfromcodereviews.html	/^<h1 id="the-hangman">The hangman<\/h1>$/;"	h	language:HTML
+The ignorance related fallacies	dist/blog/theignorancerelatedfallacies.html	/^    <h1 class="post__title">The ignorance related fallacies<\/h1>$/;"	h	language:HTML
+The last responsible moment	dist/blog/thelastresponsiblemoment.html	/^    <h1 class="post__title">The last responsible moment<\/h1>$/;"	h	language:HTML
+The miracle is to walk on Earth	_posts/2015-06-12-miracle-mindfulness.md	/^## The miracle is to walk on Earth$/;"	s	language:Markdown
+The miracle is to walk on Earth	dist/blog/miracle-mindfulness.html	/^<h2 id="the-miracle-is-to-walk-on-earth">The miracle is to walk on Earth<\/h2>$/;"	i	language:HTML
+The miracle of mindfulness	dist/blog/miracle-mindfulness.html	/^    <h1 class="post__title">The miracle of mindfulness<\/h1>$/;"	h	language:HTML
+The most useful tool that you probably don't use (AKA clipboard manager)	dist/blog/The_most_useful_tool_that_you_probably_dont_use.html	/^    <h1 class="post__title">The most useful tool that you probably don't use (AKA clipboard mana/;"	h	language:HTML
+The pragmatic programmer notes	dist/blog/pragmatic-programmer-review.html	/^    <h1 class="post__title">The pragmatic programmer notes<\/h1>$/;"	h	language:HTML
+The problem of GUI's	_posts/2014-04-03-pragmatic-programmer-review.md	/^### The problem of GUI's$/;"	S	language:Markdown
+The problem of GUI’s	dist/blog/pragmatic-programmer-review.html	/^<h3 id="the-problem-of-guis">The problem of GUI’s<\/h3>$/;"	j	language:HTML
+The right tool for the right job FALLACY	dist/blog/the-better-tool-for-the-job-fallacy.html	/^    <h1 class="post__title">The right tool for the right job FALLACY<\/h1>$/;"	h	language:HTML
+The web movement I fully embrace the open web movement.	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## The web movement I fully embrace the open web movement.$/;"	s	language:Markdown
+The web movement I fully embrace the open web movement.	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="the-web-movement-i-fully-embrace-the-open-web-movement">The web movement I fully embrace/;"	i	language:HTML
+Theme tweaking	_posts/2017-09-10-3-years-archlinux.md	/^## Theme tweaking$/;"	s	language:Markdown
+Theme tweaking	dist/blog/3-years-archlinux.html	/^<h2 id="theme-tweaking">Theme tweaking<\/h2>$/;"	i	language:HTML
+Things that are yet broken	_posts/2015-12-01-ayearofmyarchinstallation.md	/^## Things that are yet broken$/;"	s	language:Markdown
+Things that are yet broken	dist/blog/ayearofmyarchinstallation.html	/^<h2 id="things-that-are-yet-broken">Things that are yet broken<\/h2>$/;"	i	language:HTML
+Third slide	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^#  Third slide$/;"	c	language:Markdown
+Toastmasters talk 2	dist/blog/toastmasters-talk2.html	/^    <h1 class="post__title">Toastmasters talk 2<\/h1>$/;"	h	language:HTML
+Tools	_posts/2015-10-16-mynotesfortheqahangout.md	/^### Tools$/;"	S	language:Markdown
+Tools	_posts/2016-10-12-two-years-of-arch.md	/^## Tools$/;"	s	language:Markdown
+Tools	dist/blog/mynotesfortheqahangout.html	/^<h3 id="tools">Tools<\/h3>$/;"	j	language:HTML
+Tools	dist/blog/two-years-of-arch.html	/^<h2 id="tools">Tools<\/h2>$/;"	i	language:HTML
+Tradução livre	_posts/2014-10-10-dawkins-talk.md	/^## Tradução livre$/;"	s	language:Markdown
+Tradução livre	dist/blog/dawkins-talk.html	/^<h2 id="tradução-livre">Tradução livre<\/h2>$/;"	i	language:HTML
+Traits of enduring technology	_posts/2016-11-27-on-being-a-50-years-old-programmer.md	/^Traits of enduring technology$/;"	s	language:Markdown
+Traits of enduring technology	dist/blog/on-being-a-50-years-old-programmer.html	/^<h2 id="traits-of-enduring-technology">Traits of enduring technology<\/h2>$/;"	i	language:HTML
+Traits of my posture on software	dist/blog/traitsofmypostureonsoftware.html	/^    <h1 class="post__title">Traits of my posture on software<\/h1>$/;"	h	language:HTML
+Translate text	_posts/2016-07-27-little-unix-tools.md	/^## Translate text$/;"	s	language:Markdown
+Translate text	dist/blog/little-unix-tools.html	/^<h2 id="translate-text">Translate text<\/h2>$/;"	i	language:HTML
+Trocando *layouts*	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^### Trocando *layouts*$/;"	S	language:Markdown
+Trocando layouts	dist/blog/porumtecladomaisprodutivo.html	/^<h3 id="trocando-layouts">Trocando <em>layouts<\/em><\/h3>$/;"	j	language:HTML
+Tutoriais	_posts/2014-02-19-como-aprender-php.md	/^### Tutoriais$/;"	S	language:Markdown
+Tutoriais	dist/blog/como-aprender-php.html	/^<h3 id="tutoriais">Tutoriais<\/h3>$/;"	j	language:HTML
+Two years of Arch	dist/blog/two-years-of-arch.html	/^    <h1 class="post__title">Two years of Arch<\/h1>$/;"	h	language:HTML
+UTILIZAÇÃO	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### UTILIZAÇÃO$/;"	t	language:Markdown
+Uma interface para os plugins	_posts/2015-05-09-plugins-zf2.md	/^#### Uma interface para os plugins$/;"	t	language:Markdown
+Umount the file system	_posts/2016-10-04-sshfs.md	/^Umount the file system$/;"	s	language:Markdown
+Umount the file system	dist/blog/sshfs.html	/^<h2 id="umount-the-file-system">Umount the file system<\/h2>$/;"	i	language:HTML
+Use Vim mode on Sublime	dist/blog/vim-on-sublime.html	/^    <h1 class="post__title">Use Vim mode on Sublime<\/h1>$/;"	h	language:HTML
+Use abbreviations on CLI	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Use abbreviations on CLI$/;"	S	language:Markdown
+Use abbreviations on CLI	dist/blog/doctrine2contributiontouch.html	/^<h3 id="use-abbreviations-on-cli">Use abbreviations on CLI<\/h3>$/;"	j	language:HTML
+Use fail	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Use fail$/;"	S	language:Markdown
+Use fail	dist/blog/doctrine2contributiontouch.html	/^<h3 id="use-fail">Use fail<\/h3>$/;"	j	language:HTML
+Use or no use	dist/blog/useornouse.html	/^    <h1 class="post__title">Use or no use<\/h1>$/;"	h	language:HTML
+Using Event Manager	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^## Using Event Manager$/;"	s	language:Markdown
+Using Event Manager	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h2 id="using-event-manager">Using Event Manager<\/h2>$/;"	i	language:HTML
+Using Services Aliases	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^## Using Services Aliases$/;"	s	language:Markdown
+Using Services Aliases	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h2 id="using-services-aliases">Using Services Aliases<\/h2>$/;"	i	language:HTML
+Utilize um sistema Unix	_posts/2014-02-19-como-aprender-php.md	/^## Utilize um sistema Unix$/;"	s	language:Markdown
+Utilize um sistema Unix	dist/blog/como-aprender-php.html	/^<h2 id="utilize-um-sistema-unix">Utilize um sistema Unix<\/h2>$/;"	i	language:HTML
+VALIDATORS	_posts/2015-05-08-testesdeapicomopyresttest.md	/^##### VALIDATORS$/;"	T	language:Markdown
+Vamos falar de composição	dist/blog/composicao.html	/^    <h1 class="post__title">Vamos falar de composição<\/h1>$/;"	h	language:HTML
+Verdades sobre a verdade	dist/blog/sobre-a-verdade.html	/^    <h1 class="post__title">Verdades sobre a verdade<\/h1>$/;"	h	language:HTML
+Viability of developing cross-platform mobile business applictions	_posts/2015-07-13-games-research.md	/^##  Viability of developing cross-platform mobile business applictions$/;"	s	language:Markdown
+Viability of developing cross-platform mobile business applictions	dist/blog/games-research.html	/^<h2 id="viability-of-developing-cross-platform-mobile-business-applictions">Viability of develop/;"	i	language:HTML
+Vim	_posts/2015-06-08-dicasack.md	/^## Vim$/;"	s	language:Markdown
+Vim	_posts/2017-09-10-3-years-archlinux.md	/^## Vim$/;"	s	language:Markdown
+Vim	dist/blog/3-years-archlinux.html	/^<h2 id="vim">Vim<\/h2>$/;"	i	language:HTML
+Vim	dist/blog/dicasack.html	/^<h2 id="vim">Vim<\/h2>$/;"	i	language:HTML
+Vim no Sublime	_posts/2014-04-15-vim-on-sublime.md	/^## Vim no Sublime$/;"	s	language:Markdown
+Vim no Sublime	dist/blog/vim-on-sublime.html	/^<h2 id="vim-no-sublime">Vim no Sublime<\/h2>$/;"	i	language:HTML
+Viscosidade	_posts/2015-02-01-sintomasdedesignpodre.md	/^## Viscosidade$/;"	s	language:Markdown
+Viscosidade	dist/blog/sintomasdedesignpodre.html	/^<h2 id="viscosidade">Viscosidade<\/h2>$/;"	i	language:HTML
+Visualizando a vizinhança	_posts/2015-06-08-dicasack.md	/^## Visualizando a vizinhança$/;"	s	language:Markdown
+Visualizando a vizinhança	dist/blog/dicasack.html	/^<h2 id="visualizando-a-vizinhança">Visualizando a vizinhança<\/h2>$/;"	i	language:HTML
+Weakness - Is too hard to write too much interfac                  es	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^### Weakness - Is too hard to write too much interfac                  es$/;"	S	language:Markdown
+Weakness - Is too hard to write too much interfac es	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weakness---is-too-hard-to-write-too-much-interfac------------------es">Weakness - Is too/;"	j	language:HTML
+Weaknesses - Performance problems - Zend event manager is ugly	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^### Weaknesses - Performance problems - Zend event manager is ugly$/;"	S	language:Markdown
+Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly">Weaknesses - Performance/;"	j	language:HTML
+Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly-1">Weaknesses - Performan/;"	j	language:HTML
+What to say when asked for an estimate	_posts/2014-04-03-pragmatic-programmer-review.md	/^### What to say when asked for an estimate$/;"	S	language:Markdown
+What to say when asked for an estimate	dist/blog/pragmatic-programmer-review.html	/^<h3 id="what-to-say-when-asked-for-an-estimate">What to say when asked for an estimate<\/h3>$/;"	j	language:HTML
+When it is worth to cry	dist/blog/when-it-is-worth-to-cry.html	/^    <h1 class="post__title">When it is worth to cry<\/h1>$/;"	h	language:HTML
+Why I'm leaving Linux	dist/blog/why-i-left-linux.html	/^    <h1 class="post__title">Why I'm leaving Linux<\/h1>$/;"	h	language:HTML
+Why I've always sucked at software estimation	dist/blog/why-i-suck-at-estimation.html	/^    <h1 class="post__title">Why I've always sucked at software estimation<\/h1>$/;"	h	language:HTML
+Wrapping up	_posts/2018-09-02-view-on-php.md	/^## Wrapping up$/;"	s	language:Markdown
+Wrapping up	dist/blog/view-on-php.html	/^<h2 id="wrapping-up">Wrapping up<\/h2>$/;"	i	language:HTML
+XML to JSON	_posts/2016-07-27-little-unix-tools.md	/^## XML to JSON$/;"	s	language:Markdown
+XML to JSON	dist/blog/little-unix-tools.html	/^<h2 id="xml-to-json">XML to JSON<\/h2>$/;"	i	language:HTML
+Zend Framework 2 Traits	dist/blog/zendframework2traits.html	/^    <h1 class="post__title">Zend Framework 2 Traits<\/h1>$/;"	h	language:HTML
+[3D RPG in Ogre 3D](https://github.com/jeanCarloMachado/rpg)	_posts/2015-06-09-gamedevelopmentwandering.md	/^## [3D RPG in Ogre 3D](https:\/\/github.com\/jeanCarloMachado\/rpg)$/;"	s	language:Markdown
+[INSTALAÇÃO](https://github.com/svanoort/pyresttest#user-content-installation-troubleshooting-and-special-cases)	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### [INSTALAÇÃO](https:\/\/github.com\/svanoort\/pyresttest#user-content-installation-trouble/;"	t	language:Markdown
+[Math Game](http://jeancarlomachado.com.br/game/math/index.html)	_posts/2015-06-09-gamedevelopmentwandering.md	/^## [Math Game](http:\/\/jeancarlomachado.com.br\/game\/math\/index.html)$/;"	s	language:Markdown
+[PYRESTTEST](https://github.com/svanoort/pyresttest)	_posts/2015-05-08-testesdeapicomopyresttest.md	/^### [PYRESTTEST](https:\/\/github.com\/svanoort\/pyresttest)$/;"	S	language:Markdown
+\x21/usr/bin/env php	_posts/2016-02-08-aminimalservicemanagersetup.md	/^# !\/usr\/bin\/env php$/;"	c	language:Markdown
+\x21/usr/bin/env php	_posts/2016-03-12-thebeautyofunix.md	/^# !\/usr\/bin\/env php$/;"	c	language:Markdown
+```	_posts/2015-05-08-testesdeapicomopyresttest.md	/^```$/;"	s	language:Markdown
+a	dist/assets/css/main.css	/^a {$/;"	s	language:CSS
+a:active	dist/assets/css/main.css	/^  a:active {$/;"	s	language:CSS
+a:hover	dist/assets/css/main.css	/^  a:hover {$/;"	s	language:CSS
+a:visited	dist/assets/css/main.css	/^  a:visited {$/;"	s	language:CSS
+af ar az be bn bg bs ca cub zh-CN zh-TW cs cy da de en en_us en_gb en_au	_posts/2016-07-27-little-unix-tools.md	/^# af ar az be bn bg bs ca cub zh-CN zh-TW cs cy da de en en_us en_gb en_au $/;"	c	language:Markdown
+all	Makefile	/^all: watch$/;"	t	language:Make
+all	dist/Makefile	/^all: watch$/;"	t	language:Make
+all	dist/docker_image/Makefile	/^all: build$/;"	t	language:Make
+all	docker_image/Makefile	/^all: build$/;"	t	language:Make
+body	dist/assets/css/main.css	/^body {$/;"	s	language:CSS
+build	Makefile	/^build: clear$/;"	t	language:Make
+build	dist/Makefile	/^build: clear$/;"	t	language:Make
+build	dist/docker_image/Makefile	/^build:$/;"	t	language:Make
+build	docker_image/Makefile	/^build:$/;"	t	language:Make
+clear	Makefile	/^clear:$/;"	t	language:Make
+clear	dist/Makefile	/^clear:$/;"	t	language:Make
+curl, Bash and Firefox mutualism	dist/blog/curl-plus-firefox.html	/^    <h1 class="post__title">curl, Bash and Firefox mutualism<\/h1>$/;"	h	language:HTML
+deploy	Makefile	/^deploy:  build$/;"	t	language:Make
+deploy	dist/Makefile	/^deploy:  build$/;"	t	language:Make
+echo $result	_posts/2016-07-27-little-unix-tools.md	/^# echo $result$/;"	c	language:Markdown
+el es et eu fa fi fr ga gl gu ht hi hmn hr hu hy is id it iw ja jw ka km	_posts/2016-07-27-little-unix-tools.md	/^# el es et eu fa fi fr ga gl gu ht hi hmn hr hu hy is id it iw ja jw ka km $/;"	c	language:Markdown
+file export-php-from-json	_posts/2016-03-12-thebeautyofunix.md	/^# file export-php-from-json$/;"	c	language:Markdown
+file url-decode	_posts/2016-03-12-thebeautyofunix.md	/^# file url-decode$/;"	c	language:Markdown
+file url-to-json	_posts/2016-03-12-thebeautyofunix.md	/^# file url-to-json$/;"	c	language:Markdown
+h1	dist/assets/css/main.css	/^h1 {$/;"	s	language:CSS
+install	Makefile	/^install:$/;"	t	language:Make
+install	dist/Makefile	/^install:$/;"	t	language:Make
+keywords: Archlinux, Experience, Unix, Advanced systems	_posts/2016-10-12-two-years-of-arch.md	/^keywords: Archlinux, Experience, Unix, Advanced systems$/;"	s	language:Markdown
+keywords: Clipboard managers	_posts/2017-03-01-The_most_useful_tool_that_you_probably_dont_use.md	/^keywords: Clipboard managers$/;"	s	language:Markdown
+keywords: Composição	_posts/2017-12-28-composicao.md	/^keywords: Composição$/;"	s	language:Markdown
+keywords: Conversa, cidade pequena	_posts/2018-03-13-melhorar-a-conversa.md	/^keywords: Conversa, cidade pequena$/;"	s	language:Markdown
+keywords: Docker, Buildkite	_posts/2016-11-28-distorting_reallity_with_docker.md	/^keywords: Docker, Buildkite$/;"	s	language:Markdown
+keywords: Linux, desktops	_posts/2018-05-16-why-i-left-linux.md	/^keywords: Linux, desktops$/;"	s	language:Markdown
+keywords: Lying	_posts/2018-07-24-lying.md	/^keywords: Lying$/;"	s	language:Markdown
+keywords: Meditação	_posts/2017-10-24-o-que-e-a-meditacao.md	/^keywords: Meditação$/;"	s	language:Markdown
+keywords: Motivation	_posts/2018-08-19-reasons.md	/^keywords: Motivation$/;"	s	language:Markdown
+keywords: My personal values	_posts/2018-04-18-myvalues.md	/^keywords: My personal values$/;"	s	language:Markdown
+keywords: My, Keywords	_posts/2016-12-11-Provicialism.md	/^keywords: My, Keywords$/;"	s	language:Markdown
+keywords: O grande problema	_posts/2017-12-26-o-grande-problema.md	/^keywords: O grande problema$/;"	s	language:Markdown
+keywords: PHP,TDD	_posts/2016-05-08-mockinginphpaacomparison.md	/^keywords: PHP,TDD$/;"	s	language:Markdown
+keywords: Produtividade, getting things done	_posts/2017-07-09-primeiro-faca-depois-otimize.md	/^keywords: Produtividade, getting things done$/;"	s	language:Markdown
+keywords: Programming	_posts/2016-11-27-on-being-a-50-years-old-programmer.md	/^keywords: Programming$/;"	s	language:Markdown
+keywords: Refatoração, boas práticas	_posts/2017-07-14-quando-refatorar.md	/^keywords: Refatoração, boas práticas$/;"	s	language:Markdown
+keywords: Reporting getyourguide	_posts/2018-08-01-get-your-guide.md	/^keywords: Reporting getyourguide$/;"	s	language:Markdown
+keywords: Respeito	_posts/2017-10-23-respeito.md	/^keywords: Respeito$/;"	s	language:Markdown
+keywords: TDD, C Development	_posts/2016-11-20-tdd_rules.md	/^keywords: TDD, C Development$/;"	s	language:Markdown
+keywords: Unix, utilities, Unix Way	_posts/2016-07-27-little-unix-tools.md	/^keywords: Unix, utilities, Unix Way$/;"	s	language:Markdown
+keywords: Verdade, Honestidade intelectual	_posts/2017-08-16-sobre-a-verdade.md	/^keywords: Verdade, Honestidade intelectual$/;"	s	language:Markdown
+keywords: archlinux, years of usage	_posts/2017-09-10-3-years-archlinux.md	/^keywords: archlinux, years of usage$/;"	s	language:Markdown
+keywords: biases, fallacies	_posts/2015-03-03-fallacies.md	/^keywords: biases, fallacies$/;"	s	language:Markdown
+keywords: ciencia,método	_posts/2015-08-08-metodo-cientifico-huxley.md	/^keywords: ciencia,método$/;"	s	language:Markdown
+keywords: clean code	_posts/2015-07-19-grande-redesign.md	/^keywords: clean code$/;"	s	language:Markdown
+keywords: estimating, software engineering	_posts/2018-06-02-why-i-suck-at-estimation.md	/^keywords: estimating, software engineering$/;"	s	language:Markdown
+keywords: gestão, tarefas, produtividade, desenvolvimento de software, continuous delivery	_posts/2017-06-09-tarefas-pequenas.md	/^keywords: gestão, tarefas, produtividade, desenvolvimento de software, continuous delivery$/;"	s	language:Markdown
+keywords: morte	_posts/2017-11-18-morte.md	/^keywords: morte$/;"	s	language:Markdown
+keywords: my personal view on php	_posts/2018-09-02-view-on-php.md	/^keywords: my personal view on php$/;"	s	language:Markdown
+keywords: quotes	_posts/2018-08-30-quotes.md	/^keywords: quotes$/;"	s	language:Markdown
+keywords: science	_posts/2014-10-10-dawkins-talk.md	/^keywords: science$/;"	s	language:Markdown
+keywords: toastmasters talk 2	_posts/2018-10-23-toastmasters-talk2.md	/^keywords: toastmasters talk 2$/;"	s	language:Markdown
+keywords: tools, software	_posts/2018-03-04-the-better-tool-for-the-job-fallacy.md	/^keywords: tools, software$/;"	s	language:Markdown
+keywords: whatnext, methodology	_posts/2018-02-21-metodologia-whatnext.md	/^keywords: whatnext, methodology$/;"	s	language:Markdown
+kn ko la lv lt mk mr ms mt no nl pl pt ro ru sr sk sl sq sw sv ta te th	_posts/2016-07-27-little-unix-tools.md	/^# kn ko la lv lt mk mr ms mt no nl pl pt ro ru sr sk sl sq sw sv ta te th $/;"	c	language:Markdown
+layout: about	about.md	/^layout: about$/;"	s	language:Markdown
+layout: post	_posts/2012-11-23-controle-porta-paralela.md	/^layout: post$/;"	s	language:Markdown
+layout: post	_posts/2014-02-19-como-aprender-php.md	/^layout: post$/;"	s	language:Markdown
+layout: post	_posts/2015-06-03-humano-demasiado-humano-nietzsche.md	/^layout: post$/;"	s	language:Markdown
+layout: post	_posts/2016-08-02-graphite-and-statsd-container.md	/^layout: post$/;"	s	language:Markdown
+layout: post	_posts/2016-10-04-sshfs.md	/^layout: post$/;"	s	language:Markdown
+p	dist/assets/css/main.css	/^p {$/;"	s	language:CSS
+phpmd.xml	_posts/2016-08-15-code-style-compufacil.md	/^## phpmd.xml$/;"	s	language:Markdown
+phpmd.xml	dist/blog/code-style-compufacil.html	/^<h2 id="phpmdxml">phpmd.xml<\/h2>$/;"	i	language:HTML
+ruleset.xml	_posts/2016-08-15-code-style-compufacil.md	/^## ruleset.xml$/;"	s	language:Markdown
+ruleset.xml	dist/blog/code-style-compufacil.html	/^<h2 id="rulesetxml">ruleset.xml<\/h2>$/;"	i	language:HTML
+title: A collection of summaries about Html Game Development	_posts/2015-07-13-games-research.md	/^title: A collection of summaries about Html Game Development$/;"	s	language:Markdown
+title: A container for Statsd with Mongo Backend	_posts/2015-11-04-acontainerforstatsdwithmongobackend.md	/^title: A container for Statsd with Mongo Backend$/;"	s	language:Markdown
+title: A cool hack for rand	_posts/2015-10-05-cool-hack-rand.md	/^title: A cool hack for rand$/;"	s	language:Markdown
+title: A minimal service manager setup	_posts/2016-02-08-aminimalservicemanagersetup.md	/^title: A minimal service manager setup$/;"	s	language:Markdown
+title: A smart way of testing inside Vim	_posts/2016-09-19-phpunit-tests-on-vim.md	/^title: A smart way of testing inside Vim$/;"	s	language:Markdown
+title: A year of my Arch installation	_posts/2015-12-01-ayearofmyarchinstallation.md	/^title: A year of my Arch installation$/;"	s	language:Markdown
+title: Archlinux wanderings changing GUI's	_posts/2015-05-16-archlinuxwanderingsachanginggui27s.md	/^title: Archlinux wanderings changing GUI's$/;"	s	language:Markdown
+title: Ato moral	_posts/2014-05-19-ato-moral.md	/^title: Ato moral$/;"	s	language:Markdown
+title: Blogging Like a Hacker	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^title: Blogging Like a Hacker$/;"	s	language:Markdown
+title: Code Style on Compufacil	_posts/2016-08-15-code-style-compufacil.md	/^title: Code Style on Compufacil$/;"	s	language:Markdown
+title: Code review references	_posts/2015-12-08-codereviewreferences.md	/^title: Code review references$/;"	s	language:Markdown
+title: Decoupling strategies for Zend Framework 2 applications	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^title: Decoupling strategies for Zend Framework 2 applications$/;"	s	language:Markdown
+title: Dicas Ack	_posts/2015-06-08-dicasack.md	/^title: Dicas Ack$/;"	s	language:Markdown
+title: Dicas Pacman	_posts/2015-10-04-dicaspacman.md	/^title: Dicas Pacman$/;"	s	language:Markdown
+title: Dicas bash	_posts/2015-03-12-dicas-bash.md	/^title: Dicas bash$/;"	s	language:Markdown
+title: Dicas do livro Clean Code de Robert C. Martin	_posts/2015-01-10-dicasdolivrocleancodederobertc.martin.md	/^title: Dicas do livro Clean Code de Robert C. Martin$/;"	s	language:Markdown
+title: Do sowftware livre e da liberdade dos usuários	_posts/2012-11-07-sofware-livre.md	/^title: Do sowftware livre e da liberdade dos usuários$/;"	s	language:Markdown
+title: Doctrine 2 contribution touch	_posts/2016-02-21-doctrine2contributiontouch.md	/^title: Doctrine 2 contribution touch$/;"	s	language:Markdown
+title: Documentação com o Swagger	_posts/2016-08-10-documentacao-swagger.md	/^title: Documentação com o Swagger$/;"	s	language:Markdown
+title: Finding issues on Github	_posts/2016-05-20-findingissuesongithub.md	/^title: Finding issues on Github$/;"	s	language:Markdown
+title: Front in Floripa impressions	_posts/2015-12-06-frontinfloripaimpressions.md	/^title: Front in Floripa impressions$/;"	s	language:Markdown
+title: Full crud with pyresttest	_posts/2016-03-27-fullcrudwithpyresttest.md	/^title: Full crud with pyresttest$/;"	s	language:Markdown
+title: Game development wandering	_posts/2015-06-09-gamedevelopmentwandering.md	/^title: Game development wandering$/;"	s	language:Markdown
+title: Hard lessons from code reviews	_posts/2015-09-29-hardlessonsfromcodereviews.md	/^title: Hard lessons from code reviews$/;"	s	language:Markdown
+title: My notes for the QA Hangout	_posts/2015-10-16-mynotesfortheqahangout.md	/^title: My notes for the QA Hangout$/;"	s	language:Markdown
+title: Múltiplas instalações do PHP	_posts/2013-08-22-multiplos-phps.md	/^title: Múltiplas instalações do PHP$/;"	s	language:Markdown
+title: Notas do livro Crepúsculo dos ídolos - Nietzsche	_posts/2015-01-22-review-crepusculo-dos-idolos-nietzsche.md	/^title: Notas do livro Crepúsculo dos ídolos - Nietzsche$/;"	s	language:Markdown
+title: Notes of the Book How to win friends and influence people	_posts/2015-06-21-notesofthebookahowtowinfriendsandinfluencepeople.md	/^title: Notes of the Book How to win friends and influence people $/;"	s	language:Markdown
+title: Não esqueça de ser ótimo	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^title: Não esqueça de ser ótimo$/;"	s	language:Markdown
+title: O programador fantasma	_posts/2014-09-1-programador-fantasma.md	/^title: O programador fantasma$/;"	s	language:Markdown
+title: Por um teclado mais produtivo	_posts/2015-02-01-porumtecladomaisprodutivo.md	/^title: Por um teclado mais produtivo$/;"	s	language:Markdown
+title: Programador como mago de D&D	_posts/2015-02-19-programador-mago.md	/^title: Programador como mago de D&D$/;"	s	language:Markdown
+title: Prototyping with Calc	_posts/2015-08-25-prototypingwithcalc.md	/^title: Prototyping with Calc$/;"	s	language:Markdown
+title: Quotes from the book Waking Up	_posts/2016-03-27-quotesfromthebookwakingup.md	/^title: Quotes from the book Waking Up$/;"	s	language:Markdown
+title: Recalibrar	_posts/2016-06-05-recalibrar.md	/^title: Recalibrar$/;"	s	language:Markdown
+title: Refactoring must be a constant	_posts/2015-09-01-refactoringmustbeaconstant.md	/^title: Refactoring must be a constant$/;"	s	language:Markdown
+title: Reflections on Service layer	_posts/2015-09-16-reflectionsonservicelayer.md	/^title: Reflections on Service layer$/;"	s	language:Markdown
+title: Remove Firefox useless curl headers with this	_posts/2015-09-01-removefirefoxuselesscurlheaderswiththis.md	/^title: Remove Firefox useless curl headers with this$/;"	s	language:Markdown
+title: Remove early	_posts/2015-09-2-removeearly.md	/^title: Remove early$/;"	s	language:Markdown
+title: Review your assumptions as soon as possible	_posts/2015-08-26-reviewyourassumptionsassoonaspossible.md	/^title: Review your assumptions as soon as possible$/;"	s	language:Markdown
+title: Revisão do livro - A paisagem moral	_posts/2014-11-03-paisagem-moral-harris.md	/^title: Revisão do livro - A paisagem moral$/;"	s	language:Markdown
+title: Setup manual de views no ZF2	_posts/2015-06-03-manual-view-setup-z2.md	/^title: Setup manual de views no ZF2$/;"	s	language:Markdown
+title: Simple presentation template with Markdown and Pandoc	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^title: Simple presentation template with Markdown and Pandoc$/;"	s	language:Markdown
+title: Sintomas de design podre	_posts/2015-02-01-sintomasdedesignpodre.md	/^title: Sintomas de design podre$/;"	s	language:Markdown
+title: Sistema de plugins zf2	_posts/2015-05-09-plugins-zf2.md	/^title: Sistema de plugins zf2$/;"	s	language:Markdown
+title: Slow ride with kernel upgrades	_posts/2015-11-11-slowridewithkernelupgrades.md	/^title: Slow ride with kernel upgrades$/;"	s	language:Markdown
+title: Stop struggling with docker volumes	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^title: Stop struggling with docker volumes$/;"	s	language:Markdown
+title: Testes de API com  o Pyresttest	_posts/2015-05-08-testesdeapicomopyresttest.md	/^title: Testes de API com  o Pyresttest$/;"	s	language:Markdown
+title: The beauty of Unix	_posts/2016-03-12-thebeautyofunix.md	/^title: The beauty of Unix$/;"	s	language:Markdown
+title: The best alias you will ever have	_posts/2015-08-28-thebestaliasyouwilleverhave.md	/^title: The best alias you will ever have$/;"	s	language:Markdown
+title: The destructive power of Proactive Incompetents	_posts/2015-09-01-thedestructivepowerofproactiveincompetents.md	/^title: The destructive power of Proactive Incompetents$/;"	s	language:Markdown
+title: The ignorance related fallacies	_posts/2015-09-04-theignorancerelatedfallacies.md	/^title: The ignorance related fallacies$/;"	s	language:Markdown
+title: The last responsible moment	_posts/2015-09-22-thelastresponsiblemoment.md	/^title: The last responsible moment$/;"	s	language:Markdown
+title: The miracle of mindfulness	_posts/2015-06-12-miracle-mindfulness.md	/^title: The miracle of mindfulness$/;"	s	language:Markdown
+title: The pragmatic programmer notes	_posts/2014-04-03-pragmatic-programmer-review.md	/^title: The pragmatic programmer notes$/;"	s	language:Markdown
+title: Traits of my posture on software	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^title: Traits of my posture on software$/;"	s	language:Markdown
+title: Use Vim mode on Sublime	_posts/2014-04-15-vim-on-sublime.md	/^title: Use Vim mode on Sublime$/;"	s	language:Markdown
+title: Use or no use	_posts/2016-04-28-useornouse.md	/^title: Use or no use$/;"	s	language:Markdown
+title: When it is worth to cry	_posts/2018-06-13-when-it-is-worth-to-cry.md	/^title: When it is worth to cry$/;"	s	language:Markdown
+title: Zend Framework 2 Traits	_posts/2015-06-24-zendframework2traits.md	/^title: Zend Framework 2 Traits$/;"	s	language:Markdown
+title: curl, Bash and Firefox mutualism	_posts/2015-04-19-curl-plus-firefox.md	/^title: curl, Bash and Firefox mutualism$/;"	s	language:Markdown
+tl tr uk ur vi yi	_posts/2016-07-27-little-unix-tools.md	/^# tl tr uk ur vi yi$/;"	c	language:Markdown
+ul	dist/assets/css/main.css	/^ul {$/;"	s	language:CSS
+ul li	dist/assets/css/main.css	/^  ul li {$/;"	s	language:CSS
+watch	Makefile	/^watch:$/;"	t	language:Make
+watch	dist/Makefile	/^watch:$/;"	t	language:Make
+{{ page.title }}	_layouts/post.html	/^    <h1 class="post__title">{{ page.title }}<\/h1>$/;"	h	language:HTML
+{{ site.name }}	_includes/header.html	/^    <h1>{{ site.name }}<\/h1>$/;"	h	language:HTML
+Árvore de dependências de pacote	_posts/2015-10-04-dicaspacman.md	/^## Árvore de dependências de pacote$/;"	s	language:Markdown
+Árvore de dependências de pacote	dist/blog/dicaspacman.html	/^<h2 id="árvore-de-dependências-de-pacote">Árvore de dependências de pacote<\/h2>$/;"	i	language:HTML
+É muito mais fácil convencer gentilmente	_posts/2015-09-12-ncaoesqueca7adesercbtimo.md	/^## É muito mais fácil convencer gentilmente$/;"	s	language:Markdown
+É muito mais fácil convencer gentilmente	dist/blog/ncaoesqueca7adesercbtimo.html	/^<h2 id="é-muito-mais-fácil-convencer-gentilmente">É muito mais fácil convencer gentilmente<\//;"	i	language:HTML
+Último comando	_posts/2015-03-12-dicas-bash.md	/^## Último comando$/;"	s	language:Markdown
+Último comando	dist/blog/dicas-bash.html	/^<h2 id="último-comando">Último comando<\/h2>$/;"	i	language:HTML
