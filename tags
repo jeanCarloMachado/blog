@@ -564,6 +564,7 @@ The hangman	_posts/2015-09-29-hardlessonsfromcodereviews.md	/^# The hangman$/;"	
 The hangman	dist/blog/hardlessonsfromcodereviews.html	/^<h1 id="the-hangman">The hangman<\/h1>$/;"	h	language:HTML
 The ignorance related fallacies	dist/blog/theignorancerelatedfallacies.html	/^    <h1 class="post__title">The ignorance related fallacies<\/h1>$/;"	h	language:HTML
 The last responsible moment	dist/blog/thelastresponsiblemoment.html	/^    <h1 class="post__title">The last responsible moment<\/h1>$/;"	h	language:HTML
+The love I don't want	dist/blog/the-love-i-dont-want.html	/^    <h1 class="post__title">The love I don't want<\/h1>$/;"	h	language:HTML
 The miracle is to walk on Earth	_posts/2015-06-12-miracle-mindfulness.md	/^## The miracle is to walk on Earth$/;"	s	language:Markdown
 The miracle is to walk on Earth	dist/blog/miracle-mindfulness.html	/^<h2 id="the-miracle-is-to-walk-on-earth">The miracle is to walk on Earth<\/h2>$/;"	i	language:HTML
 The miracle of mindfulness	dist/blog/miracle-mindfulness.html	/^    <h1 class="post__title">The miracle of mindfulness<\/h1>$/;"	h	language:HTML
