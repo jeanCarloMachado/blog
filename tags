@@ -45,13 +45,13 @@
 3. Registrar a sessão	dist/blog/metodologia-whatnext.html	/^<h2 id="3-registrar-a-sessão">3. Registrar a sessão<\/h2>$/;"	i	language:HTML
 3D RPG in Ogre 3D	dist/blog/gamedevelopmentwandering.html	/^<h2 id="3d-rpg-in-ogre-3d"><a href="https:\/\/github.com\/jeanCarloMachado\/rpg">3D RPG in Ogre /;"	i	language:HTML
 A beleza do método científico, segundo Huxley	dist/blog/metodo-cientifico-huxley.html	/^    <h1 class="post__title">A beleza do método científico, segundo Huxley<\/h1>$/;"	h	language:HTML
+A bit of poetry	dist/blog/a-bit-of-poetry.html	/^    <h1 class="post__title">A bit of poetry<\/h1>$/;"	h	language:HTML
 A collection of summaries about Html Game Development	dist/blog/games-research.html	/^    <h1 class="post__title">A collection of summaries about Html Game Development<\/h1>$/;"	h	language:HTML
 A container for Statsd with Mongo Backend	dist/blog/acontainerforstatsdwithmongobackend.html	/^    <h1 class="post__title">A container for Statsd with Mongo Backend<\/h1>$/;"	h	language:HTML
 A conversa do interior	dist/blog/melhorar-a-conversa.html	/^    <h1 class="post__title">A conversa do interior<\/h1>$/;"	h	language:HTML
 A cool hack for rand	dist/blog/cool-hack-rand.html	/^    <h1 class="post__title">A cool hack for rand<\/h1>$/;"	h	language:HTML
 A day of mindfulness	_posts/2015-06-12-miracle-mindfulness.md	/^## A day of mindfulness$/;"	s	language:Markdown
 A day of mindfulness	dist/blog/miracle-mindfulness.html	/^<h2 id="a-day-of-mindfulness">A day of mindfulness<\/h2>$/;"	i	language:HTML
-A list of fallacies and biases	dist/blog/fallacies.html	/^    <h1 class="post__title">A list of fallacies and biases<\/h1>$/;"	h	language:HTML
 A minimal service manager setup	dist/blog/aminimalservicemanagersetup.html	/^    <h1 class="post__title">A minimal service manager setup<\/h1>$/;"	h	language:HTML
 A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han	_posts/2015-07-13-games-research.md	/^## A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han$/;"	s	language:Markdown
 A situation-aware cross-platform architecture for ubiquitous game - Jung Hyun Han	dist/blog/games-research.html	/^<h2 id="a-situation-aware-cross-platform-architecture-for-ubiquitous-game---jung-hyun-han">A sit/;"	i	language:HTML
@@ -74,6 +74,8 @@ Adhock testing	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Adhock test
 Adhock testing	dist/blog/pragmatic-programmer-review.html	/^<h2 id="adhock-testing">Adhock testing<\/h2>$/;"	i	language:HTML
 Algumas conclusões bacanas	_posts/2015-07-13-games-research.md	/^#### Algumas conclusões bacanas$/;"	t	language:Markdown
 Alguns detalhes interessantes da história do HTML	_posts/2015-07-13-games-research.md	/^#### Alguns detalhes interessantes da história do HTML$/;"	t	language:Markdown
+An autumn morning	_posts/2018-12-16-a-bit-of-poetry.md	/^## An autumn morning$/;"	s	language:Markdown
+An autumn morning	dist/blog/a-bit-of-poetry.html	/^<h2 id="an-autumn-morning">An autumn morning<\/h2>$/;"	i	language:HTML
 Anonymous classes	_posts/2016-05-08-mockinginphpaacomparison.md	/^##  Anonymous classes$/;"	s	language:Markdown
 Anonymous classes	dist/blog/mockinginphpaacomparison.html	/^<h2 id="anonymous-classes">Anonymous classes<\/h2>$/;"	i	language:HTML
 Aplicação parcial	_posts/2017-12-28-composicao.md	/^## Aplicação parcial$/;"	s	language:Markdown
@@ -91,11 +93,11 @@ Ato moral	_posts/2014-05-19-ato-moral.md	/^####  Ato moral$/;"	t	language:Markdo
 Ato moral	dist/blog/ato-moral.html	/^    <h1 class="post__title">Ato moral<\/h1>$/;"	h	language:HTML
 Automating the parts	_posts/2015-04-19-curl-plus-firefox.md	/^## Automating the parts$/;"	s	language:Markdown
 Automating the parts	dist/blog/curl-plus-firefox.html	/^<h2 id="automating-the-parts">Automating the parts<\/h2>$/;"	i	language:HTML
-Automation bias	_posts/2015-03-03-fallacies.md	/^## Automation bias$/;"	s	language:Markdown
-Automation bias	dist/blog/fallacies.html	/^<h2 id="automation-bias">Automation bias<\/h2>$/;"	i	language:HTML
 Awesome things	_posts/2015-12-01-ayearofmyarchinstallation.md	/^## Awesome things$/;"	s	language:Markdown
 Awesome things	dist/blog/ayearofmyarchinstallation.html	/^<h2 id="awesome-things">Awesome things<\/h2>$/;"	i	language:HTML
 BENCHMARKS	_posts/2015-05-08-testesdeapicomopyresttest.md	/^#### BENCHMARKS$/;"	t	language:Markdown
+BLOG_REPO	Makefile	/^BLOG_REPO=${HOME}\/projects\/blog$/;"	m	language:Make
+BLOG_REPO	dist/Makefile	/^BLOG_REPO=${HOME}\/projects\/blog$/;"	m	language:Make
 Benefits	_posts/2015-10-16-mynotesfortheqahangout.md	/^### Benefits$/;"	S	language:Markdown
 Benefits	dist/blog/mynotesfortheqahangout.html	/^<h3 id="benefits">Benefits<\/h3>$/;"	j	language:HTML
 Benefits:	_posts/2014-04-03-pragmatic-programmer-review.md	/^### Benefits:$/;"	S	language:Markdown
@@ -180,14 +182,14 @@ Controle de processos	dist/blog/dicas-bash.html	/^<h2 id="controle-de-processos"
 Cool personal unixy tools	dist/blog/little-unix-tools.html	/^    <h1 class="post__title">Cool personal unixy tools<\/h1>$/;"	h	language:HTML
 Copy to clipboard using pipe	_posts/2016-07-27-little-unix-tools.md	/^## Copy to clipboard using pipe$/;"	s	language:Markdown
 Copy to clipboard using pipe	dist/blog/little-unix-tools.html	/^<h2 id="copy-to-clipboard-using-pipe">Copy to clipboard using pipe<\/h2>$/;"	i	language:HTML
-Correlational errors	_posts/2015-03-03-fallacies.md	/^# Correlational errors$/;"	c	language:Markdown
-Correlational errors	dist/blog/fallacies.html	/^<h1 id="correlational-errors">Correlational errors<\/h1>$/;"	h	language:HTML
 Create a user and a group with the ids	_posts/2016-08-03-stop-struggling-with-docker-volumes.md	/^## Create a user and a group with the ids$/;"	s	language:Markdown
 Create a user and a group with the ids	dist/blog/stop-struggling-with-docker-volumes.html	/^<h2 id="create-a-user-and-a-group-with-the-ids">Create a user and a group with the ids<\/h2>$/;"	i	language:HTML
 Creation vs Consuming	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## Creation vs Consuming$/;"	s	language:Markdown
 Creation vs Consuming	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="creation-vs-consuming">Creation vs Consuming<\/h2>$/;"	i	language:HTML
 DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012	_posts/2015-07-13-games-research.md	/^## DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012$/;"	s	language:Markdown
 DEVELOPING EFFECT OF HTML5 THECHNOLOGY IN WEB GAME - Yu Zhang, 2012	dist/blog/games-research.html	/^<h2 id="developing-effect-of-html5-thechnology-in-web-game---yu-zhang-2012">DEVELOPING EFFECT OF/;"	i	language:HTML
+DIST_REPO	Makefile	/^DIST_REPO=${HOME}\/projects\/jeancarlomachado.github.io$/;"	m	language:Make
+DIST_REPO	dist/Makefile	/^DIST_REPO=${HOME}\/projects\/jeancarlomachado.github.io$/;"	m	language:Make
 Debugging	_posts/2014-04-03-pragmatic-programmer-review.md	/^## Debugging$/;"	s	language:Markdown
 Debugging	dist/blog/pragmatic-programmer-review.html	/^<h2 id="debugging">Debugging<\/h2>$/;"	i	language:HTML
 Debugging Doctrine Entities	_posts/2016-02-21-doctrine2contributiontouch.md	/^### Debugging Doctrine Entities$/;"	S	language:Markdown
@@ -321,6 +323,10 @@ Links interessantes	_posts/2015-06-08-dicasack.md	/^## Links interessantes$/;"	s
 Links interessantes	dist/blog/dicasack.html	/^<h2 id="links-interessantes">Links interessantes<\/h2>$/;"	i	language:HTML
 Listagem de pacotes orfãos	_posts/2015-10-04-dicaspacman.md	/^## Listagem de pacotes orfãos$/;"	s	language:Markdown
 Listagem de pacotes orfãos	dist/blog/dicaspacman.html	/^<h2 id="listagem-de-pacotes-orfãos">Listagem de pacotes orfãos<\/h2>$/;"	i	language:HTML
+Love	_posts/2018-12-16-a-bit-of-poetry.md	/^## Love$/;"	s	language:Markdown
+Love	dist/blog/a-bit-of-poetry.html	/^<h2 id="love">Love<\/h2>$/;"	i	language:HTML
+Love and science	_posts/2018-12-16-a-bit-of-poetry.md	/^## Love and science$/;"	s	language:Markdown
+Love and science	dist/blog/a-bit-of-poetry.html	/^<h2 id="love-and-science">Love and science<\/h2>$/;"	i	language:HTML
 Lying	dist/blog/lying.html	/^    <h1 class="post__title">Lying<\/h1>$/;"	h	language:HTML
 Main Title	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^# Main Title$/;"	c	language:Markdown
 Makefile	_posts/2016-03-1-simplepresentationtemplatewithmarkdownandpandoc.md	/^##  Makefile$/;"	s	language:Markdown
@@ -383,8 +389,6 @@ O notation	_posts/2017-03-30-calculating_processing_time_complexity.md	/^## O no
 O notation	dist/blog/calculating_processing_time_complexity.html	/^<h2 id="o-notation">O notation<\/h2>$/;"	i	language:HTML
 O programador fantasma	dist/blog/programador-fantasma.html	/^    <h1 class="post__title">O programador fantasma<\/h1>$/;"	h	language:HTML
 O que é a meditação	dist/blog/o-que-e-a-meditacao.html	/^    <h1 class="post__title">O que é a meditação<\/h1>$/;"	h	language:HTML
-Observer Expectancy	_posts/2015-03-03-fallacies.md	/^## Observer Expectancy$/;"	s	language:Markdown
-Observer Expectancy	dist/blog/fallacies.html	/^<h2 id="observer-expectancy">Observer Expectancy<\/h2>$/;"	i	language:HTML
 On being a 50 years old programmer	dist/blog/on-being-a-50-years-old-programmer.html	/^    <h1 class="post__title">On being a 50 years old programmer<\/h1>$/;"	h	language:HTML
 One Editor	_posts/2014-04-03-pragmatic-programmer-review.md	/^## One Editor$/;"	s	language:Markdown
 One Editor	dist/blog/pragmatic-programmer-review.html	/^<h2 id="one-editor">One Editor<\/h2>$/;"	i	language:HTML
@@ -564,7 +568,6 @@ The hangman	_posts/2015-09-29-hardlessonsfromcodereviews.md	/^# The hangman$/;"	
 The hangman	dist/blog/hardlessonsfromcodereviews.html	/^<h1 id="the-hangman">The hangman<\/h1>$/;"	h	language:HTML
 The ignorance related fallacies	dist/blog/theignorancerelatedfallacies.html	/^    <h1 class="post__title">The ignorance related fallacies<\/h1>$/;"	h	language:HTML
 The last responsible moment	dist/blog/thelastresponsiblemoment.html	/^    <h1 class="post__title">The last responsible moment<\/h1>$/;"	h	language:HTML
-The love I don't want	dist/blog/the-love-i-dont-want.html	/^    <h1 class="post__title">The love I don't want<\/h1>$/;"	h	language:HTML
 The miracle is to walk on Earth	_posts/2015-06-12-miracle-mindfulness.md	/^## The miracle is to walk on Earth$/;"	s	language:Markdown
 The miracle is to walk on Earth	dist/blog/miracle-mindfulness.html	/^<h2 id="the-miracle-is-to-walk-on-earth">The miracle is to walk on Earth<\/h2>$/;"	i	language:HTML
 The miracle of mindfulness	dist/blog/miracle-mindfulness.html	/^    <h1 class="post__title">The miracle of mindfulness<\/h1>$/;"	h	language:HTML
@@ -633,6 +636,8 @@ Weakness - Is too hard to write too much interfac es	dist/blog/decouplingstrateg
 Weaknesses - Performance problems - Zend event manager is ugly	_posts/2015-08-25-decouplingstrategiesforzendframework2applications.md	/^### Weaknesses - Performance problems - Zend event manager is ugly$/;"	S	language:Markdown
 Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly">Weaknesses - Performance/;"	j	language:HTML
 Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly-1">Weaknesses - Performan/;"	j	language:HTML
+Well being	_posts/2018-12-16-a-bit-of-poetry.md	/^## Well being$/;"	s	language:Markdown
+Well being	dist/blog/a-bit-of-poetry.html	/^        <h2 id="well-being">Well being<\/h2>$/;"	i	language:HTML
 What to say when asked for an estimate	_posts/2014-04-03-pragmatic-programmer-review.md	/^### What to say when asked for an estimate$/;"	S	language:Markdown
 What to say when asked for an estimate	dist/blog/pragmatic-programmer-review.html	/^<h3 id="what-to-say-when-asked-for-an-estimate">What to say when asked for an estimate<\/h3>$/;"	j	language:HTML
 When it is worth to cry	dist/blog/when-it-is-worth-to-cry.html	/^    <h1 class="post__title">When it is worth to cry<\/h1>$/;"	h	language:HTML
@@ -699,7 +704,6 @@ keywords: TDD, C Development	_posts/2016-11-20-tdd_rules.md	/^keywords: TDD, C D
 keywords: Unix, utilities, Unix Way	_posts/2016-07-27-little-unix-tools.md	/^keywords: Unix, utilities, Unix Way$/;"	s	language:Markdown
 keywords: Verdade, Honestidade intelectual	_posts/2017-08-16-sobre-a-verdade.md	/^keywords: Verdade, Honestidade intelectual$/;"	s	language:Markdown
 keywords: archlinux, years of usage	_posts/2017-09-10-3-years-archlinux.md	/^keywords: archlinux, years of usage$/;"	s	language:Markdown
-keywords: biases, fallacies	_posts/2015-03-03-fallacies.md	/^keywords: biases, fallacies$/;"	s	language:Markdown
 keywords: ciencia,método	_posts/2015-08-08-metodo-cientifico-huxley.md	/^keywords: ciencia,método$/;"	s	language:Markdown
 keywords: clean code	_posts/2015-07-19-grande-redesign.md	/^keywords: clean code$/;"	s	language:Markdown
 keywords: estimating, software engineering	_posts/2018-06-02-why-i-suck-at-estimation.md	/^keywords: estimating, software engineering$/;"	s	language:Markdown
