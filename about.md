@@ -2,8 +2,6 @@
 layout: about
 ---
 
-I'm a senior backend engineer at GYG.
-
 I'm in love with science and technology.
 
 I speak on software conferences and give courses on technologies I'm passionate about.
@@ -18,8 +16,6 @@ A citizen of the world.
 
 A honesty aficionado.
 
-
-
 Below are some of my breadcrumbs on the Web.
 
  - [Github](https://github.com/jeanCarloMachado)
@@ -27,9 +23,8 @@ Below are some of my breadcrumbs on the Web.
  - [Twitter](https://twitter.com/JeanCarloMachad)
  - [Stackoverflow](http://stackoverflow.com/users/3344920/jean-carlo-machado)
  - [Slideshare](https://www.slideshare.net/jeancarlomachado)
+ - [Resume](https://github.com/jeanCarloMachado/resume/blob/master/index.pdf)
 
 ---
 
 Need to talk to me? Enter in contact through contato@jeancarlomachado.com.br.
-
-
