@@ -267,6 +267,8 @@ God Delusion Talk by Dawkins	dist/blog/dawkins-talk.html	/^    <h1 class="post__
 Going deeper	_posts/2018-08-19-reasons.md	/^## Going deeper$/;"	s	language:Markdown
 Going deeper	dist/blog/reasons.html	/^<h2 id="going-deeper">Going deeper<\/h2>$/;"	i	language:HTML
 Good why's	dist/blog/reasons.html	/^    <h1 class="post__title">Good why's<\/h1>$/;"	h	language:HTML
+Goodness	_posts/2018-04-18-myvalues.md	/^## Goodness$/;"	s	language:Markdown
+Goodness	dist/blog/myvalues.html	/^<h2 id="goodness">Goodness<\/h2>$/;"	i	language:HTML
 Graphic environments	_posts/2016-10-12-two-years-of-arch.md	/^## Graphic environments$/;"	s	language:Markdown
 Graphic environments	dist/blog/two-years-of-arch.html	/^<h2 id="graphic-environments">Graphic environments<\/h2>$/;"	i	language:HTML
 Graphical Potential Games - Ortiz	_posts/2015-07-13-games-research.md	/^## Graphical Potential Games - Ortiz$/;"	s	language:Markdown
@@ -576,6 +578,8 @@ The pragmatic programmer notes	dist/blog/pragmatic-programmer-review.html	/^    
 The problem of GUI's	_posts/2014-04-03-pragmatic-programmer-review.md	/^### The problem of GUI's$/;"	S	language:Markdown
 The problem of GUI’s	dist/blog/pragmatic-programmer-review.html	/^<h3 id="the-problem-of-guis">The problem of GUI’s<\/h3>$/;"	j	language:HTML
 The right tool for the right job FALLACY	dist/blog/the-better-tool-for-the-job-fallacy.html	/^    <h1 class="post__title">The right tool for the right job FALLACY<\/h1>$/;"	h	language:HTML
+The way	_posts/2018-12-16-a-bit-of-poetry.md	/^## The way$/;"	s	language:Markdown
+The way	dist/blog/a-bit-of-poetry.html	/^        <h2 id="the-way">The way<\/h2>$/;"	i	language:HTML
 The web movement I fully embrace the open web movement.	_posts/2015-06-10-traitsofmypostureonsoftware.md	/^## The web movement I fully embrace the open web movement.$/;"	s	language:Markdown
 The web movement I fully embrace the open web movement.	dist/blog/traitsofmypostureonsoftware.html	/^<h2 id="the-web-movement-i-fully-embrace-the-open-web-movement">The web movement I fully embrace/;"	i	language:HTML
 Theme tweaking	_posts/2017-09-10-3-years-archlinux.md	/^## Theme tweaking$/;"	s	language:Markdown
@@ -637,7 +641,7 @@ Weaknesses - Performance problems - Zend event manager is ugly	_posts/2015-08-25
 Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly">Weaknesses - Performance/;"	j	language:HTML
 Weaknesses - Performance problems - Zend event manager is ugly	dist/blog/decouplingstrategiesforzendframework2applications.html	/^<h3 id="weaknesses---performance-problems---zend-event-manager-is-ugly-1">Weaknesses - Performan/;"	j	language:HTML
 Well being	_posts/2018-12-16-a-bit-of-poetry.md	/^## Well being$/;"	s	language:Markdown
-Well being	dist/blog/a-bit-of-poetry.html	/^        <h2 id="well-being">Well being<\/h2>$/;"	i	language:HTML
+Well being	dist/blog/a-bit-of-poetry.html	/^<h2 id="well-being">Well being<\/h2>$/;"	i	language:HTML
 What to say when asked for an estimate	_posts/2014-04-03-pragmatic-programmer-review.md	/^### What to say when asked for an estimate$/;"	S	language:Markdown
 What to say when asked for an estimate	dist/blog/pragmatic-programmer-review.html	/^<h3 id="what-to-say-when-asked-for-an-estimate">What to say when asked for an estimate<\/h3>$/;"	j	language:HTML
 When it is worth to cry	dist/blog/when-it-is-worth-to-cry.html	/^    <h1 class="post__title">When it is worth to cry<\/h1>$/;"	h	language:HTML
