@@ -1,5 +1,4 @@
 FROM jekyll/jekyll:latest
-USER root
 RUN gem install addressable -v 2.5.0 ; \
       gem install sass -v 3.4.23 ; \
       gem install rb-fsevent -v 0.9.8 ; \
@@ -12,6 +11,6 @@ RUN gem install addressable -v 2.5.0 ; \
 RUN gem install ref -v 2.0.0 ; \
       gem install therubyracer -v 0.12.3
 
-COPY . /blog
-WORKDIR /blog
+COPY . /jeanblog
+WORKDIR /jeanblog
 RUN bundle install
