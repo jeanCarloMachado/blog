@@ -14,3 +14,4 @@ RUN gem install ref -v 2.0.0 ; \
 COPY . /jeanblog
 WORKDIR /jeanblog
 RUN bundle install
+ENTRYPOINT bundle exec jekyll serve
