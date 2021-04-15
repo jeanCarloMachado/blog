@@ -16,12 +16,14 @@ deploy:  build
 	cd $(DIST_REPO) ; git push origin master
 
 
+docker:
+	docker build . -t blog
+
+
 clear:
 	rm -rf dist || true
 watch:
 	browser http://localhost:4000
 	bundle exec jekyll serve
 
-install:
-	bundle install
 
