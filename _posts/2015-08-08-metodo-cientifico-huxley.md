@@ -1,0 +1,267 @@
+---
+layout: post
+title: A beleza do método científico, segundo Huxley
+keywords: ciencia,método
+---
+
+Um texto extraordinário de Thomas Huxley, meu trabalho aqui foi
+traduzir; o texto necessita de uma segunda revisão - que eu farei em
+breve - de qualquer forma seu objetivo já fica claramente exposto.
+
+***
+O método científico é nada mais que a expressão do necessário
+modo de trabalhar da mente humana. É simplesmente o modo em que todo
+o fenômeno é raciocinado, desenvolvido. Não há diferença, entre
+as operações mentais de um homem de ciência e aquelas de uma pessoa
+normal. Entre as operações e métodos de um padeiro ou açougueiro
+medindo seus bens nas escalas comuns, e as operações de um químico
+ao fazer uma difícil e complexa análise pelos meios de sua balança
+de alta precisão. Não é o caso que as escalas e a balança diferem
+nos princípios de sua construção ou na maneira de trabalhar; mas
+o feijão em um caso é pesado em um eixo infinitamente menor que no
+outro.***
+
+Você provavelmente entenderá melhor se eu lhe der um exemplo familiar.
+Vocês todos já ouviram, ouso pensar, que os homens de ciência
+trabalham pelos meios da indução e dedução, e que com ajuda destas
+operações, eles, em certo senso, espremem da Natureza certas coisas,
+que são chamadas de leis naturais, e causas, e disso, por certa
+habilidade da sua parte, eles constroem hipóteses e teorias. E é
+imaginado por muitos que as operações da mente normal não podem
+- de nenhuma forma - serem comparadas a estes processos, e que eles
+precisam ser adquiridos através uma certa perícia no ofício. Por
+ouvir todas estas grandes palavras você pode pensar que a mente de um
+homem de ciência deve ser constituída de uma maneira diferenciada
+daquela do homem normal; mas se você não se assustar pelos termos, vai
+descobrir isso é uma falácia, que todos estes terríveis aparatos são
+utilizados por vocês cada dia e em cada hora de suas vidas.
+
+Existe um incidente bem conhecido em uma das peças de Moliere, que o
+autor faz o herói expressar grande prazer quando lhe é dito que o
+mesmo vinha praticando prosa por toda sua vida. No mesmo sentido eu
+confio que você se confortará, e se deliciará com você mesmo, na
+descoberta que você tem agido de acordo com os princípios da filosofia
+indutiva e dedutiva durante o mesmo período. Provavelmente não há
+nenhum aqui que não tenha, no curso de seu dia, tido a ocasião de
+colocar em movimento um complexo treinamento de raciocínio, do mesmo
+tipo, apenas diferenciando o grau, em que o homem científico vai em
+busca de desvendar os fenômenos naturais.
+
+Uma circunstancia muito trivial serve para exemplificar isso. Suponha
+que você entre numa fruteira procurando por uma maçã - você pega
+uma, dá uma mordida nela, você nota que ela está azeda; você a
+inspeciona e percebe que ela é verde e dura. Você pega outra, aquela
+também é verde e dura, e azeda. O vendedor oferece-lhe uma terceira;
+mas, antes de mordê-la, você examina-a, e descobre e ela é dura e
+verde, e imediatamente diz que você não a levará, ela deve ser azeda,
+como aquelas que você já testou.
+
+Nada pode ser mais simples que isso, você pensa; mas se você se der o
+trabalho de analisar e traçar os elementos lógicos que foram feitos
+pela sua mente você ficará surpreso. Em primeiro lugar, você fez uma
+operação de indução. Você descobriu que, em duas experiências, ser
+verde e dura implica em uma maçã azeda. Foi assim na primeira maçã,
+e foi confirmado na segunda. Verdade, é uma base muito pequena, mas já
+é o suficiente para elaborar uma indução. Você generalizou os fatos
+e esperou encontrar azedas as maçãs que também são verdes e duras.
+Sobre isso, você elaborou uma lei geral, que todas as maçãs que são
+verdes e duras são azedas; e isso é uma perfeita indução. Bem, tendo
+em mãos sua lei natural quando é oferecido para você uma maçã verde
+e dura , você diz, "Todas as maças verdes e duras são azedas; essa
+maçã é verde e dura; sendo assim essa maça é azeda". Esse treino
+de raciocínio é o que os lógicos chamam de silogismo, e tem todas
+suas varias partes e termos - sua premissa maior, sua premissas menor e
+sua conclusão. E pela ajuda de um pouco mais de raciocínio, que, se
+descritos, seriam exibidos em dois ou três outros silogismo, você
+chega a sua conclusão final "Eu não levarei essa maçã". Então,
+veja bem, você estabeleceu uma lei por indução e sobre aquilo você
+fundou uma dedução, e raciocinou a conclusão do caso particular.
+Bem, agora suponha, em mãos de sua lei, que depois de um tempo você
+está discutindo as qualidades das maçãs com um amigo: você dirá
+a ele, "É uma coisa curiosa, eu descobri que todas as maçãs verdes
+e duras são azedas!" Seu amigo lhe responde, "Mas como você sabe
+isso?" Você prontamente responde, "Ah, porque eu as experimentei
+variadas vezes e em todos os casos elas se mostraram assim.". Bem,
+se nós estivéssemos falando de ciência ao invés de senso comum,
+chamaríamos aquilo de uma verificação experimental. E, se ainda
+confrontado por oposição, você vai além e diz, "Eu ouvi um pessoal
+em Somersetshire e Devonshire, onde um grande número de maçãs cresce,
+que eles observaram o mesmo. Também é o caso em Normandia, e na
+América do Norte. Em resumo, eu descobri que essa é uma experiência
+universal sempre que alguém se dedica ao assunto.". Nesse ponto, seu
+amigo, a menos que ele é uma pessoa muito pouco racional, concorda
+com você e está convencido que você está certo da conclusão que
+desenhou. Ele acredita, embora talvez não saiba que acredita, que quão
+maior a quantidade de verificações - quanto mais experimentos foram
+feitos, e os mesmos resultados obtidos - que quão maior a variedade de
+condições que os mesmos resultados são encontrados, mais está certa
+a conclusão, e ele evita perguntar mais. Ele percebe que o experimento
+foi tentado sobre diversas circunstancias, tempo, lugares e pessoas, com
+o mesmo resultado; e ele acredita que a lei que você compôs deve ser
+razoável, e provavelmente acreditará nela.
+
+Em ciência nós fazemos o mesmo; o filósofo exercita precisamente
+as mesmas faculdades, apenas de uma maneira muito mais delicada. No
+inquérito científico se torna uma questão de obrigação expor uma
+possível lei para todo o tipo de verificação, e cuidar, mais ainda,
+que seja feito intencionalmente, e não por mero acidente, como no caso
+das maçãs. E em ciência, como na vida comum, nossa confiança em uma
+lei é a exata proporção da ausência de variação nos resultados
+da verificação experimental. Por instância, se você soltar o artigo
+que você provavelmente tem em sua mão, ele vai imediatamente cair
+no chão. Esta é uma verificação muito comum de uma das melhores
+estabelecidas leis da natureza - a gravitação. O método pelos quais
+homens de ciência estabeleceram a existência dessa lei é exatamente
+a mesma que aquela pela qual nós estabelecemos a proposição trivial
+sobre o fato de todas as maçãs verdes e duras serem azedas. Mas
+nós acreditamos de uma maneira direta porque toda a experiência da
+humanidade a verifica, e nós podemos verificar por nós mesmos a
+qualquer momento; essa é a fundação mais profunda que uma lei natural
+pode descansar.
+
+Com o intento de provar que o método de estabelecer leis na ciência
+é exatamente o mesmo utilizado na vida comum. Vamos agora nos dedicar
+a outro assunto (na verdade é apenas outra face da mesma questão), e
+esse é o método que, através da relação entre certos fenômenos,
+nós provamos que alguns são causa de outros.
+
+Eu pretendo colocar o caso claramente para você, e eu vou mostrar o
+que significo por outro caso familiar. Vou supor que você, ao descer
+de manhã para sala de estar de sua casa, descobre que sua chaleira e
+algumas colheres que foram deixadas no quarto na tarde anterior não
+estão mais lá - a janela está aberta, e você observa a marca de uma
+mão suja na abertura da janela, e talvez, em adição aquilo, você
+nota a marca de um sapato no jardim lá fora. Todos esses fenômenos
+chamaram sua atenção instantaneamente, e antes que dois segundos
+tenham passado você diz, "Oh, alguém forçou a janela, entrou no
+quarto e levou minhas colheres e bule!" Essa frase sai de sua boca em
+um momento. E você vai provavelmente adicionar "Eu sei que alguém o
+fez, estou certo disso!" Você tenta dizer exatamente o que você sabe;
+mas na realidade você está dando a impressão do que viu, em todos os
+detalhes essenciais, uma hipótese. Você não sabe de tudo isso; não
+é nada mais do que uma hipótese rapidamente formada em sua mente. E
+uma hipótese fundada em um longo treino de induções e deduções.
+
+O que são essas induções e deduções e como você chegou nessa
+hipótese? Você observou, em primeiro lugar, que a janela estava
+aberta; mas por um trem de raciocínio envolvendo muitas indicações
+e deduções, você provavelmente já tenha chegado a conclusão que -
+janelas não se abrem por elas mesmas; então você conclui que algo
+abriu a janela. Uma segunda lei geral que você chegou da mesma forma
+é que bules e colheres não saem de seu lugar espontaneamente, e você
+constatou que eles não estão onde você os deixou, que eles foram
+removidos. Em terceiro lugar, você olha para as marcas nas janela e a
+marca de calçado lá fora, e você pensa que em toda sua experiência
+anterior que aquela forma nunca foi produzida por nada além da mão
+de um ser humano; a mesma experiência mostra que nenhum outro animal
+a não ser um ser humano veste sapatos com taxas neles como as que
+produzem aquelas marcas no cascalho. Eu não sei, mesmo se eu pudesse
+descobrir todos aquelas 'dicas perdidas' que foram descritas, que elas
+nos apontariam para qualquer outra conclusão! De qualquer fora as
+leis que definem nossa presente experiência são fortes o suficiente
+para o propósito presente. Você depois chega a conclusão que esse
+tipo de marcas não são deixadas por nenhum outro tipo de animal a
+não ser o homem, ou são encontradas em algum outro lugar além
+nas mãos e sapatos de homens. Você tem, em frente, uma lei geral,
+fundada em observação e experiencia, e essa - lamento dizer - é uma
+muito universal - que alguns homens são ladroes; e você assume de
+vez à partir de todas essas premissas - e isso é o que constitui uma
+hipótese - que o homem que fez as marcas fora e na janela também,
+abriu a janela, foi dentro da sala, e roubou o bule e colheres. Você
+chegou na *vera causa*; você assumiu uma causa, ela é clara, é
+competente em produzir todo o fenômeno observado. Você pode explicar
+odos os fenômenos apenas pela hipótese de um ladrão. Mas essa é uma
+conclusão hipotética, na justiça que você não tem nenhuma prova, é
+apenas altamente provável por uma série de raciocínios indutivos e
+dedutivos.
+
+Suponho que sua primeira ação, assumindo que você é uma pessoa de
+senso comum ordinário, e você estabeleceu essas hipóteses para sua
+própria satisfação, vai muito provavelmente procurar a polícia,
+e enviá-los a procura do ladrão, com o objetivo de recuperar sua
+propriedade. Mas justamente quando você está pensando nesse objetivo,
+uma pessoa entra na sala, e ao saber seu intento replica, "Meu bom
+amigo, você está tomando resoluções abruptamente. Como você
+sabe que o homem que realmente fez essas marcas também levou suas
+colheres? Pode ter sido um macaco que as tomou e o homem poderia
+apenas estar a procura do animal." Você provavelmente responderia,
+"Bem, isso é possível, mas você não percebe que isso é contra
+toda a experiência da forma que bules e colheres são subtraídos;
+sendo assim, sua hipótese é menos provável que a minha." Enquanto
+vocês estão conversando desta forma, outro amigo chega, um daquele
+bom tipo que havíamos falado anteriormente. E ele pode dizer, "Oh
+meu querido senhor, você certamente está sendo precipitado. Você
+é muito presunçoso. Você admite que todas essas ocorrências
+aconteceram quando você estava dormindo e não pode saber de nada sobre
+o que de fato aconteceu. Como você sabe que as leis da Natureza não
+foram suspendidas durante a noite? Pode ser que houve alguma forma de
+interferência sobrenatural nesse caso." Ele declara que sua hipótese
+é uma que não pode ser demonstrada na realidade, e que por nenhum meio
+você pode estar certo que as leis da Natureza são as mesmas quando
+você está dormindo assim como quando você está acordado.
+
+Você é incapaz de responder esse tipo de raciocínio instantaneamente.
+Você sente que seu valioso amigo colocou você sob alguma desvantagem.
+Não obstante, você se sente convencido de que você está certo, e
+você fala para ele, "Meu caro amigo, eu posso apenas ser guiado pelas
+possibilidades naturais neste caso, e se você for gentil o suficiente
+para ir para o lado e me permitir passar, eu vou procurar a polícia".
+Bem, vamos supor que sua jornada foi um sucesso, e que por sorte você
+encontrou um policial; que eventualmente o ladrão foi encontrado com
+sua propriedade em mãos, e que as marcas correspondem a suas mãos
+e botas. Provavelmente qualquer juri vai considerar esses fatos uma
+ótima verificação experimental de suas hipóteses, tocando a causa do
+fenômeno observado em sua sala de estar, e irá agir de acordo.
+
+Agora, neste caso suposto, eu utilizei um fenômeno comum, para que
+você pudesse observar quais são os diferentes passos em um ordinário
+processo de raciocínio, se você se der o trabalho de analisar
+cuidadosamente. Todas as operações que eu descrevi, você verá,
+estão envolvidas na mente de qualquer pessoa racional, direcionando-o
+à conclusão da atitude necessária culminando na obtenção dos itens
+furtados. Eu disse que você é levado, neste caso, para a conclusão
+pele exato mesmo trem de pensamentos que um homem de ciência usa
+quando ele está buscando descobrir a origem e as leis dos mais ocultos
+fenômenos. O processo é, e sempre deverá ser, o mesmo; e precisamente
+o mesmo modo de pensar foi utilizado por Newton e Laplace em seus
+trabalhos para descobrir e definir as causas dos movimentos dos corpos,
+como você, com seu próprio senso comum, poderia utilizar para detectar
+um ladrão. A única diferença é a natureza do inquérito ser mais
+obscuro, cada passo precisa ser cuidadosamente observado, para que não
+haja um único problema nas hipóteses. Uma falha nas muitas premissas
+do dia a dia pode ter pequeno ou nenhum efeito na correta conclusão
+nossas hipóteses; mas, na busca científica, uma falácia, pequena ou
+grande, é sempre de importância, e à longo prazo, produtora de erros
+perniciosos, senão fatais.
+
+Não permita se a ser enganado pela noção comum que uma hipótese não
+é confiável simplesmente porque é uma hipótese. É muitas vezes
+argumentado, à respeito de alguma conclusão científica, que, apesar
+de tudo, é apenas uma hipótese. Mas o que temos para guiarmo-nos
+em nove décimos das coisas mais importantes de nossas vidas senão
+hipóteses, e geralmente mal embasadas? Então na ciência onde as
+evidências das hipóteses são sujeitas à mais rígida avaliação,
+nós devemos certamente buscar o mesmo curso. Você pode ter hipóteses
+e hipóteses. Um homem pode dizer, se ele quiser, que a lua é feita de
+queijo: isso é uma hipótese. Mas outro homem, que devotou grande tempo
+e atenção ao assunto, e se equipou dos mais poderosos telescópios e
+resultados de observações de outros, declara que na sua opinião ela
+é provavelmente composta de materiais muito similares àqueles que a
+Terra é composta: e isso também é apenas uma hipótese. Mas eu não
+preciso lhe dizer que existe uma enorme diferença no valor dessas
+hipóteses. Essa última é baseada em sólido conhecimento científico
+é certamente valiosa; e aquela que é meramente uma adivinhação
+aleatória é provável que tenha pouco valor. Cada grande passo em
+nosso progresso para descobrir causa foi feito exatamente da mesma forma
+que eu lhes descrevi. Uma pessoa observando a ocorrência de certos
+fatos e fenômenos pergunta, naturalmente, que processo, que tipo de
+operação sabida que ocorre na Natureza aplicada a este caso particular
+vai resolver o mistério? Uma vez que você tenha uma hipótese; seu
+valor vai ser proporcional ao cuidado e completude que ela foi testada
+e verificada. É assim nestes assuntos como é nos problemas comuns da
+vida prática: a suposição do tolo será tola, enquanto a suposição
+do sábio será sábia. Em todos os casos, você percebe que o valor
+do resultado depende da paciência e fidelidade em que o investigador
+aplica suas hipóteses a cada possível tipo de verificação.
+
+O original se encontra [aqui](http://www.is.wayne.edu/MNISSANI/A&S/allsci.htm).
