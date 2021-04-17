@@ -7,10 +7,9 @@ The running site can be found on > http://jeancarlomachado.net
 
 ## To develop
 
-```
-make docker
-make build
-
+```sh
+make build_and_watch
+make deploy
 ```
 
 ## To distribute
