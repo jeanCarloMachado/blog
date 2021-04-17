@@ -9,8 +9,7 @@ The running site can be found on > http://jeancarlomachado.net
 
 ```
 make docker
-docker run -it 
-docker run -it -p 4000 --net=host -v $(pwd):/jeanblog blog
+make build
 
 ```
 

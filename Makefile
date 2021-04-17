@@ -3,9 +3,8 @@ BLOG_REPO=${HOME}/projects/blog
 
 all: watch
 
-build: clear
-	# cp -rf ${POSTS_DIR} $(BLOG_REPO)/_posts || true
-	cd  $(BLOG_REPO) && bundle exec jekyll build
+build:
+	docker run -it -p 4000 --net=host -v $(pwd):/jeanblog blog
 
 deploy:  build
 	rm -rf $(DIST_REPO)/blog || true
@@ -20,8 +19,6 @@ docker:
 	docker build . -t blog
 
 
-clear:
-	rm -rf dist || true
 watch:
 	browser http://localhost:4000
 	bundle exec jekyll serve
